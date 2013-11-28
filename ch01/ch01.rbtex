@@ -50,6 +50,7 @@ from that era would have been offended to be accused of even partial Aristotelia
   )
 %>
 
+<% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
 <% begin_sec("Aristotelian spacetime",nil,'aristotelian-spacetime') %>
 
 Figure \subfigref{observers-and-simultaneity}{1} shows an observer and two clocks, represented
@@ -75,7 +76,7 @@ valid observer- and simultaneity-vectors. We require that every $\vc{o}$ vector 
 other, and likewise for $\vc{s}$ vectors. But, as is usual with vectors, we allow the arrow to be
 drawn anywhere without considering the different locations to have any significance; our model of
 spacetime doesn't allow different regions to have different properties.
-<% marg(0) %>
+<% marg %>
 <%
   fig(
     'aristotelian-s-and-o-vectors',
@@ -133,7 +134,7 @@ an $\vc{s}$ vector is a valid $\vc{o}$ vector. (We may wish to require that it p
 rather than the past, but Newton's laws are symmetric under time-reversal, so this is not
 strictly necessary.)
 
-<% marg(0) %>
+<% marg %>
 <%
   fig(
     'galilean-s-and-o-vectors',
@@ -149,6 +150,242 @@ between a distance and a time. The same was true in the Aristotelian model; the 
 in figure \figref{aristotelian-s-and-o-vectors} were drawn perpendicular to one another simply as
 a matter of convention, but any other angle could have been used.
 
+\pagebreak[4]
+
+<% marg %>
+<%
+  fig(
+    'galilean-twin-paradox',
+    %q{Example \ref{eg:galilean-twin-paradox}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The Galilean twin paradox}\label{eg:galilean-twin-paradox}
+Alice and Betty are identical twins. Betty goes on a space voyage, traveling away from the
+earth along vector $\vc{o}_1$ and then turning around and coming back on $\vc{o}_2$.\
+Meanwhile, Alice stays on earth. Because this is an experiment involving material objects, and
+the conditions are similar to those under which Galilean relativity has been repeatedly verified
+by experiment, we expect the results to be consistent with Galilean relativity's claim that
+motion is relative. Therefore it seems that it should be equally valid to consider Betty and the spaceship as
+having been at rest the whole time, while Alice and the planet earth traveled away from the spaceship
+along $\vc{o}_3$ and then returned via $\vc{o}_4$. But this is not consistent with the experimental
+results, which show that Betty undergoes a violent acceleration at her turnaround point, while Alice
+and the other inhabitants of the earth feel no such effect.
+
+The paradox is resolved by realizing that Galilean relativity defined unambiguously whether or not
+two vectors are parallel. It's true that we could fix a frame of reference in which
+$\vc{o}_1$ represented the spaceship staying at rest,
+but $\vc{o}_2$ is not parallel to $\vc{o}_1$, so in this frame we still have a good explanation
+for why Betty feels an acceleration: she has gone from being at rest to being in motion.
+
+Regardless of which frame of reference we pick, and regardless of whether we even fix a frame of reference,
+$\vc{o}_3$ and $\vc{o}_4$ are parallel to one another, and this explains why Alice feels no effect.
+\end{eg}
+
 <% end_sec('galilean-spacetime') %>
+
+<% begin_sec("Einstein's spacetime",nil,'einstein-spacetime') %>
+We have two models of spacetime, neither of which is capable of describing all the
+phenomena we observe. Because of the relatively crude state of technology \emph{ca.}
+1900, it required considerable insight for Einstein to piece together a fragmentary
+body of indirect evidence and arrive at a consistent and correct model of spacetime.
+Today, the evidence is part of everyday life. For example,
+every time you use a GPS receiver, \figref{gps-on-bike}, you're using Einstein's theory of relativity.
+Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
+that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
+<% marg %>
+<%
+  fig(
+    'gps-on-bike',
+    %q{This Global Positioning System (GPS) system, running on a smartphone attached to a bike's handlebar,
+       depends on Einstein's theory of relativity. Time flows at a different rate aboard a GPS satellite than
+       it does on the bike, and the GPS software has to take this into account.}
+  )
+%>
+<% end_marg %>
+
+A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating
+brought atomic clocks aboard commercial
+airliners, figure \figref{hk-in-cabin}, and went around the world, once from east to west and once from west to east.
+Hafele and Keating observed that there was a discrepancy between the times measured by the
+traveling clocks and the times measured by similar clocks that stayed home at the U.S. Naval Observatory in Washington.
+The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
+
+
+We are used to thinking of time as absolute and universal, so it is
+disturbing to find that it can flow at a different rate for observers in
+different frames of reference. 
+Nevertheless, the effects that Hafele and Keating observed were small.
+This makes sense: Galilean relativity had already been thoroughly verified for material objects such as
+clocks, planets, and airplanes,
+so a new theory like Einstein's had to agree with Galileo's to a good approximation, within the Galilean theory's
+realm of applicability. This requirement of backward-compatibility is known as
+the correspondence principle.\index{correspondence principle!for time dilation}\index{correspondence principle!defined}
+
+<% marg(80) %>
+<%
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hafele-keating-directions',
+    %q{All three clocks are moving to the east. Even though the west-going plane is moving to the west relative to the air, the air is moving
+           to the east due to the earth's rotation.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'einstein-s-and-o-vectors',
+    %q{According to Einstein, simultaneity is relative, not absolute.}
+  )
+%>
+<% end_marg %>
+
+It's also reassuring that the effects on time were
+small compared to the three-day lengths of the plane trips. There was therefore no
+opportunity for paradoxical scenarios such as one in which the east-going experimenter arrived
+back in Washington before he left and then convinced himself not to take the trip.
+A theory that maintains this kind of orderly relationship between cause and effect is said to satisfy causality.\index{causality}
+
+
+Hafele and Keating were testing specific quantitative predictions of relativity, and they verified them to within
+their experiment's error bars. Let's work backward instead, and
+inspect the empirical results for clues as to how time works.
+The disagreements among the clocks suggest that simultaneity is not absolute: different observers
+have different notions of simultaneity, as suggested in figure \figref{einstein-s-and-o-vectors}.
+Just as Galilean relativity freed the $\vc{o}$ vectors from the constraint of being parallel to
+one another, Einstein frees the $\vc{s}$ vectors. But because a particular observer does have
+methods of synchronizing clocks (e.g., Einstein synchronization, example \ref{eg:einstein-train},
+p.~\pageref{eg:einstein-train}), the definition of simultaneity isn't completely arbitrary.
+For each $\vc{o}$ vector we have a corresponding $\vc{s}$ vector, which represents that observer's
+opinion as to what constitutes simultaneity. Because the convention on a Cartesian $x-t$ graph
+is to draw the axes at right angles to one another, we refer to such a pair of vectors as
+orthogonal, but the word is not to be interpreted literally, since we can't define an actual angle
+between a time interval and a spatial displacement.
+
+<% 
+  fig(
+    'three-cases',
+    %q{%
+      Possibilities for the behavior of orthogonality.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+What, then, are the rules for orthogonality? Figure \figref{three-cases} shows three possibilities.
+In each case, we have an initial pair of vectors $\vc{o}_1$ and $\vc{s}_1$ that we assume are
+orthogonal, and we then draw a new pair $\vc{o}_2$ and $\vc{s}_2$ for a second observer who is
+in motion relative to the first. The Galilean case, where $\vc{s}_2$ remains parallel to
+$\vc{s}_1$, has already been ruled out. The second case is the one in which $\vc{s}$ rotates in
+the same direction as $\vc{o}$. This one is forbidden by causality, because if we kept on rotating,
+we could eventually end up rotating $\vc{o}$ by 180 degrees, so by a continued process of acceleration,
+we could send an observer into a state in which her sense of time was reversed. We are left with only
+one possibility for Einstein's spacetime, which is the one in which a clockwise rotation of
+$\vc{o}$ causes a counterclockwise rotation of $\vc{s}$.
+
+
+Now there is a limit to how far this process can go, or else the $\vc{s}$ and $\vc{o}$ would eventually
+lie on the same line. But this can never be, for a valid $\vc{s}$ vector can never be a valid $\vc{o}$, nor
+an $\vc{o}$ a valid $\vc{s}$. Such a possibility would mean that an observer would describe two different
+points on his own world-line as simultaneous, but an observer for whom no time passes is not an observer
+at all, since observation implies collecting data and then being able to remember it at some later time.
+We conclude that there is a diagonal line that forms the boundary between the set of possible $\vc{s}$ vectors
+and the set of valid $\vc{o}$ vectors. This line has some slope, and the inverse of this slope corresponds
+to some velocity, which is apparently a universal and fixed property of Einstein's spacetime. This
+velocity we call $c$, and the correspondence principle tells us that $c$ must be very large, or else
+Einsteinian, or ``relativistic,'' effects such as time distortion would have been large even for motion
+at everyday speeds; in the Hafele-Keating experiment they were quite small, even at the high speed of
+a passenger jet.
+
+Although $c$ is a large number when expressed in meters per second, for convenience in
+relativity we will always choose units such that $c=1$. The boundary between $\vc{s}$ and $\vc{o}$ vectors
+then appears on spacetime diagrams as a diagonal line at $\pm 45$ degrees. In more than one spatial
+dimension, this boundary forms a cone, figure \figref{light-cone}, and for reasons that will become
+more clear in a moment, this cone is called the light cone.\index{light cone}
+Vectors lying inside the light cone are referred to as timelike, those outside as spacelike, and
+those on the cone itself as lightlike or null.
+<% marg(35) %>
+<%
+  fig(
+    'light-cone',
+    %q{The light cone.}
+  )
+%>
+<% end_marg %>
+
+An important advantage of Einstein's relativity over Galileo's is that it is compatible with the
+empirical observation that some phenomena travel at fixed speeds. Light travels at a fixed speed,
+and so do gravitational waves (which, although they have not yet been observed directly, have been
+indirectly confirmed to exist through observations of the decaying orbits of binary neutron stars).
+This fixed speed is $c$, and all observers agree on it. In 1905, the only phenomenon known to travel
+at $c$ was light, so $c$ is usually described as the ``speed of light,'' but from the modern point
+of view it functions more as a kind of conversion factor between our units of measurement for time
+and space. It is a property of spacetime, not a property of light. 
+
+More fundamentally, $c$ is the
+maximum speed of cause and effect. For if we could propagate cause and effect, e.g., by transmitting
+a signal, at a speed greater than $c$, the vector connecting the cause and the effect would be spacelike.
+But by adding two spacelike vectors we can
+make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
+into the past, violating causality.
+
+<%
+ fig(
+   'einstein-train',
+   '',
+   {
+     'width'=>'wide',
+     'sidecaption'=>true,
+     'anonymous'=>true
+   }
+ )
+%>
+
+\begin{eg}{Einstein's train}\label{eg:einstein-train}
+\egquestion The figure shows a famous thought experiment devised by Einstein. A train is moving at
+constant velocity to the right when bolts of lightning strike the ground near its front and
+back. Alice, standing on the dirt at the midpoint of the flashes, observes that the light
+from the two flashes arrives simultaneously, so she says the two strikes must have occurred
+simultaneously. Bob, meanwhile, is sitting aboard the train, at its middle. 
+He passes by Alice at the moment when Alice later figures out that the flashes happened.
+Later, he receives flash 2, and then flash 1. He infers that since both flashes traveled
+half the length of the train, flash 2 must have occurred first.
+How can this be reconciled with Alice's belief that the flashes were simultaneous?
+
+<% marg(20) %>
+<%
+  fig(
+    'einstein-train-solution',
+    %q{Example \ref{eg:einstein-train}.}
+  )
+%>
+<% end_marg %>
+
+\eganswer Figure \figref{einstein-train-solution} shows the corresponding spacetime diagram.
+It seems paradoxical that Alice and Bob disagree on simultaneity, but this is only because
+we have an ingrained prejudice in favor of Galilean relativity.
+Alice's method of determining that 1 and 2 were simultaneous is valid, and is
+known as Einstein synchronization.\index{Einstein synchronization}
+The dashed line connecting 1 and 2 is orthogonal to Alice's world-line.
+But Bob has a different opinion about what constitutes simultaneity. The slanted dashed
+line is orthogonal to his world-line. According to Bob, 2 happened before the time
+represented by this line, 1 after.
+\end{eg}
+
+
+<% end_sec('einstein-spacetime') %>
+<% end_sec('three-models-of-spacetime') %>
+
+
 
 <% end_chapter %>
