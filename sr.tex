@@ -1,0 +1,67 @@
+\documentclass{sr}
+\let\ifpdf\relax % http://tex.stackexchange.com/questions/11414/package-ifpdf-error
+
+%\includeonly{ch01/ch01temp}
+
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+
+\begin{document}
+
+\include{cover/cover}
+
+\cleardoublepage
+
+\include{cover/inside-title-page}
+
+\include{cover/copyright}
+
+\pagebreak\vspace{100mm}
+
+\hbox{}\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Brief Contents\\
+\hspace{-20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
+\ref{ch:observers-and-simultaneity} & Observers and simultaneity \quad \pageref{ch:observers-and-simultaneity}\\
+\end{tabular}
+\mynormaltype
+
+\vspace{100mm}\pagebreak
+
+\cleardoublepage
+
+\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Contents\\
+\mynormaltype
+
+\tableofcontents
+
+{\sffamily{} Appendix \ref{hwansappendix}: Hints and solutions                      \dotfill \pageref{hwansappendix}}
+
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{10} 
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}
+
+%=================================================================================================================================
+
+\backmatter
+\nomarginlayout   
+\formatchtoc{\large}{\quad\contentspage}{0mm} % This has to go before first appendix.
+\renewcommand{\chaptermark}[1]%
+    {\markboth{\textsf{\thechapter\hspace{\myfooterspace}#1}}{}}
+\blankchaptermarks
+
+%=================================================================================================================================
+
+\vfill\pagebreak
+
+
+%=================================================================================================================================
+
+
+\noindent\formatlikesection{Photo Credits}\\
+\end{document}

@@ -1,0 +1,154 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '01',
+    %q{Observers and simultaneity},
+    'ch:observers-and-simultaneity'
+  )
+%>
+
+``The test of a first-rate intelligence is the ability to hold two opposing ideas in mind at
+the same time and still retain the ability to function.'' ---F.~Scott Fitzgerald
+
+<% 
+  fig(
+    'spacetime',
+    %q{%
+      Three views of spacetime. 1.~A typical graph of a particle's motion: in this case, oscillatory
+      motion. 2.~In relativity, it's customary to swap the axes, and 3 we can even remove
+      the axes entirely.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+      # 'sidepos'=>'b'
+    }
+  )
+%>
+
+Time and space together make spacetime, figure
+\figref{spacetime}, the stage on which physics is played out.
+Until 1905, physicists were trained to accept two mutually contradictory theories of
+spacetime. I'll call these the Aristotelian and Galilean views, although my colleagues
+from that era would have been offended to be accused of even partial Aristotelianism.
+
+<% 
+  fig(
+    'observers-and-simultaneity',
+    %q{%
+      1. An observer and two clocks. 2. Idealization as events. 3. Vectors used
+      to represent relationships between events.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+      # 'sidepos'=>'b'
+    }
+  )
+%>
+
+<% begin_sec("Aristotelian spacetime",nil,'aristotelian-spacetime') %>
+
+Figure \subfigref{observers-and-simultaneity}{1} shows an observer and two clocks, represented
+using the graphical conventions of figure \subfigref{spacetime}{3}. The existence
+of such a material object at a certain place and time constitutes an \emph{event},\index{event}
+which we idealize as a point, \subfigref{observers-and-simultaneity}{2}. Spacetime consists of
+the set of all events. As time passes, a physical object traces out a continuous curve, a set of events
+known in relativistic parlance as its \emph{world-line}.\index{world-line}
+
+The relativist's attitude is that events and relationships between events
+are primary, while coordinates such as $x$ and $t$ are secondary and
+possibly irrelevant. Coordinates let us attach labels like $(x,t)$ to points, but this is like
+taking a walk through the zoo and giving a name to each animal: the animals don't care about the names.
+Figure \subfigref{observers-and-simultaneity}{3} shows the use of vectors to indicate relationships
+between points. Vector $\vc{o}$ is an observer-vector, connecting two points on the world-line
+of the person. It points from the past into the future. The vector $\vc{s}$ connecting the two clocks is
+a vector of simultaneity. The clocks have previously been synchronized side by side, and if we assume
+that transporting them to separate locations doesn't disrupt them, then the fact that both clocks
+read two minutes after three o'clock tells us that the two events occur at the same time.
+
+The Aristotelian model of spacetime is characterized by a set of rules about what vectors are
+valid observer- and simultaneity-vectors. We require that every $\vc{o}$ vector be parallel to every
+other, and likewise for $\vc{s}$ vectors. But, as is usual with vectors, we allow the arrow to be
+drawn anywhere without considering the different locations to have any significance; our model of
+spacetime doesn't allow different regions to have different properties.
+<% marg(0) %>
+<%
+  fig(
+    'aristotelian-s-and-o-vectors',
+    %q{Valid vectors representing observers and simultaneity, according to the Aristotelian model of spacetime.}
+  )
+%>
+<% end_marg %>
+
+When Einstein was a university student, these rules (phrased differently) were the ones he was taught to use
+in describing electricity and magnetism. He later recalled imagining himself on a motorcycle,
+riding along next to a light wave and trying to imagine how his observations could be reconciled
+with Maxwell's equations. I don't know whether he was ever brave enough to describe this daydream
+to his professors, but if he had, their answer would have been essentially that his hypothetical
+$\vc{o}$ vector was illegal. The good $\vc{o}$ vectors were thought to be the ones that represented
+an observer at rest relative to the ether, a hypothetical all-pervasive medium whose vibrations
+were electromagnetic waves. However silly this might seem to us a hundred years later, it was in
+fact strongly supported by the evidence. A vast number of experiments had verified the validity of
+Maxwell's equations, and it was known that if Maxwell's equations were valid in coordinates
+$(x,t)$ defined by an observer $\vc{o}$,
+they would become invalid under the transformation $(x',t')=(x+vt,t)$ to coordinates defined
+by an observer $\vc{o}'$ in motion at velocity $v$ relative to $\vc{o}$.
+<% end_sec('aristotelian-spacetime') %>
+
+<% begin_sec("Galilean spacetime",nil,'galilean-spacetime') %>
+But the Aristotelian model was already known to be wrong when applied to
+material objects. The classic empirical demonstration of this fact came
+around 1610 with Galileo's discovery of four moons orbiting Jupiter, figure \figref{jovian-moons}.
+Aristotelianism in its ancient form was originally devised as an explanation of
+why objects always seemed to settle down to a natural state of rest according to an observer
+standing on the earth's surface. But as Jupiter flew across the heavens, its moons circled
+around it, without showing any natural tendency to fall behind it like a paper cup thrown
+out the window of a car. Just as an observer $\vc{o}_1$ standing on the earth would consider
+the earth to be at rest, $\vc{o}_2$ hovering in a balloon at Jupiter's cloudtops would say
+that the jovian clouds represented an equally ``natural'' state of rest.
+
+<%
+  fig(
+    'jovian-moons',
+    %q{A simulation of how
+       Jupiter and its moons might appear at intervals of three
+       hours through a telescope. Because we see
+       the moons' circular orbits edge-on, their world-lines appear sinusoidal.
+       Over this time period, the innermost
+       moon, Io, completes half a cycle.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We are thus led to a different, Galilean, set of rules for $\vc{o}$ and $\vc{s}$ vectors.
+All $\vc{s}$ vectors are parallel to one another, but \emph{any} vector that is not parallel to
+an $\vc{s}$ vector is a valid $\vc{o}$ vector. (We may wish to require that it point into the future
+rather than the past, but Newton's laws are symmetric under time-reversal, so this is not
+strictly necessary.)
+
+<% marg(0) %>
+<%
+  fig(
+    'galilean-s-and-o-vectors',
+    %q{Valid vectors representing observers and simultaneity, according to the Galilean model of spacetime.}
+  )
+%>
+<% end_marg %>
+
+Note that our geometrical description includes a notion of parallelism, but not of angular measure.
+We don't know or care whether the ``angle'' between an $\vc{s}$ and an $\vc{o}$ is 90 degrees. One
+represents a distance, while the other represents an interval of time, and we can't define the angle
+between a distance and a time. The same was true in the Aristotelian model; the vectors 
+in figure \figref{aristotelian-s-and-o-vectors} were drawn perpendicular to one another simply as
+a matter of convention, but any other angle could have been used.
+
+<% end_sec('galilean-spacetime') %>
+
+<% end_chapter %>
