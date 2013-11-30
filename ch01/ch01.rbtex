@@ -341,6 +341,39 @@ But by adding two spacelike vectors we can
 make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
 into the past, violating causality.
 
+\begin{eg}{The ring laser gyroscope}
+If you've flown in a jet plane, you can thank relativity for helping you to avoid
+crashing into a mountain or an ocean. Figure \figref{ring-laser-gyro} shows a standard
+piece of navigational equipment called a ring laser gyroscope. A beam of light is
+split into two parts, sent around the perimeter of the device, and reunited. Since
+the speed of light is constant, we expect the two parts to come back together at the
+same time. If they don't, it's evidence that the device has been rotating. The plane's
+computer senses this and notes how much rotation has accumulated.
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'ring-laser-gyro',
+    %q{A ring laser gyroscope.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{No frequency-dependence}
+Relativity has only one universal speed, so it requires that all light waves
+travel at the same speed, regardless of their frequency and wavelength.
+Presently the best experimental tests of the invariance of
+the speed of light with respect to wavelength come from astronomical observations of
+gamma-ray bursts, which are sudden
+outpourings of high-frequency light, believed to originate from a supernova explosion
+in another galaxy. One such observation,
+in 2009,\footnote{\url{http://arxiv.org/abs/0908.1832}} 
+found that the
+times of arrival of all the different frequencies in the burst
+differed by no more than 2 seconds out of a total time in flight on the order
+of ten billion years!
+\end{eg}
+
 <%
  fig(
    'einstein-train',
