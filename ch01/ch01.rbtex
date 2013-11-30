@@ -5,8 +5,8 @@
 <%
   chapter(
     '01',
-    %q{Observers and simultaneity},
-    'ch:observers-and-simultaneity'
+    %q{Spacetime},
+    'ch:spacetime'
   )
 %>
 
@@ -195,7 +195,7 @@ phenomena we observe. Because of the relatively crude state of technology \emph{
 1900, it required considerable insight for Einstein to piece together a fragmentary
 body of indirect evidence and arrive at a consistent and correct model of spacetime.
 Today, the evidence is part of everyday life. For example,
-every time you use a GPS receiver, \figref{gps-on-bike}, you're using Einstein's theory of relativity.
+every time you use a GPS receiver, figure \figref{gps-on-bike}, you're using Einstein's theory of relativity.
 Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
 that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
 <% marg %>
@@ -531,8 +531,10 @@ a lightlike or spacelike world-line isn't possible for a material clock.
 
 If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of the gliding-clock time. Proof: Based
 on units, the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$, where each $(\ldots)$ represents a unitless constant.
-The $tx$ coefficient must be zero by the isotropy of space. We arbitrarily set
-the $t^2$ coefficient equal to 1. Since the area vanishes for $x=t$, the $x^2$ coefficient must equal $-1$.
+The $tx$ coefficient must be zero by the isotropy of space. The
+$t^2$ coefficient must equal 1 in order to give the right answer in the case of $x=0$, where the
+coordinates are those of an observer at rest relative to the clock.
+Since the area vanishes for $x=t$, the $x^2$ coefficient must equal $-1$.
 
 When $|x|$ is greater than $|t|$, events A and B are so far apart in space and so close together in time that
 it would be impossible to have a cause and effect relationship between them, since $c=1$ is the maximum speed of cause and effect.
@@ -667,7 +669,7 @@ We have $\vc{a}=(0,t)$ and $\vc{b}=(t,vx)$, where $v$ is the velocity of the spa
 to the earth. Application of the metric gives proper time $t$ for the earthbound twin
 and $t\sqrt{1-v^2}$ for the traveling twin. The same results apply for $\vc{c}$ and $\vc{d}$. The result
 is that the earthbound twin experiences a time that is greater by a factor $\gamma$ (Greek letter gamma)
-defined by $\gamma=1/\sqrt{1-v^2}$. If $v$ is close to $c$, $\gamma$ can be large, and we find that when
+defined as $\gamma=1/\sqrt{1-v^2}$. If $v$ is close to $c$, $\gamma$ can be large, and we find that when
 the astronaut twin returns home, still youthful, the earthbound twin can be old and gray. This was at one
 time referred to as the twin paradox, and it was considered paradoxical either because it seemed to defy
 common sense or because the traveling twin could argue that she was the one at rest while the earth was
@@ -738,7 +740,7 @@ Betty and her spaceship to be foreshortened.
   fig(
     'atomic-clock-gamma',
     %q{Time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
-       is calculated from $\gamma=1/\sqrt{1-(v/c)^2}$; at these small velocities, the approximation
+       is calculated from $\gamma=1/\sqrt{1-v^2}$; at these small velocities, the approximation
        $\gamma\approx 1+v^2/2$ is excellent, and the graph is indistinguishable
        from a parabola. This graph corresponds to an extreme close-up view of the lower left corner of 
        figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
@@ -823,14 +825,15 @@ of decay predicted with and without relativity. The relativistic line is the one
   )
 %>
 
-<% begin_sec("Coordinate systems",nil,'coordinate-systems') %>
+<% begin_sec("The Lorentz transformation",nil,'lorentz-transformation') %>
 
 Philosophically, coordinates are unnecessary, but in practical
 terms they are convenient. They are arbitrary, so we can change from one set
 to another.  For example, we can simply
 change the units used to measure time and position, as in the first and second panels of
 figure \figref{joan-of-arc}. Nothing changes about the underlying events; only the
-labels are different. The third panel shows a convenient convention we will use to
+labels are different. The third panel of figure \figref{joan-of-arc}
+shows a convenient convention we will use to
 depict such changes visually. The gray rectangle represents the
 original coordinate grid from the first panel, while the grid of black lines represents the new version
 from the second panel. Omitting the grid from the gray rectangle makes the diagram easier
@@ -880,14 +883,14 @@ Figure \figref{clock-and-ruler-gamma}
 shows how time dilation and length contraction come about in this picture.
 It should be emphasized here that the Lorentz transformation includes more effects than just
 length contraction and time dilation. Many beginners at relativity get confused and come to
-erroneous conclusions by trying to reduce all of relativity to  a matter of inserting factors of
+erroneous conclusions by trying to reduce everything to a matter of inserting factors of
 $\gamma$ in various equations. If the Lorentz transformation amounted to nothing more than
 length contraction and time dilation, it would be merely a change of units like the
 one shown in figure \figref{joan-of-arc}.
 
 The Lorentz transformation translates into algebraic notation like this:
 \begin{align*}
-  t' &= \gamma t - v\gamma x \\
+  t' &= \quad \gamma t - v\gamma x \\
   x' &= -v\gamma t + \gamma x
 \end{align*}
 The line $x=0$ transforms
@@ -998,16 +1001,6 @@ the person on the left to decide to pick up the hammer and use it?
 %>
 <% end_marg %>
 
-
-twin paradox; birdtracks
-
-postulates of SR [=LM, plus path-independence of parallel transport]; Feynman attitude, that its
-   importance is as a no-go theorem
-
-HK planes, twin paradox
-
-<% end_sec('coordinate-systems') %>
-
-
+<% end_sec('lorentz-transformation') %>
 
 <% end_chapter %>
