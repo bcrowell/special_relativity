@@ -643,11 +643,18 @@ sun's frame of reference.
 <% end_sec('metric') %>
 
 <% begin_sec("The gamma factor",nil,'gamma') %>
-<% marg(20) %>
+<% marg(-40) %>
 <%
   fig(
     'twin-paradox',
     %q{The twin ``paradox.''}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gamma-graph-small',
+    %q{A graph of $\gamma$ as a function of $v$.}
   )
 %>
 <% end_marg %>
@@ -689,9 +696,11 @@ A meter-stick appears longest to an observer who is at rest relative to it. An o
 meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 \end{lessimportant}
 
-(It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
+Our present discussion is limited to one spatial dimention, but in three spatial dimensions,
+only the length along the line of motion is contracted.
+It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
 Optical observations are influenced by the unequal times taken for light to propagate from the ends
-of the stick to the eye.)
+of the stick to the eye.
 
 \begin{eg}{An interstellar road trip}\label{eg:interstellar-road-trip}
 Alice stays on earth while her twin Betty
@@ -723,39 +732,63 @@ to be shrunk by a factor of 2. The same thing occurs for Alice, who observes
 Betty and her spaceship to be foreshortened.
 \end{eg}
 
-<% marg %>
+
+<% marg(0) %>
 <%
   fig(
-    'cern-muon-graph',
-    %q{Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
-       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
-       to large systematic errors.}
+    'atomic-clock-gamma',
+    %q{Time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
+       is calculated from $\gamma=1/\sqrt{1-(v/c)^2}$; at these small velocities, the approximation
+       $\gamma\approx 1+v^2/2$ is excellent, and the graph is indistinguishable
+       from a parabola. This graph corresponds to an extreme close-up view of the lower left corner of 
+       figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
   )
 %>
 <% end_marg %>
 
+\begin{eg}{A moving atomic clock}\label{eg:chou}
+Expanding $\gamma$ in a Taylor series, we find $\gamma\approx 1-v^2/2$, so that
+when $v$ is small, relativistic effects are approximately proportional to $v^2$, so it is very
+difficult to observe them at low speeds.
+This was the reason that the Hafele-Keating experiment was done aboard passenger jets, which
+fly at high speeds. Jets, however, fly at high altitude, and this brings in a second time dilation effect,
+a general-relativistic one due to gravity. The main purpose of the experiment was actually to test
+this effect.
+
+It was not until four decades after Hafele and Keating
+that anyone did a conceptually simple atomic clock experiment
+in which the only effect was motion, not gravity.
+In 2010, however, Chou \emph{et al.}\footnote{Science 329 (2010) 1630} succeeded in building an atomic
+clock accurate enough to detect time dilation at speeds as low as 10 m/s. Figure \figref{atomic-clock-gamma} shows their results.
+Since it was not practical to move the entire clock, the experimenters only moved the aluminum atoms inside the
+clock that actually made it ``tick.''
+\end{eg}
+
 \begin{eg}{Large time dilation}\label{eg:cern-muons}
-The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
+The time dilation effects described in example \ref{eg:chou} were
+very small. If we want to see a large time dilation
 effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
 greater than the total megatonnage of all the world's nuclear arsenals. We can, however, accelerate subatomic particles
 to speeds at which $\gamma$ is large. For experimental particle physicists, relativity is something you do all day
 before heading home and stopping off at the store for milk. An early, low-precision experiment of this kind was
-performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. Figure \figref{cern-muon-storage-ring} shows
+performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. Figure \figref{cern-muon} shows
 a 1974 experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1}
 of a similar type which verified the time dilation predicted by relativity to a precision of about
 one part per thousand.
 
 <%
   fig(
-    'cern-muon-storage-ring',
-    %q{Apparatus used for the test of relativistic time dilation described in example \ref{eg:cern-muons}. 
+    'cern-muon',
+    %q{\emph{Left}: Apparatus used for the test of relativistic time dilation described
+       in example \ref{eg:cern-muons}. 
        The prominent black and white blocks are large magnets surrounding a circular pipe
-       with a vacuum inside. \linebreak (c) 1974 by CERN.
+       with a vacuum inside. (c) 1974 by CERN.
+       \emph{Right}: Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
+       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
+       to large systematic errors.
     },
     {
-      'width'=>'wide',
-      'sidecaption'=>true,
-      'sidepos'=>'b'
+      'width'=>'fullpage'
     }
   )
 %>
@@ -766,10 +799,10 @@ of the electron. Muons undergo radioactive decay,
 lasting an average of only 2.197 $\mu\sunit$ before they evaporate into an electron and two neutrinos.
 The 1974 experiment was actually built in order to measure the magnetic properties of muons, but it produced a high-precision
 test of time dilation as a byproduct. Because muons have the same electric charge as electrons, they can be trapped using
-magnetic fields. Muons were injected into the ring shown in figure \figref{cern-muon-storage-ring}, circling around it until they underwent radioactive decay.
+magnetic fields. Muons were injected into the ring shown in figure \figref{cern-muon}, circling around it until they underwent radioactive decay.
 At the speed at which these muons were traveling, they had $\gamma=29.33$, so on the average they lasted 29.33 times
 longer than the normal lifetime. In other words, they were like tiny alarm clocks that self-destructed at a randomly
-selected time. Figure \figref{cern-muon-graph} shows the number of radioactive decays counted, as a function of the
+selected time. The graph shows the number of radioactive decays counted, as a function of the
 time elapsed after a given stream of muons was injected into the storage ring. The two dashed lines show the rates
 of decay predicted with and without relativity. The relativistic line is the one that agrees with experiment.
 \end{eg}
@@ -819,8 +852,52 @@ p.~\pageref{fig:polka-dots}, and covering spacetime with a graph-paper grid. The
 shown in figure \figref{smooshing}, is a kind of stretching and smooshing of the
 diagonals. Since the area is invariant, one diagonal grows by the same factor by
 which the other shrinks. This change of coordinates is called the 
-Lorentz transformation.\index{Lorentz transformation}
+Lorentz transformation.\index{Lorentz transformation} 
 
+<% 
+  fig(
+    'clock-and-ruler-gamma',
+    %q{%
+      1. The clock is at rest in the original frame of reference, and it measures a time interval $t$.
+       In the new frame of reference, the time interval is greater by a factor of $\gamma$.
+      2. The ruler is moving in the first frame, represented by a square, but at rest in the second one,
+       shown as a parallelogram.
+       Each picture of the ruler is a snapshot taken at a certain moment as judged according to the second
+       frame's
+       notion of simultaneity. An observer in first frame judges the ruler's length instead according to
+       that frame's definition of simultaneity, i.e., using points that are lined up vertically on the graph.
+       The ruler appears shorter in the frame in which it is moving.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+      # 'sidepos'=>'b'
+    }
+  )
+%>
+
+Figure \figref{clock-and-ruler-gamma}
+shows how time dilation and length contraction come about in this picture.
+It should be emphasized here that the Lorentz transformation includes more effects than just
+length contraction and time dilation. Many beginners at relativity get confused and come to
+erroneous conclusions by trying to reduce all of relativity to  a matter of inserting factors of
+$\gamma$ in various equations. If the Lorentz transformation amounted to nothing more than
+length contraction and time dilation, it would be merely a change of units like the
+one shown in figure \figref{joan-of-arc}.
+
+The Lorentz transformation translates into algebraic notation like this:
+\begin{align*}
+  t' &= \gamma t - v\gamma x \\
+  x' &= -v\gamma t + \gamma x
+\end{align*}
+The line $x=0$ transforms
+to a line with the correct inverse slope $v$, which is what justifies the interpretation of $v$ as
+a velocity. The inverse transformation is the one with $v$ replaced by $-v$. These properties are
+shared by the Galilean transformation.
+The fact that this is the correct relativistic transformation can be verified by noting that
+(1) the lines $x=\pm t$ are preserved, and (2)
+the determinant equals 1, so that areas are preserved. Alternatively, it is
+sufficient to check the invariance of the spacetime interval under this transformation.
 
 \begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
 Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
@@ -905,7 +982,14 @@ as they cruised past each other. Wouldn't they have to
 agree on whether B had already happened?
 \end{dq}
 
-<% marg(200) %>
+\begin{dq}\label{dq:pole-paradox}
+The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
+At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
+and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
+the person on the left to decide to pick up the hammer and use it?
+\end{dq}
+
+<% marg(50) %>
 <%
   fig(
     'dq-pole-paradox',
@@ -914,12 +998,6 @@ agree on whether B had already happened?
 %>
 <% end_marg %>
 
-\begin{dq}\label{dq:pole-paradox}
-The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
-At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
-and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
-the person on the left to decide to pick up the hammer and use it?
-\end{dq}
 
 twin paradox; birdtracks
 

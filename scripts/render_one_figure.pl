@@ -2,14 +2,15 @@
 
 use strict;
 
-use FindBin;
-use File::Glob;
-use File::Copy;
-
 # usage:
 #   render_one_figure.pl foo.svg
 # Renders it unless rendering already exists and is newer than svg. Attempts to render it to pdf first. If that
 # fails preflight, redoes it as a bitmap.
+
+use FindBin;
+use File::Glob;
+use File::Copy;
+use File::Temp qw(tempdir);
 
 my $not_for_real = 0;
 
@@ -35,34 +36,20 @@ else {
 my $pdf=$svg;
 $pdf=~s/\.svg$/.pdf/;
 unless (-e $pdf && -M $svg > -M $pdf) { # 
-  my $c="inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
+  # Inkscape normally expects preferences file to be in ~/.config/inkscape/preferences.xml .
+  # We need to override this, because otherwise it could contain inappropriate options for this purpose.
+  # There is an undocumented mechanism for overriding it using an environment variable:
+  #   https://bugs.launchpad.net/inkscape/+bug/382394
+  # Create dir for temporary prefs file. Other files will be created there.
+  my $temp_dir = tempdir( CLEANUP => 1 );
+  my $c="INKSCAPE_PORTABLE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
   print "  $c\n"; 
   unless ($not_for_real) {
     my $good_prefs = "$FindBin::RealBin/inkscape_rendering_preferences.xml";
-    unless (-r $good_prefs) {die "file $good_prefs not found or not readable"}
-    # test that user_prefs exists, that I can write into it, and that if there's a prefs file there, I can overwrite it
-    my $user_prefs_dir = "~/.config/inkscape";
-    my $user_prefs     = "~/.config/inkscape/preferences.xml";
-    my $flags =   File::Glob::GLOB_TILDE;       # allow stuff like ~ and ~jones
-    my @r = File::Glob::bsd_glob($user_prefs_dir,$flags);
-    if (@r<1 || File::Glob::GLOB_ERROR) {die "error finding directory $user_prefs_dir, $!, maybe this is windows, or inkscape isn't installed?"}
-    $user_prefs_dir = $r[0];
-    my @r = File::Glob::bsd_glob($user_prefs,$flags);
-    my $had_prefs = (@r>0);
-    my $save_user_prefs = '';
-    if ($had_prefs) {
-      $user_prefs = $r[0];
-      unless (-w $user_prefs) {die "error, $user_prefs not writeable"}
-      $save_user_prefs = "$user_prefs_dir/save_preferences.xml";
-      # bug: if two instances of this script are running simultaneously, then the following could cause
-      #      us to obliterate the user's real preferences file
-      move($user_prefs,$save_user_prefs) || die "error moving $user_prefs to $save_user_prefs, $!";
-    }
-    copy($good_prefs,$user_prefs) || die "error copying $good_prefs to $user_prefs, $!";
+    -r $good_prefs or die "file $good_prefs not found or not readable";
+    copy($good_prefs,"$temp_dir/preferences.xml") or die "error copying $good_prefs to $temp_dir, $!";
+    -e "$temp_dir/preferences.xml" or die "copied $good_prefs to $temp_dir, but it's not there?";
     system($c)==0 or die "error in render_one_figure.pl, rendering figure using command $c";
-    if ($had_prefs) {
-      move($save_user_prefs,$user_prefs) || die "error moving $save_user_prefs to $user_prefs, $!";
-    }
   }
   # Check that inkscape output pdf 1.4, since pdftk has buggy support for 1.5.
   # See https://bugs.launchpad.net/inkscape/+bug/1110549
