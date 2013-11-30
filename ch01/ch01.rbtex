@@ -143,14 +143,17 @@ strictly necessary.)
 %>
 <% end_marg %>
 
+Galilean spacetime, unlike Aristotelian spacetime, has no universal notion of ``same place.'' I can
+drive to Gettysburg, Pennsylvania, and stand in front of the brass plaque that marks the site of
+the momentous Civil War battle. But am I really in the same place? An observer whose frame of
+reference was fixed to another planet would say that our planet had moved through space since 1863.
+
 Note that our geometrical description includes a notion of parallelism, but not of angular measure.
 We don't know or care whether the ``angle'' between an $\vc{s}$ and an $\vc{o}$ is 90 degrees. One
 represents a distance, while the other represents an interval of time, and we can't define the angle
 between a distance and a time. The same was true in the Aristotelian model; the vectors 
 in figure \figref{aristotelian-s-and-o-vectors} were drawn perpendicular to one another simply as
 a matter of convention, but any other angle could have been used.
-
-\pagebreak[4]
 
 <% marg %>
 <%
@@ -212,7 +215,6 @@ Hafele and Keating observed that there was a discrepancy between the times measu
 traveling clocks and the times measured by similar clocks that stayed home at the U.S. Naval Observatory in Washington.
 The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
 
-
 We are used to thinking of time as absolute and universal, so it is
 disturbing to find that it can flow at a different rate for observers in
 different frames of reference. 
@@ -253,14 +255,14 @@ opportunity for paradoxical scenarios such as one in which the east-going experi
 back in Washington before he left and then convinced himself not to take the trip.
 A theory that maintains this kind of orderly relationship between cause and effect is said to satisfy causality.\index{causality}
 
-
 Hafele and Keating were testing specific quantitative predictions of relativity, and they verified them to within
 their experiment's error bars. Let's work backward instead, and
 inspect the empirical results for clues as to how time works.
 The disagreements among the clocks suggest that simultaneity is not absolute: different observers
 have different notions of simultaneity, as suggested in figure \figref{einstein-s-and-o-vectors}.
 Just as Galilean relativity freed the $\vc{o}$ vectors from the constraint of being parallel to
-one another, Einstein frees the $\vc{s}$ vectors. But because a particular observer does have
+one another, Einstein frees the $\vc{s}$ vectors. Galileo made ``same place'' into an ambiguous
+concept, while Einstein did the same with ``simultaneous.'' But because a particular observer does have
 methods of synchronizing clocks (e.g., Einstein synchronization, example \ref{eg:einstein-train},
 p.~\pageref{eg:einstein-train}), the definition of simultaneity isn't completely arbitrary.
 For each $\vc{o}$ vector we have a corresponding $\vc{s}$ vector, which represents that observer's
@@ -291,8 +293,7 @@ the same direction as $\vc{o}$. This one is forbidden by causality, because if w
 we could eventually end up rotating $\vc{o}$ by 180 degrees, so by a continued process of acceleration,
 we could send an observer into a state in which her sense of time was reversed. We are left with only
 one possibility for Einstein's spacetime, which is the one in which a clockwise rotation of
-$\vc{o}$ causes a counterclockwise rotation of $\vc{s}$.
-
+$\vc{o}$ causes a counterclockwise rotation of $\vc{s}$, like closing a pair of scissors.
 
 Now there is a limit to how far this process can go, or else the $\vc{s}$ and $\vc{o}$ would eventually
 lie on the same line. But this can never be, for a valid $\vc{s}$ vector can never be a valid $\vc{o}$, nor
@@ -382,9 +383,90 @@ line is orthogonal to his world-line. According to Bob, 2 happened before the ti
 represented by this line, 1 after.
 \end{eg}
 
+Example \ref{eg:einstein-train} is of course impractical as described, since real
+trains don't travel at speeds anywhere near $c$ relative to the dirt. We say that
+their speeds are ``nonrelativistic.'' Since Einstein coined the term ``relativity,''
+and his version of relativity superseded Galileo's, the unmodified word is normally
+understood to refer to Einstein-relativity. A physicist who studies Einstein-relativity
+is a relativist. A material object moving at a speed very close to $c$ is described
+as ultrarelativistic.
 
 <% end_sec('einstein-spacetime') %>
 <% end_sec('three-models-of-spacetime') %>
+
+<% begin_sec("Measurement",nil,'measurement') %>
+
+We would like to have a general system of measurement for relativity, but so far we have
+only an incomplete patchwork. The length of a timelike vector can be defined as the time
+measured on a clock that moves along the vector.\footnote{Here we define a concept in terms
+of the operations required in order to measure it. This philosophy, which has been immensely
+influential among physicists, is 
+called operationalism\index{operationalism} and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
+in the 1920's.} A spacelike vector has a length that is measured on a ruler whose motion is
+such that in the ruler's frame of reference, the vector's endpoints are simultaneous. But
+there is no third measuring instrument designed for the purpose of measuring lightlike vectors.
+
+<% begin_sec("Scalars",nil,'scalars') %>
+
+The whole topic of measurement is apt to be confusing, because the shifting landscape of
+relativity makes us feel as if we've walked into a Salvador Dali landscape of melting pocket
+watches. A good way to regain our bearings is
+to look for quantities that behave as scalars.\index{scalar!defined}
+A Euclidean scalar, such as a length or an angle, is a quantity that is invariant under rotations:
+all observers agree on its value, regardless of the orientations of their frames of reference.
+For a relativistic scalar, we require in addition that observers agree no matter what state of motion
+they have. (A change in orientation is called a rotation. A transformation that changes
+from one inertial frame of reference to another, without any rotation, is called a boost.)\index{boost!defined}
+
+ Electric charge is a good example of a relativistic scalar. Electrons in atoms typically
+have velocities of 0.01 to 0.1 (in our relativistic units, where $c=1$), so if an electron's charge
+depended on its motion relative to an observer, atoms would not be electrically neutral. Experiments
+have been built\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
+Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
+with null results.
+
+<% marg(20) %>
+<%
+  fig(
+    'polka-dots',
+    %q{Area is a scalar.}
+  )
+%>
+<% end_marg %>
+Area in the $x-t$ plane is also a scalar, by the following argument.
+Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
+$\vc{s}_1$ are orthogonal and have equal lengths as measured by a clock and a ruler (which are calibrated
+in units such that $c=1$, e.g., seconds and light-seconds). The square lattice of white polka-dots is
+obtained from them by repeated addition. The same properties hold for vectors $\vc{o}_2$ and $\vc{s}_2$,
+which give the lattice of black dots. As required, the two lattices agree on their 45-degree diagonals.
+Now within the $10\times10$ portion of the white lattice shown with gray shading,
+we have an area of 100. In the same region we count about 100 or 101 black dots --- there is some
+ambiguity because of the dots that lie on the boundary. The density of white and black dots is in fact
+exactly equal, as can be verified to any desired precision by making the region big enough. In other
+words, the diagram is drawn so that area is preserved, which is what we are going to show is required.
+
+If it was
+observer 2 rather than 1 who was drawing the diagram, presumably she would choose to draw the black
+dots in a square lattice and vectors $\vc{o}_2$ and $\vc{s}_2$ at right angles. This would require
+vectors $\vc{o}_1$ and $\vc{s}_1$ to be opened up at an oblique angle and the white lattice to be non-square.
+
+Now suppose we had \emph{not} made area conserved. What if a region containing 100 white dots had
+held 200 black ones? But a boost of velocity $v$ is the same as a flip of the
+spatial dimension followed by a $-v$ boost and another flip.
+Therefore this would violate one or the other of two principles:
+(1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
+the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
+(neither $+x$ nor $-x$ is a preferred direction). 
+<% end_sec('scalars') %>
+
+<% begin_sec("The metric",nil,'metric') %>
+The invariance of area has little importance on its own, but it provides a good stepping stone toward
+a relativistic system of measurement. 
+<% end_sec('metric') %>
+
+HK planes, twin paradox
+
+<% end_sec('measurement') %>
 
 
 
