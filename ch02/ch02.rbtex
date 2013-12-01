@@ -1,0 +1,187 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '02',
+    %q{Kinematics},
+    'ch:kinematics'
+  )
+%>
+
+At this stage, many students raise the following questions, which turn out to be related to
+one another:
+
+\begin{enumerate}
+\item According to Einstein,
+      if observers A and B aren't at rest relative to each other, then A says B's time
+      is slow, but B says A is the slow one. How can this be? If A says B is slow, shouldn't
+      B say A is fast? After all, if I took a pill that sped up my brain, everyone else would
+      seem slow to me, and I would seem fast to them.
+\item Suppose I keep accelerating my spaceship steadily. What happens when I get to the speed of light?
+\item In all the diagrams in section \ref{sec:lorentz-transformation}, the parallelograms have their
+      diagonals stretched and squished by a certain factor, which depends on $v$. What is the interpretation
+      of this factor?
+\end{enumerate}
+
+\vfill
+
+<% begin_sec("How can they both \\ldots ?",4,'how-can-they-both') %>
+
+Figure \figref{symmetric-signals} shows how relativity resolves the first question.
+If A and B had an instantaneous method of communication such as Star Trek's subspace
+radio, then they could indeed resolve the question of who was really slow. 
+
+<%
+  fig(   
+    'symmetric-signals',
+    %q{%
+      Signals don't resolve the dispute over who is really slow.
+    },
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+But relativity
+does not allow cause and effect to be propagated outside the light cone, so the best
+they can actually do is to send each other signals at $c$. In \subfigref{symmetric-signals}{1},
+B sends signals to A at time intervals of one hour as measured by B's clock. According to
+A's clock, the signals arrive at an interval that is shorter than one hour as the two spaceships
+approach one another, then longer than an hour after they pass each other and begin to recede.
+As shown in \subfigref{symmetric-signals}{2}, the situation is entirely symmetric if A sends
+signals to B.
+
+Who is really slow? Neither. If A, like many astronauts, cut her teeth as a jet pilot,
+it may occur to her to interpret the observations by analogy with the Doppler effect for sound waves.
+Figure \figref{symmetric-signals} is in fact a valid diagram if the signals are clicks of sound, provided
+that we interpret it as being drawn in the frame of reference of the air. Sound waves travel at
+a fixed speed relative to the air, and the space and time units could be chosen such that the
+speed of \emph{sound} was represented by a slope of $\pm 1$. But A will find that in the relativistic
+case, with signals traveling at $c$, her observations
+of the time intervals are not in quantitative agreement with the predictions she gets by plugging
+numbers into the familiar formulas for the Doppler shift of sound waves. She may then say, ``Ah,
+the analogy with sound isn't quite right. I need to include a correction factor for time dilation,
+since B's time is slow. I'm not slow, of course. I feel perfectly normal.''
+
+
+But her analogy is false and needlessly complicates the situation. In the version with sound waves and
+Galilean relativity, there are three frames of reference involved: A's, B's, and the air's. The
+relativistic version is simpler, because there are only two frames, A's and B's. It's neither helpful
+nor necessary to break down the observations into a factor describing what ``really'' happens and
+a correction factor to account for the relativistic distortions of ``reality.'' All we need to worry about
+is the world-lines and intersections of world-lines shown in the spacetime diagrams, along with the
+metric, which allows us to compute how much proper time is experienced by each observer.
+
+<% end_sec('how-can-they-both') %>
+
+<%
+  fig(   
+    'twin-signals',
+    %q{The twin paradox with signals sent back to earth by the traveling twin.},
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>
+
+Figure \figref{twin-signals} shows how the ideas in the preceding section apply to the twin paradox.
+In \subfigref{twin-signals}{1} we see the situation as described by a partial observers, who says
+that both twins are traveling to the right. But even the impartial observer agrees that one twin's
+motion is inertial and the other's noninertial, which breaks the symmetry and also allows the twins
+to meet up at the end and compare clocks. For convenience, \subfigref{twin-signals}{2} shows the
+situation in the frame where the earthbound twin is at rest. Both panels of the figure are drawn
+such that the relative velocity of the twins is 3/5, and in panel 2 this is the inverse slope of
+the traveling twin's world-lines. Straightforward algebra and geometry (problem
+\ref{hw:doppler-concrete}, p.~\pageref{hw:doppler-concrete}) shows that in this particular
+example, the period observed by the earthbound twin is increased by a factor of 2. But
+2 is exactly the factor by which the diagonals of the parallelogram are stretched and
+compressed in a Lorentz transformation for a velocity of 3/5. This is true in general:
+the stretching and squishing factors for the diagonals are
+the same as the Doppler shift. We notate this factor as $D$
+(which can stand for either ``Doppler'' or ``diagonal''), and in general it is given by
+\begin{equation*}
+  D(v) = \sqrt{\frac{1+v}{1-v}}
+\end{equation*}
+(problem \ref{hw:doppler-abstract}, p.~\pageref{hw:doppler-abstract}). 
+
+<% self_check('doppler-not-ruler',<<-'SELF_CHECK'
+If you measure with a ruler on figure \subfigref{twin-signals}{2}, you will find that
+the labeled sides of the quadrilateral differ by less than a factor of 2. Why is this?
+  SELF_CHECK
+  ) %>
+
+This expression is
+for the longitudinal Doppler shift, i.e., the case where the source and observer are in motion
+directly away from one another (or toward one another if $v<0$). In the purely transverse case,
+there is a Doppler shift $1/\gamma$ which can be interpreted as simply a measure of time dilation.
+
+\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}
+The transverse Doppler shift is a characteristic prediction of special relativity, with no
+nonrelativistic counterpart, and Einstein suggested it early on as a test of relativity.
+However, it is difficult to measure with high precision, because the results are sensitive to any error
+in the alignment of the 90-degree angle. Such experiments were eventually performed, with results that confirmed
+relativity,\footnote{See, e.g., Hasselkamp, Mondry, and Scharmann, Zeitschrift f\"ur Physik A: Hadrons and Nuclei 289 (1979) 151.}
+but one-dimensional measurements provided both the earliest tests of the relativistic Doppler shift and the most precise
+ones to date. The first such test was done by Ives and Stilwell in 1938, using the following trick. The relativistic
+expression $D(v) = \sqrt{(1+v)/(1-v)}$ for the Doppler shift has the property that $D(v)D(-v)=1$,
+which differs from the
+nonrelativistic result of $(1+v)(1-v)=1-v^2$. One can therefore accelerate an ion up to a relativistic speed, measure
+both the forward Doppler shifted frequency $f_f$ and the backward one  $f_b$, and compute $\sqrt{f_ff_b}$. According
+to relativity, this should exactly equal the frequency $f_\zu{o}$ measured in the ion's rest frame.
+
+In a particularly exquisite modern version of the Ives-Stilwell idea,\footnote{G.~Saathoff et al., ``Improved Test
+of Time Dilation in Relativity,'' Phys. Rev. Lett. 91 (2003) 190403. A publicly available description of the
+experiment is given in Saathoff's PhD thesis, \url{www.mpi-hd.mpg.de/ato/homes/saathoff/diss-saathoff.pdf}.} 
+Saathoff et al.~circulated $\zu{Li}^+$ ions at $v=.064$ in a storage ring. An electron-cooler technique was
+used in order to reduce the variation in velocity among ions in the beam. Since the identity $D(v)D(-v)=1$
+is independent of $v$, it was not necessary to measure $v$ to the same incredible precision as the frequencies;
+it was only necessary that it be stable and well-defined. The natural line width was 7 MHz, and other experimental
+effects broadened it further to 11 MHz. By curve-fitting the line, it was possible to achieve results good to
+a few tenths of a MHz. The resulting frequencies, in units of MHz, were:
+
+\begin{tabular}{rl}
+$f_f$ & =          $582490203.44 \pm .09$ \\
+$f_b$ & =          $512671442.9  \pm 0.5$ \\
+$\sqrt{f_ff_b}$ &= $546466918.6  \pm 0.3$ \\
+$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ (from previous experimental work) 
+\end{tabular}
+
+\noindent The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+
+If one is searching for small deviations from the predictions of special relativity, a natural place to look
+is at high velocities. Ives-Stilwell experiments have been performed at velocities as high as $0.84$, and
+they confirm special relativity.\footnote{MacArthur et al., Phys. Rev. Lett. 56 (1986) 282 (1986)}
+\end{eg}
+
+
+<% end_sec('doppler') %>
+
+<% marg %>
+<%
+  fig(
+    'three-fifths-c-twice',
+    %q{foo}
+  )
+%>
+<% end_marg %>
+
+\begin{hwsection}
+
+<% begin_hw('doppler-concrete') %>
+Verify directly, using the geometry of figure \subfigref{twin-signals}{2} on p.~\pageref{fig:twin-signals}
+that for $v=3/5$, the Doppler shift factor is $D=2$. (Do not simply plug $v=3/5$ into the
+formula $D=\sqrt{(1+v)/(1-v)}$.)
+<% end_hw %>
+
+<% begin_hw('doppler-abstract') %>
+Generalize the numerical calculation of problem \ref{hw:doppler-concrete} to
+prove the general result $D=\sqrt{(1+v)/(1-v)}$.
+<% end_hw %>
+
+\end{hwsection}

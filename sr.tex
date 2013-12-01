@@ -21,6 +21,7 @@
 \hbox{}\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Brief Contents\\
 \hspace{-20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
 \ref{ch:spacetime} & Spacetime \quad \pageref{ch:spacetime}\\
+\ref{ch:kinematics} & Kinematics \quad \pageref{ch:kinematics}\\
 \end{tabular}
 \mynormaltype
 
@@ -43,8 +44,9 @@
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
 	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}
 
 %=================================================================================================================================
 
@@ -65,8 +67,8 @@
 
 \noindent\formatlikesection{Photo Credits}\\
 \cred{hk-in-cabin}{Atomic clock on plane}{Copyright 1971, Associated press, used under U.S. fair use exception to copyright law}
-\cred{cern-muon-storage-ring}{Muon storage ring at CERN}{(c) 1974 by CERN; used here under the U.S. fair use doctrine}
 \cred{ring-laser-gyro}{Ring laser gyroscope}{Wikimedia commons user Nockson, CC-BY-SA licensed}% http://commons.wikimedia.org/wiki/File:Ring_laser_gyroscope_at_MAKS-2011_airshow.jpg
+\cred{cern-muon}{Muon storage ring at CERN}{(c) 1974 by CERN; used here under the U.S. fair use doctrine}
 \cred{joan-of-arc}{Joan of Arc holding banner}{Ingres, 1854}  % http://en.wikipedia.org/wiki/Fil$
 \cred{joan-of-arc}{Joan of Arc interrogated}{Delaroche, 1856}  % http://en.wikipedia.org/wiki/Fi$
 \end{document}

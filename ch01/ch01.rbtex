@@ -432,11 +432,8 @@ as ultrarelativistic.
 
 We would like to have a general system of measurement for relativity, but so far we have
 only an incomplete patchwork. The length of a timelike vector can be defined as the time
-measured on a clock that moves along the vector.\footnote{Here we define a concept in terms
-of the operations required in order to measure it. This philosophy, which has been immensely
-influential among physicists, is 
-called operationalism\index{operationalism} and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
-in the 1920's.} A spacelike vector has a length that is measured on a ruler whose motion is
+measured on a clock that moves along the vector.
+A spacelike vector has a length that is measured on a ruler whose motion is
 such that in the ruler's frame of reference, the vector's endpoints are simultaneous. But
 there is no third measuring instrument designed for the purpose of measuring lightlike vectors.
 
@@ -491,7 +488,20 @@ spatial dimension followed by a $-v$ boost and another flip.
 Therefore this would violate one or the other of two principles:
 (1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
 the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
-(neither $+x$ nor $-x$ is a preferred direction). 
+(neither $+x$ nor $-x$ is a preferred direction). As an example of how principle 2 could fail, we could
+imagine that instead of a flat page in a book, the diagram was drawn on the back of someone's hand;
+then due to the asymmetry of the hand, it would not even be possible to flip the pattern over.
+We conclude that if these two symmetry principles hold,
+then spacetime area is the same for any two observers, so it is a scalar.
+
+It may seem unnecessarily clumsy that we've used the idea of counting dots in the above argument,
+but remember that we have not yet built up any system of measurement for relativity, so we had
+only very primitive techniques at our disposal.
+
+<% self_check('galilean-area',<<-'SELF_CHECK'
+Is the above argument also valid for Galilean relativity?
+  SELF_CHECK
+  ) %>
 <% end_sec('area-is-scalar') %>
 <% end_sec('scalars') %>
 
@@ -569,7 +579,7 @@ The sign convention we use is the most common one in particle physics,
 while the opposite is more common in classical relativity. The set of signs, $+---$
 or $-+++$, is called the signature of the metric.\index{signature}
 
-In section \ref{sec:einstein-spacetime} we developed the idea of orthogonality of spacetime
+In subsection \ref{subsec:einstein-spacetime} we developed the idea of orthogonality of spacetime
 vectors, with the physical interpretation that if an observer moves along a vector $\vc{o}$, a
 vector $\vc{s}$ that is orthogonal to $\vc{o}$ is a vector of simultaneity. This corresponds
 to the vanishing of the inner product, $\vc{o}\cdot\vc{s}=0$. This is only imperfectly analogous to
@@ -659,21 +669,6 @@ sun's frame of reference.
 <% end_sec('metric') %>
 
 <% begin_sec("The gamma factor",nil,'gamma') %>
-<% marg(-40) %>
-<%
-  fig(
-    'twin-paradox',
-    %q{The twin ``paradox.''}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'gamma-graph-small',
-    %q{A graph of $\gamma$ as a function of $v$.}
-  )
-%>
-<% end_marg %>
 
 Figure \figref{twin-paradox} is the relativistic version of example \ref{eg:galilean-twin-paradox}
 on p.~\pageref{eg:galilean-twin-paradox}. We intend to analyze it using the metric, and since the
@@ -691,6 +686,21 @@ moving. The violation of common sense
 is in fact what was observed in the Hafele-Keating experiment, and the latter
 argument is fallacious for the same reasons as in the 
 Galilean version given in example \ref{eg:galilean-twin-paradox}.
+<% marg(100) %>
+<%
+  fig(
+    'twin-paradox',
+    %q{The twin ``paradox.''}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gamma-graph-small',
+    %q{A graph of $\gamma$ as a function of $v$.}
+  )
+%>
+<% end_marg %>
 
 We have in general the following interpretation:
 
@@ -699,13 +709,33 @@ A clock runs fastest in the frame of reference of an observer who is at rest rel
 in motion relative to the clock at speed $v$ perceives the clock as running more slowly by a factor of $\gamma$.
 \end{lessimportant}
 
+Although this is phrased in terms of clocks, we interpret it as telling us something about time itself.
+The attitude is that we should define a concept in terms
+of the operations required in order to measure it: time is defined as what a clock measures.
+This philosophy, which has been immensely influential among physicists, is 
+called operationalism\index{operationalism} and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
+in the 1920's. Our operational definition of time works because the rates of \emph{all} physical processes
+are affected equally by time dilation. Not only has the traveling twin in figure \figref{twin-paradox}
+heard fewer ticks from her antique mechanical 
+pocket watch than the earthbound one by the time they are reunited, but
+she has also had fewer heartbeats, and the ship's atomic clock agrees with her watch to within the precision
+of the watch.
+
 <% self_check('gammaatvzero',<<-'SELF_CHECK'
 What is $\\gamma$ when $v=0$? What does this mean? Express the equation for $\\gamma$ in SI units.
   SELF_CHECK
   ) %>
 
-As shown in example \ref{eg:interstellar-road-trip} below, consistency demands that we have a similar
-effect on distances:
+Time dilation is symmetrical in the sense that it treats all frames of reference democratically. If
+observers A and B aren't at rest relative to each other, then A says B's time runs slow, but B
+says A is the slow one. In figure \figref{twin-paradox}, the laws of physics make no distinction
+between the frames of reference that coincide with vectors $\vc{a}$ and $\vc{b}$; as
+in the corresponding Galilean case of
+example \ref{eg:galilean-twin-paradox} on p.~\pageref{eg:galilean-twin-paradox}, the asymmetry
+comes about because $\vc{a}$ and $\vc{c}$ are parallel, but $\vc{b}$ and $\vc{d}$ are not.
+
+As shown in example \ref{eg:interstellar-road-trip} below, consistency demands that in addition to the
+effect on time we have a similar effect on distances:
 
 \begin{lessimportant}[Length contraction]
 A meter-stick appears longest to an observer who is at rest relative to it. An observer moving relative to the
@@ -723,7 +753,6 @@ Alice stays on earth while her twin Betty
 heads off in a spaceship for Tau Ceti, a nearby star. Tau Ceti is 12 light-years
 away, so even though Betty travels at 87\% of the speed of light, it will take
 her a long time to get there: 14 years, according to Alice.
-
 <%
   fig('interstellar-road-trip',
     'Example \ref{eg:interstellar-road-trip}.',
@@ -734,8 +763,7 @@ her a long time to get there: 14 years, according to Alice.
   )
 %>
 
-Betty
-experiences time dilation. At this speed, her $\gamma$ is 2.0, so that the voyage will
+Betty experiences time dilation. At this speed, her $\gamma$ is 2.0, so that the voyage will
 only seem to her to last 7 years. But there is perfect symmetry between Alice's
 and Betty's frames of reference, so Betty agrees with Alice on their relative speed;
 Betty sees herself as being at rest, while the sun and Tau Ceti both move backward
