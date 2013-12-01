@@ -529,8 +529,11 @@ somewhat archaic sense of ``own'' or ``self,'' as in ``The Vatican does not lie
 within Italy proper.'' Proper time, which we notate $\tau$, can only be defined for timelike world-lines, since
 a lightlike or spacelike world-line isn't possible for a material clock.
 
-If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of the gliding-clock time. Proof: Based
-on units, the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$, where each $(\ldots)$ represents a unitless constant.
+If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of 
+the gliding-clock time. Proof: 
+Because of the way that area scales with a rescaling of the coordinates,
+the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$,
+where each $(\ldots)$ represents a unitless constant.
 The $tx$ coefficient must be zero by the isotropy of space. The
 $t^2$ coefficient must equal 1 in order to give the right answer in the case of $x=0$, where the
 coordinates are those of an observer at rest relative to the clock.
@@ -554,6 +557,8 @@ function $g$ called the \emph{metric},
 \begin{equation*}
   g(\vc{u},\vc{v}) = u_t v_t - u_x v_x - u_y v_y - u_z v_z \qquad .
 \end{equation*}
+Because of the analogy with the Euclidean dot product, we often use the notation
+$\vc{u}\cdot\vc{v}$ for this quantity, and we sometimes call it the inner product.\index{inner product}
 The metric is the central object of relativity.\index{metric}
 In general relativity, which describes gravity as a curvature of spacetime, the coefficients
 occurring on the right-hand side are no longer $\pm 1$, but can vary from point to point.
@@ -563,6 +568,15 @@ many authors define $g$ as the negative of our definition.
 The sign convention we use is the most common one in particle physics,
 while the opposite is more common in classical relativity. The set of signs, $+---$
 or $-+++$, is called the signature of the metric.\index{signature}
+
+In section \ref{sec:einstein-spacetime} we developed the idea of orthogonality of spacetime
+vectors, with the physical interpretation that if an observer moves along a vector $\vc{o}$, a
+vector $\vc{s}$ that is orthogonal to $\vc{o}$ is a vector of simultaneity. This corresponds
+to the vanishing of the inner product, $\vc{o}\cdot\vc{s}=0$. This is only imperfectly analogous to
+the idea that Euclidean vectors are perpendicular if their dot product is zero. In particular,
+a nonzero Euclidean vector is never perpendicular to itself, but for any lightlike vector $\vc{v}$
+we have $\vc{v}\cdot\vc{v}=0$. The metric doesn't give us a measure of the length of
+lightlike vectors. Physically, neither a ruler nor a clock can measure such a vector.
 
 \begin{eg}{The metric in SI units}
 Units with $c=1$ are known as natural units.\index{natural units} (They are natural to relativity
