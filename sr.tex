@@ -22,6 +22,7 @@
 \hspace{-20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
 \ref{ch:spacetime} & Spacetime \quad \pageref{ch:spacetime}\\
 \ref{ch:kinematics} & Kinematics \quad \pageref{ch:kinematics}\\
+\ref{ch:dynamics} & Dynamics \quad \pageref{ch:dynamics}\\
 \end{tabular}
 \mynormaltype
 
@@ -45,8 +46,9 @@
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
 	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
 	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}
 
 %=================================================================================================================================
 

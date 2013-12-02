@@ -1,0 +1,356 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '03',
+    %q{Dynamics},
+    'ch:dynamics'
+  )
+%>
+
+So far we have said nothing about how to predict motion in
+relativity. Do Newton's laws still work? Do conservation
+laws still apply? The answer is yes, but many of the
+definitions need to be modified, and certain entirely new
+phenomena occur, such as the equivalence of energy and mass, as described by the famous equation
+$E=mc^2$.
+
+<% begin_sec("Some semi-quantitative arguments",nil,'semi-quantitative') %>
+<% begin_sec("Momentum",nil,'momentum') %>
+Consider the following scheme for traveling faster than the speed of light.
+The basic idea can be demonstrated by dropping a ping-pong ball and a baseball
+stacked on top of each other like a snowman. They separate slightly in mid-air,
+and the baseball therefore has time to hit the floor and rebound before it
+collides with the ping-pong ball, which is still on the way down. The result is
+a surprise if you haven't seen it before: the ping-pong ball flies off at high
+speed and hits the ceiling! A similar fact is known to people who investigate the
+scenes of accidents involving pedestrians. If a car moving at 90 kilometers per
+hour hits a pedestrian, the pedestrian flies off at nearly double that speed, 180
+kilometers per hour. Now suppose the car was moving at 90 percent of the speed of
+light. Would the pedestrian fly off at 180\% of $c$?
+
+To see why not, we have to back up a little and think about where this speed-doubling
+result comes from. 
+For any collision, there is a special frame of reference, the center-of-mass frame,
+in which the two colliding objects approach each other,
+collide, and rebound with their velocities reversed. In the center-of-mass frame,
+the total momentum of the objects is zero both before and after the collision.
+<%
+  fig(
+    'unequalcollision',
+    %q{%
+      An unequal collision, viewed in the center-of-mass frame, 1, and
+      in the frame where the small ball is initially at rest, 2. The motion is shown as it
+      would appear on the film of an old-fashioned movie camera, with an equal amount of time separating
+      each frame from the next. Film 1 was made by a camera that tracked the center of mass, film 2 by
+      one that was initially tracking the small ball, and kept on moving at the same speed after the collision.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \subfigref{unequalcollision}{1} shows such a frame of reference for objects of very unequal mass.
+Before the collision, the large ball is moving relatively slowly toward the top of the page, but
+because of its greater mass, its momentum cancels the momentum of the smaller ball, which is
+moving rapidly in the opposite direction. The total momentum is zero. After the collision, the
+two balls just reverse their directions of motion. We know that this is the
+right result for the outcome of the collision because
+it conserves both momentum and kinetic energy, and everything not forbidden is mandatory, i.e.,
+in any experiment, there is only one possible outcome, which is the one that obeys all the
+conservation laws.
+
+<% self_check('unequalcollisioncons',<<-'SELF_CHECK'
+How do we know that momentum and kinetic energy are conserved
+in figure \subfigref{unequalcollision}{1}?
+  SELF_CHECK
+  ) %>
+
+Let's make up some numbers as an example. Say the small ball has a mass of 1 kg, the big
+one 8 kg. In frame 1, let's make the velocities as follows:
+
+<% if is_print then
+print %q(
+\\newcommand{\\smallvelocitytable}[6]{%
+\\noindent\\hspace{5mm}\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
+\\hline
+ & before the collision
+       & after the collision  \\\\
+\\hline
+\\anonymousinlinefig{#5} & #1 & #2  \\\\
+\\anonymousinlinefig{#6} & #3 & #4  \\\\
+\\hline
+\\end{tabular}
+}
+)
+end
+%>
+
+<%
+def small_vel_table(a,b,c,d)
+if is_print then
+  return "\\smallvelocitytable{#{a}}{#{b}}{#{c}}{#{d}}{smallball}{bigball}"
+end
+if is_web then
+return %Q(
+\\noindent\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
+\\hline
+ & before the collision
+       & after the collision  \\\\
+\\hline
+small ball & #{a} & #{b}  \\\\
+big ball & #{c} & #{d}  \\\\
+\\hline
+\\end{tabular}
+)
+end
+end
+%>
+
+<% print small_vel_table(-0.8,0.8,0.1,-0.1) %>
+
+Figure \subfigref{unequalcollision}{2} shows the same collision in a frame of reference where
+the small ball was initially at rest.
+ To find all the velocities in this frame, we
+just add 0.8 to all the ones in the previous table.
+
+<% print small_vel_table(0,1.6,0.9,0.7) %>
+
+\noindent In this frame, as expected, the small ball flies off with a velocity, 1.6, that
+is almost twice the initial velocity of the big ball, 0.9.
+
+If all those velocities were in meters per second, then that's exactly what happened. But
+what if all these velocities were in units of the speed of light? Now it's no longer a good
+approximation just to add velocities. We need to combine them according to the relativistic
+rules, which tell us that combining a velocity of 0.8 times the
+speed of light with another velocity of 0.8 results in 0.98, not 1.6. The results are very different:
+
+<% print small_vel_table(0,0.98,0.83,0.76) %>
+<%#
+ gamma = 1, 5.0, 1.8, 1.5
+ 1/gamma = 1, 0.2, 0.56, .67
+%>
+
+<%
+  fig(
+    'unequalrel',
+    %q{%
+      An 8-kg ball moving at 83\% of the speed of light hits a 1-kg ball. The balls
+      appear foreshortened due to the relativistic distortion of space.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We can interpret this as follows. Figure \subfigref{unequalcollision}{1} is one in which the
+big ball is moving fairly slowly. This is very nearly the way the scene would be seen by an
+ant standing on the big ball. According to an observer in frame \figref{unequalrel}, however,
+both balls are moving at nearly the speed of light after the collision. Because of this, the
+balls appear foreshortened, but the distance between the two balls is also shortened. To this
+observer, it seems that the small ball isn't pulling away from the big ball very fast.
+
+Now here's what's interesting about all this. The outcome shown in figure \subfigref{unequalcollision}{2}
+was supposed to be the only one possible, the only one that satisfied both conservation of energy
+and conservation of momentum. So how can the \emph{different} result shown in figure
+\figref{unequalrel} be possible? The answer is that relativistically, momentum must not equal
+$mv$. The old, familiar definition is only an approximation that's valid at low speeds. If
+we observe the behavior of the small ball in figure \figref{unequalrel}, it looks as though it
+somehow had some extra inertia. It's as though a football player tried to knock another player
+down without realizing that the other guy had a three-hundred-pound bag full of lead shot
+hidden under his uniform --- he just doesn't seem to react to the collision as much as he should.
+We therefore find that momentum has to be redefined in way that looks like
+\begin{equation*}
+        p = m v \times (\ldots) \qquad ,
+\end{equation*}
+where $\ldots$ represents some kind of correction factor. 
+At very low velocities, the correspondence principle demands that the correction factor
+be close to 1. At high velocities, however, it is greater than one.
+
+<% end_sec('momentum') %>
+<% begin_sec("Equivalence of mass and energy") %>\index{energy!equivalence to mass}\index{mass!equivalence to energy}
+Now we're ready to see why mass and energy must be equivalent as claimed
+in the famous $E=mc^2$. So far we've only considered collisions
+in which none of the kinetic energy is converted into any other form
+of energy, such as heat or sound.
+Let's consider what happens if a blob of putty moving at
+velocity $v$ hits another blob that is initially at rest,
+sticking to it.  The nonrelativistic result is
+that to obey conservation of momentum the two blobs must fly
+off together at $v/2$. Half of the initial kinetic energy
+has been converted to heat.\footnote{A double-mass object moving
+at half the speed does not have the same kinetic energy. Kinetic
+energy depends on the square of the velocity, so cutting the velocity
+in half reduces the energy by a factor of 1/4, which, multiplied
+by the doubled mass, makes 1/2 the original energy.}
+
+Relativistically, however, an interesting thing happens. A
+hot object has more momentum than a cold object! This is
+because, as shown above, the relativistically correct expression for momentum
+is $m v$ multiplied by a correction factor that increases with velocity,
+and the more rapidly moving atoms in the hot
+object have higher velocities.
+In our collision, the final combined blob must therefore be
+moving a little more slowly than the expected $v/2$, since
+otherwise the final momentum would have been a little
+greater than the initial momentum. To an observer who
+believes in conservation of momentum and knows only about
+the overall motion of the objects and not about their heat
+content, the low velocity after the collision would seem
+to be the result of a magical change in the mass, as if the mass
+of two combined, hot blobs of putty was more than the sum of
+their individual masses.
+
+Now we know that the masses of all the atoms in the blobs
+must be the same as they always were. The change is due to
+the change in $\gamma$ with heating, not to a change in mass.
+The heat energy, however, seems to be acting as if it was
+equivalent to some extra mass.
+
+But this whole argument was based on the fact that heat is a
+form of kinetic energy at the atomic level. Would mass-energy equivalence
+apply to other forms of energy as well? Suppose a rocket
+ship contains some electrical energy stored in a
+battery. If we believed that mass-energy equivalence applied to forms of
+kinetic energy but not to electrical energy, then
+we would have to believe that the pilot of the rocket could
+slow the ship down by using the battery to run a heater!
+This would not only be strange, but it would violate the
+principle that all frames of reference are equally valid, because the result of the
+experiment would be different depending on whether the ship
+was at rest or not. The only logical conclusion is that all
+forms of energy are equivalent to mass. Running the heater
+then has no effect on the motion of the ship, because the
+total energy in the ship was unchanged; one form of energy (electrical)
+was simply converted to another (heat).
+
+We haven't yet proved that mass-energy equivalence is described by the equation
+$E=mc^2$, but anticipating that result, let's consider a few of its consequences.
+The equation
+tells us how much energy is equivalent to how much mass: the conversion factor is the square
+of the speed of light, $c$. Since $c$ a big number, you get a really really big number
+when you multiply it by itself to get $c^2$. This means that even a small amount of mass
+is equivalent to a very large amount of energy. 
+
+<%
+  fig(
+    'eclipse',
+    %q{Example \ref{eg:eclipse}.
+      Right: A New York Times headline from November 10, 1919.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\begin{eg}{Gravity bending light}\label{eg:eclipse}
+Gravity is a universal attraction between things that have mass, and since the energy
+in a beam of light is equivalent to a some very small amount of mass, we expect that
+light will be affected by gravity, although the effect should be very small.
+The first important experimental confirmation of relativity
+came in 1919 when stars next to the sun during a solar eclipse were
+observed to have shifted a little from their ordinary
+position. (If there was no eclipse, the glare of the sun
+would prevent the stars from being observed.) Starlight had
+been deflected by the sun's gravity. Figure \figref{eclipse} is a
+photographic negative, so the circle that appears bright is actually the
+dark face of the moon, and the dark area is really the bright corona of
+the sun. The stars, marked by lines above and below then, appeared at
+positions slightly different than their normal ones.
+
+The reader is cautioned that these arguments are very rough and qualitative,
+and it is \emph{not} possible to produce a
+complete relativistic theory of gravity simply by taking $E=mc^2$
+and combining it with Newton's law of gravity. One way to see this is that
+the law of gravity doesn't refer to time at all: it predicts that gravitational
+forces propagate instantaneously. We know this can't be consistent with
+relativity, which forbids cause and effect from propagating at any speed greater
+than $c$. To produce a relativistic theory of gravity, we need general
+relativity.
+
+Similar reasoning suggests that there may be stars so dense that their gravity
+can prevent light from leaving. Such stars have been detected, and their properties
+seem so far to be described correctly by general relativity.
+\end{eg}
+
+You've learned about conservation of mass and conservation of energy, but
+now we see that they're not even separate conservation laws.
+As a consequence of the theory of relativity,  mass and energy are equivalent, and
+are not separately conserved --- one can be converted into the other. Imagine that
+a magician waves his wand, and changes a bowl of dirt into a bowl of lettuce. You'd be
+impressed, because you were expecting that both dirt and lettuce would be conserved
+quantities. Neither one can be made to vanish, or to appear out of thin air. However,
+there are processes that can change one into the other. A farmer changes dirt into
+lettuce, and a compost heap changes lettuce into dirt. At the most fundamental
+level, lettuce and dirt aren't really different things at all; they're just collections
+of the same kinds of atoms --- carbon, hydrogen, and so on.
+Because mass and energy are like two different sides of the same coin, we may speak of
+mass-energy, a single conserved quantity, found by adding up all the mass and energy,
+with the appropriate conversion factor: $E+mc^2$.\index{mass-energy!conservation of}
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}   \qquad   .
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
+\end{eg}
+
+\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit \qquad ,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
+
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
+<% marg(200) %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %> % Momentum
+<% end_sec() %> % Proofs

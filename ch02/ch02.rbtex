@@ -238,6 +238,8 @@ How can we tell that this equation is written in natural units? Rewrite it in SI
 
 <% end_sec('velocity-addition') %>
 
+<% begin_sec("Optional topics",nil,'optional-kinematics',{'optional'=>true}) %>
+This section can be skipped without loss of continuity.
 <% begin_sec("Some kinematic identities",nil,'identities') %>
 
 The following identities can be handy, and if stranded on a desert island you should be able
@@ -418,6 +420,7 @@ Open access via Project Euclid at
 \url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
 
 <% end_sec('ftl-frames') %>
+<% end_sec('optional-kinematics') %>
 
 \begin{hwsection}
 
