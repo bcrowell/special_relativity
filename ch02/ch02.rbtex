@@ -224,8 +224,9 @@ The passengers perceive the acceleration as steady if $\eta$ increase by the sam
 proper time. In other words, we can define a proper acceleration $d\eta/d\tau$, which corresponds
 to what an accelerometer measures.\index{acceleration!proper}
 
-Rapidity is convenient and useful, and is very frequently used in particle physics. However, the
-rule for combining velocities can also be rewritten in terms of ordinary velocities as
+Rapidity is convenient and useful, and is very frequently used in particle physics. But in
+terms of ordinary velocities, the
+rule for combining velocities can also be rewritten using identity (8) from section \ref{sec:identities} as
 \begin{equation*}
   v_c = \frac{v_1+v_2}{1+v_1 v_2} \qquad .
 \end{equation*}
@@ -236,6 +237,27 @@ How can we tell that this equation is written in natural units? Rewrite it in SI
   ) %>
 
 <% end_sec('velocity-addition') %>
+
+<% begin_sec("Some kinematic identities",nil,'identities') %>
+
+The following identities can be handy, and if stranded on a desert island you should be able
+to rederive them from scratch. If you're taking a class in special relativity from a professor
+who makes you memorize this sort of thing (or spit back the derivations rapidly on a test), then your
+professor is one who values rote memorization over conceptual understanding.
+
+\begin{tabular}{lll}
+$(1) \quad v=(D^2-1)/(D^2+1)$       & (4) \quad $\eta=\ln D$        & (9) \quad $D_c = D_1 D_2$ \\
+$(2) \quad \gamma=(D^{-1}+D)/2$     & (5) \quad $v=\tanh \eta$      & (10) \quad $\eta_c = \eta_1 + \eta_2$ \\
+$(3) \quad v \gamma=(D-D^{-1})/2$   & (6) \quad $\gamma=\cosh \eta$ & (11) \quad $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
+                          & (7) \quad $v \gamma=\sinh \eta$ &  \\
+\multicolumn{3}{l}{(8) \quad $\tanh(x+y)=(\tanh x+\tanh y)/(1+\tanh x \tanh y)$}
+\end{tabular}
+
+% checking these:
+% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; (D^2-1)/(D^2+1); (1/D+D)/2; vg; (D-1/D)/2"
+% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; eta=ln D; tanh eta; cosh eta; vg; sinh eta"
+
+<% end_sec('identities') %>
 
 <% begin_sec("Ultrarelativistic particles",nil,'ultrarelativistic') %>
 A typical 22-caliber rifle shoots a bullet with a mass of about 3 g at a speed of about 400 m/s.
@@ -347,13 +369,55 @@ $D\approx 1+v$, which gives
 \end{equation*}
 The negative sign confirms that the source is approaching rather than receding.
 This is in units where $c=1$. Converting to SI units, 
-where $c\ne 1$, we have $v=(=1.0\times10^{-3})c=-300\ \zu{km}/s$.
+where $c\ne 1$, we have $v=(-1.0\times10^{-3})c=-300\ \zu{km}/s$.
 Although the Andromeda Galaxy's tangential motion is not accurately known, it
 is considered likely that it will
 collide with the Milky Way in a few billion years.
 \end{eg}
 
 <% end_sec('ultrarelativistic') %>
+
+<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames') %>
+We have seen in section \ref{sec:velocity-addition} that no continuous process of acceleration can
+boost a material object to $c$. That is, the subluminal (slower than light) nature
+of a electron or a person is a fundamental feature of its identity and can never be changed.
+Einstein can never get on his motorcycle and drive at $c$ as he imagined when he was a young man,
+so we material beings can never see the world from a frame of reference that travels at $c$.
+
+Our universe does, however, contain ingredients such as light rays, gluons, and gravitational waves
+that travel at $c$, so we might wonder whether these things could be put together to form
+observers who do move at $c$. But this is not possible according to special relativity,
+because if we let $v$ approach infinity, extrapolation of
+figure \figref{three-fifths-c-twice} on p.~\pageref{fig:three-fifths-c-twice} shows that the Lorentz
+transformation would compress all of spacetime onto the light cone, reducing its number of dimensions by 1.
+Distinct points would be merged, which would make it impossible to use this frame to describe the
+same phenomena that a subluminal observer could describe. That is, the transformation would not
+be one-to-one, and this is unacceptable physically.
+
+But what about a \emph{superluminal} observer, one who moves faster than $c$?
+With charming naivete, the special-effects technicians 
+for Star Trek attempted to show the frame of reference of such an
+observer in scenes where a field of stars rushed past the Enterprise. (Never mind that
+the stars, which pass in front of and behind the spaceship, should actually be a million
+times larger than it.) Actually such an observer (would could not be made out of normal material
+particles such as electrons and protons) would consider its own world-line, which we call
+spacelike, to be timelike, while the world-line of a star such as our sun, which we consider timelike,
+would be spacelike. That is, our sun would not appear to it as an object in motion but rather as line
+stretching across space, which would wink into existence and then wink back out.
+A typical transformation between our frame and the frame of such an observer would be
+$(x,t)\rightarrow(t,x)$, simply swapping the time and space coordinates. The transformation is
+one-to-one, and therefore unobjectionable. 
+
+But this is all in 1+1 dimensions. In 3+1 dimensions, we run into the difficulty that the transformation
+between our frame and that of the superluminal being cannot be one-to-one, since we can't
+squish three dimensions to one or expand one to three without merging points or splitting one
+point into many. Our conclusion, then, is that there can be no such thing as a superluminal
+observer in our 3+1-dimensional universe. A more formal proof has been given
+by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
+Open access via Project Euclid at
+\url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
+
+<% end_sec('ftl-frames') %>
 
 \begin{hwsection}
 

@@ -58,7 +58,12 @@ using the graphical conventions of figure \subfigref{spacetime}{3}. The existenc
 of such a material object at a certain place and time constitutes an \emph{event},\index{event}
 which we idealize as a point, \subfigref{observers-and-simultaneity}{2}. Spacetime consists of
 the set of all events. As time passes, a physical object traces out a continuous curve, a set of events
-known in relativistic parlance as its \emph{world-line}.\index{world-line}
+known in relativistic parlance as its \emph{world-line}.\index{world-line} Since paper and computer
+screens are two-dimensional, the drawings only represent one dimension of space plus one dimension of
+time, which in relativity we call ``1+1 dimensions.'' The real universe has three spatial
+dimensions, so real spacetime has 3+1 dimensions. Most, but not all, of the interesting phenomena
+in special relativity can be understood in 1+1 dimensions, so whenever possible in this book I will
+draw 1+1-dimensional figures without apology or explanation.
 
 The relativist's attitude is that events and relationships between events
 are primary, while coordinates such as $x$ and $t$ are secondary and
@@ -554,7 +559,7 @@ it would be impossible to have a cause and effect relationship between them, sin
 In this situation $t^2-x^2$ is negative and cannot be interpreted as a clock time, but it can be interpreted as minus the square of the
 distance between A and B. 
 
-Generalizing to three spatial dimensions and to any vector $\vc{v}$, not just a displacement in spacetime,
+Generalizing to 3+1 dimensions and to any vector $\vc{v}$, not just a displacement in spacetime,
 we have a measurement of the vector defined by
 \begin{equation*}
   v_t^2-v_x^2-v_y^2-v_z^2 \qquad .
@@ -742,7 +747,7 @@ A meter-stick appears longest to an observer who is at rest relative to it. An o
 meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 \end{lessimportant}
 
-Our present discussion is limited to one spatial dimention, but in three spatial dimensions,
+Our present discussion is limited to 1+1 dimensions, but in 3+1,
 only the length along the line of motion is contracted.
 It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
 Optical observations are influenced by the unequal times taken for light to propagate from the ends
