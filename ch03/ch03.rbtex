@@ -184,8 +184,12 @@ A and B disagree on how much energy O has lost, the discrepancy being
 \begin{equation*}
   E\left[\frac{1}{2}(D+D^{-1})-1\right] \qquad .
 \end{equation*}
-Let's consider the case where B's velocity relative to A is small. Expanding the above
-expression in a Taylor series in $v$, the discrepancy in
+This can be rewritten using identity (2) from section \ref{sec:identities}  as
+\begin{equation*}
+  E(\gamma-1) \qquad .
+\end{equation*}
+Let's consider the case where B's velocity relative to A is small. Using the
+approximation $\gamma\approx 1+v^2/2$, we find that the discrepancy in
 O's energy loss is approximately
 \begin{equation*}
   \frac{1}{2}Ev^2 \qquad ,
@@ -199,8 +203,8 @@ where $c\ne 1$, we have Einstein's famous
   E=mc^2 \qquad .
 \end{equation*}
 This derivation entailed an approximation, and redoing it without the approximation
-entails some complexity.\footnote{See Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400},
-and Jammer, Concepts of Mass in Contemporary Physics and Philosophy.}
+entails some complexity.\footnote{For a somewhat overwrought discussion, see
+Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}.}
 It turns out, however, to be valid in general.
 
 We find that mass is not simply a built-in property of the particles that
@@ -219,14 +223,15 @@ result of experiments like the one in figure \figref{bell-jar} hundreds of years
 
 The big event here is mass-energy equivalence, but we can also
 harvest a result for the energy of a material particle moving at a certain speed. 
-Using identity (2) from section \ref{sec:identities} in the equation above
-for the energy discrepancy of object O between frames A and B, we find $m(\gamma-1)c^2$. This is the
-difference between O's energy in frame B and its energy when it is at rest, but since mass
-and energy are equivalent, we assign it energy $mc^2$ when it is at rest. The result is that
+We have $m(\gamma-1)$ for the
+difference between O's energy in frame B and its energy when it is at rest, i.e., its kinetic energy.
+But since mass
+and energy are equivalent, we assign O an energy $m$ when it is at rest. The result is that
 the energy is
 \begin{equation*}
-  E = m\gamma c^2 \qquad .
+  E = m\gamma
 \end{equation*}
+(or $m\gamma c^2$ in units with $c \ne 1$).
 
 \begin{eg}{Electron-positron annihilation}\index{positron}
 Natural radioactivity in the earth produces positrons, which are like electrons but have the
