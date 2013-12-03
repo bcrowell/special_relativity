@@ -226,7 +226,7 @@ to what an accelerometer measures.\index{acceleration!proper}
 
 Rapidity is convenient and useful, and is very frequently used in particle physics. But in
 terms of ordinary velocities, the
-rule for combining velocities can also be rewritten using identity (8) from section \ref{sec:identities} as
+rule for combining velocities can also be rewritten using identity [9] from section \ref{sec:identities} as
 \begin{equation*}
   v_c = \frac{v_1+v_2}{1+v_1 v_2} \qquad .
 \end{equation*}
@@ -244,11 +244,11 @@ The following identities can be handy, and if stranded on a desert island you sh
 to rederive them from scratch. Don't memorize them.
 
 \noindent\begin{tabular}{lll}
-$(1) \enskip v=(D^2-1)/(D^2+1)$       & (4) \enskip $\eta=\ln D$        & (9) \enskip $D_c = D_1 D_2$ \\
-$(2) \enskip \gamma=(D^{-1}+D)/2$     & (5) \enskip $v=\tanh \eta$      & (10) \enskip $\eta_c = \eta_1 + \eta_2$ \\
-$(3) \enskip v \gamma=(D-D^{-1})/2$   & (6) \enskip $\gamma=\cosh \eta$ & (11) \enskip $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
-                          & (7) \enskip $v \gamma=\sinh \eta$ &  \\
-\multicolumn{3}{l}{(8) \enskip $\tanh(x+y)=(\tanh x+\tanh y)/(1+\tanh x \tanh y)$}
+{[}1] \enskip $v=(D^2-1)/(D^2+1)$       & {[}5] \enskip $\eta=\ln D$        & {[}10] \enskip $D_c = D_1 D_2$ \\
+{[}2] \enskip $\gamma=(D^{-1}+D)/2$     & {[}6] \enskip $v=\tanh \eta$      & {[}11] \enskip $\eta_c = \eta_1 + \eta_2$ \\
+{[}3] \enskip $v \gamma=(D-D^{-1})/2$   & {[}7] \enskip $\gamma=\cosh \eta$ & {[}12] \enskip $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
+{[}4] \enskip $D(v)D(-v)=1$            & {[}8] \enskip $v \gamma=\sinh \eta$ &  \\
+\multicolumn{3}{l}{{[}9] \enskip $\tanh(x+y)=(\tanh x+\tanh y)/(1+\tanh x \tanh y)$}
 \end{tabular}
 
 % checking these:

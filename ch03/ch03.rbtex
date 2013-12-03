@@ -75,10 +75,11 @@ to a single transformation by $D_1 D_2$, we must have $f(D_1 D_2)=f(D_1)f(D_2)$.
 constrains the form of the function $f$; it must be something like $f(D)=D^n$, where $n$
 is a constant. The interpretation of $n$ is that under a Lorentz transformation corresponding to 1\%
 of $c$, energies of ultrarelativistic particles change by 
-about $n$\% (making the approximation that $v=.01$ gives $D\approx1.01$).
+about $n$\% (making the approximation that $v=.01$ gives $D\approx1.01$).\label{pesky-exponent-claim}
 In his original 1905 paper on special relativity, Einstein used Maxwell's equations and the Lorentz
-transformation to show that for a light wave $n=1$, and we will see later that this holds
-for any ultrarelativistic object. He wrote,
+transformation to show that for a light wave $n=1$, and we will prove on p.~\pageref{pesky-exponent-proof} that this holds
+for any ultrarelativistic object. 
+He wrote,
 ``It is remarkable that the energy and the frequency \ldots vary with the state
 of motion of the observer in accordance with the same law.''
 He was presumably interested in this fact because 1905 was also the year in which he
@@ -184,13 +185,13 @@ A and B disagree on how much energy O has lost, the discrepancy being
 \begin{equation*}
   E\left[\frac{1}{2}(D+D^{-1})-1\right] \qquad .
 \end{equation*}
-This can be rewritten using identity (2) from section \ref{sec:identities}  as
+This can be rewritten using identity [2] from section \ref{sec:identities}  as
 \begin{equation*}
   E(\gamma-1) \qquad .
 \end{equation*}
 Let's consider the case where B's velocity relative to A is small. Using the
-approximation $\gamma\approx 1+v^2/2$, we find that the discrepancy in
-O's energy loss is approximately
+approximation $\gamma\approx 1+v^2/2$, our result
+is approximately
 \begin{equation*}
   \frac{1}{2}Ev^2 \qquad ,
 \end{equation*}
@@ -336,3 +337,219 @@ seem so far to be described correctly by general relativity.
 
 
 <% end_sec('mass-energy-equivalence') %> % E=mc$^2$
+<% begin_sec("Relativistic momentum",nil,'momentum') %>
+Newtonian mechanics has two different measures of motion, kinetic energy and momentum,
+and the relationship between them is nonlinear. Doubling your car's momentum quadruples
+its kinetic energy.
+
+But nonrelativistic mechanics can't handle massless particles, which are always ultrarelativistic.
+We saw in section \ref{sec:ultrarelativistic} that ultrarelativistic particles are ``generic,''
+in the sense that they have no individual mechanical properties other than an energy and a direction
+of motion. Therefore the relationship between kinetic energy and momentum must be \emph{linear}
+for ultrarelativistic particles. For example, doubling the amplitude of an electromagnetic wave
+quadruples both its energy density, which depends on $\vc{E}^2$ and $\vc{B}^2$, and its momentum
+density, which goes like $\vc{E}\times\vc{B}$.
+
+How can we make sense of these energy-momentum relationships, which seem to take on two completely
+different forms in the limiting cases of very low and very high velocities?
+
+The first step is realize that since mass and energy are equivalent,
+we will get more of an apples-to-apples comparison if we stop talking about a material object's
+\emph{kinetic} energy and consider instead its \emph{total} energy $E$, which includes a contribution from its mass.
+
+Figure \figref{e-p-plane} is a graph of energy versus momentum.
+In this representation, massless particles, which have $E\propto|p|$, lie on two diagonal lines that connect at the
+origin. If we like, we can pick units such that the slopes of these lines are plus and minus one. Material particles
+lie above these lines. For example, a car sitting in a parking lot has $p=0$ and $E=m$. 
+<% marg(30) %>
+<%
+  fig(
+    'e-p-plane',
+    %q{In the $p$-$E$ plane, massless particles lie on the two diagonals, while particles with mass lie to the right.}
+  )
+%>
+<% end_marg %>
+
+Now what happens to such a graph when we change to a different frame or reference that is in motion relative to the
+original frame? A massless particle still has to act like a massless particle, so the diagonals are simply stretched
+or contracted along their own lengths. A transformation that always takes a line to a line is a linear transformation,
+and if the transformation between different frames of reference preserves
+the linearity of the lines $p=E$ and $p=-E$, then it's natural to suspect that it is actually some kind of linear transformation.
+In fact the transformation must be linear, because conservation of
+energy and momentum involve addition, and we need these laws to be valid in all frames of reference.
+But now by the same reasoning as in subsection \ref{subsec:scalars} on p.~\pageref{subsec:scalars},
+the transformation must be area-preserving.
+We then have the same three cases to consider as in figure \figref{three-cases} on p.~\pageref{fig:three-cases}.
+The ``Galilean'' version is ruled out because it would imply that particles keep the same energy when we change frames.
+(This is what would happen if $c$ were infinite, so that the mass-equivalent $E/c^2$ of a given energy was zero,
+and therefore $E$ would be interpreted purely as the mass.) Nor can the ``rotational'' version
+be right, because it doesn't preserve
+the $E=|p|$ diagonals. We are left with the third case, which establishes the following aesthetically appealing
+fact: \emph{the $p$-$E$ plane transforms according to exactly the same kind of Lorentz transformation as the $x$-$t$ plane}.
+That is, $(E,p_x,p_y,p_z)$ is a four-dimensional vector just like $(t,x,y,z)$. This is a highly
+desirable result. If it were not true, it would be like having to learn different mathematical rules for different
+kinds of three-vectors in Newtonian mechanics.
+
+The only remaining issue to settle is whether the choice of units that gives invariant 45-degree diagonals in the
+$x$-$t$ plane is the same as the choice of units that gives such diagonals in the $p$-$E$ plane.
+That is, we need to establish that the $c$ that applies to $x$ and $t$ is equal to the $c'$ needed for $p$ and $E$,
+i.e., that the velocity scales of the two graphs are matched up.
+This is true because in the Newtonian limit, the total mass-energy $E$ is essentially just the particle's mass,
+and then $p/E \approx p/m \approx v$. This establishes that the velocity scales are matched at small velocities,
+which implies that they coincide for all velocities, since a large velocity, even one approaching $c$,
+can be built up from many small increments. (This also establishes that the exponent $n$ defined on p.~\pageref{pesky-exponent-claim}
+equals 1 as claimed.)\label{pesky-exponent-proof}
+
+Suppose that a particle is at rest. Then it has $p=0$ and mass-energy $E$  equal to its mass $m$. Therefore
+the inner product of its $(E,p)$ four-vector with itself equals $m^2$. In other words, the ``magnitude'' of
+the energy-momentum four-vector is simply equal to the particle's mass. If we transform into a different
+frame of reference, in which $p\ne 0$, the inner product stays the same.  In symbols,
+\begin{equation*}
+  m^2 = E^2 - p^2 \qquad ,
+\end{equation*}
+or, in units with $c \ne 1$,
+\begin{equation*}
+  (mc^2)^2 = E^2 - (pc)^2 \qquad .
+\end{equation*}
+We take this as the relativistic definition of mass.\index{mass!defined} Since the definition
+is an inner product, which is a scalar, it is the same in all frames of reference. (Some older
+books use an obsolete convention of referring to $m\gamma$ as ``mass'' and $m$ as ``rest mass.'')
+We see from the definition that mass is not additive.
+
+<% self_check('massless-m-e-p',<<-'SELF_CHECK'
+Interpret the equation $m^2=E^2-p^2$ in the case where $m=0$.
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Mass of two light waves}
+Let the momentum of a certain light wave be $(p_t,p_x)=(E,E)$,
+and let another such wave have momentum $(E,-E)$. The total momentum is
+$(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
+This is an example of the non-additivity of relativistic mass.
+\end{eg}
+
+\begin{eg}{Light rays don't interact}\label{eg:light-rays-do-not-interact}
+We observe that when two rays of light cross paths, they continue through one another
+without bouncing like material objects. This behavior follows directly from conservation
+of energy-momentum.
+
+Any two vectors can be contained in a single plane, so we can choose our coordinates
+so that both rays have vanishing $p_z$. By choosing the state of motion of our coordinate
+system appropriately, we can also make $p_y=0$, so that the collision takes place along a single line parallel to the $x$ axis.
+Since only $p_x$ is nonzero, we
+write it simply as $p$. In the resulting $p$-$E$ plane, there are two possibilities:
+either the rays both lie along the same diagonal, or they lie along different diagonals.
+If they lie along the same diagonal, then there can't be a collision, because the
+two rays are both moving in the same direction at the same speed $c$, and the trailing
+one will never catch up with the leading one.
+
+Now suppose they lie along different diagonals. We add their energy-momentum vectors
+to get their total energy-momentum, which will lie in the gray area of figure \figref{e-p-plane}.
+That is, a pair of light rays taken as a single system act sort of like a material object
+with a nonzero mass.\footnote{If you construct a box out of mirrors and put some light inside, it
+has weight, and theoretically even has a gravitational field! This is an example of the fact
+that mass is not additive in relativity. Two objects, each with zero mass, can have an
+aggregate mass that is nonzero.} By a Lorentz transformation,
+we can always find a frame in which this total energy-momentum vector lies along the $E$
+axis. This is a frame in which the momenta of the two rays cancel, and we have
+a symmetric head-on collision between two rays of equal energy. It is the ``center-of-mass''
+frame, although neither object has any mass on an individual basis.  For convenience, let's
+assume that the $x$-$y$-$z$ coordinate system was chosen so that its origin was at rest in this
+frame. 
+
+Since the collision occurs along the $x$ axis, by symmetry
+it is not possible for the rays after the collision to depart from the $x$ axis; for if they
+did, then there would be nothing to determine the orientation of the plane in which they
+emerged.\footnote{In quantum mechanics, there is a loophole here.
+Quantum mechanics allows certain kinds of randomness, so that the symmetry can be broken by
+letting the outgoing rays be observed in a plane with some random orientation.} Therefore
+we are justified in continuing to use the same $p_x$-$E$ plane to analyze the four-vectors
+of the rays after the collision.
+
+Let each ray have
+energy $E$ in the frame described above.
+Given this total energy-momentum vector, how can we cook up two energy-momentum vectors
+for the final state such that energy and momentum will have been conserved? Since
+there is zero total momentum, our only choice is two light rays, one with energy-momentum
+vector $(E,E)$ and one with $(E,-E)$. But this is exactly the same as our initial state,
+except that we can arbitrarily choose the roles of the two rays to have been interchanged.
+Such an interchanging is only a matter of labeling, so there is no observable sense in which
+the rays have collided.\footnote{There is a second loophole here, which is that a ray of light
+is actually a wave, and a wave has other properties besides energy and momentum. It has
+a wavelength, and some waves also have a property called polarization. As a mechanical analogy for polarization,
+consider a rope stretched taut. Side-to-side vibrations can propagate along the rope, and
+these vibrations can occur in any plane that coincides with the rope. The orientation of this
+plane is referred to as the polarization of the wave. Returning to the case of the colliding
+light rays, it is possible to have nontrivial collisions in the sense that the rays could
+affect one another's wavelengths and polarizations. Although this doesn't actually happen
+with non-quantum-mechanical light waves, it can happen with other types of waves; see, e.g.,
+Hu et al., \url{arxiv.org/abs/hep-ph/9502276}, figure 2. The title of example \ref{eg:light-rays-do-not-interact}
+is only valid if a ``ray'' is taken to be something that lacks wave structure. The wave nature of
+light is not evident in everyday life from observations with apparatus such as
+flashlights, mirrors, and eyeglasses, so we expect the
+result to hold under those circumstances, and it does. E.g., flashlight beams do pass through one
+anther without interacting.}
+%--------- see http://physicsforums.com/showthread.php?p=3998393&posted=1#post3998393
+\end{eg}
+
+<% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
+Massless particles always travel at $c(=1)$. For suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
+other observer could be at rest relative to the particle. In such a frame,
+the particle's momentum $p$ is zero by symmetry, since there is no preferred
+direction for it. Then $E^2=p^2+m^2$ is zero as well, so the particle's entire energy-momentum
+vector is zero. But a vector that vanishes in one frame also vanishes in every
+other frame. That means we're talking about a particle that can't undergo scattering, emission, or
+absorption, and is therefore undetectable by any experiment. This is physically unacceptable because
+we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
+undetectable even in principle.
+
+What about the case of a material particle, i.e., one having mass?
+Since we already have an equation $E=m\gamma$ for the energy of a material particle in terms of
+its velocity, we can find a similar equation for the momentum:
+\begin{align*}
+  p &= \sqrt{E^2-m^2} \\
+    &= m\sqrt{\gamma^2-1} \\
+    &= m\sqrt{\frac{1}{1-v^2}-1} \\
+    &= m\gamma v \qquad .
+\end{align*}
+As a material particle gets closer and closer to $c$, its momentum approaches infinity,
+so that an infinite force would be required in order to reach $c$. 
+
+In summary, massless particles always move at $v=c$, while massive ones always move at $v<c$.
+
+Note that the equation $p=m\gamma v$ isn't general enough to serve as a definition of momentum, since
+it bcomes an indeterminate form in the limit $m\rightarrow0$.
+
+\begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
+We observe that electromagnetic waves are always polarized transversely, never longitudinally.
+Such a constraint can only apply to a wave that propagates at $c$. If it applied to a wave that
+propagated at less than $c$, we could move into a frame of reference in which the wave was at rest.
+In this frame, all directions in space would be equivalent, and there would be no way to decide which
+directions of polarization should be permitted. For a wave that propagates at $c$, there is no frame
+in which the wave is at rest (see section \ref{sec:ftl-frames}).
+\end{eg}
+<% end_sec('massless-go-at-c') %>
+
+
+<% end_sec('momentum') %>
+
+<% begin_sec("The velocity vector",nil,'v-vector') %>
+When I say ``vector'' in this book, I mean something that in 3+1 dimensions has four components. This
+can also be referred to as a four-vector.\index{four-vector}
+Our repertoire of vectors so far includes the displacement vector $\Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z)$
+and the energy-momentum vector $\vc{p}=(E,p_x,p_y,p_z)$. In a freshman course in Newtonian mechanics, we would have
+constructed a velocity vector $\vc{v}=\Delta \vc{r}/\Delta t$ as an intermediate step, and then built up
+$\vc{p}=m\vc{v}$. But relativistically, the quantity $\Delta \vc{r}/\Delta t$ would not transform like a vector, e.g.,
+if $\vc{r}$ was spacelike, then there would be a frame in which we had $\Delta t=0$, and then
+$\Delta \vc{r}/\Delta t$ would be finite in some frames but infinite in others, which is absurd.
+To construct a valid vector, we would have to divide
+$\Delta \vc{r}$ by a scalar. The only scalar that could be relevant would be the \emph{proper} time
+$\Delta \tau$, and this is indeed how the velocity vector is defined in relativity:
+\begin{equation*}
+  \vc{v} = \frac{\der \vc{r}}{\der \tau}
+\end{equation*}
+A velocity vector is only defined for particles whose world-lines are timelike, i.e., massive particles.
+For such particles, the product of $\vc{v}$ with the scalar mass $m$ gives the momentum vector $\vc{p}=m\vc{v}$.
+
+...copy more stuff on v vector from genrel; add a section on tachyons, experimental searches...
+<% end_sec('v-vector') %>
