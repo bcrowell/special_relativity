@@ -10,233 +10,275 @@
   )
 %>
 
-So far we have said nothing about how to predict motion in
-relativity. Do Newton's laws still work? Do conservation
-laws still apply? The answer is yes, but many of the
-definitions need to be modified, and certain entirely new
-phenomena occur, such as the equivalence of energy and mass, as described by the famous equation
-$E=mc^2$.
+<% begin_sec("Ultrarelativistic particles",nil,'ultrarelativistic') %>
+A typical 22-caliber rifle shoots a bullet with a mass of about 3 g at a speed of about 400 m/s.
+Now consider the firing of such a rifle as seen through an ultra-powerful telescope
+by an alien in a distant galaxy. We happen to be firing in the direction away from the
+alien, who gets a view from over our shoulder. Since the universe is expanding, our two galaxies
+are receding from each other. In the alien's frame, our own galaxy is the one that is
+moving --- let's say at\footnote{In reality when two velocities move at relativistic speeds compared
+with one another, they are separated by a cosmological distance, and special relativity does not
+actually allow us to construct frames of reference this large.} $c-(200\ \munit/\sunit)$.
+If the two velocities simply added, the
+bullet would be moving at $c+(200\ \munit/\sunit)$. But velocities don't simply add and
+subtract relativistically, and applying the correct
+equation for relativistic combination of velocities, we find that in the alien's frame,
+the bullet flies at only $c-(199.9995\ \munit/\sunit)$. That is, according to the alien,
+the energy in the gunpowder only succeeded in accelerating the bullet by $0.0005\ \munit/\sunit$!
+If we insisted on believing in $K=(1/2)mv^2$, this would clearly violate
+conservation of energy in the alien's frame of reference.
+It appears that kinetic energy must not only rise
+faster than $v^2$ as $v$ approaches $c$, it must blow up to infinity.
+This gives a dynamical explanation for why no material object can
+ever reach or exceed $c$, as we have already inferred on purely kinematical grounds.
 
-<% begin_sec("Some semi-quantitative arguments",nil,'semi-quantitative') %>
-<% begin_sec("Momentum",nil,'momentum') %>
-Consider the following scheme for traveling faster than the speed of light.
-The basic idea can be demonstrated by dropping a ping-pong ball and a baseball
-stacked on top of each other like a snowman. They separate slightly in mid-air,
-and the baseball therefore has time to hit the floor and rebound before it
-collides with the ping-pong ball, which is still on the way down. The result is
-a surprise if you haven't seen it before: the ping-pong ball flies off at high
-speed and hits the ceiling! A similar fact is known to people who investigate the
-scenes of accidents involving pedestrians. If a car moving at 90 kilometers per
-hour hits a pedestrian, the pedestrian flies off at nearly double that speed, 180
-kilometers per hour. Now suppose the car was moving at 90 percent of the speed of
-light. Would the pedestrian fly off at 180\% of $c$?
+To the alien, both our galaxy and the bullet are ultrarelativistic objects, i.e., objects
+moving at nearly $c$.
+A good way of thinking about an ultrarelativistic particle is that it's a particle with a
+very small mass. For example, the subatomic particle called the neutrino has a very small
+mass, thousands of times smaller than that of the electron. Neutrinos are emitted in
+radioactive decay, and because the neutrino's mass is so small, the amount of energy
+available in these decays is always enough to accelerate it to very close to $c$.
+Nobody has ever succeeded in observing a neutrino that was \emph{not} ultrarelativistic.
+When a particle's mass is very small, the mass becomes difficult to measure. For almost 70 years after the
+neutrino was discovered, its mass was thought to be zero. Similarly, we currently believe that
+a ray of light has no mass, but it is always possible that its mass will be found to be nonzero
+at some point in the future. A ray of light can be modeled as an ultrarelativistic particle.
 
-To see why not, we have to back up a little and think about where this speed-doubling
-result comes from. 
-For any collision, there is a special frame of reference, the center-of-mass frame,
-in which the two colliding objects approach each other,
-collide, and rebound with their velocities reversed. In the center-of-mass frame,
-the total momentum of the objects is zero both before and after the collision.
-<%
-  fig(
-    'unequalcollision',
-    %q{%
-      An unequal collision, viewed in the center-of-mass frame, 1, and
-      in the frame where the small ball is initially at rest, 2. The motion is shown as it
-      would appear on the film of an old-fashioned movie camera, with an equal amount of time separating
-      each frame from the next. Film 1 was made by a camera that tracked the center of mass, film 2 by
-      one that was initially tracking the small ball, and kept on moving at the same speed after the collision.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
+Let's compare ultrarelativistic particles with train cars. A single car with kinetic energy $E$ has
+different properties than a train of two cars each with kinetic energy $E/2$. The single car has
+half the mass and a speed that is greater by a factor of $\sqrt{2}$. But the same is not true
+for ultrarelativistic particles. Since an idealized ultrarelativistic particle has a mass too
+small to be detectable in any experiment, we can't detect the difference between $m$ and $2m$.
+Furthermore, ultrarelativistic particles move at close to $c$, so there is no observable
+difference in speed. Thus we expect that a single ultrarelativistic particle with energy $E$
+compared with  two such particles, each with energy $E/2$,
+should have all the same properties as measured by a mechanical detector.
 
-Figure \subfigref{unequalcollision}{1} shows such a frame of reference for objects of very unequal mass.
-Before the collision, the large ball is moving relatively slowly toward the top of the page, but
-because of its greater mass, its momentum cancels the momentum of the smaller ball, which is
-moving rapidly in the opposite direction. The total momentum is zero. After the collision, the
-two balls just reverse their directions of motion. We know that this is the
-right result for the outcome of the collision because
-it conserves both momentum and kinetic energy, and everything not forbidden is mandatory, i.e.,
-in any experiment, there is only one possible outcome, which is the one that obeys all the
-conservation laws.
+An idealized zero-mass particle also has no frame in which it can be at rest. It
+always travels at $c$, and no matter how fast we chase after it, we can never catch up.
+We can, however, observe it in different frames of reference, and we will find that its
+energy is different. For example, distant galaxies are receding from us at substantial fractions
+of $c$, and when we observe them through a telescope, they appear very dim not just because they are very
+far away but also because their light has less energy in our frame than in a frame at rest
+relative to the source. This effect must be such that changing frames of reference according
+to a specific Lorentz transformation always changes the energy of the particle by a fixed factor,
+regardless of the particle's original energy;
+for if not, then the effect of a Lorentz transformation on a single particle of energy $E$
+would be different from its effect on two particles of energy $E/2$.
 
-<% self_check('unequalcollisioncons',<<-'SELF_CHECK'
-How do we know that momentum and kinetic energy are conserved
-in figure \subfigref{unequalcollision}{1}?
-  SELF_CHECK
-  ) %>
+How does this energy-shift factor depend on the velocity $v$ of the Lorentz transformation?
+Here it becomes nicer to work in terms of the variable $D$.
+Let's write $f(D)$ for the energy-shift factor that results from a given Lorentz transformation.
+Since a Lorentz transformation $D_1$ followed by a second transformation $D_2$ is equivalent
+to a single transformation by $D_1 D_2$, we must have $f(D_1 D_2)=f(D_1)f(D_2)$. This tightly
+constrains the form of the function $f$; it must be something like $f(D)=D^n$, where $n$
+is a constant. The interpretation of $n$ is that under a Lorentz transformation corresponding to 1\%
+of $c$, energies of ultrarelativistic particles change by 
+about $n$\% (making the approximation that $v=.01$ gives $D\approx1.01$).
+In his original 1905 paper on special relativity, Einstein used Maxwell's equations and the Lorentz
+transformation to show that for a light wave $n=1$, and we will see later that this holds
+for any ultrarelativistic object. He wrote,
+``It is remarkable that the energy and the frequency \ldots vary with the state
+of motion of the observer in accordance with the same law.''
+He was presumably interested in this fact because 1905 was also the year in which he
+published his paper on the photoelectric effect, which formed the foundations of quantum
+mechanics. An axiom of quantum mechanics is that the energy and frequency of any particle
+are related by $E=hf$, and if $E$ and $f$ hadn't transformed in the same way relativistically,
+then quantum mechanics would have been incompatible with relativity.
 
-Let's make up some numbers as an example. Say the small ball has a mass of 1 kg, the big
-one 8 kg. In frame 1, let's make the velocities as follows:
+If we assume that certain objects, such as light rays, are truly massless, rather than just
+having masses too small to be detectable, then their $D$ doesn't have any finite value, but we can still
+find how the energy differs according to different observers by finding the $D$ of the
+Lorentz transformation between the two observers' frames of reference.
 
-<% if is_print then
-print %q(
-\\newcommand{\\smallvelocitytable}[6]{%
-\\noindent\\hspace{5mm}\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
-\\hline
- & before the collision
-       & after the collision  \\\\
-\\hline
-\\anonymousinlinefig{#5} & #1 & #2  \\\\
-\\anonymousinlinefig{#6} & #3 & #4  \\\\
-\\hline
-\\end{tabular}
-}
-)
-end
-%>
+\begin{eg}{An astronomical energy shift}
+\egquestion For quantum-mechanical
+reasons, a hydrogen atom can only exist in states with certain specific energies.
+By conservation of energy, the atom can therefore only absorb or emit light that
+has an energy equal to the difference between two such atomic energies.
+The outer atmosphere of a star is mostly made of monoatomic hydrogen, and
+one of the energies that a hydrogen atom can absorb or emit is
+$3.0276\times10^{-19}\ \junit$. When we observe light from stars in the Andromeda
+Galaxy, it has an energy of $3.0306\times10^{-19}\ \junit$. If this is assumed to be
+due entirely to the motion of the Milky Way and Andromeda Galaxy relative to
+one another, along the line connecting them,
+find the direction and magnitude of this velocity.
 
-<%
-def small_vel_table(a,b,c,d)
-if is_print then
-  return "\\smallvelocitytable{#{a}}{#{b}}{#{c}}{#{d}}{smallball}{bigball}"
-end
-if is_web then
-return %Q(
-\\noindent\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
-\\hline
- & before the collision
-       & after the collision  \\\\
-\\hline
-small ball & #{a} & #{b}  \\\\
-big ball & #{c} & #{d}  \\\\
-\\hline
-\\end{tabular}
-)
-end
-end
-%>
-
-<% print small_vel_table(-0.8,0.8,0.1,-0.1) %>
-
-Figure \subfigref{unequalcollision}{2} shows the same collision in a frame of reference where
-the small ball was initially at rest.
- To find all the velocities in this frame, we
-just add 0.8 to all the ones in the previous table.
-
-<% print small_vel_table(0,1.6,0.9,0.7) %>
-
-\noindent In this frame, as expected, the small ball flies off with a velocity, 1.6, that
-is almost twice the initial velocity of the big ball, 0.9.
-
-If all those velocities were in meters per second, then that's exactly what happened. But
-what if all these velocities were in units of the speed of light? Now it's no longer a good
-approximation just to add velocities. We need to combine them according to the relativistic
-rules, which tell us that combining a velocity of 0.8 times the
-speed of light with another velocity of 0.8 results in 0.98, not 1.6. The results are very different:
-
-<% print small_vel_table(0,0.98,0.83,0.76) %>
-<%#
- gamma = 1, 5.0, 1.8, 1.5
- 1/gamma = 1, 0.2, 0.56, .67
-%>
-
-<%
-  fig(
-    'unequalrel',
-    %q{%
-      An 8-kg ball moving at 83\% of the speed of light hits a 1-kg ball. The balls
-      appear foreshortened due to the relativistic distortion of space.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
-
-We can interpret this as follows. Figure \subfigref{unequalcollision}{1} is one in which the
-big ball is moving fairly slowly. This is very nearly the way the scene would be seen by an
-ant standing on the big ball. According to an observer in frame \figref{unequalrel}, however,
-both balls are moving at nearly the speed of light after the collision. Because of this, the
-balls appear foreshortened, but the distance between the two balls is also shortened. To this
-observer, it seems that the small ball isn't pulling away from the big ball very fast.
-
-Now here's what's interesting about all this. The outcome shown in figure \subfigref{unequalcollision}{2}
-was supposed to be the only one possible, the only one that satisfied both conservation of energy
-and conservation of momentum. So how can the \emph{different} result shown in figure
-\figref{unequalrel} be possible? The answer is that relativistically, momentum must not equal
-$mv$. The old, familiar definition is only an approximation that's valid at low speeds. If
-we observe the behavior of the small ball in figure \figref{unequalrel}, it looks as though it
-somehow had some extra inertia. It's as though a football player tried to knock another player
-down without realizing that the other guy had a three-hundred-pound bag full of lead shot
-hidden under his uniform --- he just doesn't seem to react to the collision as much as he should.
-We therefore find that momentum has to be redefined in way that looks like
+\eganswer The energy is shifted upward, which means that the Andromeda Galaxy is moving
+toward us. (Galaxies at cosmological distances are always observed to be receding from
+one another, but this doesn't necessarily hold for galaxies as close as these.)
+Relating the energy shift to the velocity, we have
 \begin{equation*}
-        p = m v \times (\ldots) \qquad ,
+  \frac{E'}{E} = D = \sqrt{(1+v)/(1-v)} \qquad .
 \end{equation*}
-where $\ldots$ represents some kind of correction factor. 
-At very low velocities, the correspondence principle demands that the correction factor
-be close to 1. At high velocities, however, it is greater than one.
+Since the shift is only about one part per thousand, the velocity is small compared
+to $c$ --- or small compared to 1 in units where $c=1$. Therefore we can employ the low-velocity approximation
+$D\approx 1+v$, which gives
+\begin{equation*}
+  v \approx D-1 = \frac{E'}{E}-1 = -1.0\times10^{-3} \qquad .
+\end{equation*}
+The negative sign confirms that the source is approaching rather than receding.
+This is in units where $c=1$. Converting to SI units, 
+where $c\ne 1$, we have $v=(-1.0\times10^{-3})c=-300\ \zu{km}/s$.
+Although the Andromeda Galaxy's tangential motion is not accurately known, it
+is considered likely that it will
+collide with the Milky Way in a few billion years.
+\end{eg}
 
-<% end_sec('momentum') %>
-<% begin_sec("Equivalence of mass and energy") %>\index{energy!equivalence to mass}\index{mass!equivalence to energy}
-Now we're ready to see why mass and energy must be equivalent as claimed
-in the famous $E=mc^2$. So far we've only considered collisions
-in which none of the kinetic energy is converted into any other form
-of energy, such as heat or sound.
-Let's consider what happens if a blob of putty moving at
-velocity $v$ hits another blob that is initially at rest,
-sticking to it.  The nonrelativistic result is
-that to obey conservation of momentum the two blobs must fly
-off together at $v/2$. Half of the initial kinetic energy
-has been converted to heat.\footnote{A double-mass object moving
-at half the speed does not have the same kinetic energy. Kinetic
-energy depends on the square of the velocity, so cutting the velocity
-in half reduces the energy by a factor of 1/4, which, multiplied
-by the doubled mass, makes 1/2 the original energy.}
+<% end_sec('ultrarelativistic') %>
+<% begin_sec("E=mc$^2$",nil,'mass-energy-equivalence') %>\index{mass!equivalent to energy}\index{energy!equivalent to mass}
 
-Relativistically, however, an interesting thing happens. A
-hot object has more momentum than a cold object! This is
-because, as shown above, the relativistically correct expression for momentum
-is $m v$ multiplied by a correction factor that increases with velocity,
-and the more rapidly moving atoms in the hot
-object have higher velocities.
-In our collision, the final combined blob must therefore be
-moving a little more slowly than the expected $v/2$, since
-otherwise the final momentum would have been a little
-greater than the initial momentum. To an observer who
-believes in conservation of momentum and knows only about
-the overall motion of the objects and not about their heat
-content, the low velocity after the collision would seem
-to be the result of a magical change in the mass, as if the mass
-of two combined, hot blobs of putty was more than the sum of
-their individual masses.
+We now know the relativistic expression for kinetic energy
+in the limiting case of an ultrarelativistic particle: its energy is proportional
+to the ``stretch factor'' $D$ of the Lorentz transformation.
+What about intermediate cases, like $v=c/2$?
 
-Now we know that the masses of all the atoms in the blobs
-must be the same as they always were. The change is due to
-the change in $\gamma$ with heating, not to a change in mass.
-The heat energy, however, seems to be acting as if it was
-equivalent to some extra mass.
+<%
+  fig(
+    'bell-jar',
+    %q{%
+      The match is lit inside the bell jar. It burns, and energy escapes from the jar
+      in the form of light. After it stops burning, all the same atoms are still in the
+      jar: none have entered or escaped. The figure shows the outcome expected before
+      relativity, which was that the mass measured on the balance would remain exactly the same.
+      This is not what happens in reality.
+    },
+    {
+      'width'=>'wide',   
+      'sidecaption'=>true
+    }
+  )
+%>
 
-But this whole argument was based on the fact that heat is a
-form of kinetic energy at the atomic level. Would mass-energy equivalence
-apply to other forms of energy as well? Suppose a rocket
-ship contains some electrical energy stored in a
-battery. If we believed that mass-energy equivalence applied to forms of
-kinetic energy but not to electrical energy, then
-we would have to believe that the pilot of the rocket could
-slow the ship down by using the battery to run a heater!
-This would not only be strange, but it would violate the
-principle that all frames of reference are equally valid, because the result of the
-experiment would be different depending on whether the ship
-was at rest or not. The only logical conclusion is that all
-forms of energy are equivalent to mass. Running the heater
-then has no effect on the motion of the ship, because the
-total energy in the ship was unchanged; one form of energy (electrical)
-was simply converted to another (heat).
+When we are forced to tinker with a time-honored theory, our first instinct should
+always be to tinker as conservatively as possible. Although we've been forced to
+admit that kinetic energy doesn't vary as $v^2/2$ at relativistic speeds,
+the next most conservative thing we could do would be to assume that the \emph{only} change
+necessary is to replace the factor of $v^2/2$ in the nonrelativistic expression for
+kinetic energy with some other function, which would have to act like $s$ or $1/s$ for $v\rightarrow\pm c$. I suspect that
+this is what Einstein thought when he completed his original paper on relativity in 1905,
+because it wasn't until later that year that he published a second paper showing that this
+still wasn't enough of a change to produce a working theory. We now know that there is
+something more that needs to be changed about prerelativistic physics, and this is the
+assumption that mass is only a property of material particles such as atoms (figure \figref{bell-jar}).
+Call this the ``atoms-only hypothesis.''
 
-We haven't yet proved that mass-energy equivalence is described by the equation
-$E=mc^2$, but anticipating that result, let's consider a few of its consequences.
-The equation
+Now that we know the correct relativistic way of finding the energy of a ray of
+light, it turns out that we can use that to find what we were originally seeking,
+which was the energy of a material object. The following discussion closely
+follows Einstein's. 
+
+Suppose that a material object O of mass $m$,
+initially at rest in a certain frame A, emits two rays of light, each with energy $E/2$. By
+conservation of energy, the object must have lost an amount of energy equal to $E$.
+By symmetry, O remains at rest.
+
+We now switch to a different frame of reference B moving at some arbitrary speed
+corresponding to a stretch factor $D$. The change of frames means that we're
+chasing one ray, so that its energy is scaled down to $(E/2)D^{-1}$, while running
+away from the other, whose energy gets boosted to $(E/2)D$. In frame B, as in A,
+O retains the same speed after emission of the light. But observers in frames
+A and B disagree on how much energy O has lost, the discrepancy being
+\begin{equation*}
+  E\left[\frac{1}{2}(D+D^{-1})-1\right] \qquad .
+\end{equation*}
+Let's consider the case where B's velocity relative to A is small. For small
+velocities, the stretch factor is $D\approx 1+v$, and the discrepancy in
+O's energy loss is approximately
+\begin{equation*}
+  \frac{1}{2}Ev^2 \qquad .
+\end{equation*}
+The interpretation is that when O reduced its energy by $E$ in order to make
+the light rays, it reduced its \emph{mass} from $m_\zu{o}$ to $m_\zu{o}-m$,
+where $m=E$. Inserting the necessary factor of $c^2$ to make this valid in units
+where $c\ne 1$, we have Einstein's famous
+\begin{equation*}
+  E=mc^2 \qquad .
+\end{equation*}
+
+We find that mass is not simply a built-in property of the particles that
+make up an object, with the object's mass being the sum of the masses of its particles.
+Rather, mass and energy are equivalent, so that if the experiment of figure \figref{bell-jar} is
+carried out with a sufficiently precise balance, the reading will drop because of
+the mass equivalent of the energy emitted as light.
+
+The equation $E=mc^2$
 tells us how much energy is equivalent to how much mass: the conversion factor is the square
 of the speed of light, $c$. Since $c$ a big number, you get a really really big number
 when you multiply it by itself to get $c^2$. This means that even a small amount of mass
-is equivalent to a very large amount of energy. 
+is equivalent to a very large amount of energy. Conversely, an ordinary amount of energy
+corresponds to an extremely small mass, and this is why nobody detected the non-null
+result of experiments like the one in figure \figref{bell-jar} hundreds of years ago.
+
+The big event here is mass-energy equivalence, but we can also
+harvest a result for the energy of a material particle moving at a certain speed. 
+Plugging in $D=\sqrt{(1+v)/(1-v)}$ to the equation above
+for the energy discrepancy of object O between frames A and B, we find $m(\gamma-1)c^2$. This is the
+difference between O's energy in frame B and its energy when it is at rest, but since mass
+and energy are equivalent, we assign it energy $mc^2$ when it is at rest. The result is that
+the energy is
+\begin{equation*}
+  E = m\gamma c^2 \qquad .
+\end{equation*}
+
+\begin{eg}{Electron-positron annihilation}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit \qquad ,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
+
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
+<% marg(140) %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}   \qquad   .
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
+\end{eg}
 
 <%
   fig(
@@ -279,78 +321,5 @@ can prevent light from leaving. Such stars have been detected, and their propert
 seem so far to be described correctly by general relativity.
 \end{eg}
 
-You've learned about conservation of mass and conservation of energy, but
-now we see that they're not even separate conservation laws.
-As a consequence of the theory of relativity,  mass and energy are equivalent, and
-are not separately conserved --- one can be converted into the other. Imagine that
-a magician waves his wand, and changes a bowl of dirt into a bowl of lettuce. You'd be
-impressed, because you were expecting that both dirt and lettuce would be conserved
-quantities. Neither one can be made to vanish, or to appear out of thin air. However,
-there are processes that can change one into the other. A farmer changes dirt into
-lettuce, and a compost heap changes lettuce into dirt. At the most fundamental
-level, lettuce and dirt aren't really different things at all; they're just collections
-of the same kinds of atoms --- carbon, hydrogen, and so on.
-Because mass and energy are like two different sides of the same coin, we may speak of
-mass-energy, a single conserved quantity, found by adding up all the mass and energy,
-with the appropriate conversion factor: $E+mc^2$.\index{mass-energy!conservation of}
 
-\begin{eg}{A rusting nail}\label{eg:rustingnail}
-\egquestion
-An iron nail is left in a cup of water
-until it turns entirely to rust. The energy released is
-about 0.5 MJ. In theory, would a sufficiently
-precise scale register a change in mass? If so, how much?
-
-\eganswer
- The energy will appear as heat, which will be lost
-to the environment. The total mass-energy of the cup,
-water, and iron will indeed be lessened by 0.5 MJ. (If it
-had been perfectly insulated, there would have been no
-change, since the heat energy would have been trapped in the
-cup.) The speed of light is
-$c=3\times10^8$ meters per second, so converting to mass units, we have
-\begin{align*}
-                m         &=    \frac{E}{c^2}  \\
-                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
-                         &=    6\times10^{-12}\  \text{kilograms}   \qquad   .
-\end{align*}
-The change in mass is too small to measure with any
-practical technique. This is because the square of the speed
-of light is such a large number.
-\end{eg}
-
-\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
-Natural radioactivity in the earth produces positrons, which are like electrons but have the
-opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
-rays, a form of high-frequency light. Such a process would have been considered impossible
-before Einstein, because conservation of mass and energy were believed to be separate
-principles, and this process eliminates 100\% of the original mass. The amount of energy
-produced by annihilating 1 kg of matter with 1 kg of antimatter is
-\begin{align*}
- E &= mc^2\\
-   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
-   &= 2\times10^{17}\ \junit \qquad ,
-\end{align*}
-which is on the same order of magnitude as a day's energy consumption for the
-entire world's population!
-
-Positron annihilation forms the basis for the medical imaging technique called
-a PET (positron emission tomography) scan, in which a positron-emitting chemical
-is injected into the patient and map\-ped by the emission of gamma rays from the parts
-of the body where it accumulates.
-\end{eg}
-<% marg(200) %>
-<%
-  fig(
-    'pet',
-    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
-       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
-       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
-       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
-       an abnormal medical condition.}
-  )
-%>
-<% end_marg %>
-
-<% end_sec() %> % Momentum
-<% end_sec() %> % Proofs
+<% end_sec('mass-energy-equivalence') %> % E=mc$^2$
