@@ -156,7 +156,7 @@ always be to tinker as conservatively as possible. Although we've been forced to
 admit that kinetic energy doesn't vary as $v^2/2$ at relativistic speeds,
 the next most conservative thing we could do would be to assume that the \emph{only} change
 necessary is to replace the factor of $v^2/2$ in the nonrelativistic expression for
-kinetic energy with some other function, which would have to act like $s$ or $1/s$ for $v\rightarrow\pm c$. I suspect that
+kinetic energy with some other function, which would have to act like $D$ or $1/D$ for $v\rightarrow\pm c$. I suspect that
 this is what Einstein thought when he completed his original paper on relativity in 1905,
 because it wasn't until later that year that he published a second paper showing that this
 still wasn't enough of a change to produce a working theory. We now know that there is
@@ -169,8 +169,9 @@ light, it turns out that we can use that to find what we were originally seeking
 which was the energy of a material object. The following discussion closely
 follows Einstein's. 
 
-Suppose that a material object O of mass $m$,
-initially at rest in a certain frame A, emits two rays of light, each with energy $E/2$. By
+Suppose that a material object O of mass $m_\zu{o}$,
+initially at rest in a certain frame A, emits two rays of light (or any other kind of
+ultrarelativistic particles), each with energy $E/2$. By
 conservation of energy, the object must have lost an amount of energy equal to $E$.
 By symmetry, O remains at rest.
 
@@ -183,12 +184,13 @@ A and B disagree on how much energy O has lost, the discrepancy being
 \begin{equation*}
   E\left[\frac{1}{2}(D+D^{-1})-1\right] \qquad .
 \end{equation*}
-Let's consider the case where B's velocity relative to A is small. For small
-velocities, the stretch factor is $D\approx 1+v$, and the discrepancy in
+Let's consider the case where B's velocity relative to A is small. Expanding the above
+expression in a Taylor series in $v$, the discrepancy in
 O's energy loss is approximately
 \begin{equation*}
-  \frac{1}{2}Ev^2 \qquad .
+  \frac{1}{2}Ev^2 \qquad ,
 \end{equation*}
+neglecting terms of order $v^4$ and higher.
 The interpretation is that when O reduced its energy by $E$ in order to make
 the light rays, it reduced its \emph{mass} from $m_\zu{o}$ to $m_\zu{o}-m$,
 where $m=E$. Inserting the necessary factor of $c^2$ to make this valid in units
@@ -196,6 +198,10 @@ where $c\ne 1$, we have Einstein's famous
 \begin{equation*}
   E=mc^2 \qquad .
 \end{equation*}
+This derivation entailed an approximation, and redoing it without the approximation
+entails some complexity.\footnote{See Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400},
+and Jammer, Concepts of Mass in Contemporary Physics and Philosophy.}
+It turns out, however, to be valid in general.
 
 We find that mass is not simply a built-in property of the particles that
 make up an object, with the object's mass being the sum of the masses of its particles.
@@ -213,7 +219,7 @@ result of experiments like the one in figure \figref{bell-jar} hundreds of years
 
 The big event here is mass-energy equivalence, but we can also
 harvest a result for the energy of a material particle moving at a certain speed. 
-Plugging in $D=\sqrt{(1+v)/(1-v)}$ to the equation above
+Using identity (2) from section \ref{sec:identities} in the equation above
 for the energy discrepancy of object O between frames A and B, we find $m(\gamma-1)c^2$. This is the
 difference between O's energy in frame B and its energy when it is at rest, but since mass
 and energy are equivalent, we assign it energy $mc^2$ when it is at rest. The result is that
@@ -283,40 +289,42 @@ of light is such a large number.
 <%
   fig(
     'eclipse',
-    %q{Example \ref{eg:eclipse}.
-      Right: A New York Times headline from November 10, 1919.},
+    '',
     {
-      'width'=>'fullpage'
+      'width'=>'fullpage',
+      'anonymous'=>true
     }
   )
 %>
 
+\pagebreak
+
 \begin{eg}{Gravity bending light}\label{eg:eclipse}
 Gravity is a universal attraction between things that have mass, and since the energy
-in a beam of light is equivalent to a some very small amount of mass, we expect that
-light will be affected by gravity, although the effect should be very small.
-The first important experimental confirmation of relativity
+in a beam of light is equivalent to some very small amount of mass, 
+light should be affected by gravity, although the effect should be very small.
+The first experimental confirmation of relativity
 came in 1919 when stars next to the sun during a solar eclipse were
 observed to have shifted a little from their ordinary
 position. (If there was no eclipse, the glare of the sun
 would prevent the stars from being observed.) Starlight had
-been deflected by the sun's gravity. Figure \figref{eclipse} is a
+been deflected by the sun's gravity. The figure is a
 photographic negative, so the circle that appears bright is actually the
 dark face of the moon, and the dark area is really the bright corona of
 the sun. The stars, marked by lines above and below then, appeared at
 positions slightly different than their normal ones.
 
-The reader is cautioned that these arguments are very rough and qualitative,
+Keep in mind that these arguments are very rough and qualitative,
 and it is \emph{not} possible to produce a
-complete relativistic theory of gravity simply by taking $E=mc^2$
-and combining it with Newton's law of gravity. One way to see this is that
-the law of gravity doesn't refer to time at all: it predicts that gravitational
+relativistic theory of gravity simply by taking $E=mc^2$
+and combining it with Newton's law of gravity. After all,
+this law doesn't refer to time at all: it predicts that gravitational
 forces propagate instantaneously. We know this can't be consistent with
 relativity, which forbids cause and effect from propagating at any speed greater
 than $c$. To produce a relativistic theory of gravity, we need general
 relativity.
 
-Similar reasoning suggests that there may be stars so dense that their gravity
+Similar reasoning suggests that there may be stars --- black holes --- so dense that their gravity
 can prevent light from leaving. Such stars have been detected, and their properties
 seem so far to be described correctly by general relativity.
 \end{eg}

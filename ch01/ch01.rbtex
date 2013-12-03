@@ -331,7 +331,7 @@ those on the cone itself as lightlike or null.
 <% end_marg %>
 
 An important advantage of Einstein's relativity over Galileo's is that it is compatible with the
-empirical observation that some phenomena travel at fixed speeds. Light travels at a fixed speed,
+empirical observation that some phenomena travel at a certain fixed speed. Light travels at a fixed speed,
 and so do gravitational waves (which, although they have not yet been observed directly, have been
 indirectly confirmed to exist through observations of the decaying orbits of binary neutron stars).
 This fixed speed is $c$, and all observers agree on it. In 1905, the only phenomenon known to travel
@@ -920,7 +920,7 @@ Lorentz transformation.\index{Lorentz transformation}
     },
     {
       'width'=>'wide',
-      'sidecaption'=>true
+      'sidecaption'=>false
       # 'sidepos'=>'b'
     }
   )
