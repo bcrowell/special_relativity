@@ -5,314 +5,94 @@
 <%
   chapter(
     '02',
-    %q{Kinematics},
-    'ch:kinematics'
+    %q{Foundations},
+    'ch:foundations'
   )
 %>
 
-At this stage, many students raise the following questions, which turn out to be related to
-one another:
+In this chapter we more systematically examine the foundational assumptions of special relativity,
+which were appealed to casually in chapter \ref{ch:spacetime}.  This chapter can
+be skipped without loss of continuity. The ordering of chapters \ref{ch:spacetime}
+and \ref{ch:foundations} may seem backwards, but many of the issues to be raised here are very subtle
+and hard to appreciate without already understanding something about special relativity.
 
-\begin{enumerate}
-\item According to Einstein,
-      if observers A and B aren't at rest relative to each other, then A says B's time
-      is slow, but B says A is the slow one. How can this be? If A says B is slow, shouldn't
-      B say A is fast? After all, if I took a pill that sped up my brain, everyone else would
-      seem slow to me, and I would seem fast to them.
-\item Suppose I keep accelerating my spaceship steadily. What happens when I get to the speed of light?
-\item In all the diagrams in section \ref{sec:lorentz-transformation}, the parallelograms have their
-      diagonals stretched and squished by a certain factor, which depends on $v$. What is the interpretation
-      of this factor?
-\end{enumerate}
-
-\vfill
-
-<% begin_sec("How can they both \\ldots ?",4,'how-can-they-both') %>
-
-Figure \figref{symmetric-signals} shows how relativity resolves the first question.
-If A and B had an instantaneous method of communication such as Star Trek's subspace
-radio, then they could indeed resolve the question of who was really slow. 
-
-<%
-  fig(   
-    'symmetric-signals',
-    %q{%
-      Signals don't resolve the dispute over who is really slow.
-    },
-    {
-      'width'=>'wide','sidecaption'=>true
-    }
-  )
-%>
-
-But relativity
-does not allow cause and effect to be propagated outside the light cone, so the best
-they can actually do is to send each other signals at $c$. In \subfigref{symmetric-signals}{1},
-B sends signals to A at time intervals of one hour as measured by B's clock. According to
-A's clock, the signals arrive at an interval that is shorter than one hour as the two spaceships
-approach one another, then longer than an hour after they pass each other and begin to recede.
-As shown in \subfigref{symmetric-signals}{2}, the situation is entirely symmetric if A sends
-signals to B.
-
-Who is really slow? Neither. If A, like many astronauts, cut her teeth as a jet pilot,
-it may occur to her to interpret the observations by analogy with the Doppler effect for sound waves.
-Figure \figref{symmetric-signals} is in fact a valid diagram if the signals are clicks of sound, provided
-that we interpret it as being drawn in the frame of reference of the air. Sound waves travel at
-a fixed speed relative to the air, and the space and time units could be chosen such that the
-speed of \emph{sound} was represented by a slope of $\pm 1$. But A will find that in the relativistic
-case, with signals traveling at $c$, her observations
-of the time intervals are not in quantitative agreement with the predictions she gets by plugging
-numbers into the familiar formulas for the Doppler shift of sound waves. She may then say, ``Ah,
-the analogy with sound isn't quite right. I need to include a correction factor for time dilation,
-since B's time is slow. I'm not slow, of course. I feel perfectly normal.''
-
-
-But her analogy is false and needlessly complicates the situation. In the version with sound waves and
-Galilean relativity, there are three frames of reference involved: A's, B's, and the air's. The
-relativistic version is simpler, because there are only two frames, A's and B's. It's neither helpful
-nor necessary to break down the observations into a factor describing what ``really'' happens and
-a correction factor to account for the relativistic distortions of ``reality.'' All we need to worry about
-is the world-lines and intersections of world-lines shown in the spacetime diagrams, along with the
-metric, which allows us to compute how much proper time is experienced by each observer.
-
-<% end_sec('how-can-they-both') %>
-
-<%
-  fig(   
-    'twin-signals',
-    %q{The twin paradox with signals sent back to earth by the traveling twin.},
-    {
-      'width'=>'wide','sidecaption'=>true
-    }
-  )
-%>
-
-<% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>
-
-Figure \figref{twin-signals} shows how the ideas in the preceding section apply to the twin paradox.
-In \subfigref{twin-signals}{1} we see the situation as described by a partial observers, who says
-that both twins are traveling to the right. But even the impartial observer agrees that one twin's
-motion is inertial and the other's noninertial, which breaks the symmetry and also allows the twins
-to meet up at the end and compare clocks. For convenience, \subfigref{twin-signals}{2} shows the
-situation in the frame where the earthbound twin is at rest. Both panels of the figure are drawn
-such that the relative velocity of the twins is 3/5, and in panel 2 this is the inverse slope of
-the traveling twin's world-lines. Straightforward algebra and geometry (problem
-\ref{hw:doppler-concrete}, p.~\pageref{hw:doppler-concrete}) shows that in this particular
-example, the period observed by the earthbound twin is increased by a factor of 2. But
-2 is exactly the factor by which the diagonals of the parallelogram are stretched and
-compressed in a Lorentz transformation for a velocity of 3/5. This is true in general:
-the stretching and squishing factors for the diagonals are
-the same as the Doppler shift. We notate this factor as $D$
-(which can stand for either ``Doppler'' or ``diagonal''), and in general it is given by
-\begin{equation*}
-  D(v) = \sqrt{\frac{1+v}{1-v}}
-\end{equation*}
-(problem \ref{hw:doppler-abstract}, p.~\pageref{hw:doppler-abstract}). 
-
-<% self_check('doppler-not-ruler',<<-'SELF_CHECK'
-If you measure with a ruler on figure \subfigref{twin-signals}{2}, you will find that
-the labeled sides of the quadrilateral differ by less than a factor of 2. Why is this?
-  SELF_CHECK
-  ) %>
-
-This expression is
-for the longitudinal Doppler shift, i.e., the case where the source and observer are in motion
-directly away from one another (or toward one another if $v<0$). In the purely transverse case,
-there is a Doppler shift $1/\gamma$ which can be interpreted as simply a measure of time dilation.
-
+<% begin_sec("Causality",nil,'causality') %>
+<% begin_sec("The arrow of time",nil,'arrow-of-time') %>
+Our intuitive belief in cause-and-effect mechanisms is
+not supported in any clearcut way by the laws of physics as currently understood. For example, we
+feel that the past affects the future but not the other way around, but this feeling doesn't seem
+to translate into physical law. For example, Newton's laws are invariant under time reversal,
+figure \figref{football-causality}, as are Maxwell's equations. (The weak nuclear force is the
+only part of the standard model that violates time-reversal symmetry, and even it is invariant under
+the CPT transformation.) 
 <% marg %>
 <%
   fig(
-    'doppler-identity',
-    %q{Interpretation of the identity $D(v)D(-v)=1$.}
+    'football-causality',
+    %q{Newton's laws do not distinguish past from future. The football could travel in either direction
+       while obeying Newton's laws.}
   )
 %>
 <% end_marg %>
 
-The useful identity $D(v)D(-v)=1$ is trivial to prove algebraically, and has the following interpretation.
-Suppose, as in figure \figref{doppler-identity},
-that A and C are at rest relative to one another, but B is moving relative to them.
-B's velocity relative to A is $v$, and C's relative to B is $-v$.
-At regular intervals, A sends lightspeed ``pings'' to B, who then immediately retransmits them to C.
-The interval between pings accumulates two Doppler shifts, and the result
-is their product $D(v)D(-v)$. But B didn't actually need to receive the
-original signal and retransmit it; the results would have been the same if B had just stayed out of the way.
-Therefore this product must equal 1, so we must have $D(v)D(-v)=1$.
+There is an arrow of time provided by the second law of thermodynamics, and this arises ultimately from
+the fact that, for reasons unknown to us, the universe soon after the Big Bang was in a state of extremely
+low entropy. (One can find a vast amount of nonsense written about this, such as claims that the
+second law is derivable without reference to any cosmological context. For a careful treatment, see
+Callender, ``Thermodynamic Asymmetry in Time,'' The Stanford Encyclopedia of Philosophy,
+\url{plato.stanford.edu/archives/fall2011/entries/time-thermo}.)
+<% end_sec('arrow-of-time') %>
 
-\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}
-The transverse Doppler shift is a characteristic prediction of special relativity, with no
-nonrelativistic counterpart, and Einstein suggested it early on as a test of relativity.
-However, it is difficult to measure with high precision, because the results are sensitive to any error
-in the alignment of the 90-degree angle. Such experiments were eventually performed, with results that confirmed
-relativity,\footnote{See, e.g., Hasselkamp, Mondry, and Scharmann, Zeitschrift f\"ur Physik A: Hadrons and Nuclei 289 (1979) 151.}
-but one-dimensional measurements provided both the earliest tests of the relativistic Doppler shift and the most precise
-ones to date. The first such test was done by Ives and Stilwell in 1938, using the following trick. The relativistic
-expression $D(v) = \sqrt{(1+v)/(1-v)}$ for the Doppler shift has the property that $D(v)D(-v)=1$,
-which differs from the
-nonrelativistic result of $(1+v)(1-v)=1-v^2$. One can therefore accelerate an ion up to a relativistic speed, measure
-both the forward Doppler shifted frequency $f_f$ and the backward one  $f_b$, and compute $\sqrt{f_ff_b}$. According
-to relativity, this should exactly equal the frequency $f_\zu{o}$ measured in the ion's rest frame.
+<% begin_sec("Initial-value problems",nil,'initial-value-problems') %>
+So rather than depending on the arrow of time, we may be better off formulating a notion of causality based
+on existence and uniqueness of initial-value problems.
+In 1776, Laplace gave an influential early formulation of this idea in the context of Newtonian
+mechanics: ``Given for one instant an intelligence which could comprehend
+all the forces by which nature is animated and the
+respective positions of the things which compose it \ldots nothing
+would be uncertain, and the future as the past would be laid
+out before its eyes.'' The reference to ``one instant'' is not compatible with special relativity, which has
+no frame-independent definition of simultaneity. We can, however, define initial conditions on some
+spacelike three-surface, i.e., a three-dimensional set of events that is smooth, has the topology of
+Euclidean space, and in which points sufficiently close to one another are separated from one another
+by a spacelike interval.
 
-In a particularly exquisite modern version of the Ives-Stilwell idea,\footnote{G.~Saathoff et al., ``Improved Test
-of Time Dilation in Relativity,'' Phys. Rev. Lett. 91 (2003) 190403. A publicly available description of the
-experiment is given in Saathoff's PhD thesis, \url{www.mpi-hd.mpg.de/ato/homes/saathoff/diss-saathoff.pdf}.} 
-Saathoff et al.~circulated $\zu{Li}^+$ ions at $v=.064$ in a storage ring. An electron-cooler technique was
-used in order to reduce the variation in velocity among ions in the beam. Since the identity $D(v)D(-v)=1$
-is independent of $v$, it was not necessary to measure $v$ to the same incredible precision as the frequencies;
-it was only necessary that it be stable and well-defined. The natural line width was 7 MHz, and other experimental
-effects broadened it further to 11 MHz. By curve-fitting the line, it was possible to achieve results good to
-a few tenths of a MHz. The resulting frequencies, in units of MHz, were:
+Unfortunately it is not obvious whether the classical laws of physics satisfy Laplace's definition
+of causality. Two interesting and accessible papers that express a skeptical view on this issue are
+Norton, ``Causation as Folk Science,'' \url{philsci-archive.pitt.edu/1214}; and      
+Echeverria \emph{et al.},
+``Billiard balls in wormhole spacetimes with closed timelike curves: Classical theory,''
+\url{http://resolver.caltech.edu/CaltechAUTHORS:ECHprd91}.
+The Norton paper in particular has generated a large literature at the interface between physics and
+philosophy, and one can find most of the relevant material online using the keywords ``Norton's dome.''
 
-\begin{tabular}{rl}
-$f_f$ & =          $582490203.44 \pm .09$ \\
-$f_b$ & =          $512671442.9  \pm 0.5$ \\
-$\sqrt{f_ff_b}$ &= $546466918.6  \pm 0.3$ \\
-$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ (from previous experimental work) 
-\end{tabular}
+Nor does general relativity doesn't give much support to the Laplacian version of causality.
+For example, general relativity
+says that given generic initial conditions, gravitational collapse leads to the formation of singularities, points
+where the structure of spacetime breaks down and various measurable quantities become infinite. Singularities
+typically violate causality, since the laws of physics can't describe them. In a famous image, John Earman
+wrote that if we have a certain type of singularity (called a naked singularity),
+``all sorts of nasty things \ldots emerge helter-skelter \ldots,''
+including ``TV sets showing Nixon's `Checkers' speech, green slime, 
+Japanese horror movie monsters, etc.''\label{causality-longer}\index{causality}
+<% end_sec('initial-value-problems') %>
 
-\noindent The spectacular agreement with theory has made this experiment a lightning rod for
-anti-relativity kooks.
+<% begin_sec("A modest definition of causality",nil,'modest-causality') %>
+Since there does not seem to be any reason to expect causality to hold in any grand sense,
+we will content ourselves here with a very modest and specialized definition, stated as a postulate,
+that works well enough for special relativity.
 
-If one is searching for small deviations from the predictions of special relativity, a natural place to look
-is at high velocities. Ives-Stilwell experiments have been performed at velocities as high as $0.84$, and
-they confirm special relativity.\footnote{MacArthur et al., Phys. Rev. Lett. 56 (1986) 282 (1986)}
-\end{eg}
-<% end_sec('doppler') %>
+P1. \emph{Causality}. There exist events 1 and 2 such that the displacement vector
+$\Delta\vc{r}_{12}$ is timelike in all frames.
 
-<% begin_sec("Combination of velocities",nil,'velocity-addition') %>
-In classical physics, velocities add in relative motion. For example, if a boat moves relative to
-a river, and the river moves relative to the land, then the boat's velocity relative to the land
-is found by vector addition. This linear behavior cannot hold relativistically. For example,   
-if a spaceship is moving relative to the earth at velocity $3/5$ (in units with $c=1$),
-and it launches a probe at velocity $3/5$
-relative to itself, we can't have the probe moving at a velocity of $6/5$ relative to the earth, because
-this would be greater than the maximum speed of cause and effect, which is 1.
-To see how to add velocities relativistically, we consider the effect of carrying the two Lorentz
-transformations one after the other, figure \figref{three-fifths-c-twice}.
-<% marg %>
-<%
-  fig(
-    'three-fifths-c-twice',
-    %q{Two Lorentz transformations of $v=3/5$ are applied one after the other. The transformations are
-       represented according to the graphical conventions of section \ref{sec:lorentz-transformation}.}
-  )
-%>
-<% end_marg %>
+This is sufficient to rule out the ``rotational'' version of the Lorentz transformation shown in
+figure \figref{three-cases} on p.~\pageref{fig:three-cases}.
 
-The inverse slope of the left side of each parallelogram indicates its velocity relative to the
-original frame, represented by the square. Since the left side of the final parallelogram has not
-swept past the diagonal, clearly it represents a velocity of \emph{less} than 1, not more.
-To determine the result, we use the fact that the $D$ factors multiply. We chose velocities $3/5$ because
-it gives $D=2$, which is easy to work with. Doubling the long diagonal twice gives an over-all
-stretch factor of 4, and solving the equation $D(v)=4$ for $v$ gives the result, $v=15/17$.
+<% end_sec('modest-causality') %>
 
-We can now see the answer to question 2 on p.~\pageref{ch:kinematics}. If we keep accelerating
-a spaceship steadily, we are simply continuing the process of acceleration shown in figure
-\figref{three-fifths-c-twice}. If we do this indefinitely, the velocity will approach $c=1$ but never
-surpass it. (For some more on this topic of going faster than light, see section \ref{sec:tachyons}.)
+<% begin_sec("Flatness",nil,'flatness') %>
+In postulate P1 we implicitly assumed that given two points, there is a certain vector
+connecting them. This is equivalent to the Euclidean postulate that two points define a line.
+<% end_sec('flatness') %>
 
-Note that the relationship between the first and second frames of reference in
-figure \figref{three-fifths-c-twice} is the same as the relationship between the second and third.
-Therefore if a passenger is to feel a steady sensation of acceleration (or, equivalently, if an
-accelerometer aboard the ship is to show a constant reading), then the \emph{proper} time required
-to pass from the first frame to the second must be the same as the \emph{proper} time
-to go from the second to the third. A nice way to express this is to define the \emph{rapidity}\index{rapidity}
-$\eta=\ln D$. Combining velocities means multiplying $D$'s, which is the same as adding their logarithms.
-Therefore we can write the relativistic rule for combining velocities simply as
-\begin{equation*}
-  \eta_c = \eta_1 + \eta_2 \qquad .
-\end{equation*}
-The passengers perceive the acceleration as steady if $\eta$ increase by the same amount per unit of
-proper time. In other words, we can define a proper acceleration $d\eta/d\tau$, which corresponds
-to what an accelerometer measures.\index{acceleration!proper}
-
-Rapidity is convenient and useful, and is very frequently used in particle physics. But in
-terms of ordinary velocities, the
-rule for combining velocities can also be rewritten using identity [9] from section \ref{sec:identities} as
-\begin{equation*}
-  v_c = \frac{v_1+v_2}{1+v_1 v_2} \qquad .
-\end{equation*}
-
-<% self_check('v-combo-si',<<-'SELF_CHECK'
-How can we tell that this equation is written in natural units? Rewrite it in SI units.
-  SELF_CHECK
-  ) %>
-
-<% end_sec('velocity-addition') %>
-
-<% begin_sec("Some kinematic identities",nil,'identities') %>
-
-The following identities can be handy, and if stranded on a desert island you should be able
-to rederive them from scratch. Don't memorize them.
-
-\noindent\begin{tabular}{lll}
-{[}1] \enskip $v=(D^2-1)/(D^2+1)$       & {[}5] \enskip $\eta=\ln D$        & {[}10] \enskip $D_c = D_1 D_2$ \\
-{[}2] \enskip $\gamma=(D^{-1}+D)/2$     & {[}6] \enskip $v=\tanh \eta$      & {[}11] \enskip $\eta_c = \eta_1 + \eta_2$ \\
-{[}3] \enskip $v \gamma=(D-D^{-1})/2$   & {[}7] \enskip $\gamma=\cosh \eta$ & {[}12] \enskip $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
-{[}4] \enskip $D(v)D(-v)=1$            & {[}8] \enskip $v \gamma=\sinh \eta$ &  \\
-\multicolumn{3}{l}{{[}9] \enskip $\tanh(x+y)=(\tanh x+\tanh y)/(1+\tanh x \tanh y)$}
-\end{tabular}
-
-% checking these:
-% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; (D^2-1)/(D^2+1); (1/D+D)/2; vg; (D-1/D)/2"
-% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; eta=ln D; tanh eta; cosh eta; vg; sinh eta"
-
-<% end_sec('identities') %>
-
-<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames') %>
-We have seen in section \ref{sec:velocity-addition} that no continuous process of acceleration can
-boost a material object to $c$. That is, the subluminal (slower than light) nature
-of a electron or a person is a fundamental feature of its identity and can never be changed.
-Einstein can never get on his motorcycle and drive at $c$ as he imagined when he was a young man,
-so we material beings can never see the world from a frame of reference that travels at $c$.
-
-Our universe does, however, contain ingredients such as light rays, gluons, and gravitational waves
-that travel at $c$, so we might wonder whether these things could be put together to form
-observers who do move at $c$. But this is not possible according to special relativity,
-because if we let $v$ approach infinity, extrapolation of
-figure \figref{three-fifths-c-twice} on p.~\pageref{fig:three-fifths-c-twice} shows that the Lorentz
-transformation would compress all of spacetime onto the light cone, reducing its number of dimensions by 1.
-Distinct points would be merged, which would make it impossible to use this frame to describe the
-same phenomena that a subluminal observer could describe. That is, the transformation would not
-be one-to-one, and this is unacceptable physically.
-
-But what about a \emph{superluminal} observer, one who moves faster than $c$?
-With charming naivete, the special-effects technicians 
-for Star Trek attempted to show the frame of reference of such an
-observer in scenes where a field of stars rushed past the Enterprise. (Never mind that
-the stars, which pass in front of and behind the spaceship, should actually be a million
-times larger than it.) Actually such an observer (would could not be made out of normal material
-particles such as electrons and protons) would consider its own world-line, which we call
-spacelike, to be timelike, while the world-line of a star such as our sun, which we consider timelike,
-would be spacelike. That is, our sun would not appear to it as an object in motion but rather as line
-stretching across space, which would wink into existence and then wink back out.
-A typical transformation between our frame and the frame of such an observer would be
-$(x,t)\rightarrow(t,x)$, simply swapping the time and space coordinates. The transformation is
-one-to-one, and therefore unobjectionable. 
-
-But this is all in 1+1 dimensions. In 3+1 dimensions, we run into the difficulty that the transformation
-between our frame and that of the superluminal being cannot be one-to-one, since we can't
-squish three dimensions to one or expand one to three without merging points or splitting one
-point into many. Our conclusion, then, is that there can be no such thing as a superluminal
-observer in our 3+1-dimensional universe. A more formal proof has been given
-by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
-Open access via Project Euclid at
-\url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
-If we could boost a material object past the speed of light, even by some discontinuous process, then we could do so for an observer. However, there is a no-go theorem, Gorini 1971, proving that this is impossible in 3+1 dimensions.
-For more about faster-than-light motion in relativity, see section \ref{sec:tachyons}.
-<% end_sec('ftl-frames') %>
-
-\begin{hwsection}
-
-<% begin_hw('doppler-concrete') %>
-Verify directly, using the geometry of figure \subfigref{twin-signals}{2} on p.~\pageref{fig:twin-signals}
-that for $v=3/5$, the Doppler shift factor is $D=2$. (Do not simply plug $v=3/5$ into the
-formula $D=\sqrt{(1+v)/(1-v)}$.)
-<% end_hw %>
-
-<% begin_hw('doppler-abstract') %>
-Generalize the numerical calculation of problem \ref{hw:doppler-concrete} to
-prove the general result $D=\sqrt{(1+v)/(1-v)}$.
-<% end_hw %>
-
-\end{hwsection}
+<% end_chapter %>

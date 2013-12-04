@@ -278,7 +278,6 @@ opinion as to what constitutes simultaneity. Because the convention on a Cartesi
 is to draw the axes at right angles to one another, we refer to such a pair of vectors as
 orthogonal, but the word is not to be interpreted literally, since we can't define an actual angle
 between a time interval and a spatial displacement.
-
 <% 
   fig(
     'three-cases',
