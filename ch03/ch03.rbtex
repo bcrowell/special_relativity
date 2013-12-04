@@ -520,6 +520,8 @@ In summary, massless particles always move at $v=c$, while massive ones always m
 Note that the equation $p=m\gamma v$ isn't general enough to serve as a definition of momentum, since
 it bcomes an indeterminate form in the limit $m\rightarrow0$.
 
+... example: oh-my-god particle
+
 \begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
 We observe that electromagnetic waves are always polarized transversely, never longitudinally.
 Such a constraint can only apply to a wave that propagates at $c$. If it applied to a wave that
@@ -551,5 +553,55 @@ $\Delta \tau$, and this is indeed how the velocity vector is defined in relativi
 A velocity vector is only defined for particles whose world-lines are timelike, i.e., massive particles.
 For such particles, the product of $\vc{v}$ with the scalar mass $m$ gives the momentum vector $\vc{p}=m\vc{v}$.
 
-...copy more stuff on v vector from genrel; add a section on tachyons, experimental searches...
+...copy more stuff on v vector from genrel
 <% end_sec('v-vector') %>
+
+<% begin_sec("Tachyons and FTL",nil,'tachyons') %>
+We now summarize some ideas about faster-than-light (FTL) motion in relativity:
+
+\begin{enumerate}
+\item Superluminal transmission of information would violate causality, since it would allow a
+   causal relationship between events that were spacelike in relation to one another, and the 
+   time-ordering of such events is different according to different observers. Since we never observe
+   causality to be violated, we suspect that superluminal transmission of information is impossible.
+   This leads us to interpret the metric in relativity as being fundamentally a statement of possible
+   cause and effect relationships between events.
+\item We observe the invariant mass defined by $m^2=E^2-p^2$ to be a fixed property of all objects.
+   Therefore we suspect that it is not possible for an object to change from having $|E|>|p|$ to having $|E|<|p|$.
+\item No continuous process of acceleration can bring an observer from $v<c$ to $v>c$ (see
+   section \ref{sec:velocity-addition}). Since it's possible to build an observer out of material objects,
+   it seems that it's impossible to get a material object past $c$ by a continuous process of acceleration.
+\item If we could boost a material object past the speed of light, even by some discontinuous process, then we could
+   do so for an observer. But faster-than-light frames of reference are kinematically impossible
+   in 3+1 dimensions (section \ref{sec:ftl-frames}).
+\end{enumerate}
+
+<% marg %>
+<%
+  fig(
+    'football-causality',
+    %q{Newton's laws do not distinguish past from future. The football could travel in either direction
+       while obeying Newton's laws.}
+  )
+%>
+<% end_marg %>
+
+The weakest of these arguments is 1, since the role of causality in physics is surprisingly slippery.
+Newton's laws and Maxwell's equations are symmetric under time reversal, figure \figref{football-causality},
+and although the nuclear weak interaction lacks this symmetry, it has the closely related CPT symmetry.
+There is an arrow of time provided by the second law of thermodynamics, and this arises ultimately from
+the fact that, for reasons unknown to us, the universe soon after the Big Bang was in a state of extremely
+low entropy.\footnote{One can find a vast amount of nonsense written about this, such as claims that the
+second law is derivable without reference to any cosmological context. For a careful treatment, see
+Callender, ``Thermodynamic Asymmetry in Time,'' The Stanford Encyclopedia of Philosophy,
+\url{plato.stanford.edu/archives/fall2011/entries/time-thermo}.} General relativity doesn't give much
+support to any naive belief in causality that we might have formed based on everyday experience.\footnote{For example, general relativity
+says that given generic initial conditions, gravitational collapse leads to the formation of singularities, points
+where the structure of spacetime breaks down and various measurable quantities become infinite. Singularities
+typically violate causality, since the laws of physics can't describe them. In a famous image, John Earman
+wrote that if we have a certain type of singularity, ``all sorts of nasty things \ldots emerge helter-skelter \ldots,''
+including ``TV sets showing Nixon's `Checkers' speech, green slime, 
+Japanese horror movie monsters, etc.''}\label{causality-longer}\index{causality}
+ 
+
+<% end_sec('tachyons') %>

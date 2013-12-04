@@ -209,7 +209,9 @@ stretch factor of 4, and solving the equation $D(v)=4$ for $v$ gives the result,
 We can now see the answer to question 2 on p.~\pageref{ch:kinematics}. If we keep accelerating
 a spaceship steadily, we are simply continuing the process of acceleration shown in figure
 \figref{three-fifths-c-twice}. If we do this indefinitely, the velocity will approach $c=1$ but never
-surpass it. Note that the relationship between the first and second frames of reference in
+surpass it. (For some more on this topic of going faster than light, see section \ref{sec:tachyons}.)
+
+Note that the relationship between the first and second frames of reference in
 figure \figref{three-fifths-c-twice} is the same as the relationship between the second and third.
 Therefore if a passenger is to feel a steady sensation of acceleration (or, equivalently, if an
 accelerometer aboard the ship is to show a constant reading), then the \emph{proper} time required
@@ -296,7 +298,8 @@ observer in our 3+1-dimensional universe. A more formal proof has been given
 by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
 Open access via Project Euclid at
 \url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
-
+If we could boost a material object past the speed of light, even by some discontinuous process, then we could do so for an observer. However, there is a no-go theorem, Gorini 1971, proving that this is impossible in 3+1 dimensions.
+For more about faster-than-light motion in relativity, see section \ref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
 
 \begin{hwsection}
