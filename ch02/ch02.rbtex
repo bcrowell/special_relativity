@@ -66,7 +66,7 @@ Echeverria \emph{et al.},
 The Norton paper in particular has generated a large literature at the interface between physics and
 philosophy, and one can find most of the relevant material online using the keywords ``Norton's dome.''
 
-Nor does general relativity doesn't give much support to the Laplacian version of causality.
+Nor does general relativity give much support to the Laplacian version of causality.
 For example, general relativity
 says that given generic initial conditions, gravitational collapse leads to the formation of singularities, points
 where the structure of spacetime breaks down and various measurable quantities become infinite. Singularities
@@ -87,12 +87,131 @@ $\Delta\vc{r}_{12}$ is timelike in all frames.
 
 This is sufficient to rule out the ``rotational'' version of the Lorentz transformation shown in
 figure \figref{three-cases} on p.~\pageref{fig:three-cases}.
+If P1 were violated, then we could never describe one event as causing another, since there would
+always be frames of reference in which the effect was observed as preceding the cause.
 
 <% end_sec('modest-causality') %>
+<% end_sec('causality') %>
 
 <% begin_sec("Flatness",nil,'flatness') %>
-In postulate P1 we implicitly assumed that given two points, there is a certain vector
-connecting them. This is equivalent to the Euclidean postulate that two points define a line.
+In postulate P1 we implicitly assumed that given two points, there was a certain vector
+connecting them. This is analogous to the Euclidean postulate that two points define a line.
+
+For insight, let's think about how the Euclidean version of this assumption could fail.
+Euclidean geometry is only an approximate description of the earth's surface, for example,
+and this is why flat maps always entail distortions of the actual shapes. The distortions
+might be negligible on a map of Connecticut, but severe for a map of the whole world.
+That is, the globe is only locally Euclidean. On a spherical surface, the appropriate object
+to play the role of a ``line'' is a great circle, figure \figref{geodesic}.
+The lines of longitude are examples of
+great circles, and since these all coincide at the poles, we can see that two points
+do not determine a line in noneuclidean geometry.
+<% marg(100) %>
+<%
+  fig(
+    'geodesic',
+    %q{An airplane flying from Mexico City to London follows the shortest path, which is
+       a segment of a great circle. A path of extremal length between two points is called a geodesic.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'parallel-transport',
+    %q{Transporting the vector along path BA gives a different result than doing it
+      along the path BCA.}
+  )
+%>
+<% end_marg %>
+
+A two-dimensional bug living on the surface of a sphere would not be able to tell that the
+sphere was embedded in a third dimension, but it could still detect the curvature of the
+surface. It could tell that Euclid's postulates were false on large distance scales.
+A method that has a better analog in spacetime is shown in figure \figref{parallel-transport}:
+transporting a vector from one point to another depends on the path
+along which it was transported. This effect
+is our definition of curvature.
+
+Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assumption.
+
+P2. \emph{Flatness of spacetime.} Transporting a vector from one point to another gives
+a result that is independent of the path along which it was transported.
+
+We implicitly assumed this, for example, in the argument on p.~\pageref{subsubsec:area-is-scalar},
+where we discussed flipping the polka-dot lattice of events to interchange the positive and negative
+$x$ directions; in a curved spacetime, there is no particular reason to believe that such an operation
+is even possible.
+
+A physical example of transporting a vector is provided by transporting a gyroscope. The Gravity Probe B
+satellite, launched in 2004, carried four gyroscopes
+made of quartz, which were the most perfect spheres ever manufactured,
+varying from sphericity by no more than about 40 atoms. After one year and about 5000 orbits around
+the earth, the gyroscopes were found to have changed their orientations relative to the distant stars by
+about $3\times10^{-6}$ radians. This is a violation of P2, but one that was very small and difficult to
+detect. The result was in good agreement with the predictions of general relativity, which describes
+gravity as a curvature of spacetime. The smallness of the effect tells us that the earth's gravitational
+field is not so large as to completely invalidate special relativity as a description of the nearby region
+of spacetime. One of the basic assumptions of general relativity is that in a small enough region of
+spacetime, it is always a good approximation to assume P2. In the Gravity Probe B experiment,
+the effect was small and hard to detect, and this was the reason for letting the effect accumulate
+over a large number of orbits, spanning a large region of spacetime.
+
 <% end_sec('flatness') %>
+
+<% begin_sec("Additional postulates",nil,'symmetry-postulates') %>
+We make the following additional assumptions:
+
+\begin{itemize}
+\item[P3] \emph{Spacetime is homogeneous and isotropic.} No time or place has special properties that make it distinguishable from other points, nor is one
+                  direction in space distinguishable from 
+                  another.\footnote{For the experimental evidence on isotropy, see \url{http://www.edu-observatory.org/physics-faq/Relativity/SR/experiments.html#Tests_of_isotropy_of_space}.}
+\item[P4] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
+              No experiment can distinguish one preferred inertial frame from all the others.
+\item[P5] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not subject to any forces.
+                  We can construct such a frame by using a particular particle, which is not subject to any nongravitational forces, as a reference point.
+\item[P6] \emph{Relativity of time:} There exist events 1 and 2 and frames of reference defined by observers
+        $\vc{o}$ and $\vc{o}'$ such that $\vc{o}\perp\vc{r}_{12}$ is true but
+        $\vc{o'}\perp\vc{r}_{12}$ is false, where the notation $\vc{o}\perp\vc{r}$ means that observer
+        $\vc{o}$ finds $\vc{r}$ to be a vector of simultaneity according to some convenient criterion such as
+        Einstein synchronization.\footnote{example \ref{eg:einstein-train}, p.~\pageref{eg:einstein-train}}
+\end{itemize}
+
+Postulates P3 and P4 describe symmetries of spacetime, while P6 differentiates the spacetime of special relativity from
+Galilean spacetime. Postulate P5 defines what we have meant when we referred to the parallelism
+of vectors in spacetime (e.g., in figure \figref{twin-paradox} on p.~\pageref{fig:twin-paradox}).
+Postulates P1-P6 were all the assumptions that were needed in order to arrive at the picture
+of spacetime described in ch. 1. This approach, based on symmetries, dates back to 
+1911.\footnote{W.~v.~Ignatowsky, Phys.~Zeits.~11 (1911) 972. The original paper unfortunately seems very difficult
+to obtain.}
+
+Einstein used a different axiomatization in his 1905 paper on special relativity:\footnote{Paraphrased from the translation by W.~Perrett and G.B.~Jeffery.}
+
+1. \emph{Principle of relativity:} The laws of electrodynamics and optics are
+valid for all frames of reference for which the equations of mechanics hold good.
+
+2. Light is always propagated in empty space with a definite velocity $c$ which is
+independent of the state of motion of the emitting body.
+
+His approach has been slavishly
+followed in many later textbook presentations, even though the special role it assigns to light is not
+consistent with how modern physicists think about the fundamental structure of the laws of physics.
+(In 1905 there was no other phenomenon known to travel at $c$.) Einstein did not explicitly state anything
+like our P2 (flatness), since he had not yet developed the theory of general relativity or the idea of
+representing gravity in relativity as spacetime curvature. When he did publish the general theory, he
+described the distinction between special and general relativity as a generalization of the class of
+acceptable frames of reference to include accelerated as well as inertial frames. This description has
+not stood the test of time, and all relativists use flatness as the distinguishing criterion. In particular,
+it is not true, as one sometimes still hears claimed, that special relativity is incompatible with accelerated
+frames of reference.
+
+It is useful to compare the two axiomatizations, P1-P6 and Einstein's, side by side in order to gain insight into
+how much ``wiggle room'' there is in constructing theories of spacetime. Since they are logically equivalent, any statement
+occurring in one axiomatization can be proved as a theorem in the other. For example, we might wonder whether
+
+
+DSR...?
+
+
+<% end_sec('symmetry-postulates') %>
 
 <% end_chapter %>
