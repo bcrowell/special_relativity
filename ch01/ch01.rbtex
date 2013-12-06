@@ -16,6 +16,7 @@ roughly equivalent to a university freshman physics survey course, but much of i
 intelligible to those with less physics-fu than that. Optional sections are marked with stars,
 and all of chapter \ref{ch:foundations} is optional.
 \end{indentedblock}
+<% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
 
 ``The test of a first-rate intelligence is the ability to hold two opposing ideas in mind at
 the same time and still retain the ability to function.'' ---F.~Scott Fitzgerald
@@ -44,7 +45,6 @@ from that era would have been offended to be accused of even partial Aristotelia
 
 \vfill
 
-<% begin_sec("Three models of spacetime",4,'three-models-of-spacetime') %>
 <% begin_sec("Aristotelian spacetime",nil,'aristotelian-spacetime') %>
 
 Figure \subfigref{observers-and-simultaneity}{1} shows an observer and two clocks, represented
@@ -124,7 +124,6 @@ around it, without showing any natural tendency to fall behind it like a paper c
 out the window of a car. Just as an observer $\vc{o}_1$ standing on the earth would consider
 the earth to be at rest, $\vc{o}_2$ hovering in a balloon at Jupiter's cloudtops would say
 that the jovian clouds represented an equally ``natural'' state of rest.
-
 <%
   fig(
     'jovian-moons',
@@ -181,7 +180,7 @@ along $\vc{o}_3$ and then returned via $\vc{o}_4$. But this is not consistent wi
 results, which show that Betty undergoes a violent acceleration at her turnaround point, while Alice
 and the other inhabitants of the earth feel no such effect.
 
-<% marg(100) %>
+<% marg(0) %>
 <%
   fig(
     'galilean-twin-paradox',
@@ -190,7 +189,7 @@ and the other inhabitants of the earth feel no such effect.
 %>
 <% end_marg %>
 
-The paradox is resolved by realizing that Galilean relativity defined unambiguously whether or not
+The paradox is resolved by realizing that Galilean relativity defines unambiguously whether or not
 two vectors are parallel. It's true that we could fix a frame of reference in which
 $\vc{o}_1$ represented the spaceship staying at rest,
 but $\vc{o}_2$ is not parallel to $\vc{o}_1$, so in this frame we still have a good explanation
@@ -208,19 +207,9 @@ phenomena we observe. Because of the relatively crude state of technology \emph{
 1900, it required considerable insight for Einstein to piece together a fragmentary
 body of indirect evidence and arrive at a consistent and correct model of spacetime.
 Today, the evidence is part of everyday life. For example,
-every time you use a GPS receiver, figure \figref{gps-on-bike}, you're using Einstein's theory of relativity.
+every time you use a GPS receiver, you're using Einstein's theory of relativity.
 Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
 that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
-<% marg %>
-<%
-  fig(
-    'gps-on-bike',
-    %q{This Global Positioning System (GPS) system, running on a smartphone attached to a bike's handlebar,
-       depends on Einstein's theory of relativity. Time flows at a different rate aboard a GPS satellite than
-       it does on the bike, and the GPS software has to take this into account.}
-  )
-%>
-<% end_marg %>
 
 A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating
 brought atomic clocks aboard commercial
@@ -239,7 +228,7 @@ so a new theory like Einstein's had to agree with Galileo's to a good approximat
 realm of applicability. This requirement of backward-compatibility is known as
 the correspondence principle.\index{correspondence principle!for time dilation}\index{correspondence principle!defined}
 
-<% marg(80) %>
+<% marg(180) %>
 <%
   fig(
     'hk-in-cabin',
@@ -254,14 +243,8 @@ the correspondence principle.\index{correspondence principle!for time dilation}\
            to the east due to the earth's rotation.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'einstein-s-and-o-vectors',
-    %q{According to Einstein, simultaneity is relative, not absolute.}
-  )
-%>
 <% end_marg %>
+
 
 It's also reassuring that the effects on time were
 small compared to the three-day lengths of the plane trips. There was therefore no
@@ -269,7 +252,8 @@ opportunity for paradoxical scenarios such as one in which the east-going experi
 back in Washington before he left and then convinced himself not to take the trip.
 A theory that maintains this kind of orderly relationship between cause and effect is 
 said to satisfy
-causality.\footnote{For more about causality, see p.~\pageref{causality-longer}.}\index{causality}
+causality.\footnote{For more about causality, see section \ref{sec:causality},
+p.~\pageref{sec:causality}.}\index{causality}
 
 Hafele and Keating were testing specific quantitative predictions of relativity, and they verified them to within
 their experiment's error bars. Let's work backward instead, and
@@ -286,6 +270,14 @@ opinion as to what constitutes simultaneity. Because the convention on a Cartesi
 is to draw the axes at right angles to one another, we refer to such a pair of vectors as
 orthogonal, but the word is not to be interpreted literally, since we can't define an actual angle
 between a time interval and a spatial displacement.
+<% marg(80) %>
+<%
+  fig(
+    'einstein-s-and-o-vectors',
+    %q{According to Einstein, simultaneity is relative, not absolute.}
+  )
+%>
+<% end_marg %>
 <% 
   fig(
     'three-cases',
@@ -311,7 +303,7 @@ one possibility for Einstein's spacetime, which is the one in which a clockwise 
 $\vc{o}$ causes a counterclockwise rotation of $\vc{s}$, like closing a pair of scissors.
 
 Now there is a limit to how far this process can go, or else the $\vc{s}$ and $\vc{o}$ would eventually
-lie on the same line. But this can never be, for a valid $\vc{s}$ vector can never be a valid $\vc{o}$, nor
+lie on the same line. But this is impossible, for a valid $\vc{s}$ vector can never be a valid $\vc{o}$, nor
 an $\vc{o}$ a valid $\vc{s}$. Such a possibility would mean that an observer would describe two different
 points on his own world-line as simultaneous, but an observer for whom no time passes is not an observer
 at all, since observation implies collecting data and then being able to remember it at some later time.
@@ -341,8 +333,10 @@ those on the cone itself as lightlike or null.
 
 An important advantage of Einstein's relativity over Galileo's is that it is compatible with the
 empirical observation that some phenomena travel at a certain fixed speed. Light travels at a fixed speed,
-and so do gravitational waves (which, although they have not yet been observed directly, have been
+and so do other phenomena such as
+gravitational waves (which, although they have not yet been observed directly, have been
 indirectly confirmed to exist through observations of the decaying orbits of binary neutron stars).
+So do all massless particles (subsection \ref{subsec:massless-go-at-c}).
 This fixed speed is $c$, and all observers agree on it. In 1905, the only phenomenon known to travel
 at $c$ was light, so $c$ is usually described as the ``speed of light,'' but from the modern point
 of view it functions more as a kind of conversion factor between our units of measurement for time
@@ -433,9 +427,9 @@ represented by this line, 1 after.
 
 Example \ref{eg:einstein-train} is of course impractical as described, since real
 trains don't travel at speeds anywhere near $c$ relative to the dirt. We say that
-their speeds are ``nonrelativistic.'' Since Einstein coined the term ``relativity,''
+their speeds are ``nonrelativistic.'' Because Einstein coined the term ``relativity,''
 and his version of relativity superseded Galileo's, the unmodified word is normally
-understood to refer to Einstein-relativity. A physicist who studies Einstein-relativity
+understood to refer to Einsteinian relativity. A physicist who studies Einstein-relativity
 is a relativist. A material object moving at a speed very close to $c$ is described
 as ultrarelativistic.
 
@@ -466,7 +460,7 @@ from one inertial frame of reference to another, without any rotation, is called
  Electric charge is a good example of a relativistic scalar. Electrons in atoms typically
 have velocities of 0.01 to 0.1 (in our relativistic units, where $c=1$), so if an electron's charge
 depended on its motion relative to an observer, atoms would not be electrically neutral. Experiments
-have been built\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
+have been done\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
 with null results.
 
@@ -499,7 +493,7 @@ is the same in all frames of reference, and the sides of
 the rectangle had slopes $\pm 1$ in frame 1, they must still have slopes $\pm 1$ in frame 2.
 The rectangle becomes a square with its diagonals parallel to the $x$ and $t$ axes, and the length of these diagonals equals the
 time $\tau$ elapsed on a clock that is at rest in frame 2, i.e., a clock that glides through space at constant velocity from A to B,
-meeting up with the planet earth at the appointed time.
+reuniting with the planet earth when its orbit brings it to B.
 The area of the gray regions can be interpreted as half the square of this gliding-clock time, which is
 called the proper time.\index{proper time}
 ``Proper'' is used here in the
@@ -520,7 +514,7 @@ Since the area vanishes for $x=t$, the $x^2$ coefficient must equal $-1$.
 When $|x|$ is greater than $|t|$, events A and B are so far apart in space and so close together in time that
 it would be impossible to have a cause and effect relationship between them, since $c=1$ is the maximum speed of cause and effect.
 In this situation $t^2-x^2$ is negative and cannot be interpreted as a clock time, but it can be interpreted as minus the square of the
-distance between A and B. 
+distance between A and B, as measured in a frame of reference in which A and B are simultaneous.
 
 Generalizing to 3+1 dimensions and to any vector $\vc{v}$, not just a displacement in spacetime,
 we have a measurement of the vector defined by
@@ -539,8 +533,8 @@ Because of the analogy with the Euclidean dot product, we often use the notation
 $\vc{u}\cdot\vc{v}$ for this quantity, and we sometimes call it the inner product.\index{inner product}
 The metric is the central object of relativity.\index{metric}
 In general relativity, which describes gravity as a curvature of spacetime, the coefficients
-occurring on the right-hand side are no longer $\pm 1$, but can vary from point to point.
-Even in special relativity, where the coefficients are constant,
+occurring on the right-hand side are no longer $\pm 1$, but must vary from point to point.
+Even in special relativity, where the coefficients can be made constant,
 the definition of $g$ is arbitrary up to a nonzero multiplicative constant, and in particular
 many authors define $g$ as the negative of our definition.
 The sign convention we use is the most common one in particle physics,
@@ -550,7 +544,7 @@ or $-+++$, is called the signature of the metric.\index{signature}
 In subsection \ref{subsec:einstein-spacetime} we developed the idea of orthogonality of spacetime
 vectors, with the physical interpretation that if an observer moves along a vector $\vc{o}$, a
 vector $\vc{s}$ that is orthogonal to $\vc{o}$ is a vector of simultaneity. This corresponds
-to the vanishing of the inner product, $\vc{o}\cdot\vc{s}=0$. This is only imperfectly analogous to
+to the vanishing of the inner product, $\vc{o}\cdot\vc{s}=0$, and is only imperfectly analogous to
 the idea that Euclidean vectors are perpendicular if their dot product is zero. In particular,
 a nonzero Euclidean vector is never perpendicular to itself, but for any lightlike vector $\vc{v}$
 we have $\vc{v}\cdot\vc{v}=0$. The metric doesn't give us a measure of the length of
@@ -642,7 +636,7 @@ Figure \figref{twin-paradox} is the relativistic version of example \ref{eg:gali
 on p.~\pageref{eg:galilean-twin-paradox}. We intend to analyze it using the metric, and since the
 metric gives the same result in any frame, we have chosen for convenience to represent it in the
 frame in which the earth is at rest. 
-We have $\vc{a}=(0,t)$ and $\vc{b}=(t,vx)$, where $v$ is the velocity of the spaceship relative
+We have $\vc{a}=(t,0)$ and $\vc{b}=(t,vx)$, where $v$ is the velocity of the spaceship relative
 to the earth. Application of the metric gives proper time $t$ for the earthbound twin
 and $t\sqrt{1-v^2}$ for the traveling twin. The same results apply for $\vc{c}$ and $\vc{d}$. The result
 is that the earthbound twin experiences a time that is greater by a factor $\gamma$ (Greek letter gamma)
@@ -683,9 +677,10 @@ of the operations required in order to measure it: time is defined as what a clo
 This philosophy, which has been immensely influential among physicists, is 
 called operationalism\index{operationalism} and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
 in the 1920's. Our operational definition of time works because the rates of \emph{all} physical processes
-are affected equally by time dilation. Not only has the traveling twin in figure \figref{twin-paradox}
+are affected equally by time dilation. By the time the twins in figure \figref{twin-paradox} are reunited,
+not only has the traveling twin 
 heard fewer ticks from her antique mechanical 
-pocket watch than the earthbound one by the time they are reunited, but
+pocket watch, but
 she has also had fewer heartbeats, and the ship's atomic clock agrees with her watch to within the precision
 of the watch.
 
@@ -849,7 +844,7 @@ original coordinate grid from the first panel, while the grid of black lines rep
 from the second panel. Omitting the grid from the gray rectangle makes the diagram easier
 to decode visually.
 
-<% marg(0) %>
+<% marg(50) %>
 <%
   fig(
     'smooshing',
@@ -859,14 +854,11 @@ to decode visually.
 <% end_marg %>
 
 In special relativity it is of special interest to convert between the coordinates
-of observers who are in motion relative to one another. This amounts to taking the
-lattice construction of figure \figref{polka-dots} on
-p.~\pageref{fig:polka-dots}, and covering spacetime with a graph-paper grid. The result,
+of observers who are in motion relative to one another. The result,
 shown in figure \figref{smooshing}, is a kind of stretching and smooshing of the
 diagonals. Since the area is invariant, one diagonal grows by the same factor by
 which the other shrinks. This change of coordinates is called the 
 Lorentz transformation.\index{Lorentz transformation} 
-
 <% 
   fig(
     'clock-and-ruler-gamma',
@@ -883,7 +875,7 @@ Lorentz transformation.\index{Lorentz transformation}
     },
     {
       'width'=>'wide',
-      'sidecaption'=>false
+      'sidecaption'=>true
       # 'sidepos'=>'b'
     }
   )
@@ -942,6 +934,8 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
     }
   )
 %>
+
+\pagebreak
 
 <%
   fig(

@@ -39,10 +39,10 @@ the CPT transformation.)
 
 There is an arrow of time provided by the second law of thermodynamics, and this arises ultimately from
 the fact that, for reasons unknown to us, the universe soon after the Big Bang was in a state of extremely
-low entropy. (One can find a vast amount of nonsense written about this, such as claims that the
+low entropy.\footnote{One can find a vast amount of nonsense written about this, such as claims that the
 second law is derivable without reference to any cosmological context. For a careful treatment, see
 Callender, ``Thermodynamic Asymmetry in Time,'' The Stanford Encyclopedia of Philosophy,
-\url{plato.stanford.edu/archives/fall2011/entries/time-thermo}.
+\url{plato.stanford.edu/archives/fall2011/entries/time-thermo}.}
 <% end_sec('arrow-of-time') %>
 
 <% begin_sec("Initial-value problems",nil,'initial-value-problems') %>
@@ -56,8 +56,7 @@ would be uncertain, and the future as the past would be laid
 out before its eyes.'' The reference to ``one instant'' is not compatible with special relativity, which has
 no frame-independent definition of simultaneity. We can, however, define initial conditions on some
 spacelike three-surface, i.e., a three-dimensional set of events that is smooth, has the topology of
-Euclidean space, and in which points sufficiently close to one another are separated from one another
-by a spacelike interval.
+Euclidean space, and whose events are spacelike in relation to one another.
 
 Unfortunately it is not obvious whether the classical laws of physics satisfy Laplace's definition
 of causality. Two interesting and accessible papers that express a skeptical view on this issue are
@@ -68,7 +67,7 @@ Echeverria \emph{et al.},
 The Norton paper in particular has generated a large literature at the interface between physics and
 philosophy, and one can find most of the relevant material online using the keywords ``Norton's dome.''
 
-Nor does general relativity give much support to the Laplacian version of causality.
+Nor does general relativity offer much support to the Laplacian version of causality.
 For example, general relativity
 says that given generic initial conditions, gravitational collapse leads to the formation of singularities, points
 where the structure of spacetime breaks down and various measurable quantities become infinite. Singularities
@@ -139,7 +138,7 @@ Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assu
 P2. \emph{Flatness of spacetime.} Transporting a vector from one point to another gives
 a result that is independent of the path along which it was transported.
 
-We implicitly assume this, for example, in the argument on p.~\pageref{subsubsec:area-is-scalar},
+We implicitly assume this, for example, in the argument on p.~\pageref{subsec:area-is-scalar},
 where we discuss flipping the polka-dot lattice of events to interchange the positive and negative
 $x$ directions; in a curved spacetime, there is no particular reason to believe that such an operation
 is even possible.
@@ -154,7 +153,8 @@ detect. The result was in good agreement with the predictions of general relativ
 gravity as a curvature of spacetime. The smallness of the effect tells us that the earth's gravitational
 field is not so large as to completely invalidate special relativity as a description of the nearby region
 of spacetime. One of the basic assumptions of general relativity is that in a small enough region of
-spacetime, it is always a good approximation to assume P2. In the Gravity Probe B experiment,
+spacetime, it is always a good approximation to assume P2, so that general relativity is locally
+the same as special relativity. In the Gravity Probe B experiment,
 the effect was small and hard to detect, and this was the reason for letting the effect accumulate
 over a large number of orbits, spanning a large region of spacetime.
 
@@ -210,7 +210,7 @@ like our P2 (flatness), since he had not yet developed the theory of general rel
 representing gravity in relativity as spacetime curvature. When he did publish the general theory, he
 described the distinction between special and general relativity as a generalization of the class of
 acceptable frames of reference to include accelerated as well as inertial frames. This description has
-not stood the test of time, and all relativists use flatness as the distinguishing criterion. In particular,
+not stood the test of time, and today relativists use flatness as the distinguishing criterion. In particular,
 it is not true, as one sometimes still hears claimed, that special relativity is incompatible with accelerated
 frames of reference.
 <% end_sec('einstein-postulates') %>
