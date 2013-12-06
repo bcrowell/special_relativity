@@ -240,7 +240,7 @@ How can we tell that this equation is written in natural units? Rewrite it in SI
 
 <% end_sec('velocity-addition') %>
 
-<% begin_sec("Some kinematic identities",nil,'identities') %>
+<% begin_sec("Some kinematic identities",nil,'identities',{'optional'=>true}) %>
 
 The following identities can be handy, and if stranded on a desert island you should be able
 to rederive them from scratch. Don't memorize them.
@@ -259,7 +259,7 @@ to rederive them from scratch. Don't memorize them.
 
 <% end_sec('identities') %>
 
-<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames') %>
+<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
 We have seen in section \ref{sec:velocity-addition} that no continuous process of acceleration can
 boost a material object to $c$. That is, the subluminal (slower than light) nature
 of a electron or a person is a fundamental feature of its identity and can never be changed.

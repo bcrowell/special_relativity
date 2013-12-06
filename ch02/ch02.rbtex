@@ -139,8 +139,8 @@ Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assu
 P2. \emph{Flatness of spacetime.} Transporting a vector from one point to another gives
 a result that is independent of the path along which it was transported.
 
-We implicitly assumed this, for example, in the argument on p.~\pageref{subsubsec:area-is-scalar},
-where we discussed flipping the polka-dot lattice of events to interchange the positive and negative
+We implicitly assume this, for example, in the argument on p.~\pageref{subsubsec:area-is-scalar},
+where we discuss flipping the polka-dot lattice of events to interchange the positive and negative
 $x$ directions; in a curved spacetime, there is no particular reason to believe that such an operation
 is even possible.
 
@@ -245,12 +245,70 @@ we might wonder whether it is possible to equip Galilean spacetime with a metric
 with a metric would satisfy the axioms of system T, which are logically equivalent to our system P. The underlying
 reason for this is that in Galilean spacetime there is no natural way to compare the scales of distance and time.
 
+Or we could ask whether it is possible to compose variations on the theme of special relativity, alternative theories
+whose properties differ in some way. System P shows that this would be unlikely to succeed without violating the
+symmetry of spacetime.
+
 Another interesting example is Amelino-Camelia's doubly-special 
 relativity,\footnote{\url{arxiv.org/abs/gr-qc/0012051}} in which we have both an invariant speed $c$ and an
-invariant length $L$, which is assumed to be the Planck length $\sqrt{\hbar G/c^3}$. In order to make his theory
+invariant length $L$, which is assumed to be the Planck length $\sqrt{\hbar G/c^3}$. The invariance
+of this length contradicts the existence of length contraction. In order to make his theory
 work, Amelino-Camelia is obliged to assume that energy-momentum vectors (section \ref{sec:momentum}) have
 their own special inner product that violates the algebraic properties referred to in T2.
 
 <% end_sec('compare-axiomatizations') %>
+
+<% marg(20) %>
+<%
+  fig(
+    'polka-dots',
+    %q{Area is a scalar.}
+  )
+%>
+<% end_marg %>
+<% begin_sec("Lemma: spacetime area is a scalar",nil,'area-is-scalar') %>
+In this section we prove from axioms P1-P6 that
+area in the $x-t$ plane is a scalar, i.e., it does not change between frames of reference.
+This result is used in section \ref{subsec:metric} to find the form of the spacetime metric.
+
+Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
+$\vc{s}_1$ are orthogonal and have equal lengths as measured by a clock and a ruler (which are calibrated
+in units such that $c=1$, e.g., seconds and light-seconds). The square lattice of white polka-dots is
+obtained from them by repeated addition. The same properties hold for vectors $\vc{o}_2$ and $\vc{s}_2$,
+which give the lattice of black dots. As required, the two lattices agree on their 45-degree diagonals.
+Now within the $10\times10$ portion of the white lattice shown with gray shading,
+we have an area of 100. In the same region we count about 100 or 101 black dots --- there is some
+ambiguity because of the dots that lie on the boundary. The density of white and black dots is in fact
+exactly equal, as can be verified to any desired precision by making the region big enough. In other
+words, the diagram is drawn so that area is preserved, which is what we are going to show is required.
+
+If it was
+observer 2 rather than 1 who was drawing the diagram, presumably she would choose to draw the black
+dots in a square lattice and vectors $\vc{o}_2$ and $\vc{s}_2$ at right angles. This would require
+vectors $\vc{o}_1$ and $\vc{s}_1$ to be opened up at an oblique angle and the white lattice to be non-square.
+
+Now suppose we had \emph{not} made area conserved. What if a region containing 100 white dots had
+held 200 black ones? But a boost of velocity $v$ is the same as a flip of the
+spatial dimension followed by a $-v$ boost and another flip.
+Therefore this would violate one or the other of two principles:
+(1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
+the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
+(neither $+x$ nor $-x$ is a preferred direction). As an example of how principle 2 could fail, we could
+imagine that instead of a flat page in a book, the diagram was drawn on the back of someone's hand;
+then due to the asymmetry of the hand, it would not even be possible to flip the pattern over.
+We conclude that if these two symmetry principles hold,
+then spacetime area is the same for any two observers, so it is a scalar.
+
+It may seem unnecessarily clumsy that we've used the idea of counting dots in the above argument,
+but remember that our main use of this result is to derive the form of the metric, and before the
+metric had been found,
+we had no system of measurement for relativity, so we had
+only very primitive techniques at our disposal.
+
+<% self_check('galilean-area',<<-'SELF_CHECK'
+Is the above argument also valid for Galilean relativity?
+  SELF_CHECK
+  ) %>
+<% end_sec('area-is-scalar') %>
 
 <% end_chapter %>

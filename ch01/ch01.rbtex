@@ -10,6 +10,13 @@
   )
 %>
 
+\begin{indentedblock}
+This book is intended for readers who already have a physics background
+roughly equivalent to a university freshman physics survey course, but much of it should be
+intelligible to those with less physics-fu than that. Optional sections are marked with stars,
+and all of chapter \ref{ch:foundations} is optional.
+\end{indentedblock}
+
 ``The test of a first-rate intelligence is the ability to hold two opposing ideas in mind at
 the same time and still retain the ability to function.'' ---F.~Scott Fitzgerald
 
@@ -35,6 +42,22 @@ Until 1905, physicists were trained to accept two mutually contradictory theorie
 spacetime. I'll call these the Aristotelian and Galilean views, although my colleagues
 from that era would have been offended to be accused of even partial Aristotelianism.
 
+\vfill
+
+<% begin_sec("Three models of spacetime",4,'three-models-of-spacetime') %>
+<% begin_sec("Aristotelian spacetime",nil,'aristotelian-spacetime') %>
+
+Figure \subfigref{observers-and-simultaneity}{1} shows an observer and two clocks, represented
+using the graphical conventions of figure \subfigref{spacetime}{3}. The existence
+of such a material object at a certain place and time constitutes an \emph{event},\index{event}
+which we idealize as a point, \subfigref{observers-and-simultaneity}{2}. Spacetime consists of
+the set of all events. As time passes, a physical object traces out a continuous curve, a set of events
+known in relativistic parlance as its \emph{world-line}.\index{world-line} Since paper and computer
+screens are two-dimensional, the drawings only represent one dimension of space plus one dimension of
+time, which in relativity we call ``1+1 dimensions.'' The real universe has three spatial
+dimensions, so real spacetime has 3+1 dimensions. Most, but not all, of the interesting phenomena
+in special relativity can be understood in 1+1 dimensions, so whenever possible in this book I will
+draw 1+1-dimensional figures without apology or explanation.
 <% 
   fig(
     'observers-and-simultaneity',
@@ -50,21 +73,6 @@ from that era would have been offended to be accused of even partial Aristotelia
   )
 %>
 
-<% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
-<% begin_sec("Aristotelian spacetime",nil,'aristotelian-spacetime') %>
-
-Figure \subfigref{observers-and-simultaneity}{1} shows an observer and two clocks, represented
-using the graphical conventions of figure \subfigref{spacetime}{3}. The existence
-of such a material object at a certain place and time constitutes an \emph{event},\index{event}
-which we idealize as a point, \subfigref{observers-and-simultaneity}{2}. Spacetime consists of
-the set of all events. As time passes, a physical object traces out a continuous curve, a set of events
-known in relativistic parlance as its \emph{world-line}.\index{world-line} Since paper and computer
-screens are two-dimensional, the drawings only represent one dimension of space plus one dimension of
-time, which in relativity we call ``1+1 dimensions.'' The real universe has three spatial
-dimensions, so real spacetime has 3+1 dimensions. Most, but not all, of the interesting phenomena
-in special relativity can be understood in 1+1 dimensions, so whenever possible in this book I will
-draw 1+1-dimensional figures without apology or explanation.
-
 The relativist's attitude is that events and relationships between events
 are primary, while coordinates such as $x$ and $t$ are secondary and
 possibly irrelevant. Coordinates let us attach labels like $(x,t)$ to points, but this is like
@@ -79,7 +87,7 @@ read two minutes after three o'clock tells us that the two events occur at the s
 The Aristotelian model of spacetime is characterized by a set of rules about what vectors are
 valid observer- and simultaneity-vectors. We require that every $\vc{o}$ vector be parallel to every
 other, and likewise for $\vc{s}$ vectors. But, as is usual with vectors, we allow the arrow to be
-drawn anywhere without considering the different locations to have any significance; our model of
+drawn anywhere without considering the different locations to have any significance; that is, our model of
 spacetime doesn't allow different regions to have different properties.
 <% marg %>
 <%
@@ -462,56 +470,10 @@ have been built\footnote{Marinelli and Morpugo, ``The electric neutrality of mat
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
 with null results.
 
-<% marg(20) %>
-<%
-  fig(
-    'polka-dots',
-    %q{Area is a scalar.}
-  )
-%>
-<% end_marg %>
-<% begin_sec("Lemma: spacetime area is a scalar",nil,'area-is-scalar') %>
-Area in the $x-t$ plane is also a scalar, by the following argument.
-Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
-$\vc{s}_1$ are orthogonal and have equal lengths as measured by a clock and a ruler (which are calibrated
-in units such that $c=1$, e.g., seconds and light-seconds). The square lattice of white polka-dots is
-obtained from them by repeated addition. The same properties hold for vectors $\vc{o}_2$ and $\vc{s}_2$,
-which give the lattice of black dots. As required, the two lattices agree on their 45-degree diagonals.
-Now within the $10\times10$ portion of the white lattice shown with gray shading,
-we have an area of 100. In the same region we count about 100 or 101 black dots --- there is some
-ambiguity because of the dots that lie on the boundary. The density of white and black dots is in fact
-exactly equal, as can be verified to any desired precision by making the region big enough. In other
-words, the diagram is drawn so that area is preserved, which is what we are going to show is required.
-
-If it was
-observer 2 rather than 1 who was drawing the diagram, presumably she would choose to draw the black
-dots in a square lattice and vectors $\vc{o}_2$ and $\vc{s}_2$ at right angles. This would require
-vectors $\vc{o}_1$ and $\vc{s}_1$ to be opened up at an oblique angle and the white lattice to be non-square.
-
-Now suppose we had \emph{not} made area conserved. What if a region containing 100 white dots had
-held 200 black ones? But a boost of velocity $v$ is the same as a flip of the
-spatial dimension followed by a $-v$ boost and another flip.
-Therefore this would violate one or the other of two principles:
-(1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
-the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
-(neither $+x$ nor $-x$ is a preferred direction). As an example of how principle 2 could fail, we could
-imagine that instead of a flat page in a book, the diagram was drawn on the back of someone's hand;
-then due to the asymmetry of the hand, it would not even be possible to flip the pattern over.
-We conclude that if these two symmetry principles hold,
-then spacetime area is the same for any two observers, so it is a scalar.
-
-It may seem unnecessarily clumsy that we've used the idea of counting dots in the above argument,
-but remember that we have not yet built up any system of measurement for relativity, so we had
-only very primitive techniques at our disposal.
-
-<% self_check('galilean-area',<<-'SELF_CHECK'
-Is the above argument also valid for Galilean relativity?
-  SELF_CHECK
-  ) %>
-<% end_sec('area-is-scalar') %>
 <% end_sec('scalars') %>
 
 <% begin_sec("The metric",nil,'metric') %>
+Area in the $x-t$ plane is also a scalar, as proved on p.~\pageref{subsec:area-is-scalar}.
 The invariance of area has little importance on its own, but it provides a good stepping stone toward
 a relativistic system of measurement. 
 Suppose that we have events A (Charles VII is restored to the throne) and B (Joan of Arc is executed). Now imagine
