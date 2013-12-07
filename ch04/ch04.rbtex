@@ -292,6 +292,51 @@ practical technique. This is because the square of the speed
 of light is such a large number.
 \end{eg}
 
+\pagebreak
+
+\begin{eg}{Relativistic kinetic energy}\label{eg:bertozzi}
+By about 1930, particle accelerators had progressed to the point at which relativistic effects
+were routinely taken into account. In 1964, Bertozzi did special-purpose experiment to
+test the predictions of relativity using an electron accelerator. Electrons were accelerated
+through a static electric potential difference $V$ to a variety of kinetic energies $K=eV$,
+and their velocities inferred by measuring their time
+of flight through a beamline of length $\ell=8.4\ \munit$. Electrical pulses were recorded on
+an oscilloscope at the beginning and end of the time of flight $t$. The energies
+were confirmed by calorimetry. Figure \figref{bertozzi}
+shows a sample photograph of an oscilloscope trace at $V=1.5\ \zu{MeV}$.
+<%
+  fig(
+    'bertozzi',
+    %q{Example \ref{eg:bertozzi}. Each horizontal division is 9.8 ns.},
+    {
+      'width'=>'wide',   
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The prediction of Newtonian physics is as follows.
+\begin{align*}
+  eV &= \frac{1}{2}mv^2 \\
+  \frac{v}{c} &= 2.4 \\
+  t &= 12\ \zu{ns}
+\end{align*}
+According to special relativity, we have:
+\begin{align*}
+  eV &= m(\gamma-1)c^2 \\
+  \frac{v}{c} &= \sqrt{1-\left(1+\frac{eV}{mc^2}\right)^{-2}} \\
+              &= 0.97 \\
+  t           &= 29\ \zu{ns}
+\end{align*}
+The results contradict the Newtonian prediction and are consistent with special relativity.
+According to Newton, this amount of energy should have accelerated the electrons to several
+times the speed of light. In reality, we see a clear demonstration of the nature of $c$ as
+a limiting velocity.
+\end{eg}
+%  calc -xe "V=1.5 MV; m=9.1 10^-31 kg; vc=(1/c)*sqrt(2eV/m); x=8.4 m; t=x/(vc*c)"
+%  calc -xe "V=1.5 MV; m=9.1 10^-31 kg; vc=sqrt{1-[1+(eV)/(mc^2)]^(-2)}; x=8.4 m; t=x/(vc*c)"
+
+
 <%
   fig(
     'eclipse',
@@ -302,8 +347,6 @@ of light is such a large number.
     }
   )
 %>
-
-\pagebreak
 
 \begin{eg}{Gravity bending light}\label{eg:eclipse}
 Gravity is a universal attraction between things that have mass, and since the energy
@@ -492,6 +535,7 @@ anther without interacting.}
 %--------- see http://physicsforums.com/showthread.php?p=3998393&posted=1#post3998393
 \end{eg}
 
+
 \begin{eg}{Compton scattering}
 Figure \subfigref{compton-edge}{1} is a histogram of gamma rays emitted by a
 $^{137}\zu{Cs}$ source and recorded by a NaI scintillation detector.
@@ -536,8 +580,16 @@ $\alpha=E_\zu{o}/m$, so that $v=\alpha/(1+\alpha)$.
 The transformation from the lab frame to the c.m. frame Doppler shifts the energy of the incident
 photon down to $E'=D(-v)E_\zu{o}$. The collision reverses the spatial part of the photon's energy-momentum
 vector while leaving its energy the same. Transformation back into the lab frame gives
-$E_f=D(-v)E'=D(-v)^2E_\zu{o}=E_\zu{o}/(1+2\alpha)$. (This can also be rewritten
+$E_f=D(-v)E'=D(-v)^2E_\zu{o}=E_\zu{o}/(1+2\alpha)$. 
+(This can also be rewritten
 using the quantum-mechanical relation $E=hc/\lambda$ to give the compact form $\lambda_f-\lambda_\zu{o}=2hc/m$.)
+The final result for the energy of the Compton edge is
+\begin{align*}
+  E_\zu{o}-E_f &= \frac{E_\zu{o}}{1+1/2\alpha} \\
+               &= 478\ \zu{keV} \qquad ,
+\end{align*}
+in good agreement with figure \subfigref{compton-edge}{1}.
+% calc -e "E=662; m=511; a=E/m; E/(1+1/(2a))"
 \end{eg}
 
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>

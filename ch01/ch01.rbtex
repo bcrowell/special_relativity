@@ -567,6 +567,15 @@ It doesn't matter which we pick, since the metric is arbitrary up to a constant 
 The former expression gives a result in meters, the latter seconds.
 \end{eg}
 
+\begin{eg}{Orthogonal light rays?}
+\egquestion On a spacetime diagram in 1+1 dimensions, we represent the light cone
+with the two lines $x=\pm t$, drawn at an angle of 90 degrees relative to one another.
+Are these lines orthogonal?
+
+\eganswer No. For example, if $\vc{u}=(1,1)$ and $\vc{v}=(1,-1)$, then
+$\vc{u}\cdot\vc{v}$ is 2, not zero.
+\end{eg}
+
 \begin{eg}{Pioneer 10}\label{eg:pioneer-interval}
 \egquestion The Pioneer 10 space probe was launched in 1972, and in 1973 was the first craft to
 fly by the planet Jupiter. It crossed the orbit of the planet Neptune in 1983, after which telemetry
@@ -989,21 +998,25 @@ as they cruised past each other. Wouldn't they have to
 agree on whether B had already happened?
 \end{dq}
 
+
+<% 
+  fig(
+    'dq-pole-paradox',
+    %q{Discussion question \ref{dq:pole-paradox}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+      # 'sidepos'=>'b'
+    }
+  )
+%>
+
 \begin{dq}\label{dq:pole-paradox}
-The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
+The rod in figure \figref{dq-pole-paradox} is perfectly rigid. At event A, the hammer strikes one end of the rod.
 At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
 and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
 the person on the left to decide to pick up the hammer and use it?
 \end{dq}
-
-<% marg(50) %>
-<%
-  fig(
-    'dq-pole-paradox',
-    %q{Discussion question \ref{dq:pole-paradox}.}
-  )
-%>
-<% end_marg %>
 
 <% end_sec('lorentz-transformation') %>
 
