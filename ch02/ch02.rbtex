@@ -119,8 +119,15 @@ do not determine a line in noneuclidean geometry.
 <%
   fig(
     'parallel-transport',
-    %q{Transporting the vector along path BA gives a different result than doing it
-      along the path BCA.}
+    %q{Transporting the vector along path AC gives a different result than doing it
+      along the path ABC.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'schild-ladder',
+    %q{Parallel transport.}
   )
 %>
 <% end_marg %>
@@ -133,22 +140,34 @@ transporting a vector from one point to another depends on the path
 along which it was transported. This effect
 is our definition of curvature.
 
+The particular type of transport that we have in mind here is called parallel transport.\index{parallel transport}
+When I walk from the living room to the kitchen while carrying a mechanical gyroscope, I'm
+parallel-transporting the spacelike vector indicated by the direction of its axis.
+Figure \figref{schild-ladder} shows that parallel transport can also be defined for timelike vectors,
+and that parallel transport can be defined in spacetime using only inertial motion,
+clocks, and intersection of world-lines. Observers aboard the two spaceships exchange clocks in order
+to verify the parallelism of their world-lines (vectors AB and CD, which have equal lengths as measured
+by the proper time elapsed aboard the ships). The observers shoot the clocks across the space between them, and
+the clocks are set up so that when they pass by one another, they automatically record one another's readings.
+The vectors are parallel if the record later reveals AD and BC intersected at their midpoints, as measured
+by the proper times recorded on the clocks.
+
 Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assumption.
 
-P2. \emph{Flatness of spacetime.} Transporting a vector from one point to another gives
+P2. \emph{Flatness of spacetime.} Parallel-transporting a vector from one point to another gives
 a result that is independent of the path along which it was transported.
 
-We implicitly assume this, for example, in the argument on p.~\pageref{subsec:area-is-scalar},
-where we discuss flipping the polka-dot lattice of events to interchange the positive and negative
-$x$ directions; in a curved spacetime, there is no particular reason to believe that such an operation
-is even possible.
+For example, when we established the form of the metric in section \ref{subsec:metric}, we used
+the fact, proved on p.~\pageref{subsec:area-is-scalar}, that area is a scalar, but that proof
+depends on P2.
 
-A physical example of transporting a vector is provided by transporting a gyroscope. The Gravity Probe B
-satellite, launched in 2004, carried four gyroscopes
+Property P2 is only approximately true, as shown explicitly by the Gravity Probe B
+satellite, launched in 2004. The probe carried four gyroscopes
 made of quartz, which were the most perfect spheres ever manufactured,
 varying from sphericity by no more than about 40 atoms. After one year and about 5000 orbits around
 the earth, the gyroscopes were found to have changed their orientations relative to the distant stars by
-about $3\times10^{-6}$ radians. This is a violation of P2, but one that was very small and difficult to
+about $3\times10^{-6}$ radians (figure \figref{gravity-probe-b-geodetic-graphs}).
+This is a violation of P2, but one that was very small and difficult to
 detect. The result was in good agreement with the predictions of general relativity, which describes
 gravity as a curvature of spacetime. The smallness of the effect tells us that the earth's gravitational
 field is not so large as to completely invalidate special relativity as a description of the nearby region
@@ -157,6 +176,18 @@ spacetime, it is always a good approximation to assume P2, so that general relat
 the same as special relativity. In the Gravity Probe B experiment,
 the effect was small and hard to detect, and this was the reason for letting the effect accumulate
 over a large number of orbits, spanning a large region of spacetime.
+
+<%
+  fig(
+    'gravity-probe-b-geodetic-graphs',
+    %q{%
+      Precession angle as a function of time as measured by the four gyroscopes aboard Gravity Probe B.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
 
 <% end_sec('flatness') %>
 
@@ -258,7 +289,7 @@ their own special inner product that violates the algebraic properties referred 
 
 <% end_sec('compare-axiomatizations') %>
 
-<% marg(20) %>
+<% marg(-30) %>
 <%
   fig(
     'polka-dots',
@@ -274,7 +305,10 @@ This result is used in section \ref{subsec:metric} to find the form of the space
 Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
 $\vc{s}_1$ are orthogonal and have equal lengths as measured by a clock and a ruler (which are calibrated
 in units such that $c=1$, e.g., seconds and light-seconds). The square lattice of white polka-dots is
-obtained from them by repeated addition. The same properties hold for vectors $\vc{o}_2$ and $\vc{s}_2$,
+obtained from them by repeated addition. By assuming that this lattice construction is possible, we are
+implicitly assuming postulate P2, flatness of spacetime.
+
+The same properties hold for vectors $\vc{o}_2$ and $\vc{s}_2$,
 which give the lattice of black dots. As required, the two lattices agree on their 45-degree diagonals.
 Now within the $10\times10$ portion of the white lattice shown with gray shading,
 we have an area of 100. In the same region we count about 100 or 101 black dots --- there is some
@@ -289,13 +323,12 @@ vectors $\vc{o}_1$ and $\vc{s}_1$ to be opened up at an oblique angle and the wh
 
 Now suppose we had \emph{not} made area conserved. What if a region containing 100 white dots had
 held 200 black ones? But a boost of velocity $v$ is the same as a flip of the
-spatial dimension followed by a $-v$ boost and another flip.
+spatial dimension followed by a $-v$ boost and another flip. (If P2 failed, then it might not be
+possible to flip a rigid shape in this way.)
 Therefore this would violate one or the other of two principles:
 (1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
 the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
-(neither $+x$ nor $-x$ is a preferred direction). As an example of how principle 2 could fail, we could
-imagine that instead of a flat page in a book, the diagram was drawn on the back of someone's hand;
-then due to the asymmetry of the hand, it would not even be possible to flip the pattern over.
+(neither $+x$ nor $-x$ is a preferred direction).
 We conclude that if these two symmetry principles hold,
 then spacetime area is the same for any two observers, so it is a scalar.
 
