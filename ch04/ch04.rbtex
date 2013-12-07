@@ -492,6 +492,54 @@ anther without interacting.}
 %--------- see http://physicsforums.com/showthread.php?p=3998393&posted=1#post3998393
 \end{eg}
 
+\begin{eg}{Compton scattering}
+Figure \subfigref{compton-edge}{1} is a histogram of gamma rays emitted by a
+$^{137}\zu{Cs}$ source and recorded by a NaI scintillation detector.
+This type of detector, unlike a Geiger-Muller counter, gives a pulse whose height is
+proportional to the energy of the radiation. About half the gamma rays do what we would
+like them to do in a detector: they deposit their full energy of 662 keV in the detector,
+resulting in a prominent peak in the histogram. The other half, however, interact through a process
+called Compton scattering, in which they collide with one of the electrons but emerge from the
+collision still retaining some of their energy, with which they may escape from the detector.
+The amount of energy deposited in the detector depends solely on the billiard-ball kinematics
+of the collision, and can be determined from conservation of energy-momentum based on the
+scattering angle. Forward scattering at 0 degrees is no interaction at all, and deposits no
+energy, while scattering at 180 degrees deposits the maximum energy possible if the only
+interaction inside the detector is a single Compton scattering. We will analyze the 180-degree scattering,
+since it can be tackled in 1+1 dimensions.
+<%
+  fig(
+    'compton-edge',
+    %q{%
+      1. The Compton edge lies at the energy deposited by gamma rays that scatter at 180 degrees from an electron.
+      2. The collision in the lab frame. 3. The same collision in the center of mass frame.
+    },
+    {
+      'width'=>'wide',   
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \subfigref{compton-edge}{2} shows the collision in the lab frame, where the electron is initially
+at rest. As is conventional in this type of diagram, the world-line of the photon is shown as a wiggly
+line; the wiggles are just a decoration, and the actual world-line consists of two line segments. The
+photon enters the detector with the full energy $E_\zu{o}=662\ \zu{keV}$ and leaves with a smaller
+energy $E_f$. The difference $E_\zu{o}-E_f$ is what the detector will measure, contributing a count to
+the Compton edge. In the lab frame, the total initial momentum vector is $\vc{p}=(E_\zu{o}+m,E_\zu{o})$,
+with the timelike component representing the total mass-energy. Because the photon is massless,
+its momentum $p_x=E_\zu{o}$ is equal to its energy. The vector $\vc{p}$ lies along a line whose
+inverse slope $v=E_\zu{o}/(E_\zu{o}+m)$ gives the velocity of the center-of-mass frame,
+\subfigref{compton-edge}{3}, relative to the lab frame. To make the writing easier we define
+$\alpha=E_\zu{o}/m$, so that $v=\alpha/(1+\alpha)$.
+
+The transformation from the lab frame to the c.m. frame Doppler shifts the energy of the incident
+photon down to $E'=D(-v)E_\zu{o}$. The collision reverses the spatial part of the photon's energy-momentum
+vector while leaving its energy the same. Transformation back into the lab frame gives
+$E_f=D(-v)E'=D(-v)^2E_\zu{o}=E_\zu{o}/(1+2\alpha)$. (This can also be rewritten
+using the quantum-mechanical relation $E=hc/\lambda$ to give the compact form $\lambda_f-\lambda_\zu{o}=2hc/m$.)
+\end{eg}
+
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
 Massless particles always travel at $c(=1)$. For suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
 other observer could be at rest relative to the particle. In such a frame,
