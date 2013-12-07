@@ -95,6 +95,7 @@ always be frames of reference in which the effect was observed as preceding the 
 <% end_sec('causality') %>
 
 <% begin_sec("Flatness",nil,'flatness') %>
+<% begin_sec("Failure of parallelism",nil,'failure-of-parallelism') %>
 In postulate P1 we implicitly assumed that given two points, there was a certain vector
 connecting them. This is analogous to the Euclidean postulate that two points define a line.
 
@@ -139,7 +140,9 @@ A method that has a better analog in spacetime is shown in figure \figref{parall
 transporting a vector from one point to another depends on the path
 along which it was transported. This effect
 is our definition of curvature.
+<% end_sec('failure-of-parallelism') %>
 
+<% begin_sec("Parallel transport",nil,'parallel-transport') %>
 The particular type of transport that we have in mind here is called parallel transport.\index{parallel transport}
 When I walk from the living room to the kitchen while carrying a mechanical gyroscope, I'm
 parallel-transporting the spacelike vector indicated by the direction of its axis.
@@ -151,7 +154,9 @@ by the proper time elapsed aboard the ships). The observers shoot the clocks acr
 the clocks are set up so that when they pass by one another, they automatically record one another's readings.
 The vectors are parallel if the record later reveals AD and BC intersected at their midpoints, as measured
 by the proper times recorded on the clocks.
+<% end_sec('parallel-transport') %>
 
+<% begin_sec("Special relativity requires flat spacetime",nil,'flatness-postulate') %>
 Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assumption.
 
 P2. \emph{Flatness of spacetime.} Parallel-transporting a vector from one point to another gives
@@ -189,6 +194,7 @@ over a large number of orbits, spanning a large region of spacetime.
   )
 %>
 
+<% end_sec('flatness-postulate') %>
 <% end_sec('flatness') %>
 
 <% begin_sec("Additional postulates",nil,'symmetry-postulates') %>
@@ -288,6 +294,7 @@ work, Amelino-Camelia is obliged to assume that energy-momentum vectors (section
 their own special inner product that violates the algebraic properties referred to in T2.
 
 <% end_sec('compare-axiomatizations') %>
+<% end_sec('other-axiomatizations') %>
 
 <% marg(-30) %>
 <%

@@ -297,7 +297,9 @@ of light is such a large number.
 \begin{eg}{Relativistic kinetic energy}\label{eg:bertozzi}
 By about 1930, particle accelerators had progressed to the point at which relativistic effects
 were routinely taken into account. In 1964, Bertozzi did special-purpose experiment to
-test the predictions of relativity using an electron accelerator. Electrons were accelerated
+test the predictions of relativity using an electron accelerator. The results were discussed
+in less detail in example \ref{eg:bertozzi-graph} on p.~\pageref{eg:bertozzi-graph}, at which point
+we had not yet seen the relativistic equation for kinetic energy. Electrons were accelerated
 through a static electric potential difference $V$ to a variety of kinetic energies $K=eV$,
 and their velocities inferred by measuring their time
 of flight through a beamline of length $\ell=8.4\ \munit$. Electrical pulses were recorded on
@@ -317,15 +319,14 @@ shows a sample photograph of an oscilloscope trace at $V=1.5\ \zu{MeV}$.
 
 The prediction of Newtonian physics is as follows.
 \begin{align*}
-  eV &= \frac{1}{2}mv^2 \\
-  \frac{v}{c} &= 2.4 \\
+  eV &= (1/2)mv^2 \\
+  v/c &= 2.4 \\
   t &= 12\ \zu{ns}
 \end{align*}
 According to special relativity, we have:
 \begin{align*}
   eV &= m(\gamma-1)c^2 \\
-  \frac{v}{c} &= \sqrt{1-\left(1+\frac{eV}{mc^2}\right)^{-2}} \\
-              &= 0.97 \\
+  \frac{v}{c} &= \sqrt{1-\left(1+\frac{eV}{mc^2}\right)^{-2}} =0.97 \\
   t           &= 29\ \zu{ns}
 \end{align*}
 The results contradict the Newtonian prediction and are consistent with special relativity.
@@ -471,6 +472,23 @@ $(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
 This is an example of the non-additivity of relativistic mass.
 \end{eg}
 
+\begin{eg}{Finding velocity given energy and momentum}\label{eg:v-from-p-vector}
+\egquestion If we know that a particle has mass-energy $E$ and momentum $p$ (which also implies
+knowledge of its mass $m$), what is its velocity?
+
+\eganswer In the particle's rest frame it has a world-line that points straight up on a spacetime
+diagram, and its momentum vector $\vc{p}$ likewise points up in the $p-E$ plane. Since displacement
+vectors and momentum vectors transform according to the same rules, this parallelism will be maintained
+in other frames as well. Therefore in an arbitrarily chosen frame,
+the vector $\vc{p}=(E,p)$ lies along a line whose
+inverse slope $v=p/E$ gives the velocity.
+
+As a check on our result, we look at its limiting behavior. In the Newtonian limit, the mass-energy
+$E$ is nearly all due to the mass, so we have $v\approx p/m$, the Newtonian result.
+In the opposite limit of ultrarelativistic motion, with $E \gg m$, the definition of mass
+$m^2=E^2-p^2$ gives $E\approx |p|$, and we have $|v|\approx 1$, which is also correct.
+\end{eg}
+
 \begin{eg}{Light rays don't interact}\label{eg:light-rays-do-not-interact}
 We observe that when two rays of light cross paths, they continue through one another
 without bouncing like material objects. This behavior follows directly from conservation
@@ -572,10 +590,13 @@ photon enters the detector with the full energy $E_\zu{o}=662\ \zu{keV}$ and lea
 energy $E_f$. The difference $E_\zu{o}-E_f$ is what the detector will measure, contributing a count to
 the Compton edge. In the lab frame, the total initial momentum vector is $\vc{p}=(E_\zu{o}+m,E_\zu{o})$,
 with the timelike component representing the total mass-energy. Because the photon is massless,
-its momentum $p_x=E_\zu{o}$ is equal to its energy. The vector $\vc{p}$ lies along a line whose
-inverse slope $v=E_\zu{o}/(E_\zu{o}+m)$ gives the velocity of the center-of-mass frame,
-\subfigref{compton-edge}{3}, relative to the lab frame. To make the writing easier we define
-$\alpha=E_\zu{o}/m$, so that $v=\alpha/(1+\alpha)$.
+its momentum $p_x=E_\zu{o}$ is equal to its energy.
+
+Let $v$ be
+the velocity of the center-of-mass frame,
+\subfigref{compton-edge}{3}, relative to the lab frame.
+Using the result of example \ref{eg:v-from-p-vector}, we find $v=E_\zu{o}/(E_\zu{o}+m)$.
+To make the writing easier we define $\alpha=E_\zu{o}/m$, so that $v=\alpha/(1+\alpha)$.
 
 The transformation from the lab frame to the c.m. frame Doppler shifts the energy of the incident
 photon down to $E'=D(-v)E_\zu{o}$. The collision reverses the spatial part of the photon's energy-momentum
@@ -619,8 +640,6 @@ In summary, massless particles always move at $v=c$, while massive ones always m
 
 Note that the equation $p=m\gamma v$ isn't general enough to serve as a definition of momentum, since
 it bcomes an indeterminate form in the limit $m\rightarrow0$.
-
-... example: oh-my-god particle
 
 \begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
 We observe that electromagnetic waves are always polarized transversely, never longitudinally.

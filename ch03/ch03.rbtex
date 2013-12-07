@@ -197,6 +197,13 @@ transformations one after the other, figure \figref{three-fifths-c-twice}.
        represented according to the graphical conventions of section \ref{sec:lorentz-transformation}.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'electrons-limiting-speed',
+    %q{Example \ref{eg:bertozzi-graph}.}
+  )
+%>
 <% end_marg %>
 
 The inverse slope of the left side of each parallelogram indicates its velocity relative to the
@@ -210,6 +217,32 @@ We can now see the answer to question 2 on p.~\pageref{ch:kinematics}. If we kee
 a spaceship steadily, we are simply continuing the process of acceleration shown in figure
 \figref{three-fifths-c-twice}. If we do this indefinitely, the velocity will approach $c=1$ but never
 surpass it. (For some more on this topic of going faster than light, see section \ref{sec:tachyons}.)
+
+\begin{eg}{Accelerating electrons}\label{eg:bertozzi-graph}
+Figure \figref{electrons-limiting-speed} shows the results of a 1964 experiment by Bertozzi in which
+electrons were accelerated by the static electric field $E$ of a Van de Graaff accelerator of
+length $\ell_1$. They were then allowed to fly down a beamline of length $\ell_2=8.4\ \munit$
+without being acted on by any force. The time of flight $t_2$ was used to find the final
+velocity $v=\ell_2/t_2$ to which they had been accelerated. (To make the
+low-energy portion of the graph legible, Bertozzi's highest-energy
+data point is omitted.)
+
+If we believed in Newton's laws, then the electrons would have an acceleration $a_N=Ee/m$, which would
+be constant if, as we pretend for the moment, the field $E$ were constant. (The electric field inside a Van de
+Graaff accelerator is not really quite constant, but this will turn out not to matter.) The Newtonian
+prediction for the time over which this acceleration occurs is $t_N=\sqrt{2m\ell_1/eE}$.
+An acceleration $a_N$ acting for a time $t_N$ should produce a final velocity
+$a_N t_N=\sqrt{2eV/m}$, where $V=E\ell_1$ is the voltage difference. (By conservation
+of energy, this equation holds even if the field is not constant.) The solid line in the
+graph shows the prediction of Newton's laws, which is that a constant force exerted steadily over
+time will produce a velocity that rises linearly and without limit.
+
+The experimental data, shown as black dots, clearly tell a different story. The velocity asymptotically
+approaches a limit, which we identify as $c$. The dashed line shows the predictions of special relativity,
+which we are not yet ready to calculate because we haven't yet seen how kinetic energy depends on
+velocity at relativistic speeds. The calculation is carried out in
+example \ref{eg:bertozzi} on p.~\pageref{eg:bertozzi}.
+\end{eg}
 
 Note that the relationship between the first and second frames of reference in
 figure \figref{three-fifths-c-twice} is the same as the relationship between the second and third.
