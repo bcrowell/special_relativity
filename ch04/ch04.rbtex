@@ -846,7 +846,8 @@ Current thinking in quantum field theory is that tachyonic fields actually would
 signal velocity, and that tachyonic fields are to be interpreted not as real physical phenomena but
 as unphysical features of certain field theories.\footnote{Baez gives a good explanation at
 \url{math.ucr.edu/home/baez/physics/ParticleAndNuclear/tachyons.html}.}
-A brief flurry of reawakened theoretical interest
+
+A brief flurry of reawakened interest
 in tachyons was occasioned by a 2011 debacle in which the particle-physics experiment OPERA
 mistakenly reported faster-than-light propagation of neutrinos; the anomaly was later found to
 be the result of a loose connection on a fiber-optic cable plus a miscalibrated oscillator.
@@ -854,6 +855,14 @@ be the result of a loose connection on a fiber-optic cable plus a miscalibrated 
 <% end_sec('tachyons') %>
 
 \begin{hwsection}
+<% begin_hw('enterprise-ke') %>
+Suppose that the starship Enterprise from Star Trek has a mass 
+of $8.0\times10^7$ kg, about the same as the Queen Elizabeth 2. 
+Compute the kinetic energy it would have to have if it 
+was moving at half the speed of light. Compare with the total 
+energy content of the world's nuclear arsenals, which is about $10^{21}$ J.\answercheck
+<% end_hw %>
+
 <% begin_hw('ouch') %>
 Science fiction stories often depict spaceships traveling through solar systems at relativistic speeds.
 Interplanetary space contains a significant number of tiny dust particles, and such a ship would

@@ -988,21 +988,94 @@ perceive the door as having shut long after she plowed
 through the back wall.
 \end{eg}
 
-\startdqs
+<% end_sec('lorentz-transformation') %>
 
-\begin{dq}
-Use a spacetime diagram to resolve the following relativity paradox.
-Relativity says that in one frame of reference, event A could happen before event B, but in someone else's
-frame B would come before A. How can this be? Obviously the two people could meet up at A and talk
-as they cruised past each other. Wouldn't they have to
-agree on whether B had already happened?
-\end{dq}
+\begin{hwsection}
 
+<% begin_hw('agreeontime') %>
+Astronauts in three different spaceships are communicating with each other.
+Those aboard ships A and B agree on the rate at which time is passing, but
+they disagree with the ones on ship C. \\
+(a) Alice is aboard ship A. How does she describe the motion of her own ship, in its frame of reference?\\
+(b) Describe the motion of the other two ships according to Alice.\\
+(c) Give the description according to Betty, whose frame of reference is ship B.\\
+(d) Do the same for Cathy, aboard ship C.
+<% end_hw %>
+
+<% begin_hw('gammafornegativev') %>
+What happens in the equation for $\gamma$ when you put in a negative number for $v$? Explain
+what this means physically, and why it makes sense.
+<% end_hw %>
+
+<% begin_hw('voyagergamma') %>
+\index{Voyager space probe}
+The Voyager 1 space probe, launched in 1977, is moving faster relative to the earth than
+any other human-made object, at 17,000 meters per second. \\
+(a) Calculate the probe's $\gamma$.\hwendpart
+(b) Over the course of one year on earth, slightly less than one year passes on the probe.
+How much less? (There are 31 million seconds in a year.)\answercheck
+<% end_hw %>
+
+<% begin_hw('earth-lorentz-contraction') %>
+The earth is orbiting the sun, and therefore is contracted relativistically in the
+direction of its motion. Compute the amount by which its diameter shrinks in this
+direction.\answercheck\hwendpart
+<% end_hw %>
+
+<% begin_hw('congruent-four-vectors') %>
+The figure shows seven displacement vectors in spacetime.
+Which of these represent spacetime intervals that are equal to one another?
+<% end_hw %>
+<% marg(20) %>
+<%
+  fig(
+    'hw-congruent-four-vectors',
+    %q{Problem \ref{hw:congruent-four-vectors}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('si-lorentz') %>
+Expressed in natural units, the Lorentz transformation is
+\begin{align*}
+  t' &= \quad \gamma t - v\gamma x \\
+  x' &= -v\gamma t + \gamma x \qquad .
+\end{align*}
+(a) Insert factors of $c$ to make it valid in units where $c\ne1$.
+(b) Show that in the limit $c\rightarrow\infty$, these have the right Galilean behavior.
+<% end_hw %>
+
+<% begin_hw('relativity-max-tension') %>
+The speed at which a disturbance travels along
+a string under tension is given by $v=\sqrt{T/\mu}$, where $\mu$ is the mass per unit
+length, and $T$ is the tension.\\
+ (a) Suppose a string has a density $\rho$, and a cross-sectional
+area $A$. Find an expression for the maximum tension that could possibly exist in the string
+without producing $v>c$, which is impossible according to relativity. Express your answer in
+terms of $\rho$, $A$, and $c$. The interpretation is that relativity puts a limit on how
+strong any material can be.\answercheck\hwendpart
+(b) Every substance has a tensile strength, defined as the force
+per unit area required to break it by pulling it apart. The tensile strength is measured in
+units of $\zu{N}/\munit^2$, which is the same as the pascal (Pa), the mks unit of pressure.
+Make a numerical estimate of the maximum tensile strength allowed by relativity in the case where
+the rope is made out of ordinary matter, with a density on the same order of magnitude as
+that of water. (For comparison, kevlar has a tensile strength of about $4\times10^9$ Pa,
+and there is speculation that fibers made from carbon nanotubes could have
+values as high as  $6\times10^{10}$ Pa.)\answercheck\hwendpart
+ (c) A black hole is a star that has collapsed and become very dense, so that
+its gravity is too strong for anything ever to escape from it. For instance, the escape
+velocity from a black hole is greater than $c$, so a projectile can't be shot out of it.
+Many people, when they hear this description of a black hole in terms of an escape velocity
+greater than $c$, wonder why it still wouldn't be possible to extract an object from a black
+hole by other means than launching it out as a projectile.
+For example, suppose we lower an astronaut into a black hole on a rope, and then pull him
+back out again. Why might this not work?\hwendpart
+<% end_hw %>
 
 <% 
   fig(
-    'dq-pole-paradox',
-    %q{Discussion question \ref{dq:pole-paradox}.},
+    'hw-pole-paradox',
+    %q{Problem \ref{hw:pole-paradox}.},
     {
       'width'=>'wide',
       'sidecaption'=>true
@@ -1011,13 +1084,23 @@ agree on whether B had already happened?
   )
 %>
 
-\begin{dq}\label{dq:pole-paradox}
-The rod in figure \figref{dq-pole-paradox} is perfectly rigid. At event A, the hammer strikes one end of the rod.
+<% begin_hw('pole-paradox') %>
+The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
 At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
 and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
 the person on the left to decide to pick up the hammer and use it?
-\end{dq}
+<% end_hw %>
 
-<% end_sec('lorentz-transformation') %>
+<% begin_hw('meet-up-paradox') %>
+Use a spacetime diagram to resolve the following relativity paradox.
+Relativity says that in one frame of reference, event A could happen before event B, but in someone else's
+frame B would come before A. How can this be? Obviously the two people could meet up at A and talk
+as they cruised past each other. Wouldn't they have to
+agree on whether B had already happened?
+<% end_hw %>
+
+
+
+\end{hwsection}
 
 <% end_chapter %>
