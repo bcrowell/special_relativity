@@ -654,6 +654,12 @@ in which the wave is at rest (see section \ref{sec:ftl-frames}).
 
 <% end_sec('momentum') %>
 
+<% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors',{'optional'=>true}) %>
+Newton's laws are formulated in terms of velocity and acceleration vectors.
+Although it is possible to define corresponding quantities in special relativity,
+and they are of some physical interest,
+they do not play any fundamental role in describing dynamics.
+For these reasons, most readers will want to skip this section.
 <% begin_sec("The velocity vector",nil,'v-vector') %>
 When I say ``vector'' in this book, I mean something that in 3+1 dimensions has four components. This
 can also be referred to as a four-vector.\index{four-vector}
@@ -672,8 +678,79 @@ $\Delta \tau$, and this is indeed how the velocity vector is defined in relativi
 A velocity vector is only defined for particles whose world-lines are timelike, i.e., massive particles.
 For such particles, the product of $\vc{v}$ with the scalar mass $m$ gives the momentum vector $\vc{p}=m\vc{v}$.
 
-...copy more stuff on v vector from genrel
+The velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
+though the object whose motion it describes is not moving at the speed of light.
+When we hear something referred to as a ``vector,''
+we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
+But the sum of two velocity vectors would not typically be a valid velocity vector at all, since
+it would not have unit magnitude. This lack of additivity would in any case have been expected because
+velocities don't add linearly in relativity (section \ref{sec:velocity-addition}).
+
+<% self_check('v-invalid-in-other-frame',<<-'SELF_CHECK'
+Velocity vectors are required to have $v^2=1$. 
+If a vector qualifies as a valid velocity vector in some frame, could it be invalid in another frame?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Velocity and momentum vectors of an object at rest}\label{eg:v-and-p-at-rest}
+An object at rest has $\vc{v}=(1,0)$. The first component indicates that
+if we attach a clock to the object with duct tape,
+the proper time measured by
+the clock suffers no time dilation according to an observer in this
+frame, $\der t/\der\tau=1$. The second component tells us that the object's position isn't changing,
+$\der x/\der\tau=0$.
+
+The object's momentum vector is $\vc{p}=m\vc{v}=(m,0)$, meaning that its mass-energy is equal to its mass,
+and its momentum is zero.
+\end{eg}
+
+
+Example \ref{eg:v-and-p-at-rest} suggests a nice way of thinking about velocity vectors, which is that
+every velocity vector represents a potential observer. That is, the velocity vectors are
+the observer-vectors $\vc{o}$ of chapter \ref{ch:spacetime}, but with a normalization requirement $v^2=1$ that
+we did not impose earlier, which ensures that there is a single, well-defiend velocity vector
+for every observer.
+An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
+Since we have no notion of adding one observer to another observer, it makes sense that
+velocity vectors don't add relativistically.
 <% end_sec('v-vector') %>
+<% begin_sec("The acceleration vector",nil,'a-vector') %>
+The acceleration vector is defined as the derivative of the velocity vector with
+respect to proper time, $\vc{a}=\der\vc{v}/\der\tau$.\index{vector!acceleration}\index{acceleration vector}
+Its squared magnitude is
+only approximately equal to minus the squared magnitude of the Newtonian
+acceleration three-vector, in the limit of small velocities.
+
+\begin{eg}{Constant acceleration}\label{eg:hyperbolic-motion}
+\egquestion Suppose a spaceship moves so that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
+motion $x(t)$ as measured by an observer in an inertial frame.
+
+\eganswer Let $\tau$ stand for the ship's proper time, and let dots indicate derivatives with respect to $\tau$.
+The ship's velocity has magnitude 1, so
+\begin{equation*}
+  \dot{t}^2-\dot{x}^2 = 1 \qquad .
+\end{equation*}
+An observer who is instantaneously at rest with respect to the ship judges is to have an
+acceleration vector $(0,a)$
+(because the low-velocity limit applies).
+The observer in the $(t,x)$ frame agrees on the magnitude of this vector, so
+\begin{equation*}
+  \ddot{t}^2-\ddot{x}^2=-a^2 \qquad .
+\end{equation*}
+The solution of these differential
+equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau$
+(choosing constants of integration so that the expressions take on their simplest forms).
+Eliminating $\tau$ gives
+\begin{equation*}
+  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad .
+\end{equation*}
+As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
+In the same limit,  $x$ increases exponentially with proper time, so that
+surprisingly large distances can in theory be traveled within a human lifetime
+(problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}).
+\end{eg}
+<% end_sec('a-vector') %>
+<% end_sec('v-and-a-vectors') %>
 
 <% begin_sec("Tachyons and FTL",nil,'tachyons',{'optional'=>true}) %>
 <% begin_sec("A defense in depth",nil,'defense-in-depth') %>
@@ -755,6 +832,16 @@ events in which the missing energy-momentum was spacelike. They put upper limits
 the branching ratios of this and several other reactions leading to production of single tachyons
 or tachyon-antitachyon pairs.
 
+When we add quantum mechanics to special relativity, we get quantum field theory, which sounds scary
+and can be quite technical, but is governed by some very simple principles. One of these principles is that
+``everything not forbidden is compulsory.'' The phrase originated as political satire of communism by
+T.H.~White, but was commandeered by physicist Murray Gell-Mann to express the idea that any process
+not forbidden by a conservation law will in fact occur in nature at some rate. This has some disturbing
+implications if tachyons exist. If they do, then it is possible to have two tachyons whose momentum
+vectors add up to zero
+(problem \ref{hw:tachyon-instability}, p.~\pageref{hw:tachyon-instability}).\label{tachyon-instability-introduced}
+This would seem to imply that the vacuum could spontaneously create tachyon-antitachyon pairs,
+causing the universe to blow up.
 Current thinking in quantum field theory is that tachyonic fields actually would not have a superluminal
 signal velocity, and that tachyonic fields are to be interpreted not as real physical phenomena but
 as unphysical features of certain field theories.\footnote{Baez gives a good explanation at
@@ -765,4 +852,65 @@ mistakenly reported faster-than-light propagation of neutrinos; the anomaly was 
 be the result of a loose connection on a fiber-optic cable plus a miscalibrated oscillator.
 <% end_sec('tachyon-searches') %>
 <% end_sec('tachyons') %>
+
+\begin{hwsection}
+<% begin_hw('ouch') %>
+Science fiction stories often depict spaceships traveling through solar systems at relativistic speeds.
+Interplanetary space contains a significant number of tiny dust particles, and such a ship would
+sweep these dust particles out of a large volume of space, impacting them at high speeds.
+% ... name of experiment was S-149
+A 1975 experiment aboard the Skylab space station measured the frequency of impacts from such
+objects and found that a square meter of exposed surface  experienced an impact from
+a particle with a mass of $\sim10^{-15}\ \kgunit$ about every few hours. A relativistic
+object, sweeping through space much more rapidly, would experience such impacts at rates of more
+like one every few seconds.
+(Larger particles are significantly more rare, with the frequency falling off as something
+like $m^{-8}$.)
+These particles didn't damage Skylab, because at relative velocities of $\sim10^4\ \munit/\sunit$
+their kinetic energies were on the order of microjoules. At relativistic speeds it would be
+a different story. Real-world spacecraft are lightweight
+and rather fragile, so there would probably be serious consequences
+from any impact having a kinetic energy of about $10^2\ \junit$ (comparable to a bullet from a
+small handgun). (a) Find the speed at which a starship could cruise through a solar system if
+frequent $10^2\ \junit$ collisions were acceptable, assuming no object with a mass of more than
+$10^{-15}\ \kgunit$. Express your result relative to $c$.
+(b) Find the speed under the more conservative parameters of
+10 J  and $10^{-14}\ \kgunit$.
+<% end_hw %>
+   % calc -xe "m=10^-15 kg; K=100 J; v=sqrt{1-[1+K/(mc^2)]^{-2}}; D=sqrt((1+v)/(1-v)); eta=lnD"
+   % ... v = 0.88
+   % calc -xe "m=10^-14 kg; K=10 J; v=sqrt{1-[1+K/(mc^2)]^{-2}}; D=sqrt((1+v)/(1-v)); eta=lnD"
+   % ... v = 0.15
+
+<% begin_hw('galactic-center') %>
+Example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion}
+derives the equation
+\begin{equation*}
+  x=\frac{1}{a}\cosh a\tau
+\end{equation*}
+for a particle moving with constant acceleration. (Note that a constant of integration was taken
+to be zero, so that $x\ne0$ at $\tau=0$.)
+(a) Rewrite this equation in metric units by inserting the necessary factors of $c$.
+(b) If we had a rocket ship capable of accelerating indefinitely at $g$, how
+much proper time would be needed in order to travel the distance
+$\Delta x=27,000$ light-years to the galactic center? (This will be a flyby, so the
+ship accelerates all the way rather than decelerating to stop at its destination.) Answer: 11 years
+% calc -xe "y=(365*24)(3500 s); ly=(c)y; a=9.8 m/s2; x0=c^2/a; x=x0+27000ly; [acosh(xa/c^2)c/a]/y"
+% Checking that my math is right:
+%   calc -xe "y=(365*24)(3500 s); ly=(c)y; a=9.8 m/s2; x0=c^2/a; x=x0+15000ly; [acosh(xa/c^2)c/a]/y"
+%   This gives 10 years of proper time to travel half of 30,000 ly, in agreement with
+%   http://math.ucr.edu/home/baez/physics/Relativity/SR/rocket.html .
+(c) An observer at rest relative to the galaxy explains the surprisingly short time calculated
+in part b as being due to the time dilation experienced by the traveler. How does the traveler explain
+it?
+<% end_hw %>
+
+<% begin_hw('tachyon-instability') %>
+Show, as claimed on p.~\pageref{tachyon-instability-introduced}, that if tachyons exist,
+then it is possible to have two tachyons whose momentum vectors add up to zero --- arguably
+leading to catastrophic consequences.
+<% end_hw %>
+
+\end{hwsection}
+
 <% end_chapter %>
