@@ -180,7 +180,7 @@ they confirm special relativity.\footnote{MacArthur et al., Phys. Rev. Lett. 56 
 <% end_sec('doppler') %>
 
 <% begin_sec("Combination of velocities",nil,'velocity-addition') %>
-In classical physics, velocities add in relative motion. For example, if a boat moves relative to
+In nonrelativistic physics, velocities add in relative motion. For example, if a boat moves relative to
 a river, and the river moves relative to the land, then the boat's velocity relative to the land
 is found by vector addition. This linear behavior cannot hold relativistically. For example,   
 if a spaceship is moving relative to the earth at velocity $3/5$ (in units with $c=1$),
@@ -216,7 +216,7 @@ stretch factor of 4, and solving the equation $D(v)=4$ for $v$ gives the result,
 We can now see the answer to question 2 on p.~\pageref{ch:kinematics}. If we keep accelerating
 a spaceship steadily, we are simply continuing the process of acceleration shown in figure
 \figref{three-fifths-c-twice}. If we do this indefinitely, the velocity will approach $c=1$ but never
-surpass it. (For some more on this topic of going faster than light, see section \ref{sec:tachyons}.)
+surpass it. (For more on this topic of going faster than light, see section \ref{sec:tachyons}.)
 
 \begin{eg}{Accelerating electrons}\label{eg:bertozzi-graph}
 Figure \figref{electrons-limiting-speed} shows the results of a 1964 experiment by Bertozzi in which
@@ -273,26 +273,7 @@ How can we tell that this equation is written in natural units? Rewrite it in SI
 
 <% end_sec('velocity-addition') %>
 
-<% begin_sec("Some kinematic identities",nil,'identities',{'optional'=>true}) %>
-
-The following identities can be handy, and if stranded on a desert island you should be able
-to rederive them from scratch. Don't memorize them.
-
-\noindent\begin{tabular}{lll}
-{[}1] \enskip $v=(D^2-1)/(D^2+1)$       & {[}5] \enskip $\eta=\ln D$        & {[}10] \enskip $D_c = D_1 D_2$ \\
-{[}2] \enskip $\gamma=(D^{-1}+D)/2$     & {[}6] \enskip $v=\tanh \eta$      & {[}11] \enskip $\eta_c = \eta_1 + \eta_2$ \\
-{[}3] \enskip $v \gamma=(D-D^{-1})/2$   & {[}7] \enskip $\gamma=\cosh \eta$ & {[}12] \enskip $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
-{[}4] \enskip $D(v)D(-v)=1$            & {[}8] \enskip $v \gamma=\sinh \eta$ &  \\
-\multicolumn{3}{l}{\hfill {[}9] \enskip $\tanh(x+y)=(\tanh x+\tanh y)/(1+\tanh x \tanh y)$}
-\end{tabular}
-
-% checking these:
-% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; (D^2-1)/(D^2+1); (1/D+D)/2; vg; (D-1/D)/2"
-% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; eta=ln D; tanh eta; cosh eta; vg; sinh eta"
-
-<% end_sec('identities') %>
-
-<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
+<% begin_sec("No frame of reference moving at $c$",nil,'no-c-frame') %>
 We have seen in section \ref{sec:velocity-addition} that no continuous process of acceleration can
 boost a material object to $c$. That is, the subluminal (slower than light) nature
 of a electron or a person is a fundamental feature of its identity and can never be changed.
@@ -308,7 +289,48 @@ transformation would compress all of spacetime onto the light cone, reducing its
 Distinct points would be merged, which would make it impossible to use this frame to describe the
 same phenomena that a subluminal observer could describe. That is, the transformation would not
 be one-to-one, and this is unacceptable physically.
+<% end_sec('no-c-frame') %>
 
+<% begin_sec("Some kinematic identities",nil,'identities',{'optional'=>true}) %>
+
+In addition to the relations
+\begin{align*}
+  D(v) &= \sqrt{\frac{1+v}{1-v}} \qquad \text{and} \\
+  v_c &= \frac{v_1+v_2}{1+v_1 v_2} \qquad ,
+\end{align*}
+the following identities can be handy. If stranded on a desert island you should be able
+to rederive them from scratch. Don't memorize them.
+
+\noindent\begin{tabular}{lll}
+{[}1] \enskip $v=(D^2-1)/(D^2+1)$       & {[}5] \enskip $\eta=\ln D$        & {[}10] \enskip $D_c = D_1 D_2$ \\
+{[}2] \enskip $\gamma=(D^{-1}+D)/2$     & {[}6] \enskip $v=\tanh \eta$      & {[}11] \enskip $\eta_c = \eta_1 + \eta_2$ \\
+{[}3] \enskip $v \gamma=(D-D^{-1})/2$   & {[}7] \enskip $\gamma=\cosh \eta$ & {[}12] \enskip $ v_c \gamma_c = (v_1+v_2)\gamma_1 \gamma_2$ \\
+{[}4] \enskip $D(v)D(-v)=1$            & {[}8] \enskip $v \gamma=\sinh \eta$ &  \\
+&\multicolumn{2}{l}{ {[}9] \enskip $\tanh(x+y)=\frac{\tanh x+\tanh y}{1+\tanh x \tanh y}$}
+\end{tabular}
+% checking these:
+% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; (D^2-1)/(D^2+1); (1/D+D)/2; vg; (D-1/D)/2"
+% calc -e "v=3/5; g=(1-v^2)^(-1/2); D=sqrt[(1+v)/(1-v)]; eta=ln D; tanh eta; cosh eta; vg; sinh eta"
+The hyperbolic trig functions are defined as follows:
+\begin{align*}
+  \sinh x &= \frac{e^x-e^{-x}}{2} \\
+  \cosh x &= \frac{e^x+e^{-x}}{2} \\
+  \tanh x &= \frac{\sinh x}{\cosh x}
+\end{align*}
+Their inverses are built in to some calculators and computer software, but they can also be
+calculated using the following relations:
+\begin{align*}
+  \sinh^{-1} x &= \ln\left(x+\sqrt{x^2+1}\right) \\
+  \cosh^{-1} x &= \ln\left(x+\sqrt{x^2-1}\right) \\
+  \tanh^{-1} x &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+\end{align*}
+Their derivatives are, respectively, $(x^2+1)^{-1/2}$,
+$(x^2-1)^{-1/2}$, and $(1-x^2)^{-1}$.
+<% end_sec('identities') %>
+
+<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
+Special relativity doesn't permit the existence of observers who move at $c$ (section
+\ref{sec:no-c-frame}).
 But what about a \emph{superluminal} observer, one who moves faster than $c$?
 With charming naivete, the special-effects technicians 
 for Star Trek attempted to show the frame of reference of such an
@@ -337,6 +359,76 @@ For more about faster-than-light motion in relativity, see section \ref{sec:tach
 
 \begin{hwsection}
 
+<% begin_hw('run-in-spaceship') %>
+Fred buys a ticket on a spaceship that will accelerate to an ultrarelativistic speed
+$v$ such that $c-v$ is only 6 m/s. Fred was on the track team in high school, so he
+knows he can run about 8 m/s. Once the ship is up to speed, Fred plans to run
+in the forward direction, thereby becoming the first human to exceed the speed of
+light. Other than the possible lack of gravity to allow running, what is wrong
+with Fred's plan?
+<% end_hw %>
+
+<% begin_hw('interpret-v-addition') %>
+(a) In the equation $v_c=(v_1+v_2)/(1+v_1v_2)$ for combination of velocities, interpret
+the case where one of the velocities (but not the other) equals the speed of light.
+(b) Interpret the case where the denominator blows up.
+(c) Use the geometric series to rewrite the factor $1/(1+v_1v_2)$, and then expand
+the expression for $v_c$ as a series in $v_1$ and $v_2$, retaining terms up
+to third order in velocity. How does this relate to the correspondence principle?
+<% end_hw %>
+
+<% begin_hw('identities-si') %>
+Determine which of the identities in section \ref{sec:identities} need to be modified in order
+to be valid in units with $c\ne1$, and write the modified forms.
+<% end_hw %>
+
+<% begin_hw('lhc-beamstop') %>
+The Large Hadron Collider accelerates counterrotating beams of protons and collides them head-on.
+The beam energy has been gradually increased, and the accelerator is designed to reach a
+maximum energy of 14 TeV, corresponding to a rapidity of 10.3. 
+(a) Find the velocity of the beam.
+(b) In any collision, the kinetic
+energy available to do something inelastic (smash up your car, produce nuclear reactions, \ldots)
+is the energy in the center of mass frame; in any other frame, there is initial kinetic energy that
+must also be present in the final state due to conservation of momentum.
+Suppose that a particular proton in the LHC beam never undergoes a collision with a proton from
+the opposite beam, and instead is wasted by being dumped into a beamstop. Let's say that this
+collision is with a proton in a hydrogen atom left behind by someone's fingerprint.
+Find the velocities of the two protons in
+their common center of mass frame.
+% calc -xe "E=(14 10^12 V)e; m=(938 MV)e; gamma=1+E/m; eta=acosh gamma; v=tanh eta; vv=tanh(eta/2)"
+% ...     v = 0.999999997755801    vv = 0.999933006732748
+<% end_hw %>
+
+<% begin_hw('gps-doppler') %>
+Each GPS satellite is in an orbit with a radius of 26,600 km, with an orbital period of half
+a sidereal day, giving it a velocity of 3.88 km/s. The atomic clock aboard such a satellite
+is tuned to 10.22999999543 MHz, which is chosen so that when the satellite is directly
+overhead, the effect of time dilation (transverse Doppler shift), combined with a general-relativistic
+effect due to gravity, results in a frequency of exactly 10.23 MHz. (GPS started out as a military
+project, and legend has it that the top brass, suspicious of the crazy relativity stuff, demanded
+that the satellites be equipped with a software switch to turn off the correction, just in case the
+physicists were wrong.) There are oscillations
+superimposed onto these static effects due to the longitudinal Doppler shifts as the satellites
+approach and recede from a given observer on the ground. (a) Calculate the maximum Doppler-shifted
+frequency for a hypothetical observer in outer space who is being directly approached by the
+satellite in its orbit. (b) In reality, the greatest possible longitudinal component of the
+velocity is considerably smaller than this due to the geometry. Use the size of the earth to determine this
+velocity and the corresponding maximum frequency.
+% calc -xe "R=26600 km; T=23.9344699*(3600 s)/2; v=(2pi R)/(Tc); r=6371 km; cs=r/R; vv= vcs; D=sqrt{(1+v)/(1-v)}; DD=sqrt{(1+vv)/(1-vv)}; f=10.22999999543 MHz; fD; fDD"
+%    10.2301323755978 MHz
+%    10.2300317018172 MHz
+% Here cs is cosine of theta. Some confusion over the trig. I'm convinced I have this right now because
+% cos theta = r/R has the right behavior in the cases r=R and r=0.
+% Main source of error is R. Increasing R by 50 km gives the following.
+%    10.2301326244343 MHz
+%    10.2300317018172 MHz
+% Second result doesn't depend on R for fixed T, but in reality T depends on R, so assume same sig figs.
+% So results with reasonable sig figs are:
+%    10.2301324  MHz
+%    10.2300317 MHz
+<% end_hw %>
+
 <% begin_hw('doppler-concrete') %>
 Verify directly, using the geometry of figure \subfigref{twin-signals}{2} on p.~\pageref{fig:twin-signals}
 that for $v=3/5$, the Doppler shift factor is $D=2$. (Do not simply plug $v=3/5$ into the
@@ -346,6 +438,14 @@ formula $D=\sqrt{(1+v)/(1-v)}$.)
 <% begin_hw('doppler-abstract') %>
 Generalize the numerical calculation of problem \ref{hw:doppler-concrete} to
 prove the general result $D=\sqrt{(1+v)/(1-v)}$.
+<% end_hw %>
+
+<% begin_hw('doppler-taylor') %>
+Expand the relativistic equation for the longitudinal Doppler shift of light
+$D(v)$ in a Taylor series, and find the
+first two nonvanishing terms. Show that these two terms agree with the
+nonrelativistic expression, so that any relativistic effect is of higher
+order in $v$.
 <% end_hw %>
 
 \end{hwsection}

@@ -180,7 +180,9 @@ of spacetime. One of the basic assumptions of general relativity is that in a sm
 spacetime, it is always a good approximation to assume P2, so that general relativity is locally
 the same as special relativity. In the Gravity Probe B experiment,
 the effect was small and hard to detect, and this was the reason for letting the effect accumulate
-over a large number of orbits, spanning a large region of spacetime.
+over a large number of orbits, spanning a large region of spacetime. Problem \ref{hw:angular-defect}
+on p.~\pageref{hw:angular-defect} investigates more quantitatively how the size of curvature effects
+varies with the size of the region.
 
 <%
   fig(
@@ -353,6 +355,13 @@ Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a rela
 Is this argument also valid for Galilean relativity?
 <% end_hw %>
 
+<% begin_hw('no-transverse-length-contraction') %>
+Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic scalar.
+(a) Generalize this from 1+1 dimensions to 3+1.
+(b) Use this result to prove that there is no relativistic length contraction effect
+along an axis perpendicular to the velocity.
+<% end_hw %>
+
 <% begin_hw('pythagorean') %>
 Section \ref{sec:flatness} discusses the idea that a two-dimensional bug living on the surface of
 a sphere could tell that its space was curved. Figure \figref{parallel-transport}
@@ -370,7 +379,7 @@ in any sense that is empirically verifiable to the bug.
 Of the curved surfaces in the figure, only the sphere, 4, has curvature that the bug can measure;
 the diagram can't be plastered onto the sphere without folding or cutting and pasting.
 If a two-dimensional being lived on the surface of a cone,
-would it say that its space was curved, or not?
+would it say that its space was curved, or not? What about a saddle shape?
 <% end_hw %>
 <%
   fig(
@@ -382,6 +391,35 @@ would it say that its space was curved, or not?
   )
 %>
 
+<% begin_hw('angular-defect') %>
+The discrepancy in parallel transport shown in figure \figref{parallel-transport} on
+p.~\pageref{fig:parallel-transport} can also be interpreted as a measure of the triangle's
+angular defect $d$, meaning the amount $S-\pi$ by which the sum of its interior angles $S$ exceeds 
+the Euclidean value. (a) The figure suggests a simple way of verifying that
+the angular defect of a triangle inscribed on a sphere depends on area.
+It shows a large equilateral triangle that has been dissected into four smaller triangles,
+each of which is also approximately equilateral.
+Prove that $D=4d$, where $D$ is the angular defect
+of the large triangle and $d$ value for one of the four smaller ones.
+(b) Given that the proportionality to area $d=kA$ holds in general,
+find some triangle on a sphere of radius $R$ whose area and angular defect are
+easy to calculate, and use it to fix the constant of proportionality $k$.
+<% marg %>
+<%
+  fig(
+    'hw-angular-defect',
+    %q{Problem \ref{hw:angular-defect}.}
+  )
+%>
+<% end_marg %>
+
+\hwremark A being who lived on a sphere could measure $d$ an $A$ for some triangle
+and infer $R$, which is a measure of curvature. The proportionality of the effect to
+the area of the triangle also implies that the effects of curvature become negligible
+on sufficiently small scales. The analogy in relativity is that special relativity is
+a valid approximation to general relativity in regions of space that are small enough
+so that spacetime curvature becomes negligible.
+<% end_hw %>
 
 \end{hwsection}
 

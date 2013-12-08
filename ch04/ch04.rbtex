@@ -234,7 +234,7 @@ the energy is
 \end{equation*}
 (or $m\gamma c^2$ in units with $c \ne 1$).
 
-\begin{eg}{Electron-positron annihilation}\index{positron}
+\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
 Natural radioactivity in the earth produces positrons, which are like electrons but have the
 opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
 rays, a form of high-frequency light. Such a process would have been considered impossible
@@ -613,6 +613,28 @@ in good agreement with figure \subfigref{compton-edge}{1}.
 % calc -e "E=662; m=511; a=E/m; E/(1+1/(2a))"
 \end{eg}
 
+\begin{eg}{Pair production requires matter}\label{eg:no-pair-prod-in-vacuum}
+Example \ref{eg:eplus-eminus} on p.~\pageref{eg:eplus-eminus} discussed the annihilation of
+an electron and a positron into two gamma rays, which is an example of turning matter into
+pure energy. An opposite example is pair production,\index{pair production}\index{gamma ray!pair production}
+a process in which a gamma ray disappears, and its energy goes into creating an electron and a positron.
+
+Pair production cannot happen in a vacuum. For example, gamma rays from distant black holes
+can travel through empty space for thousands of years before being detected on earth, and
+they don't turn into electron-positron pairs before they can get here. Pair production can only
+happen in the presence of matter. When lead is used as shielding against gamma rays, one of the
+ways the gamma rays can be stopped in the lead is by undergoing pair production.
+
+To see why pair production is forbidden in a vacuum, consider the process in the frame of reference
+in which the electron-positron pair has zero total momentum. In this frame, the gamma ray would have to
+have had zero momentum,
+but a gamma ray with zero momentum must have zero energy as well.
+This means that conservation of 
+the momentum vector
+has been violated: the timelike component of the momentum is the mass-energy, and it has increased
+from 0 in the initial state to at least $2mc^2$ in the final state.
+\end{eg}
+
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
 Massless particles always travel at $c(=1)$. For suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
 other observer could be at rest relative to the particle. In such a frame,
@@ -721,7 +743,7 @@ Its squared magnitude is
 only approximately equal to minus the squared magnitude of the Newtonian
 acceleration three-vector, in the limit of small velocities.
 
-\begin{eg}{Constant acceleration}\label{eg:hyperbolic-motion}
+\begin{eg}{Constant proper acceleration}\label{eg:hyperbolic-motion}
 \egquestion Suppose a spaceship moves so that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
 motion $x(t)$ as measured by an observer in an inertial frame.
 
@@ -855,12 +877,35 @@ be the result of a loose connection on a fiber-optic cable plus a miscalibrated 
 <% end_sec('tachyons') %>
 
 \begin{hwsection}
+<% begin_hw('crt') %>
+In an old-fashioned cathode ray tube (CRT) television, electrons are accelerated through
+a voltage difference that is typically about 20 kV. At what fraction of the speed of light
+are the electrons moving?
+<% end_hw %>
+
+<% begin_hw('beta-and-alpha-relativistic') %>
+In nuclear beta decay, an electron or antielectron is typically emitted with an energy on
+the order of 1 MeV. In alpha decay, the alpha particle typically has an energy of about
+5 MeV. In each case, do a rough estimate of whether the particle is nonrelativistic,
+relativistic, or ultrarelativistic.
+<% end_hw %>
+
 <% begin_hw('enterprise-ke') %>
 Suppose that the starship Enterprise from Star Trek has a mass 
 of $8.0\times10^7$ kg, about the same as the Queen Elizabeth 2. 
 Compute the kinetic energy it would have to have if it 
 was moving at half the speed of light. Compare with the total 
 energy content of the world's nuclear arsenals, which is about $10^{21}$ J.\answercheck
+<% end_hw %>
+
+<% begin_hw('neutrino-rapidity') %>
+Cosmic-ray neutrinos may be the fastest material particles in the universe.
+In 2013 the IceCube neutrino detector in Antarctica detected
+two neutrinos,\footnote{\url{arxiv.org/abs/1304.5356}} dubbed Bert and
+Ernie, after the Sesame Street characters, with energies in the neighborhood
+of $1\ \zu{PeV}=10^{15}\ \zu{eV}$.
+The higher energy was Ernie's $1.14\pm0.17$ PeV. It is not known what type of neutrino he was, nor do we have
+exact masses for neutrinos, but let's assume $m=1\ \zu{eV}$. Find Ernie's rapidity.
 <% end_hw %>
 
 <% begin_hw('ouch') %>
@@ -919,6 +964,81 @@ Show, as claimed on p.~\pageref{tachyon-instability-introduced}, that if tachyon
 then it is possible to have two tachyons whose momentum vectors add up to zero --- arguably
 leading to catastrophic consequences.
 <% end_hw %>
+
+<% begin_hw('freeneutron') %>
+(a) A free neutron (as opposed to a neutron bound into
+an atomic nucleus) is unstable, and undergoes
+spontaneous radioactive decay into a proton, an electron, and an antineutrino.
+The masses of the particles involved are as follows:
+
+\qquad\begin{tabular}{ll}
+        neutron                & $1.67495\times10^{-27}$  kg\\
+        proton                & $1.67265\times10^{-27}$  kg\\
+        electron        & $0.00091\times10^{-27}$  kg\\
+        antineutrino        & $<10^{-35}$ kg\\
+\end{tabular}
+
+\noindent Find the energy released in the decay of a free neutron. \answercheck\hwendpart
+(b) Neutrons and protons make up essentially all of the mass of the ordinary
+matter around us. We observe that the universe around us has no free neutrons, but
+lots of free protons
+(the nuclei of hydrogen, which is the element that 90\% of the universe
+is made of). We find neutrons only inside nuclei along with other neutrons and
+protons, not on their own.
+
+If there are processes that can convert neutrons into protons, we might imagine
+that there could also be proton-to-neutron conversions, and indeed such a process
+does occur sometimes in nuclei that contain both neutrons and protons:
+a proton can decay into a
+neutron, a positron, and a neutrino. A positron is a particle with the same
+properties as an electron, except that its electrical charge is positive.
+A neutrino, like an antineutrino, has negligible mass.
+
+Although such a process
+can occur within a nucleus, explain why it cannot happen to
+a free proton. (If it could, hydrogen would be radioactive, and you
+wouldn't exist!)
+<% end_hw %>
+
+<% begin_hw('vintermsofp') %>
+(a) Find a relativistic equation for the velocity of an
+object in terms of its mass and momentum (eliminating
+$\gamma$).\answercheck\hwendpart
+(b) Show that your result
+is approximately the same as the classical value, $p/m$, at
+low velocities.\hwendpart
+(c) Show that very large momenta result in
+speeds close to the speed of light.
+<% end_hw %>
+
+<% begin_hw('ke-taylor') %>
+Expand the equation for relativistic kinetic energy $K = m(\gamma-1)$ in a Taylor series, and find the
+first two nonvanishing terms. Show that the first term is the nonrelativistic
+expression.
+<% end_hw %>
+
+<% begin_hw('p-rel-taylor') %>
+Expand the equation $p=m\gamma v$ in a Taylor series, and find the
+first two nonvanishing terms. Show that the first term is the classical
+expression.
+<% end_hw %>
+
+<% begin_hw('no-pe-in-vacuum') %>
+The following are the three most common ways in which gamma rays interact with matter:
+
+\emph{Photoelectric effect:} The gamma ray hits an electron, is annihilated, and gives all of its energy to the electron.
+
+\emph{Compton scattering:} The gamma ray bounces off of an electron, exiting in some direction with some amount of energy.
+
+\emph{Pair production:} The gamma ray is annihilated, creating an electron and a positron.
+
+\noindent Example \ref{eg:no-pair-prod-in-vacuum} on p.~\pageref{eg:no-pair-prod-in-vacuum} shows
+that pair production can't occur in a vacuum due to conservation of the energy-momentum
+four-vector. What about the other two processes? Can the photoelectric effect occur without the
+presence of some third particle such as an atomic nucleus? Can Compton scattering happen
+without a third particle?
+<% end_hw %>
+
 
 \end{hwsection}
 

@@ -715,7 +715,8 @@ meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 \end{lessimportant}
 
 Our present discussion is limited to 1+1 dimensions, but in 3+1,
-only the length along the line of motion is contracted.
+only the length along the line of motion is contracted (ch.~\ref{ch:foundations},
+problem \ref{hw:no-transverse-length-contraction}, p.~\pageref{hw:no-transverse-length-contraction}).
 It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
 Optical observations are influenced by the unequal times taken for light to propagate from the ends
 of the stick to the eye.
