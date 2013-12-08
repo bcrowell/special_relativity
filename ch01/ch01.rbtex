@@ -1099,6 +1099,40 @@ as they cruised past each other. Wouldn't they have to
 agree on whether B had already happened?
 <% end_hw %>
 
+<% marg(-10) %>
+<%
+  fig(
+    'hw-mark-events',
+    %q{Problem \ref{hw:mark-events}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('mark-events') %>
+ The grid represents spacetime in a certain frame of reference.
+  Event A is marked with a dot. Mark additional points satisfying the
+  following criteria. (Pick points that lie at the intersections of the
+  gridlines.) 
+
+  Point B is at the same location as A in this frame of reference, and lies in its future.
+
+  C is also in point A's future, is not at the same location as A in this frame, but is in the same
+  location as A according to some other frame of reference.
+
+  D is simultaneous with A in this frame of reference.
+
+  E is not simultaneous with A in this frame of reference, but is simultaneous with it according to some other frame.
+
+  F lies in A's past according to this frame of reference, but could not have caused A.
+
+  G lies in A's future according to this frame of reference, but is in its past according to some other frames.
+
+  H lies in A's future according to any frame of reference, not just this one.
+
+  I is the departure of a spaceship, which arrives at A.
+
+  J could have caused A, but could not have been the departure of a spaceship like I that arrived later at A.
+<% end_hw %>
+
 
 
 \end{hwsection}

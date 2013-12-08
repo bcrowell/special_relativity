@@ -317,7 +317,8 @@ the stars, which pass in front of and behind the spaceship, should actually be a
 times larger than it.) Actually such an observer (would could not be made out of normal material
 particles such as electrons and protons) would consider its own world-line, which we call
 spacelike, to be timelike, while the world-line of a star such as our sun, which we consider timelike,
-would be spacelike. That is, our sun would not appear to it as an object in motion but rather as line
+would be spacelike. That is, our sun would not appear to the observer
+as an object in motion but rather as a line
 stretching across space, which would wink into existence and then wink back out.
 A typical transformation between our frame and the frame of such an observer would be
 $(x,t)\rightarrow(t,x)$, simply swapping the time and space coordinates. The transformation is
@@ -331,7 +332,6 @@ observer in our 3+1-dimensional universe. A more formal proof has been given
 by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
 Open access via Project Euclid at
 \url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
-If we could boost a material object past the speed of light, even by some discontinuous process, then we could do so for an observer. However, there is a no-go theorem, Gorini 1971, proving that this is impossible in 3+1 dimensions.
 For more about faster-than-light motion in relativity, see section \ref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
 

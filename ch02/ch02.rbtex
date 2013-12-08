@@ -163,7 +163,7 @@ P2. \emph{Flatness of spacetime.} Parallel-transporting a vector from one point 
 a result that is independent of the path along which it was transported.
 
 For example, when we established the form of the metric in section \ref{subsec:metric}, we used
-the fact, proved on p.~\pageref{subsec:area-is-scalar}, that area is a scalar, but that proof
+the fact, proved on p.~\pageref{sec:area-is-scalar}, that area is a scalar, but that proof
 depends on P2.
 
 Property P2 is only approximately true, as shown explicitly by the Gravity Probe B
@@ -345,10 +345,44 @@ metric had been found,
 we had no system of measurement for relativity, so we had
 only very primitive techniques at our disposal.
 
-<% self_check('galilean-area',<<-'SELF_CHECK'
-Is the above argument also valid for Galilean relativity?
-  SELF_CHECK
-  ) %>
-<% end_sec('area-is-scalar') %>
+
+\begin{hwsection}
+
+<% begin_hw('galilean-area') %>
+Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic scalar.
+Is this argument also valid for Galilean relativity?
+<% end_hw %>
+
+<% begin_hw('pythagorean') %>
+Section \ref{sec:flatness} discusses the idea that a two-dimensional bug living on the surface of
+a sphere could tell that its space was curved. Figure \figref{parallel-transport}
+on p.~\pageref{fig:parallel-transport} shows one way
+of telling, by detecting the path-dependence of parallel transport.
+A different technique would be to look for violations of the Pythagorean theorem.
+In the figure below, 1 is a diagram illustrating the proof of 
+the Pythagorean theorem in Euclid's \emph{Elements} (proposition I.47). This diagram is equally 
+valid if the page is rolled onto a cylinder, 2, or formed into a wavy corrugated shape, 3.
+These types of curvature, which can be achieved without tearing 
+or crumpling the surface, are not real to the bug. They are simply 
+side-effects of visualizing its two-dimensional universe as if 
+it were embedded in a hypothetical third dimension --- which doesn't exist 
+in any sense that is empirically verifiable to the bug.
+Of the curved surfaces in the figure, only the sphere, 4, has curvature that the bug can measure;
+the diagram can't be plastered onto the sphere without folding or cutting and pasting.
+If a two-dimensional being lived on the surface of a cone,
+would it say that its space was curved, or not?
+<% end_hw %>
+<%
+  fig(
+    'hw-pythagorean',
+    %q{Problem \ref{hw:pythagorean}.},
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+
+
+\end{hwsection}
 
 <% end_chapter %>
