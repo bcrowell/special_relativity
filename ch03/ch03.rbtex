@@ -291,6 +291,104 @@ same phenomena that a subluminal observer could describe. That is, the transform
 be one-to-one, and this is unacceptable physically.
 <% end_sec('no-c-frame') %>
 
+<% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors',{'optional'=>true}) %>
+Newton's laws are formulated in terms of velocity and acceleration vectors.
+Although it is possible to define corresponding quantities in special relativity,
+and they are of some physical interest,
+they do not play any fundamental role in describing dynamics.
+For these reasons, most readers will want to skip this section.
+<% begin_sec("The velocity vector",nil,'v-vector') %>
+When I say ``vector'' in this book, I mean something that in 3+1 dimensions has four components. This
+can also be referred to as a four-vector.\index{four-vector}
+Our repertoire of vectors so far includes the displacement vector $\Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z)$
+and the energy-momentum vector $\vc{p}=(E,p_x,p_y,p_z)$. In a freshman course in Newtonian mechanics, we would have
+constructed a velocity vector $\vc{v}=\Delta \vc{r}/\Delta t$ as an intermediate step, and then built up
+$\vc{p}=m\vc{v}$. But relativistically, the quantity $\Delta \vc{r}/\Delta t$ would not transform like a vector, e.g.,
+if $\vc{r}$ was spacelike, then there would be a frame in which we had $\Delta t=0$, and then
+$\Delta \vc{r}/\Delta t$ would be finite in some frames but infinite in others, which is absurd.
+To construct a valid vector, we would have to divide
+$\Delta \vc{r}$ by a scalar. The only scalar that could be relevant would be the \emph{proper} time
+$\Delta \tau$, and this is indeed how the velocity vector is defined in relativity:
+\begin{equation*}
+  \vc{v} = \frac{\der \vc{r}}{\der \tau}
+\end{equation*}
+A velocity vector is only defined for particles whose world-lines are timelike, i.e., massive particles.
+For such particles, the product of $\vc{v}$ with the scalar mass $m$ gives the momentum vector $\vc{p}=m\vc{v}$.
+
+The velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
+though the object whose motion it describes is not moving at the speed of light.
+When we hear something referred to as a ``vector,''
+we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
+But the sum of two velocity vectors would not typically be a valid velocity vector at all, since
+it would not have unit magnitude. This lack of additivity would in any case have been expected because
+velocities don't add linearly in relativity (section \ref{sec:velocity-addition}).
+
+<% self_check('v-invalid-in-other-frame',<<-'SELF_CHECK'
+Velocity vectors are required to have $v^2=1$. 
+If a vector qualifies as a valid velocity vector in some frame, could it be invalid in another frame?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Velocity and momentum vectors of an object at rest}\label{eg:v-and-p-at-rest}
+An object at rest has $\vc{v}=(1,0)$. The first component indicates that
+if we attach a clock to the object with duct tape,
+the proper time measured by
+the clock suffers no time dilation according to an observer in this
+frame, $\der t/\der\tau=1$. The second component tells us that the object's position isn't changing,
+$\der x/\der\tau=0$.
+
+The object's momentum vector is $\vc{p}=m\vc{v}=(m,0)$, meaning that its mass-energy is equal to its mass,
+and its momentum is zero.
+\end{eg}
+
+
+Example \ref{eg:v-and-p-at-rest} suggests a nice way of thinking about velocity vectors, which is that
+every velocity vector represents a potential observer. That is, the velocity vectors are
+the observer-vectors $\vc{o}$ of chapter \ref{ch:spacetime}, but with a normalization requirement $v^2=1$ that
+we did not impose earlier, which ensures that there is a single, well-defiend velocity vector
+for every observer.
+An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
+Since we have no notion of adding one observer to another observer, it makes sense that
+velocity vectors don't add relativistically.
+<% end_sec('v-vector') %>
+<% begin_sec("The acceleration vector",nil,'a-vector') %>
+The acceleration vector is defined as the derivative of the velocity vector with
+respect to proper time, $\vc{a}=\der\vc{v}/\der\tau$.\index{vector!acceleration}\index{acceleration vector}
+Its squared magnitude is
+only approximately equal to minus the squared magnitude of the Newtonian
+acceleration three-vector, in the limit of small velocities.
+
+\begin{eg}{Constant proper acceleration}\label{eg:hyperbolic-motion}
+\egquestion Suppose a spaceship moves so that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
+motion $x(t)$ as measured by an observer in an inertial frame.
+
+\eganswer Let $\tau$ stand for the ship's proper time, and let dots indicate derivatives with respect to $\tau$.
+The ship's velocity has magnitude 1, so
+\begin{equation*}
+  \dot{t}^2-\dot{x}^2 = 1 \qquad .
+\end{equation*}
+An observer who is instantaneously at rest with respect to the ship judges is to have an
+acceleration vector $(0,a)$
+(because the low-velocity limit applies).
+The observer in the $(t,x)$ frame agrees on the magnitude of this vector, so
+\begin{equation*}
+  \ddot{t}^2-\ddot{x}^2=-a^2 \qquad .
+\end{equation*}
+The solution of these differential
+equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau$
+(choosing constants of integration so that the expressions take on their simplest forms).
+Eliminating $\tau$ gives
+\begin{equation*}
+  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad .
+\end{equation*}
+As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
+In the same limit,  $x$ increases exponentially with proper time, so that
+surprisingly large distances can in theory be traveled within a human lifetime
+(problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}).
+\end{eg}
+<% end_sec('a-vector') %>
+<% end_sec('v-and-a-vectors') %>
+
 <% begin_sec("Some kinematic identities",nil,'identities',{'optional'=>true}) %>
 
 In addition to the relations
