@@ -458,19 +458,21 @@ or, in units with $c \ne 1$,
 We take this as the relativistic definition of mass.\index{mass!defined} Since the definition
 is an inner product, which is a scalar, it is the same in all frames of reference. (Some older
 books use an obsolete convention of referring to $m\gamma$ as ``mass'' and $m$ as ``rest mass.'')
-We see from the definition that mass is not additive.
 
 <% self_check('massless-m-e-p',<<-'SELF_CHECK'
 Interpret the equation $m^2=E^2-p^2$ in the case where $m=0$.
   SELF_CHECK
   ) %>
 
-\begin{eg}{Mass of two light waves}
+\begin{eg}{Mass of two light waves}\label{eg:mass-of-two-light-waves}
 Let the momentum of a certain light wave be $(p_t,p_x)=(E,E)$,
 and let another such wave have momentum $(E,-E)$. The total momentum is
 $(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
 This is an example of the non-additivity of relativistic mass.
 \end{eg}
+
+Example \ref{eg:mass-of-two-light-waves} shows that mass is not additive,
+nor it is a measure of the ``quantity of matter.''
 
 \begin{eg}{Finding velocity given energy and momentum}\label{eg:v-from-p-vector}
 \egquestion If we know that a particle has mass-energy $E$ and momentum $p$ (which also implies

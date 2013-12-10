@@ -684,7 +684,8 @@ Although this is phrased in terms of clocks, we interpret it as telling us somet
 The attitude is that we should define a concept in terms
 of the operations required in order to measure it: time is defined as what a clock measures.
 This philosophy, which has been immensely influential among physicists, is 
-called operationalism\index{operationalism} and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
+called operationalism\index{operationalism}\label{operationalism}
+and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
 in the 1920's. Our operational definition of time works because the rates of \emph{all} physical processes
 are affected equally by time dilation. By the time the twins in figure \figref{twin-paradox} are reunited,
 not only has the traveling twin 

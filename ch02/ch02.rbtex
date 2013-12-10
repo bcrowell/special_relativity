@@ -49,7 +49,8 @@ Callender, ``Thermodynamic Asymmetry in Time,'' The Stanford Encyclopedia of Phi
 So rather than depending on the arrow of time, we may be better off formulating a notion of causality based
 on existence and uniqueness of initial-value problems.
 In 1776, Laplace gave an influential early formulation of this idea in the context of Newtonian
-mechanics: ``Given for one instant an intelligence which could comprehend
+mechanics:\label{laplace}
+``Given for one instant an intelligence which could comprehend
 all the forces by which nature is animated and the
 respective positions of the things which compose it \ldots nothing
 would be uncertain, and the future as the past would be laid
@@ -207,10 +208,12 @@ We make the following additional assumptions:
                   direction in space distinguishable from 
                   another.\footnote{For the experimental evidence on isotropy, see \url{http://www.edu-observatory.org/physics-faq/Relativity/SR/experiments.html#Tests_of_isotropy_of_space}.}
 \item[P4] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not 
-                  subject to any forces (and by P2 gravitational forces cannot exist).
+                  subject to any forces.\footnote{Defining this no-force rule turns out to be tricky when
+                  it comes to gravity. As discussed in ch.~\ref{ch:inertia}, this apparently minor technicality
+                  turns out to have important consequences.}
                   We can construct such a frame by using a particular particle, which is not subject to any
                   forces, as a reference point.
-                  Inertial motion is modeled by vectors and parallelism.
+                  Inertial motion is modeled by vectors and parallelism.\label{inertial-frames-exist}
 \item[P5] \emph{Equivalence of inertial frames:} If a frame is in constant-velocity translational motion relative to an inertial frame, then it is also an inertial frame.
               No experiment can distinguish one preferred inertial frame from all the others.
 \item[P6] \emph{Relativity of time:} There exist events 1 and 2 and frames of reference defined by observers
