@@ -161,14 +161,14 @@ by the proper times recorded on the clocks.
 Hidden in a number of spots in chapter \ref{ch:spacetime} was the following assumption.
 
 P2. \emph{Flatness of spacetime.} Parallel-transporting a vector from one point to another gives
-a result that is independent of the path along which it was transported.
+a result that is independent of the path along which it was transported.\label{flatness-axiom}
 
 For example, when we established the form of the metric in section \ref{subsec:metric}, we used
 the fact, proved on p.~\pageref{sec:area-is-scalar}, that area is a scalar, but that proof
 depends on P2.
 
 Property P2 is only approximately true, as shown explicitly by the Gravity Probe B
-satellite, launched in 2004. The probe carried four gyroscopes
+satellite, launched in 2004.\label{gpb} The probe carried four gyroscopes
 made of quartz, which were the most perfect spheres ever manufactured,
 varying from sphericity by no more than about 40 atoms. After one year and about 5000 orbits around
 the earth, the gyroscopes were found to have changed their orientations relative to the distant stars by
@@ -224,7 +224,9 @@ We make the following additional assumptions:
 \end{itemize}
 
 Postulates P3 and P5 describe symmetries of spacetime, while P6 differentiates the spacetime of special relativity from
-Galilean spacetime. Postulate P5 defines what we have meant when we referred to the parallelism
+Galilean spacetime; the symmetry described by these three postulates is referred to as Lorentz
+invariance,\index{Lorentz invariance}\label{lorentz-invariance} and all known physical laws
+have this symmetry. Postulate P4 defines what we have meant when we referred to the parallelism
 of vectors in spacetime (e.g., in figure \figref{twin-paradox} on p.~\pageref{fig:twin-paradox}).
 Postulates P1-P6 were all the assumptions that were needed in order to arrive at the picture
 of spacetime described in ch. 1. This approach, based on symmetries, dates back to 

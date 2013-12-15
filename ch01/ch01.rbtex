@@ -211,11 +211,14 @@ every time you use a GPS receiver, you're using Einstein's theory of relativity.
 Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
 that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
 
-A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating
+A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating\label{hafele-keating}
 brought atomic clocks aboard commercial
 airliners, figure \figref{hk-in-cabin}, and went around the world, once from east to west and once from west to east.
 Hafele and Keating observed that there was a discrepancy between the times measured by the
-traveling clocks and the times measured by similar clocks that stayed home at the U.S. Naval Observatory in Washington.
+traveling clocks and the times measured by similar clocks that stayed home at the U.S. Naval Observatory in Washington.\footnote{There were actually several effects
+at work, but these details do not affect the present argument, which only depends
+on the fact that there is no absolute time. See p.~\pageref{subsec:varying-metric} for
+more on this topic.}
 The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
 
 We are used to thinking of time as absolute and universal, so it is
@@ -431,7 +434,11 @@ their speeds are ``nonrelativistic.'' Because Einstein coined the term ``relativ
 and his version of relativity superseded Galileo's, the unmodified word is normally
 understood to refer to Einsteinian relativity. A physicist who studies Einstein-relativity
 is a relativist. A material object moving at a speed very close to $c$ is described
-as ultrarelativistic.
+as ultrarelativistic. One often hears laypeople describing relativity in terms of certain
+effects that would happen ``if you went at the speed of light.'' In fact, as we'll see
+in ch.~\ref{ch:kinematics} and \ref{ch:dynamics}, it is not possible to accelerate
+material objects to $c$, and in any case that isn't necessary. Relativistic effects exist
+at all speeds, but they're weak at speeds small compared to $c$.
 
 <% end_sec('einstein-spacetime') %>
 <% end_sec('three-models-of-spacetime') %>
@@ -467,7 +474,7 @@ with null results.
 <% end_sec('scalars') %>
 
 <% begin_sec("The metric",nil,'metric') %>
-Area in the $x-t$ plane is also a scalar, as proved on p.~\pageref{subsec:area-is-scalar}.
+Area in the $x-t$ plane is also a scalar, as proved on p.~\pageref{sec:area-is-scalar}.
 The invariance of area has little importance on its own, but it provides a good stepping stone toward
 a relativistic system of measurement. 
 Suppose that we have events A (Charles VII is restored to the throne) and B (Joan of Arc is executed). Now imagine
@@ -1045,6 +1052,15 @@ Expressed in natural units, the Lorentz transformation is
 \end{align*}
 (a) Insert factors of $c$ to make it valid in units where $c\ne1$.
 (b) Show that in the limit $c\rightarrow\infty$, these have the right Galilean behavior.
+<% end_hw %>
+
+<% begin_hw('classical-limit') %>
+This problem assumes you have some basic knowledge of quantum physics.
+One way of expressing the correspondence principle as applied to special
+relativity is that in the limit $c\rightarrow\infty$, all relativistic
+expressions have to go over to their Galilean counterparts.
+What would be the corresponding limit if we wanted to recover classical
+mechanics from quantum mechanics?
 <% end_hw %>
 
 <% begin_hw('relativity-max-tension') %>

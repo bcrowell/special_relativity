@@ -665,6 +665,22 @@ In summary, massless particles always move at $v=c$, while massive ones always m
 Note that the equation $p=m\gamma v$ isn't general enough to serve as a definition of momentum, since
 it becomes an indeterminate form in the limit $m\rightarrow0$.
 
+\begin{eg}{No half-life for massless particles}\label{eg:splitting}
+When we describe an unstable nucleus or other particle as having some half-life, we mean its half-life
+in its own rest frame. A massless particle always moves at $c$ and therefore has no rest frame (section
+\ref{sec:no-c-frame}), so it doesn't make sense to describe it as having a half-life in
+this sense. This is almost,
+but not quite, the same thing as saying that massless particles can never decay.\footnote{See
+Fiore and Modanese, \url{arxiv.org/abs/hep-th/9508018},
+and \url{http://physics.stackexchange.com/questions/12488/decay-of-massless-particles}.
+If such a process does exist, then
+Lorentz invariance requires that its time-scale be proportional to the
+particle's energy.
+It can be argued that gluons, which are massless, do in fact undergo decay into less energetic
+gluons, but the interpretation is ambiguous because we never observe gluons as free particles,
+so we can't just capture one in a box and watch it rattle around inside until it decays.}
+\end{eg}
+
 \begin{eg}{Constraints on polarization}\label{eg:polzn-constraints}\index{polarization!of light}\index{transverse polarization!of light}
 We observe that electromagnetic waves are always polarized transversely, never longitudinally.
 Such a constraint can only apply to a wave that propagates at $c$. If it applied to a wave that
@@ -677,6 +693,168 @@ in which the wave is at rest (see section \ref{sec:ftl-frames}).
 
 
 <% end_sec('momentum') %>
+
+<% begin_sec("Degenerate matter",nil,'degenerate-matter',{'optional'=>true}) %>
+The properties of the momentum vector have surprising
+implications for matter subject to extreme pressure, as in a star that uses up all its fuel
+for nuclear fusion and collapses. These implications were initially considered too exotic to
+be taken seriously by astronomers.
+
+An ordinary, smallish star such as our own sun has enough hydrogen to sustain fusion reactions for billions of
+years, maintaining an equilibrium between its gravity and the pressure of its gases.
+When the hydrogen is used up, it has to begin fusing heavier elements. This leads to a period of
+relatively rapid fluctuations in structure. Nuclear 
+fusion proceeds up until the formation of elements as heavy as
+oxygen ($Z=8$), but the temperatures are not high enough to overcome the strong electrical repulsion of
+these nuclei to create even heavier ones.  Some matter is blown off, but finally nuclear reactions cease
+and the star collapses under the pull of its own gravity.
+
+To understand what happens in such a collapse, we have to understand the behavior 
+of gases under very high pressures.
+In general, a surface area $A$ within a gas is subject to
+collisions in a time $t$ from the $n$ particles occupying
+the volume $V=Avt$, where $v$ is the typical velocity of
+the particles. The resulting pressure is given by $P\sim npv/V$,
+where $p$ is the typical momentum.
+
+\begin{itemize}
+\item[] \emph{Nondegenerate gas:} In an ordinary gas such as air, the particles are nonrelativistic, so $v=p/m$, and the thermal energy per particle
+  is $p^2/2m\sim kT$, so the pressure is $P\sim nkT/V$.
+\item[] \emph{Nonrelativistic, degenerate gas:} When a fermionic gas is subject to extreme pressure, the dominant effects creating pressure are
+  quantum-mechanical. Because of the Pauli exclusion
+  principle, the volume available to each particle is $\sim V/n$, so its wavelength is no more than $\sim(V/n)^{1/3}$, leading to
+  $p=h/\lambda \sim h(n/V)^{1/3}$. If the speeds of the particles are still nonrelativistic, then $v=p/m$ still holds, so
+  the pressure becomes $P \sim (h^2/m)(n/V)^{5/3}$.
+\item[] \emph{Relativistic, degenerate gas:} If the compression is strong enough to cause highly relativistic motion for the particles, then
+  $v \approx c$, and the result is $P\sim hc(n/V)^{4/3}$.
+\end{itemize}
+
+As a star with the mass of our sun collapses, it reaches a point
+at which the electrons begin to behave as a degenerate gas, and
+the collapse stops. The resulting object is called a white dwarf.\index{white dwarf}
+A white dwarf should be an extremely compact body, about the
+size of the Earth. Because of its small surface area, it should
+emit very little light. In 1910, before the theoretical predictions
+had been made, Russell, Pickering, and Fleming
+discovered that 40 Eridani B had these characteristics. Russell recalled:
+``I knew enough about it, even in these paleozoic days, to realize at
+once that there was an extreme inconsistency between what
+we would then have called `possible' values of the surface brightness
+and density. I must have shown that I was not
+only puzzled but crestfallen, at this exception to what looked like
+a very pretty rule of stellar characteristics; but
+Pickering smiled upon me, and said: `It is just these
+exceptions that lead to an advance in our knowledge,' and so the white dwarfs entered the realm of study!''
+
+S.~Chandrasekhar showed in that 1930's that there
+was an upper limit to the mass of a white dwarf. 
+We will recapitulate his calculation briefly in condensed order-of-magnitude form.
+The pressure at the core of the star is $P\sim \rho g r\sim GM^2/r^4$, where $M$
+is the total mass of the star. The star contains roughly equal numbers of
+neutrons, protons, and electrons, so $M=Knm$, where $m$ is
+the mass of the electron, $n$ is the number of electrons, and
+$K\approx 4000$.  For stars near the limit, the electrons are relativistic.
+Setting the pressure at the core equal to the degeneracy pressure of a relativistic gas, we find that the
+Chandrasekhar limit\index{Chandrasekhar limit}\label{chandrasekhar-limit}
+is $\sim (hc/G)^{3/2}(Km)^{-2}=6M_\odot$. A less sloppy calculation gives something more like $1.4M_\odot$.
+<% marg(50) %>
+<%
+  fig(
+    'chandrasekhar',
+    %q{Subrahmanyan Chandrasekhar (1910-1995)}
+  )
+%>
+<% end_marg %>
+
+% h=6.6 10^-34 J.s
+% G=6.7 10^-11 m3.kg-1.s-2
+% c=3 10^8 m/s 
+% K=4000
+% m=9.1 10^-31 kg
+% ms=2.0 10^30 kg
+% (hc/G)^(3/2)(Km)^-2/ms
+%   6.0625148914921
+
+What happens to a star whose mass is above the Chandrasekhar limit? As nuclear fusion reactions flicker out,
+the core of the star becomes a white dwarf, but once fusion ceases completely this cannot be an equilibrium
+state. Now consider the nuclear reactions\index{neutron star}
+\begin{align*}
+  \zu{n} & \rightarrow \zu{p} + e^- + \bar{\nu} \\
+  \zu{p} & + e^-  \rightarrow \zu{n} + \nu \qquad ,
+\end{align*}
+which happen due to the weak nuclear force. The first of these releases 0.8 MeV, and has a half-life of 14 minutes.
+This explains why free neutrons are not observed in significant numbers in our universe, e.g., in cosmic rays.
+The second reaction requires an \emph{input} of 0.8 MeV of energy, so a free hydrogen atom is stable.
+The white dwarf contains fairly heavy nuclei, not individual protons, but similar considerations would seem to apply.
+A nucleus can absorb an electron and convert a proton into a neutron, and in this context the process is
+called electron capture.\index{electron capture}
+Ordinarily this process will only occur if the nucleus is neutron-deficient; once it reaches a neutron-to-proton ratio that
+optimizes its binding energy, neutron capture cannot proceed without a source of energy to make the reaction go.
+In the environment of a white dwarf, however, there is such a source. The annihilation of an electron opens up a
+hole in the ``Fermi sea.'' There is now an state into which another electron is allowed to drop without violating the
+exclusion principle, and the effect cascades upward. In a star with a mass above the Chandrasekhar limit, this process
+runs to completion, with every proton being converted into a neutron. The result is a \emph{neutron star},\index{neutron star}
+which is essentially an atomic nucleus (with $Z=0$) with the mass of a star!
+
+Observational evidence for the existence of neutron stars came in 1967 with the detection by Bell and Hewish at Cambridge
+of a mysterious  radio signal with a period of 1.3373011 seconds. The signal's observability
+was synchronized with the rotation of the earth relative to the stars, rather than with legal clock time
+or the earth's rotation relative to the sun. This led to the conclusion that its origin was in space rather than
+on earth, and Bell and Hewish originally dubbed it LGM-1 for ``little green men.'' The discovery of a second signal,
+from a different direction in the sky, convinced them that it was not actually an artificial signal being generated
+by aliens. Bell published the observation as an appendix to her PhD thesis, and it was soon interpreted as
+a signal from a neutron star. Neutron stars can be highly magnetized, and because of this magnetization they
+may emit a directional beam of electromagnetic radiation that sweeps across the sky once per rotational period ---
+the ``lighthouse effect.'' If the earth lies in the plane of the beam, a periodic signal can be detected, and
+the star is referred to as a pulsar.\index{pulsar} It is fairly easy to see that the short period of rotation
+makes it difficult to explain a pulsar as any kind of less exotic rotating object. In the approximation of
+Newtonian mechanics, a spherical body of density $\rho$, rotating with a period $T=\sqrt{3\pi/G\rho}$, has zero
+apparent gravity at its equator, since gravity is just strong enough to accelerate an object so that it
+follows a circular trajectory above a fixed point on the surface (problem \ref{hw:pulsar}).\label{pulsar-density}
+In reality, astronomical bodies of planetary size and greater are held together by their own gravity, so we have
+$T \gtrsim 1/\sqrt{G\rho}$ for any body that does not fly apart spontaneously due to its own rotation.
+In the case of the Bell-Hewish pulsar, this implies $\rho \gtrsim 10^{10}\ \kgunit/\munit^3$, which is
+far larger than the density of normal matter, and also 10-100 times greater than the typical density of
+a white dwarf near the Chandrasekhar limit.
+
+An upper limit on the mass of a neutron star can be found in a manner entirely analogous to the
+calculation of the Chandrasekhar limit. The only difference is that the mass of a neutron is much
+greater than the mass of an electron, and the neutrons are the only particles present, so there is
+no factor of $K$. Assuming the more precise result of $1.4M_\odot$ for the Chandrasekhar limit rather than our
+sloppy one, and ignoring the interaction of the neutrons via the strong nuclear force,
+we can infer an upper limit on the mass of a neutron star:
+\begin{equation*}
+  1.4M_\odot\left(\frac{Km_e}{m_n}\right)^2 \approx 5M_\odot
+\end{equation*}
+The theoretical uncertainties in such an estimate are fairly large. Tolman, Oppenheimer, and Volkoff\index{Tolman-Oppenheimer-Volkoff limit}
+originally estimated it in 1939 as $0.7M_\odot$, whereas modern estimates are more in the range of 1.5
+to $3M_\odot$. These are significantly lower than our crude estimate of $5M_\odot$,
+mainly because the attractive nature of the strong nuclear force tends to pull the star toward
+collapse. Unambiguous results are presently impossible because of uncertainties in extrapolating the
+behavior of the strong force from the regime of ordinary nuclei, where it has been relatively well parametrized, into
+the exotic environment of a neutron star, where the density is significantly different and no protons
+are present. There are a variety of effects that may be difficult to anticipate or to calculate. For example,
+Brown and Bethe found in 1994\index{Brown-Bethe scenario}\footnote{H.A. Bethe and G.E. Brown, ``Observational constraints on the maximum neutron star mass,''
+Astrophys. J. 445 (1995) L129.  G.E. Brown and H.A. Bethe, ``A Scenario for a Large Number of Low-Mass Black Holes in the Galaxy,''
+Astrophys. J.  423 (1994) 659. Both papers are available at \url{adsabs.harvard.edu}.} that it might be possible for the mass limit to be drastically revised because
+of the process $e^-\rightarrow K^-+\nu_e$, which is impossible in free space due to conservation of energy, but
+might be possible in a neutron star. Observationally, nearly all neutron stars seem to lie in a surprisingly
+small range of mass, between 1.3 and $1.45M_\odot$, but in 2010 a neutron star with a mass of $1.97\pm .04\ M_\odot$ was discovered,
+ruling out most neutron-star models that included exotic matter.\footnote{Demorest
+et al., \url{arxiv.org/abs/1010.5788v1}.}
+
+% K=4000
+% me=9.1 10^-31 kg
+% mn=1.7 10^-27 kg
+% (Kme/mn)^2
+%    4.58463667820071
+
+For stars with masses above the Tolman-Oppenheimer-Volkoff limit,
+it seems likely, both on theoretical and observational grounds,
+we end up with a black hole: an object with an event horizon (cf.~p.~\pageref{event-horizon})
+that cuts its interior off from the rest of the universe.\index{event horizon!black hole}\index{black hole}
+
+<% end_sec('degenerate-matter') %>
 
 
 <% begin_sec("Tachyons and FTL",nil,'tachyons',{'optional'=>true}) %>
@@ -941,6 +1119,27 @@ presence of some third particle such as an atomic nucleus? Can Compton scatterin
 without a third particle?
 <% end_hw %>
 
+<% begin_hw('nucleons-nonrelativistic') %>
+This problem assume you know some basic quantum physics. The point of this
+problem is to estimate whether or not a neutron or proton in an an atomic nucleus is
+highly relativistic. Nuclei typically have
+diameters of a few fm ($1\ \zu{fm}=10^{-15}\ \munit$). Take a neutron or proton to be
+a particle in a box of this size. In the ground state, half a wavelength would fit
+in the box. Use the de Broglie relation to estimate its typical momentum and thus its
+typical speed. How relativistic is it?
+<% end_hw %>
+
+<% begin_hw('splitting') %>
+Show, as claimed in example \ref{eg:splitting} on p.~\pageref{eg:splitting}, that if a massless
+particle were to decay, Lorentz invariance requires that the time-scale $\tau$ for the process
+be proportional to the particle's energy. What units would the constant of proportionality
+have?
+<% end_hw %>
+
+<% begin_hw('pulsar') %>
+Derive the equation $T=\sqrt{3\pi/G\rho}$ given on page \pageref{pulsar-density} for the period
+of a rotating, spherical object that results in zero apparent gravity at its surface.
+<% end_hw %>
 
 \end{hwsection}
 

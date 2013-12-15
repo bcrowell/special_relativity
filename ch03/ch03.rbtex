@@ -139,7 +139,7 @@ is their product $D(v)D(-v)$. But B didn't actually need to receive the
 original signal and retransmit it; the results would have been the same if B had just stayed out of the way.
 Therefore this product must equal 1, so we must have $D(v)D(-v)=1$.
 
-\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}
+\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}\label{ives-stilwell}
 The transverse Doppler shift is a characteristic prediction of special relativity, with no
 nonrelativistic counterpart, and Einstein suggested it early on as a test of relativity.
 However, it is difficult to measure with high precision, because the results are sensitive to any error
@@ -379,12 +379,32 @@ equations is $t=\frac{1}{a}\sinh a\tau$, \linebreak[4] $x=\frac{1}{a}\cosh a\tau
 (choosing constants of integration so that the expressions take on their simplest forms).
 Eliminating $\tau$ gives
 \begin{equation*}
-  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad .
+  x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad ,
 \end{equation*}
+shown in figure \figref{photon-chasing-spaceship}.
+
 As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 In the same limit,  $x$ increases exponentially with proper time, so that
 surprisingly large distances can in theory be traveled within a human lifetime
 (problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}).
+<% marg(63) %>
+<%
+  fig(
+    'photon-chasing-spaceship',
+    %q{A spaceship (curved world-line) moves with an acceleration perceived as constant by its passengers.}
+  )
+%>
+<% end_marg %>
+
+Another interesting feature of this problem is the dashed-line asymptote, which is lightlike.
+Suppose we interpret this as the world-line of a ray of light.
+The ray comes closer and closer to the ship, but will never quite catch up.
+Thus provided that the rocket never stops accelerating, the entire region of spacetime to the
+left of the dashed line is forever hidden from its passengers. That is, an observer who
+undergoes constant acceleration has an \emph{event horizon} --- a boundary that prevents her
+from observing anything on the other side. You may have heard about the event horizon associated
+with a black hole. This example shows that we can have event horizons even when there is no
+gravity at all.\index{event horizon}\label{event-horizon}
 \end{eg}
 <% end_sec('a-vector') %>
 <% end_sec('v-and-a-vectors') %>
