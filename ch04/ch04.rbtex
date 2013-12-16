@@ -421,7 +421,7 @@ and if the transformation between different frames of reference preserves
 the linearity of the lines $p=E$ and $p=-E$, then it's natural to suspect that it is actually some kind of linear transformation.
 In fact the transformation must be linear, because conservation of
 energy and momentum involve addition, and we need these laws to be valid in all frames of reference.
-But now by the same reasoning as in subsection \ref{subsec:scalars} on p.~\pageref{subsec:scalars},
+But now by the same reasoning as in subsection \ref{subsec:invariants} on p.~\pageref{subsec:invariants},
 the transformation must be area-preserving.
 We then have the same three cases to consider as in figure \figref{three-cases} on p.~\pageref{fig:three-cases}.
 The ``Galilean'' version is ruled out because it would imply that particles keep the same energy when we change frames.

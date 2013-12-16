@@ -506,25 +506,26 @@ the Hafele-Keating experiment tells us that a clock undergoing
 the motion represented by $\Delta x=1$ will probably not agree with a clock carried by the
 observer whose clock we used in defining these coordinates.
 
-<% begin_sec("Scalars",nil,'scalars') %>
+<% begin_sec("Invariants",nil,'invariants') %>
 
 The whole topic of measurement is apt to be confusing, because the shifting landscape of
 relativity makes us feel as if we've walked into a Salvador Dali landscape of melting pocket
 watches. A good way to regain our bearings is
-to look for quantities that behave as scalars.\index{scalar!defined}
-A Euclidean scalar, such as a length or an angle, is a quantity that is invariant under rotations:
+to look for quantities that are \emph{invariant}: they are the same in all frames
+of reference.\index{invariant!defined}\index{Lorentz invariant|see{invariant}}
+A Euclidean invariant, such as a length or an angle, is one that doesn't change under rotations:
 all observers agree on its value, regardless of the orientations of their frames of reference.
-For a relativistic scalar, we require in addition that observers agree no matter what state of motion
-they have. (A change in orientation is called a rotation. A transformation that changes
+For a relativistic invariant, we require in addition that observers agree no matter what state of motion
+they have. (A transformation that changes
 from one inertial frame of reference to another, without any rotation, is called a boost.)\index{boost!defined}
 
-Electric charge is a good example of a relativistic scalar. Electrons in atoms typically
+Electric charge is a good example of an invariant. Electrons in atoms typically
 have velocities of 0.01 to 0.1 (in our relativistic units, where $c=1$), so if an electron's charge
 depended on its motion relative to an observer, atoms would not be electrically neutral. Experiments
 have been done\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
 with null results.
-<% end_sec('scalars') %>
+<% end_sec('invariants') %>
 
 
 <% begin_sec("The metric",nil,'metric') %>
@@ -536,7 +537,7 @@ with null results.
   )
 %>
 <% end_marg %>
-Area in $1+1$ dimensions is also a scalar, as proved on p.~\pageref{sec:area-is-scalar}.
+Area in $1+1$ dimensions is also an invariant, as proved on p.~\pageref{sec:area-is-scalar}.
 The invariance of area has little importance on its own, but it provides a good stepping stone toward
 a relativistic system of measurement. 
 Suppose that we have events A (Charles VII is restored to the

@@ -311,9 +311,9 @@ their own special inner product that violates the algebraic properties referred 
   )
 %>
 <% end_marg %>
-<% begin_sec("Lemma: spacetime area is a scalar",nil,'area-is-scalar') %>
+<% begin_sec("Lemma: spacetime area is invariant",nil,'area-is-scalar') %>
 In this section we prove from axioms P1-P6 that
-area in the $x-t$ plane is a scalar, i.e., it does not change between frames of reference.
+area in the $x-t$ plane is invariant, i.e., it does not change between frames of reference.
 This result is used in section \ref{subsec:metric} to find the form of the spacetime metric.
 
 Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
@@ -344,7 +344,7 @@ Therefore this would violate one or the other of two principles:
 the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
 (neither $+x$ nor $-x$ is a preferred direction).
 We conclude that if these two symmetry principles hold,
-then spacetime area is the same for any two observers, so it is a scalar.
+then spacetime area is the same for any two observers, so it is an invariant.
 
 It may seem unnecessarily clumsy that we've used the idea of counting dots in the above argument,
 but remember that our main use of this result is to derive the form of the metric, and before the
@@ -356,12 +356,12 @@ only very primitive techniques at our disposal.
 \begin{hwsection}
 
 <% begin_hw('galilean-area') %>
-Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic scalar.
+Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic invariant.
 Is this argument also valid for Galilean relativity?
 <% end_hw %>
 
 <% begin_hw('no-transverse-length-contraction') %>
-Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic scalar.
+Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic invariant.
 (a) Generalize this from 1+1 dimensions to 3+1.
 (b) Use this result to prove that there is no relativistic length contraction effect
 along an axis perpendicular to the velocity.
