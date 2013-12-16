@@ -566,6 +566,12 @@ nonrelativistic expression, so that any relativistic effect is of higher
 order in $v$.
 <% end_hw %>
 
+<% begin_hw('a-dot-v-is-zero') %>
+Prove that $\vc{a}\cdot\vc{v}=0$ for any particle whose world-line
+allows the two vectors to be defined.
+<% end_hw %>
+
+
 \end{hwsection}
 
 <% end_chapter %>

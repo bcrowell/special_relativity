@@ -1,0 +1,199 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '06',
+    %q{Waves},
+    'ch:waves'
+  )
+%>
+
+This chapter and the preceding one have good, solid physical titles. Inertia.
+Waves. But underlying the physical content is a thread of mathematics designed
+to teach you a language for describing spacetime. Without this language,
+the complications of relativity rapidly build up and become unmanageable.
+In section \ref{subsec:varying-metric}, we saw that there are physically compelling
+reasons for switching back and forth between different coordinate systems ---
+different ways of attaching \emph{names} to the events that make up spacetime.
+A toddler in a bilingual family gets a payoff for switching back and forth
+between asking \emph{Mam\'a} in Spanish for \emph{dulces} and alerting Daddy in English
+that Barbie needs to be rescued from falling off the couch. She may bounce back and forth between
+the two languages in a single sentence --- a habit that linguists call
+``code switching.'' In relativity, we need to build fluency in a language that
+lets us talk about actual phenomena without getting hung up on the naming system.
+
+<% begin_sec("Frequency",nil,'frequency') %>
+<% begin_sec("Is time's flow constant?",nil,'time-constant') %>
+The simplest naming task is in $0+1$ dimensions: a time-line like the ones in history class.
+If we name the points in time A, B, C, \ldots or 1, 2, 3, \ldots, or Bush, Clinton,
+Bush, \ldots, how do we know that we're marking off equal time intervals? Does it make
+sense to imagine that time itself might speed up and slow down, or even start and stop?
+The second law of thermodynamics encourages us to think that it could. If the universe
+had existed for an infinite time, then entropy would have maximized itself --- a long time
+ago, presumably --- and we would not exist, because the heat death of the universe would
+already have happened.
+<% end_sec('time-constant') %>
+
+<% begin_sec("Clock-comparison experiments",nil,'clock-comparison') %>
+But what would it actually mean empirically for time's rate of flow to vary?
+Unless we can tie this to the results of experiments, it's nothing but cut-rate metaphysics.
+In a Hollywood movie where time could stop, presumably the scriptwriters would
+show us the stopping through the eyes of an observer, who would stroll past
+frozen waterfalls and snapshotted bullets in mid-flight. The observer's brain is
+a kind of clock, and so is the waterfall. We're left with what's known as a
+clock-comparison experiment.\index{clock-comparison experiments}
+To date, all clock-comparison experiments have given null results.
+Matsakis \emph{et al.}\footnote{Astronomy and Astrophysics 326 (1997) 924,\\
+\url{adsabs.harvard.edu/full/1997A&26A...326..924M}}
+found that pulsars match the rates of atomic clocks with a drift of less
+than about $10^{-6}$ seconds over 10 years.
+Gu\'ena \emph{et al.}\footnote{\url{arxiv.org/abs/1205.4235}}
+observed that atomic clocks using atoms of different isotopes drifted
+relative to one another by no more than about $10^{-16}$ per year.
+Any non-null result would have caused serious problems for relativity.
+One of the expectations in an Aristotelian description of spacetime
+is that the motion of material objects on earth would naturally slow
+down relative to celestial phenomena such as the rising and setting of the sun.
+The relativistic interpretation of time dilation as an effect on time itself
+(p.~\pageref{time-dilation}) also depends crucially on the null results of these experiments.
+<% end_sec('clock-comparison') %>
+
+<% begin_sec("Birdtracks notation",nil,'birdtracks') %>
+As a simple example of clock comparison, let's imagine using the hourly
+emergence of a mechanical bird from a pendulum-driven cuckoo
+clock to measure the rate at which the earth spins. There is clearly a kind of
+symmetry here, since we could equally well take our planet's
+rotation as the standard and use it to measure the frequency with which the bird pops out of the door.
+Schematically, let's represent this measurement process with
+the following notation, which is part of a system called called birdtracks:\index{birdtracks notation}%
+\footnote{The system used in this book
+follows the one defined by Cvitanovi\'{c}, which was based closely on a graphical
+notation due to Penrose. For a more complete exposition, see the Wikipedia article
+``Penrose graphical notation'' and Cvitanovi\'{c}'s 
+online book at \url{birdtracks.eu}.}\index{birdtracks}\index{Cvitanovi\'{c}, Predrag}
+\index{Penrose!graphical notation for tensors}\index{tensor!Penrose graphical notation}
+\index{vector!Penrose graphical notation}
+\begin{equation*}
+  __birdscalarproduct(c,e) = 24
+\end{equation*}
+Here $c$ represents the cuckoo clock and $e$ the rotation of the earth.
+Although the measurement relationship is nearly symmetric, the arrow has a direction, because,
+for example, the measurement of the earth's rotational period in terms of the clock's frequency is
+$__birdscalarproduct(c,e)=(24\ \zu{hr})(1\ \zu{hr}^{-1})=24$, but the clock's period in terms of the earth's frequency
+is $__birdscalarproduct(e,c)=1/24$. We say that the relationship is
+not symmetric but ``dual.'' By the way, it doesn't matter
+how we arrange these diagrams on the page. The notations __birdscalarproduct(c,e)
+and __birdflipscalarproduct(c,e) mean exactly the same thing, and expressions like this can even be drawn
+vertically.
+
+Suppose that $e$ is a displacement along some one-dimensional line of time, and we want to think of it as the
+thing being measured. Then we expect that the measurement process represented by $c$
+produces a real-valued result and is a linear function of $e$. Since the relationship
+between $c$ and $e$ is dual, we expect that $c$ also belongs to some
+vector space. For example, vector spaces allow multiplication by a scalar:
+we could double the frequency of the cuckoo clock by making the bird
+come out on the half hour as well as on the hour, forming $2c$. Measurement should
+be a linear function of both vectors; we say it is ``bilinear.'' 
+<% end_sec('birdtracks') %>
+
+<% begin_sec("Duality",nil,'duality') %>
+The two vectors $c$ and $e$ have different units,
+$\zu{hr}^{-1}$ and hr, and
+inhabit two different one-dimensional vector spaces.
+The ``flavor'' of the vector is represented by whether the arrow goes into
+it or comes out. Just as we used notation like $\overrightarrow{v}$ in freshman physics to
+tell vectors apart from scalars, we can employ arrows in the birdtracks
+notation as part of the notation for
+the vector, so that
+instead of writing the two vectors as $c$ and $e$, we can notate them
+as __birddualvec(c) and __birdvec(e). Performing a measurement is like plumbing.
+We join the two ``pipes'' in __birddualvec(c)__birdvec(e) and simplify to
+__birdscalarproduct(c,e).
+
+A confusing and nonstandardized jungle of notation and terminology has grown up around these concepts. For now,
+let's refer to a vector such as __birdvec(e), with the arrow coming in, simply as a ``vector,''\index{vector!distinguished from covector}
+and the type like __birddualvec(c) as a ``covector.''\index{covector}
+In the one-dimensional example of the earth and the cuckoo clock, the roles played by the two
+things were completely equivalent, and it didn't matter which one we expressed as a vector
+and which as a covector.
+<% end_sec('duality') %>
+
+<% end_sec('frequency') %>
+<% begin_sec("Phase",nil,'phase') %>
+<% begin_sec("Phase is a scalar",nil,'phase-is-scalar') %>
+In birdtracks notation, a scalar is a quantity that has no external arrows at all. Since the
+expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
+a scalar. This makes sense because it's a count, and a count is a scalar. We've counted the number
+of periods. Another way of describing this measurement is as a phase. If we prefer to measure
+the phase $\phi$ in units of cycles, then we have $\phi=__birdscalarproduct(c,e)$. If we
+like radians, we can use $\phi=2\pi __birdscalarproduct(c,e)$
+<% end_sec('phase-is-scalar') %>
+
+<% begin_sec("Scaling",nil,'scaling') %>
+A convenient way of summarizing all of our categories of variables is by their behavior
+when we convert units, i.e., when we rescale our space. If we switch our time unit from
+hours to minutes, the number of apples in a bowl is unchanged, the earth's period of
+rotation gets 60 times bigger, and the frequency of the cuckoo clock changes by a
+factor of 1/60. In other words, a quantity $u$ under rescaling of coordinates
+by a factor $\alpha$ becomes $\alpha^p u$, where the exponents $-1$, $0$, and $+1$
+correspond to covectors, scalars, and vectors, respectively. We can therefore see that
+these distinctions are of interest even in one dimension, contrary to what one would have
+expected from the freshman-physics concept of a vector as something transforming in a certain
+way under rotations.
+<% end_sec('scaling') %>
+<% end_sec('phase') %> 
+
+<% begin_sec("The frequency-wavenumber covector",nil,'f-vector') %>
+Generalizing from $0+1$ dimensions to $3+1$, we could have an observer moving inertially
+along vector $\vc{o}$, while counting the phase $\phi$ (in radians) of a
+plane wave (perhaps a water wave or an electromagnetic wave) washing over her.
+Since $\phi$ is just a count, it's clearly a scalar. That means that we have some
+function that takes as its input a vector $\vc{o}$ and gives as an output the scalar $\phi$.
+This function has all the right characteristics to be described as a scalar product of
+$\vc{o}$ with some covector $\bomega$, and in a constructive style of mathematics this is a good
+way of \emph{defining} a covector: it's a bilinear function from the space of vectors to the real numbers.
+We call $\bomega$ the frequency-wavelength covector, or just the frequency covector for short.
+Its timelike part is the frequency $\omega$ in units of radians per second,
+and its spatial part is the wavenumber $k$, equal to $2\pi$ divided by the wavelength.
+
+In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
+vectors and covectors. A vector is an arrow.
+A covector
+can be visualized as a set of parallel, evenly spaced lines
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to 
+show which way is ``uphill.''
+The act of measurement consists of counting how many of these
+lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+<% marg(150) %>
+<%
+  fig(
+    'vector-measuring-covector',
+    %q{1. A displacement vector. 2. A covector.
+       3. Measurement is reduced to counting.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'isotherms',
+    %q{Constant-temperature curves for January in North America, at intervals of $4\degcunit$.
+       The temperature gradient at a given point is a covector.}
+  )
+%>
+<% end_marg %>
+
+Given a scalar field $\phi$, its gradient $\operatorname{grad} \phi$ at any given point is a covector.
+In birdtracks notation, we have to indicate this by writing it with an
+outward-pointing arrow, $__birddualvec((\operatorname{grad} \phi))$. Because
+gradients occur so frequently, we have a special shorthand for them, which is
+simply a circle:
+\begin{equation*}
+  __birdgrad(\phi)
+\end{equation*}
+
+<% end_sec('f-vector') %> 
+
+
+<% end_chapter %>

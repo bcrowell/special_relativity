@@ -76,7 +76,10 @@ draw 1+1-dimensional figures without apology or explanation.
 The relativist's attitude is that events and relationships between events
 are primary, while coordinates such as $x$ and $t$ are secondary and
 possibly irrelevant. Coordinates let us attach labels like $(x,t)$ to points, but this is like
-taking a walk through the zoo and giving a name to each animal: the animals don't care about the names.
+God asking Adam to name all the birds and animals: the animals didn't care about the names.
+%       Genesis 20:19, "Out of the ground Yahweh God formed every animal of the field,
+%       and every bird of the sky, and brought them to the man to see what he would call
+%       them. Whatever the man called every living creature became its name." -- http://ebible.org/web/GEN02.htm#V0
 Figure \subfigref{observers-and-simultaneity}{3} shows the use of vectors to indicate relationships
 between points. Vector $\vc{o}$ is an observer-vector, connecting two points on the world-line
 of the person. It points from the past into the future. The vector $\vc{s}$ connecting the two clocks is
@@ -443,14 +446,65 @@ at all speeds, but they're weak at speeds small compared to $c$.
 <% end_sec('einstein-spacetime') %>
 <% end_sec('three-models-of-spacetime') %>
 
-<% begin_sec("Measurement",nil,'measurement') %>
+<% begin_sec("Minkowski coordinates",nil,'minkowski-coordinates') %>\index{Minkowski coordinates}\index{coordinates!Minkowski}\index{Minkowski, Hermann}
+It is often convenient to name points in spacetime using coordinates, and a particular type of
+naming, chosen by Einstein and Minkowski, is the default in special relativity.
+I'll refer to the coordinates of this system
+as Minkowski coordinates, and they're what I have in mind throughout this book
+when I use letters like $t$ and $x$ (or variations like $x'$, $t_\zu{o}$, etc.) without further explanation.
+To define Minkowski coordinates in $1+1$ dimensions,
+we need to pick (1) an event that we consider to be the origin, $(t,x)=(0,0)$, (2)
+an observer-vector $\vc{o}$, and (3) a side of the observer's world-line that we will call
+the positive $x$ side, and draw on the right in diagrams.
+The observer is required to be inertial,\footnote{For now we appeal
+to the freshman mechanics notion of ``inertial.'' A better relativistic
+definition, which differs from the
+Newtonian one, is given in ch.~\ref{ch:inertia}.} so that by repeatedly making copies of
+$\vc{o}$ and laying them tip-to-tail, we get a chain that lies on top of the observer's world-line
+and represents ticks on the observer's clock.
 
+Minkowski coordinates use units with $c=1$. Explicitly,
+we define the unique vector $\vc{s}$ that is orthogonal to $\vc{o}$, points in the positive
+direction, and has a length of one clock-tick. In practical terms, the orthogonality
+could be defined by Einstein synchronization (example \ref{eg:einstein-train},
+p.~\pageref{eg:einstein-train}), and the length by arranging that a radar echo travels to the tip
+of $\vc{s}$ and back in two ticks.
+<% marg(100) %>
+<%
+  fig(
+    'minkowski-portrait',
+    %q{Hermann Minkowski (1864-1909).}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'minkowski-lattice',
+    %q{A set of Minkowski coordinates.}
+  )
+%>
+<% end_marg %>
+
+We now construct a graph-paper
+lattice, figure \figref{minkowski-lattice},
+by repeating the vectors $\vc{o}$ and $\vc{s}$. This grid defines
+a name $(t,x)$ for each point in spacetime.
+<% end_sec('minkowski-coordinates') %>
+
+<% begin_sec("Measurement",nil,'measurement') %>
 We would like to have a general system of measurement for relativity, but so far we have
 only an incomplete patchwork. The length of a timelike vector can be defined as the time
 measured on a clock that moves along the vector.
 A spacelike vector has a length that is measured on a ruler whose motion is
 such that in the ruler's frame of reference, the vector's endpoints are simultaneous. But
 there is no third measuring instrument designed for the purpose of measuring lightlike vectors.
+
+Nor do we automagically get a complete system of measurement just by having defined Minkowski
+coordinates. For example, we don't yet know how to find the length of a timelike vector
+such as $(\Delta t,\Delta x)=(2,1)$, and we suspect that it will be not equal 2, since
+the Hafele-Keating experiment tells us that a clock undergoing
+the motion represented by $\Delta x=1$ will probably not agree with a clock carried by the
+observer whose clock we used in defining these coordinates.
 
 <% begin_sec("Scalars",nil,'scalars') %>
 
@@ -464,26 +518,17 @@ For a relativistic scalar, we require in addition that observers agree no matter
 they have. (A change in orientation is called a rotation. A transformation that changes
 from one inertial frame of reference to another, without any rotation, is called a boost.)\index{boost!defined}
 
- Electric charge is a good example of a relativistic scalar. Electrons in atoms typically
+Electric charge is a good example of a relativistic scalar. Electrons in atoms typically
 have velocities of 0.01 to 0.1 (in our relativistic units, where $c=1$), so if an electron's charge
 depended on its motion relative to an observer, atoms would not be electrically neutral. Experiments
 have been done\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
 with null results.
-
 <% end_sec('scalars') %>
 
+
 <% begin_sec("The metric",nil,'metric') %>
-Area in the $x-t$ plane is also a scalar, as proved on p.~\pageref{sec:area-is-scalar}.
-The invariance of area has little importance on its own, but it provides a good stepping stone toward
-a relativistic system of measurement. 
-Suppose that we have events A (Charles VII is restored to the throne) and B (Joan of Arc is executed). Now imagine
-that technologically advanced aliens want to be present at both A and B, but in the interim they wish to fly away in their spaceship, be present
-at some other event P (perhaps a news conference at which they give an update on the events taking place on earth), but get back in
-time for B. Since nothing can go faster than $c$ (which we take to equal 1), P cannot be too far away. The set of all possible events
-P forms a rectangle, figure \subfigref{light-rectangles}{1}, in the $x-t$ plane that has A and B at opposite corners and whose edges have slopes equal to $\pm 1$.
-We call this type of rectangle a light-rectangle.
-<% marg(20) %>
+<% marg(-100) %>
 <%
   fig(
     'light-rectangles',
@@ -491,15 +536,32 @@ We call this type of rectangle a light-rectangle.
   )
 %>
 <% end_marg %>
+Area in $1+1$ dimensions is also a scalar, as proved on p.~\pageref{sec:area-is-scalar}.
+The invariance of area has little importance on its own, but it provides a good stepping stone toward
+a relativistic system of measurement. 
+Suppose that we have events A (Charles VII is restored to the
+throne) and B (Joan of Arc is executed). Now imagine
+that technologically advanced aliens want to be present at both
+A and B, but in the interim they wish to fly away in their spaceship, be present
+at some other event P (perhaps a news conference at which they give
+an update on the events taking place on earth), but get back in
+time for B. Since nothing can go faster than $c$ (which we take
+to equal 1), P cannot be too far away. The set of all possible events
+P forms a rectangle, figure \subfigref{light-rectangles}{1}, in the
+$1+1$-dimensional plane that has A and B at opposite corners and whose edges have slopes equal to $\pm 1$.
+We call this type of rectangle a light-rectangle.
 
-The area of this rectangle will be the same regardless of one's frame of reference. In particular, we could choose a
+The area of this rectangle will be the same regardless
+of one's frame of reference. In particular, we could choose a
 special frame of reference, panel 2 of the figure, such that A and B occur
 in the same place. (They do not occur at the same place, for example, in the sun's frame,
 because the earth is spinning and going around the sun.) Since the speed $c=1$
 is the same in all frames of reference, and the sides of
 the rectangle had slopes $\pm 1$ in frame 1, they must still have slopes $\pm 1$ in frame 2.
-The rectangle becomes a square with its diagonals parallel to the $x$ and $t$ axes, and the length of these diagonals equals the
-time $\tau$ elapsed on a clock that is at rest in frame 2, i.e., a clock that glides through space at constant velocity from A to B,
+The rectangle becomes a square, whose diagonals are an $\vc{o}$ and an $\vc{s}$
+for frame 2. The length of these diagonals equals the
+time $\tau$ elapsed on a clock that is at rest in
+frame 2, i.e., a clock that glides through space at constant velocity from A to B,
 reuniting with the planet earth when its orbit brings it to B.
 The area of the gray regions can be interpreted as half the square of this gliding-clock time, which is
 called the proper time.\index{proper time}
@@ -508,7 +570,9 @@ somewhat archaic sense of ``own'' or ``self,'' as in ``The Vatican does not lie
 within Italy proper.'' Proper time, which we notate $\tau$, can only be defined for timelike world-lines, since
 a lightlike or spacelike world-line isn't possible for a material clock.
 
-If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of 
+In terms of (Minkowski) coordinates, suppose
+that events A and B are separated by a distance $x$ and a time $t$.
+Then in general $t^2-x^2$ gives the square of 
 the gliding-clock time. Proof: 
 Because of the way that area scales with a rescaling of the coordinates,
 the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$,
@@ -682,7 +746,7 @@ Galilean version given in example \ref{eg:galilean-twin-paradox}.
 
 We have in general the following interpretation:
 
-\begin{lessimportant}[Time dilation]
+\begin{lessimportant}[Time dilation]\label{time-dilation}
 A clock runs fastest in the frame of reference of an observer who is at rest relative to the clock. An observer
 in motion relative to the clock at speed $v$ perceives the clock as running more slowly by a factor of $\gamma$.
 \end{lessimportant}
@@ -694,7 +758,9 @@ This philosophy, which has been immensely influential among physicists, is
 called operationalism\index{operationalism}\label{operationalism}
 and was developed by P.W.~Bridgman\index{Bridgman, P.W.}
 in the 1920's. Our operational definition of time works because the rates of \emph{all} physical processes
-are affected equally by time dilation. By the time the twins in figure \figref{twin-paradox} are reunited,
+are affected equally by
+time dilation.\footnote{For more on this topic, see section \ref{sec:frequency}.} By the time the
+twins in figure \figref{twin-paradox} are reunited,
 not only has the traveling twin 
 heard fewer ticks from her antique mechanical 
 pocket watch, but
@@ -871,7 +937,7 @@ to decode visually.
 %>
 <% end_marg %>
 
-In special relativity it is of special interest to convert between the coordinates
+In special relativity it is of interest to convert between the Min\-kow\-ski coordinates
 of observers who are in motion relative to one another. The result,
 shown in figure \figref{smooshing}, is a kind of stretching and smooshing of the
 diagonals. Since the area is invariant, one diagonal grows by the same factor by

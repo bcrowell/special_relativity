@@ -556,7 +556,7 @@ anther without interacting.}
 \end{eg}
 
 
-\begin{eg}{Compton scattering}
+\begin{eg}{Compton scattering}\label{eg:compton}
 Figure \subfigref{compton-edge}{1} is a histogram of gamma rays emitted by a
 $^{137}\zu{Cs}$ source and recorded by a NaI scintillation detector.
 This type of detector, unlike a Geiger-Muller counter, gives a pulse whose height is
@@ -690,6 +690,29 @@ directions of polarization should be permitted. For a wave that propagates at $c
 in which the wave is at rest (see section \ref{sec:ftl-frames}).
 \end{eg}
 <% end_sec('massless-go-at-c') %>
+<% begin_sec("No global conservation of energy-momentum in general relativity",nil,'gr-no-e-cons') %>
+If you read optional chapter \ref{ch:foundations}, you know that the distinction between special
+and general relativity is defined by the flatness of spacetime, and that flatness is in turn
+defined by the path-independence of parallel transport. Whereas energy is a scalar in
+Newtonian mechanics, in relativity it is the timelike component of a vector. It therefore
+follows that in general relativity we should not expect to have global conservation of energy.
+For a conservation law is a statement that when we add up a certain quantity, the total has
+a constant value. But if spacetime is curved, then there is no natural, uniquely defined way to
+compare vectors that are defined at different places in spacetime. We could parallel transport one
+over to the other, but the result would depend on the path along which we chose to transport it.
+For similar reasons, we should not expect global conservation of momentum.
+
+This is the answer to a frequently asked question about cosmology. Since 1998 we've known that the
+expansion of the universe is accelerating, rather than decelerating as we would have expected due
+to gravitational attraction. What is the source of the ever-increasing kinetic energy of all those
+galaxies? The question assumes that energy must be conserved on cosmological scales, but that
+just isn't so.
+
+Nevertheless, general relativity reduces to special relativity on scales small enough to make
+curvature effects negligible. Therefore it is still valid to expect conservation of energy and
+momentum to hold \emph{locally}, as assumed, e.g., in the analysis of Compton scattering in
+example \ref{eg:compton} on p.~\pageref{eg:compton}, and verified in countless experiments.
+<% end_sec('gr-no-e-cons') %>
 
 
 <% end_sec('momentum') %>
