@@ -980,8 +980,8 @@ The Lorentz transformation translates into algebraic notation like this:
   t' &= \quad \gamma t - v\gamma x \\
   x' &= -v\gamma t + \gamma x
 \end{align*}
-The line $x=0$ transforms
-to a line with the correct inverse slope $v$, which is what justifies the interpretation of $v$ as
+The line $x=0$ is described in the $(t',x')$ coordinates as having slope $-1/v$,
+which is what justifies the interpretation of $v$ as
 a velocity. The inverse transformation is the one with $v$ replaced by $-v$. These properties are
 shared by the Galilean transformation.
 The fact that this is the correct relativistic transformation can be verified by noting that

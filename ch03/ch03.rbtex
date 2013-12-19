@@ -90,7 +90,7 @@ metric, which allows us to compute how much proper time is experienced by each o
 <% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>
 
 Figure \figref{twin-signals} shows how the ideas in the preceding section apply to the twin paradox.
-In \subfigref{twin-signals}{1} we see the situation as described by a partial observers, who says
+In \subfigref{twin-signals}{1} we see the situation as described by an impartial observer, who says
 that both twins are traveling to the right. But even the impartial observer agrees that one twin's
 motion is inertial and the other's noninertial, which breaks the symmetry and also allows the twins
 to meet up at the end and compare clocks. For convenience, \subfigref{twin-signals}{2} shows the
@@ -137,7 +137,7 @@ At regular intervals, A sends lightspeed ``pings'' to B, who then immediately re
 The interval between pings accumulates two Doppler shifts, and the result
 is their product $D(v)D(-v)$. But B didn't actually need to receive the
 original signal and retransmit it; the results would have been the same if B had just stayed out of the way.
-Therefore this product must equal 1, so we must have $D(v)D(-v)=1$.
+Therefore this product must equal 1, so $D(v)D(-v)=1$.
 
 \begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}\label{ives-stilwell}
 The transverse Doppler shift is a characteristic prediction of special relativity, with no
