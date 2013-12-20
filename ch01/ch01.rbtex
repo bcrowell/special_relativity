@@ -806,8 +806,9 @@ Our present discussion is limited to 1+1 dimensions, but in 3+1,
 only the length along the line of motion is contracted (ch.~\ref{ch:foundations},
 problem \ref{hw:no-transverse-length-contraction}, p.~\pageref{hw:no-transverse-length-contraction}).
 It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
-Optical observations are influenced by the unequal times taken for light to propagate from the ends
-of the stick to the eye.
+Optical observations are influenced, for example, by the unequal times taken for light to propagate from the ends
+of the stick to the eye. A simulation of this type of effect is drawn in
+example \ref{eg:cube} on p.~\pageref{eg:cube}.
 
 \begin{eg}{An interstellar road trip}\label{eg:interstellar-road-trip}
 Alice stays on earth while her twin Betty
@@ -1141,6 +1142,16 @@ relativity is that in the limit $c\rightarrow\infty$, all relativistic
 expressions have to go over to their Galilean counterparts.
 What would be the corresponding limit if we wanted to recover classical
 mechanics from quantum mechanics?
+<% end_hw %>
+
+<% begin_hw('sum-of-lightlike-is-timelike') %>
+In $3+1$ dimensions, prove that if $\vc{u}$ and $\vc{v}$ are nonzero, future-lightlike, and not parallel
+to each other, then their sum is future-timelike.
+<% end_hw %>
+
+<% begin_hw('orthogonal-lightlike-are-parallel') %>
+Prove that if $\vc{u}$ and $\vc{v}$ are nonzero, lightlike, and orthogonal
+to each other, then they are parallel, i.e., $\vc{u}=c\vc{v}$ for some $c\ne0$.
 <% end_hw %>
 
 <% begin_hw('relativity-max-tension') %>

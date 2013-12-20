@@ -269,12 +269,14 @@ visualized as an arrow lying within a plane of constant phase.
 Given the wave's phase information, there is more than one possible arrow of this kind.
 We could try to resolve the ambiguity by requiring that the arrow's projection into the $xy$ plane
 be perpendicular to the intersection of the wavefronts with that plane, but (with the exception
-of the case where the wave  travels at $c$) this prescription gives
+of the case where the wave  travels at $c$, example \ref{eg:light-phase-gives-vel},
+p.~\pageref{eg:light-phase-gives-vel}) this prescription gives
 results that change depending on our frame of reference, and the changes are not describable by
 a Lorentz transformation of the velocity vector.
 This shows that in the general case, the phase information of the wave, encoded in the
 frequency covector $__birddualvec(\bomega)$, does not describe the direction of the wave's
-propagation through space. At most it tells us the wave's
+propagation through space.\label{phase-does-not-determine-propagation}
+At most it tells us the wave's
 \emph{phase velocity}, $\omega/k$, which is not really a velocity. All of these are symptoms of
 the fact that a velocity is supposed to be a vector, but $__birddualvec(\bomega)$ is a covector.
 The phase velocity lacks
@@ -334,6 +336,25 @@ squared magnitude of $\vc{r}$, which we calculate using the metric as $r^2=g(\vc
 Since we can think of covectors as functions that take vectors to real numbers,
 clearly $__birddualvec(\vc{r})$ should be the function $f$ defined by
 $f(\vc{x})=g(\vc{r},\vc{x})$.
+
+\begin{eg}{Velocity vector of a light wave, given its phase}\label{eg:light-phase-gives-vel}
+We saw on p.~\pageref{phase-does-not-determine-propagation} that in general, the information about
+the phase of a wave encoded in $__birddualvec(\bomega)$
+does not determine its direction of propagation.
+The exception is a wave, such as a light
+wave, that propagates at $c$. 
+Let a world-line of propagation of the wave lie along the vector $__birdvec(\vc{v})$.
+In the case of a wave propagating at $c$, we have $v^2=0$ (so that $__birdvec(\vc{v})$ can't have the usual
+normalization for a velocity vector), and the dispersion relation is simply
+$\bomega^2=0$. Since the phase stays constant along a world-line of propagation,
+$__birdscalarproduct(\bomega,\vc{v})=0$. We therefore find that $\vc{v}$ and
+$\bomega$ are two nonzero, lightlike vectors that are orthogonal to each other.
+But as shown in problem \ref{hw:orthogonal-lightlike-are-parallel} 
+on p.~\pageref{hw:orthogonal-lightlike-are-parallel}, this implies that the two vectors are
+parallel. Thus if we're given the covector $__birddualvec(\bomega)$, we just have to
+compute its dual $__birdvec(\bomega)$ to find the direction of propagation.
+\end{eg}
+
 <% end_sec('duality-generalized') %>
 
 <% begin_sec("Change of basis",nil,'change-of-basis') %>
@@ -401,69 +422,92 @@ look at sections 6 and 7 of Einstein's 1905 paper on special relativity, where a
 derivation is needed in order to arrive at the same result.
 <% end_sec('doppler-fancy') %> 
 <% begin_sec("Aberration",nil,'aberration') %>
-Imagine that rain is falling straight down while you drive in a convertible with the top down.
+Imagine that rain is falling vertically
+while you drive in a convertible with the top down.
 To you, the raindrops appear to be moving at some nonzero angle relative to vertical. This is referred to as
 aberration:\index{aberration}
 a world-line's direction changes depending on one's frame of reference.
-In this example, aberration is a large effect because the car's speed is comparable to that
-of the raindrops. For a ray of light, aberration should depend on how big the observer's
-speed is compared to the speed of light. For example, the earth's orbital speed is about
-$10^{-4}$ in units where $c=1$, so we expect a maximum effect of about $10^{-4}$ radians,
+In the street's frame of reference, the angle between the rain's three-velocity and the car's is
+$\theta=90\degunit$, but in the car's frame $\theta'\ne90\degunit$.
+In this example, aberration is a large effect because the car's speed $v$ is comparable to 
+the velocity $u$ of the raindrops. To a snail crawling along the sidewalk at a much
+lower $v$, the effect would be small. Using the small-angle approximation
+$\tan\epsilon\approx\epsilon$, we find that for small $v$, the difference $\Delta\theta=\theta'-\theta$ would
+be approximately $v/u$, in units of radians.
+
+Compared to a ray of light, we're all like snails.
+For example, the earth's orbital speed is about
+$v\sim10^{-4}$ in units where the speed of light $u=1$,
+so we expect a maximum effect of about $10^{-4}$ radians,
 or $20''$ of arc, which is small but not negligible for a telescope with a high-quality mount,
-being used at high magnification. Suppose that the light ray's world-line is parallel to the
-vector $__birdvec(\vc{u})$. We can't make this into a velocity vector, because for a lightlike
-vector we can't satisfy the usual normalization condition. Instead, let's just arbitrarily
-fix its timelike component to be 1:
+being used at high magnification.
+
+This estimate of astronomical aberration of light is roughly right, but we don't expect it
+to be exact, both because of the small-angle approximation and because we calculated it using
+a Galilean picture of spacetime. Let's calculate the exact result.
+As shown in example \ref{eg:light-phase-gives-vel} on p.~\pageref{eg:light-phase-gives-vel},
+the direction of propagation of a light wave lies along the vector that is the dual
+to its frequency covector. Let's call this direction of propagation
+$__birdvec(\vc{u})$. Reusing the expression for  $__birddualvec(\bomega)$ defined in section
+\ref{subsec:doppler-fancy}, and arbitrarily
+fixing $__birdvec(\vc{u})$'s timelike component to be 1, we have
 \begin{equation*}
-  __birdvec(\vc{u}) =(1,-\cos\theta,-\sin\theta) 
+  __birdvec(\vc{u}) =(1,-\cos\theta,-\sin\theta)  \qquad .
 \end{equation*}
-This is designed to satisfy the condition $__birdscalarproduct(\bomega,\vc{u})=0$
-for consistency with the covector $__birddualvec(\bomega)$ defined in section
-\ref{subsec:doppler-fancy}.
 When this vector undergoes
-a boost $v$ along the $x$ axis we have
+a boost $v$ along the $x$ axis it becomes
 \begin{equation*}
   __birdvec(\vc{u}') =(\gamma(1+v\cos\theta),\gamma(-v-\cos\theta),-\sin\theta) 
 \end{equation*}
-The angle $\theta=\tan^{-1}(u_y/u_x)$ has been transformed
+The original angle $\theta=\tan^{-1}(u_y/u_x)$ has been transformed
 to $\theta'=\tan^{-1}(u_y'/u_x')$, the result being
 \begin{equation*}
   \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)} \qquad .
 \end{equation*}
 
 \begin{eg}{A test of special relativity}
-An assumption underlying this treatment of aberration was that the speed of light was $c$,
+An assumption underlying this treatment of aberration was that the speed of light was $u=c$,
 regardless of the velocity of the source. Not all prerelativistic theories had this property,
 and one would expect that in such a theory, aberration would not be in accord with the relativistic
-result.
+result. In particular, suppose that we believed in Galilean spacetime, so that when a distant galaxy,
+receding from us at some speed $w$, emitted a ray of light toward us, the light's velocity in our
+frame was $u=c-w$. That is, we imagine a theory in which emitting a ray of light is like shooting
+a bullet from a gun. Since aberration effects go approximately like $v/u$, we would expect that
+the reduced $u$ would lead to more aberration compared to the prediction of relativity.
 
-In a test of special relativity,
+To test theories of this type,
 Heckmann\footnote{Annales d'Astrophysique 23 (1960) 410,
 \url{adsabs.harvard.edu/abs/1960AnAp...23..410H}.} used a
 24-inch reflector at Hamburg to take high-magnification photographic plates of a star field
 in Ursa Major containing 11 stars inside the Milky Way and 5 distant galaxies. Measurements
-of Doppler shifts showed that the galaxies were receding from us at about 15,000 km/s, whereas
-stars within the Milky Way move relative to us at speeds that are negligible in comparison
-(a few hundred km/s). Over the course of a year, the earth's orbit carries it toward and away
+of Doppler shifts showed that the galaxies were receding from us at velocities of about $w=0.05c$, whereas
+stars within the Milky Way move relative to us at speeds that are negligible in comparison.
+If, contrary to the relativistic prediction, this led to a 5\%
+decrease in $u$, then we would expect about a 5\%
+increase in aberration for the galaxies compared to the stars.
+
+Over the course of a year, the earth's orbit carries it toward and away
 from Ursa Major, so that in the earth's frame of reference, the stars and galaxies have varying velocities
-relative to us. Special relativity predicts that the velocities of the sources should not affect
-the aberration, so that the stars and galaxies would remain in the same positions relative to one
-another. The results from the observations showed that these relative positions did not
+relative to us, and the $\sim20''$ aberration effect oscillates in direction.
+If the effect was different for the galaxies and the stars, then they ought to shift their apparent positions
+relative to one another. The shift ought to be on the order of 5\%
+of $20''$, or one second of arc.
+The results from the observations showed that these relative positions did not
 appear to vary at all over the course of a year, with the average relative shift
 being $0.00\pm0.06''$ of arc. This difference in aberration is
-consistent with zero, as predicted by special relativity,
-and several orders of magnitude smaller than the $\sim20''$ aberration due to the earth's
-orbital motion.
+consistent with zero, as predicted by special relativity.
 \end{eg}
 
-\begin{eg}{A view from an ultrarelativistic starship}
-It's fun to imagine this from the point of view of an observer oboard an ultrarelativistic
-starship. For $v$ sufficiently close to 1, any angle $\theta<180\degunit$
-transforms to a small $\theta'$. Thus, all light coming to this observer from the surrounding
-stars --- even those in extreme backward directions! --- is gathered into a small, bright patch of
-light that appears to come from straight ahead. Some visible light would be shifted into the extreme
-ultraviolet and infrared, while some infrared and ultraviolet light would become visible.
+<%
+  fig(
+    'cube',
+    %q{1. The cube's rest frame. 2. The observer's frame. 3. The observer's view of the cube,
+       severely distorted by aberration.},
+    {'width'=>'fullpage','float'=>false}
+  )
+%>
 
+\begin{eg}{The view of an ultrarelativistic observer}\label{eg:cube}
 Figure \figref{cube} shows a visualization for an observer flying through a cube at $v=0.99$.
 In \subfigref{cube}{1}, the cube is shown in its own rest frame, where it has sides of unit length, and
 the observer, having already passed through, lies one unit to the right of the cube's center. The
@@ -471,23 +515,35 @@ observer is facing to the right, away from the cube. The dashed line is a ray of
 from point P to the observer, and in this frame it appears as though the ray, 
 arriving from $\theta=162\degunit$,
 would not make it into
-the observer's eye. But in the observer's frame, \subfigref{cube}{2}, the ray
+the observer's eye.
+
+But in the observer's frame, \subfigref{cube}{2}, the ray
 is at $\theta'=47\degunit$, so it actually does fall within her field of view.
-The cube is length-contracted by a factor $\gamma\approx 7$. The image seen by the
+The cube is length-contracted by a factor $\gamma\approx 7$.
+The ray was emitted earlier, when the cube was out in front of the observer, at the position
+shown by the dashed outline. 
+
+The image seen by the
 observer is shown in \subfigref{cube}{3}. The circular outline defining the field of
 view represents $\theta'=50\degunit$.
+Note that the relativistic length contraction is not at all
+what an observer \emph{sees} optically. The optical observation is influenced by length contraction,
+but also by aberration and by the time it takes for light to propagate to the observer. The time
+of propagation is different for different parts of the cube, so in the observer's frame,
+\subfigref{cube}{2}, rays from different points had to be emitted when the cube was at different
+points in its motion, if those rays were to reach the eye.
 
 A group at Australian National University has produced animations of similar scenes,
 which can be found online by searching for ``optical effects of special relativity.''
+
+It's fun to imagine the view of an observer oboard an ultrarelativistic
+starship. For $v$ sufficiently close to 1, any angle $\theta<180\degunit$
+transforms to a small $\theta'$. Thus, all light coming to this observer from the surrounding
+stars --- even those in extreme backward directions! --- is gathered into a small, bright patch of
+light that appears to come from straight ahead. Some visible light would be shifted into the extreme
+ultraviolet and infrared, while some infrared and ultraviolet light would become visible.
 \end{eg}
 
-<%
-  fig(
-    'cube',
-    %q{1. The cube's rest frame. 2. The observer's frame. 3. The observer's view.},
-    {'width'=>'fullpage','float'=>false}
-  )
-%>
 
 <% end_sec('aberration') %> 
 <% end_sec('doppler-3d') %> 
