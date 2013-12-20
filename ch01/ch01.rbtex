@@ -507,7 +507,6 @@ the motion represented by $\Delta x=1$ will probably not agree with a clock carr
 observer whose clock we used in defining these coordinates.
 
 <% begin_sec("Invariants",nil,'invariants') %>
-
 The whole topic of measurement is apt to be confusing, because the shifting landscape of
 relativity makes us feel as if we've walked into a Salvador Dali landscape of melting pocket
 watches. A good way to regain our bearings is
@@ -525,8 +524,22 @@ depended on its motion relative to an observer, atoms would not be electrically 
 have been done\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
 with null results.
-<% end_sec('invariants') %>
 
+A vector can never be an invariant, since it changes direction under a rotation. (Some vectors, such
+as velocities, also change under a boost.)
+In freshman mechanics, any quantity, such as energy, that wasn't a vector usually fell into the
+category we referred to as scalars. In relativity, however, the term ``scalar'' has a much more
+restrictive definition, which we'll discuss 
+in section \ref{subsec:phase-is-scalar}, p.~\pageref{subsec:phase-is-scalar}.
+
+By the way, beginners in relativity sometimes get confused about invariance as opposed to conservation.
+They are not the same thing, and neither implies the other. For example, momentum has a direction in
+space, so it clearly isn't invariant --- but we'll see in section \ref{sec:momentum} that there is
+a relativistic version of the momentum vector that is conserved. As in Newtonian mechanics,
+we don't care if all observers agree on the momentum of a system --- we only care that the \emph{law}
+of momentum conservation is valid and has the same form in all frames. Conversely, there are
+quantities that are invariant but not conserved, mass being an example.
+<% end_sec('invariants') %>
 
 <% begin_sec("The metric",nil,'metric') %>
 <% marg(-100) %>

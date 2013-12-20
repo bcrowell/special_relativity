@@ -123,12 +123,29 @@ and which as a covector.
 <% end_sec('frequency') %>
 <% begin_sec("Phase",nil,'phase') %>
 <% begin_sec("Phase is a scalar",nil,'phase-is-scalar') %>
-In birdtracks notation, a scalar is a quantity that has no external arrows at all. Since the
+In section \ref{subsec:invariants}, p.~\pageref{subsec:invariants}, we defined a (Lorentz)
+\emph{invariant} as a quantity that was unchanged under rotations and Lorentz boosts.
+A measurement such as $__birdscalarproduct(c,e)=24$ is an invariant because it is simply
+a count. We've counted the number
+of periods. In fact, a count is not just invariant under rotations and boosts but under any 
+well-behaved change of coordinates --- 
+the technical condition being
+that each coordinate in each set is a differentiable function of each coordinate in the other
+set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}
+For example, a change of units $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$ is all right
+as long as $k$ is nonzero. A quantity that stays the same under any diffeomorphism is called
+a \emph{scalar}.\index{scalar}
+Since a Lorentz transformation is a diffeomorphism,
+every scalar is a Lorentz invariant. Not every Lorentz invariant
+is a scalar. For example, spacetime volume is Lorentz invariant (p.~\pageref{sec:area-is-scalar}),
+but under the change of units described above, spacetime volume doesn't stay the 
+same.\index{scalar!compared to Lorentz invariant}\index{invariant!compared to scalar}
+
+In birdtracks notation, any expression that has no external arrows at all represents a scalar. Since the
 expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
-a scalar. This makes sense because it's a count, and a count is a scalar. We've counted the number
-of periods. Another way of describing this measurement is as a phase. If we prefer to measure
+a scalar. Another way of describing this measurement is as a phase. If we prefer to measure
 the phase $\phi$ in units of cycles, then we have $\phi=__birdscalarproduct(c,e)$. If we
-like radians, we can use $\phi=2\pi __birdscalarproduct(c,e)$
+like radians, we can use $\phi=2\pi __birdscalarproduct(c,e)$.
 <% end_sec('phase-is-scalar') %>
 
 <% begin_sec("Scaling",nil,'scaling') %>
@@ -169,17 +186,6 @@ observer in units of radians per second.
 If the same observer considers $\vc{s}$ to be a vector of simultaneity with a length of
 one meter, then $__birdscalarproduct(\bomega,\vc{s})$ is
 the observer's measurement of the wavenumber $k$, defined as $2\pi$ divided by the wavelength.
-
-<% begin_sec("Visualization",nil,'visualization') %>
-In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
-vectors and covectors. A vector is an arrow.
-A covector
-can be visualized as a set of parallel, evenly spaced lines
-on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to 
-show which way is ``uphill.''
-The act of measurement consists of counting how many of these
-lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
-<% end_sec('visualization') %> 
 <% marg(0) %>
 <%
   fig(
@@ -198,6 +204,17 @@ lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
   )
 %>
 <% end_marg %>
+
+<% begin_sec("Visualization",nil,'visualization') %>
+In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
+vectors and covectors. A vector is an arrow.
+A covector
+can be visualized as a set of parallel, evenly spaced lines
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to 
+show which way is ``uphill.''
+The act of measurement consists of counting how many of these
+lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+<% end_sec('visualization') %> 
 
 <% begin_sec("The gradient",nil,'gradient') %>
 Given a scalar field $\phi$, its gradient $\nabla \phi$ at any given point is a covector.
@@ -405,11 +422,40 @@ to $\theta'=\tan^{-1}(\omega_y'/\omega_x')$, the result being
   \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)} \qquad .
 \end{equation*}
 <% end_sec('aberration') %> 
-It's fun to imagine this from the point of view of an observer oboard an altrarelativistic
+
+\begin{eg}{A view from an ultrarelativistic starship}
+It's fun to imagine this from the point of view of an observer oboard an ultrarelativistic
 starship. For $v$ sufficiently close to 1, any angle $\theta<180\degunit$
 transforms to a small $\theta'$. Thus, all light coming to this observer from the surrounding
-stars --- even those in the backward direction! --- is gathered into a small, bright patch of
-light that appears to come from straight ahead.
+stars --- even those in extreme backward directions! --- is gathered into a small, bright patch of
+light that appears to come from straight ahead. Some visible light would be shifted into the extreme
+ultraviolet and infrared, while some infrared and ultraviolet light would become visible.
+
+Figure \figref{cube} shows a visualization for an observer flying through a cube at $v=0.99$.
+In \subfigref{cube}{1}, the cube is shown in its own rest frame, where it has sides of unit length, and
+the observer, having already passed through, lies one unit to the right of the cube's center. The
+observer is facing to the right, away from the cube. The dashed line is a ray of light that travels
+from point P to the observer, and in this frame it appears as though the ray, 
+arriving from $\theta=162\degunit$,
+would not make it into
+the observer's eye. But in the observer's frame, \subfigref{cube}{2}, the ray
+is at $\theta'=47\degunit$, so it actually does fall within her field of view.
+The cube is length-contracted by a factor $\gamma\approx 7$. The image seen by the
+observer is shown in \subfigref{cube}{3}. The circular outline defining the field of
+view represents $\theta'=50\degunit$.
+
+A group at Australian National University has produced animations of similar scenes,
+which can be found online by searching for ``optical effects of special relativity.''
+\end{eg}
+
+<%
+  fig(
+    'cube',
+    %q{1. The cube's rest frame. 2. The observer's frame. 3. The observer's view.},
+    {'width'=>'fullpage','float'=>false}
+  )
+%>
+
 <% end_sec('doppler-3d') %> 
 
 
