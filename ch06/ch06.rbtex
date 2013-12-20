@@ -430,7 +430,31 @@ to $\theta'=\tan^{-1}(u_y'/u_x')$, the result being
 \begin{equation*}
   \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)} \qquad .
 \end{equation*}
-<% end_sec('aberration') %> 
+
+\begin{eg}{A test of special relativity}
+An assumption underlying this treatment of aberration was that the speed of light was $c$,
+regardless of the velocity of the source. Not all prerelativistic theories had this property,
+and one would expect that in such a theory, aberration would not be in accord with the relativistic
+result.
+
+In a test of special relativity,
+Heckmann\footnote{Annales d'Astrophysique 23 (1960) 410,
+\url{adsabs.harvard.edu/abs/1960AnAp...23..410H}.} used a
+24-inch reflector at Hamburg to take high-magnification photographic plates of a star field
+in Ursa Major containing 11 stars inside the Milky Way and 5 distant galaxies. Measurements
+of Doppler shifts showed that the galaxies were receding from us at about 15,000 km/s, whereas
+stars within the Milky Way move relative to us at speeds that are negligible in comparison
+(a few hundred km/s). Over the course of a year, the earth's orbit carries it toward and away
+from Ursa Major, so that in the earth's frame of reference, the stars and galaxies have varying velocities
+relative to us. Special relativity predicts that the velocities of the sources should not affect
+the aberration, so that the stars and galaxies would remain in the same positions relative to one
+another. The results from the observations showed that these relative positions did not
+appear to vary at all over the course of a year, with the average relative shift
+being $0.00\pm0.06''$ of arc. This difference in aberration is
+consistent with zero, as predicted by special relativity,
+and several orders of magnitude smaller than the $\sim20''$ aberration due to the earth's
+orbital motion.
+\end{eg}
 
 \begin{eg}{A view from an ultrarelativistic starship}
 It's fun to imagine this from the point of view of an observer oboard an ultrarelativistic
@@ -465,6 +489,7 @@ which can be found online by searching for ``optical effects of special relativi
   )
 %>
 
+<% end_sec('aberration') %> 
 <% end_sec('doppler-3d') %> 
 
 
