@@ -410,14 +410,23 @@ of the raindrops. For a ray of light, aberration should depend on how big the ob
 speed is compared to the speed of light. For example, the earth's orbital speed is about
 $10^{-4}$ in units where $c=1$, so we expect a maximum effect of about $10^{-4}$ radians,
 or $20''$ of arc, which is small but not negligible for a telescope with a high-quality mount,
-being used at high magnification. In section \ref{subsec:doppler-fancy}, we only needed the
-timelike component of the frequency vector. Now let's display the entire vector:
-\begin{align*}
-  __birddualvec(\bomega)&=\omega(1,\cos\theta,\sin\theta) \\
-  __birddualvec(\bomega')&=\omega(\gamma(1+v\cos\theta),\gamma(v+\cos\theta),\sin\theta) 
-\end{align*}
-The angle $\theta=\tan^{-1}(\omega_y/\omega_x)$ has been transformed
-to $\theta'=\tan^{-1}(\omega_y'/\omega_x')$, the result being
+being used at high magnification. Suppose that the light ray's world-line is parallel to the
+vector $__birdvec(\vc{u})$. We can't make this into a velocity vector, because for a lightlike
+vector we can't satisfy the usual normalization condition. Instead, let's just arbitrarily
+fix its timelike component to be 1:
+\begin{equation*}
+  __birdvec(\vc{u}) =(1,-\cos\theta,-\sin\theta) 
+\end{equation*}
+This is designed to satisfy the condition $__birdscalarproduct(\bomega,\vc{u})=0$
+for consistency with the covector $__birddualvec(\bomega)$ defined in section
+\ref{subsec:doppler-fancy}.
+When this vector undergoes
+a boost $v$ along the $x$ axis we have
+\begin{equation*}
+  __birdvec(\vc{u}') =(\gamma(1+v\cos\theta),\gamma(-v-\cos\theta),-\sin\theta) 
+\end{equation*}
+The angle $\theta=\tan^{-1}(u_y/u_x)$ has been transformed
+to $\theta'=\tan^{-1}(u_y'/u_x')$, the result being
 \begin{equation*}
   \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)} \qquad .
 \end{equation*}
