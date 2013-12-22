@@ -5,7 +5,7 @@
 <%
   chapter(
     '02',
-    %q{Foundations},
+    %q{Foundations (optional)},
     'ch:foundations'
   )
 %>

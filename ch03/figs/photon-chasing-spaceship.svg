@@ -64,31 +64,35 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#dedede;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.53544941pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#dedede;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="rect2383"
        width="184.25197"
        height="157.57919"
-       x="4.9446044"
+       x="48.86425"
        y="332.29938" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 80.939094,467.20552 C 80.939094,459.0437 83.823384,449.39091 88.431664,440.81695 C 91.128604,435.57629 94.375084,430.6424 97.804064,425.85657 C 100.07783,422.57865 102.33228,419.2864 104.87311,416.20633 C 108.68288,411.40721 112.34071,406.48352 116.41038,401.89737 C 121.06081,396.51334 125.60761,391.03761 130.32607,385.71375 C 140.7458,374.35172 151.11342,362.94087 161.56592,351.60954 C 162.24455,350.90276 162.92315,350.19595 163.60171,349.4891"
+       style="fill:none;stroke:#000000;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 124.11434,467.20552 c 0,-8.16182 2.88429,-17.81461 7.49257,-26.38857 2.69694,-5.24066 5.94342,-10.17455 9.3724,-14.96038 2.27376,-3.27792 4.52821,-6.57017 7.06904,-9.65024 3.80977,-4.79912 7.4676,-9.72281 11.53727,-14.30896 4.65043,-5.38403 9.19723,-10.85976 13.91569,-16.18362 10.41973,-11.36203 20.78735,-22.77288 31.23985,-34.10421 0.67863,-0.70678 1.35723,-1.41359 2.03579,-2.12044"
        id="path2517"
-       sodipodi:nodetypes="cccccccc" />
+       sodipodi:nodetypes="cccccccc"
+       inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5,5;stroke-dashoffset:0"
-       d="M 38.448614,466.93776 159.22475,346.16162"
+       style="fill:none;stroke:#000000;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5, 5;stroke-dashoffset:0"
+       d="M 81.623857,466.93776 202.39999,346.16162"
        id="path2519"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 81.000544,346.16162 L 81.000544,481.97108"
-       id="path2521" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 26.472924,466.93776 L 155.91232,466.93776"
-       id="path2523"
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 81.000544,346.16162 0,126.87665"
+       id="path2521"
+       inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 74.858973,466.93776 129.439397,0"
+       id="path2523"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"

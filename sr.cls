@@ -13,7 +13,7 @@
 \newcounter{scctr}[chapter]
 \newcounter{hwctr}[chapter]
 %====================== packages =====================================================
-\RequirePackage[leqno]{amsmath}
+\RequirePackage{amsmath}
 \RequirePackage{url,tensor,learn-cmd-syntax,tikz,birdtracks}
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================

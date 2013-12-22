@@ -131,7 +131,7 @@ of periods. In fact, a count is not just invariant under rotations and boosts bu
 well-behaved change of coordinates --- 
 the technical condition being
 that each coordinate in each set is a differentiable function of each coordinate in the other
-set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}
+set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}\label{diffeomorphism}
 For example, a change of units $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$ is all right
 as long as $k$ is nonzero. A quantity that stays the same under any diffeomorphism is called
 a \emph{scalar}.\index{scalar}
@@ -319,7 +319,7 @@ which is half the phase velocity.\index{group velocity}
 
 <% begin_sec("Duality",nil,'duality') %>
 <% begin_sec("Duality in 3+1 dimensions",nil,'duality-generalized') %>
-In our original example of the cuckoo clock and the earth, we had duality: the
+In our original $0+1$-dimensional example of the cuckoo clock and the earth, we had duality: the
 measurements $__birdscalarproduct(c,e)=24$ and $__birdscalarproduct(e,c)=1/24$ really provided
 the same information, and it didn't matter whether we made our scalar out of
 covector __birddualvec(c) and vector  __birdvec(e) or
@@ -336,6 +336,97 @@ squared magnitude of $\vc{r}$, which we calculate using the metric as $r^2=g(\vc
 Since we can think of covectors as functions that take vectors to real numbers,
 clearly $__birddualvec(\vc{r})$ should be the function $f$ defined by
 $f(\vc{x})=g(\vc{r},\vc{x})$.
+
+\begin{eg}{Finding the dual of a given vector}\label{eg:find-dual}
+\egquestion Given the vector $__birdvec(\vc{v})=(3,4)$ in $1+1$-dimensional Minkowski coordinates, find
+the covector $__birddualvec(\vc{v})$, i.e., its dual.
+
+\eganswer Our goal is to write out an explicit expression for the covector in component form,
+\begin{equation*}
+  __birddualvec(\vc{v}) = (a,b) \qquad .
+\end{equation*}
+To define these components, we have to have some basis in mind, consisting of one
+timelike observer-vector $\vc{o}$ and one spacelike vector of simultaneity $\vc{s}$.
+Since we're doing this in Minkowski coordinates (section
+\ref{sec:minkowski-coordinates}, \pageref{sec:minkowski-coordinates}), let's
+notate these as $__birdvec(\hat{\vc{t}})$ and $__birdvec(\hat{\vc{x}})$, where the hats indicate that these
+are unit vectors in the sense that $\hat{t}^2=1$ and $\hat{x}^2=-1$.
+Writing $__birddualvec(\vc{v})$ in terms of $a$ and $b$ means that we're identifying
+$__birddualvec(\vc{v})$ with the function $f$ defined by
+$f(\vc{x})=g(__birdvec(\vc{v}),\vc{x})$. Therefore
+\begin{equation*}
+  f(__birdvec(\hat{\vc{t}}))=a \qquad \text{and} \qquad f(__birdvec(\hat{\vc{x}}))=b
+\end{equation*}
+or
+\begin{equation*}
+  g(__birdvec(\vc{v}),__birdvec(\hat{\vc{t}}))=3=a \qquad 
+  \text{and} \qquad g(__birdvec(\vc{v}),__birdvec(\hat{\vc{x}}))=-4=b \qquad .
+\end{equation*}
+\end{eg}
+
+The result of the formidable, fancy-looking calculation in example
+\ref{eg:find-dual} was simply to take the vector
+\begin{equation*}
+  (3,4)
+\end{equation*}
+and flip the sign of its spacelike component to give the its dual, the covector
+\begin{equation*}
+  (3,-4) \qquad .
+\end{equation*}
+Looking back at why this happened, it was because we were using Minkowski coordinates, and
+in Minkowski coordinates the form of the metric is $g(p,q)=(+1)p_tq_t+(-1)p_xq_x+\ldots$.
+Therefore, we can always find duals in this way, provided that (1) we're using Minkowski
+coordinates, and (2) the signature of the metric is, as assumed throughout this book,
+$+---$, not $-+++$.
+
+\begin{eg}{Going both ways}\label{eg:going-both-ways}
+\egquestion Assume Minkowski coordinates at signature $+---$.
+Given the vector
+\begin{equation*}
+  __birdvec(\vc{e})=(8,7)
+\end{equation*} and
+the covector 
+\begin{equation*}
+  __birddualvec(\vc{f})=(1,2) \qquad ,
+\end{equation*}
+find $__birddualvec(\vc{e})$
+and $__birdvec(\vc{f})$
+
+\eganswer By the rule established above, we can find $__birddualvec(\vc{e})$ simply by
+flipping the sign of the 7,
+\begin{equation*}
+  __birddualvec(\vc{e})=(8,-7) \qquad .
+\end{equation*}
+To find $__birdvec(\vc{f})$, we need to ask what vector $(a,b)$, if we flipped the sign of $b$,
+would give us $(a,-b)=(1,2)$. Obviously this is
+\begin{equation*}
+  __birdvec(\vc{f})=(1,-2) \qquad .
+\end{equation*}
+In other words, flipping the sign of the spacelike part of a vector is also the recipe for
+changing covectors into vectors.
+\end{eg}
+
+Example \ref{eg:going-both-ways} shows that in Minkowski coordinates, the operation of
+changing a covector to the corresponding vector is the \emph{same} as that of
+changing a vector to its covector. Thus, the dual of a dual is the same thing you started with.
+In this respect, duality is similar to arithmetic operations such as $x\rightarrow -x$
+and $x\rightarrow 1/x$. That is, the duality is a self-inverse operation --- it undoes itself,
+like getting two sex-change operations in a row, or switching political parties twice in a
+country that has a two-party system.
+Birdtracks notation makes this self-inverse property
+look obvious, since duality means switching a inward
+arrow to an outward one or vice versa, and clearly doing two such switches gives back
+the original notation. This property was established in example \ref{eg:going-both-ways} by
+using Minkowski coordinates and assuming the signature to be $+---$, but it holds without
+these assumptions (problem \ref{hw:dual-of-dual}, p.~\pageref{hw:dual-of-dual}).
+
+In the general case where the coordinates may not be Minkowski, the above analysis plays
+out as follows. Covectors and vectors are represented by row and column vectors. The metric can
+be specified by a matrix $g$ so that the inner product of column vectors
+$p$ and $q$ is given by $p^Tgq$, where T represents the transpose. Rerunning the same logic
+with these additional complications, we find that the dual of a vector $q$ is $(gq)^T$, while
+the dual of a covector $\omega$ is $(\omega g^{-1})^T$, where $g^{-1}$ is the inverse of the matrix
+$g$.
 
 \begin{eg}{Velocity vector of a light wave, given its phase}\label{eg:light-phase-gives-vel}
 We saw on p.~\pageref{phase-does-not-determine-propagation} that in general, the information about
@@ -373,7 +464,7 @@ the scalar product is unaffected by the change of basis, since $r'c'=rBB^{-1}c=r
 
 In the important special case where $B$ is a Lorentz transformation, this means that
 covectors transform under the \emph{inverse} transformation, which can be found by
-flipping the sign of $v$.
+flipping the sign of $v$. This fact will be important in the following section.
 <% end_sec('change-of-basis') %> 
 <% end_sec('duality') %> 
 
@@ -584,20 +675,94 @@ Abstract index notation evolved out of an earlier one
 called the Einstein summation convention,\index{Einstein summation convention}
 in which superscripts and subscripts referred to specific coordinates.
 For example, we might take 0 to be the time coordinate, 1 to be $x$, and so on.
-A symbol like $u_\gamma$ would then indicate a component of the dual vector $u$,
-which could be its $x$ component if $\gamma$ took on the value 1. Repeated indices
+A symbol like $u_\lambda$ would then indicate a component of the dual vector $u$,
+which could be its $x$ component if $\lambda$ took on the value 1. Repeated indices
 were summed over. 
 
 The advantage of the birdtrack and abstract index notations is that they are
 coordinate-independent, so that an equation written in them is valid regardless
-of the choice of coordinates. The Einstein and Penrose notations look very similar,
-so for example if we want to take a general result expressed in Penrose notation
+of the choice of coordinates. The Einstein and abstract-index notations look very similar,
+so for example if we want to take a general result expressed in abstract-index notation
 and apply it in a specific coordinate system, there is essentially no translation
 required. In fact, the two notations look so similar that we need an explicit way
 to tell which is which, so that we can tell whether or not a particular result
 is coordinate-independent. We therefore use the convention that Latin indices
 represent abstract indices, whereas Greek ones imply a specific coordinate system
-and can take on numerical values, e.g., $\gamma=1$.
+and can take on numerical values, e.g., $\lambda=1$.
+
+The following are some examples of equivalent equations written side by side
+in birdtracks and abstract index notations.
+
+Observer $\vc{o}$'s displacement in spacetime is a vector:
+\begin{equation*}
+  __birdvec(\vc{o}) \qquad o^a
+\end{equation*}
+In Einstein notation, it's awkward to express a vector as a whole, because in a notation
+like $o^\lambda$, $\lambda$ is supposed to take on a particular value. If we used
+$o^\lambda$ to mean the whole vector, it would be an abuse of notation. In abstract index
+notation, however, the $a$ is simply a name we gave to a pipe coming into vector $\vc{o}$;
+the fact that we didn't need to refer to the name in order to connect it to some other pipe
+is irrelevant.
+
+A wave's frequency is a covector:
+\begin{equation*}
+  __birddualvec(\bomega) \qquad \omega_a
+\end{equation*}
+
+An observer experiences proper time $\tau$:
+\begin{equation*}
+  __birdscalarproduct(\vc{o},\vc{o}) = \tau^2 \qquad o_a o^a = \tau^2
+\end{equation*}
+There are no external arrows in the birdtracks version, and in the abstract-index version
+all lower indices (pipes coming out) have been paired with upper indices (pipes coming in);
+this indicates that the proper time is a scalar, and therefore independent of any choice of
+coordinate system.
+In Einstein notation, this becomes $o_\lambda o^\lambda$, with an implied sum over the
+repeated index, $\sum_{\lambda} o_\lambda o^\lambda$. The $\lambda$ refers to a particular
+coordinate system, so in the Einstein notation it is no longer obvious that the equation holds
+regardless of our choice of coordinates.
+
+A world-line along which a wave propagates lies along a vector that is orthogonal to
+the wave's frequency covector:
+\begin{equation*}
+  __birdscalarproduct(\bomega,\vc{u}) = 0 \qquad \omega_a u^a = 0
+\end{equation*}
+The frequency covector is the gradient of the phase:
+\begin{equation*}
+  __birddualvec(\bomega) = __birdgrad(\phi) \qquad \omega_a = \nabla_a \phi
+\end{equation*}
+
+The following grammatical rules apply to both abstract-index and Einstein notation:
+
+\begin{enumerate}\label{index-grammar}
+\item Repeated indices occur in pairs, with one up and one down and the two factors multiplying each other.
+\item Disregarding indices that are paired as in rule 1, all other indices must appear uniformly in
+         all terms and on both sides of an equation.  ``Appear uniformly'' means that an index can't
+         be missing and can't be a superscript in some places but a subscript in others.
+\item For reasons to be explained in section \ref{sec:xfn-summary}, p.~\pageref{sec:xfn-summary},
+         a partial derivative with respect to a coordinate, such as $\partial/\partial x^k$,
+         is treated as if the index were a \emph{subscript}, and conversely
+         $\partial/\partial x_k$ is considered to have a superscripted $k$.
+\end{enumerate}
+
+\noindent In abstract-index notation, rule 1 follows because the indices are simply labels describing
+how, in birdtracks notation, the pipes should be hooked up. Violating rule 1, as in an expression like $v^a v^a$,
+produces a quantity that does not actually behave as a scalar. An example of a violation of rule
+2 is $v^a=\omega_a$. This doesn't make sense, for the same reason that it doesn't make sense to
+equate a row vector to a column vector in linear algebra. Even if an equation like this did hold
+in one frame of reference, it would fail in another, since the left-hand and right-hand sides
+transform differently under a boost.
+
 <% end_sec('abstract-index') %> 
+
+\begin{hwsection}
+
+<% begin_hw('dual-of-dual') %>
+In section \ref{subsec:duality-generalized}, I proved that duality is a self-inverse operation,
+invoking Minkowski coordinates and assuming the signature to be $+---$. Show that these
+assumptions were not necessary.
+<% end_hw %>
+
+\end{hwsection}
 
 <% end_chapter %>

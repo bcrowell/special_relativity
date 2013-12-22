@@ -1126,6 +1126,15 @@ first two nonvanishing terms. Show that the first term is the classical
 expression.
 <% end_hw %>
 
+<% begin_hw('atom-recoil') %>
+An atom in an excited state emits a photon, ending up in a lower state. The initial state
+has mass $m_1$, the final one $m_2$. To a very good approximation, we expect the energy
+$E$ of the photon to equal $m_1-m_2$. However, conservation of momentum dictates that the atom
+must recoil from the emission, and therefore it carries away a small amount of
+kinetic energy that is not available to the photon.
+Find the exact energy of the photon, in the frame in which the atom was initially at rest.
+<% end_hw %>
+
 <% begin_hw('no-pe-in-vacuum') %>
 The following are the three most common ways in which gamma rays interact with matter:
 

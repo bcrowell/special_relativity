@@ -21,11 +21,12 @@
 \hbox{}\noindent\huge\bfseries\sffamily{}\hspace{-2mm}\ \ Brief Contents\\
 \hspace{-20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
 \ref{ch:spacetime} & Spacetime \quad \pageref{ch:spacetime}\\
-\ref{ch:foundations} & Foundations \quad \pageref{ch:foundations}\\
+\ref{ch:foundations} & Foundations (optional) \quad \pageref{ch:foundations}\\
 \ref{ch:kinematics} & Kinematics \quad \pageref{ch:kinematics}\\
 \ref{ch:dynamics} & Dynamics \quad \pageref{ch:dynamics}\\
-\ref{ch:inertia} & Inertia \quad \pageref{ch:inertia}\\
+\ref{ch:inertia} & Inertia (optional) \quad \pageref{ch:inertia}\\
 \ref{ch:waves} & Waves \quad \pageref{ch:waves}\\
+\ref{ch:coordinates} & Coordinates \quad \pageref{ch:coordinates}\\
 \end{tabular}
 \mynormaltype
 
@@ -53,8 +54,9 @@
 	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}
 	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}
 	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
 	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}
 
 %=================================================================================================================================
 

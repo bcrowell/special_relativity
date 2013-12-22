@@ -47,9 +47,6 @@
 %		is upright, even math variables.
 %	Punctuation after displayed equations: \qquad in between.
 %	Subscripts are italic, since this is what LaTeX makes it easy for me to do.
-%	Equation numbers, when used, go on the left, to allow room for notes on the
-%		right. Equation numbers are in square brackets,
-%		numbered within sections.
 %	Problem with equation numbers in examples: not indented, and not in sans.
 %	page breaks:
 %		mysection makes a pagebreak by default, but can give it an optional parameter
@@ -96,7 +93,6 @@
      % there is no uppercase Greek. He actually doesn't recommend using sansmath.sty
      % with Helvetica, since some of the symbols match the letters poorly, but
      % I had hundreds of preexisting figures with Helvetica in them.
-\RequirePackage[leqno]{amsmath}
 \usepackage[french,english]{babel}
 \RequirePackage[absolute]{textpos}% ---- http://nxg.me.uk/dist/textpos/
 % The following line is for margin kerning. There is more stuff
@@ -344,15 +340,10 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 %-------------------- theorem header -------------------
 \newcommand{\mythmhdr}[1]{\noindent\textbf{#1:}}
 %-------------------- equation numbering -------------------
-\numberwithin{equation}{section}
-% Equation numbers have square brackets:
-%   Original code from amsmath.sty:
-%		\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip\@@italiccorr)}}
-%   Change it as follows:
-		\renewcommand{\tagform@}[1]{\maketag@@@{[\ignorespaces#1\unskip\@@italiccorr]}}
+\numberwithin{equation}{chapter}
+%		\renewcommand{\tagform@}[1]{\maketag@@@{(\ignorespaces#1\unskip\@@italiccorr)}}
 %	Use \eqref to refer to an equation.
-%\renewcommand{\theequation}{\ensuremath{\fnsymbol{equation}}} % used to use symbols...
-\renewcommand{\theequation}{\ensuremath{\arabic{equation}}} % ... now using numbers
+\renewcommand{\theequation}{\ensuremath{\arabic{equation}}}
 %-------------------- tuning placement of floating figures -------------------
 % The following three numbers are to make TeX more likely to put figures on the
 % same page rather than on a separate figures page. Can tinker with these, but
