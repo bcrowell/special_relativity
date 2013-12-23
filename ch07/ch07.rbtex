@@ -20,7 +20,7 @@ In chapter \ref{ch:waves} we learned to classify physical quantities as
 covectors, scalars, and vectors, and we learned rules for how these
 three types of quantities transformed in two special changes of coordinates:
 
-\begin{enumerate}
+\begin{enumerate}\label{boost-and-scaling-rules}
 \item When we rescale all coordinates by a factor $\alpha$,
 vectors, scalars, and covectors scale by $\alpha^p$, where $p=+1$, $0$, and $-1$, respectively.
 \item Under a boost, the three cases require respectively the Lorentz transformation, no transformation,
@@ -295,5 +295,33 @@ For the $y$ component,
 \end{eg}
 
 <% end_sec('xfn-summary') %>
+
+<% begin_sec("Inertia and rates of change",nil,'xfn-derivatives') %>
+Suppose that we describe a flying bullet in polar coordinates. We neglect the vertical dimension, so
+the bullet's motion is linear.
+If the bullet has a displacement of $(\Delta r_1,\Delta\theta_1)$ in an short time interval $\Delta t$,
+then clearly at a later point in its motion, during an equal interval,
+it will have a displacement $(\Delta r_2,\Delta\theta_2)$ with two \emph{different} numbers inside the
+parentheses. This isn't because its velocity or momentum really changed. It's because the coordinate
+system is curvilinear. There are three ways to get around this:
+
+\begin{enumerate}
+\item Use only Minkowski coordinates.
+\item Instead of characterizing inertial motion as motion with constant velocity components,
+      we can instead characterize it as motion that maximizes the proper time
+      (section \ref{subsec:maximal-time}, p.~\pageref{subsec:maximal-time}).
+\item Define a correction term to be added when taking the derivative of a vector or covector
+      expressed in non-Minkowski coordinates.
+\end{enumerate}
+
+\noindent These issues become more acute in general relativity, where curvature of spacetime
+can make option 1 impossible. Option 3, called the covariant derivative,\index{covariant derivative}
+becomes an important tool in general relativity, but we won't go into it here.
+For now, just keep in mind that in non-Minkowski coordinates,
+you cannot naively use changes in the components of a vector as a measure of a change in the vector
+itself.
+
+<% end_sec('xfn-derivatives') %>
+
 
 <% end_chapter %>

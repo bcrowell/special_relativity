@@ -355,7 +355,7 @@ But by adding two spacelike vectors we can
 make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
 into the past, violating causality.
 
-\begin{eg}{The ring laser gyroscope}
+\begin{eg}{The ring laser gyroscope}\label{eg:ring-laser-gyro}
 If you've flown in a jet plane, you can thank relativity for helping you to avoid
 crashing into a mountain or an ocean. Figure \figref{ring-laser-gyro} shows a standard
 piece of navigational equipment called a ring laser gyroscope. A beam of light is
@@ -523,7 +523,7 @@ have velocities of 0.01 to 0.1 (in our relativistic units, where $c=1$), so if a
 depended on its motion relative to an observer, atoms would not be electrically neutral. Experiments
 have been done\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
 Physics Letters B137 (1984) 439.} to test this to the phenomenal precision of one part in $10^{21}$,
-with null results.
+with null results.\label{charge-is-scalar}
 
 A vector can never be an invariant, since it changes direction under a rotation. (Some vectors, such
 as velocities, also change under a boost.)
@@ -990,10 +990,12 @@ length contraction and time dilation, it would be merely a change of units like 
 one shown in figure \figref{joan-of-arc}.
 
 The Lorentz transformation translates into algebraic notation like this:
-\begin{align*}
+\begin{align}\label{eqn:lorentz-transformation}
+\begin{split}
   t' &= \quad \gamma t - v\gamma x \\
   x' &= -v\gamma t + \gamma x
-\end{align*}
+\end{split}
+\end{align}
 The line $x=0$ is described in the $(t',x')$ coordinates as having slope $-1/v$,
 which is what justifies the interpretation of $v$ as
 a velocity. The inverse transformation is the one with $v$ replaced by $-v$. These properties are
@@ -1076,6 +1078,39 @@ back wall of the garage, but the driver would not agree
 about the simultaneity of these two events, and would
 perceive the door as having shut long after she plowed
 through the back wall.
+\end{eg}
+
+<%
+  fig(
+    'clock-shifts',
+    %q{%
+      Example \ref{eg:clock-shifts}.
+    },
+    {
+      # 'anonymous'=>true,
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\begin{eg}{Shifting clocks}\label{eg:clock-shifts}
+The top row of clocks in the figure are located in three different places. They have been synchronized in the
+frame of reference of the earth, represented by the paper. This synchronization is carried out by
+exchanging light signals (Einstein synchronization), as in example \ref{eg:einstein-train}
+on p.~\pageref{eg:einstein-train}. For example, if the front and back clocks both send out flashes of
+light when they think it's 2 o'clock, the one in the middle will receive them both at the same
+time. Event A is the one at which the back clock A reads 2 o'clock, etc. 
+
+The bottom row of clocks are aboard the train, and have been synchronized in a similar way.
+For the reasons discussed in example \ref{eg:einstein-train}, their synchronization differs
+from that of the earth-based clocks.
+By referring to the diagram of the Lorentz transformation shown on the right, we see that in the
+frame of the train, 2, C happens first, then B, then A.
+
+This is an example of the interpretation of the term $t'=\ldots - v\gamma x$ in the
+Lorentz transformation (eq.~\eqref{eqn:lorentz-transformation}, p.~\pageref{eqn:lorentz-transformation}).
+Because the events occur at different $x$'s, each is shifted in time relative to the next,
+according to clocks synchronized in frame 2 ($t'$, the train).
 \end{eg}
 
 <% end_sec('lorentz-transformation') %>

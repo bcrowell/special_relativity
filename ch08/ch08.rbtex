@@ -1,0 +1,55 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '08',
+    %q{Rotation (optional)},
+    'ch:rotation'
+  )
+%>
+
+<% begin_sec("No clock synchronization in a rotating frame",nil,'rot-no-sync') %>
+Panels 1 and 2 of figure \figref{chain-chain-chain} recapitulate the result of example
+\ref{eg:clock-shifts} on p.~\pageref{eg:clock-shifts}. The set of three clocks fixed
+to the earth in \subfigref{chain-chain-chain}{1} have been synchronized by Einstein
+synchronization (example \ref{eg:einstein-train},
+p.~\pageref{eg:einstein-train}), i.e., by exchanging flashes of light. The
+three clocks aboard the moving train, \subfigref{chain-chain-chain}{2}, have been
+synchronized in the same way, and the events that were simultaneous according to
+frame 1 are not simultaneous in frame 2. There is a systematic shift in the times,
+which is represented by the term $t'=\ldots - v\gamma x$ in the
+Lorentz transformation (eq.~\eqref{eqn:lorentz-transformation}, p.~\pageref{eqn:lorentz-transformation}).
+
+<%
+  fig(
+    'chain-chain-chain',
+    %q{%
+      Clocks can't be synchronized in a rotating frame of reference.
+    },
+    {
+      'sidecaption'=>true,
+      'width'=>'wide'
+    }
+  )
+%>
+
+Now suppose we take the diagram of the train and wrap it around,
+\subfigref{chain-chain-chain}{3}. If we go on and close the loop, making the chain into
+a circle like a chain necklace, we have a problem. The trend in the clock times
+can continue until it wraps back around to the beginning, but then there will be
+a discrepancy.
+
+We conclude that clocks can't be synchronized in a rotating frame of reference.
+Such a frame does not admit a universal time coordinate. Furthermore, the people
+aboard the train know that their attempts at synchronization fail, so they
+can tell, without reference to anything external, that they're
+going in a circle. (Cf.~example \ref{eg:machian-planets}, p.~\pageref{eg:machian-planets}.)
+Although the train scenario is obviously unrealistic, these issues are far from
+hypothetical. This type of effect was first observed by M.~Georges Sagnac in 1913,
+and it relates to the principle of the ring laser gyroscope (example
+\ref{eg:ring-laser-gyro}, p.~\pageref{eg:ring-laser-gyro}), used in passenger jets.
+
+<% end_sec('rot-no-sync') %>
+<% end_chapter %>
