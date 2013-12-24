@@ -10,7 +10,8 @@
   )
 %>
 
-<% begin_sec("No clock synchronization in a rotating frame",nil,'rot-no-sync') %>
+<% begin_sec("Rotating frames of reference",nil,'rotating-frames') %>
+<% begin_sec("No clock synchronization",nil,'rot-no-sync') %>
 Panels 1 and 2 of figure \figref{chain-chain-chain} recapitulate the result of example
 \ref{eg:clock-shifts} on p.~\pageref{eg:clock-shifts}. The set of three clocks fixed
 to the earth in \subfigref{chain-chain-chain}{1} have been synchronized by Einstein
@@ -42,14 +43,177 @@ can continue until it wraps back around to the beginning, but then there will be
 a discrepancy.
 
 We conclude that clocks can't be synchronized in a rotating frame of reference.
-Such a frame does not admit a universal time coordinate. Furthermore, the people
-aboard the train know that their attempts at synchronization fail, so they
-can tell, without reference to anything external, that they're
-going in a circle. (Cf.~example \ref{eg:machian-planets}, p.~\pageref{eg:machian-planets}.)
-Although the train scenario is obviously unrealistic, these issues are far from
-hypothetical. This type of effect was first observed by M.~Georges Sagnac in 1913,
-and it relates to the principle of the ring laser gyroscope (example
-\ref{eg:ring-laser-gyro}, p.~\pageref{eg:ring-laser-gyro}), used in passenger jets.
+Such a frame does not admit a universal time coordinate because Einstein
+synchronization isn't transitive: synchronizing clock A with clock B, and
+B with C, does not imply that A is synchronized with C. This nontransitivity
+is one way of \emph{defining} what we mean by rotation. That is, if the
+operational definition of an inertial frame given in section \ref{sec:define-inertia},
+p.~\pageref{sec:define-inertia}, shows that our frame is noninertial, and we want to
+know more about why it's noninertial, testing for this nontransitivity is a way
+of finding out whether it's because of rotation.
 
 <% end_sec('rot-no-sync') %>
+
+<% begin_sec("Rotation is locally detectable",nil,'rot-absolute') %>
+The people
+aboard the circular train know that their attempts at synchronization fail, so they
+can tell, without reference to anything external, that they're
+going in a circle. (Cf.~example \ref{eg:machian-planets}, p.~\pageref{eg:machian-planets}.)
+
+Although this is a book on special, not general, relativity, it's interesting to note
+the following possibility. Suppose that we verify, by local experiments, that we have
+a good, nonrotating, inertial frame of reference. It is then imaginable that if we
+view distant galaxies from this frame, we will see them rotate at some angular frequency
+$\Omega$ about some axis on the celestial sphere. If this is observed, then we must infer
+that it is the universe as a whole --- not our laboratory! --- that is rotating.
+Such an effect has been searched for, and, for example, an upper limit 
+$\Omega \lesssim 10^{-7}\ \zu{radian}/\zu{year}$ was inferred by
+Clemence.\footnote{``Astronomical time,'' Rev.~Mod.~Phys.~ 29 (1957) 2.}
+General-relativistic models of such rotating cosmologies have a preferred vector
+constituting the direction of the axis about which matter rotates, but there is
+no global center of rotation. Current upper limits on $\Omega$ are good enough to
+rule out any significant effect on cosmological expansion due to centrifugal forces.
+<% end_sec('rot-absolute') %>
+
+<% begin_sec("The Sagnac effect",nil,'sagnac') %>
+Although the train scenario is obviously unrealistic, the time shift is far from
+hypothetical. This type of effect, called the Sagnac effect,
+was first observed by M.~Georges Sagnac in 1913,
+and it relates to the principle of the ring laser gyroscope (example
+\ref{eg:ring-laser-gyro}, p.~\pageref{eg:ring-laser-gyro}), used in passenger jets.
+(The name is French, and is pronounced ``sah-NYAHK.'')
+To find the Sagnac effect quantitatively, we note that in the circular train example
+(ignoring signs) the relevant
+term in the Lorentz transformation, $v\gamma x$, would accumulate, after one
+complete circuit of Einstein synchronization, a discrepancy $\delta$ equal to
+the circumference of the circle multiplied by $v\gamma$. If the circle's radius is
+$r$ and the angular velocity $\omega$, we have $\Delta t=2\pi \gamma r^2\omega$.
+This can be rewritten in terms of the circle's area $A$ as $\Delta t=2 A\omega$,
+or, reinserting factors of $c$ to accomodate SI units, $\Delta t=2 A\omega/c^2$.
+The proportionality to the enclosed area is not an accident; the product $vx$
+has the form of the integrand $\vc{F}\cdot\der\vc{s}$ occurring in Stokes' theorem.
+
+\begin{eg}{Sagnac effect in the Hafele-Keating experiment}
+A clock at the equator of the earth rotates at a frequency $\omega$ of $2\pi$ radians per sidereal day,
+suffering a Sagnac effect of 210 ns per day. 
+The traveling atomic clocks in the Hafele-Keating experiment (p.~\pageref{hafele-keating}) went around
+the world in both directions, and were compared with a third set of clocks that stayed in
+Washington, DC. Since the time required to fly around the earth was also on the order of one
+day, the differences in the values of $\omega$ for the three sets of clocks were on the
+same order of magnitude as the $\omega$ of the earth, and we therefore expect cumulative 
+differential Sagnac effects that are also on the order of a hundred nanoseconds.
+These effects exist only in the rotating frame of the earth, but the things
+being measured are proper times, and proper time is a scalar, so the experimental
+results are independent of what frame of reference is used for calculating them.
+Since the airline pilots provided Hafele and Keating with navigational data referred
+to the rotating earth, they analyzed their results in the rotating frame, in which
+there was a Sagnac effect. They could equally well have transformed their data into
+the frame of the stars, in which case the same result would have been predicted, but
+it would have been described as arising from kinematic time dilation.
+\end{eg}
+% calc -xe "r=6378 km; omega=(2pi)/(23.9344699*(3600 s)); A=pi r^2; 2A omega/c^2->ns"
+
+\begin{eg}{Ring laser gyroscope}
+The ring laser gyroscope in the photo in example
+\ref{eg:ring-laser-gyro} on p.~\pageref{eg:ring-laser-gyro} looks like it has
+an area on the order of $10^2\ \zu{cm}^2$ and uses red light. 
+For use in navigation, one wants to be able to detect a change in course of,
+say, one degree in our hour, or $\omega\sim5\times10^{-6}\ \zu{radian}/\sunit$.
+The result is a time shift $\Delta t\sim 10^{-24}\ \sunit$, which for red
+light is a phase shift of only $\Delta \phi = 4\pi A\omega/c\lambda\sim 3\times 10^{-9}\ \zu{radian}$.
+In the original nineteenth-century experiments, this phase shift would have had to be measured
+by producing interference between the two beams and measuring the change in intensity resulting
+from this change in phase. Our estimate of $\phi$ shows that this is impractical for
+a portable instrument. In a modern ring laser gyroscope, an active laser medium is inserted
+in the loop, and the result is that the loop resonates at a frequency that is shifted from the
+laser's natural frequency by $\Delta f \sim\Delta \phi c/L$, where $L$ is the circumference. The result
+is a frequency shift of a few Hz, which is easily measurable. An alternative technique, used in
+the fiber optic gyroscope, is to wrap
+$N$ turns of optical fiber around the circumference, effectively changing $A$ to $NA$.
+\end{eg}
+% calc -xe "theta=1 deg; w=theta/(3600 s); A=100 cm2; t=2Aw/c^2; lambda=633 nm; dphi=4piAw/(clambda); L=4sqrt A; df=dphi c /L"
+% Faucheux, "The ring laser gyro," http://wr.lib.tsinghua.edu.cn/sites/default/files/1095053630075.pdf
+<% end_sec('sagnac') %>
+
+<% begin_sec("A rotating coordinate system",nil,'rot-coords') %>
+The GPS system is a practical example of a case where we naturally want to employ a rotating coordinate
+system. Hikers and sailors, after all, want to know where they are relative to the earth's rotating
+surface. Since locations need to be determined to within meters, the timing of signals needs to be
+done to a precision of something like $(1\ \munit)/c$, which is a few nanoseconds. This is why
+the GPS satellites have atomic clocks aboard, and timing to this precision clearly requires that
+relativistic effects be taken into account. We therefore need not a rotating Newtonian coordinate system
+but a rotating relativistic one. Let's start with the \emph{nonrotating} frame, and define
+coordinates $(t,r,\theta,z)$, with the spatial part $(r,\theta,z)$ being ordinary cylindrical coordinates.
+For simplicity, we'll neglect the $z$ coordinate in what follows. Extending the result of
+problem \ref{hw:polar-metric} on p.~\pageref{hw:polar-metric} from $2+0$ dimensions to $2+1$,
+we have the metric
+\begin{equation}\label{eqn:nonrotating-metric}
+  \der s^2=\der t^2 - \der r^2 - r^2\der \theta^2 \qquad .
+\end{equation}
+The results of section \ref{subsec:rot-no-sync} show that we do not expect to be able to
+define a completely satisfactory time coordinate in the rotating frame, so let's start
+with the minimal change $(t,r,\theta)\rightarrow(t,r,\theta')$, where $\theta'=\theta-\omega t$.
+This is at least enough to make world-lines of constant $\theta'$ be ones that revolve around
+the origin at the appropriate frequency. Substituting $\der\theta=\der\theta'+\omega\der t$,
+we find
+\begin{equation}\label{eq:rotating-lab-metric}
+  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
+\end{equation}
+<% end_sec('rot-coords') %>
+Recognizing $\omega r$ as the velocity of one frame relative to another, and
+$(1-\omega^2 r^2)^{-1/2}$ as $\gamma$, we see that we do have a relativistic time dilation effect in the $\der t^2$ term.
+But the $\der r^2$
+and $\der \theta'^2$ terms look the same as in equation \eqref{eqn:nonrotating-metric}. Why don't we see any Lorentz contraction of the length scale
+in the azimuthal direction?
+
+The answer is that coordinates in relativity are arbitrary, and
+just because we can write down a certain set of coordinates, that doesn't mean they have any special
+physical interpretation. The coordinates $(t,r,\theta')$ do not correspond physically to the quantities
+that a rotating observer R would measure with clocks and
+meter-sticks. If R uses a ruler to measure a short arc along the circumference of the circle $r=r_0$,
+the distance is a distance being measured between events in spacetime that are simultaneous in the
+rest frame of the ruler, and these do not occur at the time value of the time coordinate $t$.
+In the Lorentz transformation, for linear motion, it is the $-v\gamma x$ term applied to the times that
+fixes this problems and makes $t'$ properly represent simultaneity in the new frame.
+In our rotational version, we could try to do something similar
+by defining a time coordinate
+$t' = t + f\theta'$, where $f$ is a function of $r$ that is engineered
+so that the $\der\theta'\der t$ cross term in the metric would go away. This can be done
+(the function $f$ that works turns out to be $\omega r^2/(1-\omega^2 r^2)$), but the problem is that
+the $t'$ coordinate is not single-valued, in the sense that $(t,r,\theta)$ and
+$(t,r,\theta+2\pi)$ would not produce the same $t'$. This is inevitable, 
+as we've seen in section \ref{subsec:rot-no-sync}, so we can't
+improve on the coordinates $(t,r,\theta')$ and the metric \eqref{eq:rotating-lab-metric}.
+
+These are the coordinates, called Earth-Centered Inertial (ECI) coordinates, used in the GPS system.
+Their time coordinate is not the time measured by a clock in the rotating frame
+but is simply the time coordinate of the nonrotating
+frame of reference tied to the earth's center. Conceptually, we can imagine this time coordinate as one that
+is established by sending out an electromagnetic ``tick-tock'' signal from the earth's center, with each
+satellite correcting the phase of the signal based on the propagation time inferred from its own $r$. In reality,
+this is accomplished by communication with a master control station in Colorado Springs, which communicates with
+the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape Canaveral.
+
+<% end_sec('rotating-frames') %>
+
+\begin{hwsection}
+
+<% begin_hw('michelson-gale-pearson') %>
+In the 1925 Michelson-Gale-Pearson experiment, the physicists measured the Sagnac effect
+due to the earth's rotation. They laid out a rectangle of sewer pipes
+with length $x=613\ \munit$ and width $y=339\ \munit$, and pumped out the air.
+The latitude of the site in Illinois
+was $41\degunit46'$, so that the effective area was equal to the projection of the
+rectangle into the plane perpendicular to the earth's axis.
+Light was provided by a sodium discharge with $\lambda=570\ \zu{nm}$. The light was
+sent in both directions around the rectangle and interfered, effectively doubling the area.
+Clever techniques were required in order to calibrate the apparatus, since it was not
+possible to change its orientation. Calculate the number of wavelengths by which the
+relative phase of the two beams was expected to shift dur to the Sagnac effect, and
+compare with the experimentally measured result of $0.230\pm0.005$ cycles.
+<% end_hw %>
+% calc -xe "x=(2010 ft->m); y=(1113 ft->m)"
+
+\end{hwsection}
+
 <% end_chapter %>

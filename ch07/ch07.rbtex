@@ -257,7 +257,7 @@ To evaluate these partial derivatives, we have to invert the transformation (whi
 is trivial to accomplish) and then take the partial derivatives.
 \end{eg}
 
-\begin{eg}{Polar coordinates}
+\begin{eg}{Polar coordinates}\label{eg:polar-coodinates}
 None of the techniques discussed here are particular to relativity. For example,
 consider the transformation from polar coordinates $(r,\theta)$ in the plane
 to Cartesian coordinates
@@ -322,6 +322,17 @@ you cannot naively use changes in the components of a vector as a measure of a c
 itself.
 
 <% end_sec('xfn-derivatives') %>
+
+\begin{hwsection}
+
+
+<% begin_hw('polar-metric') %>
+Example \ref{eg:polar-coodinates} on p.~\pageref{eg:polar-coodinates} discussed polar
+coordinates in the Euclidean plane. Use the technique demonstrated
+in section \ref{sec:xfn-metric} to find the metric in these coordinates.
+<% end_hw %>
+
+\end{hwsection}
 
 
 <% end_chapter %>
