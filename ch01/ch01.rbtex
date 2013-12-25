@@ -797,7 +797,7 @@ comes about because $\vc{a}$ and $\vc{c}$ are parallel, but $\vc{b}$ and $\vc{d}
 As shown in example \ref{eg:interstellar-road-trip} below, consistency demands that in addition to the
 effect on time we have a similar effect on distances:
 
-\begin{lessimportant}[Length contraction]
+\begin{lessimportant}[Length contraction]\label{length-contraction}
 A meter-stick appears longest to an observer who is at rest relative to it. An observer moving relative to the
 meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 \end{lessimportant}

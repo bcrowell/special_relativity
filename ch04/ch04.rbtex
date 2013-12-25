@@ -717,6 +717,104 @@ example \ref{eg:compton} on p.~\pageref{eg:compton}, and verified in countless e
 
 <% end_sec('momentum') %>
 
+<% begin_sec("Force",nil,'force',{'optional'=>true}) %>
+Force is a concept that is seldom needed in relativity, and that's why this section is optional.
+By analogy with Newtonian mechanics, we define a relativistic force vector
+\begin{equation*}
+  \vc{F} = m\vc{a} \qquad ,
+\end{equation*}
+where $\vc{a}$ is the acceleration four-vector (sec \ref{sec:v-and-a-vectors},
+p.~\pageref{sec:v-and-a-vectors}) and $m$ is the mass of a particle that has
+that acceleration as a result of the force $\vc{F}$. This is equivalent to
+\begin{equation*}
+  \vc{F} = \frac{\der\vc{p}}{\der\tau} \qquad ,
+\end{equation*}
+where $\vc{p}$ is the mass of the particle and $\tau$ its proper time. Since the timelike
+part of $\vc{p}$ is the particle's mass-energy, the timelike component of the force is
+related to the \emph{power} expended by the force. These definitions
+only work for massive particles, since for a massless particle we can't define
+$\vc{a}$ or $\tau$. $\vc{F}$ has been defined in terms
+of Lorentz invariants and four-vectors, and therefore it transforms as a god-fearing four-vector
+itself.
+
+The trouble with all this is that $\vc{F}$ isn't what we actually measure when we measure a force,
+except if we happen to be in a frame of reference that momentarily coincides with the rest frame
+of the particle. The force we measure? That would be this other force, $\vc{f}$. It's the
+little half-terrier mutt your friend found in an alley. Lowercase. Cute. Works hard.
+It's defined as
+\begin{equation*}
+  \vc{f} = \frac{\der\vc{p}}{\der t} \qquad ,
+\end{equation*}
+with a $\der t$ in the denominator rather than a $\der\tau$. In other words, it measures the rate
+of transfer of momentum according to the observer, whose time coordinate is $t$, not $\tau$ --- unless
+the observer happens to be moving along with the particle. 
+
+Define a frame of reference $\vc{o}$
+for the inertial frame of reference of an observer who does happen to be moving along with the particle
+at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{f}$ the same as $\vc{F}$.
+In this frame, the particle is momentarily at rest, so the work being done on it vanishes, and
+the timelike components of $\vc{f}$ and $\vc{F}$ are both zero.
+
+Suppose we do a Lorentz transformation from $\vc{o}$ to a new frame $\vc{o}'$, and suppose the boost
+is parallel to $\vc{f}$ and $\vc{F}$ (which are both purely spatial in frame $\vc{o}$). Call this
+direction $x$. Then $\der\vc{p}=(\der p_t,\der p_x)=(0,\der p_x)$ transforms
+to $\der\vc{p}'=(-\gamma v \der p_x,\gamma\der p_x)$, so that 
+$f_x'=\der p'_x/\der t'=(\gamma\der p_x)/(\gamma \der t)=f_x$. The two factors of $\gamma$ cancel, and
+we find that $f_x'=f_x$.
+
+Now let's do the case where the boost is in the $y$ direction, perpendicular to the force.
+The Lorentz transformation doesn't change $\der p_y$, so $f_y'=\der p'_y/\der t'=\der p_y/(\gamma \der t)
+=f_y/\gamma$.
+
+The summary of our results is as follows. Let $\vc{f}$ be the force acting on a particle, as measured
+in a frame instantaneously comoving with the particle. Then in a frame of reference moving relative
+to this one, we have
+\begin{align*}
+\begin{split}
+  f'_\parallel &= f_\parallel \qquad \text{and}\\
+  f'_\perp     &= f_\perp/\gamma \qquad ,
+\end{split}
+\end{align*}
+where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,
+and $\perp$ a direction perpendicular to it.
+
+\begin{eg}{Circular motion}
+For uniform circular motion, $\gamma$ is constant, and we have
+\begin{equation*}
+    \vc{f} = m \frac{\der \vc{v}}{\der t} \\
+\end{equation*}
+In terms of the Newtonian three-vectors $\vc{f}^{(3)}$, $\vc{v}^{(3)}$ and $\vc{a}^{(3)}$,
+this becomes
+\begin{equation*}
+    \vc{f}^{(3)} = m\gamma \frac{\der \vc{v}^{(3)}}{\der t} = m\gamma \vc{a}^{(3)}\qquad,
+\end{equation*}
+which is greater than the Newtonian value by the factor $\gamma$.
+As a practical example, in a cathode ray tube (CRT) such as the tube in
+an old-fasioned oscilloscope or television, a beam of electrons is accelerated
+up to relativistic speed (problem \ref{hw:crt}, p.~\pageref{hw:crt}).
+To paint a picture on the screen, the beam has to be steered by
+transverse forces, and since the deflection angles are small, the world-line
+of the beam is approximately that of uniform circular motion. The force
+required to deflect the beam is greater by a factor of $\gamma$ than would
+have been expected according to Newton's laws.
+\end{eg}
+
+\begin{eg}{Linear motion}
+For accelerated linear motion, we have:
+\begin{align*}
+  \vc{v} &= \frac{\der\vc{r}}{\der\tau} \qquad , \\
+\intertext{whose $x$ component is $\gamma v$. Then}
+  f_x &= m\frac{\der (\gamma v)}{\der t} \\
+           &= m\frac{\der\gamma}{\der t} v+m\gamma\frac{\der v}{\der t} \\
+           &= m\frac{\der\gamma}{\der v}\frac{\der v}{\der t} + m\gamma a \\
+           &= m(v^2\gamma^3 a+\gamma a) \\
+           &= m a\gamma^3
+\end{align*}
+The particle's apparent inertia is increased by a factor of $\gamma^3$.
+\end{eg}
+
+<% end_sec('force') %>
+
 <% begin_sec("Degenerate matter",nil,'degenerate-matter',{'optional'=>true}) %>
 The properties of the momentum vector have surprising
 implications for matter subject to extreme pressure, as in a star that uses up all its fuel

@@ -367,6 +367,30 @@ Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a rela
 along an axis perpendicular to the velocity.
 <% end_hw %>
 
+<% begin_hw('angle-of-a-stick') %>
+The purpose of this problem is to find how the direction of a physical object such as a stick
+changes under a Lorentz transformation.
+Part b of problem \ref{hw:no-transverse-length-contraction} shows that relativistic
+length contraction occurs only along the axis parallel to the motion. The generalization
+of the $1+1$-dimensional Lorentz transformation
+to $2+1$ dimensions therefore consists simply of augmenting equation
+\eqref{eqn:lorentz-transformation} on p.~\pageref{eqn:lorentz-transformation} with $y'=y$.
+Suppose that a stick, in its own rest frame, has one end with a world-line
+$(\tau,0,0)$ and the other with $(\tau,p,q)$, where $\tau$ is the stick's proper time.
+Call these ends A and B.
+In other words, we have a stick that goes from the origin to coordinates $(p,q)$ in the $(x,y)$ plane.
+Apply a Lorentz transformation for a boost with velocity $v$ in the $x$ direction, and
+find the equations of the world-lines of the ends of the stick in the new $(t',x',y')$ coordinates.
+According to this new frame's notion of simultaneity, find the coordinates of B 
+when A is at $(t',x',y')=(0,0,0)$. (a) In the special case where $q=0$, recover the
+$1+1$-dimensional result for length contraction given on p.~\pageref{length-contraction}.
+(b) Returning to the general case where $q\ne 0$, consider the angle $\theta$ that the stick
+makes with the $x$ axis, and the related angle $\theta'$ that it makes with the $x'$ axis in
+the new frame. Show that $\tan\theta' = \gamma\tan\theta$.
+<% end_hw %>
+
+
+
 <% begin_hw('pythagorean') %>
 Section \ref{sec:flatness} discusses the idea that a two-dimensional bug living on the surface of
 a sphere could tell that its space was curved. Figure \figref{parallel-transport}
