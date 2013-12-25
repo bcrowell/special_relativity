@@ -196,6 +196,173 @@ the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape
 
 <% end_sec('rotating-frames') %>
 
+<% begin_sec("Boosts and rotations",nil,'noncommutative') %>
+A relative of mine fell in love. She and her boyfriend bought a house in the suburbs and started trying to
+have a baby. They think they'll get married at some later point. An engineer by training, she says she
+doesn't want to get hung up on the ``order of operations.'' For some mathematical operations,
+the order doesn't matter: $5+7$ is the same as $7+5$.
+
+<%
+  fig(
+    'rotating-book',
+    %q{%
+      Performing the rotations in one order gives
+      one result, 3, while reversing the order gives a different result, 5.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_sec("Rotations",nil,'rot-noncommutative') %>
+But figure \figref{rotating-book} shows that the order of operations does matter for rotations.
+Rotating around the $x$ axis and then $y$ produces a different result than $y$ followed by $x$.
+We say that rotations are noncommutative.
+This is why, in Newtonian mechanics, we don't have an angular displacement vector $\Delta\btheta$;
+vectors are supposed to be additive, and their additivity
+For \emph{small} rotations, however, the discrepancy caused by choosing one order of operations rather
+than the other becomes small (of order $\theta^2$), so we \emph{can} define an infinitesimal
+displacement vector $\der\btheta$, whose direction is given by the right-hand rule,
+and an angular velocity $\bomega=\der\btheta/\der t$.
+
+As an example of how this works out
+for small rotations, let's take the vector
+\begin{equation}\label{eqn:rot-orig}
+  (0,0,1)
+\end{equation}
+and apply the operations shown in figure \figref{rotating-book}, but
+with rotations of only $\theta=0.1\ \zu{radians}$
+rather than 90 degrees. Rotation by this angle about the $x$ axis is given by the transformation
+$(x,y,z)\rightarrow (x,y\cos\theta-z\sin\theta,y\sin\theta+z\cos\theta)$, and applying this to the
+original vector gives this:
+\begin{equation}
+  (0.00000,- 0.09983,0.99500)  \qquad \text{(after $x$)} \qquad\qquad
+\end{equation}
+After a $y$ rotation by the same angle, we have
+\begin{equation}\label{eqn:rot-xy}
+  (0.09933,- 0.09983,0.99003)  \qquad \text{(after $x$, then $y$)}
+\end{equation}
+Starting over from the original vector \eqref{eqn:rot-orig} Doing the operations in the opposite order gives these results:
+\begin{align}
+  &(0.09983,0.00000,0.99500) \qquad \text{(after $y$)} \\
+  &(0.09983,- 0.09933,0.99003) \qquad \text{(after $y$, then $x$)}  \label{eqn:rot-yx}
+\end{align}
+The discrepancy between \eqref{eqn:rot-xy} and \eqref{eqn:rot-yx} is a rotation by
+very nearly $.005$ radians in the $xy$ plane. As claimed, this is on the order of $\theta^2$
+(in fact, it's almost exactly $\theta^2/2$). A single example can never prove anything,
+but this is an example of the general rule that rotations along different axes don't commute,
+and for small angles the discrepancy is a rotation in the plane defined by the two axes,
+with a magnitude whose maximum size is on the order of $\theta^2$.
+<% end_sec('rot-noncommutative') %>
+
+<% begin_sec("Boosts",nil,'boosts-noncommutative') %>
+Something similar happens for boosts. In $3+1$ dimensions, we start with the vector
+\begin{equation}\label{eqn:boost-orig}
+  (0,1,0,0) \qquad ,
+\end{equation}
+pointing along the $x$ axis. A Lorentz boost with $v=0.1$ (\eqref{eqn:lorentz-transformation},
+p.~\pageref{eqn:lorentz-transformation}) in the $x$ direction gives
+\begin{equation}\label{eqn:boost-x}
+  (0.10050,1.00504,0.00000,0.00000) \qquad \text{(after $x$)} \qquad\qquad
+\end{equation}
+and a second boost, now in the $y$ direction, produces this:
+\begin{equation}\label{eqn:boost-xy}
+  (0.10101,1.00504,0.01010,0.00000) \qquad \text{(after $x$, then $y$)}
+\end{equation}
+Starting over from \eqref{eqn:boost-orig} and doing the boosts in the opposite order, we have
+\begin{align}
+  &(0.00000,1.00000,0.00000,0.00000) \qquad \text{(after $y$)} \\
+  &(0.10050,1.00504,0.00000,0.00000) \qquad \text{(after $y$, then $x$)}  \label{eqn:boost-yx}
+\end{align}
+The discrepancy between \eqref{eqn:boost-xy} and \eqref{eqn:boost-yx} is a rotation in
+the $xy$ plane by very nearly 0.01 radians. This is an example of a more general fact, which 
+is that boosts along different axes don't commute, and for small angles the discrepancy is a rotation
+in the plane defined by the two boosts, with a magnitude whose maximum size is on the order of $v^2$, in
+units of radians.
+<% end_sec('boosts-noncommutative') %>
+
+<% begin_sec("Thomas precession",nil,'thomas-precession') %>
+Figure \figref{thomas-hammers} shows the most important physical consequence of all this.
+The gyroscope is sent around the perimeter of a square, with impulses provided by hammer taps at
+the corners. Each impulse can be modeled as a Lorentz boost, notated, e.g., $L_x$ for
+a boost in the $x$ direction. The series of four operations can be written as
+$L_yL_xL_{-y}L_{-x}$, using the notational convention that the first operation applied is the
+one on the right side of the list. If boosts were commutative, we could swap the two operations
+in the middle of the list, giving $L_yL_{-y}L_xL_{-x}$. The $L_x$ would undo the $L_{-x}$, and
+the $L_y$ would undo the $L_{-y}$. But boosts aren't commutative, so the vector representing the
+orientation of the gyroscope is rotated in the $xy$ plane. This effect is called the 
+Thomas precession,\index{Thomas precession} after after Llewellyn Thomas (1903-1992).\index{Thomas, Llewellyn}
+Thomas precession a purely relativistic effect, since a Newtonian gyroscope does not change its axis of rotation
+unless subjected to a torque; if the boosts are accomplished by forces that act at the gyroscope's center,
+then there is no nonrelativistic explanation for the effect.
+<% marg(50) %>
+<%
+  fig(
+    'thomas-hammers',
+    %q{Nonrelativistically, the gyroscope should not rotate as long as the forces from the hammer are all transmitted to
+              it at its center of mass.}
+  )
+%>
+<% end_marg %>
+
+Clearly we should see the same effect if the jerky motion in figure \figref{thomas-hammers}
+was replaced by uniform circular motion, and something similar should happen in any case in
+which a spinning object experiences an external force. In the limit of low velocities,
+the general expression for the
+angular velocity of the precession is $\Omega= \vc{a}\times\vc{v}$, and in the
+case of circular motion, $\Omega=(1/2)v^2\omega$, where $\omega$ is the frequency
+of the circular motion.
+
+If we want to see this precession effect in real life, we should look for a system in which both $v$ and $a$ are large.
+An atom is such a system.
+The Bohr model,\index{Bohr model} introduced in 1913, marked the first quantitatively successful, if
+conceptually muddled, description of the atomic energy levels of hydrogen. Continuing to take $c=1$,
+the over-all scale of the energies was calculated to be proportional to $m\alpha^2$, where $m$ is the mass of the
+electron, and $\alpha=ke^2/\hbar\approx1/137$, known as the fine structure constant,\index{fine structure constant}
+is essentially just a unitless way of expressing the coupling constant for electrical forces.
+At higher resolution, each excited energy level is found to be split into several sub-levels. The transitions among
+these close-lying states are in the millimeter region of the microwave spectrum. The energy scale of this fine structure is
+$\sim m\alpha^4$. This is down by a factor of $\alpha^2$ compared to the visible-light transitions,
+hence the name of the constant. Uhlenbeck and Goudsmit\index{Uhlenbeck}\index{Goudsmit} showed in 1926 that a splitting on this order of magnitude
+was to be expected due to the magnetic
+interaction between the proton and the electron's magnetic moment, oriented along its spin. The effect they calculated,
+however, was too big by a factor of two. 
+
+The explanation of the mysterious factor of two had in fact been implicit in a 1916 calculation by
+Willem de Sitter,\index{de Sitter, Willem} one of the first applications of general relativity. De Sitter
+treated the earth-moon system as a gyroscope, and found the precession of its axis of rotation,
+which was partly due to the curvature of spacetime and partly due to the type of rotation described earlier
+in this section.
+The effect on the motion of the moon was noncumulative, and was only about one meter, which was much
+too small to be measured at the time. In 1927, however,  Thomas
+applied similar reasoning to the hydrogen atom, with the electron's spin vector playing the role of gyroscope.
+Since the electron's spin is $\hbar/2$, the energy splitting is $\pm(\hbar/2)\Omega$, depending on whether the
+electron's spin is in the same direction as its orbital motion, or in the opposite direction. This is less than the
+atom's gross energy scale $\hbar\omega$ by a factor of $v^2/2$, which is $\sim\alpha^2$. The Thomas
+precession cancels out half of the magnetic effect, bringing theory in agreement with experiment.
+<% marg(60) %>
+<%
+  fig(
+    'fine-structure',
+    %q{States in hydrogen are labeled with their $\ell$ and $s$ quantum numbers, representing their orbital and spin angular momenta in units of $\hbar$.
+            The state with $s=+1/2$ has its spin angular momentum aligned with its orbital angular momentum, while the $s=-1/2$ state
+            has the two angular momenta in opposite directions. The direction and order of magnitude of the splitting between the two
+            $\ell=1$ states is successfully explained by magnetic interactions with the proton, but the calculated effect is too big by a factor of 2.
+            The relativistic Thomas precession cancels out half of the effect.}
+  )
+%>
+<% end_marg %>
+
+Uhlenbeck later recalled: ``...when I first heard about [the Thomas precession], it seemed unbelievable that a
+relativistic effect could give a factor of 2 instead of something of order $v/c$...  Even
+the cognoscenti of relativity theory (Einstein included!) were quite surprised.''
+
+<% end_sec('thomas-precession') %>
+
+<% end_sec('noncommutative') %>
+
 \begin{hwsection}
 
 <% begin_hw('michelson-gale-pearson') %>
