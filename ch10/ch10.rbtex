@@ -1,0 +1,266 @@
+<%
+  require "./scripts/eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '10',
+    %q{Electromagnetism},
+    'ch:em'
+  )
+%>
+
+<% begin_sec("Relativity requires magnetism",nil,'rel-requires-magnetism') %>
+Figure
+\subfigref{purcell-wire}{1} is an unrealistic model of charged particle moving
+parallel to a current-carrying wire.
+What electrical force does the lone particle in figure \figref{purcell-wire}/1 feel? Since the
+density of ``traffic'' on the two sides of the ``road'' is equal, there is zero overall
+electrical force on the lone particle. Each ``car'' that attracts the
+lone particle is paired with a partner on the other
+side of the road that repels it. If we didn't know about magnetism, we'd think this
+was the whole story: the lone particle feels no force at all from the wire.
+<% marg(40) %>
+<% fig(
+    'purcell-wire',
+     %q{A model of a charged particle and a current-carrying wire, seen in
+        two different frames of reference. The relativistic length contraction is highly
+        exaggerated. The force on the lone particle is purely
+        magnetic in 1, and purely electric in 2.}
+   )
+%>
+<% end_marg %>
+
+Figure \figref{purcell-wire}/2
+shows what we'd see if we were observing all this from a frame of reference moving
+along with the lone charge.
+Relativity tells us that moving objects
+appear contracted to an observer who is not moving along with them.
+Both lines of charge are in motion in both frames of reference, but in frame 1
+they were moving at equal speeds, so their contractions were equal.
+In frame 2, however, their speeds are unequal. The dark
+charges are moving more slowly than in frame 1, so in frame 2 they are less contracted.
+The light-colored charges are moving more quickly, so their contraction is greater now.
+The ``cars'' on the two sides of the ``road'' are no longer paired off, so the electrical
+forces on the lone particle no longer cancel out as they did in \figref{purcell-wire}/1.
+The lone particle is attracted to the wire, because the particles attracting it are more
+dense than the ones repelling it.
+
+Now observers in frames 1 and 2 disagree about many things, but they do agree on
+concrete events. Observer 2 is going to see the lone particle drift toward the wire
+due to the wire's electrical attraction, gradually speeding up, and eventually hit
+the wire. If 2 sees this collision, then 1 must as well. But 1 knows that the total
+electrical force on the lone particle is exactly zero. There must be some new type
+of force. She invents a name for this new type of force: magnetism.
+
+We are led to the conclusion that magnetic interactions must arise because of
+relativity, and that magnetism is a purely relativistic effect. Since relativistic effects
+are down by a factor of $v^2$ compared to Newtonian ones, it's surprising that
+relativity can produce an effect as vigorous as the attraction between a magnet and
+your refrigerator. The explanation is that although matter is electrically neutral, the
+cancellation of electrical forces between macroscopic objects is extremely delicate,
+so anything that throws off the cancellation, even slightly, leads to a surprisingly
+large force.
+<% end_sec('rel-requires-magnetism') %>
+
+<% begin_sec("Fields in relativity",nil,'fields') %>
+Based on what we learned in section \ref{sec:rel-requires-magnetism}, the next natural step
+would seem to be to find some way of extending Coulomb's law to include magnetism. For example,
+we could try to find a formula for the magnetic force between charges $q_1$ and $q_2$ based
+on not just their relative positions but also on their velocities. The following considerations,
+however, tell us not to go down that path.
+<% begin_sec("Time delays in forces exerted at a distance",nil,'time-delays') %>
+Relativity forbids Newton's instantaneous action at a distance (p.~\pageref{c-cause-and-effect}).
+Since forces can't be transmitted instantaneously, it becomes natural to imagine force-effects
+spreading outward from their source like ripples on a pond, and we then have no choice but to
+impute some physical reality to these ripples. We call them fields, and they have their own
+independent existence.
+
+Even empty space, then, is not perfectly featureless. It has measurable
+properties. For example, we can drop a rock in order to measure the direction of the gravitational
+field, or use a magnetic compass to find the direction of the magnetic field. This concept made a deep impression
+on Einstein as a child. He recalled that
+as a five-year-old, the gift of a magnetic compass convinced him that there was ``something behind things, something deeply hidden.''
+<% end_sec('time-delays') %>
+
+<% begin_sec("Fields carry energy.",nil,'fields-carry-energy') %>
+The smoking-gun argument for this strange notion of
+traveling force ripples comes from the fact that they carry energy. In figure \subfigref{e-field-energy-argument}{1},
+Alice and Betty hold positive charges A and B at some distance from one another. If Alice chooses to move
+her charge closer to Betty's, \subfigref{e-field-energy-argument}{2}, Alice will have to do some mechanical work
+against the electrical repulsion, burning off some of the calories from that
+chocolate cheesecake she had at lunch.
+This reduction in
+her body's chemical energy is offset by a corresponding increase in the electrical potential energy $q\Delta V$.
+Not only that, but Alice feels the resistance stiffen as the charges get closer together
+and the repulsion strengthens. 
+She has to do a little extra work, but this is all properly accounted for in the electrical potential energy.
+<% marg(20) %>
+<%
+  fig(
+    'e-field-energy-argument',
+    %q{Fields carry energy.}
+  )
+%>
+<% end_marg %>
+
+But now suppose, \subfigref{e-field-energy-argument}{3}, that Betty decides to play a trick on Alice
+by tossing charge B far away just as Alice is getting ready to move charge A.
+We have already established that Alice can't feel charge B's motion instantaneously, so the electric forces
+must actually be propagated by an electric \emph{field}. Of course this experiment is
+utterly impractical, but suppose for the sake of argument that the time it takes the change in the electric field
+to propagate across the diagram is long enough so that Alice can complete her motion before she feels the
+effect of B's disappearance. She is still getting stale information about B's position. As she moves A to the
+right, she feels a repulsion, because the field in her region of space is still the field caused by
+B in its \emph{old} position. She has burned some chocolate cheesecake calories, and it appears that
+conservation of energy has been violated, because these calories can't be properly accounted for
+by any interaction with B, which is long gone.
+
+If we hope to preserve the law of conservation of energy, then the only possible conclusion is that
+the electric field itself carries away the cheesecake energy. In fact, this example
+represents an impractical method of transmitting radio waves. Alice does work on charge A, and that energy
+goes into the radio waves. Even if B had never existed, the radio waves would still have carried energy,
+and Alice would still have had to do work in order to create them.
+<% end_sec('fields-carry-energy') %>
+
+<% begin_sec("Fields must have transformation laws",nil,'fields-transform') %>
+In the foregoing discussion I've been guilty of making arguments that fields were ``real.''
+Sorry. In physics, and particularly in relativity, it's usually a waste of time
+worrying about whether some effect such as length contraction is ``real'' or only ``seems that way.''
+But thinking of fields as having an independent existence does lead to a useful guiding principle,
+which is that \emph{fields must have transformation laws}. Suppose that at a certain
+location, observer $\vc{o}_1$ measures every possible field --- electric, magnetic,
+bodice-ripper-sexual-attractional, and so on. (The gravitational field is not on the list, for the
+reasons discussed in section \ref{sec:ep}.) Observer $\vc{o}_2$, passing by the same
+event but in a different state of motion, could carry out similar measurements.
+We're talking about measurements being carried out on a cubic inch of pure vacuum, but suppose
+that the answer to Peggy Lee's famous question is ``Yes, that's all there is'' --- the only
+information there is to know about that empty parcel of nothingness
+is the (frame-dependent) value of the fields
+it contains. Then $\vc{o}_1$ ought to be able to predict the results of $\vc{o}_2$'s measurements.
+For if not, then what is the nature of the information that is hidden from
+$\vc{o}_1$ but revealed to $\vc{o}_2$? Presumably this would be something related to how
+the fields were produced by certain particles long ago and far away.
+For example, maybe $\vc{o}_1$ is at rest relative to a certain charge $q$ that helped
+to create the fields, but $\vc{o}_2$ isn't, so $\vc{o}_2$ picks up $q$'s magnetic field,
+which is information unavailable to $\vc{o}_1$ --- who thinks $q$ was at rest, and therefore
+didn't \emph{make} any magnetic field. This would contradict our ``that's all there is''
+hypothesis.
+<% end_sec('fields-transform') %>
+<% end_sec('fields') %>
+
+
+<% begin_sec("Electromagnetic fields",4,'em-fields') %>
+<% begin_sec("The electric field",nil,'e-field') %>
+We know that magnetic \emph{forces} must exist, but that
+doesn't yet tell us how to define a magnetic \emph{field} or how electric and magnetic
+fields transform.
+To understand this on a more general basis, let's explicitly list
+some assumptions about the electric field and see how they lead to the existence
+and properties of a magnetic field:
+
+\noindent \begin{enumerate}\label{em-field-assumptions}
+\item \emph{Definition of the electric field:} In the frame of reference of some inertial
+      observer $\vc{o}$, take some standard,
+      charged test particle, release it at rest, and observe the three-force
+      $\vc{f}^{(3)}$ (section \ref{sec:force}, p.~\pageref{sec:force})
+      acting on the particle. Then the electric field three-vector 
+      $\vc{E}^{(3)}$ in frame $\vc{o}$ is defined implicitly by $\vc{f}^{(3)}=q\vc{E}^{(3)}$,
+      where we fix our system of units by taking some arbitrary value for the charge $q$ of the test particle.
+\item \emph{Definition of electric charge:} 
+      For charges other than the standard test charge, we
+      take Gauss's law to be our definition of electric charge.
+\item Charge is Lorentz invariant (p.~\pageref{charge-is-scalar}).
+\item Fields must have transformation laws (section \ref{subsec:fields-transform}).
+\end{enumerate}
+
+Many times already in our study of relativity, we've followed the strategy of taking a Galilean
+vector and trying to redefine it as a four-dimensional vector in relativity. Let's try to do this
+with the electric field. Then we would have no other obvious thing to try than to change its definition
+to $\vc{F}=q\vc{E}$, where $\vc{F}=m\vc{a}$ is the relativistic
+force vector (section \ref{sec:force}, p.~\pageref{sec:force}), so that the electric field
+three-vector was just the spacelike part of $\vc{E}$.
+Because $\vc{a}\cdot\vc{v}=0$ for a material particle, this would imply that $\vc{E}$ was orthogonal
+to $\vc{o}$ for any observer $\vc{o}$. But this is impossible, since then a
+spacetime displacement vector $\vc{s}$ along the direction of $\vc{E}$ would be a vector of simultaneity
+for all observers, and we know that this isn't possible in relativity.
+<% end_sec('e-field') %>
+
+<% begin_sec("The magnetic field",nil,'b-field') %>
+Clearly we need to tweak our assumptions to allow for the existence of a magnetic field
+in addition to the electric one.
+What properties could this additional field have? How would we define or measure it?
+
+We could imagine that in addition to charge $q$,
+particles would have some other characteristic, call it $r$, and there
+would then be some entirely separate field defined by their action on a particle with this ``$r$-ness.''
+But going down this road leads us to define completely separate fields such as the one
+associated with the strong nuclear force. 
+
+The nature of the contradiction
+arrived at in section \ref{subsec:e-field} is such that our additional field is closely linked to
+the electric one, and therefore we expect it to act on charge, not on $r$-ness. Without inventing
+something new like $r$-ness, the only other available property
+of the test particle is its state of motion, characterized by its velocity vector $\vc{v}$. If this
+is the case, then the simplest rule we could imagine for determining the force on a test particle
+would be a linear one, which would look like matrix multiplication:
+\begin{equation*}
+  \vc{F} = qM\vc{v}
+\end{equation*}
+$M$ would be $4\times4$, so it would have 16 elements. Presumably these 16 numbers would encode
+the information about the electric field, as well as some additional information about the field
+or fields we were missing.
+But these are not 16 numbers that we can choose freely and independently. For example,
+we have the requirement $\vc{a}\cdot\vc{v}=0$ for any $\vc{v}$, and picking $\vc{v}=(1,0,0,0)$
+(a particle at rest) then forces us to take the time-time (upper left) element $M_{tt}$ to be
+zero. It turns out that when we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
+we end up with the constraint that $M$ must be antisymmetric, meaning that when we transpose it, the result
+is another matrix that looks just like the original one, but with all the signs flipped. The result
+is something like this:
+\begin{equation*}
+  \begin{pmatrix}
+    0     & -E_x    &    -E_y &    -E_z \\
+    E_x  & 0      &    B_z &    -B_y \\
+    E_y  & -B_z   &    0   &    B_x \\
+    E_z  & B_y   &    -B_x &   0
+  \end{pmatrix}
+\end{equation*}
+We'll call this the electromagnetic field matrix.
+The labeling of the left column simply expresses the definition of the electric field, which
+is expressed in terms of the vector $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
+then follows from antisymmetry, and antisymmetry also requires that the central diagonal be zero.
+Writing out the matrix multiplication for an arbitrary velocity vector
+$\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector,
+we have expressions such as
+$F_x=\gamma q(E_x+u_yB_z-u_zB_y)$. Taking into account the difference of a factor of $\gamma$
+between the three-force and four-force, we end up with the familiar Lorentz force law,
+\begin{equation*}
+  \vc{f} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
+\end{equation*}
+where $\vc{B}$ is the magnetic field.
+This is expressed in units where $c=1$, so that
+the electric and magnetic field have the same units. In units with $c\ne 1$,
+the magnetic components of the electromagnetic field matrix should be multiplied by $c$.
+<% end_sec('b-field') %>
+
+<% begin_sec("What about gravity?",nil,'what-about-gravity') %>
+A funny puzzle pops up if we go back and think about the assumptions on p.~\pageref{em-field-assumptions}
+that went into all this.
+Those assumptions were so general that it almost seems as though the only possible behavior
+for fields is the behavior of electric and magnetic fields. But other fields \emph{do}
+behave differently. How did the assumptions fail
+in the case of gravity, for example? Gauss's law (assumption 2) certainly holds for gravity.
+But the source of gravitational fields isn't charge, it's mass-energy, and mass-energy isn't
+a Lorentz invariant, contrary to assumption 3. Furthermore, assumption 1
+entailed that our field could be defined in terms of \emph{forces} measured by
+an inertial observer, but for an inertial observer gravity doesn't exist (section \ref{sec:ep}).
+<% end_sec('what-about-gravity') %>
+
+<% end_sec('em-fields') %>
+
+<% begin_sec("Transformation of the fields",nil,'em-xfn') %>
+
+<% end_sec('em-xfn') %>
+
+
+<% end_chapter %>
