@@ -185,7 +185,9 @@ $(t,r,\theta+2\pi)$ would not produce the same $t'$. This is inevitable,
 as we've seen in section \ref{subsec:rot-no-sync}, so we can't
 improve on the coordinates $(t,r,\theta')$ and the metric \eqref{eq:rotating-lab-metric}.
 
-These are the coordinates, called Earth-Centered Inertial (ECI) coordinates, used in the GPS system.
+The coordinates $(t,r,\theta')$, with the metric \eqref{eq:rotating-lab-metric}
+are the ones used in the GPS system, and in that context are called
+Earth-Centered Inertial (ECI) coordinates. (Another name is Born coordinates.)
 Their time coordinate is not the time measured by a clock in the rotating frame
 but is simply the time coordinate of the nonrotating
 frame of reference tied to the earth's center. Conceptually, we can imagine this time coordinate as one that
@@ -221,7 +223,7 @@ But figure \figref{rotating-book} shows that the order of operations does matter
 Rotating around the $x$ axis and then $y$ produces a different result than $y$ followed by $x$.
 We say that rotations are noncommutative.
 This is why, in Newtonian mechanics, we don't have an angular displacement vector $\Delta\btheta$;
-vectors are supposed to be additive, and their additivity
+vectors are supposed to be additive, and vector addition is commutative.
 For \emph{small} rotations, however, the discrepancy caused by choosing one order of operations rather
 than the other becomes small (of order $\theta^2$), so we \emph{can} define an infinitesimal
 displacement vector $\der\btheta$, whose direction is given by the right-hand rule,
@@ -240,11 +242,11 @@ original vector gives this:
 \begin{equation}
   (0.00000,- 0.09983,0.99500)  \qquad \text{(after $x$)} \qquad\qquad
 \end{equation}
-After a $y$ rotation by the same angle, we have
+After a further rotation by the same angle, this time about the $y$ axis, we have
 \begin{equation}\label{eqn:rot-xy}
   (0.09933,- 0.09983,0.99003)  \qquad \text{(after $x$, then $y$)}
 \end{equation}
-Starting over from the original vector \eqref{eqn:rot-orig} Doing the operations in the opposite order gives these results:
+Starting over from the original vector \eqref{eqn:rot-orig} and doing the operations in the opposite order gives these results:
 \begin{align}
   &(0.09983,0.00000,0.99500) \qquad \text{(after $y$)} \\
   &(0.09983,- 0.09933,0.99003) \qquad \text{(after $y$, then $x$)}  \label{eqn:rot-yx}
@@ -262,7 +264,7 @@ Something similar happens for boosts. In $3+1$ dimensions, we start with the vec
 \begin{equation}\label{eqn:boost-orig}
   (0,1,0,0) \qquad ,
 \end{equation}
-pointing along the $x$ axis. A Lorentz boost with $v=0.1$ (\eqref{eqn:lorentz-transformation},
+pointing along the $x$ axis. A Lorentz boost with $v=0.1$ (eq.~\eqref{eqn:lorentz-transformation},
 p.~\pageref{eqn:lorentz-transformation}) in the $x$ direction gives
 \begin{equation}\label{eqn:boost-x}
   (0.10050,1.00504,0.00000,0.00000) \qquad \text{(after $x$)} \qquad\qquad
@@ -293,8 +295,8 @@ one on the right side of the list. If boosts were commutative, we could swap the
 in the middle of the list, giving $L_yL_{-y}L_xL_{-x}$. The $L_x$ would undo the $L_{-x}$, and
 the $L_y$ would undo the $L_{-y}$. But boosts aren't commutative, so the vector representing the
 orientation of the gyroscope is rotated in the $xy$ plane. This effect is called the 
-Thomas precession,\index{Thomas precession} after after Llewellyn Thomas (1903-1992).\index{Thomas, Llewellyn}
-Thomas precession a purely relativistic effect, since a Newtonian gyroscope does not change its axis of rotation
+Thomas precession,\index{Thomas precession} after Llewellyn Thomas (1903-1992).\index{Thomas, Llewellyn}
+Thomas precession is a purely relativistic effect, since a Newtonian gyroscope does not change its axis of rotation
 unless subjected to a torque; if the boosts are accomplished by forces that act at the gyroscope's center,
 then there is no nonrelativistic explanation for the effect.
 <% marg(50) %>

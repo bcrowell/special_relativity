@@ -348,12 +348,38 @@ at $c$ was light, so $c$ is usually described as the ``speed of light,'' but fro
 of view it functions more as a kind of conversion factor between our units of measurement for time
 and space. It is a property of spacetime, not a property of light. 
 
-More fundamentally, $c$ is the
-maximum speed of cause and effect. For if we could propagate cause and effect, e.g., by transmitting
-a signal, at a speed greater than $c$, the vector connecting the cause and the effect would be spacelike.
+More fundamentally, $c$ is the maximum speed of cause and effect.\label{c-cause-and-effect}
+If we could propagate cause and effect, e.g., by transmitting
+a signal, at a speed greater than $c$, we would be violating both causality and the
+principle that motion is relative:
+\begin{itemize}
+\item \emph{The argument from causality:} If a signal could be propagated at a speed greater than
+$c$, then the vector $\vc{r}$ connecting the cause and the effect would be spacelike.
 But by adding two spacelike vectors we can
 make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
 into the past, violating causality.
+\item \emph{The argument from relativity of motion:}
+Furthermore, there would exist a frame in which vector $\vc{r}$ was a vector of simultaneity, so that
+the information would have been propagated not just faster than $c$ but in fact \emph{instantaneously}.
+It would then be possible to send signals from one place in the universe to another without any time lag.
+This would allow perfect synchronization of all clocks. But observations such as
+the Hafele-Keating experiment demonstrate that
+clocks A and B that have been initially synchronized will drift out of sync
+if one is in motion relative to the other.
+With instantaneous transmission of signals, we could determine, without having to wait for A and B to be reunited,
+which was ahead and which was behind. Since they don't need to be reunited, neither one needs to undergo any acceleration;
+each clock can fix an inertial frame of reference, with a velocity vector that changes neither its direction nor its magnitude.
+But this violates the principle that constant-velocity motion is relative, because each clock
+can be considered to be at rest, in its own frame of reference. Since no experiment has ever detected any violation
+of the relativity of motion, we conclude that instantaneous action at a distance is impossible.
+\end{itemize}
+One could complain that giving two separate arguments to this effect was gilding the lily. If we were
+doing mathematics, then one proof would be enough. But this is science, not mathematics, so every
+assumption that goes into an argument is not absolute truth but provisional truth, founded on
+observations that have limited precision and that cover a limited domain of conditions. Neither
+the relativity of motion nor causality is a logical necessity; they are both just generalizations
+based on a body of evidence. For more on causality, and its uncertain empirical status,
+see section \ref{sec:causality}, p.~\pageref{sec:causality}.
 
 \begin{eg}{The ring laser gyroscope}\label{eg:ring-laser-gyro}
 If you've flown in a jet plane, you can thank relativity for helping you to avoid
