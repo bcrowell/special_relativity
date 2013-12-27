@@ -712,6 +712,7 @@ Nevertheless, general relativity reduces to special relativity on scales small e
 curvature effects negligible. Therefore it is still valid to expect conservation of energy and
 momentum to hold \emph{locally}, as assumed, e.g., in the analysis of Compton scattering in
 example \ref{eg:compton} on p.~\pageref{eg:compton}, and verified in countless experiments.
+Cf.~section \ref{sec:stress-energy}, p.~\pageref{sec:stress-energy}, on the stress-energy tensor.
 <% end_sec('gr-no-e-cons') %>
 
 

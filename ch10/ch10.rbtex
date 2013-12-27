@@ -216,7 +216,7 @@ we have the requirement $\vc{a}\cdot\vc{v}=0$ for any $\vc{v}$, and picking $\vc
 zero. It turns out that when we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
 we end up with the constraint that $M$ must be antisymmetric, meaning that when we transpose it, the result
 is another matrix that looks just like the original one, but with all the signs flipped. The result
-is something like this:
+is the following rank-2 tensor:
 \begin{equation*}
   \begin{pmatrix}
     0     & -E_x    &    -E_y &    -E_z \\
@@ -225,7 +225,7 @@ is something like this:
     E_z  & B_y   &    -B_x &   0
   \end{pmatrix}
 \end{equation*}
-We'll call this the electromagnetic field matrix.
+We'll call this the electromagnetic field tensor.
 The labeling of the left column simply expresses the definition of the electric field, which
 is expressed in terms of the vector $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
 then follows from antisymmetry, and antisymmetry also requires that the central diagonal be zero.
