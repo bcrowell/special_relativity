@@ -51,10 +51,9 @@ concrete events. Observer 2 is going to see the lone particle drift toward the w
 due to the wire's electrical attraction, gradually speeding up, and eventually hit
 the wire. If 2 sees this collision, then 1 must as well. But 1 knows that the total
 electrical force on the lone particle is exactly zero. There must be some new type
-of force. She invents a name for this new type of force: magnetism.
+of force. She invents a name for it: magnetism.
 
-We are led to the conclusion that magnetic interactions must arise because of
-relativity, and that magnetism is a purely relativistic effect. Since relativistic effects
+Magnetism is a purely relativistic effect. Since relativistic effects
 are down by a factor of $v^2$ compared to Newtonian ones, it's surprising that
 relativity can produce an effect as vigorous as the attraction between a magnet and
 your refrigerator. The explanation is that although matter is electrically neutral, the
@@ -146,26 +145,34 @@ to create the fields, but $\vc{o}_2$ isn't, so $\vc{o}_2$ picks up $q$'s magneti
 which is information unavailable to $\vc{o}_1$ --- who thinks $q$ was at rest, and therefore
 didn't \emph{make} any magnetic field. This would contradict our ``that's all there is''
 hypothesis.
+
+To show the power of ``that's all there is,'' consider example \ref{eg:boost-solenoid},
+p.~\pageref{eg:boost-solenoid}, in which we found that boosting a solenoid along its own
+axis doesn't change its internal field. As a fact about solenoids, it's fairly obscure and
+useless. But if the fields must have transformation laws, then we've learned something much
+more general: a magnetic field \emph{always} stays the same under a boost in the direction
+of the field.
 <% end_sec('fields-transform') %>
 <% end_sec('fields') %>
 
 
 <% begin_sec("Electromagnetic fields",4,'em-fields') %>
 <% begin_sec("The electric field",nil,'e-field') %>
-We know that magnetic \emph{forces} must exist, but that
-doesn't yet tell us how to define a magnetic \emph{field} or how electric and magnetic
-fields transform.
+Section \ref{sec:rel-requires-magnetism} showed that relativity requires
+magnetic \emph{forces} to exist, and section \ref{subsec:fields-transform} gave us a
+peek at what this implies about or how electric and magnetic
+\emph{fields} transform.
 To understand this on a more general basis, let's explicitly list
 some assumptions about the electric field and see how they lead to the existence
 and properties of a magnetic field:
 
 \noindent \begin{enumerate}\label{em-field-assumptions}
-\item \emph{Definition of the electric field:} In the frame of reference of some inertial
+\item \emph{Definition of the electric field:} In the frame of reference of an inertial
       observer $\vc{o}$, take some standard,
       charged test particle, release it at rest, and observe the three-force
       $\vc{f}^{(3)}$ (section \ref{sec:force}, p.~\pageref{sec:force})
       acting on the particle. Then the electric field three-vector 
-      $\vc{E}^{(3)}$ in frame $\vc{o}$ is defined implicitly by $\vc{f}^{(3)}=q\vc{E}^{(3)}$,
+      $\vc{E}^{(3)}$ in frame $\vc{o}$ is defined by $\vc{f}^{(3)}=q\vc{E}^{(3)}$,
       where we fix our system of units by taking some arbitrary value for the charge $q$ of the test particle.
 \item \emph{Definition of electric charge:} 
       For charges other than the standard test charge, we
@@ -187,22 +194,27 @@ for all observers, and we know that this isn't possible in relativity.
 <% end_sec('e-field') %>
 
 <% begin_sec("The magnetic field",nil,'b-field') %>
-Clearly we need to tweak our assumptions to allow for the existence of a magnetic field
-in addition to the electric one.
+Our situation is very similar to the one encountered in section \ref{sec:j-vector},
+p.~\pageref{sec:j-vector}, where we found that knowledge of the charge density in one frame was
+insufficient to tell us the charge density in other frames. There was missing information,
+which turned out to be the current density. The problems we've encountered in defining the transformation
+properties of the electric field suggest a similar ``missing-information'' situation, and it seems
+likely that the missing information is the magnetic field.
+How should we modify the assumptions on p.~\pageref{em-field-assumptions} to allow for the existence of a magnetic field
+in addition to the electric one?
 What properties could this additional field have? How would we define or measure it?
 
-We could imagine that in addition to charge $q$,
-particles would have some other characteristic, call it $r$, and there
-would then be some entirely separate field defined by their action on a particle with this ``$r$-ness.''
-But going down this road leads us to define completely separate fields such as the one
-associated with the strong nuclear force. 
+One way of imagining a new type of field would be if, in addition to charge $q$,
+particles had some other characteristic, call it $r$, and there
+was then be some entirely separate field defined by their action on a particle with this ``$r$-ness.''
+But going down this road leads us to unrelated phenomena such as the the strong nuclear interaction.
 
 The nature of the contradiction
 arrived at in section \ref{subsec:e-field} is such that our additional field is closely linked to
 the electric one, and therefore we expect it to act on charge, not on $r$-ness. Without inventing
 something new like $r$-ness, the only other available property
-of the test particle is its state of motion, characterized by its velocity vector $\vc{v}$. If this
-is the case, then the simplest rule we could imagine for determining the force on a test particle
+of the test particle is its state of motion, characterized by its velocity vector $\vc{v}$. 
+Now the simplest rule we could imagine for determining the force on a test particle
 would be a linear one, which would look like matrix multiplication:
 \begin{equation*}
   \vc{F} = qM\vc{v}
