@@ -291,12 +291,7 @@ same phenomena that a subluminal observer could describe. That is, the transform
 be one-to-one, and this is unacceptable physically.
 <% end_sec('no-c-frame') %>
 
-<% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors',{'optional'=>true}) %>
-Newton's laws are formulated in terms of velocity and acceleration vectors.
-Although it is possible to define corresponding quantities in special relativity,
-and they are of some physical interest,
-they do not play any fundamental role in describing dynamics.
-For these reasons, most readers will want to skip this section.
+<% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors') %>
 <% begin_sec("The velocity vector",nil,'v-vector') %>
 When I say ``vector'' in this book, I mean something that in 3+1 dimensions has four components. This
 can also be referred to as a four-vector.\index{four-vector}
@@ -446,6 +441,45 @@ Their derivatives are, respectively, $(x^2+1)^{-1/2}$,
 $(x^2-1)^{-1/2}$, and $(1-x^2)^{-1}$.
 <% end_sec('identities') %>
 
+<% begin_sec("The projection operator",nil,'proj',{'optional'=>true}) %>
+A frequent source of confusion in relativity is that we write down equations that
+are coordinate-dependent, but forget the dependency. Similarly, it is possible to
+write expressions that are only valid for one choice of signature. The following
+notation, defining a projection operator $P$, is one tool for avoiding these difficulties.
+\begin{equation}
+  P_\vc{o}\vc{r}=\vc{r}-\frac{\vc{r}\cdot\vc{o}}{\vc{o}\cdot\vc{o}}\vc{o}
+\end{equation}
+Usually $\vc{o}$ is the future timelike vector representing a certain observer,
+but the definition can be applied as long as $\vc{o}$ isn't lightlike.
+The idea being expressed is that we want to get rid of any part of $\vc{r}$ that
+is parallel to $\vc{o}$'s arrow of time. In a graph constructed according to
+$\vc{o}$'s Minkowski coordinates, we cast $\vc{r}$'s shadow down perpendicularly
+onto the spacelike axis, or the spacelike three-plane in $3+1$ dimensions.
+This is why $P$ is referred to as a projection operator. The notation sometimes allows
+us to express the things that we would otherwise express by explicitly
+or implicitly constructing and referring to $\vc{o}$'s spacelike Minkowski coordinates.
+$P$ has the following properties:
+
+\begin{enumerate}
+\item $\vc{o}\cdot P_\vc{o}\vc{r} = 0$ 
+\item $\vc{r}-P_\vc{o}\vc{r}$ is parallel to $\vc{o}$.
+\item $P_\vc{o}\vc{o}=0$
+\item $P_\vc{o}P_\vc{o}\vc{r} = P_\vc{o}\vc{r}$
+\item $P_\vc{o}$ is linear, i.e., $P_\vc{o}(\vc{q}+\vc{r})=P_\vc{o}\vc{q}+P_\vc{o}\vc{r}$ and $P_\vc{o}(c\vc{r})=cP_\vc{o}\vc{r}$
+\item $P_{c\vc{o}}=P_\vc{o}$
+\item If $\vc{o}$ and $\vc{v}$ are both future timelike, and $|o^2|=1$, then
+      we can express $\vc{v}$ as $\vc{v}=P_\vc{o}\vc{v}+\gamma\vc{o}$, where $\gamma$
+      has the usual interpretation for world-lines that coincide with these two vectors.
+\end{enumerate}
+
+All of these hold regardless of whether the signature is $+---$ or $-+++$, and none of them refer to any coordinates.
+Properties 1 and 2 express the definition geometrically, and can serve as an alternative definition of $P$.
+Property 3 says that an observer considers herself to be at rest.
+4 is a general property of all projection operators. 7 splits the vector into its spatial and temporal parts
+according to $\vc{o}$.
+
+<% end_sec('proj') %>
+
 <% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
 Special relativity doesn't permit the existence of observers who move at $c$ (section
 \ref{sec:no-c-frame}).
@@ -454,7 +488,7 @@ With charming naivete, the special-effects technicians
 for Star Trek attempted to show the frame of reference of such an
 observer in scenes where a field of stars rushed past the Enterprise. (Never mind that
 the stars, which pass in front of and behind the spaceship, should actually be a million
-times larger than it.) Actually such an observer (would could not be made out of normal material
+times larger than it.) Actually such an observer (which could not be made out of normal material
 particles such as electrons and protons) would consider its own world-line, which we call
 spacelike, to be timelike, while the world-line of a star such as our sun, which we consider timelike,
 would be spacelike. That is, our sun would not appear to the observer
@@ -462,9 +496,10 @@ as an object in motion but rather as a line
 stretching across space, which would wink into existence and then wink back out.
 A typical transformation between our frame and the frame of such an observer would be
 $(x,t)\rightarrow(t,x)$, simply swapping the time and space coordinates. The transformation is
-one-to-one, and therefore unobjectionable. 
+one-to-one, and therefore not subject to the objection raised in section
+\ref{sec:no-c-frame} to frames moving \emph{at} $c$.
 
-But this is all in 1+1 dimensions. In 3+1 dimensions, we run into the difficulty that the transformation
+But this is all in 1+1 dimensions. In 3+1 dimensions, we again run into the difficulty that the transformation
 between our frame and that of the superluminal being cannot be one-to-one, since we can't
 squish three dimensions to one or expand one to three without merging points or splitting one
 point into many. Our conclusion, then, is that there can be no such thing as a superluminal
@@ -472,7 +507,8 @@ observer in our 3+1-dimensional universe. A more formal proof has been given
 by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
 Open access via Project Euclid at
 \url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
-For more about faster-than-light motion in relativity, see section \ref{sec:tachyons}.
+For more about faster-than-light motion in relativity, see section \ref{sec:tachyons},
+p.~\pageref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
 
 \begin{hwsection}

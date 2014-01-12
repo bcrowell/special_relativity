@@ -720,6 +720,7 @@ Cf.~section \ref{sec:stress-energy}, p.~\pageref{sec:stress-energy}, on the stre
 
 <% begin_sec("Force",nil,'force',{'optional'=>true}) %>
 Force is a concept that is seldom needed in relativity, and that's why this section is optional.
+<% begin_sec("Four-force",nil,'four-force') %>
 By analogy with Newtonian mechanics, we define a relativistic force vector
 \begin{equation*}
   \vc{F} = m\vc{a} \qquad ,
@@ -737,7 +738,8 @@ only work for massive particles, since for a massless particle we can't define
 $\vc{a}$ or $\tau$. $\vc{F}$ has been defined in terms
 of Lorentz invariants and four-vectors, and therefore it transforms as a god-fearing four-vector
 itself.
-
+<% end_sec('four-force') %>
+<% begin_sec("Three-force",nil,'three-force') %>
 The trouble with all this is that $\vc{F}$ isn't what we actually measure when we measure a force,
 except if we happen to be in a frame of reference that momentarily coincides with the rest frame
 of the particle. The force we measure? That would be this other force, $\vc{f}$. It's the
@@ -750,39 +752,14 @@ with a $\der t$ in the denominator rather than a $\der\tau$. In other words, it 
 of transfer of momentum according to the observer, whose time coordinate is $t$, not $\tau$ --- unless
 the observer happens to be moving along with the particle. 
 
-Define a frame of reference $\vc{o}$
-for the inertial frame of reference of an observer who does happen to be moving along with the particle
-at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{f}$ the same as $\vc{F}$.
-In this frame, the particle is momentarily at rest, so the work being done on it vanishes, and
-the timelike components of $\vc{f}$ and $\vc{F}$ are both zero.
-
-Suppose we do a Lorentz transformation from $\vc{o}$ to a new frame $\vc{o}'$, and suppose the boost
-is parallel to $\vc{f}$ and $\vc{F}$ (which are both purely spatial in frame $\vc{o}$). Call this
-direction $x$. Then $\der\vc{p}=(\der p_t,\der p_x)=(0,\der p_x)$ transforms
-to $\der\vc{p}'=(-\gamma v \der p_x,\gamma\der p_x)$, so that 
-$f_x'=\der p'_x/\der t'=(\gamma\der p_x)/(\gamma \der t)=f_x$. The two factors of $\gamma$ cancel, and
-we find that $f_x'=f_x$.
-
-Now let's do the case where the boost is in the $y$ direction, perpendicular to the force.
-The Lorentz transformation doesn't change $\der p_y$, so $f_y'=\der p'_y/\der t'=\der p_y/(\gamma \der t)
-=f_y/\gamma$.
-
-The summary of our results is as follows. Let $\vc{f}$ be the force acting on a particle, as measured
-in a frame instantaneously comoving with the particle. Then in a frame of reference moving relative
-to this one, we have
-\begin{align*}
-\begin{split}
-  f'_\parallel &= f_\parallel \qquad \text{and}\\
-  f'_\perp     &= f_\perp/\gamma \qquad ,
-\end{split}
-\end{align*}
-where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,
-and $\perp$ a direction perpendicular to it.
+The following two examples show that an object moving at relativistic speeds has less inertia
+in the transverse direction than in the longitudinal one. A corollary is that the three-acceleration
+need not be parallel to the three-force.
 
 \begin{eg}{Circular motion}
 For uniform circular motion, $\gamma$ is constant, and we have
 \begin{equation*}
-    \vc{f} = m \frac{\der \vc{v}}{\der t} \\
+    \vc{f} = m \gamma\frac{\der \vc{v}}{\der t} \\
 \end{equation*}
 In terms of the Newtonian three-vectors $\vc{f}^{(3)}$, $\vc{v}^{(3)}$ and $\vc{a}^{(3)}$,
 this becomes
@@ -813,6 +790,37 @@ For accelerated linear motion, we have:
 \end{align*}
 The particle's apparent inertia is increased by a factor of $\gamma^3$.
 \end{eg}
+<% end_sec('three-force') %>
+<% begin_sec("Transformation of the three-force",nil,'xfn-three-force') %>
+<% end_sec('xfn-three-force') %>
+Define a frame of reference $\vc{o}$
+for the inertial frame of reference of an observer who does happen to be moving along with the particle
+at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{f}$ the same as $\vc{F}$.
+In this frame, the particle is momentarily at rest, so the work being done on it vanishes, and
+the timelike components of $\vc{f}$ and $\vc{F}$ are both zero.
+
+Suppose we do a Lorentz transformation from $\vc{o}$ to a new frame $\vc{o}'$, and suppose the boost
+is parallel to $\vc{f}$ and $\vc{F}$ (which are both purely spatial in frame $\vc{o}$). Call this
+direction $x$. Then $\der\vc{p}=(\der p_t,\der p_x)=(0,\der p_x)$ transforms
+to $\der\vc{p}'=(-\gamma v \der p_x,\gamma\der p_x)$, so that 
+$f_x'=\der p'_x/\der t'=(\gamma\der p_x)/(\gamma \der t)=f_x$. The two factors of $\gamma$ cancel, and
+we find that $f_x'=f_x$.
+
+Now let's do the case where the boost is in the $y$ direction, perpendicular to the force.
+The Lorentz transformation doesn't change $\der p_y$, so $f_y'=\der p'_y/\der t'=\der p_y/(\gamma \der t)
+=f_y/\gamma$.
+
+The summary of our results is as follows. Let $\vc{f}$ be the force acting on a particle, as measured
+in a frame instantaneously comoving with the particle. Then in a frame of reference moving relative
+to this one, we have
+\begin{align*}
+\begin{split}
+  f'_\parallel &= f_\parallel \qquad \text{and}\\
+  f'_\perp     &= f_\perp/\gamma \qquad ,
+\end{split}
+\end{align*}
+where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,
+and $\perp$ a direction perpendicular to it.
 
 <% end_sec('force') %>
 
@@ -986,7 +994,7 @@ Let's summarize some ideas about faster-than-light (FTL, superluminal) motion in
 \begin{enumerate}
 \item Superluminal transmission of information would violate causality, since it would allow a
    causal relationship between events that were spacelike in relation to one another, and the 
-   time-ordering of such events is different according to different observers. Since we never observe
+   time-ordering of such events is different according to different observers. Since we never seem to observe
    causality to be violated, we suspect that superluminal transmission of information is impossible.
    This leads us to interpret the metric in relativity as being fundamentally a statement of possible
    cause and effect relationships between events.
@@ -1064,7 +1072,7 @@ and can be quite technical, but is governed by some very simple principles. One 
 ``everything not forbidden is compulsory.'' The phrase originated as political satire of communism by
 T.H.~White, but was commandeered by physicist Murray Gell-Mann to express the idea that any process
 not forbidden by a conservation law will in fact occur in nature at some rate. 
-If tachyons exist, then it is possible to have two tachyons whose momentum
+If tachyons exist, then it is possible to have two tachyons whose energy-momentum
 vectors add up to zero
 (problem \ref{hw:tachyon-instability}, p.~\pageref{hw:tachyon-instability}).\label{tachyon-instability-introduced}
 This would seem to imply that the vacuum could spontaneously create tachyon-antitachyon pairs.

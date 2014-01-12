@@ -171,7 +171,7 @@ and so is area in $1+1$-dimensional spacetime, but neither is a scalar.
 
 <% begin_sec("The frequency-wavenumber covector",nil,'f-vector') %>
 Generalizing from $0+1$ dimensions to $3+1$, we could have an observer moving inertially
-along vector $__birdvec(\vc{o})$, while counting the phase $\phi$ (in radians) of a
+along velocity vector $__birdvec(\vc{o})$, while counting the phase $\phi$ (in radians) of a
 plane wave (perhaps a water wave or an electromagnetic wave) that is washing over her.
 Since $\phi$ is just a count, it's clearly a scalar. That means that we have some
 function that takes as its input a vector $__birdvec(\vc{o})$ and gives as an output the scalar $\phi$.
