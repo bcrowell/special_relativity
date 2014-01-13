@@ -739,32 +739,39 @@ $\vc{a}$ or $\tau$. $\vc{F}$ has been defined in terms
 of Lorentz invariants and four-vectors, and therefore it transforms as a god-fearing four-vector
 itself.
 <% end_sec('four-force') %>
-<% begin_sec("Three-force",nil,'three-force') %>
+<% begin_sec("The force measured by an observer",nil,'three-force') %>
 The trouble with all this is that $\vc{F}$ isn't what we actually measure when we measure a force,
 except if we happen to be in a frame of reference that momentarily coincides with the rest frame
-of the particle. The force we measure? That would be this other force, $\vc{f}$. It's the
-little half-terrier mutt your friend found in an alley. Lowercase. Cute. Works hard.
+of the particle. As with velocity and acceleration (section \ref{sec:proj},
+p.~\pageref{sec:proj}), we have a four-vector that has simple, standard
+transformation properties, but a different $\vc{F}_\vc{o}$, which is what is
+actually measured by the observer $\vc{o}$. 
 It's defined as
 \begin{equation*}
-  \vc{f} = \frac{\der\vc{p}}{\der t} \qquad ,
+  \vc{F}_\vc{o} = \frac{\der\vc{p}}{\der t} \qquad ,
 \end{equation*}
 with a $\der t$ in the denominator rather than a $\der\tau$. In other words, it measures the rate
 of transfer of momentum according to the observer, whose time coordinate is $t$, not $\tau$ --- unless
-the observer happens to be moving along with the particle. 
+the observer happens to be moving along with the particle. Unlike the three-vectors
+$\vc{v}_\vc{o}$ and $\vc{a}_\vc{o}$, whose timelike components are zero by definition according
+to observer $\vc{o}$, $\vc{F}_\vc{o}$ usually has a nonvanishing timelike component, which is
+the rate of change of the particle's mass-energy, i.e., the power.
 
 The following two examples show that an object moving at relativistic speeds has less inertia
 in the transverse direction than in the longitudinal one. A corollary is that the three-acceleration
 need not be parallel to the three-force.
 
 \begin{eg}{Circular motion}
-For uniform circular motion, $\gamma$ is constant, and we have
+For a particle in uniform circular motion, $\gamma$ is constant, and we have
 \begin{equation*}
-    \vc{f} = m \gamma\frac{\der \vc{v}}{\der t} \\
+    \vc{F}_\vc{o} = \frac{\der}{\der t}(m\gamma\vc{v}) = m \gamma\frac{\der \vc{v}}{\der t} \qquad .
 \end{equation*}
-In terms of the Newtonian three-vectors $\vc{f}^{(3)}$, $\vc{v}^{(3)}$ and $\vc{a}^{(3)}$,
-this becomes
+The particle's mass-energy is constant, so the timelike component of
+$\vc{F}_\vc{o}$ does happen to be zero in this example.
+In terms of the three-vectors $\vc{v}_\vc{o}$ and $\vc{a}_\vc{o}$ defined in
+section \ref{sec:proj}, we have
 \begin{equation*}
-    \vc{f}^{(3)} = m\gamma \frac{\der \vc{v}^{(3)}}{\der t} = m\gamma \vc{a}^{(3)}\qquad,
+    \vc{F}_\vc{o} = m\gamma \frac{\der \vc{v}_\vc{o}}{\der t} = m\gamma \vc{a}_\vc{o}\qquad,
 \end{equation*}
 which is greater than the Newtonian value by the factor $\gamma$.
 As a practical example, in a cathode ray tube (CRT) such as the tube in
@@ -778,11 +785,11 @@ have been expected according to Newton's laws.
 \end{eg}
 
 \begin{eg}{Linear motion}
-For accelerated linear motion, we have:
+For accelerated linear motion in the $x$ direction, ignoring $y$ and $z$, we have a velocity vector
 \begin{align*}
   \vc{v} &= \frac{\der\vc{r}}{\der\tau} \qquad , \\
 \intertext{whose $x$ component is $\gamma v$. Then}
-  f_x &= m\frac{\der (\gamma v)}{\der t} \\
+  F_{\vc{o},x} &= m\frac{\der (\gamma v)}{\der t} \\
            &= m\frac{\der\gamma}{\der t} v+m\gamma\frac{\der v}{\der t} \\
            &= m\frac{\der\gamma}{\der v}\frac{\der v}{\der t} + m\gamma a \\
            &= m(v^2\gamma^3 a+\gamma a) \\
@@ -791,32 +798,33 @@ For accelerated linear motion, we have:
 The particle's apparent inertia is increased by a factor of $\gamma^3$.
 \end{eg}
 <% end_sec('three-force') %>
-<% begin_sec("Transformation of the three-force",nil,'xfn-three-force') %>
+<% begin_sec("Transformation of the force measured by an observer",nil,'xfn-three-force') %>
 <% end_sec('xfn-three-force') %>
 Define a frame of reference $\vc{o}$
 for the inertial frame of reference of an observer who does happen to be moving along with the particle
-at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{f}$ the same as $\vc{F}$.
+at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{F}_\vc{o}$ the same as $\vc{F}$.
 In this frame, the particle is momentarily at rest, so the work being done on it vanishes, and
-the timelike components of $\vc{f}$ and $\vc{F}$ are both zero.
+the timelike components of $\vc{F}_\vc{o}$ and $\vc{F}$ are both zero.
 
 Suppose we do a Lorentz transformation from $\vc{o}$ to a new frame $\vc{o}'$, and suppose the boost
-is parallel to $\vc{f}$ and $\vc{F}$ (which are both purely spatial in frame $\vc{o}$). Call this
+is parallel to $\vc{F}_\vc{o}$ and $\vc{F}$ (which are both purely spatial in frame $\vc{o}$). Call this
 direction $x$. Then $\der\vc{p}=(\der p_t,\der p_x)=(0,\der p_x)$ transforms
 to $\der\vc{p}'=(-\gamma v \der p_x,\gamma\der p_x)$, so that 
-$f_x'=\der p'_x/\der t'=(\gamma\der p_x)/(\gamma \der t)=f_x$. The two factors of $\gamma$ cancel, and
-we find that $f_x'=f_x$.
+$F_{\vc{o}',x}=\der p'_x/\der t'=(\gamma\der p_x)/(\gamma \der t)=F_{\vc{o},x}$. The two factors of $\gamma$ cancel, and
+we find that $F_{\vc{o}',x}=F_{\vc{o},x}$.
 
 Now let's do the case where the boost is in the $y$ direction, perpendicular to the force.
-The Lorentz transformation doesn't change $\der p_y$, so $f_y'=\der p'_y/\der t'=\der p_y/(\gamma \der t)
-=f_y/\gamma$.
+The Lorentz transformation doesn't change $\der p_y$,
+so $F_{\vc{o}',y}=\der p'_y/\der t'=\der p_y/(\gamma \der t)
+=F_{\vc{o}',y}/\gamma$.
 
-The summary of our results is as follows. Let $\vc{f}$ be the force acting on a particle, as measured
+The summary of our results is as follows. Let $\vc{F}_\vc{o}$ be the force acting on a particle, as measured
 in a frame instantaneously comoving with the particle. Then in a frame of reference moving relative
 to this one, we have
 \begin{align*}
 \begin{split}
-  f'_\parallel &= f_\parallel \qquad \text{and}\\
-  f'_\perp     &= f_\perp/\gamma \qquad ,
+  F_{\vc{o}',\parallel} &= F_{\vc{o},\parallel} \qquad \text{and}\\
+  F_{\vc{o}',\perp}     &= \frac{F_{\vc{o},\perp}}{\gamma} \qquad ,
 \end{split}
 \end{align*}
 where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,

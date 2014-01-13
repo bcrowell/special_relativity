@@ -169,10 +169,11 @@ and properties of a magnetic field:
 \noindent \begin{enumerate}\label{em-field-assumptions}
 \item \emph{Definition of the electric field:} In the frame of reference of an inertial
       observer $\vc{o}$, take some standard,
-      charged test particle, release it at rest, and observe the three-force
-      $\vc{f}^{(3)}$ (section \ref{sec:force}, p.~\pageref{sec:force})
-      acting on the particle. Then the electric field three-vector 
-      $\vc{E}^{(3)}$ in frame $\vc{o}$ is defined by $\vc{f}^{(3)}=q\vc{E}^{(3)}$,
+      charged test particle, release it at rest, and observe the force
+      $\vc{F}_\vc{o}$ (section \ref{sec:force}, p.~\pageref{sec:force})
+      acting on the particle. (The timelike component of this force vanishes.)
+      Then the electric field three-vector 
+      $\vc{E}$ in frame $\vc{o}$ is defined by $\vc{F}_\vc{o}=q\vc{E}$,
       where we fix our system of units by taking some arbitrary value for the charge $q$ of the test particle.
 \item \emph{Definition of electric charge:} 
       For charges other than the standard test charge, we
@@ -245,9 +246,9 @@ Writing out the matrix multiplication for an arbitrary velocity vector
 $\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector,
 we have expressions such as
 $F_x=\gamma q(E_x+u_yB_z-u_zB_y)$. Taking into account the difference of a factor of $\gamma$
-between the three-force and four-force, we end up with the familiar Lorentz force law,
+between the four-force and the force measured by an observer, we end up with the familiar Lorentz force law,
 \begin{equation*}
-  \vc{f} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
+  \vc{F}_\vc{o} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
 \end{equation*}
 where $\vc{B}$ is the magnetic field.
 This is expressed in units where $c=1$, so that
@@ -271,7 +272,8 @@ an inertial observer, but for an inertial observer gravity doesn't exist (sectio
 <% end_sec('em-fields') %>
 
 <% begin_sec("Transformation of the fields",nil,'em-xfn') %>
-
+The transformation law for the electric and magnetic fields now follows from the general
+tensor transformation law for rank-2 tensors (p.~\pageref{rank-two-xfn}).
 <% end_sec('em-xfn') %>
 
 

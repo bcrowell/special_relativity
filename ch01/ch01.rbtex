@@ -10,12 +10,6 @@
   )
 %>
 
-\begin{indentedblock}
-This book is intended for readers who already have a physics background
-roughly equivalent to a university freshman physics survey course, but much of it should be
-intelligible to those with less physics-fu than that. Optional sections are marked with stars,
-and all of chapter \ref{ch:foundations} is optional.
-\end{indentedblock}
 <% begin_sec("Three models of spacetime",nil,'three-models-of-spacetime') %>
 
 ``The test of a first-rate intelligence is the ability to hold two opposing ideas in mind at
