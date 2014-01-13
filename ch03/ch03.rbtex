@@ -345,16 +345,26 @@ for every observer.
 An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
 Since we have no notion of adding one observer to another observer, it makes sense that
 velocity vectors don't add relativistically.
+
+If $\vc{u}$ and $\vc{v}$ are both future-directed, properly normalized velocity vectors, 
+and if the signature is $+---$ as in this book, then
+their inner product is $\gamma=\vc{u}\cdot\vc{v}$, the gamma factor,\index{gamma factor!as an inner product}
+introduced in section \ref{subsec:gamma}, p.~\pageref{subsec:gamma}, corresponding their relative
+velocity.
 <% end_sec('v-vector') %>
 <% begin_sec("The acceleration vector",nil,'a-vector') %>
 The acceleration vector is defined as the derivative of the velocity vector with
 respect to proper time, $\vc{a}=\der\vc{v}/\der\tau$.\index{vector!acceleration}\index{acceleration vector}
-Its squared magnitude is
-only approximately equal to minus the squared magnitude of the Newtonian
+It measures the curvature of a world-line.
+Its squared magnitude is the minus the \emph{proper acceleration},\index{proper acceleration}\index{acceleration!proper}
+meaning the acceleration that would be measured by
+an accelerometer carried along that world-line.
+The proper acceleration is only approximately equal to the squared magnitude of the Newtonian
 acceleration three-vector, in the limit of small velocities.
 
 \begin{eg}{Constant proper acceleration}\label{eg:hyperbolic-motion}
-\egquestion Suppose a spaceship moves so that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
+\egquestion Suppose a spaceship moves so
+that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
 motion $x(t)$ as measured by an observer in an inertial frame.
 
 \eganswer Let $\tau$ stand for the ship's proper time, and let dots indicate derivatives with respect to $\tau$.
@@ -376,12 +386,15 @@ Eliminating $\tau$ gives
 \begin{equation*}
   x = \frac{1}{a}\sqrt{1+a^2t^2} \qquad ,
 \end{equation*}
-shown in figure \figref{photon-chasing-spaceship}.
+shown in figure \figref{photon-chasing-spaceship}. The world-line is a hyperbola, and this type of
+motion is sometimes referred to as hyperbolic motion.\index{hyperbolic motion}
 
 As $t$ approaches infinity, $\der x/\der t$ approaches the speed of light.
 In the same limit,  $x$ increases exponentially with proper time, so that
 surprisingly large distances can in theory be traveled within a human lifetime
-(problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}).
+(problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}). Some further
+properties of hyperbolic motion are developed in problems
+\ref{hw:hyperbolic-properties}, \ref{hw:hyperbolic-four-vectors}, and \ref{hw:hyperbolic-proj}.
 <% marg(63) %>
 <%
   fig(
@@ -465,19 +478,60 @@ $P$ has the following properties:
 \item $\vc{r}-P_\vc{o}\vc{r}$ is parallel to $\vc{o}$.
 \item $P_\vc{o}\vc{o}=0$
 \item $P_\vc{o}P_\vc{o}\vc{r} = P_\vc{o}\vc{r}$
-\item $P_\vc{o}$ is linear, i.e., $P_\vc{o}(\vc{q}+\vc{r})=P_\vc{o}\vc{q}+P_\vc{o}\vc{r}$ and $P_\vc{o}(c\vc{r})=cP_\vc{o}\vc{r}$
 \item $P_{c\vc{o}}=P_\vc{o}$
+\item $P_\vc{o}$ is linear, i.e., $P_\vc{o}(\vc{q}+\vc{r})=P_\vc{o}\vc{q}+P_\vc{o}\vc{r}$ and $P_\vc{o}(c\vc{r})=cP_\vc{o}\vc{r}$
+\item $\frac{\der}{\der x} P_\vc{o}\vc{r}=P_\vc{o}\frac{\der\vc{r}}{\der x}$,
+      where $x$ is any variable and $\vc{o}$ doesn't depend on $x$.\label{proj-commutes-with-deriv}
 \item If $\vc{o}$ and $\vc{v}$ are both future timelike, and $|o^2|=1$, then
       we can express $\vc{v}$ as $\vc{v}=P_\vc{o}\vc{v}+\gamma\vc{o}$, where $\gamma$
       has the usual interpretation for world-lines that coincide with these two vectors.
 \end{enumerate}
 
 All of these hold regardless of whether the signature is $+---$ or $-+++$, and none of them refer to any coordinates.
-Properties 1 and 2 express the definition geometrically, and can serve as an alternative definition of $P$.
+Properties 1 and 2 can serve as an alternative, geometrical definition of $P$.
 Property 3 says that an observer considers herself to be at rest.
 4 is a general property of all projection operators. 7 splits the vector into its spatial and temporal parts
 according to $\vc{o}$.
 
+Sometimes if we know a position, velocity, or acceleration four-vector, we want to find out
+how these would be measured by a particular observer using clocks and rulers. The following table shows
+how to switch back and forth between the two representations. We use, for example, the notation
+$\vc{v}_\vc{o}$ to mean the velocity vector of the form $(0,v_x,v_y,v_z)$ that would be measured by
+an observer whose velocity vector is $\vc{o}$ (so that the subscript is an ``o'' for ``observer,''
+not a zero). Since this type of vector, expressed in the Minkowski coordinates of observer $\vc{o}$,
+has a zero time component, we refer to it as a three-vector.\index{three-vector}
+In all of these expressions, the velocity vectors $\vc{o}$ and $\vc{v}$ are assumed to be
+normalized, and the signature is assumed to be $+---$ (one implication being that
+$\vc{o}\cdot\vc{v}$ is simply $\gamma$).
+
+\noindent\begin{tabular}{p{53mm}p{53mm}}\label{three-and-four-vec-conversions}
+\emph{finding the three-vector from the four-vector} & \emph{finding the four-vector from the three-vector} \\
+$\vc{x}_\vc{o}=P_\vc{o}\vc{x}$ & \\
+$\vc{v}_\vc{o}=\frac{P_\vc{o}\vc{v}}{\vc{o}\cdot\vc{v}}$
+       & $\vc{v} = \gamma(\vc{o}+\vc{v}_\vc{o})$ \\
+$\vc{a}_\vc{o} = \frac{1}{(\vc{o}\cdot\vc{v})^2}\left[P_\vc{o}\vc{a}-(\vc{o}\cdot\vc{a})\vc{v}_\vc{o}\right]$
+      & $\vc{a} = \gamma^3(\vc{a}_\vc{o}\cdot\vc{v}_\vc{o})\vc{v}+\gamma^2\vc{a}_\vc{o}$,
+           where $\vc{v}_\vc{o}$ is found as above
+\end{tabular}
+
+As an example of how these are derived, the three-velocity $\vc{v}_\vc{o}$ is the derivative of
+$\vc{x}_\vc{o}$ with respect to observer $\vc{o}$'s Minkowski time coordinate $t$, whereas the
+four-velocity is defined as the derivative of $\vc{x}$ with respect to the proper time $\tau$ of the world-line
+being observed. Therefore we have 
+\begin{align*}
+ \vc{v}_\vc{o} &= \frac{\der \vc{x}_\vc{o}}{\der t} \\
+               &= \frac{\der P_\vc{o}\vc{x}}{\der t} \\
+\intertext{and applying property \ref{proj-commutes-with-deriv} of the projection operator this becomes}
+ \vc{v}_\vc{o} &= P_\vc{o}\frac{\der \vc{x}}{\der t} \\
+               &= P_\vc{o}\frac{\der \vc{x}}{\der \tau} \frac{\der\tau}{\der t}\\
+               &= \frac{1}{\gamma} P_\vc{o}\frac{\der \vc{x}}{\der \tau}\\
+               &= \frac{1}{\vc{o}\cdot\vc{v}} P_\vc{o}\frac{\der \vc{x}}{\der \tau}\\
+               &= \frac{P_\vc{o}\vc{v}}{\vc{o}\cdot\vc{v}}  \qquad .
+\end{align*}
+The similar but messier derivation of the expression for $\vc{a}_\vc{o}$
+is problem \ref{hw:three-accel-derivation}. In manipulating expressions of this type,
+the identity $\der\gamma/\der t=\gamma^3 \vc{a}_\vc{o}\cdot\vc{v}_\vc{o}$ is often handy
+(problem \ref{hw:gamma-deriv-derivation}).
 <% end_sec('proj') %>
 
 <% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
@@ -602,11 +656,66 @@ nonrelativistic expression, so that any relativistic effect is of higher
 order in $v$.
 <% end_hw %>
 
+<% begin_hw('hyperbolic-properties') %>\index{hyperbolic motion}
+Example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion} described the motion of
+an object having constant proper acceleration $a$, the world-line being
+$t=\frac{1}{a}\sinh a\tau$ and $x=\frac{1}{a}\cosh a\tau$ in a particular observer's
+Minkowski coordinates.
+(a) Prove the following results for $\gamma$ and for the
+(three-)velocity and (three-)acceleration measured by this observer.
+\begin{align*}
+  \gamma &= \cosh a\tau \\
+  v &= \tanh a\tau \\
+  \text{acceleration} &= a\cosh^{-3} a\tau
+\end{align*}
+Do the calculations simply by taking the first and second derivatives of position with respect to
+time. You will find the following facts helpful:
+\begin{align*}
+  1-\tanh^2&=\cosh^{-2} \\
+  \frac{\der}{\der x}\tanh x&=\cosh^{-2} x
+\end{align*}
+(b) Interpret the results in the limit of large $\tau$.
+<% end_hw %>
+
+<% begin_hw('hyperbolic-four-vectors') %>
+Example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion} described the motion of
+an object having constant proper acceleration $a$, the world-line being
+$t=\frac{1}{a}\sinh a\tau$ and $x=\frac{1}{a}\cosh a\tau$ in a particular observer's
+Minkowski coordinates.
+Find the corresponding velocity and acceleration four-vectors.
+<% end_hw %>
+
+<% begin_hw('hyperbolic-proj') %>
+Starting from the results of problem \ref{hw:hyperbolic-four-vectors},
+repeat problem \ref{hw:hyperbolic-properties}a using the techniques of section
+\ref{sec:proj} on p.~\pageref{sec:proj}. You will find it helpful to know
+that $1-\tanh^2=\cosh^{-2}$.
+<% end_hw %>
+
 <% begin_hw('a-dot-v-is-zero') %>
 Prove that $\vc{a}\cdot\vc{v}=0$ for any particle whose world-line
 allows the two vectors to be defined.
 <% end_hw %>
 
+<% begin_hw('v-dot-v') %>
+Let $\vc{v}$ be a future-directed, properly normalized velocity vector.
+Compare the value of $\vc{v}\cdot\vc{v}$ in the $+---$ signature used in this
+book with its value in the signature $-+++$.
+<% end_hw %>
+
+<% begin_hw('gamma-deriv-derivation') %>
+(a) Prove the relation
+$\der\gamma/\der t=\gamma^3 \vc{a}_\vc{o}\cdot\vc{v}_\vc{o}$
+given on p.~\pageref{three-and-four-vec-conversions}, in the special case where 
+the motion is linear.
+(b) Generalize the result to $3+1$ dimensions.
+<% end_hw %>
+
+<% begin_hw('three-accel-derivation') %>
+Derive the identity 
+$\vc{a}_\vc{o} = \frac{1}{(\vc{o}\cdot\vc{v})^2}\left[P_\vc{o}\vc{a}-(\vc{o}\cdot\vc{a})\vc{v}_\vc{o}\right]$
+on p.~\pageref{three-and-four-vec-conversions}.
+<% end_hw %>
 
 \end{hwsection}
 

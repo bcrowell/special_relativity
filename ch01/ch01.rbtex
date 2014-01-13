@@ -750,7 +750,7 @@ sun's frame of reference.
 
 <% end_sec('metric') %>
 
-<% begin_sec("The gamma factor",nil,'gamma') %>
+<% begin_sec("The gamma factor",nil,'gamma') %>\index{gamma factor!defined}
 
 Figure \figref{twin-paradox} is the relativistic version of example \ref{eg:galilean-twin-paradox}
 on p.~\pageref{eg:galilean-twin-paradox}. We intend to analyze it using the metric, and since the
