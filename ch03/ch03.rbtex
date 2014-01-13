@@ -307,11 +307,52 @@ $\Delta \tau$, and this is indeed how the velocity vector is defined in relativi
 \begin{equation*}
   \vc{v} = \frac{\der \vc{r}}{\der \tau}
 \end{equation*}
-A velocity vector is only defined for particles whose world-lines are timelike, i.e., massive particles.
-For such particles, the product of $\vc{v}$ with the scalar mass $m$ gives the momentum vector $\vc{p}=m\vc{v}$.
 
-The velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
+Not all objects have well-defined velocity vectors. For example, consider a ray of light with
+a straight world-line, so that $\der\ldots/\der\ldots$ is the same as the ratio of finite
+differences $\Delta\ldots/\Delta\ldots$, i.e., calculus isn't needed.
+A ray of light has $v=c$, so
+that applying the metric to any segment of its world-line gives $\Delta\tau=0$. Attempting to calculate
+$\vc{v}=\Delta\vc{r}/\Delta\tau$ then gives something of the form $(\infty,\infty)$.
+We will see in subsec.~\ref{subsec:massless-go-at-c} that 
+\emph{all} massless particles, not just photons, travel at $c$, so the same would apply to them.
+Therefore a velocity vector is only defined for particles whose world-lines
+are timelike, i.e., massive particles.
+
+It follows from the definition above
+that the velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
 though the object whose motion it describes is not moving at the speed of light.
+The requirement $v^2=1$ is an example of a recurring idea in physics and mathematics called
+normalization.\index{normalization} The idea is that we have some object (a vector, a function, \ldots)
+that could be scaled up or down by any amount, but from among all the possible scales, there is
+only one that is the right one. For example, a gambler might place a horse's chance of winning at
+9 to 1, but a physicist would divide these by 10 in order to normalize the probabilities to
+0.9 and 0.1, the idea being that the total probability should add up to 1. Our definition of the
+velocity vector implies that it is normalized. 
+
+The geometric interpretation of the velocity vector is shown in
+figure \figref{tangent-vector}. The curve represents the world-line of a particle. The dashed line
+is drawn tangent to the world-line at a certain moment. Under a microscope, the dashed line, which
+represents a possible inertial motion of a particle, is indistinguishable from the solid curve, which
+is noninertial. The dashed line has a slope $\Delta t/\Delta x= 2$, which corresponds to a
+velocity $\Delta x/\Delta t=1/2$. The figure is drawn in $1+1$ dimensions, but in $3+1$
+dimensions we would want to know more than this number. We would want to know the orientation of
+the dashed line in the three spatial dimensions.
+This information can be encapsulated in a vector. Both of the vectors shown in the
+figure are parallel to the dashed line, so even though they have different lengths,
+there is no difference between the velocities they represent. Since we want the particle to have
+a single well-defined vector to represent its velocity, we pick the vector that is normalized.
+Thus an alternative, geometrical definition of the velocity vector would have been that it is
+the vector that is tangent to the particle's world-line and normalized to 1.
+<% marg(30) %>
+<%
+  fig(
+    'tangent-vector',
+    %q{Both vectors are tangent vectors.}
+  )
+%>
+<% end_marg %>
+
 When we hear something referred to as a ``vector,''
 we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
 But the sum of two velocity vectors would not typically be a valid velocity vector at all, since
@@ -354,7 +395,10 @@ velocity.
 <% end_sec('v-vector') %>
 <% begin_sec("The acceleration vector",nil,'a-vector') %>
 The acceleration vector is defined as the derivative of the velocity vector with
-respect to proper time, $\vc{a}=\der\vc{v}/\der\tau$.\index{vector!acceleration}\index{acceleration vector}
+respect to proper time,\index{vector!acceleration}\index{acceleration vector}
+\begin{equation*}
+  \vc{a}=\frac{\der\vc{v}}{\der\tau} \qquad .
+\end{equation*}
 It measures the curvature of a world-line.
 Its squared magnitude is the minus the \emph{proper acceleration},\index{proper acceleration}\index{acceleration!proper}
 meaning the acceleration that would be measured by
@@ -362,10 +406,33 @@ an accelerometer carried along that world-line.
 The proper acceleration is only approximately equal to the squared magnitude of the Newtonian
 acceleration three-vector, in the limit of small velocities.
 
+Suppose an observer claims that at a certain moment in time, a particle has $\vc{v}=(1,0)$ and
+$\vc{a}=(3,0)$. That is, the particle is at rest ($v_x=0$) and its $v_t$ is growing by 3 units per second.
+This is impossible, because after an infinitesimal time interval $\der t$, this rate of change
+will result in $\vc{v}=(1+3\der t,0)$, which is not properly normalized: its magnitude has grown
+from 1 to $1+3\der t$. The observer is mistaken. This is not a possible combination of velocity
+and acceleration vectors. In general (problem \ref{hw:prove-a-dot-v-is-zero},
+p.~\pageref{hw:prove-a-dot-v-is-zero}), we always have the following constraint on the velocity
+and acceleration vectors:\label{a-dot-v-is-zero}
+\begin{equation*}
+  \vc{a}\cdot\vc{v} = 0 \qquad .
+\end{equation*}
+This is analogous to the three-dimensional idea that in uniform circular motion, the
+perpendicularity of the velocity and acceleration three-vectors is what causes the
+velocity vector to rotate without changing its magnitude.
+
 \begin{eg}{Constant proper acceleration}\label{eg:hyperbolic-motion}
 \egquestion Suppose a spaceship moves so
 that the acceleration is judged to be the constant value $a$ by an observer on board. Find the
 motion $x(t)$ as measured by an observer in an inertial frame.
+<% marg(0) %>
+<%
+  fig(
+    'photon-chasing-spaceship',
+    %q{A spaceship (curved world-line) moves with an acceleration perceived as constant by its passengers.}
+  )
+%>
+<% end_marg %>
 
 \eganswer Let $\tau$ stand for the ship's proper time, and let dots indicate derivatives with respect to $\tau$.
 The ship's velocity has magnitude 1, so
@@ -395,14 +462,6 @@ surprisingly large distances can in theory be traveled within a human lifetime
 (problem \ref{hw:galactic-center}, p.~\pageref{hw:galactic-center}). Some further
 properties of hyperbolic motion are developed in problems
 \ref{hw:hyperbolic-properties}, \ref{hw:hyperbolic-four-vectors}, and \ref{hw:hyperbolic-proj}.
-<% marg(63) %>
-<%
-  fig(
-    'photon-chasing-spaceship',
-    %q{A spaceship (curved world-line) moves with an acceleration perceived as constant by its passengers.}
-  )
-%>
-<% end_marg %>
 
 Another interesting feature of this problem is the dashed-line asymptote, which is lightlike.
 Suppose we interpret this as the world-line of a ray of light.
@@ -656,6 +715,11 @@ nonrelativistic expression, so that any relativistic effect is of higher
 order in $v$.
 <% end_hw %>
 
+<% begin_hw('prove-a-dot-v-is-zero') %>
+Prove, as claimed on p.~\pageref{a-dot-v-is-zero}, that we must have
+$\vc{a}\cdot\vc{v} = 0$ if the velocity four-vector is to remain properly normalized.
+<% end_hw %>
+
 <% begin_hw('hyperbolic-properties') %>\index{hyperbolic motion}
 Example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion} described the motion of
 an object having constant proper acceleration $a$, the world-line being
@@ -690,11 +754,6 @@ Starting from the results of problem \ref{hw:hyperbolic-four-vectors},
 repeat problem \ref{hw:hyperbolic-properties}a using the techniques of section
 \ref{sec:proj} on p.~\pageref{sec:proj}. You will find it helpful to know
 that $1-\tanh^2=\cosh^{-2}$.
-<% end_hw %>
-
-<% begin_hw('a-dot-v-is-zero') %>
-Prove that $\vc{a}\cdot\vc{v}=0$ for any particle whose world-line
-allows the two vectors to be defined.
 <% end_hw %>
 
 <% begin_hw('v-dot-v') %>

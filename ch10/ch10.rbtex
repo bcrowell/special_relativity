@@ -223,12 +223,23 @@ would be a linear one, which would look like matrix multiplication:
 $M$ would be $4\times4$, so it would have 16 elements. Presumably these 16 numbers would encode
 the information about the electric field, as well as some additional information about the field
 or fields we were missing.
+
 But these are not 16 numbers that we can choose freely and independently. For example,
-we have the requirement $\vc{a}\cdot\vc{v}=0$ for any $\vc{v}$, and picking $\vc{v}=(1,0,0,0)$
-(a particle at rest) then forces us to take the time-time (upper left) element $M_{tt}$ to be
-zero. It turns out that when we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
+consider a charged particle that is instantaneously at rest in a certain observer's
+frame, with $\vc{v}=(1,0,0,0)$.
+(In this situation, the four-force equals the force measured by the observer.)
+The work done by a force is
+positive if the force is in the same direction as the motion, negative if in the opposite
+direction, and zero if there is no motion. Therefore the power $P=\der W/\der t$ in this
+example should be zero. Power is the timelike component of the force vector, which
+forces us to take the time-time (upper left) element $M_{tt}$ to be zero.
+
+More generally, consider the kinematical constraint $\vc{a}\cdot\vc{v} = 0$ (p.~\pageref{a-dot-v-is-zero}).
+When we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
 we end up with the constraint that $M$ must be antisymmetric, meaning that when we transpose it, the result
-is another matrix that looks just like the original one, but with all the signs flipped. The result
+is another matrix that looks just like the original one, but with all the signs flipped.
+
+The result
 is the following rank-2 tensor:
 \begin{equation*}
   \begin{pmatrix}
