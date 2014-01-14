@@ -761,7 +761,7 @@ The following two examples show that an object moving at relativistic speeds has
 in the transverse direction than in the longitudinal one. A corollary is that the three-acceleration
 need not be parallel to the three-force.
 
-\begin{eg}{Circular motion}
+\begin{eg}{Circular motion}\label{eg:force-in-circular-motion}
 For a particle in uniform circular motion, $\gamma$ is constant, and we have
 \begin{equation*}
     \vc{F}_\vc{o} = \frac{\der}{\der t}(m\gamma\vc{v}) = m \gamma\frac{\der \vc{v}}{\der t} \qquad .
@@ -784,7 +784,7 @@ required to deflect the beam is greater by a factor of $\gamma$ than would
 have been expected according to Newton's laws.
 \end{eg}
 
-\begin{eg}{Linear motion}
+\begin{eg}{Linear motion}\label{eg:force-in-linear-motion}
 For accelerated linear motion in the $x$ direction, ignoring $y$ and $z$, we have a velocity vector
 \begin{align*}
   \vc{v} &= \frac{\der\vc{r}}{\der\tau} \qquad , \\
@@ -795,8 +795,17 @@ For accelerated linear motion in the $x$ direction, ignoring $y$ and $z$, we hav
            &= m(v^2\gamma^3 a+\gamma a) \\
            &= m a\gamma^3
 \end{align*}
-The particle's apparent inertia is increased by a factor of $\gamma^3$.
+The particle's apparent inertia is increased by a factor of $\gamma^3$ due to relativity.
 \end{eg}
+
+The results of examples \ref{eg:force-in-circular-motion} and
+\ref{eg:force-in-linear-motion} can be combined as follows:
+\begin{equation*}
+  F_{\vc{o}} = m\gamma \vc{a}_{\vc{o},\perp}+m\gamma^3 \vc{a}_{\vc{o},\parallel} \qquad ,
+\end{equation*}
+where the subscripts $\perp$ and $\parallel$ refer to the parts of $\vc{a}_\vc{o}$ perpendicular
+and parallel to $\vc{v}_\vc{o}$.
+
 <% end_sec('three-force') %>
 <% begin_sec("Transformation of the force measured by an observer",nil,'xfn-three-force') %>
 <% end_sec('xfn-three-force') %>

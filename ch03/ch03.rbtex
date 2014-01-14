@@ -293,105 +293,79 @@ be one-to-one, and this is unacceptable physically.
 
 <% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors') %>
 <% begin_sec("The velocity vector",nil,'v-vector') %>
+In a freshman course in Newtonian mechanics, we would define a vector as something that has three
+components. Furthermore, we would require it to transform in a certain way under a rotation.
+For example, we could form the collection of numbers $(e,T,\zu{DJIA})$, where $e$ is the fundamental
+charge, $T$ is the temperature in Buffalo, New York, and DJIA measures how the stock market is doing.
+But this would not be a vector, since it doesn't act the right way when rotated (this particular
+``vector'' is invariant under rotations). Figure \figref{playing-card} gives a less silly
+non-example.
+In contradistinction to a vector, a scalar is specified by a single real number and is invariant
+under rotations.
+The most basic example of a Newtonian vector was a displacement
+$(\Delta x,\Delta y,\Delta z)$, and from the displacement vector we would go on
+to construct other quantities such as a velocity vector $\vc{v}=\Delta \vc{r}/\Delta t$.
+This worked because in Newtonian mechanics $\Delta t$ was treated as a scalar, and dividing
+a vector by a scalar produces something that again transforms in the right way to be a vector.
+<% marg(100) %>
+<%
+  fig(
+    'playing-card',
+    %q{%
+      A playing card returns to its original state when rotated by 180 degrees. Its orientation,
+      unlike the orientation of an arrow, doesn't behave as a vector, since it doesn't transform
+      in the usual way under rotations. Under a 180-degree rotation, a vector should negate itself
+      rather that coming back to its original state.
+    }
+  )
+%>
+<% end_marg %>
+
+
+Now let's upgrade to relativity, and work through the same steps by analogy.
 When I say ``vector'' in this book, I mean something that in 3+1 dimensions has four components. This
 can also be referred to as a four-vector.\index{four-vector}
-Our repertoire of vectors so far includes the displacement vector $\Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z)$
-and the energy-momentum vector $\vc{p}=(E,p_x,p_y,p_z)$. In a freshman course in Newtonian mechanics, we would have
-constructed a velocity vector $\vc{v}=\Delta \vc{r}/\Delta t$ as an intermediate step, and then built up
-$\vc{p}=m\vc{v}$. But relativistically, the quantity $\Delta \vc{r}/\Delta t$ would not transform like a vector, e.g.,
+Our only example so far has been the spacetime
+displacement vector $\Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z)$.
+This vector transforms according to the Lorentz transformation. In general, we require as part
+of the definition of a (four-)vector that it transform in the usual way under both rotations
+and boosts (Lorentz transformation).
+We might now imagine that the next step should be
+to construct a velocity four-vector $\Delta \vc{r}/\Delta t$.
+But relativistically, the quantity $\Delta \vc{r}/\Delta t$ would not transform like a vector, e.g.,
 if $\vc{r}$ was spacelike, then there would be a frame in which we had $\Delta t=0$, and then
 $\Delta \vc{r}/\Delta t$ would be finite in some frames but infinite in others, which is absurd.
-To construct a valid vector, we would have to divide
+
+To construct a valid vector, we have to divide
 $\Delta \vc{r}$ by a scalar. The only scalar that could be relevant would be the \emph{proper} time
-$\Delta \tau$, and this is indeed how the velocity vector is defined in relativity:
+$\Delta \tau$, and this is indeed how the velocity vector is defined in relativity.
+For an inertial world-line (one with constant velocity),
+we define $\vc{v}=\Delta \vc{r}/\Delta \tau$. The generalization
+to noninertial world-lines requires that we make this definition into a derivative:
 \begin{equation*}
   \vc{v} = \frac{\der \vc{r}}{\der \tau}
 \end{equation*}
 
 Not all objects have well-defined velocity vectors. For example, consider a ray of light with
-a straight world-line, so that $\der\ldots/\der\ldots$ is the same as the ratio of finite
+a straight world-line, so that the derivative $\der\ldots/\der\ldots$ is the same as the ratio of finite
 differences $\Delta\ldots/\Delta\ldots$, i.e., calculus isn't needed.
 A ray of light has $v=c$, so
 that applying the metric to any segment of its world-line gives $\Delta\tau=0$. Attempting to calculate
 $\vc{v}=\Delta\vc{r}/\Delta\tau$ then gives something of the form $(\infty,\infty)$.
-We will see in subsec.~\ref{subsec:massless-go-at-c} that 
+We will see in section~\ref{subsec:massless-go-at-c} that 
 \emph{all} massless particles, not just photons, travel at $c$, so the same would apply to them.
 Therefore a velocity vector is only defined for particles whose world-lines
 are timelike, i.e., massive particles.
 
-It follows from the definition above
-that the velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
-though the object whose motion it describes is not moving at the speed of light.
-The requirement $v^2=1$ is an example of a recurring idea in physics and mathematics called
-normalization.\index{normalization} The idea is that we have some object (a vector, a function, \ldots)
-that could be scaled up or down by any amount, but from among all the possible scales, there is
-only one that is the right one. For example, a gambler might place a horse's chance of winning at
-9 to 1, but a physicist would divide these by 10 in order to normalize the probabilities to
-0.9 and 0.1, the idea being that the total probability should add up to 1. Our definition of the
-velocity vector implies that it is normalized. 
-
-The geometric interpretation of the velocity vector is shown in
-figure \figref{tangent-vector}. The curve represents the world-line of a particle. The dashed line
-is drawn tangent to the world-line at a certain moment. Under a microscope, the dashed line, which
-represents a possible inertial motion of a particle, is indistinguishable from the solid curve, which
-is noninertial. The dashed line has a slope $\Delta t/\Delta x= 2$, which corresponds to a
-velocity $\Delta x/\Delta t=1/2$. The figure is drawn in $1+1$ dimensions, but in $3+1$
-dimensions we would want to know more than this number. We would want to know the orientation of
-the dashed line in the three spatial dimensions.
-This information can be encapsulated in a vector. Both of the vectors shown in the
-figure are parallel to the dashed line, so even though they have different lengths,
-there is no difference between the velocities they represent. Since we want the particle to have
-a single well-defined vector to represent its velocity, we pick the vector that is normalized.
-Thus an alternative, geometrical definition of the velocity vector would have been that it is
-the vector that is tangent to the particle's world-line and normalized to 1.
-<% marg(30) %>
-<%
-  fig(
-    'tangent-vector',
-    %q{Both vectors are tangent vectors.}
-  )
-%>
-<% end_marg %>
-
-When we hear something referred to as a ``vector,''
-we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
-But the sum of two velocity vectors would not typically be a valid velocity vector at all, since
-it would not have unit magnitude. This lack of additivity would in any case have been expected because
-velocities don't add linearly in relativity (section \ref{sec:velocity-addition}).
-
-<% self_check('v-invalid-in-other-frame',<<-'SELF_CHECK'
-Velocity vectors are required to have $v^2=1$. 
-If a vector qualifies as a valid velocity vector in some frame, could it be invalid in another frame?
-  SELF_CHECK
-  ) %>
-
-\begin{eg}{Velocity and momentum vectors of an object at rest}\label{eg:v-and-p-at-rest}
+\begin{eg}{Velocity vector of an object at rest}\label{eg:v-at-rest}
 An object at rest has $\vc{v}=(1,0)$. The first component indicates that
 if we attach a clock to the object with duct tape,
 the proper time measured by
 the clock suffers no time dilation according to an observer in this
 frame, $\der t/\der\tau=1$. The second component tells us that the object's position isn't changing,
 $\der x/\der\tau=0$.
-
-The object's momentum vector is $\vc{p}=m\vc{v}=(m,0)$, meaning that its mass-energy is equal to its mass,
-and its momentum is zero.
 \end{eg}
 
-
-Example \ref{eg:v-and-p-at-rest} suggests a nice way of thinking about velocity vectors, which is that
-every velocity vector represents a potential observer. That is, the velocity vectors are
-the observer-vectors $\vc{o}$ of chapter \ref{ch:spacetime}, but with a normalization requirement $v^2=1$ that
-we did not impose earlier, which ensures that there is a single, well-defiend velocity vector
-for every observer.
-An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
-Since we have no notion of adding one observer to another observer, it makes sense that
-velocity vectors don't add relativistically.
-
-If $\vc{u}$ and $\vc{v}$ are both future-directed, properly normalized velocity vectors, 
-and if the signature is $+---$ as in this book, then
-their inner product is $\gamma=\vc{u}\cdot\vc{v}$, the gamma factor,\index{gamma factor!as an inner product}
-introduced in section \ref{subsec:gamma}, p.~\pageref{subsec:gamma}, corresponding their relative
-velocity.
 <% end_sec('v-vector') %>
 <% begin_sec("The acceleration vector",nil,'a-vector') %>
 The acceleration vector is defined as the derivative of the velocity vector with
@@ -405,21 +379,6 @@ meaning the acceleration that would be measured by
 an accelerometer carried along that world-line.
 The proper acceleration is only approximately equal to the squared magnitude of the Newtonian
 acceleration three-vector, in the limit of small velocities.
-
-Suppose an observer claims that at a certain moment in time, a particle has $\vc{v}=(1,0)$ and
-$\vc{a}=(3,0)$. That is, the particle is at rest ($v_x=0$) and its $v_t$ is growing by 3 units per second.
-This is impossible, because after an infinitesimal time interval $\der t$, this rate of change
-will result in $\vc{v}=(1+3\der t,0)$, which is not properly normalized: its magnitude has grown
-from 1 to $1+3\der t$. The observer is mistaken. This is not a possible combination of velocity
-and acceleration vectors. In general (problem \ref{hw:prove-a-dot-v-is-zero},
-p.~\pageref{hw:prove-a-dot-v-is-zero}), we always have the following constraint on the velocity
-and acceleration vectors:\label{a-dot-v-is-zero}
-\begin{equation*}
-  \vc{a}\cdot\vc{v} = 0 \qquad .
-\end{equation*}
-This is analogous to the three-dimensional idea that in uniform circular motion, the
-perpendicularity of the velocity and acceleration three-vectors is what causes the
-velocity vector to rotate without changing its magnitude.
 
 \begin{eg}{Constant proper acceleration}\label{eg:hyperbolic-motion}
 \egquestion Suppose a spaceship moves so
@@ -474,6 +433,125 @@ with a black hole. This example shows that we can have event horizons even when 
 gravity at all.\index{event horizon}\label{event-horizon}
 \end{eg}
 <% end_sec('a-vector') %>
+<% begin_sec("Constraints on the velocity and acceleration vectors",nil,'v-a-constraints') %>
+<% begin_sec("Counting degrees of freedom",nil,'v-a-df') %>
+There is something misleading about the foregoing treatment of the velocity and acceleration vectors,
+and the easiest way to see this is by introducing the idea of a 
+\emph{degree of freedom}.\index{degree of freedom}
+Often we can describe a system using a list of real numbers. For the hand on a clock, we only
+need one number, such as 3 o'clock. This is because the hand is constrained to stay in the plane
+of the clock's face and also to keep its tail at the center of the circle. Since one number
+describes its position, we say that it has one degree of freedom. If a hiker wants to know where
+she is on a map, she has two degrees of freedom, which could be specified as her latitude and
+longitude. If she was in a helicopter, there would be no constraint to stay on the earth's surface,
+and the number of degrees of freedom would be increased to three. If we also considered the
+helicopter's velocity to be part of the description of its state, then there would be 
+a total of six degrees of
+freedom: one for each coordinate and one for each component of the velocity vector.
+
+Now suppose that we want to describe a particle's velocity and acceleration. In Newtonian mechanics,
+we would describe these three-vectors as possessing a total of
+six degrees of freedom: $v_x$, $v_y$, $v_z$, $a_x$, $a_y$, and $a_z$.
+Upgrading from Newtonian mechanics to relativity can't change the number of degrees of freedom.
+For example, an electron's acceleration is fully determined by the force we exert on it, and
+we might control that acceleration by placing a proton nearby and producing an electrical attraction.
+The position of the proton (three degrees of freedom for its three coordinates)
+determines the electron's acceleration, so the acceleration has exactly three degrees of freedom as well.
+
+This means that there must be some hidden redundancy in the \emph{eight} components
+of the velocity and acceleration four-vectors. The system only has six degrees of freedom,
+so there must be \emph{two constraints} that we didn't know about. Similarly, I've gone hiking and had
+my GPS unit claim that I was a thousand feet above a lake or three thousand feet under a mountain.
+In those situations there was a constraint that I knew about but that the GPS didn't: that I was on
+the surface of the earth.
+<% marg(-20) %>
+<%
+  fig(
+    'tangent-vector',
+    %q{Both vectors are tangent vectors.}
+  )
+%>
+<% end_marg %>
+<% end_sec('v-a-df') %>
+<% begin_sec("Normalization of the velocity",nil,'v-normalization') %>
+The first constraint arises naturally from a geometrical interpretation of the velocity four-vector,
+shown in
+figure \figref{tangent-vector}. The curve represents the world-line of a particle. The dashed line
+is drawn tangent to the world-line at a certain moment. Under a microscope, the dashed line, which
+represents a possible inertial motion of a particle, is indistinguishable from the solid curve, which
+is noninertial. The dashed line has a slope $\Delta t/\Delta x= 2$, which corresponds to a
+velocity $\Delta x/\Delta t=1/2$. The figure is drawn in $1+1$ dimensions, but in $3+1$
+dimensions we would want to know more than this number. We would want to know the orientation of
+the dashed line in the three spatial dimensions, i.e., not just the speed of the particle but also its
+direction of motion.
+All the desired information can be encapsulated in a vector. Both of the vectors shown in the
+figure are parallel to the dashed line, so even though they have different lengths,
+there is no difference between the velocities they represent. Since we want the particle to have
+a single well-defined vector to represent its velocity, we want to pick one vector from among
+all the vectors parallel to the dashed line, and call that ``the'' velocity vector.
+
+We have already implicitly made this choice.
+It follows from the original definition $\vc{v}=\der\vc{r}/\der \tau$
+that the velocity vector's squared magnitude $v^2=\vc{v}\cdot\vc{v}$ is always equal to 1, even
+though the object whose motion it describes is not moving at the speed of light.
+This, along with the requirement that the velocity vector lie within the future rather than the past
+light cone, uniquely specifies which tangent vector we want.
+The requirement $v^2=1$ is an example of a recurring idea in physics and mathematics called
+normalization.\index{normalization} The idea is that we have some object (a vector, a function, \ldots)
+that could be scaled up or down by any amount, but from among all the possible scales, there is
+only one that is the right one. For example, a gambler might place a horse's chance of winning at
+9 to 1, but a physicist would divide these by 10 in order to normalize the probabilities to
+0.9 and 0.1, the idea being that the total probability should add up to 1. Our definition of the
+velocity vector implies that it is normalized. 
+Thus an alternative, geometrical definition of the velocity vector would have been that it is
+the vector that is tangent to the particle's world-line, future-directed, and normalized to 1.
+
+When we hear something referred to as a ``vector,''
+we usually take this is a statement that it not only transforms as a vector, but also that it adds as a vector.
+But the sum of two velocity vectors would not typically be a valid velocity vector at all, since
+it would not have unit magnitude. This lack of additivity would in any case have been expected because
+velocities don't add linearly in relativity (section \ref{sec:velocity-addition}).
+
+<% self_check('v-invalid-in-other-frame',<<-'SELF_CHECK'
+Velocity vectors are required to have $v^2=1$. 
+If a vector qualifies as a valid velocity vector in some frame, could it be invalid in another frame?
+  SELF_CHECK
+  ) %>
+
+A nice way of thinking about velocity vectors is that
+every such vector represents a potential observer. That is, the velocity vectors are
+the observer-vectors $\vc{o}$ of chapter \ref{ch:spacetime}, but with a normalization requirement $o^2=1$ that
+we did not impose earlier.
+An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
+Since we have no notion of adding one observer to another observer, it makes sense that
+velocity vectors don't add relativistically.
+
+If $\vc{u}$ and $\vc{v}$ are both future-directed, properly normalized velocity vectors, 
+and if the signature is $+---$ as in this book, then
+their inner product is $\gamma=\vc{u}\cdot\vc{v}$, the gamma factor,\index{gamma factor!as an inner product}
+introduced in section \ref{subsec:gamma}, p.~\pageref{subsec:gamma}, corresponding their relative
+velocity.
+<% end_sec('v-normalization') %>
+<% begin_sec("Orthogonality of the velocity and acceleration",nil,'v-dot-a-is-zero') %>
+Now for the second of the two constraints deduced on p.~\pageref{subsubsec:v-a-df}.
+
+Suppose an observer claims that at a certain moment in time, a particle has $\vc{v}=(1,0)$ and
+$\vc{a}=(3,0)$. That is, the particle is at rest ($v_x=0$) and its $v_t$ is growing by 3 units per second.
+This is impossible, because after an infinitesimal time interval $\der t$, this rate of change
+will result in $\vc{v}=(1+3\der t,0)$, which is not properly normalized: its magnitude has grown
+from 1 to $1+3\der t$. The observer is mistaken. This is not a possible combination of velocity
+and acceleration vectors. In general (problem \ref{hw:prove-a-dot-v-is-zero},
+p.~\pageref{hw:prove-a-dot-v-is-zero}), we always have the following constraint on the velocity
+and acceleration vectors:\label{a-dot-v-is-zero}
+\begin{equation*}
+  \vc{a}\cdot\vc{v} = 0 \qquad .
+\end{equation*}
+This is analogous to the three-dimensional idea that in uniform circular motion, the
+perpendicularity of the velocity and acceleration three-vectors is what causes the
+velocity vector to rotate without changing its magnitude.
+<% end_sec('v-dot-a-is-zero') %>
+
+<% end_sec('v-a-constraints') %>
 <% end_sec('v-and-a-vectors') %>
 
 <% begin_sec("Some kinematic identities",nil,'identities',{'optional'=>true}) %>
@@ -533,23 +611,26 @@ or implicitly constructing and referring to $\vc{o}$'s spacelike Minkowski coord
 $P$ has the following properties:
 
 \begin{enumerate}
-\item $\vc{o}\cdot P_\vc{o}\vc{r} = 0$ 
-\item $\vc{r}-P_\vc{o}\vc{r}$ is parallel to $\vc{o}$.
-\item $P_\vc{o}\vc{o}=0$
-\item $P_\vc{o}P_\vc{o}\vc{r} = P_\vc{o}\vc{r}$
+\item $\vc{o}\cdot P_\vc{o}\vc{r} = 0$ \label{proj-orthogonal-property}
+\item $\vc{r}-P_\vc{o}\vc{r}$ is parallel to $\vc{o}$.\label{proj-knock-out-o-property}
+\item $P_\vc{o}\vc{o}=0$\label{proj-self-at-rest-property}
+\item $P_\vc{o}P_\vc{o}\vc{r} = P_\vc{o}\vc{r}$\label{proj-is-a-projection-property}
 \item $P_{c\vc{o}}=P_\vc{o}$
 \item $P_\vc{o}$ is linear, i.e., $P_\vc{o}(\vc{q}+\vc{r})=P_\vc{o}\vc{q}+P_\vc{o}\vc{r}$ and $P_\vc{o}(c\vc{r})=cP_\vc{o}\vc{r}$
 \item $\frac{\der}{\der x} P_\vc{o}\vc{r}=P_\vc{o}\frac{\der\vc{r}}{\der x}$,
       where $x$ is any variable and $\vc{o}$ doesn't depend on $x$.\label{proj-commutes-with-deriv}
 \item If $\vc{o}$ and $\vc{v}$ are both future timelike, and $|o^2|=1$, then
       we can express $\vc{v}$ as $\vc{v}=P_\vc{o}\vc{v}+\gamma\vc{o}$, where $\gamma$
-      has the usual interpretation for world-lines that coincide with these two vectors.
+      has the usual interpretation for world-lines that coincide with 
+      these two vectors.\label{proj-split-property}
 \end{enumerate}
 
 All of these hold regardless of whether the signature is $+---$ or $-+++$, and none of them refer to any coordinates.
-Properties 1 and 2 can serve as an alternative, geometrical definition of $P$.
-Property 3 says that an observer considers herself to be at rest.
-4 is a general property of all projection operators. 7 splits the vector into its spatial and temporal parts
+Properties \ref{proj-orthogonal-property}
+and \ref{proj-knock-out-o-property} can serve as an alternative, geometrical definition of $P$.
+Property \ref{proj-self-at-rest-property} says that an observer considers herself to be at rest.
+\ref{proj-is-a-projection-property} is a general property of all projection operators. \ref{proj-split-property} 
+splits the vector into its spatial and temporal parts
 according to $\vc{o}$.
 
 Sometimes if we know a position, velocity, or acceleration four-vector, we want to find out
@@ -570,7 +651,7 @@ $\vc{v}_\vc{o}=\frac{P_\vc{o}\vc{v}}{\vc{o}\cdot\vc{v}}$
        & $\vc{v} = \gamma(\vc{o}+\vc{v}_\vc{o})$ \\
 $\vc{a}_\vc{o} = \frac{1}{(\vc{o}\cdot\vc{v})^2}\left[P_\vc{o}\vc{a}-(\vc{o}\cdot\vc{a})\vc{v}_\vc{o}\right]$
       & $\vc{a} = \gamma^3(\vc{a}_\vc{o}\cdot\vc{v}_\vc{o})\vc{v}+\gamma^2\vc{a}_\vc{o}$,
-           where $\vc{v}_\vc{o}$ is found as above
+           where $\vc{v}$ is found as above
 \end{tabular}
 
 As an example of how these are derived, the three-velocity $\vc{v}_\vc{o}$ is the derivative of

@@ -220,7 +220,16 @@ would be a linear one, which would look like matrix multiplication:
 \begin{equation*}
   \vc{F} = qM\vc{v}
 \end{equation*}
-$M$ would be $4\times4$, so it would have 16 elements. Presumably these 16 numbers would encode
+$M$ would be $4\times4$, so it would have 16 elements:
+\begin{equation*}
+  \begin{pmatrix}
+    M_{tt}     & M_{tx}    &    M_{ty} &   M_{tz} \\
+    M_{xt}     & M_{xx}    &    M_{xy} &   M_{xz} \\
+    M_{yt}     & M_{yx}    &    M_{yy} &   M_{yz} \\
+    M_{zt}     & M_{zx}    &    M_{zy} &   M_{zz} \\
+  \end{pmatrix}
+\end{equation*}
+Presumably these 16 numbers would encode
 the information about the electric field, as well as some additional information about the field
 or fields we were missing.
 
@@ -232,15 +241,29 @@ The work done by a force is
 positive if the force is in the same direction as the motion, negative if in the opposite
 direction, and zero if there is no motion. Therefore the power $P=\der W/\der t$ in this
 example should be zero. Power is the timelike component of the force vector, which
-forces us to take the time-time (upper left) element $M_{tt}$ to be zero.
+forces us to take $M_{tt}=0$.
 
 More generally, consider the kinematical constraint $\vc{a}\cdot\vc{v} = 0$ (p.~\pageref{a-dot-v-is-zero}).
 When we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
 we end up with the constraint that $M$ must be antisymmetric, meaning that when we transpose it, the result
-is another matrix that looks just like the original one, but with all the signs flipped.
+is another matrix that looks just like the original one, but with all the signs flipped:
+\begin{equation*}
+  \begin{pmatrix}
+    0          & M_{tx}    &    M_{ty} &   M_{tz} \\
+    -M_{tx}     & 0         &    M_{xy} &   M_{xz} \\
+    -M_{ty}     & -M_{xy}    &    0      &   M_{yz} \\
+    -M_{tz}     & -M_{xz}    &    -M_{yz} &   0 \\
+  \end{pmatrix}
+\end{equation*}
+Each element equals minus the corresponding element across the main diagonal
+from it, and antisymmetry also requires that the main diagonal itself be zero.
+In terms of the concept of degrees of freedom introduced in section
+\ref{subsec:v-a-constraints}, p.~\pageref{subsec:v-a-constraints},
+we are down to 6 degrees of freedom rather than 16.
 
-The result
-is the following rank-2 tensor:
+We now relabel the elements of the matrix and follow up with a justification
+of the relabeling.
+The result is the following rank-2 tensor:
 \begin{equation*}
   \begin{pmatrix}
     0     & -E_x    &    -E_y &    -E_z \\
@@ -252,7 +275,7 @@ is the following rank-2 tensor:
 We'll call this the electromagnetic field tensor.
 The labeling of the left column simply expresses the definition of the electric field, which
 is expressed in terms of the vector $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
-then follows from antisymmetry, and antisymmetry also requires that the central diagonal be zero.
+then follows from antisymmetry.
 Writing out the matrix multiplication for an arbitrary velocity vector
 $\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector,
 we have expressions such as
@@ -265,6 +288,9 @@ where $\vc{B}$ is the magnetic field.
 This is expressed in units where $c=1$, so that
 the electric and magnetic field have the same units. In units with $c\ne 1$,
 the magnetic components of the electromagnetic field matrix should be multiplied by $c$.
+
+Thus starting only from the assumptions on p.~\pageref{em-field-assumptions}, we deduce that
+the electric field must be accompanied by a magnetic field.
 <% end_sec('b-field') %>
 
 <% begin_sec("What about gravity?",nil,'what-about-gravity') %>
@@ -283,8 +309,42 @@ an inertial observer, but for an inertial observer gravity doesn't exist (sectio
 <% end_sec('em-fields') %>
 
 <% begin_sec("Transformation of the fields",nil,'em-xfn') %>
-The transformation law for the electric and magnetic fields now follows from the general
+Since we have associated the components of the electric and magnetic fields with
+elements of a rank-2 tensor,
+the transformation law for these fields now follows from the general
 tensor transformation law for rank-2 tensors (p.~\pageref{rank-two-xfn}).
+We first state the general rule, in a prettified form, and then give some
+concrete examples.
+Under a boost by a three-velocity $\vc{v}$, the electric and magnetic fields
+$\vc{E}$ and $\vc{B}$ transform to $\vc{E}'$ and $\vc{B}'$ according to these rules:
+\begin{align*}
+  \vc{E}'_\parallel &=   \vc{E}_\parallel
+         \qquad
+  \vc{E}'_\perp = \gamma(\vc{E}_\perp+\vc{v}\times\vc{B}) \\
+  \vc{B}'_\parallel &=   \vc{B}_\parallel
+         \qquad
+  \vc{B}'_\perp = \gamma(\vc{B}_\perp-\vc{v}\times\vc{E}) 
+\end{align*}
+
+\begin{eg}{A line of charge}
+A positive line of charge exists.
+At a nearby point P, it creates an electric field $\vc{E}$ that points outward, as measured by
+an observer $\vc{o}$ who is at rest relative to the charge.
+(Finding the magnitude of the field at a certain distance is a straightforward application of
+Gauss's law.) 
+
+Now consider an observer $\vc{o}'$ moving at velocity $\vc{v}$ relative to $\vc{o}$, in the direction
+parallel to the line of charge. Without even worrying about how the field was created, we can
+transform it into the new frame. The result is $\vc{E}'=\gamma\vc{E}$ and 
+$\vc{B}'_\perp=-\gamma \vc{v}\times\vc{E}$. If we do happen to know
+that the field was created created by the line of charge, which is moving according to
+$\vc{o}'$, then we can explain these results as arising from two effects. First, the line of
+charge has been length-contracted. This causes the density of charge per unit length to increase
+by a factor of $\gamma$, with a proportional increase in the electric field. Second,
+the line of charge is moving in this frame, so it forms an electric current, and this current
+is the cause of the magnetic field $\vc{B}'$.
+\end{eg}
+
 <% end_sec('em-xfn') %>
 
 
