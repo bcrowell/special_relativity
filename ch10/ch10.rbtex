@@ -325,27 +325,187 @@ $\vc{E}$ and $\vc{B}$ transform to $\vc{E}'$ and $\vc{B}'$ according to these ru
          \qquad
   \vc{B}'_\perp = \gamma(\vc{B}_\perp-\vc{v}\times\vc{E}) 
 \end{align*}
+<% marg(-10) %>
+<% fig(
+    'line-of-charge',
+     %q{Example \ref{eg:line-of-charge}.}
+   )
+%>
+<% end_marg %>
 
-\begin{eg}{A line of charge}
-A positive line of charge exists.
-At a nearby point P, it creates an electric field $\vc{E}$ that points outward, as measured by
-an observer $\vc{o}$ who is at rest relative to the charge.
+\begin{eg}{A line of charge}\label{eg:line-of-charge}
+Figure \subfigref{line-of-charge}{1} shows a line of charges.
+At a given nearby point, it creates an electric field $\vc{E}$ that points outward, as measured by
+an observer $\vc{o}$ who is at rest relative to the charges. This field is represented in the figure
+by its pattern of field lines, which start on the charges and radiate outward like the bristles of
+a bottle brush. Because the charges are at rest, the magnetic field is zero.
 (Finding the magnitude of the field at a certain distance is a straightforward application of
 Gauss's law.) 
 
-Now consider an observer $\vc{o}'$ moving at velocity $\vc{v}$ relative to $\vc{o}$, in the direction
-parallel to the line of charge. Without even worrying about how the field was created, we can
-transform it into the new frame. The result is $\vc{E}'=\gamma\vc{E}$ and 
-$\vc{B}'_\perp=-\gamma \vc{v}\times\vc{E}$. If we do happen to know
+Now consider an observer $\vc{o}'$,
+figure \subfigref{line-of-charge}{2}, moving at velocity $\vc{v}$ to the right 
+relative to $\vc{o}$. Without even worrying about how the field was created, we can
+transform the fields, at the point in space discussed previously,
+into the new frame. The result is $\vc{E}'=\gamma\vc{E}$ and 
+$\vc{B}'_\perp=-\gamma \vc{v}\times\vc{E}$. In this frame, the electric field is more intense, and
+there is also a magnetic field, whose pattern of white field lines forms circles lying in planes
+perpendicular to the line. If we do happen to know
 that the field was created created by the line of charge, which is moving according to
 $\vc{o}'$, then we can explain these results as arising from two effects. First, the line of
 charge has been length-contracted. This causes the density of charge per unit length to increase
-by a factor of $\gamma$, with a proportional increase in the electric field. Second,
-the line of charge is moving in this frame, so it forms an electric current, and this current
+by a factor of $\gamma$, with a proportional increase in the electric field. In the field-line
+description, we simply have more charges in the figure, so there are more field lines coming out
+of them. Second,
+the line of charge is moving to the left in this frame, so it forms an electric current, and this current
 is the cause of the magnetic field $\vc{B}'$.
 \end{eg}
 
 <% end_sec('em-xfn') %>
 
+<% begin_sec("Invariants",nil,'em-invariants') %>
+We've seen cases before in which an invariant can be formed from a rank-1 tensor. The square of the proper
+time corresponding to a timelike spacetime displacement $\vc{r}$ is $\vc{r}\cdot\vc{r}$ or, in the index
+notation introduced in section \ref{sec:abstract-index}, $r^ar_a$. From the momentum tensor we can
+construct the square of the mass $p^ap_a$.
+
+There are good reasons to believe that something similar can be done with the 
+electromagnetic field tensor, since electromagnetic fields have certain properties that are
+preserved when we switch frames. Specifically, an electromagnetic wave consists of
+electric and magnetic fields that are equal in magnitude and perpendicular to one another.
+An electromagnetic wave that is a valid solution to Maxwell's equations in one frame should
+also be a valid wave in another frame. It can be shown that the following two quantities are
+invariants:
+\begin{align*}
+  P &= B^2-E^2\\
+\intertext{and}
+  Q &= \vc{E}\cdot\vc{B}
+\end{align*}
+The first of these can also be expressed as $P=\frac{1}{2}M^{ab}M_{ab}$, while the second
+equals $Q=\frac{1}{4}\epsilon^{abcd}M_{ab}M_{cd}$, where the Levi-Civita symbol\index{Levi-Civita symbol}
+$\epsilon^{\kappa\lambda\mu\nu}$ equals $+1$ if $\kappa\lambda\mu\nu$ are an even permutation of 1234,
+$-1$ if odd, and 0 otherwise. For an electromagnetic wave, both $P$ and $Q$ are zero. (The converse is
+false: a field for which both invariants vanish need not be an electromagnetic wave.)
+<% end_sec('em-invariants') %>
+
+<% begin_sec("Stress-energy tensor of the electromagnetic field",nil,'em-stress-energy') %>
+The electromagnetic field has a stress-energy tensor associated with it.
+From our study of electromagnetism we know that the electromagnetic field has
+energy density $U=(E^2+B^2)/8\pi k$ and momentum density $\vc{S}=(\vc{E}\times\vc{B})/4\pi k$ (in units
+where $c=1$, with $k$ being the Coulomb constant). This fixes the components of the stress-energy
+tensor of the form $T^{t\ldots}$ and $T^{\ldots t}$, i.e., the top row and left column, to look
+like this:
+\begin{equation*}
+  T^{\mu\nu} = \begin{pmatrix}
+    U    &   S_x   &   S_y   &   S_z \\
+    S_x  &   &  &  \\
+    S_y  &   &  &  \\
+    S_z  &   &  &  
+  \end{pmatrix} \qquad .
+\end{equation*}
+
+The following argument tells us something about
+what to expect for the components $T^{xx}$, $T^{yy}$, and $T^{zz}$, which are interpreted as pressures
+along the $x$, $y$, and $z$ axes. Suppose that the electric field has a discontinuity in its
+$x$ component at $x=0$, so that $\lim_{x\rightarrow 0^-}E_x=E_1$ and
+$\lim_{x\rightarrow 0^+}E_x=E_2$.
+By Gauss's law, this requires the existence of a sheet of charge in the $yz$ plane,
+with a density of charge per unit area  $\sigma \propto E_2-E_1$. This sheet of charge
+experiences an average field $(E_1+E_2)/2$, so it feels a force per unit area
+proportional to $(E_2-E_1)(E_1+E_2)$, which is the same as $E_2^2-E_1^2$. In other words,
+the square of the electric field $E^2$ can be taken as a measure of pressure, and the force in this
+example is due to a pressure difference between the two sides of the plane. Therefore
+we expect to see expressions along the diagonal that involve the squares of the fields.
+
+The complete expression for the stress-energy tensor of the electromagnetic field turns out to be
+\begin{equation*}
+  T^{\mu\nu} = \begin{pmatrix}
+    U    &   S_x   &   S_y   &   S_z \\
+    S_x  &   -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
+    S_y  &   -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
+    S_z  &   -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz} 
+  \end{pmatrix} \qquad ,
+\end{equation*}
+where
+\begin{align*}
+  U&=\frac{1}{8\pi k}(E^2+B^2) \qquad , \\
+  \vc{S}&=\frac{1}{4\pi k}\vc{E}\times\vc{B} \qquad ,
+\end{align*}
+and $\sigma$, known as the Maxwell stress tensor, is given by
+\begin{equation*}
+  -\sigma_{\mu \nu} = 
+  \frac{1}{4\pi k}\times
+  \begin{cases}
+    -E_\mu E_\nu-B_\mu B_\nu & \text{if $\mu\ne \nu$} \\
+    -E_\mu E_\nu-B_\mu B_\nu+\frac{1}{2}U & \text{if $\mu= \nu$} \\
+  \end{cases}
+\end{equation*}
+
+\begin{eg}{Stress-energy tensor of a plane wave}
+Let an electromagnetic plane wave (not necessarily sinusoidal) propagate along the $x$ axis,
+with its polarization such that $\vc{E}$ is in the $y$ direction and $\vc{B}$ on the $z$ axis,
+and $|\vc{E}|=|\vc{B}|=A$.
+Then we have the following for the stress-energy tensor.
+\begin{equation*}
+  T^{\mu\nu} = \frac{A^2}{4\pi k}\begin{pmatrix}
+    1 & 1 & 0 & 0 \\
+    1 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0
+  \end{pmatrix} \qquad ,
+\end{equation*}
+The $T^{tt}$ component tells us that the wave has a certain energy density. 
+Because the wave is massless, we have $E^2-p^2=m^2=0$, so the momentum density is
+the same as the energy density, and $T^{tx}$ is the same as $T^{tt}$. If this wave
+strikes a surface in the $yz$ plane, the momentum the surface absorbs from the
+wave will be felt as a pressure, represented by $T^{xx}$.
+
+In example \ref{eg:dust-stress-energy} on p.~\pageref{eg:dust-stress-energy},
+we saw that a cloud of dust, viewed in a frame moving at velocity $v$ relative to
+the dust's rest frame, had the following stress-energy tensor.
+\begin{equation*}
+T\indices{^{\mu}^{\nu}} = \left( \begin{matrix}
+                   \gamma^2\rho & \gamma^2 v \rho & 0 & 0 \\
+                   \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0    
+      \end{matrix} \right) \qquad .
+\end{equation*}
+In the ultrarelativistic limit $v\rightarrow 1$, this becomes
+\begin{equation*}
+T\indices{^{\mu}^{\nu}} = (\text{energy density}) \times \left( \begin{matrix}
+                   1 & 1 & 0 & 0 \\
+                   1 & 1 & 0 & 0 \\
+                   0 & 0 & 0 & 0 \\
+                   0 & 0 & 0 & 0    
+      \end{matrix} \right) \qquad ,
+\end{equation*}
+which is exactly the same as the result for our electromagnetic wave. This illustrates
+the fact discussed in section \ref{sec:ultrarelativistic} that all ultrarelativistic
+particles have the same mechanical properties.
+\end{eg}
+
+<% end_sec('em-stress-energy') %>
+
+\begin{hwsection}
+
+<% begin_hw('boost-capacitor') %>
+(a) A parallel-plate capacitor has charge per unit area $\pm\sigma$ on its two plates.
+Use Gauss's law to find the field between the plates.\hwendpart
+(b) In the style of example \ref{eg:line-of-charge} on p.~\pageref{eg:line-of-charge},
+transform the field to a frame moving perpendicular to the plates, and verify that
+the result makes sense in terms of the sources that are present.
+<% end_hw %>
+
+<% begin_hw('pure-e-to-pure-b') %>
+We've seen examples such as figure \figref{purcell-wire} on p.~\pageref{fig:purcell-wire}
+in which a purely magnetic field in one
+frame becomes a mixture of magnetic and electric fields in another, and also
+cases like example \ref{eg:line-of-charge} on p.~\pageref{eg:line-of-charge} in which
+a purely electric field transforms to a mixture. Can we have a case in which a purely
+electric field in one frame transforms to a purely magnetic one in another? The easy way
+to do this problem is by using invariants.
+<% end_hw %>
+
+\end{hwsection}
 
 <% end_chapter %>

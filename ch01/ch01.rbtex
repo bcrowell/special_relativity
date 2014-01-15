@@ -1180,6 +1180,14 @@ Which of these represent spacetime intervals that are equal to one another?
 %>
 <% end_marg %>
 
+<% begin_hw('dot-range') %>
+(a) In Euclidean geometry in three dimensions, suppose we have two vectors, $\vc{a}$
+and $\vc{b}$, which are unit vectors, i.e., $\vc{a}\cdot\vc{a}=1$
+and $\vc{b}\cdot\vc{b}=1$. What is the range of possible values for the
+inner product $\vc{a}\cdot\vc{b}$?\hwendpart
+(b) Repeat part a for two timelike, future-directed unit vectors in $3+1$ dimensions.
+<% end_hw %>
+
 <% begin_hw('si-lorentz') %>
 Expressed in natural units, the Lorentz transformation is
 \begin{align*}

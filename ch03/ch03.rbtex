@@ -672,6 +672,62 @@ The similar but messier derivation of the expression for $\vc{a}_\vc{o}$
 is problem \ref{hw:three-accel-derivation}. In manipulating expressions of this type,
 the identity $\der\gamma/\der t=\gamma^3 \vc{a}_\vc{o}\cdot\vc{v}_\vc{o}$ is often handy
 (problem \ref{hw:gamma-deriv-derivation}).
+
+<% marg(-10) %>
+<%
+  fig(
+    'lewis-tolman',
+    %q{Example \ref{eg:lewis-tolman}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Lewis-Tolman paradox}\label{eg:lewis-tolman}\index{Lewis-Tolman paradox}
+The following example is a form of a paradox
+discussed by Lewis and Tolman in 1909. Figure \figref{lewis-tolman}
+shows the frame of reference of observer $\vc{o}$
+in which identical particles 1 and 2 are at initially rest and
+located at equal distances $\ell$ from the origin along the $y$ and $x$ axes.
+External forces of equal strength act in the directions shown by the arrows so as to produce
+accelerations of magnitude $\alpha$. The system is in rotational equilibrium $\der L/\der t=0$,
+because the rate at which
+particle 1 picks clockwise angular momentum is the same as the rate at which 2 acquires it
+in the counterclockwise direction.
+
+Now change to the frame of reference $\vc{o}'$, moving to the right relative to $\vc{o}$ at velocity $v$.
+Particle 2's distance from the origin is Lorentz-contracted from $\ell$ to $\ell/\gamma$, so its angular
+momentum is also reduced by $1/\gamma$. It now appears that the system's total angular momentum is increasing
+in the clockwise sense. How can we have rotational equilibrium in one frame, but not another?
+
+The resolution of the paradox is that the accelerations transform as well. In the original frame
+$\vc{o}$, the four-velocities are $\vc{v}_1=\vc{v}_2=(1,0,0,0)$, and the
+four-accelerations are $\vc{a}_1=(0,\alpha,0,0)$ and $\vc{a}_2=(0,0,\alpha,0)$.
+Applying a Lorentz transformation, we have $\vc{v}_1'=\vc{v}_2'=(\gamma,-\gamma v,0,0)$ and
+\begin{align*}
+  \vc{a}_1' &= \alpha(-\gamma v,\gamma,0,0) \\
+  \vc{a}_2' &= \alpha(0,0,1,0) \qquad .
+\end{align*}
+Our definition of angular momentum is expressed in terms of \emph{three}-vectors such as
+$\vc{a}_{\vc{o}'1}$ and $\vc{a}_{\vc{o}'2}$, not four-vectors like $\vc{a}_1'$ and $\vc{a}_2'$.
+We have
+\begin{equation*}
+  \frac{\der L'}{\der t'} = m a_{\vc{o}'1x}\ell - m a_{\vc{o}'2y}\frac{\ell}{\gamma} \qquad .
+\end{equation*}
+Using the relations $\vc{v}_\vc{o}=\gamma^{-1}P_\vc{o}\vc{v}$ and
+$\vc{a}_\vc{o} = \gamma^{-2}\left[P_\vc{o}\vc{a}-(\vc{o}\cdot\vc{a})\vc{v}_\vc{o}\right]$,
+we find
+\begin{align*}
+  v_{\vc{o}'1x} &= -v \qquad ,\\
+  a_{\vc{o}'1x} &= \frac{1}{\gamma^2} [\alpha\gamma-(-\alpha\gamma v)(- v)] 
+                 = \frac{\alpha}{\gamma^3} \qquad , \\
+\intertext{and}
+  a_{\vc{o}'2y} &= \frac{\alpha}{\gamma^2} \qquad .
+\end{align*}
+The result is 
+\begin{equation*}
+  \frac{\der L'}{\der t'} = m \frac{\alpha}{\gamma^3}\ell - m \frac{\alpha}{\gamma^2}\frac{\ell}{\gamma} \qquad ,
+\end{equation*}
+which is zero.
+\end{eg}
 <% end_sec('proj') %>
 
 <% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
