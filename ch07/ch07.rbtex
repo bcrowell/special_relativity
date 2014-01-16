@@ -48,14 +48,18 @@ were destroyed.
 Since this is ``gravity without gravity,'' we don't actually need a planet cluttering up the
 picture. Imagine a universe consisting of limitless, empty, flat spacetime. Describe it
 initially using Minkowski coordinates $(t,x,y,z)$. Now suppose we want to find a new set of
-coordinates $(T,x',Y,Z)$ that correspond to the frame of reference of an observer aboard
+coordinates $(T,X,Y,Z)$ that correspond to the frame of reference of an observer aboard
 a spaceship accelerating
-in the $x$ direction with a constant acceleration. The Galilean answer would be that we simply
-take $x'=x-\frac{1}{2}at^2$. But this is unsatisfactory from a relativistic point of view for
+in the $x$ direction with a constant acceleration. 
+
+The Galilean answer would be that we simply
+take $X=x-\frac{1}{2}at^2$. But this is unsatisfactory from a relativistic point of view for
 several reasons. At $t=c/a$ the observer would be moving at the speed of light, but relativity
 doesn't allow frames of reference moving at $c$ (section \ref{sec:no-c-frame}, p.~\pageref{sec:no-c-frame}).
 At $t>c/a$, the observer's motion would be faster than $c$, but this is impossible in $3+1$
-dimensions (section \ref{sec:ftl-frames}, p.~\pageref{sec:ftl-frames}). These problems are related to
+dimensions (section \ref{sec:ftl-frames}, p.~\pageref{sec:ftl-frames}). 
+
+These problems are related to
 the fact that the observer's \emph{proper} acceleration, i.e., the reading on an accelerometer
 aboard the ship, isn't constant if the ship's position is given by $\frac{1}{2}at^2$.
 We saw in example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion} that constant
@@ -64,18 +68,18 @@ $t=\frac{1}{a}\sinh a\tau$, where $\tau$ is the proper time. For this type of mo
 velocity only approaches $c$ asymptotically. This suggests the following for the relationship 
 between the two sets of coordinates:
 \begin{align*}
-  t &= x'\sinh T \\
-  x &= x'\cosh T \\
+  t &= X\sinh T \\
+  x &= X\cosh T \\
   y &= Y \\
   z &= Z
 \end{align*}
-For example, if the ship follows a world-line $(T,x')=(\tau,1)$, then its motion in the unaccelerated
+For example, if the ship follows a world-line $(T,X)=(\tau,1)$, then its motion in the unaccelerated
 frame is $(t,x)=(\sinh\tau,\cosh\tau)$, which is of the desired form with $a=1$.
 <% marg(50) %>
 <%
   fig(
     'rindler-wedge',
-    %q{The transformation between Minkowski coordinates $(t,x)$ and the accelerated coordinates $(T,x')$}
+    %q{The transformation between Minkowski coordinates $(t,x)$ and the accelerated coordinates $(T,X)$}
   )
 %>
 <% end_marg %>
