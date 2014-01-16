@@ -753,6 +753,23 @@ equate a row vector to a column vector in linear algebra. Even if an equation li
 in one frame of reference, it would fail in another, since the left-hand and right-hand sides
 transform differently under a boost.
 
+In section \ref{subsec:duality-generalized} we discussed the notion of finding the covector
+that was dual to a given vector, and the vector dual to a given covector. Because the distinction
+between vectors and covectors is represented in index notation by placing the index on the top
+or on the bottom, relativists refer to this kind of thing as raising and lowering indices.
+In general, this type of manipulation is called ``index gymnastics.''
+Here's what raising and lowering indices looks like.\index{raising an index}\index{lowering an index}
+
+Converting a vector to its covector form:
+\begin{equation*}
+  u_a = g_{ab} u^b
+\end{equation*}
+Changing a covector to the corresponding vector:
+\begin{equation*}
+  u^a = g^{ab} u_b
+\end{equation*}
+The symbol $g^{ab}$ refers to the inverse of the matrix $g_{ab}$.
+
 <% end_sec('abstract-index') %> 
 
 \begin{hwsection}
