@@ -416,7 +416,68 @@ the square of the electric field $E^2$ can be taken as a measure of pressure, an
 example is due to a pressure difference between the two sides of the plane. Therefore
 we expect to see expressions along the diagonal that involve the squares of the fields.
 
-The complete expression for the stress-energy tensor of the electromagnetic field turns out to be
+For the reader who wants the full derivation of the
+remaining nine components of the tensor, we now give an argument that makes use of the following
+list of its properties. Other readers can skip ahead to where the full tensor is presented.
+\begin{enumerate}
+\item $T$ is symmetric, $T^{\mu\nu}=T^{\nu\mu}$.
+\item The components must be second-order in the fields, e.g., we can have terms like
+      $E_x B_z$, but not $E_x^3 B_z^7$ or $E_x B_z B_y$. This is because Maxwell's equations are linear,
+      and when a wave equation is perfectly linear, the corresponding energy expression is second-order
+      in the amplitude of the wave.
+\item $T$ has the parity properties described in example \ref{eg:stress-energy-parity} on
+      p.~\pageref{eg:stress-energy-parity}.
+\item The electric and magnetic fields are treated symmetrically in Maxwell's equations, so they
+      should be treated symmetrically in the stress-energy tensor. E.g., we could have a term like
+      $7E_x^2+7B_z^2$, but not $7E_x^2+6B_z^2$.
+\item On p.~\pageref{tec} of section \ref{subsec:energy-conditions}, we saw that the trace energy condition
+      $T\indices{^a_a}\ge 0$
+      is satisfied by a cloud of dust if and only if the dust's mass-energy is not transported at
+      a speed greater than $c$. In section \ref{sec:ultrarelativistic}, we saw that
+      all ultrarelativistic particles have the same mechanical properties. Since a
+      cloud of dust, in the limit where its speed approaches $c$,
+      is on the edge of the bound set by the trace energy condition, $T\indices{^a_a}\rightarrow 0$,
+      we expect that the electromagnetic field, in which disturbances propagate at $c$, should
+      also exactly saturate the trace energy condition, so that $T\indices{^a_a}=0$.
+\item The stress-energy tensor should behave properly under rotations, which basically means that
+      $x$, $y$, and $z$ should be treated symmetrically.
+\item An electromagnetic plane wave propagating in the $x$ direction should not exert any
+      pressure in the $y$ or $z$ directions.
+\item If the field obey's Maxwell's equations, then the energy-conservation condition
+      $\partial T^{ab}/\partial x^a=0$ should hold.
+\end{enumerate}
+
+These facts are enough to completely determine the form of the remaining nine components of the stress-energy
+tensor. Property 3 requires that all of these components be even under parity. Since electric fields
+flip under parity but magnetic fields don't,\footnote{To convince yourself of this fact, consider
+what happens to a current loop under a parity flip. The location of each current element is flipped
+to the other side of the loop, but its direction of motion is also flipped, so that the picture as
+a whole remains unchanged.} these components can only have terms like $E_i E_j$ and $B_i B_j$, not
+mixed terms like $E_i B_j$. Taking into account properties 4 and 6, we find that the 
+diagonal terms must look like
+\begin{equation*}
+  4\pi k T^{xx} = a(E_x^2+B_x^2)+b(E^2+B^2) \qquad ,
+\end{equation*}
+and the off-diagonal ones
+\begin{equation*}
+  4\pi k T^{xy} = c(E_xE_y+B_xB_y) \qquad .
+\end{equation*}
+Property 5 gives $1/2-a-3b=0$ and 7 gives $b=-a/2$, so we have $a=-1$ and $b=1/2$. To determine the
+third constant, $c$, we apply property 8 to the $x$ column:
+\begin{equation*}
+  0 = \frac{T^{tx}}{\partial t}
+     + \frac{T^{xx}}{\partial x} + \frac{T^{yx}}{\partial y} + \frac{T^{zx}}{\partial z} \qquad .
+\end{equation*}
+This gives a complicated expression with a  lot of terms in it, but from among these we pick out
+the following, which involve derivatives of the form $\partial B_i/\partial x^i$:
+\begin{equation*}
+  -B_x\left(\frac{\partial B_x}{\partial x}-c\frac{\partial B_y}{\partial y}-c\frac{\partial B_z}{\partial z}\right) \qquad .
+\end{equation*}
+By picking $c=-1$ we can make this vanish, because the part inside parentheses is the divergence
+of the magnetic field, which equals zero according to Maxwell's equations.
+
+We have now established the
+complete expression for the stress-energy tensor of the electromagnetic field, which is
 \begin{equation*}
   T^{\mu\nu} = \begin{pmatrix}
     U    &   S_x   &   S_y   &   S_z \\
@@ -436,7 +497,7 @@ and $\sigma$, known as the Maxwell stress tensor, is given by
   \frac{1}{4\pi k}\times
   \begin{cases}
     -E_\mu E_\nu-B_\mu B_\nu & \text{if $\mu\ne \nu$} \\
-    -E_\mu E_\nu-B_\mu B_\nu+\frac{1}{2}U & \text{if $\mu= \nu$} \\
+    -E_\mu E_\nu-B_\mu B_\nu+\frac{1}{2}(E^2+B^2) & \text{if $\mu= \nu$} \\
   \end{cases}
 \end{equation*}
 
