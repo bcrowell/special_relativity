@@ -14,7 +14,8 @@
 \newcounter{hwctr}[chapter]
 %====================== packages =====================================================
 \RequirePackage{amsmath}
-\RequirePackage{url,tensor,learn-cmd-syntax,tikz,birdtracks}
+\RequirePackage{url,tensor,learn-cmd-syntax,tikz,birdtracks,enumerate}
+% enumerate is for lc roman numerals, which I sometimes want so items don't look like equation numbers
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================
 \RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}

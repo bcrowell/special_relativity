@@ -565,6 +565,102 @@ particles have the same mechanical properties.
 
 <% end_sec('em-stress-energy') %>
 
+<% begin_sec("Maxwell's equations",4,'maxwells-equations') %>
+<% begin_sec("Statement and interpretation",nil,'maxwell-statement') %>
+In this book I assume that you've had the usual physics background acquired in a freshman survey
+course, which includes an initial, probably frightening,
+encounter with Maxwell's equations in integral form. In units with $c=1$, Maxwell's equations are:
+\begin{framed}
+\begin{align}
+  \Phi_E          &= 4\pi kq \label{eqn:maxwell-div-e} \\
+  \Phi_B          &= 0 \label{eqn:maxwell-div-b} \\
+  \oint \vc{E}\cdot\der\bell        &= -\frac{\partial\Phi_B}{\partial t} \label{eqn:maxwell-curl-e} \\
+  \oint \vc{B}\cdot\der\bell     &= \frac{\partial\Phi_E}{\partial t}  + 4\pi k I \label{eqn:maxwell-curl-b} 
+\end{align}
+\end{framed}
+where
+\begin{align}
+  \Phi_E &= \int \vc{E}\cdot\der\vc{a} \qquad \text{and} \label{eqn:e-flux} \\
+  \Phi_B &= \int \vc{B}\cdot\der\vc{a} \label{eqn:b-flux} \qquad .
+\end{align}
+Equations \eqref{eqn:maxwell-div-e} and \eqref{eqn:maxwell-div-b}
+refer to a closed surface and the charge
+$q$ contained inside that surface. Equation \eqref{eqn:maxwell-div-e}, Gauss's law, says that charges
+are the sources of the electric field, while \eqref{eqn:maxwell-div-b} says that magnetic ``charges''
+don't exist. Equations \eqref{eqn:maxwell-curl-e} and \eqref{eqn:maxwell-curl-b} refer to 
+a surface like a potato chip, which has an edge or boundary, and the current $I$ passing through
+that surface, with the line integrals in being evaluated along that boundary.
+The right-hand side of \eqref{eqn:maxwell-curl-e} says that a changing  magnetic field produces
+a curly electric field, as in a generator or a transformer. The $I$ term in
+\eqref{eqn:maxwell-curl-b} says that currents create magnetic fields that curl around them.
+The $\partial\Phi_E/\partial t$ term, which says that changing electric fields create magnetic fields,
+is necessary so that the equations produce consistent results regardless of the surfaces chosen,
+and is also part of the apparatus responsible for the existence of electromagnetic waves, in which
+the changing $\vc{E}$ field produces the $\vc{B}$, and the changing $\vc{B}$ makes the $\vc{E}$.
+
+Equations \eqref{eqn:maxwell-div-e} and \eqref{eqn:maxwell-div-b} have no time-dependence. They
+function as constraints on the possible field patterns.
+Equations \eqref{eqn:maxwell-curl-e} and \eqref{eqn:maxwell-curl-b} are dynamical laws that
+predict how an initial field pattern will evolve over time. It can be shown that if
+\eqref{eqn:maxwell-div-e} and \eqref{eqn:maxwell-div-b} are satisfied initially, then
+\eqref{eqn:maxwell-curl-e} and \eqref{eqn:maxwell-curl-b} ensure that they will continue
+to be satisfied later. Because the dynamical laws consist of two vector equations, they
+provide a total of 6 constraints, which are the number needed in order to predict the
+behavior of the 6 fields $E_x$, $E_y$, $E_z$, $B_x$, $B_y$, and $B_z$.
+<% end_sec('maxwell-statement') %>
+
+<% begin_sec("Experimental support",nil,'experimental-support') %>
+Before Einstein's 1905 paper on relativity, the known laws of physics were Newton's laws and
+Maxwell's equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}. Experiments
+such as example \ref{eg:bertozzi} on p.~\pageref{eg:bertozzi} show that Newton's
+laws are only low-velocity approximations. Maxwell's equations are \emph{not}
+low-velocity approximations; for example,
+in section \ref{subsec:invariants} we noted the evidence that atoms are electrically
+neutral, in agreement with Gauss's law, \eqref{eqn:maxwell-div-e}, to one part in
+$10^{21}$, even though the electrons in atoms typically have velocities on the order
+of 1-10\%
+of $c$. 
+<% end_sec('experimental-support') %>
+
+<% begin_sec("Incompatibility with Galilean spacetime",nil,'incompatibility-with-galilean') %>
+Maxwell's equations are not compatible with the Galilean description of spacetime
+(section \ref{subsec:galilean-spacetime}, p.~\pageref{subsec:galilean-spacetime}).
+If we assume that equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b} hold in
+some frame $\vc{o}$, and then apply a Galilean boost, transforming the coordinates
+$(t,x,y,z)$ to $(t',x',y',z')=(t,x-vt,y,z)$, we find that in frame $\vc{o}'$ the equations
+have a different and more complicated form that cannot be simplified so as to look like
+the form they had in $\vc{o}$. Rather than writing out the resulting horrible mess and
+verifying that it can't be cast back into the simpler form, an easier way to prove this
+is to note that there are solutions to the equations in $\vc{o}$ that are not
+solutions after a Galilean boost into $\vc{o}'$, if we try to keep the equations in the same
+form. For example, if a light wave propagates in the $x$ direction at speed $c$ in $\vc{o}$, then
+after a boost with $v=c$, we would have a light wave in frame $\vc{o}'$ that was standing still.
+(This is Einstein's thought experiment of riding alongside a light wave on a motorcycle,
+p.~\pageref{subsec:galilean-spacetime}.) Such a wave would violate $\eqref{eqn:maxwell-curl-e}$,
+since the left-hand side would be nonzero for a surface lying in the $xy$ plane, but the time
+derivative on the right-hand side would be zero.
+<% end_sec('incompatibility-with-galilean') %>
+
+<% begin_sec("Not manifestly relativistic in their original form",nil,'not-manifestly-rel') %>
+Since Maxwell's equations are not low-velocity approximations and
+are incompatible with Galilean relativity, we expect with the benefit
+of historical hindsight that they \emph{are} compatible with the relativistic picture of spacetime.
+But when they are expressed in the form
+\eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}, they
+have two features, either one of which seems enough to make them
+completely \emph{incompatible} with relativity:
+\begin{enumerate}[(i)]
+\item They appear to describe instantaneous action at a distance. For example, Gauss's law,
+      $\Phi_E = 4\pi kq$, relates the electric field in one place (on the closed surface)
+      to the electric charge somewhere else (inside the surface). This smells wrong relativistically,
+      for the reasons discussed in section \ref{sec:fields}.
+\item They treat time and space asymmetrically.
+\end{enumerate}
+
+<% end_sec('not-manifestly-rel') %>
+
+<% end_sec('maxwells-equations') %>
+
 \begin{hwsection}
 
 <% begin_hw('boost-capacitor') %>
