@@ -48,5 +48,7 @@
   \newcommand{\mysubsection}[2][3]{\pagebreak[#1]\subsection{#2}}
   \newcommand{\mysubsectionnotoc}[2][3]{\pagebreak[#1]\subsection*{#2}}
 
+\newcommand{\emt}{\mathcal{F}}%electromagnetic field tensor
+
 \StopSaveCommands % for learn-cmd-syntax
 \WriteSaveCommands  % for learn-cmd-syntax

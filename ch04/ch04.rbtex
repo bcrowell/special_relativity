@@ -509,10 +509,7 @@ one will never catch up with the leading one.
 Now suppose they lie along different diagonals. We add their energy-momentum vectors
 to get their total energy-momentum, which will lie in the gray area of figure \figref{e-p-plane}.
 That is, a pair of light rays taken as a single system act sort of like a material object
-with a nonzero mass.\footnote{If you construct a box out of mirrors and put some light inside, it
-has weight, and theoretically even has a gravitational field! This is an example of the fact
-that mass is not additive in relativity. Two objects, each with zero mass, can have an
-aggregate mass that is nonzero.} By a Lorentz transformation,
+with a nonzero mass. By a Lorentz transformation,
 we can always find a frame in which this total energy-momentum vector lies along the $E$
 axis. This is a frame in which the momenta of the two rays cancel, and we have
 a symmetric head-on collision between two rays of equal energy. It is the ``center-of-mass''
