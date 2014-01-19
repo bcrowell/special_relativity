@@ -512,10 +512,10 @@ and $\sigma$, known as the Maxwell stress tensor, is given by
 \end{equation*}
 All of this can be expressed more compactly and in a coordinate-independent way
 as
-\begin{equation*}
+\begin{equation}\label{eqn:em-stress-energy-coord-free}
   T^{ab} = \frac{1}{4\pi k} \left(\emt^{ac}\emt\indices{^b_c}+\frac{1}{4}o^do_dg^{ab}\emt_{ef}\emt^{ef}\right)
       \qquad ,
-\end{equation*}
+\end{equation}
 where $\vc{o}$ is a future-directed velocity vector, so that $o^do_d=+1$ for the signature $+---$
 used in this book, and $-1$ if the signature is $-+++$.
 
@@ -734,7 +734,9 @@ When the approximations used above are eliminated, Maxwell's equations do predic
 field, which is the expected electromagnetic wave propagating away from the electron
 at the proper speed $c$.
 \end{eg}
+<% end_sec('not-manifestly-rel') %>
 
+<% begin_sec("Lorentz invariance",nil,'lorentz-invariance') %>
 Example \ref{eg:electron-through-hoop} might seem like a ``just-so story,''
 but the apparently miraculous resolution is not a coincidence. It happens because
 Maxwell's equations are in fact invariant under a Lorentz transformation, even though
@@ -771,7 +773,7 @@ of this combined equation should have a first derivative in it. Given the gramma
 rules of tensors and index gymnastics, we don't have many possible ways to accomplish this. The
 only obvious thing to try is
 \begin{equation}
-  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 4\pi k J^\mu \qquad .
+  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 4\pi k J^\mu \qquad . \label{eqn:maxwell-rel-source}
 \end{equation}
 Writing this out for $\mu$ being the time coordinate, we get a relation that equates
 the divergence of $\vc{E}$ to $4\pi$ times the charge density; this is the local equivalent
@@ -784,7 +786,40 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
   + \frac{\partial\emt^{\nu\lambda}}{\partial x^\mu}
   + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 \qquad .
 \end{equation}
-<% end_sec('not-manifestly-rel') %>
+
+\begin{eg}{Conservation of charge and energy-momentum}
+Solving equation \eqref{eqn:maxwell-rel-source} for the current vector, we have
+\begin{equation*}
+  J^\mu = \frac{1}{4\pi k} \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} \qquad .
+\end{equation*}
+Conservation of charge (section \ref{subsec:conservation-of-charge}, p.~\pageref{subsec:conservation-of-charge})
+can be expressed as
+\begin{equation}
+  \frac{\partial J^\mu}{\partial x^\mu} = 0 \qquad .
+\end{equation}
+If we substitute the first equation into the second, we obtain
+\begin{equation*}
+  \frac{\partial}{\partial x^\mu}\left(\frac{1}{4\pi k} \frac{\partial \emt^{\mu\nu}}{\partial x^\nu}\right)
+        = 0
+\end{equation*}
+or
+\begin{equation*}
+  \frac{\partial^2  \emt^{\mu\nu}}{\partial x^\mu \partial x^\nu}
+        = 0 \qquad ,
+\end{equation*}
+with a sum over both $\mu$ and $\nu$. But this equation is automatically satisfied because
+$\emt$ is antisymmetric, so
+for every combination of indices $\mu$ and $\nu$, the term involving $\emt^{\mu\nu}$
+is canceled by one containing $\emt^{\nu\mu}=-\emt^{\mu\nu}$. Thus conservation of charge does
+not have to be added as a supplementary condition in addition to Maxwell's equations; it is automatically
+implied by Maxwell's equations.
+
+Using equation \eqref{eqn:em-stress-energy-coord-free} on 
+p.~\pageref{eqn:em-stress-energy-coord-free}, one can also prove that Maxwell's equations
+imply conservation of energy-momentum.
+\end{eg}
+
+<% end_sec('lorentz-invariance') %>
 
 <% end_sec('maxwells-equations') %>
 
@@ -814,7 +849,7 @@ stress tensor, followed by an argument in which the tensor is constructed with t
 constants $a$, $b$, and $c$, to be determined from those properties.
 The values of $a$ and $b$ are derived in the text, and the purpose of this problem is to
 finish up by proving that $c=-1$. The idea is to take the field of a point charge, which we know
-satisfies Maxwell's equations, and then apply property \ref{em-stress-tensor-properties},
+satisfies Maxwell's equations, and then apply property \ref{em-t-energy-cons-property},
 which requires that the energy-conservation condition $\partial T^{ab}/\partial x^a=0$ hold.
 This works out nicely if you apply this property to the $x$ column of $T$, at a point
 that lies in the positive $x$ direction relative to the charge.
