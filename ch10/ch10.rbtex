@@ -220,13 +220,20 @@ would be a linear one, which would look like matrix multiplication:
 \begin{equation*}
   \vc{F} = q\emt\vc{v}
 \end{equation*}
+or in index notation,
+\begin{equation*}
+  F^a = q\emt\indices{^a_b} v^b \qquad .
+\end{equation*}
+Although the form $\emt\indices{^a_b}$ with one upper and one lower index occurs naturally in
+this expression, we'll find it more convenient from now on to work with the
+upper-upper form $\emt^{ab}$.
 $\emt$ would be $4\times4$, so it would have 16 elements:
 \begin{equation*}
   \begin{pmatrix}
-    \emt_{tt}     & \emt_{tx}    &    \emt_{ty} &   \emt_{tz} \\
-    \emt_{xt}     & \emt_{xx}    &    \emt_{xy} &   \emt_{xz} \\
-    \emt_{yt}     & \emt_{yx}    &    \emt_{yy} &   \emt_{yz} \\
-    \emt_{zt}     & \emt_{zx}    &    \emt_{zy} &   \emt_{zz} \\
+    \emt\indices{^t^t}     & \emt\indices{^t^x}    &    \emt\indices{^t^y} &   \emt\indices{^t^z} \\
+    \emt\indices{^x^t}     & \emt\indices{^x^x}    &    \emt\indices{^x^y} &   \emt\indices{^x^z} \\
+    \emt\indices{^y^t}     & \emt\indices{^y^x}    &    \emt\indices{^y^y} &   \emt\indices{^y^z} \\
+    \emt\indices{^z^t}     & \emt\indices{^z^x}    &    \emt\indices{^z^y} &   \emt\indices{^z^z} \\
   \end{pmatrix}
 \end{equation*}
 Presumably these 16 numbers would encode
@@ -241,7 +248,7 @@ The work done by a force is
 positive if the force is in the same direction as the motion, negative if in the opposite
 direction, and zero if there is no motion. Therefore the power $P=\der W/\der t$ in this
 example should be zero. Power is the timelike component of the force vector, which
-forces us to take $\emt_{tt}=0$.
+forces us to take $\emt\indices{^t^t}=0$.
 
 More generally, consider the kinematical constraint $\vc{a}\cdot\vc{v} = 0$ (p.~\pageref{a-dot-v-is-zero}).
 When we require $\vc{a}\cdot\vc{v}=0$ for \emph{any} $\vc{v}$, not just this one,
@@ -249,10 +256,10 @@ we end up with the constraint that $\emt$ must be antisymmetric, meaning that wh
 is another matrix that looks just like the original one, but with all the signs flipped:
 \begin{equation*}
   \begin{pmatrix}
-    0          & \emt_{tx}    &    \emt_{ty} &   \emt_{tz} \\
-    -\emt_{tx}     & 0         &    \emt_{xy} &   \emt_{xz} \\
-    -\emt_{ty}     & -\emt_{xy}    &    0      &   \emt_{yz} \\
-    -\emt_{tz}     & -\emt_{xz}    &    -\emt_{yz} &   0 \\
+    0                      & \emt\indices{^t^x}    &    \emt\indices{^t^y} &   \emt\indices{^t^z} \\
+   -\emt\indices{^t^x}     & 0                     &    \emt\indices{^x^y} &   \emt\indices{^x^z} \\
+   -\emt\indices{^t^y}     & -\emt\indices{^x^y}   &    0                  &   \emt\indices{^y^z} \\
+   -\emt\indices{^t^z}     & -\emt\indices{^x^z}   &    -\emt\indices{^y^z} &   0 \\
   \end{pmatrix}
 \end{equation*}
 Each element equals minus the corresponding element across the main diagonal
@@ -262,24 +269,25 @@ In terms of the concept of degrees of freedom introduced in section
 we are down to 6 degrees of freedom rather than 16.
 
 We now relabel the elements of the matrix and follow up with a justification
-of the relabeling.
+of the relabeling. 
 The result is the following rank-2 tensor:
 \begin{equation*}
-  \emt^{\mu\nu}=\begin{pmatrix}
+  \emt\indices{^\mu^\nu}=\begin{pmatrix}
     0     & -E_x    &    -E_y &    -E_z \\
-    E_x  & 0      &    B_z &    -B_y \\
-    E_y  & -B_z   &    0   &    B_x \\
-    E_z  & B_y   &    -B_x &   0
+    E_x  & 0      &    -B_z &   B_y \\
+    E_y  & B_z   &    0   &    -B_x \\
+    E_z  & -B_y   &    B_x &   0
   \end{pmatrix}
 \end{equation*}
 We'll call this the electromagnetic field tensor.
 The labeling of the left column simply expresses the definition of the electric field, which
 is expressed in terms of the vector $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
 then follows from antisymmetry.
-Writing out the matrix multiplication for an arbitrary velocity vector
+For an arbitrary velocity vector
 $\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector,
-we have expressions such as
-$F_x=\gamma q(E_x+u_yB_z-u_zB_y)$. Taking into account the difference of a factor of $\gamma$
+we write out the multiplication by the matrix $\emt\indices{^\mu_\nu}$ (with one index lowered again),
+obtaining expressions such as
+$F^x=\gamma q(E_x+u_yB_z-u_zB_y)$. Taking into account the difference of a factor of $\gamma$
 between the four-force and the force measured by an observer, we end up with the familiar Lorentz force law,
 \begin{equation*}
   \vc{F}_\vc{o} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
@@ -781,7 +789,7 @@ of \eqref{eqn:maxwell-div-e}. If you've taken vector calculus and know about the
 operator and Stokes' theorem, then you can verify that for $\mu$ referring to $x$, $y$,
 and $z$, we recover the local form of \eqref{eqn:maxwell-curl-b}. The tensorial way
 of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out to be
-\begin{equation}
+\begin{equation}\label{eqn:maxwell-rel-2}
   \frac{\partial\emt^{\mu\nu}}{\partial x^\lambda}
   + \frac{\partial\emt^{\nu\lambda}}{\partial x^\mu}
   + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 \qquad .
@@ -794,9 +802,9 @@ Solving equation \eqref{eqn:maxwell-rel-source} for the current vector, we have
 \end{equation*}
 Conservation of charge (section \ref{subsec:conservation-of-charge}, p.~\pageref{subsec:conservation-of-charge})
 can be expressed as
-\begin{equation}
+\begin{equation*}
   \frac{\partial J^\mu}{\partial x^\mu} = 0 \qquad .
-\end{equation}
+\end{equation*}
 If we substitute the first equation into the second, we obtain
 \begin{equation*}
   \frac{\partial}{\partial x^\mu}\left(\frac{1}{4\pi k} \frac{\partial \emt^{\mu\nu}}{\partial x^\nu}\right)
@@ -853,6 +861,32 @@ satisfies Maxwell's equations, and then apply property \ref{em-t-energy-cons-pro
 which requires that the energy-conservation condition $\partial T^{ab}/\partial x^a=0$ hold.
 This works out nicely if you apply this property to the $x$ column of $T$, at a point
 that lies in the positive $x$ direction relative to the charge.
+<% end_hw %>
+
+<% begin_hw('maxwell-count-df') %>
+Show that the number of independent conditions contained in equations
+\eqref{eqn:maxwell-rel-source} and \eqref{eqn:maxwell-rel-2}
+agrees with the number found in equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}.
+<% end_hw %>
+
+<% begin_hw('maxwell-div-b') %>
+Show that
+\begin{equation*}
+  \frac{\partial\emt^{\mu\nu}}{\partial x^\lambda}
+  + \frac{\partial\emt^{\nu\lambda}}{\partial x^\mu}
+  + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 
+\end{equation*}
+(equation \eqref{eqn:maxwell-rel-2}, p.~\pageref{eqn:maxwell-rel-2}) implies that
+the magnetic field has zero divergence.
+<% end_hw %>
+
+<% begin_hw('maxwell-plane-wave') %>
+Write down the fields of an electromagnetic plane wave propagating in the $z$ direction, choosing
+some polarization. Do not assume a sinusoidal wave. Show that this is a solution of 
+\begin{equation*}
+  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 0
+\end{equation*}
+(equation \eqref{eqn:maxwell-rel-source}, p.~\pageref{eqn:maxwell-rel-source}, in a vacuum).
 <% end_hw %>
 
 \end{hwsection}
