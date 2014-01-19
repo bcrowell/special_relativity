@@ -351,7 +351,7 @@ principle that motion is relative:
 $c$, then the vector $\vc{r}$ connecting the cause and the effect would be spacelike.
 But by adding two spacelike vectors we can
 make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
-into the past, violating causality.
+into the past, violating causality.\label{no-ftl-info-causality}
 \item \emph{The argument from relativity of motion:}
 Furthermore, there would exist a frame in which vector $\vc{r}$ was a vector of simultaneity, so that
 the information would have been propagated not just faster than $c$ but in fact \emph{instantaneously}.

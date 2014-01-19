@@ -652,11 +652,138 @@ completely \emph{incompatible} with relativity:
 \begin{enumerate}[(i)]
 \item They appear to describe instantaneous action at a distance. For example, Gauss's law,
       $\Phi_E = 4\pi kq$, relates the electric field in one place (on the closed surface)
-      to the electric charge somewhere else (inside the surface). This smells wrong relativistically,
-      for the reasons discussed in section \ref{sec:fields}.
-\item They treat time and space asymmetrically.
+      to the electric charge somewhere else (inside the surface). This \emph{nonlocal}
+      structure smells wrong relativistically,
+      for the reasons discussed in section \ref{sec:fields}.\label{maxwell-action-at-a-distance}
+\item They appear to treat time and space asymmetrically.\label{maxwell-xt-asymmetry}
 \end{enumerate}
+What's really happening here is that equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}
+are like a version of \emph{Hamlet} written in crayon on a long strip of toilet paper.
+They are completely relativistic, but have been written in a form that hides that fact.
 
+The problem of nonlocality, \ref{maxwell-action-at-a-distance}, can be shown to be a non-issue
+because Maxwell's equations can be reworked into a form in which they are purely local.
+The idea is shown in figure \figref{b-div-violation}. The magnetic field lines all form closed
+loops, except for one of them, which begins at a point in space and extends off to infinity.
+Drawing the large box, 1, we find that $\Phi_{B,1}$, the flux of the magnetic field through
+the box, is not zero, because a line leaves the box but none come in. But the same discrepancy
+could have been detected with the smaller box 2, or in fact with an arbitrarily small box
+containing source of the field line. In other words, the equation $\Phi_B=0$ is nonlocal, but
+if it is to hold for any surface, then it must also hold locally, in the limit of an arbitrarily
+small surface. This purely \emph{local} law of physics can be expressed using the three-dimensional
+version of the divergence,\index{divergence} introduced on p.~\pageref{divergence}:
+\begin{equation*}
+  \frac{\partial B_x}{\partial x}+\frac{\partial B_y}{\partial y}+\frac{\partial B_z}{\partial z} = 0
+\end{equation*}
+Of the four Maxwell's equations, both equation \eqref{eqn:maxwell-div-e} and \eqref{eqn:maxwell-div-b}
+can be reexpressed in this way. This book neither presents the full machinery of vector calculus
+nor assumes previous knowledge of it, but a similar limiting procedure can also be applied to equations
+\eqref{eqn:maxwell-curl-e} and \eqref{eqn:maxwell-curl-b}, using an operator called the curl.\index{curl}
+<% marg(100) %>
+<%
+  fig(
+    'b-div-violation',
+    %q{A magnetic field that violates $\Phi_B=0$.}
+  )
+%>
+<% end_marg %>
+
+The following example is one in which both problem \ref{maxwell-action-at-a-distance} and
+problem \ref{maxwell-xt-asymmetry} turn out not to be problems.
+
+\begin{eg}{Jumping through a hoop}\label{eg:electron-through-hoop}
+Here is an example in which the non-obvious features of Maxwell's equations prevent the
+antirelativistic meltdown projected in \ref{maxwell-action-at-a-distance}.
+In figure \subfigref{electron-through-hoop}{1}, an electron jumps back and forth through an
+imaginary circular hoop, across which we construct an imaginary flat surface.
+Every time the electron pierces the surface, it makes a momentary spike in the current
+$I$, which appears in \eqref{eqn:maxwell-curl-b},
+\begin{equation*}
+  \oint \vc{B}\cdot\der\bell = \frac{\partial\Phi_E}{\partial t}  + 4\pi k I \qquad .
+\end{equation*}
+We might expect
+that this would cause the field $\vc{B}$ detected on the edge of the disk to show similar
+spikes at the same times. But ``same times'' implies some notion of simultaneity, and this
+would be incompatible with relativity, since the $t$ coordinate being referred to here is just
+one observer's notion of time. Furthermore, it would seem that information was being transmitted
+instantaneously from the center of the disk to its edge, which violates relativity 
+(p.~\pageref{no-ftl-info-causality}).
+<% marg(40) %>
+<%
+  fig(
+    'electron-through-hoop',
+    %q{1. An electron jumps through a hoop. 2. An alternative surface spanning the hoop.}
+  )
+%>
+<% end_marg %>
+
+Stranger still, we can produce an apparent paradox without even appealing to relativity.
+Instead of the flat surface in \subfigref{electron-through-hoop}{1}, we can pick
+a dish-shaped one, \subfigref{electron-through-hoop}{2}, with a deep enough curve
+so that the electron never crosses it. The current $I$ is always zero according to this
+surface, so that no field $\vc{B}$ would be produced at the rim at all.
+
+The resolution of all these difficulties lies in the term $\partial\Phi_E/\partial t$,
+which we've ignored. With surface 1, the electron crosses the surface in time $\delta t$,
+causing a current $I=e/\delta t$ but also causing a change in the flux from
+$\Phi_E\approx 2\pi k e$ to $\Phi_E\approx -2\pi k e$. The result is that the right-hand
+side of the equation is nearly zero. With surface 2, $I=0$ and $\partial\Phi_E/\partial t\approx0$,
+so the right-hand side is again nearly zero.
+
+When the approximations used above are eliminated, Maxwell's equations do predict a nonvanishing
+field, which is the expected electromagnetic wave propagating away from the electron
+at the proper speed $c$.
+\end{eg}
+
+Example \ref{eg:electron-through-hoop} might seem like a ``just-so story,''
+but the apparently miraculous resolution is not a coincidence. It happens because
+Maxwell's equations are in fact invariant under a Lorentz transformation, even though
+that isn't obvious when they're written in the form 
+\eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}. There are various ways of showing
+this:
+
+\begin{itemize}
+\item Einstein did it by brute force in his 1905 paper on relativity,
+      by transforming the coordinates through a Lorentz transformation and
+      the fields as in section \ref{sec:em-xfn}.
+\item Maxwell's equations are basically wave equations. (They have both wave solutions and
+      static solutions.) We can verify that when we start with a sinusoidal plane wave
+      in one frame, then transform into another frame, the result is again a valid sine-wave
+      solution, having been subjected to a Doppler shift (section \ref{sec:doppler})
+      and aberration (section \ref{sec:doppler-3d}). This requires checking that the
+      wave is still purely transverse, but that follows easily from examining the invariants
+      described in section \ref{sec:em-invariants}. By a celebrated mathematical result called Fourier's
+      theorem, \emph{any} well-behaved wave can be written as a sum of sine waves, and therefore
+      any wave solution of Maxwell's equations in one frame is also a solution in every other frame.
+\item Maxwell's equations can be rewritten in terms of tensors, obeying all the grammatical
+      rules of index gymnastics. if they can be written in this form, they are automatically
+      Lorentz invariant.
+\end{itemize}
+
+The last approach is the most general and elegant, so we'll provide a brief sketch of how
+it works. Equation \eqref{eqn:maxwell-div-e} has $4\pi$ times the charge on the right,
+while \eqref{eqn:maxwell-curl-b} has $4\pi$ times the
+current. These both relate to the current four-vector
+$\vc{J}$, so clearly we need to combine them somehow into a single equation with
+$\vc{J}$ on the right. Since the local form of equation \eqref{eqn:maxwell-div-e} involves
+the three-dimensional divergence, which contains first derivatives, the left-hand side
+of this combined equation should have a first derivative in it. Given the grammatical
+rules of tensors and index gymnastics, we don't have many possible ways to accomplish this. The
+only obvious thing to try is
+\begin{equation}
+  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 4\pi k J^\mu \qquad .
+\end{equation}
+Writing this out for $\mu$ being the time coordinate, we get a relation that equates
+the divergence of $\vc{E}$ to $4\pi$ times the charge density; this is the local equivalent
+of \eqref{eqn:maxwell-div-e}. If you've taken vector calculus and know about the curl
+operator and Stokes' theorem, then you can verify that for $\mu$ referring to $x$, $y$,
+and $z$, we recover the local form of \eqref{eqn:maxwell-curl-b}. The tensorial way
+of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out to be
+\begin{equation}
+  \frac{\partial\emt^{\mu\nu}}{\partial x^\lambda}
+  + \frac{\partial\emt^{\nu\lambda}}{\partial x^\mu}
+  + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 \qquad .
+\end{equation}
 <% end_sec('not-manifestly-rel') %>
 
 <% end_sec('maxwells-equations') %>
