@@ -21,7 +21,7 @@ GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --titl
 
 default:
 	@make preflight
-	$(RUN_ERUBY)
+	BK=$(BOOK) $(RUN_ERUBY)
 	# perl -e 'foreach $$f(<ch*>) {if (-d $$f) {$$f=~/ch(\d\d)/; $$n=$$1; $$c = "cd ch$$n && ../fruby ch$$n.rbtex >ch$${n}temp.tex && cd -"; print "$$c\n"; system $$c}}'
 	$(DO_PDFLATEX)
 	@scripts/translate_to_html.rb --util="learn_commands:$(BOOK).cmd"

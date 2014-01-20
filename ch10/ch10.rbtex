@@ -271,23 +271,23 @@ we are down to 6 degrees of freedom rather than 16.
 We now relabel the elements of the matrix and follow up with a justification
 of the relabeling. 
 The result is the following rank-2 tensor:
-\begin{equation*}
+\begin{equation}\label{eqn:emt}
   \emt\indices{^\mu^\nu}=\begin{pmatrix}
     0     & -E_x    &    -E_y &    -E_z \\
     E_x  & 0      &    -B_z &   B_y \\
     E_y  & B_z   &    0   &    -B_x \\
     E_z  & -B_y   &    B_x &   0
   \end{pmatrix}
-\end{equation*}
+\end{equation}
 We'll call this the electromagnetic field tensor.
 The labeling of the left column simply expresses the definition of the electric field, which
-is expressed in terms of the vector $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
+is expressed in terms of the velocity $\vc{v}=(1,0,0,0)$ of a particle at rest. The top row
 then follows from antisymmetry.
-For an arbitrary velocity vector
-$\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector,
-we write out the multiplication by the matrix $\emt\indices{^\mu_\nu}$ (with one index lowered again),
-obtaining expressions such as
-$F^x=\gamma q(E_x+u_yB_z-u_zB_y)$. Taking into account the difference of a factor of $\gamma$
+For an arbitrary velocity vector, writing out the matrix multiplication
+$F^\mu = q\emt\indices{^\mu_\nu} v^\nu$ results in expressions such as
+$F^x=\gamma q(E_x+u_yB_z-u_zB_y)$
+(problem \ref{hw:lorentz-force}, p.~\pageref{hw:lorentz-force}).\label{lorentz-force}
+Taking into account the difference of a factor of $\gamma$
 between the four-force and the force measured by an observer, we end up with the familiar Lorentz force law,
 \begin{equation*}
   \vc{F}_\vc{o} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
@@ -849,6 +849,15 @@ cases like example \ref{eg:line-of-charge} on p.~\pageref{eg:line-of-charge} in 
 a purely electric field transforms to a mixture. Can we have a case in which a purely
 electric field in one frame transforms to a purely magnetic one in another? The easy way
 to do this problem is by using invariants.
+<% end_hw %>
+
+<% begin_hw('lorentz-force') %>
+(a) Starting from equation \eqref{eqn:emt} on p.~\pageref{eqn:emt} for $\emt\indices{^\mu^\nu}$,
+lower an index to find $\emt\indices{^\mu_\nu}$. Assume Minkowski coordinates and metric
+signature $+---$.\hwendpart
+(a) Let $\vc{v}=\gamma(1,u_x,u_y,u_z)$, where $(u_x,u_y,u_z)$ is the velocity three-vector.
+Write out the matrix multiplication $F^\mu = q\emt\indices{^\mu_\nu} v^\nu$, and show as claimed on
+p.~\pageref{lorentz-force} that the result is the Lorentz force law.
 <% end_hw %>
 
 <% begin_hw('off-diagonal-stress-tensor') %>

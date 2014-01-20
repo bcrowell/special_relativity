@@ -591,7 +591,7 @@ Their derivatives are, respectively, $(x^2+1)^{-1/2}$,
 $(x^2-1)^{-1/2}$, and $(1-x^2)^{-1}$.
 <% end_sec('identities') %>
 
-<% begin_sec("The projection operator",nil,'proj',{'optional'=>true}) %>
+<% begin_sec("The projection operator",nil,'proj',{'optional'=>true}) %>\index{projection operator}
 A frequent source of confusion in relativity is that we write down equations that
 are coordinate-dependent, but forget the dependency. Similarly, it is possible to
 write expressions that are only valid for one choice of signature. The following
@@ -775,7 +775,7 @@ with Fred's plan?
 <% begin_hw('interpret-v-addition') %>
 (a) In the equation $v_c=(v_1+v_2)/(1+v_1v_2)$ for combination of velocities, interpret
 the case where one of the velocities (but not the other) equals the speed of light.
-(b) Interpret the case where the denominator blows up.
+(b) Interpret the case where the denominator goes to zero.
 (c) Use the geometric series to rewrite the factor $1/(1+v_1v_2)$, and then expand
 the expression for $v_c$ as a series in $v_1$ and $v_2$, retaining terms up
 to third order in velocity. How does this relate to the correspondence principle?
@@ -783,7 +783,7 @@ to third order in velocity. How does this relate to the correspondence principle
 
 <% begin_hw('identities-si') %>
 Determine which of the identities in section \ref{sec:identities} need to be modified in order
-to be valid in units with $c\ne1$, and write the modified forms.
+to be valid in units with $c\ne1$, and describe how they should be modified.
 <% end_hw %>
 
 <% begin_hw('lhc-beamstop') %>
@@ -819,18 +819,6 @@ frequency for a hypothetical observer in outer space who is being directly appro
 satellite in its orbit. (b) In reality, the greatest possible longitudinal component of the
 velocity is considerably smaller than this due to the geometry. Use the size of the earth to determine this
 velocity and the corresponding maximum frequency.
-% calc -xe "R=26600 km; T=23.9344699*(3600 s)/2; v=(2pi R)/(Tc); r=6371 km; cs=r/R; vv= vcs; D=sqrt{(1+v)/(1-v)}; DD=sqrt{(1+vv)/(1-vv)}; f=10.22999999543 MHz; fD; fDD"
-%    10.2301323755978 MHz
-%    10.2300317018172 MHz
-% Here cs is cosine of theta. Some confusion over the trig. I'm convinced I have this right now because
-% cos theta = r/R has the right behavior in the cases r=R and r=0.
-% Main source of error is R. Increasing R by 50 km gives the following.
-%    10.2301326244343 MHz
-%    10.2300317018172 MHz
-% Second result doesn't depend on R for fixed T, but in reality T depends on R, so assume same sig figs.
-% So results with reasonable sig figs are:
-%    10.2301324  MHz
-%    10.2300317 MHz
 <% end_hw %>
 
 <% begin_hw('doppler-concrete') %>

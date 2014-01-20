@@ -1156,10 +1156,6 @@ $10^{-15}\ \kgunit$. Express your result relative to $c$.
 (b) Find the speed under the more conservative parameters of
 10 J  and $10^{-14}\ \kgunit$.
 <% end_hw %>
-   % calc -xe "m=10^-15 kg; K=100 J; v=sqrt{1-[1+K/(mc^2)]^{-2}}; D=sqrt((1+v)/(1-v)); eta=lnD"
-   % ... v = 0.88
-   % calc -xe "m=10^-14 kg; K=10 J; v=sqrt{1-[1+K/(mc^2)]^{-2}}; D=sqrt((1+v)/(1-v)); eta=lnD"
-   % ... v = 0.15
 
 <% begin_hw('galactic-center') %>
 Example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion}

@@ -201,6 +201,77 @@ $\Delta\Phi = \Phi(1+\Delta X)-\Phi(1) \approx (\text{acceleration})(\text{heigh
 so the time coefficient in the second form of the metric is $\approx 1+2\Delta\Phi\approx 1+2\Delta X$.
 But to within the desired level of approximation, this is the same as 
 $X^2=(1+\Delta X)^2\approx1+2\Delta X$.
+
+The procedure employed above works in general. To transform the metric from coordinates $(t,x,y,z)$
+to new coordinates $(t',x',y',z')$, we obtain the unprimed coordinates in terms of the primed ones,
+take differentials on both sides, and eliminate $\der t$, \ldots in favor of $\der t'$, \dots
+in the expression for $\der s^2$. We'll see in section \ref{subsec:rank-two},
+p.~\pageref{subsec:rank-two}, that this is an
+example of a more general transformation law for \emph{tensors}, mathematical objects
+that generalize vectors and covectors in the same way that matrices generalize row and column vectors.
+
+<%
+  fig(
+    'lambert',
+    %q{%
+      Example \ref{eg:lambert}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+      # 'sidepos'=>'b'
+    }
+  )
+%>
+
+\begin{eg}{A map projection}\label{eg:lambert}
+Because the earth's surface is curved, it is not possible to represent it on a flat map without
+distortion. Let $\phi$ be the latitude, $\theta$ the angle measured down from the north pole
+(known as the colatitude),
+both measured in radians, and let $a$ be the earth's radius.
+Then by the definition of radian measure, an infinitesimal north-south displacement by $\der\theta$
+is a distance $a\der\theta$. A point at a given colatitude $\theta$ lies at a distance
+$a\sin\theta$ from the axis, so for an infinitesimal east-west distance we have
+$a\sin\theta\der\phi$. For convenience, let the units be chosen such that 
+$a=1$. Then the metric, with signature $++$, is 
+\begin{equation*}
+  \der s^2 = \der\theta^2 + \sin^2\theta\:\der\phi \qquad .
+\end{equation*}
+One of the many possible ways of forming a flat map is the 
+Lambert cylindrical projection,\index{Lambert cylindrical projection}
+\begin{align*}
+  x &= \phi \\
+  y &= \cos\theta \qquad ,
+\end{align*}
+shown in figure \figref{lambert}.
+If we see a distance on the map and want to know how far
+it actually is on the earth's surface, we need to transform the metric into the $(x,y)$
+coordinates. The inverse coordinate transformation is
+\begin{align*}
+  \phi &= x \\
+  \theta &= \cos^{-1} y \qquad .
+\end{align*}
+Taking differentials on both sides, we get
+\begin{align*}
+  \der\phi &= \der x \\
+  \der \theta &= -\frac{\der y}{\sqrt{1-y^2}} \qquad .
+\end{align*}
+We take the metric and eliminate $\theta$, $\phi$, $\der\theta$, and $\der\phi$, finding
+\begin{equation*}
+  \der s^2 = (1-y^2)\der x^2 + \frac{1}{1-y^2} \der y^2 \qquad .
+\end{equation*}
+In figure \figref{lambert}, the polka-dot pattern is made of figures that are actually circles,
+all of equal size,
+on the earth's surface. Since they are fairly small, we can approximate $y$ as having a single
+value for each circle, which means that they are represented on the flat map as
+approximate ellipses with their east-west dimensions having
+been stretched by $(1-y^2)^{-1/2}$ and their north-south
+ones shrunk by $(1-y^2)^{1/2}$. Since these two factors are reciprocals of one another, the area of each
+ellipse is the same as the area of the original circle, and therefore the same as those of
+all the other ellipses. They are a visual representation of the metric, and they demonstrate the
+equal-area property of this projection.
+\end{eg}
+
 <% end_sec('xfn-metric') %>
 
 <% begin_sec("Summary of transformation laws",nil,'xfn-summary') %>

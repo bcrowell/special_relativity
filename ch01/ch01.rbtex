@@ -1244,6 +1244,15 @@ For example, suppose we lower an astronaut into a black hole on a rope, and then
 back out again. Why might this not work?\hwendpart
 <% end_hw %>
 
+\pagebreak
+
+<% begin_hw('pole-paradox') %>
+The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
+At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
+and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
+the person on the left to decide to pick up the hammer and use it?
+<% end_hw %>
+
 <% 
   fig(
     'hw-pole-paradox',
@@ -1256,12 +1265,6 @@ back out again. Why might this not work?\hwendpart
   )
 %>
 
-<% begin_hw('pole-paradox') %>
-The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.
-At event B, the other end moves. Since the rod is perfectly rigid, it can't compress, so A
-and B are simultaneous. In frame 2, B happens before A. Did the motion at the right end \emph{cause}
-the person on the left to decide to pick up the hammer and use it?
-<% end_hw %>
 
 <% begin_hw('meet-up-paradox') %>
 Use a spacetime diagram to resolve the following relativity paradox.

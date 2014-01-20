@@ -430,7 +430,7 @@ the angular defect of a triangle inscribed on a sphere depends on area.
 It shows a large equilateral triangle that has been dissected into four smaller triangles,
 each of which is also approximately equilateral.
 Prove that $D=4d$, where $D$ is the angular defect
-of the large triangle and $d$ value for one of the four smaller ones.
+of the large triangle and $d$ the value for one of the four smaller ones.
 (b) Given that the proportionality to area $d=kA$ holds in general,
 find some triangle on a sphere of radius $R$ whose area and angular defect are
 easy to calculate, and use it to fix the constant of proportionality $k$.
@@ -443,7 +443,7 @@ easy to calculate, and use it to fix the constant of proportionality $k$.
 %>
 <% end_marg %>
 
-\hwremark A being who lived on a sphere could measure $d$ an $A$ for some triangle
+\hwremark A being who lived on a sphere could measure $d$ and $A$ for some triangle
 and infer $R$, which is a measure of curvature. The proportionality of the effect to
 the area of the triangle also implies that the effects of curvature become negligible
 on sufficiently small scales. The analogy in relativity is that special relativity is
