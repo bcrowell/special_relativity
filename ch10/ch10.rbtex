@@ -795,6 +795,75 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
   + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 \qquad .
 \end{equation}
 
+<%
+  fig(
+    'flea-generator',
+    %q{Example \ref{eg:flea-generator}.},
+    {
+      'sidecaption'=>true,
+      'width'=>'wide'
+    }
+  )
+%>
+\begin{eg}{A generator}\label{eg:flea-generator}
+        Figure \figref{flea-generator} shows a crude, impractical generator, depicted in two frames of reference.
+
+        Flea 1 is sitting on top of the bar magnet, which creates the magnetic field pattern
+        shown with the arrows. To her, the bar magnet is
+        obviously at rest, and this magnetic field pattern is static.
+        As the square wire loop is dragged away from her and the magnet,
+        its protons experience a force in the $-z$ direction, as determined by the Lorentz force law
+        $\vc{F}=q\vc{v}\times\vc{B}$. The electrons, which are negatively
+        charged, feel a force in the $+z$ direction. The conduction electrons are free to move, but the
+        protons aren't. In the front and back sides of the loop, this force is perpendicular
+        to the wire. In the right and left sides, however, the electrons are free to respond to the force.
+        Since the magnetic field is weaker on the right side, current circulates around the loop.
+        
+        Flea 2 is sitting on the loop, which she considers to be at rest.
+        In her frame of reference, it's the bar magnet that is moving. Like flea 1, she
+        observes a current circulating around the loop, but unlike flea 1, she
+        cannot use magnetic forces to explain this current. As far as she is concerned, the
+        electrons were initially at rest. Magnetic forces are forces between moving charges
+        and other moving charges, so a magnetic field can never accelerate a charged particle
+        starting from rest. A force that accelerates a charge from rest can only be an
+        \emph{electric} force, so she is forced to conclude that there is an electric field
+        in her region of space. This field drives electrons
+        around and around in circles --- it is
+        a curly field. What reason can flea 2
+        offer for the existence of this electric field pattern? Well, she's been noticing that
+        the magnetic field in her region of space has been changing, possibly because that bar
+        magnet over there has been getting farther away. She observes that a changing magnetic
+        field creates a curly electric field. Thus the $\partial \Phi_B/\partial t$ term in
+        equation \eqref{eqn:maxwell-curl-e} is not optional; it is required to exist if Maxwell's
+        equations are to be equally valid in all frames.
+
+        Einstein opens his 1905 paper on relativity\footnote{
+        ``Zur Elektrodynamik bewegter K\:orper,'' Annalen der Physik. 17 (1905) 891.
+        Translation by Perrett and Jeffery} begins with this sentence:
+        ``It is known that Maxwell's electrodynamics---as usually understood at
+        the present time---when applied to moving bodies, leads to asymmetries
+        which do not appear to be inherent in the phenomena.'' He then gives essentially
+        this example. Although the observers in frames 1 and 2 agree on all physical
+        measurements, their explanations of the physical mechanisms, couched in the
+        language of Maxwell's equations in the form \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b},
+        are completely different. In relativistic language, flea 2's explanation can be written
+        in terms of equation \eqref{eqn:maxwell-rel-2}, in the case where the indices are
+        $x$, $z$, and $t$:
+\begin{equation*}
+  \frac{\partial\emt^{xz}}{\partial t}
+  + \frac{\partial\emt^{zt}}{\partial x}
+  + \frac{\partial\emt^{tx}}{\partial z} = 0 \qquad ,
+\end{equation*}
+        which is the same as
+        \begin{equation*}
+          \frac{\partial B_y}{\partial t} + \frac{\partial E_z}{\partial x} - \frac{\partial E_x}{\partial z} = 0 \qquad .
+        \end{equation*}
+        Because the first term is negative, the second term must be positive.
+        Since equations \eqref{eqn:maxwell-rel-source} and \eqref{eqn:maxwell-rel-2} are written
+        in terms of tensors, obeying the grammatical rules of index gymnastics, we are \emph{guaranteed}
+        that they give consistent predictions in all frames of reference.
+\end{eg}
+
 \begin{eg}{Conservation of charge and energy-momentum}
 Solving equation \eqref{eqn:maxwell-rel-source} for the current vector, we have
 \begin{equation*}
@@ -838,7 +907,8 @@ imply conservation of energy-momentum.
 Use Gauss's law to find the field between the plates.\hwendpart
 (b) In the style of example \ref{eg:line-of-charge} on p.~\pageref{eg:line-of-charge},
 transform the field to a frame moving perpendicular to the plates, and verify that
-the result makes sense in terms of the sources that are present.
+the result makes sense in terms of the sources that are present.\hwendpart
+(c) Repear the analysis for a frame moving parallel to the plates.
 <% end_hw %>
 
 <% begin_hw('pure-e-to-pure-b') %>

@@ -204,7 +204,8 @@ $X^2=(1+\Delta X)^2\approx1+2\Delta X$.
 
 The procedure employed above works in general. To transform the metric from coordinates $(t,x,y,z)$
 to new coordinates $(t',x',y',z')$, we obtain the unprimed coordinates in terms of the primed ones,
-take differentials on both sides, and eliminate $\der t$, \ldots in favor of $\der t'$, \dots
+take differentials on both sides, and eliminate $t$, \ldots, $\der t$, \ldots in favor of
+$t'$, \ldots $\der t'$, \dots
 in the expression for $\der s^2$. We'll see in section \ref{subsec:rank-two},
 p.~\pageref{subsec:rank-two}, that this is an
 example of a more general transformation law for \emph{tensors}, mathematical objects
@@ -406,6 +407,27 @@ Example \ref{eg:polar-coodinates} on p.~\pageref{eg:polar-coodinates} discussed 
 coordinates in the Euclidean plane. Use the technique demonstrated
 in section \ref{sec:xfn-metric} to find the metric in these coordinates.
 <% end_hw %>
+
+<% marg(50) %>
+<%
+  fig(
+    'oblique-metric',
+    %q{Problem \ref{hw:oblique-metric}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('oblique-metric') %>
+Oblique Cartesian coordinates are like 
+normal Cartesian coordinates in the plane, but their axes are at at 
+an angle $\varphi \ne \pi/2$ to one another. Show that the metric in these coordinates is
+\begin{equation*}
+  \der s^2 = \der x^2 + \der y^2 + 2\cos\varphi\der x\der y \qquad .
+\end{equation*}
+
+<% end_hw %>
+
+
 
 \end{hwsection}
 
