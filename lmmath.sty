@@ -13,7 +13,9 @@
 %
 %================================ math ================================
 %-------------------- differentials, vectors not in italics, units -------------------
-\newcommand{\der}{\textup{d}}
+\newcommand{\der}{\mathop{d\!}}
+%   ... the \! is a negative thin space to keep the d close to the variable that comes after it
+%       http://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator
 \newcommand{\divg}{\textup{div}\:}
 \newcommand{\curl}{\textup{curl}\:}
 \newcommand{\grad}{\textup{grad}\:}

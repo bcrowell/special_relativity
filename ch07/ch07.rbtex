@@ -236,7 +236,7 @@ $a\sin\theta$ from the axis, so for an infinitesimal east-west distance we have
 $a\sin\theta\der\phi$. For convenience, let the units be chosen such that 
 $a=1$. Then the metric, with signature $++$, is 
 \begin{equation*}
-  \der s^2 = \der\theta^2 + \sin^2\theta\:\der\phi \qquad .
+  \der s^2 = \der\theta^2 + \sin^2\theta\der\phi \qquad .
 \end{equation*}
 One of the many possible ways of forming a flat map is the 
 Lambert cylindrical projection,\index{Lambert cylindrical projection}
