@@ -432,18 +432,36 @@ like this:
   \end{pmatrix} \qquad .
 \end{equation*}
 
+<% marg(0) %>
+<% fig(
+    'em-pressure-and-tension',
+     %q{Pressure and tension in electrostatic fields.}
+   )
+%>
+<% end_marg %>
 The following argument tells us something about
 what to expect for the components $T^{xx}$, $T^{yy}$, and $T^{zz}$, which are interpreted as pressures
-along the $x$, $y$, and $z$ axes. Suppose that the electric field has a discontinuity in its
-$x$ component at $x=0$, so that $\lim_{x\rightarrow 0^-}E_x=E_1$ and
-$\lim_{x\rightarrow 0^+}E_x=E_2$.
-By Gauss's law, this requires the existence of a sheet of charge in the $yz$ plane,
-with a density of charge per unit area  $\sigma \propto E_2-E_1$. This sheet of charge
-experiences an average field $(E_1+E_2)/2$, so it feels a force per unit area
-proportional to $(E_2-E_1)(E_1+E_2)$, which is the same as $E_2^2-E_1^2$. In other words,
-the square of the electric field $E^2$ can be taken as a measure of pressure, and the force in this
-example is due to a pressure difference between the two sides of the plane. Therefore
-we expect to see expressions along the diagonal that involve the squares of the fields.
+or tensions, depending on their signs. In figure \subfigref{em-pressure-and-tension}{1}, the capacitor
+plates want to collapse against each other in the vertical ($y$) direction, but at the same time
+the internal repulsions within each plate make that plate want to expand in the $x$ direction.
+If the capacitor is built out of materials that hold their shape, then the electromagnetic tension
+in $T^{yy}<0$ is counteracted by pressure $T^{yy}>0$ in the materials, while the electromagnetic
+pressure $T^{xx}>0$ is canceled by the materials' tension $T^{xx}<0$. 
+We got these results for a particular physical situation, but relativity requires that the stress-energy
+be defined at every point based on the fields at that point, so our conclusions must hold generally.
+In \subfigref{em-pressure-and-tension}{2} and \subfigref{em-pressure-and-tension}{3}, white boxes
+have been drawn in regions where the total field is strong and the fields are strongly interacting.
+In 2, there is tension in the $x$ direction and pressure in $y$; the tension can be thought of
+as contributing to the attraction between the opposite charges.
+In 3, there is also $x$ tension and $y$ pressure; the pressure contributes to the like charges' repulsion.
+
+To make this more quantitative, consider the discontinuity in $E_y$ at the upper plate in
+figure \subfigref{em-pressure-and-tension}{1}. The field abruptly switches from $0$ on the outside
+to some value $E$ between the plates.
+By Gauss's law, the charge per unit area on the plate must be $\sigma=E/4\pi k$.
+The average field experienced by the charge in the plate is $\overline{E}=(0+E)/2=E/2$, so the force
+per unit area, i.e., the tension in the field, is $\sigma\overline{E}=E^2/8\pi k$. Thus we expect
+$T^{yy}=-E^2/8\pi k$ if $E$ is along the $y$ axis.
 
 For the reader who wants the full derivation of the
 remaining nine components of the tensor, we now give an argument that makes use of the following
@@ -578,6 +596,7 @@ particles have the same mechanical properties.
 In this book I assume that you've had the usual physics background acquired in a freshman survey
 course, which includes an initial, probably frightening,
 encounter with Maxwell's equations in integral form. In units with $c=1$, Maxwell's equations are:
+\begin{subequations}\label{eqn:maxwell}
 \begin{framed}
 \begin{align}
   \Phi_E          &= 4\pi kq \label{eqn:maxwell-div-e} \\
@@ -586,6 +605,7 @@ encounter with Maxwell's equations in integral form. In units with $c=1$, Maxwel
   \oint \vc{B}\cdot\der\bell     &= \frac{\partial\Phi_E}{\partial t}  + 4\pi k I \label{eqn:maxwell-curl-b} 
 \end{align}
 \end{framed}
+\end{subequations}
 where
 \begin{align}
   \Phi_E &= \int \vc{E}\cdot\der\vc{a} \qquad \text{and} \label{eqn:e-flux} \\
@@ -633,7 +653,7 @@ of $c$.
 <% begin_sec("Incompatibility with Galilean spacetime",nil,'incompatibility-with-galilean') %>
 Maxwell's equations are not compatible with the Galilean description of spacetime
 (section \ref{subsec:galilean-spacetime}, p.~\pageref{subsec:galilean-spacetime}).
-If we assume that equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b} hold in
+If we assume that equations \eqref{eqn:maxwell} hold in
 some frame $\vc{o}$, and then apply a Galilean boost, transforming the coordinates
 $(t,x,y,z)$ to $(t',x',y',z')=(t,x-vt,y,z)$, we find that in frame $\vc{o}'$ the equations
 have a different and more complicated form that cannot be simplified so as to look like
@@ -654,7 +674,7 @@ Since Maxwell's equations are not low-velocity approximations and
 are incompatible with Galilean relativity, we expect with the benefit
 of historical hindsight that they \emph{are} compatible with the relativistic picture of spacetime.
 But when they are expressed in the form
-\eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}, they
+\eqref{eqn:maxwell}, they
 have two features, either one of which seems enough to make them
 completely \emph{incompatible} with relativity:
 \begin{enumerate}[(i)]
@@ -665,7 +685,7 @@ completely \emph{incompatible} with relativity:
       for the reasons discussed in section \ref{sec:fields}.\label{maxwell-action-at-a-distance}
 \item They appear to treat time and space asymmetrically.\label{maxwell-xt-asymmetry}
 \end{enumerate}
-What's really happening here is that equations \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b}
+What's really happening here is that equations \eqref{eqn:maxwell}
 are like a version of \emph{Hamlet} written in crayon on a long strip of toilet paper.
 They are completely relativistic, but have been written in a form that hides that fact.
 
@@ -845,7 +865,7 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
         which do not appear to be inherent in the phenomena.'' He then gives essentially
         this example. Although the observers in frames 1 and 2 agree on all physical
         measurements, their explanations of the physical mechanisms, couched in the
-        language of Maxwell's equations in the form \eqref{eqn:maxwell-div-e}-\eqref{eqn:maxwell-curl-b},
+        language of Maxwell's equations in the form \eqref{eqn:maxwell},
         are completely different. In relativistic language, flea 2's explanation can be written
         in terms of equation \eqref{eqn:maxwell-rel-2}, in the case where the indices are
         $x$, $z$, and $t$:

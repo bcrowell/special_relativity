@@ -203,10 +203,10 @@ where $c\ne 1$, we have Einstein's famous
 \begin{equation*}
   E=mc^2 \qquad .
 \end{equation*}
-This derivation entailed an approximation, and redoing it without the approximation
+This derivation entailed both an approximation and some hidden assumptions, and redoing it without the approximation
 entails some complexity.\footnote{For a somewhat overwrought discussion, see
 Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}.}
-It turns out, however, to be valid in general.
+It turns out, however, to be valid in general for any isolated body.
 
 We find that mass is not simply a built-in property of the particles that
 make up an object, with the object's mass being the sum of the masses of its particles.
@@ -429,8 +429,15 @@ The ``Galilean'' version is ruled out because it would imply that particles keep
 and therefore $E$ would be interpreted purely as the mass.) Nor can the ``rotational'' version
 be right, because it doesn't preserve
 the $E=|p|$ diagonals. We are left with the third case, which establishes the following aesthetically appealing
-fact: \emph{the $p$-$E$ plane transforms according to exactly the same kind of Lorentz transformation as the $x$-$t$ plane}.
-That is, $(E,p_x,p_y,p_z)$ is a four-dimensional vector just like $(t,x,y,z)$. This is a highly
+fact:
+%
+\begin{important}[Energy-momentum is a four-vector]
+Let an isolated object have momentum and mass-energy $p$ and $E$. Then
+the $p$-$E$ plane transforms according to exactly the same kind of Lorentz transformation as the $x$-$t$ plane.
+That is, $(E,p_x,p_y,p_z)$ is a four-dimensional vector just like $(t,x,y,z)$.
+\end{important}
+%
+\noindent This is a highly
 desirable result. If it were not true, it would be like having to learn different mathematical rules for different
 kinds of three-vectors in Newtonian mechanics.
 

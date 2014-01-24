@@ -14,12 +14,12 @@
 \newcounter{hwctr}[chapter]
 %====================== packages =====================================================
 \RequirePackage{amsmath}
+\def\maketag@@@#1{\hbox{\m@th#1}} % workaround for bug in amsmath; see http://tex.stackexchange.com/a/155719/6853
 \RequirePackage{url,tensor,learn-cmd-syntax,tikz,birdtracks,enumerate}
 % enumerate is for lc roman numerals, which I sometimes want so items don't look like equation numbers
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================
 \RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}
-
 %=====================================================================================
 % In DP, we use italics for figref, but in LM that would look too much like an algebra
 % symbol, so no italics.
