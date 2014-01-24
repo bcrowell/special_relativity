@@ -459,8 +459,8 @@ To make this more quantitative, consider the discontinuity in $E_y$ at the upper
 figure \subfigref{em-pressure-and-tension}{1}. The field abruptly switches from $0$ on the outside
 to some value $E$ between the plates.
 By Gauss's law, the charge per unit area on the plate must be $\sigma=E/4\pi k$.
-The average field experienced by the charge in the plate is $\overline{E}=(0+E)/2=E/2$, so the force
-per unit area, i.e., the tension in the field, is $\sigma\overline{E}=E^2/8\pi k$. Thus we expect
+The average field experienced by the charge in the plate is $\xoverline{E}=(0+E)/2=E/2$, so the force
+per unit area, i.e., the tension in the field, is $\sigma\xoverline{E}=E^2/8\pi k$. Thus we expect
 $T^{yy}=-E^2/8\pi k$ if $E$ is along the $y$ axis.
 
 For the reader who wants the full derivation of the

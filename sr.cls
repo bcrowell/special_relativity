@@ -53,3 +53,23 @@
 
 \StopSaveCommands % for learn-cmd-syntax
 \WriteSaveCommands  % for learn-cmd-syntax
+%-------------
+% http://tex.stackexchange.com/a/22101/6853
+    \newsavebox\myboxA
+    \newsavebox\myboxB
+    \newlength\mylenA
+
+    \newcommand*\xoverline[2][0.75]{%
+        \sbox{\myboxA}{$\m@th#2$}%
+        \setbox\myboxB\null% Phantom box
+        \ht\myboxB=\ht\myboxA%
+        \dp\myboxB=\dp\myboxA%
+        \wd\myboxB=#1\wd\myboxA% Scale phantom
+        \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+        \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+        \addtolength\mylenA{-\the\wd\myboxB}%
+        \ifdim\wd\myboxB<\wd\myboxA%
+           \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+        \else
+            \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+        \fi}
