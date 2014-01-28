@@ -203,10 +203,10 @@ where $c\ne 1$, we have Einstein's famous
 \begin{equation*}
   E=mc^2 \qquad .
 \end{equation*}
-This derivation entailed both an approximation and some hidden assumptions, and redoing it without the approximation
-entails some complexity.\footnote{For a somewhat overwrought discussion, see
-Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}.}
-It turns out, however, to be valid in general for any isolated body.
+This derivation entailed both an approximation and some hidden assumptions.
+These issues are explored more thoroughly in 
+section \ref{sec:internal-structure} on p.~\pageref{sec:internal-structure}.
+The result turns out to be valid for any isolated body.
 
 We find that mass is not simply a built-in property of the particles that
 make up an object, with the object's mass being the sum of the masses of its particles.
@@ -722,6 +722,80 @@ Cf.~section \ref{sec:stress-energy}, p.~\pageref{sec:stress-energy}, on the stre
 
 <% end_sec('momentum') %>
 
+<% begin_sec("Systems with internal structure",nil,'internal-structure',{'optional'=>true}) %>
+Section \ref{sec:mass-energy-equivalence} presented essentially Einstein's original proof of
+$E=mc^2$, which has been criticized on several grounds. A detailed discussion is given by
+Ohanian.\footnote{``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}}
+Putting aside questions that are purely historical or concerned only with academic priority,
+we would like to know whether the proof has logical flaws, and also whether the claimed result is
+only valid under certain conditions. We need to consider (1) whether the use of the low-velocity
+approximation matters, (2) whether it matters if the system being described has finite spatial
+extent, and (3) whether it matters if parts of the system are moving at relativistic velocities.
+<% marg(-10) %>
+<%
+  fig(
+    'beads',
+    %q{The world lines of two beads bouncing back and forth on a wire.}
+  )
+%>
+<% end_marg %>
+
+The following example demonstrates these issues and their logical connections. Suppose that two
+beads slide freely on a wire, bouncing elastically off of each other and also rebounding elastically
+from the wire's ends. Their world-lines are shown in figure \figref{beads}.
+Let's say the beads each have unit mass.
+In frame $\vc{o}$, the beads are released from the center of the wire with velocities $\pm u$. For
+concreteness, let's set $u=1/2$, so that the system has internal motion at relativistic speeds.
+In this frame, the total energy-momentum vector of the system, on the surface of simultaneity
+labeled 1 in figure \figref{beads}, is $\vc{p}=(2.31,0)$. That is, it has
+a total mass-energy of 2.31 units, and a total momentum of zero (meaning that this is the center of
+mass frame). As time goes on, an observer in this frame will say that the balls reach the ends
+of the wire simultaneously, at which point they rebound, maintaining the same total energy-momentum
+vector $\vc{p}$. The mass of the system is, by definition, $m=\sqrt{p_t^2-p_x^2}=\sqrt{2.31}$, and this
+mass remains constant as the balls bounce back and forth.
+
+Now let's transform into a frame $\vc{o}'$, moving at a velocity $v=1/2$ relative to $\vc{o}$.
+If velocities added linearly in relativity, then the initial velocities of the beads in this frame would
+be 0 and $-1$, but of course a material object can't move with speed $|v|=c=1$, and velocities
+\emph{don't} add linearly. Applying the correct velocity addition formula for relativity, we find
+that the beads have initial velocities $0$ and $-0.8$ in this frame, and if we compute their
+total energy-momentum vector, on surface of simultaneity 2 in figure \figref{beads},
+we get $\vc{p}'=(2.67,-1.33)$. This is exactly what we would have
+gotten by taking the original vector $\vc{p}$ and pushing it through a Lorentz transformation.
+That is, the energy-momentum vector seems to be acting like a good four-vector, even through the system
+has finite spatial extent and contains parts that move at relativistic speeds. In particular,
+this implies that the system has the same mass $m=\sqrt{2.31}$ as in $\vc{o}$, since $m$ is the
+norm of the $\vc{p}$ vector, and the norm of a vector stays the same under a Lorentz transformation.
+
+But now consider surface 3, which, like 2, observer $\vc{o}'$ considers to be a surface of
+simultaneity. At this time, $\vc{o}'$ says that \emph{both} beads are moving to the left.
+Between time 2 and time 3, $\vc{o}'$ says that the system's total momentum has changed, while
+its total mass-energy stayed constant. Its mass is different, and the total energy-momentum
+vector $\vc{p}'$ at time 3 is \emph{not} related by a Lorentz transformation to the value
+of $\vc{p}$ at any time in frame $\vc{o}$. The reason for this misbehavior is that the right-hand
+bead has bounced off of the right end of the wire, but because $\vc{o}$  and $\vc{o}'$ have
+different opinions about simultaneity, $\vc{o}'$ says that there has not yet been any matching
+collision for the bead on the left.
+
+But all of these difficulties arise only because we have left something out. When the right-hand
+bead bounces off of the right-hand end of the wire, this is a collision between the bead and the wire.
+After the collision, the wire rebounds to the right (or a vibration is created in it). By ignoring the rebound of
+the wire, we have violated the law of conservation of momentum. If we take into account the momentum
+imparted to the wire, then the energy-momentum vector of the whole system is conserved, and must
+therefore be the same at 2 and 3.
+
+The upshot of all this is that $E=mc^2$ and the four-vector nature of $\vc{p}$ are both valid
+for systems with finite spatial extent,
+provided that the systems are isolated. ``Isolated'' means simply that we
+should not gratuitously ignore anything such as the wire in this example that exchanges
+energy-momentum with our system. To give a general \emph{proof} of this, it will be helpful
+to develop the idea of the stress-energy tensor (section
+\ref{sec:stress-energy}, p.~\pageref{sec:stress-energy}), which allows a succinct statement
+of what we mean by conservation of energy-momentum (subsection
+\ref{subsec:p-flux}).
+<% end_sec('internal-structure') %>
+
+
 <% begin_sec("Force",nil,'force',{'optional'=>true}) %>
 Force is a concept that is seldom needed in relativity, and that's why this section is optional.
 <% begin_sec("Four-force",nil,'four-force') %>
@@ -879,6 +953,14 @@ where $p$ is the typical momentum.
 \item[] \emph{Relativistic, degenerate gas:} If the compression is strong enough to cause highly relativistic motion for the particles, then
   $v \approx c$, and the result is $P\sim hc(n/V)^{4/3}$.
 \end{itemize}
+<% marg(-50) %>
+<%
+  fig(
+    'chandrasekhar',
+    %q{Subrahmanyan Chandrasekhar (1910-1995)}
+  )
+%>
+<% end_marg %>
 
 As a star with the mass of our sun collapses, it reaches a point
 at which the electrons begin to behave as a degenerate gas, and
@@ -908,14 +990,6 @@ $K\approx 4000$.  For stars near the limit, the electrons are relativistic.
 Setting the pressure at the core equal to the degeneracy pressure of a relativistic gas, we find that the
 Chandrasekhar limit\index{Chandrasekhar limit}\label{chandrasekhar-limit}
 is $\sim (hc/G)^{3/2}(Km)^{-2}=6M_\odot$. A less sloppy calculation gives something more like $1.4M_\odot$.
-<% marg(50) %>
-<%
-  fig(
-    'chandrasekhar',
-    %q{Subrahmanyan Chandrasekhar (1910-1995)}
-  )
-%>
-<% end_marg %>
 
 % h=6.6 10^-34 J.s
 % G=6.7 10^-11 m3.kg-1.s-2

@@ -591,7 +591,7 @@ particles have the same mechanical properties.
 
 <% end_sec('em-stress-energy') %>
 
-<% begin_sec("Maxwell's equations",4,'maxwells-equations') %>
+<% begin_sec("Maxwell's equations",nil,'maxwells-equations') %>
 <% begin_sec("Statement and interpretation",nil,'maxwell-statement') %>
 In this book I assume that you've had the usual physics background acquired in a freshman survey
 course, which includes an initial, probably frightening,
