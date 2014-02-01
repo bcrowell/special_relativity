@@ -862,7 +862,7 @@ again passing over issues with signs.
 We refer to these properties as \emph{linearity} of the affine 2-volume. Any sensible measure
 of $m$-volume should have similar linearity properties.
 <% end_sec('volume-linearity') %> 
-<% begin_sec("The 3-volume covector",nil,'three-volume') %>
+<% begin_sec("The 3-volume covector",nil,'three-volume') %>\label{three-vol-covector}
 
 In the special case of $m=3$, linearity leads to an especially simple characterization
 of the volume. Let a 3-volume be defined by the parallelepiped spanned by vectors
