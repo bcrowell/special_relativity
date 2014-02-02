@@ -205,7 +205,8 @@ where $c\ne 1$, we have Einstein's famous
 \end{equation*}
 This derivation entailed both an approximation and some hidden assumptions.
 These issues are explored more thoroughly in 
-section \ref{sec:internal-structure} on p.~\pageref{sec:internal-structure}.
+section \ref{sec:internal-structure} on p.~\pageref{sec:internal-structure}
+and in ch.~\ref{ch:flux} on p.~\pageref{ch:flux}.
 The result turns out to be valid for any isolated body.
 
 We find that mass is not simply a built-in property of the particles that
@@ -728,19 +729,19 @@ $E=mc^2$, which has been criticized on several grounds. A detailed discussion is
 Ohanian.\footnote{``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}}
 Putting aside questions that are purely historical or concerned only with academic priority,
 we would like to know whether the proof has logical flaws, and also whether the claimed result is
-only valid under certain conditions. We need to consider (1) whether the use of the low-velocity
-approximation matters, (2) whether it matters if the system being described has finite spatial
-extent, and (3) whether it matters if parts of the system are moving at relativistic velocities.
-<% marg(-10) %>
-<%
-  fig(
-    'beads',
-    %q{The world lines of two beads bouncing back and forth on a wire.}
-  )
-%>
-<% end_marg %>
+only valid under certain conditions. We need to consider the following questions:
 
-The following example demonstrates these issues and their logical connections. Suppose that two
+\begin{enumerate}
+\item Does it matter whether the system being described has finite spatial extent, or whether the system
+      is isolated?
+\item Does it matter whether parts of the system are moving at relativistic velocities?
+\item Does the low-velocity approximation used in Einstein's proof make a difference?
+\item How do we handle a system that is not made out of pointlike particles, e.g., a
+      capacitor, in which some of the energy-momentum is in an electric field?
+\end{enumerate}
+
+The following example demonstrates issues 1-3 and their logical connections; the definitional
+question 4 is addressed in ch.~\ref{ch:flux}. Suppose that two
 beads slide freely on a wire, bouncing elastically off of each other and also rebounding elastically
 from the wire's ends. Their world-lines are shown in figure \figref{beads}.
 Let's say the beads each have unit mass.
@@ -753,6 +754,14 @@ mass frame). As time goes on, an observer in this frame will say that the balls 
 of the wire simultaneously, at which point they rebound, maintaining the same total energy-momentum
 vector $\vc{p}$. The mass of the system is, by definition, $m=\sqrt{p_t^2-p_x^2}=\sqrt{2.31}$, and this
 mass remains constant as the balls bounce back and forth.
+<% marg(100) %>
+<%
+  fig(
+    'beads',
+    %q{The world lines of two beads bouncing back and forth on a wire.}
+  )
+%>
+<% end_marg %>
 
 Now let's transform into a frame $\vc{o}'$, moving at a velocity $v=1/2$ relative to $\vc{o}$.
 If velocities added linearly in relativity, then the initial velocities of the beads in this frame would
@@ -792,9 +801,8 @@ energy-momentum with our system. To give a general \emph{proof} of this, it will
 to develop the idea of the stress-energy tensor (section
 \ref{sec:stress-energy}, p.~\pageref{sec:stress-energy}), which allows a succinct statement
 of what we mean by conservation of energy-momentum (subsection
-\ref{subsec:p-flux}).
+\ref{subsec:p-flux}). A proof is given in section \ref{subsec:p-vector} on p.~\pageref{subsec:p-vector}.
 <% end_sec('internal-structure') %>
-
 
 <% begin_sec("Force",nil,'force',{'optional'=>true}) %>
 Force is a concept that is seldom needed in relativity, and that's why this section is optional.

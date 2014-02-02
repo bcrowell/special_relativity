@@ -843,7 +843,7 @@ method works for 3-volume.
 <% end_marg %>
 <% end_sec('affine-measure') %> 
 
-<% begin_sec("Linearity",nil,'volume-linearity') %>
+<% begin_sec("Linearity",nil,'volume-linearity') %>\label{volume-linearity}
 
 Suppose that a parallelogram is formed with vectors $\vc{a}$ and $\vc{b}$ as two of its sides.
 It we double $\vc{a}$, then the area doubles as well,
@@ -878,7 +878,8 @@ $\vc{S}$ according to
 The volume covector collects the information about the volume of the 3-parallelepiped,
 encapsulating it in a convenient form with known transformation properties. In particular,
 the statement and proof of Gauss's theorem in $3+1$ dimensions are greatly simplified
-by the use of this tool. The 3-volume covector, unlike the affine 3-volume, is defined in
+by the use of this tool (p.~\pageref{covector-used-in-gauss-proof}).
+The 3-volume covector, unlike the affine 3-volume, is defined in
 an absolute sense rather than in relation to some parallelepiped arbitrarily chosen as
 a standard. Both the covector and the affine volume fail to satisfy the ratio-comparison
 property V1 on p.~\pageref{volume-properties}, since we can't compare volumes unless they
