@@ -488,6 +488,7 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
+                           #      marked below as "# bug ------------- not really correct"??
     'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     # not yet implemeted: 
     #    translated=false
@@ -1117,7 +1118,9 @@ def chapter(number,title,label,caption='',options={})
     'width'=>'wide',       # 'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
     'sidecaption'=>false,
-    'special_width'=>nil   # used in CL4, to let part of the figure hang out into the margin
+    'special_width'=>nil,  # used in CL4, to let part of the figure hang out into the margin
+    'short_title'=>nil,      # used in TOC; if omitted, taken from title
+    'very_short_title'=>nil  # used in running headers; if omitted, taken from short_title
   }
   $section_level += 1
   $ch = number
@@ -1127,6 +1130,8 @@ def chapter(number,title,label,caption='',options={})
       options[option]=default
     end
   }
+  if options['short_title']==nil then options['short_title']=title end
+  if options['very_short_title']==nil then options['very_short_title']=options['short_title'] end
   opener = options['opener']
   if opener!='' then
     if !figure_exists_in_my_own_dir?(opener) then
@@ -1160,7 +1165,7 @@ def chapter_print(number,title,label,caption,options)
   has_opener = (opener!='')
   result = nil
   if !has_opener then
-    result = "\\mychapter{#{title}}"
+    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}"
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1

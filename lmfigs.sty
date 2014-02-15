@@ -56,7 +56,8 @@
   \newcommand{\mychaptercmdsb}{%
            \thispagestyle{fancy}\myeqnspacing\normalfont\normalsize%
   }
-  \newcommand{\mychapter}[1]{\mychaptercmdsa\chapter{#1}\mychaptercmdsb}
+  \newcommand{\mychapter}[3]{\mychaptercmdsa\chapter[#1]{#3}\mychaptercmdsb}
+       %...ignore #2 because only memoir supports it
   \newcommand{\mychapterwithopener}[3]{%
          \mychaptercmdsa%
          \noindent\widefignocaptionnofloat{#1}%

@@ -17,7 +17,7 @@ SHOW_ERRORS = \
 DO_PDFLATEX = echo "$(DO_PDFLATEX_RAW)" ; perl -e 'if (system("$(DO_PDFLATEX_RAW)")) {$(SHOW_ERRORS)}'
 HANDHELD_TEMP = handheld_temp
 BOOK = sr
-GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --title "Calculus" --toc-filter="[0-9]\.[0-9]" --title="General Relativity"
+GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --title "Special Relativity" --toc-filter="[0-9]\.[0-9]" --title="Special Relativity"
 
 default:
 	@make preflight
