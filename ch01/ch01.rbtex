@@ -19,8 +19,8 @@ the same time and still retain the ability to function.'' ---F.~Scott Fitzgerald
   fig(
     'spacetime',
     %q{%
-      Three views of spacetime. 1.~A typical graph of a particle's motion: in this case, oscillatory
-      motion. 2.~In relativity, it's customary to swap the axes, and 3 we can even remove
+      Three views of spacetime. 1.~A typical graph of a particle's motion: an oscillation.
+      2.~In relativity, it's customary to swap the axes, and 3 we can even remove
       the axes entirely.
     },
     {

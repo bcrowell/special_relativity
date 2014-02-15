@@ -226,6 +226,9 @@ simply a circle:
 \begin{equation*}
   __birdgrad(\phi)
 \end{equation*}
+As discussed in section \ref{subsec:covariant-derivative-notation} on
+p.~\pageref{subsec:covariant-derivative-notation}, this notation, and the
+notion of a gradient, have to be defined in a special way when the coordinates are not Minkowski.
 
 \begin{eg}{Cosmological observers}
 Time is relative, so what do people mean when they say that the universe is 13.8 billion years old?
@@ -824,8 +827,8 @@ as the point such that when the initial lattice segment $0\frac{1}{2}$ is extend
 on the lattice is 1. 
 The continuously varying variable constructed in this way is called an \emph{affine parameter}.\index{affine parameter}
 The time measured by a free-falling clock is an example of an affine parameter, as is the distance measured
-by the tick marks on a free-falling ruler. Since light rays travel along geodesics, the wave crests on a light wave
-can even be used analogously to the ruler's tick marks. The affine measurement of 1-volume violates V1,
+by the tick marks on a free-falling ruler. An affine parameter can only be defined along a straight
+world-line, not an arbitrary curve. The affine measurement of 1-volume violates V1,
 because it only allows us to compare distances that lie on $\ell$ or parallel to it. On the other hand,
 it has the advantage over metric measurement that it allows us to measure lengths along lightlike lines.
 

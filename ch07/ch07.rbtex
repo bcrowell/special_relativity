@@ -392,12 +392,14 @@ system is curvilinear. There are three ways to get around this:
 
 \noindent These issues become more acute in general relativity, where curvature of spacetime
 can make option 1 impossible. Option 3, called the covariant derivative,\index{covariant derivative}
-becomes an important tool in general relativity, but we won't go into it here.
-For now, just keep in mind that in non-Minkowski coordinates,
+is discussed in optional section \ref{sec:covariant-derivative} on p.~\pageref{sec:covariant-derivative}.
+If you aren't going to read that section, just keep in mind that in non-Minkowski coordinates,
 you cannot naively use changes in the components of a vector as a measure of a change in the vector
 itself.
 
 <% end_sec('xfn-derivatives') %>
+
+
 
 \begin{hwsection}
 
