@@ -315,7 +315,7 @@ a vector by a scalar produces something that again transforms in the right way t
       A playing card returns to its original state when rotated by 180 degrees. Its orientation,
       unlike the orientation of an arrow, doesn't behave as a vector, since it doesn't transform
       in the usual way under rotations. Under a 180-degree rotation, a vector should negate itself
-      rather that coming back to its original state.
+      rather than coming back to its original state.
     }
   )
 %>
