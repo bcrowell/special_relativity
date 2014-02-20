@@ -329,7 +329,7 @@ Our only example so far has been the spacetime
 displacement vector $\Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z)$.
 This vector transforms according to the Lorentz transformation. In general, we require as part
 of the definition of a (four-)vector that it transform in the usual way under both rotations
-and boosts (Lorentz transformation).
+and boosts (Lorentz transformations).
 We might now imagine that the next step should be
 to construct a velocity four-vector $\Delta \vc{r}/\Delta t$.
 But relativistically, the quantity $\Delta \vc{r}/\Delta t$ would not transform like a vector, e.g.,
