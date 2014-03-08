@@ -1160,6 +1160,7 @@ Because the events occur at different $x$'s, each is shifted in time relative to
 according to clocks synchronized in frame 2 ($t'$, the train).
 \end{eg}
 
+
 <% end_sec('lorentz-transformation') %>
 
 \begin{hwsection}

@@ -432,6 +432,69 @@ from observing anything on the other side. You may have heard about the event ho
 with a black hole. This example shows that we can have event horizons even when there is no
 gravity at all.\index{event horizon}\label{event-horizon}
 \end{eg}
+
+<% marg(-100) %>
+<%
+  fig(
+    'bell-spaceship-paradox',
+    %q{%
+      Example \ref{eg:bell-spaceship-paradox}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}\index{Bell's spaceship paradox}%
+\index{spaceship paradox}\index{paradox!Bell's spaceship}
+A difficult philosophical question is whether the time dilation and length contractions predicted by relativity
+are ``real.'' This depends, of course, on what one means by ``real.'' They are frame-dependent, i.e., observers
+in different frames of reference disagree about them. But this doesn't tell us much about their reality, since
+velocities are frame-dependent in Newtonian mechanics, but nobody worries about whether velocities are real.
+John Bell\index{Bell, John} (1928-1990) proposed the following thought experiment to physicists in the CERN cafeteria, and
+found that nearly all of them got it wrong. He took this as evidence that their intuitions had been misguided by
+the standard way of approaching this question of the reality of Lorentz contractions.
+
+Let two spaceships accelerate as shown in figure \figref{bell-spaceship-paradox}.
+Each ship is equipped with a yard-arm, and a thread is tied between the two arms,
+\subfigref{bell-spaceship-paradox}{1}. 
+Unaccelerated observer $\vc{o}$ uses Minkowski coordinates $(t,x)$, as shown in \subfigref{bell-spaceship-paradox}{2}.
+The accelerations, as judged by $\vc{o}$, are equal for the two ships as functions of time. (It doesn't
+matter very much what functions we choose. Figures
+\subfigref{bell-spaceship-paradox}{2} and \subfigref{bell-spaceship-paradox}{3} 
+have been drawn for the case where the proper accelerations
+are constant.)
+Does the thread break, due
+to Lorentz contraction?
+
+The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
+Lorentz contraction is a frame-dependent effect, and no such contraction would be observed 
+in the rockets' frames.
+The error in this reasoning is that the accelerations of of the two ships
+were specified to be equal in frame $\vc{o}$,
+not in the frames of the rockets. The Minkowski coordinates
+$(t',x')$ shown in \subfigref{bell-spaceship-paradox}{2}
+correspond to the frame of an inertial observer $\vc{o}'$ who
+is momentarily moving along with the trailing rocket after the acceleration has been going on for a while.
+The $x'$ axis is a line of simultaneity for $\vc{o}'$, and this axis intersects the leading
+ship's world-line at a point that that $\vc{o}$ considers to be later in time. Therefore
+$\vc{o}'$ says that the leading ship has reached a higher speed than the trailing one.
+In $\vc{o}'$, the two ships' accelerations are unequal.
+
+We can also see directly from the spacetime diagram that whereas length $L_1$ is 4 units
+as measured by an observer initially at rest relative to the thread, 
+$L_2$ is about 5 units as measured by $\vc{o}'$, who is at rest relative to the trailing end
+of the thread at a later time. Since $L_2$ is greater than the unstressed length $L_1$, the
+thread is under tension.
+
+Figure \subfigref{bell-spaceship-paradox}{3} is more in the spirit of
+Bell's analysis. In frame $\vc{o}$, the thread has initial, unstressed length $L$.
+If the thread had been attached only to the leading ship, then it would have trailed
+behind it, unstressed, with Lorentz-contracted length $L/\gamma$. Since its actual length
+according to $\vc{o}$ is still $L$, it has been stretched relative to its unstressed length.
+
+This presentation includes ideas contributed by physicsforums users tiny-tim and
+PeterDonis.
+\end{eg}
 <% end_sec('a-vector') %>
 <% begin_sec("Constraints on the velocity and acceleration vectors",nil,'v-a-constraints') %>
 <% begin_sec("Counting degrees of freedom",nil,'v-a-df') %>
