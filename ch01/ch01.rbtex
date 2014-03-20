@@ -1336,6 +1336,24 @@ agree on whether B had already happened?
   J could have caused A, but could not have been the departure of a spaceship like I that arrived later at A.
 <% end_hw %>
 
+<% begin_hw('sum-of-observer-vectors') %>
+(a) Given an observer whose world-line is along a four-vector $\vc{O}$,
+suppose we want to determine whether some other four-vector $\vc{P}$
+is also a possible world-line of an observer. Show that knowledge of
+the signs of the inner products $\vc{O}\cdot\vc{P}$ and
+$\vc{P}\cdot\vc{P}$  is necessary and sufficient to determine this.\hwendpart
+(b) Suppose that $\vc{U}$ and $\vc{V}$ are both observer-vectors. What would it mean
+physically to compute $\vc{U}+\vc{V}$?\hwendpart
+(c) For vectors as described in part b, determine the signs of
+\begin{equation*}
+  (\vc{U}+\vc{V})\cdot(\vc{U}+\vc{V})
+\end{equation*}
+and
+\begin{equation*}
+  (\vc{U}+\vc{V})\cdot\vc{U}
+\end{equation*}
+by multiplying them out. Interpret the result physically.
+<% end_hw %>
 
 
 \end{hwsection}
