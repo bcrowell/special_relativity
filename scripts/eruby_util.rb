@@ -710,8 +710,26 @@ def self_check(label,text)
   write_to_answer_data('self_check',label)
 end
 
+def read_whole_file(file)
+  x = ''
+  File.open(file,'r') { |f|
+    x = f.gets(nil) # nil means read whole file
+  }
+  return x
+end
+
+
+def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw
+  if difficulty==nil then difficulty=1 end
+  begin_hw(name,difficulty,options)
+  x = read_whole_file("ch#{$ch}/hw/#{name}.tex")
+  print x.sub(/\n+$/,'')+"\n" # exactly one newline at end before \end{homework}
+  if options['solution'] then hw_solution() end
+  end_hw
+end
+
 def begin_hw(name,difficulty=1,options={})
-  if difficulty==nil then difficulty=1 end # why doesn't this happen by default?
+  if difficulty==nil then difficulty=1 end
   if calc() then options['calc']=false end
   calc = ''
   if options['calc'] then calc='1' end

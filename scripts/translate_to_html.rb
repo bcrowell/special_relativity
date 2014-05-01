@@ -2166,7 +2166,7 @@ end
 $read_topic_map = false
 $topic_map = {}
 def find_topic(ch,book,own)
-  if book=='calc' || book=='genrel' then return own end
+  if book=='calc' || book=='genrel'  || book=='sr' || book=='fund' then return own end
 
   # Topic maps are also used in scripts/BookData.pm.
   if !$read_topic_map then
