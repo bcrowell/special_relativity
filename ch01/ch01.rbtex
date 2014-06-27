@@ -933,7 +933,7 @@ one part per thousand.
   fig(
     'cern-muon',
     %q{\emph{Left}: Apparatus used for the test of relativistic time dilation described
-       in example \ref{eg:cern-muons}. 
+       in example }+ref_workaround('eg:cern-muons')+%q{. 
        The prominent black and white blocks are large magnets surrounding a circular pipe
        with a vacuum inside. (c) 1974 by CERN.
        \emph{Right}: Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
@@ -1089,7 +1089,7 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
   fig(
     'schoolbus-with-x-t',
     %q{%
-      Example \ref{eg:garage-paradox}: In the garage's frame of reference, the bus
+      Example }+ref_workaround('eg:garage-paradox')+%q{: In the garage's frame of reference, the bus
       is moving, and can fit in the garage due to its length contraction. In the bus's frame of reference,
       the garage is moving, and can't hold the bus due to \emph{its} length contraction.
     },
@@ -1131,7 +1131,7 @@ through the back wall.
   fig(
     'clock-shifts',
     %q{%
-      Example \ref{eg:clock-shifts}.
+      Example }+ref_workaround('eg:clock-shifts')+%q{.
     },
     {
       # 'anonymous'=>true,

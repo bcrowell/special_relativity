@@ -387,8 +387,19 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 \newcommand{\hwnote}[1]{\noindent\emph{#1}}
 \newcommand{\currenthwlabel}{}
 \newcommand{\calccrud}{}
+%
+% http://tex.stackexchange.com/questions/175746/how-to-force-a-label-to-be-a-given-string
 \newenvironment{homework}[3]
-	{\refstepcounter{hwctr}\label{hw:#1}\noindent\textbf{\thehwctr}%
+  {%
+    \refstepcounter{hwctr}%
+    \begin{homeworkforcelabel}{#1}{#2}{#3}{\thehwctr}
+  }%
+  {%
+    \end{homeworkforcelabel}
+  }
+%
+\newenvironment{homeworkforcelabel}[4]
+	{\renewcommand{\@currentlabel}{#4}\label{hw:#1}\noindent\textbf{#4}%
 	\renewcommand{\hwdifficulty}{#2}%
 	\hwcleartrailingstuff
         \renewcommand{\currenthwlabel}{#1}

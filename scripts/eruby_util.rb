@@ -10,8 +10,7 @@
 #
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# This script is used in the freshman survey books (Light and Matter, ...) and in General Relativity.
-# It's not used in Calculus, which has a different layout.
+# This script is used in everything except for Brief Calculus, which has a different layout.
 
 # See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
 # figfeedbackNN, all.pos.
@@ -20,9 +19,13 @@ require 'json'
 
 $n_code_listing = 0
 $hw_number = 0
+$hw_number_in_block = 0
+$store_hw_label = []
+$hw_block = 0 # for style used in Fundamentals of Calculus
 $hw = []
 $hw_has_solution = []
 $hw_names_referred_to = []
+$hw_freeze = 0
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
@@ -75,17 +78,39 @@ def save_complaint(message)
   }
 end
 
+# returns contents or nil on error; for more detailed error reporting, see slurp_file_with_detailed_error_reporting()
+def slurp_file(file)
+  x = slurp_file_with_detailed_error_reporting(file)
+  return x[0]
+end
+
+# returns [contents,nil] normally [nil,error message] otherwise
+def slurp_file_with_detailed_error_reporting(file)
+  begin
+    File.open(file,'r') { |f|
+      t = f.gets(nil) # nil means read whole file
+      if t.nil? then t='' end # gets returns nil at EOF, which means it returns nil if file is empty
+      return [t,nil]
+    }
+  rescue
+    return [nil,"Error opening file #{file} for input: #{$!}."]
+  end
+end
+
+
 #--------------------------------------------------------------------------
 config_file = 'book.config'
 if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
 $config = {
+  # In the following, nil means that there is no default and it's an error if it's not given explicitly.
   'titlecase_above'=>nil, # e.g., 1 means titlecase for chapters but not for sections or subsections
+  'hw_block_style'=>0 # 1 means hw numbered like a7, as in Fundamentals of Calculus
 }
 File.open(config_file,'r') { |f|
   c = f.gets(nil) # nil means read whole file
   c.scan(/(\w+),(.*)/) { |var,value|
     if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
-    if {'titlecase_above'=>nil}.has_key?(var) then
+    if {'titlecase_above'=>nil,'hw_block_style'=>nil}.has_key?(var) then
       value = value.to_i
     end
     $config[var] = value
@@ -108,21 +133,19 @@ refs_file = 'save.ref'
 $ref = {}
 n_defs = {}
 if File.exist?(refs_file) then # It's not an error if the file doesn't exist yet; references are just not defined yet, and that's normal for the first time on a fresh file.
-  File.open(refs_file,'r') do |f|
-    # lines look like this:
-    #    fig:entropygraphb,h,255
-    t = f.gets(nil) # nil means read whole file
-    t.scan(/(.*),(.*),(.*)/) { |label,number,page|
-      if $ref[label]!=nil then
-        if $last_chapter==true && $ref[label][0]!=number && $ref[label][1]!=page.to_i && label=~/\Afig:/ then 
-          save_complaint("******* warning: figure #{label} defined both as figure #{$ref[label][0]} on p. #{$ref[label][1]} and as figure #{number} on p. #{page.to_i}, eruby_util.rb reading #{refs_file}")
-        end
+  # lines look like this:
+  #    fig:entropygraphb,h,255
+  t = slurp_file(refs_file)
+  t.scan(/(.*),(.*),(.*)/) { |label,number,page|
+    if $ref[label]!=nil then
+      if $last_chapter==true && $ref[label][0]!=number && $ref[label][1]!=page.to_i && label=~/\Afig:/ then 
+        save_complaint("******* warning: figure #{label} defined both as figure #{$ref[label][0]} on p. #{$ref[label][1]} and as figure #{number} on p. #{page.to_i}, eruby_util.rb reading #{refs_file}")
       end
-      $ref[label] = [number,page.to_i]
-      if n_defs[label]==nil then n_defs[label]=0 end
-      n_defs[label] = n_defs[label]+1
-    }
-  end
+    end
+    $ref[label] = [number,page.to_i]
+    if n_defs[label]==nil then n_defs[label]=0 end
+    n_defs[label] = n_defs[label]+1
+  }
 end
 avg = 0
 n = 0
@@ -287,6 +310,15 @@ def marg_print(delta_y)
     end # if fig_file exists
     # In the following, I'm converting from pdfsavepos's coordinate system to textpos's; assumes calc package is available.
     print "\\begin{textblock*}{\\marginfigwidth}(#{x}mm,\\paperheight-#{y}mm)%\n"
+end
+
+# options is normally {}
+def marginbox(delta_y,name,caption,options,text)
+  options['text'] = text
+  options['textbox'] = true
+  marg(delta_y)
+  fig(name,caption,options)
+  end_marg
 end
 
 def mm(x)
@@ -488,8 +520,8 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
-                           #      marked below as "# bug ------------- not really correct"??
-    'raw'=>false           # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
+    'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
+    'textbox'=>false       # marginbox(), as used in Fund.
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -518,6 +550,9 @@ def fig(name,caption=nil,options={})
     end
   }
   width=options['width']
+  if options['narrowfigwidecaption'] then
+    options['width']='wide'; options['sidecaption']=true; options['float']=false; options['anonymous']=false
+  end
   if options['float']=='default' then
     options['float']=(width=='wide' or width=='fullpage')
   end
@@ -604,7 +639,11 @@ def fig_print(name,caption,options,dir)
   #============================================================================
   #----------------------- text ----------------------
   if options['text']!=nil then
-    spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
+    if options['textbox'] then
+      spit("\\startmargintextbox{#{name}}{#{caption}}\n#{options['text']}\n\\finishmargintextbox{#{name}}\n")
+    else
+      spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
+    end
   end
   #----------------------- narrow ----------------------
   if width=='narrow' and options['text']==nil then
@@ -698,6 +737,7 @@ def spit(tex)
   $fig_handled = true
 end
 
+# use fatal_error if not directly related to a figure
 def die(name,message)
   $stderr.print "eruby_util: figure #{name}, #{message}\n"
   exit(-1)
@@ -718,12 +758,89 @@ def read_whole_file(file)
   return x
 end
 
+#--------------------------------------------------
+# code for numbering style used in Fundamentals of Calculus
+#--------------------------------------------------
 
-def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw
+def hw_block_style
+  return $config['hw_block_style']==1 # set in book.config
+end
+
+# first block is 0<->a
+def integer_to_base24(i)
+  if i<0 then fatal_error("negative i in integer_to_base24") end
+  if i<24 then return "abcdefghijkmnpqrstuvwxyz"[i] end
+  return integer_to_base24(i/24)+integer_to_base24(i%24)
+end
+
+def base24_to_integer(s)
+  if s.length==0 then fatal_error("null string in base24_to_integer") end
+  if s.length==1 then
+    i = "abcdefghijkmnpqrstuvwxyz".index(s)
+    if i.nil? then fatal_error("illegal character #{s} in base24_to_integer") end
+    return i
+  end
+  return base24_to_integer(s[0,s.length-1])*24+base24_to_integer(s[s.length-1])
+end
+
+# test integer_to_base24() and base24_to_integer()
+if false then
+  [[0,'a'],[1,'b'],[23,'z'],[24,'ba']].each { |x|
+    i = x[0]
+    s = x[1]
+    unless integer_to_base24(i)==s then 
+      $stderr.print "integer_to_base24("+i.to_s+") gives "+integer_to_base24(i)+", should have given "+s+"\n"
+      exit(-1)
+    end
+    unless base24_to_integer(s)==i then 
+      $stderr.print "base24_to_integer("+s+") gives "+base24_to_integer(s).to_s+", should have given "+i+"\n"
+      exit(-1)
+    end
+  }
+end
+
+def hw_freeze
+  if $hw_freeze<0 then fatal_error("hw_freeze invoked, and $hw_freeze already less than 0? ") end
+  $hw_freeze = $hw_freeze+1
+end
+
+def hw_end_freeze
+  $hw_freeze = $hw_freeze-1
+  if $hw_freeze<0 then fatal_error("hw_end_freeze invoked, and $hw_freeze already 0? ") end
+end
+
+def get_hw_block
+  return integer_to_base24($hw_block)
+end
+
+def hw_label
+  label = $hw_number.to_s
+  if hw_block_style() then label = get_hw_block+$hw_number_in_block.to_s end 
+  return label
+end
+
+# control of letter that labels block
+# hw_block ... bumps by 3
+# hw_block(1) ... bumps by 1
+# hw_block('b') ... sets it to 'b'
+def hw_block(*arg)
+  x = arg[0]
+  $hw_number_in_block = 0
+  print %q~\vspace{\stretch{2}}~
+     # ... twice as big as what's at the end of homeworkforcelabel in lmcommon.sty
+  if x.nil? then $hw_block = $hw_block+3; return end
+  if x.class() == Fixnum then $hw_block = $hw_block+x; return end
+  if x.class() == String then $hw_block = base24_to_integer(x); return end
+  fatal_error("error in hw_block, arg has class=#{x.class()}")
+end
+
+#--------------------------------------------------
+
+def hw(name,options={},difficulty=1) # used in Fundamentals of Calculus, which has all hw in chNN/hw; other books use begin_hw
   if difficulty==nil then difficulty=1 end
   begin_hw(name,difficulty,options)
   x = read_whole_file("ch#{$ch}/hw/#{name}.tex")
-  print x.sub(/\n+$/,'')+"\n" # exactly one newline at end before \end{homework}
+  print x.sub(/\n+\Z/,'')+"\n" # exactly one newline at end before \end{homework}
   if options['solution'] then hw_solution() end
   end_hw
 end
@@ -733,10 +850,13 @@ def begin_hw(name,difficulty=1,options={})
   if calc() then options['calc']=false end
   calc = ''
   if options['calc'] then calc='1' end
-  print "\\begin{homework}{#{name}}{#{difficulty}}{#{calc}}"
   $hw_number += 1
+  $hw_number_in_block += 1
   $hw[$hw_number] = name
   $hw_has_solution[$hw_number] = false
+  label = hw_label()
+  $store_hw_label[$hw_number] = label
+  print "\\begin{homeworkforcelabel}{#{name}}{#{difficulty}}{#{calc}}{#{label}}"
 end
 
 def hw_solution()
@@ -849,7 +969,7 @@ def hw_ref(name)
 end
 
 def end_hw()
-  print "\\end{homework}"
+  print "\\end{homeworkforcelabel}"
 end
 
 def hint_text(label,text=nil)
@@ -1068,6 +1188,9 @@ def remove_titlecase(title)
   foo.gsub!(/e=mc/,"E=mc") # LM 25
   foo.gsub!(/ke=/,"KE=") # Mechanics 12.4
   foo.gsub!(/k=/,"K=") # Mechanics 12.4; in case I switch from KE to K
+  foo.gsub!(/l'h/,"L'H") # L'Hopital; software isn't smart enough to handle apostrophe and housetop accent
+  foo.gsub!(/L'h/,"L'H")
+  foo.gsub!(/ i /," I ")
   # logic above can't handle multi-word patterns
   proper_nouns()["multiword"].each { |proper| # e.g., proper="Big Bang"
     foo.gsub!(/#{Regexp::quote(proper.downcase)}/) {proper} 
@@ -1104,9 +1227,9 @@ def end_chapter
     book = ENV['BK']
     chnum = $ch.to_i
     if $ch=='002' then chnum=0 end
-    1.upto($hw_number) { |i|
+    1.upto($hw_number) { |i| # output doesn't always get sorted correctly; see fund/solns/prep_solutions for perl code that sorts it correctly
       name = $hw[i]
-      f.print "#{book},#{chnum},#{i},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
+      f.print "#{book},#{chnum},#{$store_hw_label[i]},#{name},#{$hw_has_solution[i]?'1':'0'}\n"
     }
   }
   mv = whichever_file_exists(['mv_silent','../mv_silent'])

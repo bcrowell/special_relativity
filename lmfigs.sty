@@ -282,6 +282,24 @@
 	\label{fig:#1} %
         \normalfont\normalsize
 }
+\newcommand{\starttextbox}[1]{%
+          % #1 = name
+        \recordpos{fig:#1}{begintextfig}\break% Without the break, we record the height at the middle of the table, not the top.
+}
+\newcommand{\textboxbody}[2]{
+          % #1 = title
+          % #2 = text
+        \noindent%
+        \refstepcounter{textboxctr}
+        \begin{shaded}
+          \noindent \ensuremath{\triangleright} Box \thetextboxctr \quad \textbf{#1}\\
+          #2
+        \end{shaded}
+}
+\newcommand{\finishtextbox}[1]{%
+          % #1 = name
+	\break\recordpos{fig:#1}{endtextfig}\label{fig:#1}\label{textbox:#1}\normalfont\normalsize
+}
 \newcommand{\figref}[1]{\formatfigref{\ref{fig:#1}}}
 \newcommand{\subfigref}[2]{\figref{#1}/#2}
 \newcommand{\fignocaption}[2]{%

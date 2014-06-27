@@ -18,6 +18,7 @@ DO_PDFLATEX = echo "$(DO_PDFLATEX_RAW)" ; perl -e 'if (system("$(DO_PDFLATEX_RAW
 HANDHELD_TEMP = handheld_temp
 BOOK = sr
 GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --title "Special Relativity" --toc-filter="[0-9]\.[0-9]" --title="Special Relativity"
+PROBLEMS_CSV = problems.csv
 
 default:
 	@make preflight
@@ -83,7 +84,7 @@ very_clean:
 
 preflight:
 	@@chmod +x scripts/custom/*
-	@perl -e 'foreach $$f(<scripts/custom/*>) {system($$f)}'
+	@perl -e 'if (-e "scripts/custom/enable") {foreach $$f(<scripts/custom/*.pl>) {$$c="$$f $(BOOK) $(PROBLEMS_CSV)"; system($$c)}}'
 	@perl -e 'foreach $$f("scripts/run_eruby.pl","scripts/equation_to_image.pl","scripts/latex_table_to_html.pl","scripts/harvest_aux_files.rb","scripts/check_for_colliding_figures.rb","scripts/translate_to_html.rb","mv_silent") {die "file $$f is not executable; fix this with chmod +x $$f" unless -e $$f && -x $$f}'
 
 post:
@@ -139,4 +140,4 @@ problems:
 	cat ch*_problems.csv | sort >temp.csv
 	scripts/sort_problems.pl <temp.csv >problems.csv
 	rm temp.csv
-	ssed -R -e "s/(\w*),(\d+),(\d+),(.*),\d/m4_define(__hw_\1_\2_\4,\3)m4_dnl/g" problems.csv >problems.m4
+	ssed -R -e "s/(\w*),(\d+),([a-z0-9]+),(.*),\d/m4_define(__hw_\1_\2_\4,\3)m4_dnl/g;s/\-/_/g" problems.csv >problems.m4
