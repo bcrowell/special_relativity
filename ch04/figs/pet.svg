@@ -99,7 +99,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       sodipodi:absref="/home/bcrowell/Documents/writing/books/physics/share/relativity/figs/pet-bitmaps/pet-photo.jpg"
+       sodipodi:absref="pet-bitmaps/pet-photo.jpg"
        xlink:href="pet-bitmaps/pet-photo.jpg"
        width="184.25197"
        height="135.33817"
@@ -107,7 +107,7 @@
        x="74.240738"
        y="325.30893" />
     <image
-       sodipodi:absref="/home/bcrowell/Documents/writing/books/physics/share/relativity/figs/pet-bitmaps/pet-ring.png"
+       sodipodi:absref="pet-bitmaps/pet-ring.png"
        xlink:href="pet-bitmaps/pet-ring.png"
        transform="scale(-1,1)"
        width="157"
@@ -124,7 +124,7 @@
        d="M 170.4698,570.65931 L 145.3335,603.10799"
        id="path2502" />
     <image
-       sodipodi:absref="/home/bcrowell/Documents/writing/books/physics/share/relativity/figs/pet-bitmaps/pet-body-scan.jpg"
+       sodipodi:absref="pet-bitmaps/pet-body-scan.jpg"
        xlink:href="pet-bitmaps/pet-body-scan.jpg"
        width="184.25197"
        height="120.59016"

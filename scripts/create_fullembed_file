@@ -35,7 +35,7 @@ while ($log =~ /{([^}]+\.enc)}/g) {
   $enc =~ s/\n//g;
   if ($enc =~ /([^\/]+)\.enc/) {
     my $tail = $1;
-    #print "enc=$tail\n";
+    print STDERR "enc=$tail\n";
     push @enc,$tail;
   }
 }
@@ -47,7 +47,7 @@ while ($log =~ /<([^>]+\.pfb)>/g) {
   $pfb =~ s/\n//g;
   if ($pfb =~ /([^\/]+\.pfb)/) {
     my $tail = $1;
-    #print "$tail\n";
+    print STDERR "pfb=$tail\n";
     push @pfb,$tail;
   }
 

@@ -56,14 +56,14 @@
        y="241.60051"
        x="92.674667"
        id="image3063"
-       xlink:href="file:///home/bcrowell/Documents/writing/books/sr/ch03/figs/eclipse-bitmaps/eclipse.jpg"
+       xlink:href="eclipse-bitmaps/eclipse.jpg"
        height="305.09427"
        width="393.58154" />
     <image
        y="241.60051"
        x="509.27448"
        id="image3125"
-       xlink:href="file:///home/bcrowell/Documents/writing/books/sr/ch03/figs/eclipse-bitmaps/newspaper-eclipse.png"
+       xlink:href="eclipse-bitmaps/newspaper-eclipse.png"
        height="305.09427"
        width="162.04831" />
   </g>

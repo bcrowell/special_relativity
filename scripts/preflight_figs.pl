@@ -7,7 +7,7 @@ use strict;
 #   qpdf (ubuntu package qpdf)
 #   pdffonts (ubuntu package poppler-utils)
 
-my $expected_files = 120;
+my $expected_files = 90;
 my @files = <*/figs/*.svg>;
 
 my $count_svg = 0;

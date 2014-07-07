@@ -336,14 +336,18 @@ dots in a square lattice and vectors $\vc{o}_2$ and $\vc{s}_2$ at right angles. 
 vectors $\vc{o}_1$ and $\vc{s}_1$ to be opened up at an oblique angle and the white lattice to be non-square.
 
 Now suppose we had \emph{not} made area conserved. What if a region containing 100 white dots had
-held 200 black ones? But a boost of velocity $v$ is the same as a flip of the
-spatial dimension followed by a $-v$ boost and another flip. (If P2 failed, then it might not be
-possible to flip a rigid shape in this way.)
-Therefore this would violate one or the other of two principles:
-(1) that all frames of reference are equally valid (there is no ``preferred frame'' such as that of
-the ether); or (2) that space is isotropic, meaning that it has the same properties in all directions
-(neither $+x$ nor $-x$ is a preferred direction).
-We conclude that if these two symmetry principles hold,
+held 200 black ones? Dot-counting is how the observers define area, so
+if this happened, they would have to agree that a boost by $v$, from frame 1 to frame 2,
+doubled the area of the gray region.
+Because spacetime is flat (P2) and homogeneous (P3), it is possible to take a geometrical shape
+inscribed in a certain region of spacetime and move, rotate, or flip it.
+And by isotropy of space (P3), a boost of velocity $v$ is the same as a flip of the
+spatial dimension followed by a $-v$ boost and another flip.
+Area is conserved by a flip, so we find that a boost by $-v$, from frame 2 to frame 1,
+\emph{also} doubles area. Thus a $+v$ boost followed by a $-v$
+boost would cause a quadrupling of area. But a pair of equal and opposite boosts cancels out, so this
+is a contradiction. 
+We conclude that if these symmetry principles hold,
 then spacetime area is the same for any two observers, so it is an invariant.
 
 It may seem unnecessarily clumsy that we've used the idea of counting dots in the above argument,
