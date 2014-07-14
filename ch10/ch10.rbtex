@@ -394,7 +394,7 @@ is the cause of the magnetic field $\vc{B}'$.
 <% begin_sec("Invariants",nil,'em-invariants') %>
 We've seen cases before in which an invariant can be formed from a rank-1 tensor. The square of the proper
 time corresponding to a timelike spacetime displacement $\vc{r}$ is $\vc{r}\cdot\vc{r}$ or, in the index
-notation introduced in section \ref{sec:abstract-index}, $r^ar_a$. From the momentum tensor we can
+notation introduced in section \ref{subsec:abstract-index}, $r^ar_a$. From the momentum tensor we can
 construct the square of the mass $p^ap_a$.
 
 There are good reasons to believe that something similar can be done with the 
