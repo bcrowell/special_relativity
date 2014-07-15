@@ -696,7 +696,7 @@ loops, except for one of them, which begins at a point in space and extends off 
 Drawing the large box, 1, we find that $\Phi_{B,1}$, the flux of the magnetic field through
 the box, is not zero, because a line leaves the box but none come in. But the same discrepancy
 could have been detected with the smaller box 2, or in fact with an arbitrarily small box
-containing source of the field line. In other words, the equation $\Phi_B=0$ is nonlocal, but
+containing the source of the field line. In other words, the equation $\Phi_B=0$ is nonlocal, but
 if it is to hold for any surface, then it must also hold locally, in the limit of an arbitrarily
 small surface. This purely \emph{local} law of physics can be expressed using the three-dimensional
 version of the divergence,\index{divergence} introduced on p.~\pageref{divergence}:

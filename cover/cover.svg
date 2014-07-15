@@ -81,9 +81,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.4135137"
-     inkscape:cx="362.69016"
-     inkscape:cy="934.4823"
+     inkscape:zoom="1.30946"
+     inkscape:cx="804.0846"
+     inkscape:cy="570.7187"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1723,7 +1723,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1736,7 +1736,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 37.22494,191.91839 a 2.805795,2.805795 0 1 1 -0.0014,0"
+       d="m 37.22494,191.91839 c 1.549597,7.7e-4 2.80517,1.25759 2.8044,2.80719 -7.7e-4,1.54959 -1.257592,2.80517 -2.807189,2.8044 -1.549598,-7.7e-4 -2.805171,-1.25759 -2.804401,-2.80719 7.7e-4,-1.54906 1.256741,-2.8044 2.805794,-2.8044"
        sodipodi:start="4.712886"
        sodipodi:end="10.995574"
        sodipodi:open="true"
@@ -1749,7 +1749,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1762,7 +1762,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1780,7 +1780,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1793,7 +1793,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1806,7 +1806,7 @@
        sodipodi:cy="194.72418"
        sodipodi:rx="2.805795"
        sodipodi:ry="2.805795"
-       d="m 36.081585,192.16129 a 2.805795,2.805795 0 1 1 -0.0012,5.2e-4"
+       d="m 36.081585,192.16129 c 1.415446,-0.63069 3.074164,0.005 3.704852,1.42093 0.630687,1.41545 -0.0055,3.07417 -1.420932,3.70485 -1.415446,0.63069 -3.074164,-0.005 -3.704851,-1.42093 -0.630483,-1.41498 0.0051,-3.07319 1.419756,-3.70433"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1830,7 +1830,7 @@
        sodipodi:cy="973.57251"
        sodipodi:rx="64.747963"
        sodipodi:ry="64.747963"
-       d="m 316.10964,914.42991 a 64.747963,64.747963 0 1 1 -0.0271,0.0121"
+       d="m 316.10964,914.42991 c 32.66356,-14.55406 70.941,0.12659 85.49505,32.79015 14.55406,32.66355 -0.12658,70.94094 -32.79014,85.49504 -32.66355,14.5541 -70.94099,-0.1266 -85.49505,-32.79014 -14.54934,-32.65296 0.11674,-70.91865 32.76303,-85.48296"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1843,7 +1843,7 @@
        sodipodi:cy="973.57251"
        sodipodi:rx="64.747963"
        sodipodi:ry="64.747963"
-       d="m 316.10964,914.42991 a 64.747963,64.747963 0 1 1 -0.0271,0.0121"
+       d="m 316.10964,914.42991 c 32.66356,-14.55406 70.941,0.12659 85.49505,32.79015 14.55406,32.66355 -0.12658,70.94094 -32.79014,85.49504 -32.66355,14.5541 -70.94099,-0.1266 -85.49505,-32.79014 -14.54934,-32.65296 0.11674,-70.91865 32.76303,-85.48296"
        sodipodi:start="4.2932211"
        sodipodi:end="10.575948"
        sodipodi:open="true"
@@ -1973,41 +1973,37 @@
          id="tspan4073"
          x="1016.0586"
          y="242.5584">Crowell</tspan></text>
-    <g
-       id="g4281"
-       transform="translate(-1051.75,0)">
-      <rect
-         y="39.862259"
-         x="1828"
-         height="1012.5"
-         width="40.540001"
-         id="rect4244"
-         style="fill:#418a93;fill-opacity:1;stroke:none" />
-      <text
-         transform="matrix(0,1,-1,0,0,0)"
-         sodipodi:linespacing="125%"
-         id="text4067-8"
-         y="-1839.9966"
+    <rect
+       style="fill:#418a93;fill-opacity:1;stroke:none"
+       id="rect4244"
+       width="40.540001"
+       height="1012.5"
+       x="776.25"
+       y="39.862259" />
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold Italic"
+       x="470.60074"
+       y="-785.95557"
+       id="text4067-8"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,1,-1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4069-7"
          x="470.60074"
-         style="font-size:32px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold Italic"
-         xml:space="preserve"><tspan
-           y="-1839.9966"
-           x="470.60074"
-           id="tspan4069-7"
-           sodipodi:role="line">Special Relativity</tspan></text>
-      <text
-         transform="matrix(0,1,-1,0,0,0)"
-         sodipodi:linespacing="125%"
-         id="text4071-9"
-         y="-1836.8325"
+         y="-785.95557">Special Relativity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="272.20004"
+       y="-785.08252"
+       id="text4071-9"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,1,-1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4073-0"
          x="272.20004"
-         style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-         xml:space="preserve"><tspan
-           y="-1836.8325"
-           x="272.20004"
-           id="tspan4073-0"
-           sodipodi:role="line">Crowell</tspan></text>
-    </g>
+         y="-785.08252">Crowell</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot4273"
@@ -2018,7 +2014,7 @@
            height="1095.2657"
            x="1701.9204"
            y="-45.410137" /></flowRegion><flowPara
-         id="flowPara4279"></flowPara></flowRoot>    <text
+         id="flowPara4279" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.24999988px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
        x="306.05978"
