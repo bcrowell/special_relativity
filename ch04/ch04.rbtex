@@ -691,8 +691,7 @@ We observe that electromagnetic waves are always polarized transversely, never l
 Such a constraint can only apply to a wave that propagates at $c$. If it applied to a wave that
 propagated at less than $c$, we could move into a frame of reference in which the wave was at rest.
 In this frame, all directions in space would be equivalent, and there would be no way to decide which
-directions of polarization should be permitted. For a wave that propagates at $c$, there is no frame
-in which the wave is at rest (see section \ref{sec:ftl-frames}).
+directions of polarization should be permitted.
 \end{eg}
 <% end_sec('massless-go-at-c') %>
 <% begin_sec("No global conservation of energy-momentum in general relativity",nil,'gr-no-e-cons') %>
@@ -771,7 +770,7 @@ that the beads have initial velocities $0$ and $-0.8$ in this frame, and if we c
 total energy-momentum vector, on surface of simultaneity 2 in figure \figref{beads},
 we get $\vc{p}'=(2.67,-1.33)$. This is exactly what we would have
 gotten by taking the original vector $\vc{p}$ and pushing it through a Lorentz transformation.
-That is, the energy-momentum vector seems to be acting like a good four-vector, even through the system
+That is, the energy-momentum vector seems to be acting like a good four-vector, even though the system
 has finite spatial extent and contains parts that move at relativistic speeds. In particular,
 this implies that the system has the same mass $m=\sqrt{2.31}$ as in $\vc{o}$, since $m$ is the
 norm of the $\vc{p}$ vector, and the norm of a vector stays the same under a Lorentz transformation.
