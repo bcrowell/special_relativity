@@ -229,7 +229,7 @@ data point is omitted.)
 
 If we believed in Newton's laws, then the electrons would have an acceleration $a_N=Ee/m$, which would
 be constant if, as we pretend for the moment, the field $E$ were constant. (The electric field inside a Van de
-Graaff accelerator is not really quite constant, but this will turn out not to matter.) The Newtonian
+Graaff accelerator is not really quite uniform, but this will turn out not to matter.) The Newtonian
 prediction for the time over which this acceleration occurs is $t_N=\sqrt{2m\ell_1/eE}$.
 An acceleration $a_N$ acting for a time $t_N$ should produce a final velocity
 $a_N t_N=\sqrt{2eV/m}$, where $V=E\ell_1$ is the voltage difference. (By conservation
@@ -756,7 +756,7 @@ located at equal distances $\ell$ from the origin along the $y$ and $x$ axes.
 External forces of equal strength act in the directions shown by the arrows so as to produce
 accelerations of magnitude $\alpha$. The system is in rotational equilibrium $\der L/\der t=0$,
 because the rate at which
-particle 1 picks clockwise angular momentum is the same as the rate at which 2 acquires it
+particle 1 picks up clockwise angular momentum is the same as the rate at which 2 acquires it
 in the counterclockwise direction.
 
 Now change to the frame of reference $\vc{o}'$, moving to the right relative to $\vc{o}$ at velocity $v$.

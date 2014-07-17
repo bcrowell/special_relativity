@@ -7,6 +7,8 @@ use strict;
 # Looks for absolute links in svg file and makes them relative.
 # Also checks whether files linked to exist.
 
+# http://superuser.com/questions/742356/how-to-enforce-relative-file-paths
+
 use File::Spec; 
 use File::Basename;
 use Cwd 'abs_path';
