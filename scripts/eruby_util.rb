@@ -57,6 +57,7 @@ $section_level = -1
 $section_label_stack = [] # see begin_sec() and end_sec(); unlabeled sections have ''
 $section_title_stack = []
 $section_most_recently_begun = nil # title of the section that was the most recent one successfully processed
+$conditional_stack = []
 
 def fatal_error(message)
   $stderr.print "eruby_util.rb: #{message}\n"
@@ -194,6 +195,27 @@ end
 
 def dir
   return ENV['DIR']
+end
+
+# argument can be 0, 1, true, or false; don't do, e.g., !__sn, because in ruby !0 is false
+def begin_if(condition)
+  if condition.class() == Fixnum then
+    if condition==1 then condition=true else condition=false end
+  end
+  if condition.class()!=TrueClass && condition.class()!=FalseClass then
+    die('(begin_if)',"begin_if called with argument of class #{condition.class()}, should be Fixnum, true, or false")
+  end
+  $conditional_stack.push(condition)
+  if !condition then
+    print "\n\\begin{comment}\n" # requires comment package; newlines before and after are required by that package
+  end
+end
+
+def end_if
+  condition = $conditional_stack.pop
+  if !condition then
+    print "\n\\end{comment}\n" # requires comment package; newlines before and after are required by that package
+  end
 end
 
 def pos_file
@@ -1022,21 +1044,6 @@ def handle_answer_text_caching(label,text,type)
     text.gsub!(/\n+\Z/) {"\n\n"} # exactly two newlines at the end
   end
   return text
-end
-
-def conditionally_include_file(condition,filename)
-  if !condition then return end
-  if FileTest.exist?(filename) then
-    File.open(filename,'r') { |f|
-      text = f.gets(nil) # nil means slurp whole file
-      if text =~ /<%/ then 
-        fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} contains eruby")
-      end
-      print text
-    }
-  else
-    fatal_error("error in eruby_util.rb, conditionally_include_file: file #{filename} doesn't exist")
-  end
 end
 
 def part_title(title)

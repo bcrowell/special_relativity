@@ -1385,6 +1385,15 @@ Derive the equation $T=\sqrt{3\pi/G\rho}$ given on page \pageref{pulsar-density}
 of a rotating, spherical object that results in zero apparent gravity at its surface.
 <% end_hw %>
 
+<% begin_hw('neutrino-antineutrino') %>
+Neutrinos with energies of $\sim1\ \zu{MeV}$ (the typical energy scale of nuclear physics)
+make up a significant part of the matter in our universe.
+If a neutrino and an antineutrino annihilate each other, the product is
+two back-to-back photons whose energies are equal in the center-of-mass frame.
+Should astronomers be able to detect these photons by selecting only those with
+the correct energy?
+<% end_hw %>
+
 \end{hwsection}
 
 <% end_chapter %>

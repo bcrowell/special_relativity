@@ -5,7 +5,7 @@ Compiling the book into pdf format is fairly easy on a Linux
 machine. Basically you just need to install some open-source
 software. The following are the relevant packages on a Debian-based
 system such as Ubuntu:
-  texlive-full pdftk m4 inkscape ruby1.9
+  texlive-full qpdf m4 inkscape ruby1.9
 
 Make sure you have at least inkscape 0.47 and ruby 1.9. As of
 January 2010, ruby 1.9 is the stable version, and it's available
