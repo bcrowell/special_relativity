@@ -206,7 +206,7 @@ We make the following additional assumptions:
 \begin{itemize}
 \item[P3] \emph{Spacetime is homogeneous and isotropic.} No time or place has special properties that make it distinguishable from other points, nor is one
                   direction in space distinguishable from 
-                  another.\footnote{For the experimental evidence on isotropy, see \url{http://www.edu-observatory.org/physics-faq/Relativity/SR/experiments.html#Tests_of_isotropy_of_space}.}
+                  another.\footnote{For the experimental evidence on isotropy, see \url{http://www.edu-observatory.org/physics-faq/Relativity/SR/experiments.html\#Tests_of_isotropy_of_space}.}
 \item[P4] \emph{Inertial frames of reference exist.} These are frames in which particles move at constant velocity if not 
                   subject to any forces.\footnote{Defining this no-force rule turns out to be tricky when
                   it comes to gravity. As discussed in ch.~\ref{ch:inertia}, this apparently minor technicality

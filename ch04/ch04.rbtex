@@ -643,7 +643,8 @@ from 0 in the initial state to at least $2mc^2$ in the final state.
 \end{eg}
 
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
-Massless particles always travel at $c(=1)$. For suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
+Massless particles always travel at $c(=1)$. For
+suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
 other observer could be at rest relative to the particle. In such a frame,
 the particle's momentum $p$ is zero by symmetry, since there is no preferred
 direction for it. Then $E^2=p^2+m^2$ is zero as well, so the particle's entire energy-momentum
