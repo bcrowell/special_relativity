@@ -19,8 +19,8 @@
 % enumerate is for lc roman numerals, which I sometimes want so items don't look like equation numbers
 \StartSaveCommands % for learn-cmd-syntax
 %====================== pull in sub-packages =====================================================
-\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{lmlanguage,lmlayout,lmcommon,lmfigs,lmenvironments}
+% \RequirePackage[hidelinks]{hyperref} % doesn't work correctly, see meki, latex notes
 %=====================================================================================
 % In DP, we use italics for figref, but in LM that would look too much like an algebra
 % symbol, so no italics.

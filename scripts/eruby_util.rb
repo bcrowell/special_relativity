@@ -1313,8 +1313,12 @@ def chapter_print(number,title,label,caption,options)
   opener = options['opener']
   has_opener = (opener!='')
   result = nil
+  append = "\\anchor{anchor-#{label}}" # navigator package
+  File.open('brief-toc-new.tex','a') { |f|
+    f.print "\\brieftocentry{#{label}}{#{title}} \\\\\n" # LM and Me. don't use brief-toc-new.tex
+  }
   if !has_opener then
-    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}"
+    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1
@@ -1324,26 +1328,26 @@ def chapter_print(number,title,label,caption,options)
       if caption!='' then
         if !options['sidecaption'] then
           if options['special_width']==nil then
-            result = "\\mychapterwithopener{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopener{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           else
-            result = "\\specialchapterwithopener{#{options['special_width']}}{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\specialchapterwithopener{#{options['special_width']}}{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           end
         else
           if options['anonymous'] then
-            result = "\\mychapterwithopenersidecaptionanon{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopenersidecaptionanon{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           else
-            result = "\\mychapterwithopenersidecaption{#{opener}}{#{caption}}{#{title}}#{ol}"
+            result = "\\mychapterwithopenersidecaption{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
           end
         end
       else
-        result = "\\mychapterwithopenernocaption{#{opener}}{#{title}}#{ol}"
+        result = "\\mychapterwithopenernocaption{#{opener}}{#{title}}#{ol}#{append}"
       end
     else
       if options['anonymous'] then
         if caption!='' then
-          result = "\\mychapterwithfullpagewidthopener{#{opener}}{#{caption}}{#{title}}#{ol}"
+          result = "\\mychapterwithfullpagewidthopener{#{opener}}{#{caption}}{#{title}}#{ol}#{append}"
         else
-          result = "\\mychapterwithfullpagewidthopenernocaption{#{opener}}{#{title}}#{ol}"
+          result = "\\mychapterwithfullpagewidthopenernocaption{#{opener}}{#{title}}#{ol}#{append}"
         end
       else
         $stderr.print "********************************* ch #{ch}full page width chapter openers are only supported as anonymous figures ************************************\n"

@@ -79,7 +79,7 @@
 % protcode.tex to use half the amount of margin kerning that was supplied by
 % default. (One expects this to be completely dependent on the font and size.)
 
-\RequirePackage{tocloft,titlesec,titletoc,multicol,makeidx,wrapfig,fancyhdr,calc,amssymb,moreverb,ifthen,lmmath,mathrsfs,framed,alphalph,cancel,shaddap}
+\RequirePackage{tocloft,titlesec,titletoc,multicol,makeidx,wrapfig,fancyhdr,calc,amssymb,moreverb,ifthen,lmmath,mathrsfs,framed,alphalph,cancel,shaddap,navigator}
 %   used to include isolatin1, but now that causes error?
 \RequirePackage{color}% ---- see pdftex mailing list, 2004 May 22-23
 % Notes:
@@ -461,6 +461,9 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 	\setlength{\belowdisplayshortskip}{2mm plus 1mm minus 1mm}
 }
 %==============================toc==================================
+\newcommand{\link}[2]{\jumplink{anchor-#1}{#2}} % navigator package
+\newcommand{\brieftocentry}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
+            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#1}{\pageref{#2}}}
 %For the following, see the documentation for tocloft.sty:
 \renewcommand{\contentsname}{}
 \setlength{\cftbeforetoctitleskip}{0mm}
