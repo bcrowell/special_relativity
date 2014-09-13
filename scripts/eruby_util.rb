@@ -1341,8 +1341,8 @@ def chapter_print(number,title,label,caption,options)
   opener = options['opener']
   has_opener = (opener!='')
   result = nil
-  bare_label = label.clone
-  bare_label.gsub(/ch:/,'')
+  bare_label = label.clone.gsub!(/ch:/,'')
+  #$stderr.print "in chapter_print, bare_label=#{bare_label}\n"
   append = ''
   #append = "\\anchor{anchor-#{label}}" # navigator package
   File.open('brief-toc-new.tex','a') { |f|
