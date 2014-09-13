@@ -92,6 +92,7 @@ post:
 	cp sr.pdf ~/Lightandmatter/sr
 
 prepress:
+	PREPRESS=1 make book
 	make preflight_figs
 	scripts/pdf_extract_pages.rb sr.pdf 3-end sr_lulu.pdf
 	# Filtering through gs used to be necessary to convince Lulu not to complain about missing fonts.

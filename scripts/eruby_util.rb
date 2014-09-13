@@ -1132,14 +1132,42 @@ def begin_sec(title,pagebreak=nil,label='',options={})
     macro = 'myssssection'
     label_level = 'subsubsubsec'
   end
-  #$stderr.print "level=#{$section_level}, title=#{title}\n"
   title = alter_titlecase(title,$section_level)
-  if label != '' then
-    label="\\label{#{label_level}:#{label}}"
-  end
-  print "\\#{macro}#{pagebreak}{#{title}}#{label}\n"
+  cmd = "\\#{macro}#{pagebreak}{#{title}}"
+  t = sectioning_command_with_href(cmd,$section_level,label,label_level,title)
+  #$stderr.print t
+  print t
   $section_most_recently_begun = title
   #$stderr.print "in begin_sec(), eruby_util.rb: level=#{$section_level}, title=#{title}, macro=#{macro}\n"
+end
+
+def sectioning_command_with_href(cmd,section_level,label,label_level,title)
+  # http://tex.stackexchange.com/a/200940/6853
+  name_level = {0=>'chapter',1=>'section',2=>'subsection',3=>'subsubsection',4=>'subsubsubsection'}[section_level]
+  label_command = ''
+  complete_label = ''
+  anchor_command = ''
+  if label != '' then
+    complete_label = "#{label_level}:#{label}"
+    label_command="\\label{#{complete_label}}"
+    anchor_command = "\\anchor{anchor-#{complete_label}}" # navigator_package
+  end
+  anchor_command_1 = ''
+  anchor_command_2 = ''
+  if section_level==0 then anchor_command_2=anchor_command else anchor_command_1=anchor_command end
+  if is_prepress then toc_macro="toclinewithoutlink" else toc_macro="toclinewithlink" end
+  t = <<-TEX
+    \\begingroup
+    \\renewcommand{\\addcontentsline}[3]{}% temporarily disable \\addcontentsline
+    #{anchor_command_1}#{cmd}#{label_command}#{anchor_command_2}
+    \\endgroup
+    \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
+    TEX
+  return t
+end
+
+def is_prepress
+  return ENV['PREPRESS']=='1'
 end
 
 # The following allows me to control what's titlecase and what's not, simply by changing book.config. Since text can be shared between books,
@@ -1313,7 +1341,10 @@ def chapter_print(number,title,label,caption,options)
   opener = options['opener']
   has_opener = (opener!='')
   result = nil
-  append = "\\anchor{anchor-#{label}}" # navigator package
+  bare_label = label.clone
+  bare_label.gsub(/ch:/,'')
+  append = ''
+  #append = "\\anchor{anchor-#{label}}" # navigator package
   File.open('brief-toc-new.tex','a') { |f|
     f.print "\\brieftocentry{#{label}}{#{title}} \\\\\n" # LM and Me. don't use brief-toc-new.tex
   }
@@ -1359,7 +1390,8 @@ def chapter_print(number,title,label,caption,options)
     $stderr.print "**************************************** Error, ch #{$ch}, processing chapter header. ****************************************\n"
     exit(-1)
   end
-  print "#{result}\\label{#{label}}\n"
+  print sectioning_command_with_href(result,0,bare_label,'ch',title)
+  #print "#{result}\\label{#{label}}\n"
 end
 
 $photo_credits = []
