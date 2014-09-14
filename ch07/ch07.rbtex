@@ -401,7 +401,7 @@ itself.
 
 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 
 <% begin_hw('polar-metric') %>
@@ -431,7 +431,7 @@ an angle $\varphi \ne \pi/2$ to one another. Show that the metric in these coord
 
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 
 <% end_chapter %>

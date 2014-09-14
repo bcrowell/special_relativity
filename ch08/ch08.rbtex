@@ -365,7 +365,7 @@ the cognoscenti of relativity theory (Einstein included!) were quite surprised.'
 
 <% end_sec('noncommutative') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('michelson-gale-pearson') %>
 In the 1925 Michelson-Gale-Pearson experiment, the physicists measured the Sagnac effect
@@ -383,6 +383,6 @@ compare with the experimentally measured result of $0.230\pm0.005$ cycles.
 <% end_hw %>
 % calc -xe "x=(2010 ft->m); y=(1113 ft->m)"
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

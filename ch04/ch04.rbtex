@@ -1190,7 +1190,7 @@ be the result of a loose connection on a fiber-optic cable plus a miscalibrated 
 <% end_sec('tachyon-searches') %>
 <% end_sec('tachyons') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 <% begin_hw('max-temp') %>
 Criticize the following reasoning. \emph{Temperature is a measure of the energy per atom.
 In nonrelativistic physics, there is a minimum temperature, which corresponds to zero energy
@@ -1395,6 +1395,6 @@ Should astronomers be able to detect these photons by selecting only those with
 the correct energy?
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

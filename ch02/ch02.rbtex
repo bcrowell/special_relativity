@@ -358,7 +358,7 @@ only very primitive techniques at our disposal.
 
 <% end_sec('area-is-scalar') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('galilean-area') %>
 Section \ref{sec:area-is-scalar} gives an argument that spacetime area is a relativistic invariant.
@@ -455,6 +455,6 @@ a valid approximation to general relativity in regions of space that are small e
 so that spacetime curvature becomes negligible.
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

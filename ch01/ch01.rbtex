@@ -1163,7 +1163,7 @@ according to clocks synchronized in frame 2 ($t'$, the train).
 
 <% end_sec('lorentz-transformation') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('agreeontime') %>
 Astronauts in three different spaceships are communicating with each other.
@@ -1356,6 +1356,6 @@ by multiplying them out. Interpret the result physically.
 <% end_hw %>
 
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

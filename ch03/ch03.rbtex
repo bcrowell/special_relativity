@@ -827,7 +827,7 @@ For more about faster-than-light motion in relativity, see section \ref{sec:tach
 p.~\pageref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('run-in-spaceship') %>
 Fred buys a ticket on a spaceship that will accelerate to an ultrarelativistic speed
@@ -967,6 +967,6 @@ $\vc{a}_\vc{o} = \frac{1}{(\vc{o}\cdot\vc{v})^2}\left[P_\vc{o}\vc{a}-(\vc{o}\cdo
 on p.~\pageref{three-and-four-vec-conversions}.
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

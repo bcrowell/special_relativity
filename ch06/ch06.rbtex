@@ -911,7 +911,7 @@ its covector is represented by a stack of planes with half the spacing.
 <% end_sec('volume') %> 
 <% end_sec('tools') %> 
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('dual-of-dual') %>
 In section \ref{subsec:duality-generalized}, I proved that duality is a self-inverse operation,
@@ -919,6 +919,6 @@ invoking Minkowski coordinates and assuming the signature to be $+---$. Show tha
 assumptions were not necessary.
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>

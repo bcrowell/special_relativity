@@ -371,7 +371,10 @@ me permission to use it, but that doesn't mean you have permission to use it.}
     \renewcommand{\printthesection}{}    % Footers should read ``Problems,'' not ``Section X.Y Problems''
     \hwcaptions                          % figures in hw section don't have a, b, c, labels
     \setcounter{figure}{0}               %
-    \mysection{\langproblems}                 % Has the side-effect of generating a page break.
+    \begingroup
+    \renewcommand{\addcontentsline}[3]{}% temporarily disable \addcontentsline
+    \mysection{\langproblems}            % Has the side-effect of generating a page break.
+    \endgroup
     \setcounter{secnumdepth}{2}          % Start numbering sections again.
                                          % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
                                          % this. Using section* messes up footers & toc. 

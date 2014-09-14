@@ -920,7 +920,7 @@ imply conservation of energy-momentum.
 
 <% end_sec('maxwells-equations') %>
 
-\begin{hwsection}
+<% begin_hw_sec %>
 
 <% begin_hw('boost-capacitor') %>
 (a) A parallel-plate capacitor has charge per unit area $\pm\sigma$ on its two plates.
@@ -988,6 +988,6 @@ some polarization. Do not assume a sinusoidal wave. Show that this is a solution
 (equation \eqref{eqn:maxwell-rel-source}, p.~\pageref{eqn:maxwell-rel-source}, in a vacuum).
 <% end_hw %>
 
-\end{hwsection}
+<% end_hw_sec %>
 
 <% end_chapter %>
