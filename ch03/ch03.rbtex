@@ -87,7 +87,7 @@ metric, which allows us to compute how much proper time is experienced by each o
   )
 %>
 
-<% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>\label{Doppler shift}
+<% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>\index{Doppler shift}
 
 Figure \figref{twin-signals} shows how the ideas in the preceding section apply to the twin paradox.
 In \subfigref{twin-signals}{1} we see the situation as described by an impartial observer, who says

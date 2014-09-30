@@ -786,7 +786,7 @@ this:
       theorem, \emph{any} well-behaved wave can be written as a sum of sine waves, and therefore
       any wave solution of Maxwell's equations in one frame is also a solution in every other frame.
 \item Maxwell's equations can be rewritten in terms of tensors, obeying all the grammatical
-      rules of index gymnastics. if they can be written in this form, they are automatically
+      rules of index gymnastics. If they can be written in this form, they are automatically
       Lorentz invariant.
 \end{itemize}
 
