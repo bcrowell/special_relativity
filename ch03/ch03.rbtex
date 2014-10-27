@@ -369,7 +369,7 @@ $\der x/\der\tau=0$.
 <% end_sec('v-vector') %>
 <% begin_sec("The acceleration vector",nil,'a-vector') %>\index{acceleration!vector}
 The acceleration vector is defined as the derivative of the velocity vector with
-respect to proper time,\index{vector!acceleration}\index{acceleration vector}
+respect to proper time,\index{acceleration!vector}
 \begin{equation*}
   \vc{a}=\frac{\der\vc{v}}{\der\tau} \qquad .
 \end{equation*}
