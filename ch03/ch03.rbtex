@@ -179,7 +179,7 @@ they confirm special relativity.\footnote{MacArthur et al., Phys. Rev. Lett. 56 
 \end{eg}
 <% end_sec('doppler') %>
 
-<% begin_sec("Combination of velocities",nil,'velocity-addition') %>
+<% begin_sec("Combination of velocities",nil,'velocity-addition') %>\index{velocity!addition}
 In nonrelativistic physics, velocities add in relative motion. For example, if a boat moves relative to
 a river, and the river moves relative to the land, then the boat's velocity relative to the land
 is found by vector addition. This linear behavior cannot hold relativistically. For example,   
@@ -292,7 +292,7 @@ be one-to-one, and this is unacceptable physically.
 <% end_sec('no-c-frame') %>
 
 <% begin_sec("The velocity and acceleration vectors",nil,'v-and-a-vectors') %>
-<% begin_sec("The velocity vector",nil,'v-vector') %>
+<% begin_sec("The velocity vector",nil,'v-vector') %>\index{velocity!vector}
 In a freshman course in Newtonian mechanics, we would define a vector as something that has three
 components. Furthermore, we would require it to transform in a certain way under a rotation.
 For example, we could form the collection of numbers $(e,T,\zu{DJIA})$, where $e$ is the fundamental
@@ -367,7 +367,7 @@ $\der x/\der\tau=0$.
 \end{eg}
 
 <% end_sec('v-vector') %>
-<% begin_sec("The acceleration vector",nil,'a-vector') %>
+<% begin_sec("The acceleration vector",nil,'a-vector') %>\index{acceleration!vector}
 The acceleration vector is defined as the derivative of the velocity vector with
 respect to proper time,\index{vector!acceleration}\index{acceleration vector}
 \begin{equation*}

@@ -248,7 +248,7 @@ __birdscalarproduct((-\nabla T),\vc{v}), subject to the usual constraint $v^2=1$
 <% end_sec('gradient') %> 
 
 <% begin_sec("Phase and group velocity",nil,'phase-and-group-vel') %>
-<% begin_sec("Phase velocity",nil,'phase-vel') %>
+<% begin_sec("Phase velocity",nil,'phase-vel') %>\index{velocity!wave!phase}
 A wavefront is a line or surface of constant phase.
 In a snapshot of a wave at one moment of time, the direction of propagation of the wave is across
 the wavefronts. The visual situation is different in a spacetime diagram. In $1+1$ dimensions,
@@ -286,7 +286,7 @@ The phase velocity lacks
 physical interest, because it is not the velocity at which any ``stuff'' moves.\index{phase velocity}
 <% end_sec('phase-vel') %>
 
-<% begin_sec("Group velocity",nil,'group-vel') %>
+<% begin_sec("Group velocity",nil,'group-vel') %>\index{velocity!wave!group}
 There is a dispersion relation between a wave's frequency and wavenumber.
 For example, surface waves in deep water obey the constraint $C=0$, where
 $C=\omega^4-\alpha^2 k^2$ (figure \figref{dispersion})
