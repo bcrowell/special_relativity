@@ -589,6 +589,58 @@ the fact discussed in section \ref{sec:ultrarelativistic} that all ultrarelativi
 particles have the same mechanical properties.
 \end{eg}
 
+\begin{eg}{Mass of a capacitor}\label{eg:mass-of-a-capacitor}
+Consider the mass of a charged parallel-plate capacitor, figure 
+\subfigref{eg-mass-of-a-capacitor}{1}, first in its rest frame and
+then in a frame boosted in the direction parallel to the field (perpendicular to the plates).
+If we're not careful, we run into the following paradox. Under a boost, an electric field
+parallel to the boost remains unchanged. Therefore in the boosted frame, we have exactly the
+same field strength, but filling a volume that has been decreased by length contraction.
+Therefore the mass-energy of the capacitor is \emph{greatest} in its own rest frame, which
+is absurd and would contradict our proof in section \ref{subsec:p-vector} that
+the energy-momentum of an isolated system transforms as a four-vector.
+
+<% marg(0) %>
+<% fig(
+    'eg-mass-of-a-capacitor',
+     %q{Example \ref{eg:mass-of-a-capacitor}.}
+   )
+%>
+<% end_marg %>
+
+The resolution of the paradox comes from recognizing that we assumed the capacitor to be
+in static equilibrium, but we ignored the stress-energy of whatever mechanical supports
+were maintaining this equilibrium. If we consider only the stress-energy $T_{(em)}$ of the electromagnetic field,
+then we have $T_{(em)}^{tt}=(1/8\pi k)E^2$ (energy density) and
+$T_{(em)}^{yy}=-(1/8\pi k)E^2$ (tension in the $y$ direction, parallel to the field),
+figure \subfigref{eg-mass-of-a-capacitor}{2}.
+It's easy to see that this has a nonvanishing divergence, since 
+$\partial_y T_{(em)}^{yy}\ne0$ at the plates, and there are no
+other terms in the stress-energy tensor that could compensate for this.
+
+There is nothing surprising here; only the \emph{total} stress-energy tensor
+$T$ has to be divergenceless, not $T_{(em)}$. It would violate the laws of
+physics if the capacitor were to remain in equilibrium like this without some force
+to counter the electromagnetic tension. Let's say that this force is provided by
+a spring, as in figure \subfigref{eg-mass-of-a-capacitor}{3}. The spring has its own
+contribution $T_{(s)}$ to the stress-energy. For convenience, let's imagine making the
+spring filled in (rather than a hollow cylinder) and fattening it up so that
+it fills the entire interior volume of the cylinder. Then to achieve static
+equilibrium in the rest frame, we need the pressure in the spring to cancel
+out the pressure in the electric field. We therefore have $T^{yy}=0$ for the total stress-energy tensor.
+
+If we now apply the tensor transformation law to the stress-energy tensor, we find that the
+stress-energy tensor in the boosted frame contains a mass-energy density $T^{t't'}$
+that depends only on $T^{tt}$ and $T^{yy}$. (There also has to be an $xx$
+component to keep the plates from exploding laterally, but that doesn't enter here.)
+But we have $T^{yy}=0$, so the problem is exactly the same as transforming a lump
+of nonrelativistic matter, and we know that that calculation comes out OK.
+For an explicit demonstration 
+that this still works out if we drop the simplifying assumption that the spring fills the
+entire interior volume of the capacitor, see
+Rindler and Denur, ``A simple relativistic paradox about electrostatic energy,'' Am J Phys 56 (1988) 9.
+\end{eg}
+
 <% end_sec('em-stress-energy') %>
 
 <% begin_sec("Maxwell's equations",nil,'maxwells-equations') %>
@@ -719,6 +771,15 @@ nor assumes previous knowledge of it, but a similar limiting procedure can also 
 The following example is one in which both problem \ref{maxwell-action-at-a-distance} and
 problem \ref{maxwell-xt-asymmetry} turn out not to be problems.
 
+<% marg(0) %>
+<%
+  fig(
+    'electron-through-hoop',
+    %q{1. An electron jumps through a hoop. 2. An alternative surface spanning the hoop.}
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Jumping through a hoop}\label{eg:electron-through-hoop}
 Here is an example in which the non-obvious features of Maxwell's equations prevent the
 antirelativistic meltdown projected in \ref{maxwell-action-at-a-distance}.
@@ -736,14 +797,6 @@ would be incompatible with relativity, since the $t$ coordinate being referred t
 one observer's notion of time. Furthermore, it would seem that information was being transmitted
 instantaneously from the center of the disk to its edge, which violates relativity 
 (p.~\pageref{no-ftl-info-causality}).
-<% marg(40) %>
-<%
-  fig(
-    'electron-through-hoop',
-    %q{1. An electron jumps through a hoop. 2. An alternative surface spanning the hoop.}
-  )
-%>
-<% end_marg %>
 
 Stranger still, we can produce an apparent paradox without even appealing to relativity.
 Instead of the flat surface in \subfigref{electron-through-hoop}{1}, we can pick

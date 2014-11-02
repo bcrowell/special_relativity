@@ -378,7 +378,7 @@ Light was provided by a sodium discharge with $\lambda=570\ \zu{nm}$. The light 
 sent in both directions around the rectangle and interfered, effectively doubling the area.
 Clever techniques were required in order to calibrate the apparatus, since it was not
 possible to change its orientation. Calculate the number of wavelengths by which the
-relative phase of the two beams was expected to shift dur to the Sagnac effect, and
+relative phase of the two beams was expected to shift due to the Sagnac effect, and
 compare with the experimentally measured result of $0.230\pm0.005$ cycles.
 <% end_hw %>
 % calc -xe "x=(2010 ft->m); y=(1113 ft->m)"
