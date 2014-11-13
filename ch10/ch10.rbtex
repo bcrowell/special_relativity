@@ -625,7 +625,7 @@ to counter the electromagnetic tension. Let's say that this force is provided by
 a spring, as in figure \subfigref{eg-mass-of-a-capacitor}{3}. The spring has its own
 contribution $T_{(s)}$ to the stress-energy. For convenience, let's imagine making the
 spring filled in (rather than a hollow cylinder) and fattening it up so that
-it fills the entire interior volume of the cylinder. Then to achieve static
+it fills the entire interior volume of the capacitor. Then to achieve static
 equilibrium in the rest frame, we need the pressure in the spring to cancel
 out the pressure in the electric field. We therefore have $T^{yy}=0$ for the total stress-energy tensor.
 
