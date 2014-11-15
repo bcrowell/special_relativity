@@ -1045,12 +1045,32 @@ The Lorentz transformation translates into algebraic notation like this:
 \end{align}
 The line $x=0$ is described in the $(t',x')$ coordinates as having slope $-1/v$,
 which is what justifies the interpretation of $v$ as
-a velocity. The inverse transformation is the one with $v$ replaced by $-v$. These properties are
-shared by the Galilean transformation.
+a velocity. 
 The fact that this is the correct relativistic transformation can be verified by noting that
-(1) the lines $x=\pm t$ are preserved, and (2)
+(1) the speed-of-light lines $x=\pm t$ are preserved, and (2)
 the determinant equals 1, so that areas are preserved. Alternatively, it is
 sufficient to check the invariance of the spacetime interval under this transformation.
+
+<% marg(0) %>
+<%
+  fig(
+    'agree-on-v',
+    %q{Example \ref{eg:agree-on-v}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Observers agree on their relative speeds}\label{eg:agree-on-v}
+Observer A says observer B is moving away from her at velocity $v$; is it true, as in Galilean relativity,
+that B measures the same speed for A? Yes, it is true, but not completely obvious. One way to verify this fact is
+to check that Lorentz transformations with velocities $v$ and $-v$ are inverses. A more physically transparent
+justification is shown in figure \figref{agree-on-v}. In \subfigref{agree-on-v}{1}, A determines B's velocity relative
+to her by sending out two round-trip signals at the speed of light, and measuring the difference between
+the two round-trip times. Because
+spacetime is the same in all directions,\footnote{This is discussed in more detail on
+p.~\pageref{sec:symmetry-postulates}} the experimental
+data are exactly the same when B carries out the measurement, \subfigref{agree-on-v}{2}, and
+therefore B infers the same speed.
+\end{eg}
 
 \begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
 Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
