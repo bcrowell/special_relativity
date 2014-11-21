@@ -1395,6 +1395,14 @@ Should astronomers be able to detect these photons by selecting only those with
 the correct energy?
 <% end_hw %>
 
+<% begin_hw('back-to-back-gammas') %>
+In a certain frame of reference, a gamma ray with energy $E_1$ is moving to the right,
+while a second gamma way with energy $E_2$ flies off to the left.
+(a) Find the mass of the system.
+(b) Find the velocity of the center-of-mass frame, i.e., the frame of reference in which
+the total momentum is zero.
+<% end_hw %>
+
 <% end_hw_sec %>
 
 <% end_chapter %>
