@@ -1181,12 +1181,19 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   anchor_command_2 = ''
   if section_level==0 then anchor_command_2=anchor_command else anchor_command_1=anchor_command end
   if is_prepress then toc_macro="toclinewithoutlink" else toc_macro="toclinewithlink" end
+  # In the following, I had been using begingroup/endgroup to temporarily disable \addcontentsline,
+  # but that had the side-effect that had the side effect of causing a \label{} that came after
+  # begin_sec to have a null string as the label instead of the section number.
+  # - 
   # similar code in begin_hw_sec
+  # -
   t = <<-TEX
-    \\begingroup
+    %\\begingroup
+    \\let\\oldacl\\addcontentsline
     \\renewcommand{\\addcontentsline}[3]{}% temporarily disable \\addcontentsline
     #{anchor_command_1}#{cmd}#{label_command}#{anchor_command_2}
-    \\endgroup
+    %\\endgroup
+    \\let\\addcontentsline\\oldacl
     \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
     TEX
   return t
