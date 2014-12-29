@@ -1106,39 +1106,43 @@ Let's summarize some ideas about faster-than-light (FTL, superluminal) motion in
 \item No continuous process of acceleration can bring an observer from $v<c$ to $v>c$ (see
    section \ref{sec:velocity-addition}). Since it's possible to build an observer out of material objects,
    it seems that it's impossible to get a material object past $c$ by a continuous process of acceleration.
-\item If we could boost a material object past the speed of light, even by some discontinuous process, then we could
-   do so for an observer. But faster-than-light frames of reference are kinematically impossible
-   in 3+1 dimensions (section \ref{sec:ftl-frames}).
+\item If superluminal motion were possible, then one might also expect superluminal observers to be possible.
+   But FTL frames of reference are kinematically impossible in $3+1$ dimensions
+   (section \ref{sec:ftl-frames}, p.~\pageref{sec:ftl-frames}).
 \end{enumerate}
 
-\noindent Special relativity seems to have a defense in depth against superluminal motion.
+\noindent Thus special relativity seems to have a defense in depth against superluminal motion.
+
+Based on 2, FTL motion would be a property of an exotic form of matter built out of hypothetical
+particles with imaginary mass. Such particles are called tachyons. An imaginary mass is not
+absurd on its face, because experiments directly measure $E$ and $p$, not $m$. E.g., if we put a tachyon
+on a scale and weighed it, we would be measuring its mass-energy $E$.
 
 The weakest of these arguments is 1, since as described in section \ref{sec:causality}, we have
 no strong reasons for believing in causality as an overarching principle of physics.
-If we're willing to let go of causality, then we only need to comply with arguments 2, 3, and 4
-above. Based on 2, FTL motion would be a property of an exotic form of matter built out of hypothetical
-particles with imaginary mass. Such particles are called tachyons. Argument 4 tells us that the laws of
+It would be exciting if we could detect tachyons in particle accelerator experiments or as
+naturally occurring radiation. Perhaps we could even learn to transmit and receive tachyon signals artificially,
+allowing us to send ourselves messages from the future! This possibility was pointed out in 1917
+by Tolman\footnote{\url{www.archive.org/details/theoryrelativmot00tolmrich}} and is referred
+to as the ``tachyonic antitelephone.''\footnote{Bilaniuk \emph{et al.} claimed in a 1962 paper to have
+found a reinterpretation that eliminated the 
+causality violation, but their interpretation requires that
+rates of tachyon emission in one frame be related to rates of tachyon absorption in another frame,
+which in my opinion is equally problematic, since rates of absorption should depend on the environment,
+whereas rates of emission should depend on the emitter; the causality violation has simply been
+described in different words, but not eliminated. For a different critique,
+see Benford, Book, and Newcomb, ``The tachyonic antitelephone,'' Physical Review D 2 (1970) 263.
+Scans of the paper can be found online.}
+
+If we're willing to let go of causality, then we just need to make sure that our tachyons
+comply with items 3 and 4
+above.  Argument 4 tells us that the laws of
 physics must conspire to make it impossible to build an observer out of tachyons; this is not entirely
 implausible, since there are other classes of particles such as photons that can't be used to construct
 observers.
 <% end_sec('defense-in-depth') %>
 
 <% begin_sec("Experiments to search for tachyons",nil,'tachyon-searches') %>
-It would be exciting if we could detect tachyons in particle accelerator experiments or as
-naturally occurring radiation. Perhaps we could even learn to transmit and receive tachyon signals artificially,
-allowing us to send ourselves messages from the future! The latter possibility was pointed out in 1917
-by Tolman\footnote{\url{www.archive.org/details/theoryrelativmot00tolmrich}} and is referred
-to as the ``tachyonic antitelephone.'' Bilaniuk \emph{et al.} claimed in a 1962 paper to have
-found a reinterpretation that eliminated the 
-causality violation,\footnote{Bilaniuk and Sudarshan, ``Particles beyond the light barrier,''
-Phys. Today 22, 43 (1969), available online at
-\url{wildcard.ph.utexas.edu/~sudarshan/publications.htm}} but their interpretation requires that
-rates of tachyon emission in one frame be related to rates of tachyon absorption in another frame,
-which in my opinion is equally problematic, since rates of absorption should depend on the environment,
-whereas rates of emission should depend on the emitter; the causality violation has simply been
-described in different words, but not eliminated.\footnote{For a different critique,
-see Benford, Book, and Newcomb, ``The tachyonic antitelephone,'' Physical Review D 2 (1970) 263.
-Scans of the paper can be found online.}
 
 Experimental searches are made more difficult by conflicting theoretical claims as to
 whether tachyons should be charged or neutral, whether they should have integral or
@@ -1156,7 +1160,7 @@ who studied air showers generated by cosmic rays to look
 for precursor particles that arrived before the first photons.
 
 One could also look for
-particles with $|p|>E$. Alvager and Erman, in a 1965 experiment, studied the beta decay of
+particles with $|p|>|E|$. Alvager and Erman, in a 1965 experiment, studied the beta decay of
 ${}^{170}\zu{Tm}$, using a spectrometer to measure the momentum of charged radiation
 and a solid state detector to
 determine energy. An upper limit of one tachyon per $10^4$ beta particles was inferred.
@@ -1170,6 +1174,22 @@ events in which the missing energy-momentum was spacelike. They put upper limits
 the branching ratios of this and several other reactions leading to production of single tachyons
 or tachyon-antitachyon pairs.
 
+For a long time after the discovery of the neutrino, very little was known about its mass, so
+it was consistent with the experimental evidence to imagine that one or more species of neutrinos were tachyons, and
+Chodos \emph{et al.} made such speculations in 1985.
+A brief flurry of reawakened interest
+in tachyons was occasioned by a 2011 debacle in which the particle-physics experiment OPERA
+mistakenly reported faster-than-light propagation of neutrinos; the anomaly was later found to
+be the result of a loose connection on a fiber-optic cable plus a miscalibrated oscillator.
+An experiment called KATRIN, currently nearing the start of operation at Karlsruhe, will
+provide the first direct measurement of the mass of the neutrino, by measuring very precisely the maximum energy of the
+electrons emitted in the decay of tritium, ${}^3\zu{H}\rightarrow {}^3\zu{He}+e^{-}+\bar{\nu}_e$.
+Conservation of energy then allows one to determine the \emph{minimum} energy of the antineutrino,
+which is related to its mass and momentum by $m^2=E^2-p^2$. Because $m^2$ appears in this equation,
+the experiment really measures $m^2$, not $m$, and a result of $m^2<0$ would bring the tachyonic
+neutrino back from the grave.
+<% end_sec('tachyon-searches') %>
+<% begin_sec("Tachyons and quantum mechanics",nil,'tachyons-and-qm') %>
 When we add quantum mechanics to special relativity, we get quantum field theory, which sounds scary
 and can be quite technical, but is governed by some very simple principles. One of these principles is that
 ``everything not forbidden is compulsory.'' The phrase originated as political satire of communism by
@@ -1183,11 +1203,7 @@ Most theorists now interpret this as meaning that when tachyons pop up in the eq
 a sign that the assumed vacuum state is not stable, and will change into some other state that
 is the true state of minimum energy.
 
-A brief flurry of reawakened interest
-in tachyons was occasioned by a 2011 debacle in which the particle-physics experiment OPERA
-mistakenly reported faster-than-light propagation of neutrinos; the anomaly was later found to
-be the result of a loose connection on a fiber-optic cable plus a miscalibrated oscillator.
-<% end_sec('tachyon-searches') %>
+<% end_sec('tachyons-and-qm') %>
 <% end_sec('tachyons') %>
 
 <% begin_hw_sec %>

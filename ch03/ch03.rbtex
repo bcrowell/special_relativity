@@ -822,9 +822,7 @@ point into many. Our conclusion, then, is that there can be no such thing as a s
 observer in our 3+1-dimensional universe. A more formal proof has been given
 by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
 Open access via Project Euclid at
-\url{http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
-Jin and Lazar\footnote{\url{arxiv.org/abs/1403.5988}} have also shown that even in 1+1 dimensions, extending the Lorentz transformation
-to $|v|>|c|$ violates the isotropy of space (section \ref{sec:symmetry-postulates}, p.~\pageref{sec:symmetry-postulates}).
+\url{projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
 For more about faster-than-light motion in relativity, see section \ref{sec:tachyons},
 p.~\pageref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
