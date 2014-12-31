@@ -797,32 +797,58 @@ which is zero.
 <% end_sec('proj') %>
 
 <% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
-Special relativity doesn't permit the existence of observers who move at $c$ (section
-\ref{sec:no-c-frame}).
+We recall from section \ref{sec:no-c-frame} that
+special relativity doesn't permit the existence of observers who move at $c$. This is because
+if two observers differ in velocity by $c$, then the Lorentz transformation between them is
+not a one-to-one map, which is physically unacceptable.
+
 But what about a \emph{superluminal} observer, one who moves faster than $c$?
 With charming naivete, the special-effects technicians 
 for Star Trek attempted to show the frame of reference of such an
 observer in scenes where a field of stars rushed past the Enterprise. (Never mind that
 the stars, which pass in front of and behind the spaceship, should actually be a million
-times larger than it.) Actually such an observer (which could not be made out of normal material
-particles such as electrons and protons) would consider its own world-line, which we call
+times larger than it.) Actually such an observer  would consider her own world-line, which we call
 spacelike, to be timelike, while the world-line of a star such as our sun, which we consider timelike,
-would be spacelike. That is, our sun would not appear to the observer
+would be spacelike in her opinion. Our sun's world-line might, for example, be orthogonal to hers, in which case the sun
+would not appear to her
 as an object in motion but rather as a line
 stretching across space, which would wink into existence and then wink back out.
-A typical transformation between our frame and the frame of such an observer would be
-$(x,t)\rightarrow(t,x)$, simply swapping the time and space coordinates. The transformation is
-one-to-one, and therefore not subject to the objection raised in section
-\ref{sec:no-c-frame} to frames moving \emph{at} $c$.
+A typical transformation between our frame and the frame of such an observer would be the map $S$
+defined by 
+$(t',x')=(x,t)$, simply swapping the time and space coordinates. The ``swap'' transformation $S$ is
+one-to-one, and therefore not subject to the objection raised previously to frames moving \emph{at} $c$.
+$S$ happens to be a boost by an infinite velocity, but we can also obtain boosts for velocities
+$c<v<\infty$ and $-\infty<v<-c$ by combining $S$ with a (subluminal) Lorentz transformation; given a
+superluminal world-line $\ell$, we first transform into a frame in which $\ell$ is a line of simultaneity,
+and the we apply $S$.
 
-But this is all in 1+1 dimensions. In 3+1 dimensions, we again run into the difficulty that the transformation
-between our frame and that of the superluminal being cannot be one-to-one, since we can't
+But this was all in 1+1 dimensions. In 3+1 dimensions, what is the equivalent of $S$? One possibility is
+something like $(t',x',y',z')=(x,t,t,t)$, but this isn't one-to-one. We can't
 squish three dimensions to one or expand one to three without merging points or splitting one
-point into many. Our conclusion, then, is that there can be no such thing as a superluminal
-observer in our 3+1-dimensional universe. A more formal proof has been given
-by Gorini.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
+point into many.
+
+Another possibility would be a one-to-one transformation such as
+$(t',x',y',z')=(x,t,y,z)$. The trouble with this version is that it violates the
+isotropy of spacetime (section \ref{sec:symmetry-postulates}, p.~\pageref{sec:symmetry-postulates}).
+For example, consider the vector $(1,0,1,0)$ in the unprimed coordinates.
+This lies on the light cone, and could point along the world-line of a ray of light.
+After the transformation to the primed coordinates, this vector becomes $(0,1,1,0)$, which points
+along a line of simultaneity. The primed observer says that the speed of light in this direction
+is infinite, and yet there are other directions in which it has a finite value. This clearly
+violates isotropy.
+
+A surprisingly large number of papers, going all the way back to the birth of relativity,
+have been written by people trying to find a way to extend the Lorentz transformations to
+superluminal speeds, and these have all turned out to be failures. In fact, there are
+no-go theorems showing that there can be no such thing as a superluminal
+observer in our 3+1-dimensional universe.\footnote{Gorini, ``Linear Kinematical Groups,'' Commun.~Math.~Phys.~21 (1971) 150.
 Open access via Project Euclid at
-\url{projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}}
+\url{projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.cmp/1103857292}.}\textsuperscript{,}%
+\footnote{Andreka et al., ``A logic road from special relativity to general relativity,'' \url{arxiv.org/abs/1005.0960},
+theorem 2.1.}
+
+The nonexistence of FTL \emph{frames} does not immediately rule out the possibility of
+FTL \emph{motion}. (After all, we do have motion at $c$, but no frames moving at $c$.)
 For more about faster-than-light motion in relativity, see section \ref{sec:tachyons},
 p.~\pageref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
