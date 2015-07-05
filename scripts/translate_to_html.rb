@@ -814,6 +814,15 @@ def preprocess(tex,command_data,style_files)
   style = ''
   style_files.each { |s|  style = style + "\n" + slurp_file(s) }
 
+  # delete material marked to be ignored by me
+  ignore_these_keys = []
+  tex.scan(/begin_ignore_for_web:(\d+)/) {
+    ignore_these_keys.push($1)
+  }
+  ignore_these_keys.each { |n|
+    tex.sub!(Regexp.new("%begin_ignore_for_web:#{n}.*%end_ignore_for_web:#{n}\n",Regexp::MULTILINE),'') 
+  }
+
   # Convert summary and hwsection environments into sections, which is what they really are, anyway.
   ['summary','hwsection'].each { |s|
     a = {'summary'=>'Summary','hwsection'=>'Homework Problems'}[s]
@@ -1272,10 +1281,12 @@ def parse_section(tex,environment_data)
             top = "\n\n"
             bottom = "\n\n"
           else
-            top = "\n\n<div class=\"#{x}\">\n\n"
+            type_of_div = x
+            if x=='homeworkforcelabel' then type_of_div='homework' end
+            top = "\n\n<div class=\"#{type_of_div}\">\n\n"
             bottom = "\n\n</div>\n\n"
           end
-          if x=~/\A(homework|hw)\Z/ then 
+          if x=~/\A(homework|hw|homeworkforcelabel)\Z/ then 
             d = "<b>#{hw}</b>. " + d
             hw+=1
             if args[1]!='' && !$wiki && $config['forbid_anchors_and_links']==0 then top = top + "<a #{$anchor}=\"hw:#{arg}\"></a>" end
@@ -1537,7 +1548,9 @@ def handle_table_one(original)
           if !File.exist?(temp) then $stderr.print "error, temp file #{temp} doesn't exist"; exit(-1) end
           fmt = 'html'
           if $xhtml then fmt='xhtml' end
-          unless system("#{$config['script_dir']}/latex_table_to_html.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{fmt} >/dev/null") then $stderr.print "error, #{$?}"; exit(-1) end
+          unless system("#{$config['script_dir']}/latex_table_to_html.pl #{temp} #{$config['sty_dir']}/lmmath.sty #{fmt} >/dev/null") then
+            $stderr.print "warning, error translating table to html, #{$?}"
+          end
           html = slurp_file(temp_html)
           if html.nil? then html='' end
           html.gsub!(/\n*$/,"\n") # exactly one newline at the end
@@ -2057,6 +2070,8 @@ def parse_eensy_weensy(t)
   tex.gsub!(/\\index{#{curly}}/,'') # This actually gets taken care of earlier by duplicated code. Probably not necessary to have it here as well.
   tex.gsub!(/\\noindent/,'') # Should pay attention to this, but it would be really hard.
   tex.gsub!(/\\write18{#{curly}}/,'')
+  tex.gsub!(/\\anchor{#{curly}}/,'')
+  tex.gsub!(/\\link{#{curly}}/,'')
   # kludge, needed in SN 10:
   tex.gsub!(/\\formatlikecaption{/,'') 
   tex.gsub!(/\\normalsize/,'') 
@@ -2622,7 +2637,12 @@ chipmunk.scan(/(\\\w+({[^}]*})?)/) {
   whole.gsub!(/\n.*/,'') # if it inadvertently eats thousands of lines and thinks it's one macro, don't print it all
   if !math_ok then macros_not_handled[whole]=1 end
 }
-unless macros_not_handled.keys.empty? then $stderr.print "Warning: the following macros were not handled in this chapter: "+macros_not_handled.keys.join(' ')+"\n" end
+unless macros_not_handled.keys.empty? then 
+  File.open("macros_not_handled",'a') { |f|
+    f.print "Warning: the following macros were not handled in chapter #{$ch}: "+macros_not_handled.keys.join(' ')+"\n" 
+  }
+  $stderr.print "Warning: some macros were not handled. See list in the file macros_not_handled.\n"
+end
 end
 #------------------------------------------------------------------------------------------------------------------------------------
 def print_footnotes_and_append_to_index(tex)

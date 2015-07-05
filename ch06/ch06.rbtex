@@ -132,7 +132,10 @@ well-behaved change of coordinates ---
 the technical condition being
 that each coordinate in each set is a differentiable function of each coordinate in the other
 set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}\label{diffeomorphism}
-For example, a change of units $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$ is all right
+For example, a uniform scaling of the coordinates $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$, which is
+arguably the same as a change of units,\footnote{The appropriate relativistic way of defining
+a change of units is subject to some ambiguity. See Dicke, ``Mach's principle and invariance under
+transformation of units," Phys Rev 125 (1962) 2163.} is all right
 as long as $k$ is nonzero. A quantity that stays the same under any diffeomorphism is called
 a \emph{scalar}.\index{scalar}
 Since a Lorentz transformation is a diffeomorphism,
@@ -150,7 +153,7 @@ like radians, we can use $\phi=2\pi __birdscalarproduct(c,e)$.
 
 <% begin_sec("Scaling",nil,'scaling') %>
 A convenient way of summarizing all of our categories of variables is by their behavior
-when we convert units, i.e., when we rescale our space. If we switch our time unit from
+when we rescale our coordinates. If we switch our time unit from
 hours to minutes, the number of apples in a bowl is unchanged, the earth's period of
 rotation gets 60 times bigger, and the frequency of the cuckoo clock changes by a
 factor of 1/60. In other words, a quantity $u$ under rescaling of coordinates
@@ -164,8 +167,9 @@ In section \ref{subsec:invariants} (p.~\pageref{subsec:invariants}), we defined 
 as a quantity that did not change under rotations or Lorentz boosts, i.e., one that was independent
 of the frame of reference.\index{invariant!compared to scalar}\index{scalar}\index{Lorentz scalar|see{scalar}}
 For a scalar we have the even more restrictive condition that it must not change if we change
-our units of measurement. For example, proper time is an invariant,
-and so is area in $1+1$-dimensional spacetime, but neither is a scalar.
+under any change of coordinates. For example, 
+area in $1+1$-dimensional spacetime is an invariant, but it's not a scalar; it changes when we rescale
+our coordinates.
 <% end_sec('scaling') %>
 <% end_sec('phase') %> 
 
