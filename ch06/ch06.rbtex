@@ -134,8 +134,7 @@ that each coordinate in each set is a differentiable function of each coordinate
 set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}\label{diffeomorphism}
 For example, a uniform scaling of the coordinates $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$, which is
 arguably the same as a change of units,\footnote{The appropriate relativistic way of defining
-a change of units is subject to some ambiguity. See Dicke, ``Mach's principle and invariance under
-transformation of units," Phys Rev 125 (1962) 2163.} is all right
+a change of units is subject to some ambiguity. See section \ref{sec:tensor-units}, p.~\pageref{sec:tensor-units}.} is all right
 as long as $k$ is nonzero. A quantity that stays the same under any diffeomorphism is called
 a \emph{scalar}.\index{scalar}
 Since a Lorentz transformation is a diffeomorphism,
@@ -261,15 +260,6 @@ The surfer is on top of a crest, riding along with it. His velocity vector $__bi
 direction that lies on top of the wavefront, not across it.
 Clearly both his motion and the propagation of the wave are to the right, not to the left as we might imagine
 based on experience with snapshots of waves.
-<% marg(0) %>
-<%
-  fig(
-    'surfer-phase',
-    %q{The surfer moves directly to the right with velocity vector $\vc{u}$. The wave also propagates to
-       the right.}
-  )
-%>
-<% end_marg %>
 
 In $2+1$ dimensions, \subfigref{surfer-phase}{2}, the surfer's velocity is 
 visualized as an arrow lying within a plane of constant phase. 
@@ -297,7 +287,15 @@ $C=\omega^4-\alpha^2 k^2$ (figure \figref{dispersion})
 and $\alpha$ is a constant with units of acceleration, relating
 to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
 could enter into the constraint.)
-<% marg(60) %>
+<% marg(300) %>
+<%
+  fig(
+    'surfer-phase',
+    %q{The surfer moves directly to the right with velocity vector $\vc{u}$. The wave also propagates to
+       the right.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'dispersion',
@@ -324,7 +322,7 @@ which is half the phase velocity.\index{group velocity}
 <% end_sec('phase-and-group-vel') %>
 <% end_sec('f-vector') %> 
 
-<% begin_sec("Duality",nil,'duality') %>
+<% begin_sec("Duality",4,'duality') %>
 <% begin_sec("Duality in 3+1 dimensions",nil,'duality-generalized') %>
 In our original $0+1$-dimensional example of the cuckoo clock and the earth, we had duality: the
 measurements $__birdscalarproduct(c,e)=24$ and $__birdscalarproduct(e,c)=1/24$ really provided
@@ -475,7 +473,7 @@ flipping the sign of $v$. This fact will be important in the following section.
 <% end_sec('change-of-basis') %> 
 <% end_sec('duality') %> 
 
-<% begin_sec("The Doppler shift and aberration",nil,'doppler-3d') %>
+<% begin_sec("The Doppler shift and aberration",nil,'doppler-3d') %>\index{Doppler shift}
 <% begin_sec("Doppler shift",nil,'doppler-fancy') %>
 As an example, we generalize our previous discussion of the Doppler shift of light to $3+1$ dimensions.
 
