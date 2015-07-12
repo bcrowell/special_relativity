@@ -1190,9 +1190,9 @@ find differential equations that describe inertial motion.
 The world-line of a test particle is called a geodesic.\index{geodesic}
 We defined this term in a nonrelativistic context as the shortest curve between two points.
 Geodesics play the same role in relativity that straight lines play in Euclidean geometry.
-A relativistic geodesic minimizes or maximizes the metric distance between two events.
-A timelike geodesic maximizes the
-proper time (cf.~section \ref{subsec:maximal-time}, p.~\pageref{subsec:maximal-time}).
+In special relativity, a timelike
+geodesic maximizes the 
+proper time (cf.~section \ref{subsec:maximal-time}, p.~\pageref{subsec:maximal-time}) between two events.
 In special relativity, geodesics are given by linear equations when expressed 
 in Minkowski coordinates, and the velocity vector of a test particle has constant components
 when expressed in Minkowski coordinates. In general relativity, Minkowski coordinates don't exist, and
@@ -1211,7 +1211,8 @@ parallel geodesics may later converge or diverge.\index{geodesic!differential eq
 <% begin_sec("Characterization of the geodesic",nil,'characterization-of-geodesic') %>
 A geodesic can be defined as a world-line that preserves tangency under parallel transport, \figref{geodesic-parallel-transports-tangent}. This is
 essentially a mathematical way of expressing the notion that we have previously expressed more informally in terms of ``staying on course'' or
-moving ``inertially.''
+moving ``inertially.'' (For reasons discussed in more detail on p.~\pageref{subsubsec:geodesic-not-extremum},
+this definition is preferable to defining a geodesic as a curve of extremal or stationary metric length.)
 
 A curve can be specified by giving functions $x^i(\lambda)$ for its coordinates, where $\lambda$ is a real parameter. A vector lying tangent to the
 curve can then be calculated using partial derivatives, $T^i=\partial x^i/\partial\lambda$. There are three ways in which a vector
@@ -1280,7 +1281,56 @@ would have no way of deciding how to move. The form of the
 geodesic equation guarantees uniqueness, because one can use it to define an algorithm
 that constructs a geodesic for a given set of initial conditions.
 
+<% begin_sec("Not characterizable as curves of stationary length",nil,'geodesic-not-extremum') %>
+
+The geodesic equation may seem cumbersome. Why not just define a
+geodesic as a curve connecting two points that maximizes or minimizes
+its own metric length? The trouble is that this doesn't generalize
+nicely to curves that are not timelike. The casual reader may wish to skip
+the remainder of this subsection, which discusses this point.
+
+For the spacelike case, we would want to define the proper metric
+length $\sigma$ of a curve as $\sigma=\int \sqrt{-g_{ij}dx^i dx^j}$, the
+minus sign being necessary because we are using a metric with
+signature $+---$, and we want the result to be real. The quantity
+$\sigma$ can be thought of as the result we would get by approximating
+the curve with a chain of short line segments, and adding their proper
+lengths. In the case where the whole curve lies within a single plane of
+simultaneity for some observer, $\sigma$ is the curve's Euclidean length as
+measured by that observer. Our $\sigma$ is neither a maximum nor a minimum for a spacelike geodesic
+connecting two events.
+To see this, pick a frame in which the
+two events are simultaneous, and adopt Minkowski coordinates such that the points both lie on the $x$ axis. Deforming the
+geodesic in the $xy$ plane does what we expect according to Euclidean
+geometry: it increases the length. Deforming it in the $xt$
+plane, however, reduces the length (as becomes obvious when you
+consider the case of a large deformation that turns the geodesic into
+a curve of length zero, consisting of two lightlike line segments). 
+The result is that the geodesic is neither a minimizer nor a maximizer of $\sigma$ but
+is rather what is referred to as \emph{stationary} with respect to changes in $\sigma$.
+Stationarity means that if we vary the curve by some small amount, not moving any part of
+it by a Minkowski coordinate distance greater than $\epsilon$, then the change in
+$\sigma$ is of order $\epsilon^2$.
+
+That's not so bad, but the situation becomes worse for lightlike
+geodesics.  Here we would have to define what ``length'' was. We could
+either take an absolute value, $L=\int \sqrt{|g_{ij}dx^i dx^j|}$, or
+not, $L=\int \sqrt{g_{ij}dx^i dx^j}$. If we don't take the absolute
+value, $L$ need not be real for small variations of the geodesic, and
+therefore we don't have a well-defined ordering, and can't say whether
+$L$ is a maximum, a minimum, or neither. Regardless of whether we take
+the absolute value, we have $L=0$ for a lightlike geodesic, but
+the square root function doesn't have differentiable behavior when its argument
+is zero, so we don't have stationarity.  If we do take the absolute value, then for the geodesic
+curve, the length is zero, which is the shortest possible. However,
+one can have nongeodesic curves of zero length, such as a lightlike
+helical curve about the $t$ axis. 
+
+<% end_sec('geodesic-not-extremum') %> % The geodesic equation
+
 <% end_sec('geodesic-equation') %> % The geodesic equation
+
+
 <% end_sec('covariant-derivative') %>
 
 <% begin_sec("Congruences, expansion, and rigidity",nil,'congruences',{'optional'=>true}) %>
