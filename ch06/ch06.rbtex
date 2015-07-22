@@ -942,7 +942,7 @@ the equation $x=t$ in Minkowski coordinates.
 
 The above classification can be stated very succinctly by using the 3-volume covector defined in 
 section \ref{subsec:volume}. A plane is spacelike, lightlike, or timelike, respectively, if
-the regions it contains are described by 3-volume covectors that are spacelike, lightlike, or timelike.
+the regions it contains are described by 3-volume covectors that are timelike, lightlike, or spacelike.
 A surface that is smooth but not necessarily flat can be be described locally according to
 these categories by considering its tangent plane. For example, a light cone is lightlike at each of
 its points, and since it is lightlike everywhere, we call it a lightlike surface. The event horizon
