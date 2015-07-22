@@ -83,7 +83,7 @@ Although the measurement relationship is nearly symmetric, the arrow has a direc
 for example, the measurement of the earth's rotational period in terms of the clock's frequency is
 $__birdscalarproduct(c,e)=(1\ \zu{hr}^{-1})(24\ \zu{hr})=24$, but the clock's period in terms of the earth's frequency
 is $__birdscalarproduct(e,c)=1/24$. We say that the relationship is
-not symmetric but ``dual.'' By the way, it doesn't matter
+not symmetric but ``dual.''\index{duality} By the way, it doesn't matter
 how we arrange these diagrams on the page. The notations __birdscalarproduct(c,e)
 and __birdflipscalarproduct(c,e) mean exactly the same thing, and expressions like this can even be drawn
 vertically.
@@ -98,7 +98,7 @@ come out on the half hour as well as on the hour, forming $2c$. Measurement shou
 be a linear function of both vectors; we say it is ``bilinear.'' 
 <% end_sec('birdtracks') %>
 
-<% begin_sec("Duality",nil,'duality') %>
+<% begin_sec("Duality",nil,'duality') %>\index{duality}
 The two vectors $c$ and $e$ have different units,
 $\zu{hr}^{-1}$ and hr, and
 inhabit two different one-dimensional vector spaces.
@@ -323,7 +323,7 @@ which is half the phase velocity.\index{group velocity}
 <% end_sec('f-vector') %> 
 
 <% begin_sec("Duality",4,'duality') %>
-<% begin_sec("Duality in 3+1 dimensions",nil,'duality-generalized') %>
+<% begin_sec("Duality in 3+1 dimensions",nil,'duality-generalized') %>\index{duality}
 In our original $0+1$-dimensional example of the cuckoo clock and the earth, we had duality: the
 measurements $__birdscalarproduct(c,e)=24$ and $__birdscalarproduct(e,c)=1/24$ really provided
 the same information, and it didn't matter whether we made our scalar out of
@@ -911,6 +911,75 @@ its covector is represented by a stack of planes with half the spacing.
 <% end_marg %>
 <% end_sec('three-volume') %> 
 <% end_sec('volume') %> 
+<% begin_sec("Classification of 3-surfaces",nil,'classification-of-surfaces') %>\index{surfaces!classification of}
+If I nail together three sticks, all at right angles to one another, then I can consider them as a set of basis vectors
+spanning a three-dimensional space of events. This three-space is flat, so we can call it a hyperplane --- or just a plane
+if, as throughout this section, there is no danger of forgetting that it has three dimensions rather than two.
+All of the events in this plane are simultaneous in my frame of reference. None
+of these facts depends on the use of right angles;
+we just need to make sure that the sticks don't all lie in the same plane.
+
+The business of a physicist is ultimately
+to make predictions. That is, if given a set of initial conditions, we can say how our system will evolve through time.
+These initial conditions are in principle measured throughout all of space, and a plane of simultaneity would be
+a natural choice for the set of points at which to take the measurements.
+A surface used for this purpose is called a Cauchy surface.\index{surfaces!Cauchy}\index{Cauchy surface}
+
+If a plane is a surface of simultaneity according to some observer, then we call it \emph{spacelike}.
+Any particle's world-line must intersect such a plane exactly once, and this is why
+it works as a Cauchy surface: we are guaranteed to detect the particle, so that we can account for
+its effect on the evolution of the cosmos. 
+We could take a spacelike plane and reorient it.
+For a small enough change in the orientation (that is, a change that could be described by small enough
+changes in the basis vectors), it will remain spacelike.
+
+When a plane is not spacelike, and remains so under any sufficiently small change in orientation, we call it \emph{timelike}.
+In Minkowski coordinates, an example would be the $t$-$x$-$y$ plane. A given particle's world-line might never cross
+such a surface, and therefore a timelike plane cannot be used as a Cauchy surface.
+
+A plane that is neither spacelike nor timelike is called \emph{lightlike}. An example is the surface defined by
+the equation $x=t$ in Minkowski coordinates.
+
+The above classification can be stated very succinctly by using the 3-volume covector defined in 
+section \ref{subsec:volume}. A plane is spacelike, lightlike, or timelike, respectively, if
+the regions it contains are described by 3-volume covectors that are spacelike, lightlike, or timelike.
+A surface that is smooth but not necessarily flat can be be described locally according to
+these categories by considering its tangent plane. For example, a light cone is lightlike at each of
+its points, and since it is lightlike everywhere, we call it a lightlike surface. The event horizon
+of a black hole is also a lightlike surface. Any spacelike surface,
+whether curved or flat, can be used as a Cauchy surface. 
+
+Lightlike surfaces have some funny properties. 
+Using birdtracks notation,
+suppose that we form such a surface as the space spanned by
+the three basis
+vectors $__birdvec(\vc{a})$, $__birdvec(\vc{b})$, and $__birdvec(\vc{c})$,
+and let $__birddualvec(\vc{S})$ be the corresponding 3-volume covector.
+The surface is lightlike, so
+\begin{equation}\label{eq:lightlike-s}
+  __birdscalarproduct(\vc{S},\vc{S})=0 \qquad .
+\end{equation}
+Because $__birddualvec(\vc{S})$ is defined as the function giving the 4-volume of a parallelepiped spanned
+by the bases with a fourth vector $__birdvec(\vc{d})$, and because this volume vanishes
+when $__birdvec(\vc{d})$ is tangent to the surface (property V2, p.~\pageref{volume-properties}),
+we have,
+\begin{equation}
+   __birdscalarproduct(\vc{S},\vc{a})=__birdscalarproduct(\vc{S},\vc{b})=__birdscalarproduct(\vc{S},\vc{c})=0 \qquad .
+\end{equation}
+So in this sense $__birddualvec(\vc{S})$ is perpendicular to the surface.
+In Euclidean space we are used to describing the orientation of a surface in terms of the unit normal vector,
+and this is very nearly what $__birddualvec(\vc{S})$ is, except that it's a covector rather than a vector,
+and it also can't be made to have unit length, since its magnitude is zero.
+We could fix the first of these two problems by constructing the vector $__birdvec(\vc{S})$ that is
+dual to $__birddualvec(\vc{S})$, but this has a disconcerting effect.
+Combining \eqref{eq:lightlike-s}
+with the definition of $__birddualvec(\vc{S})$, we find that $__birdvec(\vc{S})$ spans
+a vanishing 4-volume with the basis vectors, and therefore by V2 we find that $__birdvec(\vc{S})$
+is tangent to the surface. Thus in some sense we have a vector that is both parallel to and tangent to
+a surface --- which avoids being absurd because we are really referring to two \emph{different} objects,
+the covector $__birddualvec(\vc{S})$ and the vector $__birdvec(\vc{S})$.
+
+<% end_sec('classification-of-surfaces') %> 
 <% end_sec('tools') %> 
 
 <% begin_hw_sec %>
@@ -919,6 +988,16 @@ its covector is represented by a stack of planes with half the spacing.
 In section \ref{subsec:duality-generalized}, I proved that duality is a self-inverse operation,
 invoking Minkowski coordinates and assuming the signature to be $+---$. Show that these
 assumptions were not necessary.
+<% end_hw %>
+
+<% begin_hw('lightlike-normal-vector') %>
+Let a 3-plane U be defined in Minkowski coordinates by the equation $x=t$.
+Is this plane spacelike, timelike, or lightlike?
+Find a covector $__birddualvec(\vc{S})$ that is normal to U in the sense described in
+section \ref{subsec:classification-of-surfaces}, p.~\pageref{subsec:classification-of-surfaces}, describing it in terms 
+of its components. Compute the vector $__birdvec(\vc{S})$, also in component form.
+Verify that $__birdscalarproduct(\vc{S},\vc{S})=0$.
+Show that $__birdvec(\vc{S})$ is tangent to M.
 <% end_hw %>
 
 <% end_hw_sec %>

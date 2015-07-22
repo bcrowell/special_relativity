@@ -230,8 +230,8 @@ have this symmetry. Postulate P4 defines what we have meant when we referred to 
 of vectors in spacetime (e.g., in figure \figref{twin-paradox} on p.~\pageref{fig:twin-paradox}).
 Postulates P1-P6 were all the assumptions that were needed in order to arrive at the picture
 of spacetime described in ch. 1. This approach, based on symmetries, dates back to 
-1911.\footnote{W.~v.~Ignatowsky, Phys.~Zeits.~11 (1911) 972. The original paper unfortunately seems very difficult
-to obtain.}
+1911.\footnote{W.~v.~Ignatowsky, Phys.~Zeits.~11 (1911) 972. English translation at 
+\url{en.wikisource.org/wiki/Translation:Some_General_Remarks_on_the_Relativity_Principle}}
 <% end_sec('symmetry-postulates') %>
 
 <% begin_sec("Other axiomatizations",nil,'other-axiomatizations') %>
@@ -264,7 +264,8 @@ Another approach, presented, e.g., by Laurent,\footnote{Bertel Laurent, Introduc
 combines our P2 with the following:
 
 \begin{itemize}
-\item[T1] \emph{Metric:} An inner product exists. Proper time is measured by the square of the inner product of a world-line
+\item[T1] \emph{Metric:} An inner product exists. Proper time is measured by the square
+          root of the inner product of a world-line
           with itself.
 \item[T2] \emph{Maximum proper time:} Inertial motion gives a world-line along which the proper time is at a maximum with respect to small
           changes in the world-line. Inertial motion is modeled by vectors and parallelism, and this vector-space
@@ -282,7 +283,7 @@ as the shortest path between two points, except that we define a geodesic as bei
 It is useful to compare the axiomatizations P, E, and T from sections \ref{subsec:arrow-of-time}-\ref{subsec:maximal-time}
 with each other in order to gain insight into
 how much ``wiggle room'' there is in constructing theories of spacetime. Since they are logically equivalent, any statement
-occurring in one axiomatization can be proved as a theorem in the other. 
+occurring in one axiomatization can be proved as a theorem in any one of the others.
 
 For example, 
 we might wonder whether it is possible to equip Galilean spacetime with a metric. The answer is no, since a system
@@ -314,7 +315,7 @@ their own special inner product that violates the algebraic properties referred 
 <% begin_sec("Lemma: spacetime area is invariant",nil,'area-is-scalar') %>
 In this section we prove from axioms P1-P6 that
 area in the $x-t$ plane is invariant, i.e., it does not change between frames of reference.
-This result is used in section \ref{subsec:metric} to find the form of the spacetime metric.
+This result was used in section \ref{subsec:metric} to find the form of the spacetime metric.
 
 Consider figure \figref{polka-dots}. Vectors $\vc{o}_1$ and
 $\vc{s}_1$ are orthogonal and have equal lengths as measured by a clock and a ruler (which are calibrated
