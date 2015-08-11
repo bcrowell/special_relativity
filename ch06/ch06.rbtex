@@ -189,7 +189,19 @@ observer in units of radians per second.
 If the same observer considers $\vc{s}$ to be a vector of simultaneity with a length of
 one meter, then $__birdscalarproduct(\bomega,\vc{s})$ is
 the observer's measurement of the wavenumber $k$, defined as $2\pi$ divided by the wavelength.
-<% marg(0) %>
+
+<% begin_sec("Visualization",nil,'visualization') %>
+In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
+vectors and covectors. A vector is an arrow.
+A covector
+can be visualized as a set of parallel, evenly spaced lines
+on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to 
+show which way is ``uphill.''
+The act of measurement consists of counting how many of these
+lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+<% end_sec('visualization') %> 
+
+<% marg(300) %>
 <%
   fig(
     'vector-measuring-covector',
@@ -207,17 +219,6 @@ the observer's measurement of the wavenumber $k$, defined as $2\pi$ divided by t
   )
 %>
 <% end_marg %>
-
-<% begin_sec("Visualization",nil,'visualization') %>
-In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
-vectors and covectors. A vector is an arrow.
-A covector
-can be visualized as a set of parallel, evenly spaced lines
-on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhead to 
-show which way is ``uphill.''
-The act of measurement consists of counting how many of these
-lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
-<% end_sec('visualization') %> 
 
 <% begin_sec("The gradient",nil,'gradient') %>
 Given a scalar field $\phi$, its gradient $\nabla \phi$ at any given point is a covector.

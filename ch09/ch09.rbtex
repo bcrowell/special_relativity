@@ -1,7 +1,6 @@
 <%
   require "./scripts/eruby_util.rb"
 %>
-\addtocontents{toc}{\protect\newpage} % otherwise the chapter heading shows up as an orphaned line in toc
 <%
   chapter(
     '09',

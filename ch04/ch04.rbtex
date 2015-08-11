@@ -804,9 +804,9 @@ of what we mean by conservation of energy-momentum (subsection
 \ref{subsec:p-flux}). A proof is given in section \ref{subsec:p-vector} on p.~\pageref{subsec:p-vector}.
 <% end_sec('internal-structure') %>
 
-<% begin_sec("Force",nil,'force',{'optional'=>true}) %>
+<% begin_sec("Force",nil,'force',{'optional'=>true}) %>\index{force}
 Force is a concept that is seldom needed in relativity, and that's why this section is optional.
-<% begin_sec("Four-force",nil,'four-force') %>
+<% begin_sec("Four-force",nil,'four-force') %>\index{force!four-vector}
 By analogy with Newtonian mechanics, we define a relativistic force vector
 \begin{equation*}
   \vc{F} = m\vc{a} \qquad ,
@@ -825,7 +825,7 @@ $\vc{a}$ or $\tau$. $\vc{F}$ has been defined in terms
 of Lorentz invariants and four-vectors, and therefore it transforms as a god-fearing four-vector
 itself.
 <% end_sec('four-force') %>
-<% begin_sec("The force measured by an observer",nil,'three-force') %>
+<% begin_sec("The force measured by an observer",nil,'three-force') %>\index{force!three-vector}
 The trouble with all this is that $\vc{F}$ isn't what we actually measure when we measure a force,
 except if we happen to be in a frame of reference that momentarily coincides with the rest frame
 of the particle. As with velocity and acceleration (section \ref{sec:proj},
