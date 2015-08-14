@@ -492,8 +492,8 @@ If the thread had been attached only to the leading ship, then it would have tra
 behind it, unstressed, with Lorentz-contracted length $L/\gamma$. Since its actual length
 according to $\vc{o}$ is still $L$, it has been stretched relative to its unstressed length.
 
-This example can be analyzed with more mathematical elegance using the expansion scalar,
-which is described in section \ref{sec:congruences} on p.~\pageref{sec:congruences}.
+This example is analyzed with more mathematical elegance using the expansion scalar
+in example \ref{eg:bell-expansion} on p.~\pageref{eg:bell-expansion}.
 
 This presentation includes ideas contributed by physicsforums users tiny-tim and
 PeterDonis.

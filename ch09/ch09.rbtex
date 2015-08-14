@@ -1454,7 +1454,7 @@ according to
   \Theta = \partial_a v^a \qquad .
 \end{equation*}
 This definition is valid in $n+1$ dimensions, but in $1+1$ dimensions it reduces
-to $\Theta=\partial(\gamma^{-1})/\partial t+\partial(u\gamma^{-1})/\partial x$.
+to $\Theta=\partial\gamma/\partial t+\partial(u\gamma)/\partial x$.
 
 The expansion scalar
 is interpreted as the fractional rate of change in the volume of a set of particles that move
@@ -1469,6 +1469,41 @@ three spatial dimensions, the fractional rate of change of volume is
 $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not flat, so
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
+
+\pagebreak
+
+\begin{eg}{The Bell spaceship paradox}\label{eg:bell-expansion}\index{Bell's spaceship paradox}%
+\index{spaceship paradox}\index{paradox!Bell's spaceship}
+Bell's spaceship paradox was discussed in example \ref{eg:bell-spaceship-paradox} on p.~\pageref{eg:bell-spaceship-paradox}.
+In the paradox, two spaceships begin accelerating simultaneously and
+have equal accelerations in the frame of an external, inertial observer,
+causing a thread stretched between them breaks. We now give a more mathematically elegant demonstration of the
+same result using the expansion scalar.
+
+We define a congruence $(x+c)^2=1+t^2$. For a given value of the parameter $c$, we get an accelerating
+world-line. (Its proper acceleration $a=1$ happens to be constant, example \ref{eg:hyperbolic-motion}, 
+p.~\pageref{eg:hyperbolic-motion}, although this is not necessary for the purposes of discussing the paradox.)
+Each world-line starts at rest at $t=0$, and each one has the same acceleration at any given $t$.
+By picking any two distinct values of $c$, we obtain the literal situation described in the paradox.
+
+Implicit differentiation gives $u=t/\sqrt{1+t^2}$. The algebra gets a little messy now, so I used the open-source
+computer algebra system Maxima. The following program, which should be fairly readable without previous
+knowledge of Maxima's syntax, calculates the expansion tensor:
+
+\begin{listing}{1}
+u:t/sqrt(1+t^2);
+gamma:1/sqrt(1-u^2);
+theta:diff(gamma,t)+diff(u*gamma,x);
+is(equal(theta,gamma*u^2/t));
+\end{listing}
+
+The third line prints out a complicated expression for $\Theta$, which the fourth line shows can be
+simplified to $\gamma u^2/t$. This is positive for $t>0$, which shows that the thread is forced to expand.
+Note that although the calculation was carried out in a particular set of coordinates, a relativistic scalar
+such as $\Theta$ has a coordinate-independent value. Reference to a particular coordinate system or
+frame of reference occurs only in the initial definition of the congruence, which is defined in order
+to model the situation described in the paradox, which is stated in terms of a particular external observer.
+\end{eg}
 
 <% end_sec('congruences') %>
 
@@ -1790,6 +1825,14 @@ then define $\delta g^{\mu\nu}=g'^{\mu\nu}-g^{\mu\nu}$.
 (a) Use a simple example to show that $\delta g_{\mu\nu}$ and $\delta g^{\mu\nu}$ cannot be computed from one
 another in the usual way by raising and lowering indices.
 (b) Find the general relationship between $\delta g_{\mu\nu}$ and $\delta g^{\mu\nu}$.
+<% end_hw %>
+
+<% begin_hw('rindler-expansion') %>
+In example \ref{eg:bell-expansion} on p.~\pageref{eg:bell-expansion}, we analyzed the Bell spaceship paradox
+using the expansion scalar. Suppose that we carry out a similar analysis, but with the congruence defined by
+$x^2-t^2=a^{-2}$. The interpretation is that we have a bunch of objects at rest relative to
+one another in their own rest frame, but we switch to the accelerated coordinates described in
+section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}. Show that the expansion tensor vanishes.
 <% end_hw %>
 
 <% end_hw_sec %>
