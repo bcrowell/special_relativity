@@ -97,6 +97,11 @@ not possible to satisfy all three at the same time. Rindler coordinates satisfy 
 $(X,Y,Z)$ can easily be shown to be $1/X$, which depends on $X$. Thus we
 don't speak of Rindler coordinates as ``the'' coordinates of an accelerated
 observer.
+
+Rindler coordinates have the property that if a rod extends along the $X$ axis,
+and external forces are applied to it in just such a way that every point on the rod has constant $X$,
+then it accelerates along its own length without any stress. (See problem \ref{hw:rindler-expansion},
+p.~\pageref{hw:rindler-expansion}.)
 <% end_sec('rindler-coords') %>
 
 <% begin_sec("Transformation of vectors",nil,'xfn-vectors') %>

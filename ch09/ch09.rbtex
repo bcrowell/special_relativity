@@ -1370,6 +1370,8 @@ space, except that one of our $n+1$ dimensions is timelike, and the lines aren't
 directions that lie outside the light cone. One way to specify a congruence is to give the normalized velocity
 vector that is tangent to the world-line passing through any given point.
 
+\pagebreak
+
 \begin{eg}{An expanding congruence}\label{eg:exponential-congruence}
 As an example of a congruence in $1+1$ dimensions, consider the set of all curves of the form
 $x=ae^{bt}$, where $a$ and $b$ are positive constants. It would look like figure
@@ -1428,16 +1430,25 @@ Suppose that we accelerate a rigid object such as a ruler. Then we must have som
 \subfigref{expansion}{2}, the velocity vector must vary with both $t$ and $x$; the three velocity
 vectors in the figure are all different. As the particles accelerate, the spacing between them
 Lorentz-contracts, so that an observer accelerating along with them sees the spacing as remaining
-constant. This notion of rigid motion in relativity is called Born rigidity.\index{Born rigidity}\index{rigidity}
+constant.
+
+This notion of rigid motion in relativity is called Born rigidity.\index{Born rigidity}\index{rigidity}
 No physical substance can naturally be perfectly rigid (Born rigid),
 for if it were, then the speed at which sound
 waves traveled in it would be greater than $c$. Born rigidity can only be accomplished 
 through a set of external forces applied at all points on the object according
-to a program that has been planned in advance. A real object such as a ruler is not Born-rigid, but it will
+to a program that has been planned in advance. A real object such as a ruler does not maintain
+its own Born-rigidity, but it will
 eventually return to its original size and shape after having undergone relativistic acceleration,
 due to its own elastic properties, provided that the acceleration has been gentle enough to
 avoid permanently damaging it. In $1+1$ dimensions, Born rigidity is equivalent to a lack of
-expansion. In $3+1$ dimensions, we also require vanishing shear.
+expansion. In $3+1$ dimensions, we also require vanishing shear. Certain Born-rigid types of motion
+are possible, and others are not, purely as a matter of kinematics. It turns out to be possible
+to accelerate a rod in a Born-rigid way along its own length (problem \ref{hw:rindler-expansion},
+p.~\pageref{hw:rindler-expansion}), but it is not possible, for example, for a sphere to remain
+Born-rigid while simultaneously rotating and having its center of mass accelerated. These issues
+are involved in a paradox known as the Ehrenfest paradox, and the possible types of motion are
+delineated by a theorem called the Herglotz-Noether theorem.
 
 Mathematically, it is clear that the condition of vanishing expansion must be expressible
 in $1+1$ dimensions in terms of the partial derivatives $\partial u/\partial t$ and $\partial u/\partial x$,
@@ -1470,7 +1481,6 @@ $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not fla
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
 
-\pagebreak
 
 \begin{eg}{The Bell spaceship paradox}\label{eg:bell-expansion}\index{Bell's spaceship paradox}%
 \index{spaceship paradox}\index{paradox!Bell's spaceship}
@@ -1834,9 +1844,9 @@ $x^2-t^2=a^{-2}$. The motivation for considering this congruence is that its wor
 proper acceleration $a$, and each such world-line has a constant value of the coordinate $X$ in the
 system of accelerated coordinates  described in
 section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}.
-Show that the expansion tensor vanishes. The interpretation is that although rigid bodies are not
-in general possible in relativity, it is possible to apply a set of external forces to a straight rod so that
-it accelerates along its own length without any stress.
+Show that the expansion tensor vanishes. The interpretation is that it is possible to
+apply a carefully planned set of external forces to a straight rod so that
+it accelerates along its own length without any stress, i.e., while remaining Born-rigid.
 <% end_hw %>
 
 <% end_hw_sec %>
