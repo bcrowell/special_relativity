@@ -1830,9 +1830,13 @@ another in the usual way by raising and lowering indices.
 <% begin_hw('rindler-expansion') %>
 In example \ref{eg:bell-expansion} on p.~\pageref{eg:bell-expansion}, we analyzed the Bell spaceship paradox
 using the expansion scalar. Suppose that we carry out a similar analysis, but with the congruence defined by
-$x^2-t^2=a^{-2}$. The interpretation is that we have a bunch of objects at rest relative to
-one another in their own rest frame, but we switch to the accelerated coordinates described in
-section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}. Show that the expansion tensor vanishes.
+$x^2-t^2=a^{-2}$. The motivation for considering this congruence is that its world-lines have constant
+proper acceleration $a$, and each such world-line has a constant value of the coordinate $X$ in the
+system of accelerated coordinates  described in
+section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}.
+Show that the expansion tensor vanishes. The interpretation is that although rigid bodies are not
+in general possible in relativity, it is possible to apply a set of external forces to a straight rod so that
+it accelerates along its own length without any stress.
 <% end_hw %>
 
 <% end_hw_sec %>
