@@ -841,7 +841,8 @@ of transfer of momentum according to the observer, whose time coordinate is $t$,
 the observer happens to be moving along with the particle. Unlike the three-vectors
 $\vc{v}_\vc{o}$ and $\vc{a}_\vc{o}$, whose timelike components are zero by definition according
 to observer $\vc{o}$, $\vc{F}_\vc{o}$ usually has a nonvanishing timelike component, which is
-the rate of change of the particle's mass-energy, i.e., the power.
+the rate of change of the particle's mass-energy, i.e., the power. We can refer to the spacelike
+part of $\vc{F}_\vc{o}$ as the three-force.
 
 The following two examples show that an object moving at relativistic speeds has less inertia
 in the transverse direction than in the longitudinal one. A corollary is that the three-acceleration
@@ -894,7 +895,6 @@ and parallel to $\vc{v}_\vc{o}$.
 
 <% end_sec('three-force') %>
 <% begin_sec("Transformation of the force measured by an observer",nil,'xfn-three-force') %>
-<% end_sec('xfn-three-force') %>
 Define a frame of reference $\vc{o}$
 for the inertial frame of reference of an observer who does happen to be moving along with the particle
 at a particular instant in time. Then $t$ is the same as $\tau$, and $\vc{F}_\vc{o}$ the same as $\vc{F}$.
@@ -924,7 +924,21 @@ to this one, we have
 \end{align*}
 where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,
 and $\perp$ a direction perpendicular to it.
-
+<% end_sec('xfn-three-force') %>
+<% begin_sec("Work",nil,'work') %>
+Consider the one-dimensional version of the three-force, $F=\der p/\der t$.
+An advantantage of this quantity is that it allows us to use
+the Newtonian form of the (one-dimensional)
+work-kinetic energy relation $\der E/\der x=F$ without correction.\index{work}
+Proof:
+\begin{align*}
+  \frac{\der E}{\der x} &= \frac{\der E}{\der p}\frac{\der p}{\der t} \frac{\der t}{\der x} \\
+                        &= \frac{\der E}{\der p} \frac{F}{v}
+\end{align*}
+By implicit differentiation of the definition of mass, we find that $\der E/\der p=p/E$, and this in turn equals $v$
+by the identity proved in example \ref{eg:v-from-p-vector}, p.~\pageref{eg:v-from-p-vector}. This leads to
+the claimed result, which is valid for both massless and material particles.
+<% end_sec('work') %>
 <% end_sec('force') %>
 
 <% begin_sec("Degenerate matter",nil,'degenerate-matter',{'optional'=>true}) %>
@@ -1417,6 +1431,11 @@ while a second gamma way with energy $E_2$ flies off to the left.
 (a) Find the mass of the system.
 (b) Find the velocity of the center-of-mass frame, i.e., the frame of reference in which
 the total momentum is zero.
+<% end_hw %>
+
+<% begin_hw('newtonian-work') %>
+In section \ref{subsec:work} we proved the work-energy relation $\der E/\der x=F$ in the context
+of relativity. Recapitulate the derivation in the context of pure Newtonian mechanics.
 <% end_hw %>
 
 <% end_hw_sec %>

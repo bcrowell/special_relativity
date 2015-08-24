@@ -1332,7 +1332,7 @@ helical curve about the $t$ axis.
 
 <% end_sec('covariant-derivative') %>
 
-<% begin_sec("Congruences, expansion, and rigidity",nil,'congruences',{'optional'=>true}) %>
+<% begin_sec("Congruences, expansion, and rigidity",nil,'congruences-etc',{'optional'=>true}) %>
 <% marg(-5) %>
 <%
   fig(
@@ -1341,6 +1341,8 @@ helical curve about the $t$ axis.
   )
 %>
 <% end_marg %>
+<% begin_sec("Congruences",nil,'congruences') %>
+
 This chapter has focused on fluxes of conserved quantities; we wanted to rule out
 pictures like \subfigref{congruence-vs-conservation}{1}, in which the appearance and disappearance
 of world-lines would imply nonconservation of properties such as charge and mass-energy.
@@ -1385,6 +1387,9 @@ Suppose we instead let the congruence consist of the set of all curves of the fo
 constants and $|u|<1$. Then as in example \ref{eg:exponential-congruence},
 $v^\lambda=\gamma^{-1}(1,u)$. The world-lines are inertial and parallel to one another.
 \end{eg}
+
+<% end_sec('congruences') %>
+<% begin_sec("Expansion and rigidity",nil,'expansion') %>
 
 For the remainder of this discussion, we restrict ourselves to the $1+1$-dimensional case, so that
 rotation and shear are impossible, and the only interesting question is whether a given congruence
@@ -1442,13 +1447,7 @@ its own Born-rigidity, but it will
 eventually return to its original size and shape after having undergone relativistic acceleration,
 due to its own elastic properties, provided that the acceleration has been gentle enough to
 avoid permanently damaging it. In $1+1$ dimensions, Born rigidity is equivalent to a lack of
-expansion. In $3+1$ dimensions, we also require vanishing shear. Certain Born-rigid types of motion
-are possible, and others are not, purely as a matter of kinematics. It turns out to be possible
-to accelerate a rod in a Born-rigid way along its own length (problem \ref{hw:rindler-expansion},
-p.~\pageref{hw:rindler-expansion}), but it is not possible, for example, for a sphere to remain
-Born-rigid while simultaneously rotating and having its center of mass accelerated. These issues
-are involved in a paradox known as the Ehrenfest paradox, and the possible types of motion are
-delineated by a theorem called the Herglotz-Noether theorem.
+expansion. In $3+1$ dimensions, we also require vanishing shear.
 
 Mathematically, it is clear that the condition of vanishing expansion must be expressible
 in $1+1$ dimensions in terms of the partial derivatives $\partial u/\partial t$ and $\partial u/\partial x$,
@@ -1481,20 +1480,83 @@ $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not fla
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
 
+<% end_sec('expansion') %>
+<% begin_sec("The Herglotz-Noether theorem in 1+1 dimensions",nil,'herglotz-noether') %>\index{Herglotz-Noether theorem}
 
-\begin{eg}{The Bell spaceship paradox}\label{eg:bell-expansion}\index{Bell's spaceship paradox}%
+Certain Born-rigid types of motion
+are possible, and others are not, purely as a matter of kinematics. It turns out to be possible
+to accelerate a rod in a Born-rigid way along its own length (problem \ref{hw:rindler-expansion},
+p.~\pageref{hw:rindler-expansion}), but surprisingly, it is not possible, for example, for a sphere to remain
+Born-rigid while simultaneously rotating and having its center of mass accelerated.
+The possible types of motion are delineated by a theorem called the Herglotz-Noether theorem.
+Unlike the $3+1$-dimensional version of the theorem,
+the $1+1$-dimensional version is neither surprising nor difficult to state or prove.
+
+\emph{Herglotz-Noether theorem in 1+1 dimensions:} Any rigid motion in $1+1$ dimensions is uniquely
+determined by the world-line W of one point, provided that the world-line of that point is smooth and timelike.
+
+Proof: To avoid technical issues, we assume that ``smooth'' means analytic, which slightly weakens the result.
+As discussed above, zero expansion is equivalent to
+$0=\partial\gamma/\partial t+\partial(u\gamma)/\partial x$, where $(t,x)$ are any set of Minkowski coordinates.
+This can be put in the form $\partial u/\partial x=f(u)\partial u/\partial t$, where $f$ is smooth for $-1<u<1$
+and $f(0)=0$.
+We need to prove that the solution
+of this partial differential equation is unique, given W.
+We arbitrarily choose one event on W.
+By assumption, W is timelike at this point, so we are free to choose our Minkowski coordinates
+such that our point is at rest at this event at the origin. Since $f(0)=0$, it follows that
+at the origin $\partial u/\partial x=0$. We can similarly evaluate the higher derivatives
+$\partial^n u/\partial x^n$, and because $u$ is smooth we can in this calculation freely interchange the order
+of the partial derivatives $\partial_x$ and $\partial_t$. It is straightforward to  show that these higher derivatives
+$\partial^n u/\partial x^n$ are also zero. Since $u(x)$ is assumed to be analytic, it follows that $u(0,x)=0$ for
+all $x$, i.e., an observer instantaneously moving along W at $t=0$ says that all other points are at rest
+as well at that time. But because W is timelike,
+every point in spacetime is simultaneous with some event on it according to an observer at that event moving
+along with W. Therefore the value of $u$ is determined everywhere in spacetime, and this completes the proof
+of the existence and uniqueness of the congruence.
+
+Remarks: 
+(1) The $1+1$-dimensional version of the Herglotz-Noether theorem is not a special case of
+the $3+1$-dimensional version. The latter is usually proved for a space-filling congruence,
+and it fails when the body in question does not enclose a volume, e.g., in the case of a thin rod
+or a letter ``C.''
+(2) The theorem can be strengthened by relaxing the requirement of smoothness so that only
+the existence of a second derivative of the position with respect to proper time is 
+required.\footnote{Giulini, ``The Rich Structure of Minkowski Space,'' \url{arxiv.org/abs/0802.4345},
+theorems 18 and 22}
+<% end_sec('herglotz-noether') %>
+
+<% begin_sec("Bell's spaceship paradox revisited",nil,'bell-revisited') %>\index{Bell's spaceship paradox}%
 \index{spaceship paradox}\index{paradox!Bell's spaceship}
 Bell's spaceship paradox was discussed in example \ref{eg:bell-spaceship-paradox} on p.~\pageref{eg:bell-spaceship-paradox}.
 In the paradox, two spaceships begin accelerating simultaneously and
 have equal accelerations in the frame of an external, inertial observer,
-causing a thread stretched between them breaks. We now give a more mathematically elegant demonstration of the
-same result using the expansion scalar.
+causing a thread stretched between them breaks. We now give a more rigorous and mathematically elegant demonstration of the
+same result, suggested by P.~Allen.
 
-We define a congruence $(x+c)^2=1+t^2$. For a given value of the parameter $c$, we get an accelerating
+The motion of the thread throughout its length can be described by a timelike congruence.
+If the thread is not to come under any strain, then this must be a Born-rigid congruence.
+By the $1+1$-dimensional Herglotz-Noether theorem, the congruence is uniquely determined by
+the motion of one of its points, which we take to be the trailing rocket. This congruence
+happens to be known. It is defined by the system of accelerated coordinates
+(Rindler coordinates)  described in
+section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}. The vanishing of the
+expansion scalar for this congruence is left for the reader to verify (problem
+\ref{hw:rindler-expansion}, p.~\pageref{hw:rindler-expansion}). But this congruence consists of
+world-lines whose proper accelerations are each constant and all different from one another,
+and this is inconsistent with the description given in the Bell paradox, where it is stated
+that a frame exists in which the motions of the two ships are identical except for a translation. Therefore the
+thread cannot move rigidly.
+
+This completes the resolution fo the paradox, but as an illustrative example, we present an explicit
+calculation of the expansion scalar for the congruence that one would most naturally imagine to be implied
+by the description of the paradox. This is given by
+$(x+c)^2=1+t^2$. For a given value of the parameter $c$, we get an accelerating
 world-line. (Its proper acceleration $a=1$ happens to be constant, example \ref{eg:hyperbolic-motion}, 
 p.~\pageref{eg:hyperbolic-motion}, although this is not necessary for the purposes of discussing the paradox.)
 Each world-line starts at rest at $t=0$, and each one has the same acceleration at any given $t$.
-By picking any two distinct values of $c$, we obtain the literal situation described in the paradox.
+By picking any two distinct values of $c$ as the endpoints of the thread,
+we obtain the literal situation described in the paradox.
 
 Implicit differentiation gives $u=t/\sqrt{1+t^2}$. The algebra gets a little messy now, so I used the open-source
 computer algebra system Maxima. The following program, which should be fairly readable without previous
@@ -1513,9 +1575,10 @@ Note that although the calculation was carried out in a particular set of coordi
 such as $\Theta$ has a coordinate-independent value. Reference to a particular coordinate system or
 frame of reference occurs only in the initial definition of the congruence, which is defined in order
 to model the situation described in the paradox, which is stated in terms of a particular external observer.
-\end{eg}
 
-<% end_sec('congruences') %>
+<% end_sec('bell-revisited') %>
+
+<% end_sec('congruences-etc') %>
 
 <% begin_sec("Units of measurement for tensors",nil,'tensor-units') %>\index{units!for tensors}
 Analyzing units, also known as dimensional analysis, is one of the
@@ -1838,11 +1901,12 @@ another in the usual way by raising and lowering indices.
 <% end_hw %>
 
 <% begin_hw('rindler-expansion') %>
-In example \ref{eg:bell-expansion} on p.~\pageref{eg:bell-expansion}, we analyzed the Bell spaceship paradox
-using the expansion scalar. Suppose that we carry out a similar analysis, but with the congruence defined by
+In section \ref{subsec:bell-revisited} on p.~\pageref{subsec:bell-revisited}, we analyzed the Bell spaceship paradox
+using the expansion scalar and the Herglotz-Noether theorem.
+Suppose that we carry out a similar analysis, but with the congruence defined by
 $x^2-t^2=a^{-2}$. The motivation for considering this congruence is that its world-lines have constant
 proper acceleration $a$, and each such world-line has a constant value of the coordinate $X$ in the
-system of accelerated coordinates  described in
+system of accelerated coordinates (Rindler coordinates)  described in
 section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}.
 Show that the expansion tensor vanishes. The interpretation is that it is possible to
 apply a carefully planned set of external forces to a straight rod so that

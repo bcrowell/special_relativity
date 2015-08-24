@@ -492,8 +492,15 @@ If the thread had been attached only to the leading ship, then it would have tra
 behind it, unstressed, with Lorentz-contracted length $L/\gamma$. Since its actual length
 according to $\vc{o}$ is still $L$, it has been stretched relative to its unstressed length.
 
-This example is analyzed with more mathematical elegance using the expansion scalar
-in example \ref{eg:bell-expansion} on p.~\pageref{eg:bell-expansion}.
+This treatment has one wart on it, which is that we judged the distance between the two ships
+in a frame of reference instantaneously comoving with the trailing ship, but this is slightly
+different from the length as determined in the leading ship's frame. One way to remove this
+wart is to note that the fractional discrepancy $\Delta L_1/L_1$ is of order $v^3$, which is
+of a lower order than the strain in the thread, which is of order $v^2$. To carry out this type
+of error estimation rigorously would however be cumbersome.
+A more elegant and rigorous approach is
+given
+in section \ref{subsec:bell-revisited} on p.~\pageref{subsec:bell-revisited}.
 
 This presentation includes ideas contributed by physicsforums users tiny-tim and
 PeterDonis.
