@@ -1494,6 +1494,7 @@ the $1+1$-dimensional version is neither surprising nor difficult to state or pr
 
 \emph{Herglotz-Noether theorem in 1+1 dimensions:} Any rigid motion in $1+1$ dimensions is uniquely
 determined by the world-line W of one point, provided that the world-line of that point is smooth and timelike.
+It is in general only possible to extend the congruence describing the motion to some neighborhood of W.
 
 Proof: To avoid technical issues, we assume that ``smooth'' means analytic, which slightly weakens the result.
 As discussed above, zero expansion is equivalent to
@@ -1501,7 +1502,7 @@ $0=\partial\gamma/\partial t+\partial(u\gamma)/\partial x$, where $(t,x)$ are an
 This can be put in the form $\partial u/\partial x=f(u)\partial u/\partial t$, where $f$ is smooth for $-1<u<1$
 and $f(0)=0$.
 We need to prove that the solution
-of this partial differential equation is unique, given W.
+of this partial differential equation, if it exists, is unique given W.
 We arbitrarily choose one event on W.
 By assumption, W is timelike at this point, so we are free to choose our Minkowski coordinates
 such that our point is at rest at this event at the origin. Since $f(0)=0$, it follows that
@@ -1511,9 +1512,10 @@ of the partial derivatives $\partial_x$ and $\partial_t$. It is straightforward 
 $\partial^n u/\partial x^n$ are also zero. Since $u(x)$ is assumed to be analytic, it follows that $u(0,x)=0$ for
 all $x$, i.e., an observer instantaneously moving along W at $t=0$ says that all other points are at rest
 as well at that time. But because W is timelike,
-every point in spacetime is simultaneous with some event on it according to an observer at that event moving
+every point in spacetime is simultaneous with some event $\zu{E}\in \zu{W}$ 
+according to an observer at that event moving
 along with W. Therefore the value of $u$ is determined everywhere in spacetime, and this completes the proof
-of the existence and uniqueness of the congruence.
+of the uniqueness of the congruence.
 
 Remarks: 
 (1) The $1+1$-dimensional version of the Herglotz-Noether theorem is not a special case of
@@ -1524,6 +1526,14 @@ or a letter ``C.''
 the existence of a second derivative of the position with respect to proper time is 
 required.\footnote{Giulini, ``The Rich Structure of Minkowski Space,'' \url{arxiv.org/abs/0802.4345},
 theorems 18 and 22}
+(3) The existence of such a rigid motion is not guaranteed by the theorem, only its uniqueness if it
+does exist. Existence may fail because the event E referred to in the proof may not be unique, which can
+happen if the object is large and violently accelerating (its size $L$ not being $\lesssim c^2/a$, where
+$a$ is the proper acceleration. For example, in the accelerated coordinates 
+(Rindler coordinates)  described in
+section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}, if a point on a rigid rod has
+$X=\text{constant}$, then the rod cannot extend outside the shaded wedge shown in
+figure \figref{rindler-wedge}.
 <% end_sec('herglotz-noether') %>
 
 <% begin_sec("Bell's spaceship paradox revisited",nil,'bell-revisited') %>\index{Bell's spaceship paradox}%
