@@ -1511,25 +1511,28 @@ $\partial^n u/\partial x^n$, and because $u$ is smooth we can in this calculatio
 of the partial derivatives $\partial_x$ and $\partial_t$. It is straightforward to  show that these higher derivatives
 $\partial^n u/\partial x^n$ are also zero. Since $u(x)$ is assumed to be analytic, it follows that $u(0,x)=0$ for
 all $x$, i.e., an observer instantaneously moving along W at $t=0$ says that all other points are at rest
-as well at that time. But because W is timelike,
-every point in spacetime is simultaneous with some event $\zu{E}\in \zu{W}$ 
+as well at that time. But because W is timelike, we can always find some neighborhood A of W such that
+every point in A is simultaneous with a unique event on W
 according to an observer at that event moving
-along with W. Therefore the value of $u$ is determined everywhere in spacetime, and this completes the proof
-of the uniqueness of the congruence.
+along with W. Therefore the value of $u$ is determined 
+everywhere in A, and this completes the proof that the congruence exists and is unique in A.
 
 Remarks: 
 (1) The $1+1$-dimensional version of the Herglotz-Noether theorem is not a special case of
 the $3+1$-dimensional version. The latter is usually proved for a space-filling congruence,
 and it fails when the body in question does not enclose a volume, e.g., in the case of a thin rod
 or a letter ``C.''
+
 (2) The theorem can be strengthened by relaxing the requirement of smoothness so that only
 the existence of a second derivative of the position with respect to proper time is 
 required.\footnote{Giulini, ``The Rich Structure of Minkowski Space,'' \url{arxiv.org/abs/0802.4345},
 theorems 18 and 22}
-(3) The existence of such a rigid motion is not guaranteed by the theorem, only its uniqueness if it
-does exist. Existence may fail because the event E referred to in the proof may not be unique, which can
-happen if the object is large and violently accelerating (its size $L$ not being $\lesssim c^2/a$, where
-$a$ is the proper acceleration. For example, in the accelerated coordinates 
+
+(3) If the motion is accelerated, then
+the rigid motion cannot be extended to an arbitrary distance from W.
+If the proper acceleration of W can be as great as $a$, then we expect to be able to
+extend the rigid motion to a proper distance only as big as $~ c^2/a$.
+For example, in the accelerated coordinates 
 (Rindler coordinates)  described in
 section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}, if a point on a rigid rod has
 $X=\text{constant}$, then the rod cannot extend outside the shaded wedge shown in
