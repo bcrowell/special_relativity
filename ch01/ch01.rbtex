@@ -1058,6 +1058,20 @@ sufficient to check the invariance of the spacetime interval under this transfor
     %q{Example \ref{eg:agree-on-v}.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-negative-v',
+    %q{Example \ref{eg:lorentz-negative-v}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-more-quadrants',
+    %q{Example \ref{eg:lorentz-more-quadrants}.}
+  )
+%>
 <% end_marg %>
 \begin{eg}{Observers agree on their relative speeds}\label{eg:agree-on-v}
 Observer A says observer B is moving away from her at velocity $v$; is it true, as in Galilean relativity,
@@ -1071,6 +1085,17 @@ p.~\pageref{sec:symmetry-postulates}} the experimental
 data are exactly the same when B carries out the measurement, \subfigref{agree-on-v}{2}, and
 therefore B infers the same speed.
 \end{eg}
+
+\begin{eg}{Motion in the opposite direction}\label{eg:lorentz-negative-v}
+Figure \figref{lorentz-negative-v} shows the case where the observer whose frame is represented by the grid is moving to
+the left relative to the one whose frame is represented by the gray square.
+\end{eg}
+
+\begin{eg}{Other quadrants}\label{eg:lorentz-more-quadrants}
+So far I've been arbitrarily choosing to draw only the first quadrant of each coordinate system.
+Figure \figref{lorentz-more-quadrants} shows a region that includes all four quadrants.
+\end{eg}
+
 
 \begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
 Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
@@ -1103,8 +1128,6 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
   )
 %>
 
-\pagebreak
-
 <%
   fig(
     'schoolbus-with-x-t',
@@ -1119,6 +1142,36 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
     }
   )
 %>
+
+\begin{eg}{Deja vu?}\label{eg:there-you-go-again}
+The grids we've been drawing
+are mere \emph{conventions}, as elaborate and arbitrary as dress in
+the court of Louis XIV. They come from a surveying process, which may need
+to be planned in advance and whose results we might not be able to \emph{see} until later.
+
+The dark line is the world-line of an observer O, who moves inertially for a while,
+accelerates to the left, and then moves inertially again. On the right are pasted two coordinate grids
+adapted to the two inertial segments. At event E, Bush steals the 2000 election, and this is
+depicted as being simultaneous with both event A and event B. Does poor O see it happen twice?
+No, even if the bad news is transmitted by a signal moving at the speed of light (dashed line), O
+receives it only once, at event C.
+
+The only problem here is a poor choice of labels, which causes E to have more than one label.
+Something similar happens in a constant-acceleration frame, section \ref{sec:rindler-coords},
+p.~\pageref{sec:rindler-coords}. Cf.~also example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'there-you-go-again',
+    %q{Example \ref{eg:there-you-go-again}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
 
 \begin{eg}{The garage paradox}\label{eg:garage-paradox}\index{garage paradox}
 One of the most famous of all the so-called relativity

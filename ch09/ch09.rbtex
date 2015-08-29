@@ -1514,7 +1514,7 @@ all $x$, i.e., an observer instantaneously moving along W at $t=0$ says that all
 as well at that time. But because W is timelike, we can always find some neighborhood A of W such that
 every point in A is simultaneous with a unique event on W
 according to an observer at that event moving
-along with W. Therefore the value of $u$ is determined 
+along with W. (Cf.~example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.) Therefore the value of $u$ is determined 
 everywhere in A, and this completes the proof that the congruence exists and is unique in A.
 
 Remarks: 

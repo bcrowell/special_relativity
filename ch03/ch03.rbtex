@@ -430,7 +430,7 @@ left of the dashed line is forever hidden from its passengers. That is, an obser
 undergoes constant acceleration has an \emph{event horizon} --- a boundary that prevents her
 from observing anything on the other side. You may have heard about the event horizon associated
 with a black hole. This example shows that we can have event horizons even when there is no
-gravity at all.\index{event horizon}\label{event-horizon}
+gravity at all.\index{event horizon}\index{horizon}\label{event-horizon}
 \end{eg}
 
 <% marg(-100) %>
@@ -443,6 +443,8 @@ gravity at all.\index{event horizon}\label{event-horizon}
   )
 %>
 <% end_marg %>
+
+\enlargethispage{\baselineskip}
 
 \begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}\index{Bell's spaceship paradox}%
 \index{spaceship paradox}\index{paradox!Bell's spaceship}
@@ -504,6 +506,36 @@ in section \ref{subsec:bell-revisited} on p.~\pageref{subsec:bell-revisited}.
 
 This presentation includes ideas contributed by physicsforums users tiny-tim and
 PeterDonis.
+\end{eg}
+
+\enlargethispage{\baselineskip}
+
+<% marg(-300) %>
+<%
+  fig(
+    'deja-vu-again',
+    %q{Example \ref{eg:deja-vu-again}.}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{Deja vu all over again}\label{eg:deja-vu-again}
+In example \ref{eg:there-you-go-again} on p.~\pageref{eg:there-you-go-again}, we saw that when an observer
+is accelerated, she may consider an event to be simultaneous with her more than once. That is, given a smooth,
+timelike world-line $\vc{r}(\tau)$ parametrized by proper time, and an event E, which we take to be the origin
+of our coordinate system, there may be more than one time at which $\vc{r}$ is orthogonal to the velocity
+vector $\vc{v}$. It is an interesting exercise to try to estimate how much acceleration is needed and how
+distant E must be. Define $f(\tau)=\vc{r}\cdot\vc{v}$, and suppose that $f(\tau_1)=f(\tau_2)$ for
+$\tau_1\ne \tau_2$. Then by Rolle's theorem, there must be some intermediate time $\tau^*$ at which
+$f'(\tau^*)=0$. Differentiating $f$ using the product rule, we
+find $f'=\vc{v}\cdot\vc{v}+\vc{r}\cdot\vc{a}=1+\vc{r}\cdot\vc{a}$ (in the $+---$ signature), so that
+$\vc{r}\cdot\vc{a}=-1$ at $\tau^*$. Converting to units with $c\ne1$, we have
+$\vc{r}\cdot\vc{a}=-c^2$. In this sense E must be distant, and the acceleration large.
+Note, however, that the Cauchy-Schwarz inequality from Euclidean geometry, $|\vc{e}\cdot\vc{f}|\le|\vc{e}|\;|\vc{f}|$,
+may fail or need to be reversed for spacelike vectors in Minkowski space, so we cannot use this result
+to put a bound on the proper acceleration.
+% https://www.physicsforums.com/threads/every-event-is-simultaneous-with-you-at-some-time-proof.829332/
 \end{eg}
 <% end_sec('a-vector') %>
 <% begin_sec("Constraints on the velocity and acceleration vectors",nil,'v-a-constraints') %>

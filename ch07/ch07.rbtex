@@ -52,8 +52,8 @@ coordinates $(T,X,Y,Z)$ that correspond to the frame of reference of an observer
 a spaceship accelerating
 in the $x$ direction with a constant acceleration. 
 
-The Galilean answer would be that we simply
-take $X=x-\frac{1}{2}at^2$. But this is unsatisfactory from a relativistic point of view for
+The Galilean answer would be
+$X=x-\frac{1}{2}at^2$. But this is unsatisfactory from a relativistic point of view for
 several reasons. At $t=c/a$ the observer would be moving at the speed of light, but relativity
 doesn't allow frames of reference moving at $c$ (section \ref{sec:no-c-frame}, p.~\pageref{sec:no-c-frame}).
 At $t>c/a$, the observer's motion would be faster than $c$, but this is impossible in $3+1$
@@ -61,10 +61,10 @@ dimensions (section \ref{sec:ftl-frames}, p.~\pageref{sec:ftl-frames}).
 
 These problems are related to
 the fact that the observer's \emph{proper} acceleration, i.e., the reading on an accelerometer
-aboard the ship, isn't constant if the ship's position is given by $\frac{1}{2}at^2$.
+aboard the ship, isn't constant if $x=\frac{1}{2}at^2$.
 We saw in example \ref{eg:hyperbolic-motion} on p.~\pageref{eg:hyperbolic-motion} that constant
 proper acceleration is described by $x=\frac{1}{a}\cosh a\tau$,
-$t=\frac{1}{a}\sinh a\tau$, where $\tau$ is the proper time. For this type of motion, the
+$t=\frac{1}{a}\sinh a\tau$, where $\tau$ is the proper time. For this motion, the
 velocity only approaches $c$ asymptotically. This suggests the following for the relationship 
 between the two sets of coordinates:
 \begin{align*}
@@ -102,6 +102,10 @@ Rindler coordinates have the property that if a rod extends along the $X$ axis,
 and external forces are applied to it in just such a way that every point on the rod has constant $X$,
 then it accelerates along its own length without any stress. (See problem \ref{hw:rindler-expansion},
 p.~\pageref{hw:rindler-expansion}.)
+
+The diagonals are event horizons (p.~\pageref{event-horizon}).
+Their intersection lies along every constant-$T$ line; cf.~examples \ref{eg:there-you-go-again},
+p.~\pageref{eg:there-you-go-again} and \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.
 <% end_sec('rindler-coords') %>
 
 <% begin_sec("Transformation of vectors",nil,'xfn-vectors') %>
