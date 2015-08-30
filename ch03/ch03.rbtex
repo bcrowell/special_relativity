@@ -658,33 +658,29 @@ The other is global: two points that are far apart as measured along W
 could be close together in the ambient Euclidean space, as at point C.
 
 If we carry over these ideas to Minkowski space, then case B is easy to analyze using the techniques we have
-developed. The analog of the radius of curvature is the proper acceleration.
+developed. The analog of the radius of curvature is the inverse of the proper acceleration, which suggests that
+we should be able to get a bound on the radius of the tubular neighborhood in terms of the acceleration.
 Define $f(\tau)=\vc{r}\cdot\vc{v}$. At a given point on W, $f$ is minus the Minkowski time coordinate
 that an observer whose world-line is W would assign, at that instant, to E.
 The condition for the type of self-intersection we're discussing
 is that both $f$ and its derivative with respect to proper time $f'$ vanish at the same point on W.
 Differentiating $f$ using the product rule, we
 find $f'=\vc{v}\cdot\vc{v}+\vc{r}\cdot\vc{a}=1+\vc{r}\cdot\vc{a}$ (in the $+---$ signature), so that
-$\vc{r}\cdot\vc{a}=-1$. Converting to units with $c\ne1$, we have
-$\vc{r}\cdot\vc{a}=-c^2$. In ordinary units $c$ is large, so in this sense E must be distant, and the acceleration large.
-It seems that we have an explanation of why
-why we never encounter such a problem in nonrelativistic physics.
+$\vc{r}\cdot\vc{a}=-1$.
 
-We have to be careful, however, in interpreting this bound on $\vc{r}\cdot\vc{a}$. In the Euclidean case, if two
-vectors have a large dot product, we can conclude that the product of their magnitude is large.
-This follows from the ponderously named Cauchy-Schwarz inequality,\index{Cauchy-Schwarz inequality}
-$|\vc{e}\cdot\vc{f}|\le|\vc{e}|\;|\vc{f}|$, which follows from $\vc{e}\cdot\vc{f}=|\vc{e}|\;|\vc{f}|\cos\theta_{ef}$.
-But in Minkowski space the Cauchy-Schwarz inequality doesn't have this form, e.g., $\vc{e}$ could
-be lightlike, so that $|\vc{e}|=0$, but it could still happen that $\vc{e}\cdot\vc{f}\ne0$.
-
-To make our bound more useful, we need to restrict ourselves to $1+1$ dimensions.
-We have both $\vc{v}\cdot\vc{r}=0$ and $\vc{v}\cdot\vc{a}=0$, and in $1+1$ dimensions this
-implies that $\vc{r}$ and $\vc{a}$ are collinear, spacelike vectors. Then if $\vc{r}\cdot\vc{a}=-1$, we must have
-$\vc{r}$ in the same direction as $\vc{a}$, so that W is accelerating away from E, as in
-figure \subfigref{deja-vu-again}{3}, and $|\vc{r}||\vc{a}|=1$. Since $\vc{r}$ is perpendicular to
+We now make use of the fact that both $\vc{a}$ and $\vc{r}$ are orthogonal to W --- the former as a general
+kinematic fact, and the latter because $f=0$. This means that they lie in the plane perpendicular to W.
+The geometry of this plane is Euclidean, so we can apply the
+Euclidean inequality $|\vc{a}\cdot\vc{r}|\le|\vc{a}|\;|\vc{r}|$, where the bars on the left denote
+the absolute value and the ones on the right the magnitudes of the vectors. We therefore
+have $|\vc{a}|\;|\vc{r}|\ge 1$.
+Since $\vc{r}$ is orthogonal to
 W, we can interpret it as the proper distance between E and W. The magnitude of $\vc{a}$ is
-the proper acceleration, so we have an exact bound of the form 
-$(\text{proper distance})(\text{proper acceleration})=1$.
+the proper acceleration. Converting to units with $c\ne1$, we have an exact bound of the form
+$(\text{proper distance})(\text{proper acceleration})\ge c^2$.
+In ordinary units $c$ is large, so in this sense E must be distant, and the acceleration large.
+This explains
+why we never encounter such a problem in nonrelativistic physics.
 % https://www.physicsforums.com/threads/every-event-is-simultaneous-with-you-at-some-time-proof.829332/
 \end{eg}
 
