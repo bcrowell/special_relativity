@@ -657,7 +657,8 @@ One is local: the radius of curvature of W is too small, as at B, where W coinci
 The other is global: two points that are far apart as measured along W
 could be close together in the ambient Euclidean space, as at point C.
 
-If we carry over these ideas to Minkowski space, then case B is easy to analyze using the techniques we have
+If we carry over these ideas to Minkowski space, then case B,
+\subfigref{deja-vu-again}{3}, is easy to analyze using the techniques we have
 developed. The analog of the radius of curvature is the inverse of the proper acceleration, which suggests that
 we should be able to get a bound on the radius of the tubular neighborhood in terms of the acceleration.
 Define $f(\tau)=\vc{r}\cdot\vc{v}$. At a given point on W, $f$ is minus the Minkowski time coordinate
@@ -681,7 +682,40 @@ $(\text{proper distance})(\text{proper acceleration})\ge c^2$.
 In ordinary units $c$ is large, so in this sense E must be distant, and the acceleration large.
 This explains
 why we never encounter such a problem in nonrelativistic physics.
+
 % https://www.physicsforums.com/threads/every-event-is-simultaneous-with-you-at-some-time-proof.829332/
+\end{eg}
+
+\begin{eg}{That was never now}\label{eg:jamais-vu}
+In example \ref{eg:deja-vu-again} we
+characterized the circumstances under which simultaneity can fail to be
+unique. Simultaneity can also fail to exist. For example, 
+in the same notation, take W to be the constant-acceleration motion described in
+example \ref{eg:hyperbolic-motion}, p.~\pageref{eg:hyperbolic-motion}, and let E be the event $(-1,0)$.
+Then it can easily be shown (problem \ref{hw:jamais-vu}) that $f(\tau)$ is always positive, so an observer moving along W will
+always consider E to be in her past, never her future. No time exists for her such that she considers
+E to be ``now.'' The function $f$ comes to a maximum somewhere but never crosses zero.
+
+There will always be some neighborhood of W within which we are protected against nonexistence of simultaneity.
+To determine the radius of this neighborhood, we consider instead of an event like E an event B that lies
+on the boundary of the neighborhood, and define $f$ in terms of B rather than E.
+Then $f(\tau)=0$ for some $\tau$, but $f$ does not cross over zero, so that either $f\le 0$ everywhere
+or $f\ge 0$ everywhere. At the place where $f(\tau)=0$, we also have $f'(\tau)=0$, and the rest of the
+analysis is the same as in example \ref{eg:deja-vu-again}. Therefore the radius of the tubular neighborhood
+determined in that example defines a radius within which simultaneity has both existence and uniqueness.
+
+The interpretation of such a boundary point B is a little funny. For the motion
+in example \ref{eg:hyperbolic-motion}, the only such point is the one labeled $(0,0)$ in the
+Minkowski coordinates used there. Is there really anything special about this point, or is it just a random point that
+we happened to choose as the origin of our coordinate system? An observer moving along this W
+does not believe that any point in spacetime
+accessible to her has any special properties. She has always been accelerating and always will be, so no event she
+can observe or affect can be distinguished from the other events that she could have observed or affected in the same
+way at any earlier or later time. But we can easily show that B \emph{is} special by giving a description of
+it without reference to any coordinates. Let W's causal future be the set of all events that lie in the future light cone
+of some event on W, and similarly for W's causal past. The boundaries of these two sets are W's past and future
+event horizons, and these horizons coincide at only one event,
+which is B. This seems paradoxical, but our observer can neither observe nor affect B, so there is no contradiction.
 \end{eg}
 
 <% end_sec('v-dot-a-is-zero') %>
@@ -726,7 +760,7 @@ Their derivatives are, respectively, $(x^2+1)^{-1/2}$,
 $(x^2-1)^{-1/2}$, and $(1-x^2)^{-1}$.
 <% end_sec('identities') %>
 
-<% begin_sec("The projection operator",nil,'proj',{'optional'=>true}) %>\index{projection operator}
+<% begin_sec("The projection operator",4,'proj',{'optional'=>true}) %>\index{projection operator}
 A frequent source of confusion in relativity is that we write down equations that
 are coordinate-dependent, but forget the dependency. Similarly, it is possible to
 write expressions that are only valid for one choice of signature. The following
@@ -865,7 +899,7 @@ which is zero.
 \end{eg}
 <% end_sec('proj') %>
 
-<% begin_sec("Faster-than-light frames of reference?",nil,'ftl-frames',{'optional'=>true}) %>
+<% begin_sec("Faster-than-light frames of reference?",4,'ftl-frames',{'optional'=>true}) %>
 We recall from section \ref{sec:no-c-frame} that
 special relativity doesn't permit the existence of observers who move at $c$. This is because
 if two observers differ in velocity by $c$, then the Lorentz transformation between them is
@@ -1069,10 +1103,28 @@ a point on W, parametrized by proper time $\tau$.
 Define the proper distance $\ell$ between E and a point on W as
 $\ell^2=-(P_\vc{v} \vc{r})^2$, where the square indicates an inner product of the vector with itself,
 and the minus sign is because we use the $+---$ signature.
-Show that $\der(\ell^2)/\der\tau=2(\vc{r}\cdot\vc{v})(\vc{r}\cdot\vc{a})$. Does this make sense
+Show that $\der(\ell^2)/\der\tau=2(\vc{r}\cdot\vc{v})(\vc{r}\cdot\vc{a})(\vc{v}\cdot\vc{v})$, where
+the final factor is just a signature-dependent sign. Does this make sense
 when W is inertial? Give an example where the derivative vanishes because the first factor is
 zero, and another example where the second factor is the one that vanishes (but $\vc{a}\ne 0$).
 <% end_hw %>
+
+<% begin_hw('jamais-vu') %>
+Consider an observer O moving along a world-line W with
+the constant-acceleration motion defined in example \ref{eg:hyperbolic-motion}, p.~\pageref{eg:hyperbolic-motion}.
+In example \ref{eg:jamais-vu}, p.~\pageref{eg:jamais-vu}, we gave the coordinates of a certain event E that
+was never ``now'' as described by our observer. The purpose of this problem is to analyze this is a more
+elegant and coordinate-invariant way.
+Let P be a point on W, 
+let B be the event described in example \ref{eg:jamais-vu},
+and let $\vc{x}=\overrightarrow{BP}$,
+$\vc{h}=\overrightarrow{BE}$, and
+$\vc{r}=\overrightarrow{EP}$.
+(a) Show that W, which was originally described in a certain set of coordinates, can instead
+by defined by the fact that $\vc{x}\cdot\vc{v}=0$ for every point on W.
+(b) Show that if $\vc{h}$ is timelike, then $\vc{r}\cdot\vc{v}$ is never zero.
+<% end_hw %>   
+
 
 <% end_hw_sec %>
 
