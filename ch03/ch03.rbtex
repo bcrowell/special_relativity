@@ -302,6 +302,7 @@ But this would not be a vector, since it doesn't act the right way when rotated 
 non-example.
 In contradistinction to a vector, a scalar is specified by a single real number and is invariant
 under rotations.
+
 The most basic example of a Newtonian vector was a displacement
 $(\Delta x,\Delta y,\Delta z)$, and from the displacement vector we would go on
 to construct other quantities such as a velocity vector $\vc{v}=\Delta \vc{r}/\Delta t$.
@@ -351,7 +352,7 @@ a straight world-line, so that the derivative $\der\ldots/\der\ldots$ is the sam
 differences $\Delta\ldots/\Delta\ldots$, i.e., calculus isn't needed.
 A ray of light has $v=c$, so
 that applying the metric to any segment of its world-line gives $\Delta\tau=0$. Attempting to calculate
-$\vc{v}=\Delta\vc{r}/\Delta\tau$ then gives something of the form $(\infty,\infty)$.
+$\vc{v}=\Delta\vc{r}/\Delta\tau$ then gives something with infinite components.
 We will see in section~\ref{subsec:massless-go-at-c} that 
 \emph{all} massless particles, not just photons, travel at $c$, so the same would apply to them.
 Therefore a velocity vector is only defined for particles whose world-lines
@@ -525,7 +526,7 @@ helicopter's velocity to be part of the description of its state, then there wou
 a total of six degrees of
 freedom: one for each coordinate and one for each component of the velocity vector.
 
-Now suppose that we want to describe a particle's velocity and acceleration. In Newtonian mechanics,
+Now suppose that we want to specify a particle's velocity and acceleration. In Newtonian mechanics,
 we would describe these three-vectors as possessing a total of
 six degrees of freedom: $v_x$, $v_y$, $v_z$, $a_x$, $a_y$, and $a_z$.
 Upgrading from Newtonian mechanics to relativity can't change the number of degrees of freedom.
@@ -600,7 +601,16 @@ the observer-vectors $\vc{o}$ of chapter \ref{ch:spacetime}, but with a normaliz
 we did not impose earlier.
 An observer writes her own velocity vector as  $(1,0)$, i.e., as the unit vector in the timelike direction.
 Since we have no notion of adding one observer to another observer, it makes sense that
-velocity vectors don't add relativistically.
+velocity vectors don't add relativistically. Similarly, there is no meaningful way to define the
+magnitude of an observer, so it makes sense that the magnitude of a velocity vector carries
+no useful information and can arbitrarily
+be set equal to 1.
+
+Regarding the magnitude,
+note also that the magnitude of a vector is frame-invariant,
+and therefore it wouldn't make sense to imagine that the magnitude of
+an object's four-velocity would produce some number telling you
+how fast the object was going. How fast relative to what? 
 
 If $\vc{u}$ and $\vc{v}$ are both future-directed, properly normalized velocity vectors, 
 and if the signature is $+---$ as in this book, then
