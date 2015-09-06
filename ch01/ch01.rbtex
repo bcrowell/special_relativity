@@ -1236,6 +1236,107 @@ according to clocks synchronized in frame 2 ($t'$, the train).
 
 <% end_sec('lorentz-transformation') %>
 
+<% begin_sec("Triangle and Cauchy-Schwarz inequalities",4,'triangle',{'optional'=>true}) %>\index{triangle inequalities}\index{Cauchy-Schwarz inequalities}
+<% marg() %>
+<%
+  fig(
+    'twin-paradox-triangle',
+    %q{The twin paradox, interpreted as a triangle inequality.}
+  )
+%>
+<% end_marg %>
+
+In Euclidean geometry, we have the intuitively obvious fact that any side of a triangle is no greater than the sum of the
+other two sides. This can be written in terms of vectors as
+$|\vc{m}+\vc{n}|\le|\vc{m}|+|\vc{n}|$.
+Closely related to it is the inequality $|\vc{m}\cdot\vc{n}|\le|\vc{m}|\;|\vc{n}|$, known as the
+Cauchy-Schwarz inequality, which can be seen because $\vc{m}\cdot\vc{n}=|\vc{m}|\;|\vc{n}|\cos\theta$,
+where $\theta$ is the angle between the two vectors. 
+
+Any proof of these facts ultimately depends on the assumption that the metric has the Euclidean signature
+$+++$ (or on equivalent assumptions such as Euclid's axioms). Figure \figref{twin-paradox-triangle} shows that
+on physical grounds, we do not expect the inequalities to hold for Minkowski vectors in their unmodified Euclidean forms.
+The quantity $|\vc{m}+\vc{n}|$ represented the proper time of the spaceship that moved inertially along with the
+earth, while $|\vc{m}|+|\vc{n}|$ is the \emph{greater} proper time of the traveling spaceship.
+
+On the other hand, Minkowski space has copies of Euclidean space built in. For example, we know that
+all the familiar Euclidean facts must hold in any plane of simultaneity defined by a particular observer at a given
+moment in time, since the restriction of the metric to that plane has signature $---$, and the distinction between
+this and the $+++$ signature is an arbitrary notational convention.
+
+Summarizing these observations, we expect that the relativistic version of the triangle and Cauchy-Schwarz inequalities
+will be split into cases, some of which are the same as the Euclidean case and some of them different.
+
+Some notational issues may be confusing in the following discussion. We let $\vc{a}^2$ mean $\vc{a}\cdot\vc{a}$, which
+may not be positive, while $|\vc{a}|$ indicates the positive real number $\sqrt{|\vc{a}\cdot\vc{a}|}$. I will try to
+specifically point out any equations that are only true for $+---$ signature and not for $-+++$, and express important
+final results in a way that doesn't depend on this choice.
+
+<% begin_sec("Two timelike vectors",nil,'triangle-t') %>
+A simple and important case is the one in which both $\vc{m}$ and $\vc{n}$ trace possible world-lines of
+material objects, as in figure \figref{twin-paradox-triangle}. That is, they must both be timelike vectors.
+To see what form of the Cauchy-Schwarz inequality should hold, we break the vector $\vc{n}$ down
+into two parts, $\vc{n}=\vc{n}_\parallel+\vc{n}_\perp$, where $\vc{n}_\parallel$ is parallel to $\vc{m}$
+and $\vc{n}_\perp$ perpendicular. We then have $|\vc{m}\cdot\vc{n}|=|\vc{m}\cdot\vc{n}_\parallel|
+=|\vc{m}|\;|\vc{n}_\parallel|$. But $\vc{n}^2=(\vc{n}_\parallel+\vc{n}_\perp)^2=\vc{n}_\parallel^2
++2\vc{n}_\parallel\cdot\vc{n}_\perp+\vc{n}_\perp^2=\vc{n}_\parallel^2+\vc{n}_\perp^2$, and since
+$\vc{n}_\parallel$ is timelike and $\vc{n}_\perp$ spacelike, we have (in the $+---$ signature) $\vc{n}_\parallel^2>0$
+and $\vc{n}_\perp^2<0$. Therefore, regardless of signature, $|\vc{n}|\le|\vc{n}_\parallel|$.
+Therefore we have the reversed Cauchy-Schwarz inequality
+\begin{equation*}
+  |\vc{m}\cdot\vc{n}| \ge |\vc{m}|\;|\vc{n}|\qquad \text{(valid for either $+---$ or $-+++$)}\qquad .
+\end{equation*}
+A useful way of interpreting the reversal compared to the Euclidean case is that
+if the vectors happen to be normalized such that $|\vc{m}|=|\vc{n}|=1$, then
+$\vc{m}\cdot\vc{n}=\gamma$, where $\gamma$ is the Lorentz factor for an observer whose world-line
+is parallel to $\vc{m}$ with respect to a world-line parallel to $\vc{n}$. The difference from the
+Euclidean behavior can then be understood as arising from the fact that whereas $|\cos\theta|\le1$,
+we always have $\gamma\ge1$.
+
+Given the physical motivation presented so far, it would have been natural to
+take both $\vc{m}$ and $\vc{n}$ to lie in the future rather than the past light
+cone, but we have not yet assumed that this was the case, and the reversed Cauchy-Schwarz inequality
+holds independently of such an assumption. (See problem \ref{hw:cauchy-schwarz-future-past} for
+an alternative way of seeing this.) In order to discuss the related triangle inequality, however,
+we will need to assume that both vectors are future-directed. Physically, this is necessary
+in order to give the interpretation shown in figure \figref{twin-paradox-triangle}, from
+which we have already inferred that the triangle inequality must be reversed.
+To verify this mathematically, we can compute the difference
+$(\vc{m}+\vc{n})^2-(|\vc{m}|+|\vc{n}|)^2$ (problem \ref{hw:triangle-future-future}).
+
+<% end_sec('triangle-t') %>
+
+<% begin_sec("Two spacelike vectors not spanning the light cone",nil,'triangle-x-no-span') %>
+Now suppose that $\vc{m}$ and $\vc{n}$ are both spacelike, and the plane that they span does
+not include the light-cone. Operating within this plane, we never get any timelike or lightlike
+vectors, and therefore the non-Euclidean nature of the metric is never apparent to us.
+The geometry of this plane is therefore Euclidean, so in this case the ordinary Euclidean versions
+of the Cauchy-Schwarz and triangle inequalities must hold.
+
+\begin{eg}{No relativity required}
+Suppose that a certain observer establishes Minkowski coordinates, and consider
+the unit vectors $\hat{\vc{x}}$ and $\hat{\vc{y}}$ lying along the $x$ and $y$ axes.
+The $x$-$y$ plane that they span does not include the light cone.
+By plugging in to the Minkowski-coordinate form of the metric, we find
+that $\hat{\vc{x}}\cdot\hat{\vc{y}}=0$, as expected since the geometry of the $x$-$y$ plane
+is Euclidean. This satisfies the ordinary form of the Cauchy-Schwarz inequality.
+\end{eg}
+
+<% end_sec('triangle-x-no-span') %>
+
+<% begin_sec("Two spacelike vectors spanning the light cone",nil,'triangle-x-span') %>
+Now consider the case, in Minkowski coordinates, where $\vc{m}=(0,5,0,0)$ and
+$\vc{n}=(4,5,0,0)$. These vectors span the $t$-$x$ plane, whose geometry is not Euclidean,
+and they do not satisfy the Euclidean Cauchy-Schwarz inequality, since
+$\vc{m}\cdot\vc{n}=-25$, whereas $|\vc{m}|\;|\vc{n}|=15$.
+Two vectors of this type will always satisfy the reversed version of the Cauchy-Schwarz inequality
+(problem \ref{hw:cauchy-schwarz-x-span}). The converse holds in the sense that if two spacelike vectors
+satisfy the strict inequality $|\vc{m}\cdot\vc{n}|>|\vc{m}|\;|\vc{n}|$, then they span the light cone.
+<% end_sec('triangle-x-span') %>
+
+
+<% end_sec('triangle') %>
+
 <% begin_hw_sec %>
 
 <% begin_hw('agreeontime') %>
@@ -1428,6 +1529,28 @@ and
 by multiplying them out. Interpret the result physically.
 <% end_hw %>
 
+<% begin_hw('cauchy-schwarz-future-past') %>
+In section \ref{subsec:triangle-t}, we proved the reversed Cauchy-Schwarz inequality
+for two timelike vectors, without any assumption as to whether they lay in the future or
+past light cones. But suppose that we had only established this fact for two vectors that were
+both future-directed. Show that the same inequality would then also have to hold regardless
+of whether one or both vectors was past-directed.
+<% end_hw %>
+
+<% begin_hw('triangle-future-future') %>
+In the case of two future-directed timelike vectors, complete the proof of
+the reversed triangle inequality using the method suggested in section \ref{subsec:triangle-t}.
+<% end_hw %>
+
+<% begin_hw('cauchy-schwarz-x-span') %>
+In section \ref{subsec:triangle-x-span} we claimed that the reversed Cauchy-Schwarz inequality
+holds for two spacelike vectors that span the light cone. The purpose of this problem is
+to prove this fact using the following sketch of an argument provided by PhysicsForums user martinbn.
+Suppose that spacelike vectors
+$\vc{m}$ and $\vc{n}$ span the light cone, so that we can find some real number $\alpha$ such that
+$\vc{p}=\alpha\vc{m}+\vc{n}$ is lightlike. 
+Compute $\vc{p}^2$, and show that since $\alpha$ is real, the reversed Cauchy-Schwarz inequality holds.
+<% end_hw %>
 
 <% end_hw_sec %>
 
