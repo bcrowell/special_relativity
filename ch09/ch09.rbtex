@@ -1480,6 +1480,24 @@ $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not fla
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
 
+<% marg(-10) %>
+<%
+  fig(
+    'catastrophe',
+    %q{Example \ref{eg:catastrophe}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A catastrophe}\label{eg:catastrophe}
+Consider the timelike congruence in $1+1$ dimensions defined by $u=x/t$. This consists of the set of all inertial
+world-lines passing through the origin. Since our definition of a congruence requires that the world-lines
+be non-intersecting, let's restrict this example to the interior of the past light cone of the origin,
+$|x|<-t$. We have a universe full of hapless particles, all heading like lemmings toward a catastrophic
+collision. The spacetime diagram looks like an optical ray diagram for the formation of a real image.
+A computation gives the unexpectedly simple result $\Theta=\gamma/t$. For $t<0$, this is negative,
+indicating a contraction, and it blows up to minus infinity as $t$ approaches $0$. 
+\end{eg}
+
 <% end_sec('expansion') %>
 <% begin_sec("The Herglotz-Noether theorem in 1+1 dimensions",nil,'herglotz-noether') %>\index{Herglotz-Noether theorem}
 
@@ -1530,8 +1548,9 @@ theorems 18 and 22}
 
 (3) If the motion is accelerated, then
 the rigid motion cannot be extended to an arbitrary distance from W.
-If the proper acceleration of W can be as great as $a$, then we expect to be able to
-extend the rigid motion to a proper distance only as big as $~ c^2/a$.
+If the proper acceleration of W can be as great as $a$, then as in
+example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}, we expect to be able to
+extend the rigid motion to a proper distance only as big as $c^2/a$.
 For example, in the accelerated coordinates 
 (Rindler coordinates)  described in
 section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}, if a point on a rigid rod has
