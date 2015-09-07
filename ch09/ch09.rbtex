@@ -1416,7 +1416,7 @@ Figure \subfigref{expansion}{1} shows the case where
 $\partial u/\partial x=0$ and $\partial u/\partial t\ne0$. Each world-line is a copy of the others that has been
 shifted spatially, and the two velocity vectors shown as arrows are equal.
 This is precisely Bell's spaceship paradox
-(example \ref{eg:bell-spaceship-paradox}, p.~\pageref{eg:bell-spaceship-paradox}).
+(section \ref{subsec:bell-spaceship-paradox}, p.~\pageref{subsec:bell-spaceship-paradox}).
 Although the horizontal spacing between the world-lines remains constant as defined by the fixed
 frame of reference used for the diagram, an observer accelerating along with one of the particles
 would find that they had expanded away from one another, because 
@@ -1487,6 +1487,13 @@ defined in section \ref{sec:covariant-derivative}, not the partial derivative $\
     %q{Example \ref{eg:catastrophe}.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'rindler-caustic',
+    %q{A caustic in the lines of simultaneity of the family of accelerated world-lines.}
+  )
+%>
 <% end_marg %>
 \begin{eg}{A catastrophe}\label{eg:catastrophe}
 Consider the timelike congruence in $1+1$ dimensions defined by $u=x/t$. This consists of the set of all inertial
@@ -1495,10 +1502,32 @@ be non-intersecting, let's restrict this example to the interior of the past lig
 $|x|<-t$. We have a universe full of hapless particles, all heading like lemmings toward a catastrophic
 collision. The spacetime diagram looks like an optical ray diagram for the formation of a real image.
 A computation gives the unexpectedly simple result $\Theta=\gamma/t$. For $t<0$, this is negative,
-indicating a contraction, and it blows up to minus infinity as $t$ approaches $0$. 
-\end{eg}
+indicating a contraction, and it blows up to minus infinity as $t$ approaches $0$.
 
+\end{eg}
 <% end_sec('expansion') %>
+
+<% begin_sec("Caustics",nil,'caustics') %>
+The apex of the cone in example \ref{eg:catastrophe} is a \emph{caustic.}\index{caustic}
+Given a space-filling set of straight lines, a caustic occurs where their intensity diverges to infinity.
+The word means ``burning,'' because in optics a caustic of light rays concentrates energy and can burn things.
+Example \ref{eg:catastrophe} involves a caustic of timelike world-lines, and ``straight'' is to be interpreted as meaning
+that the world-lines are inertial. 
+
+Figure \figref{rindler-caustic} shows  two caustics formed by spacelike
+lines for the accelerated coordinate system described in \ref{sec:rindler-coords}.
+Here, as is often the case, the caustics are not just points.
+
+An example from general relativity is that when a black hole forms by gravitational collapse,
+a caustic is formed at a one point by the set of lightlike world-lines that enter the event horizon
+from the outside universe at the moment when the horizon is formed.
+If a ray of light is emitted from this caustic point, it remains on the event horizon forever,
+as do all rays emitted at the horizon in the outward direction at later times. The event horizon is the
+same set of events as the union of all the lightlike world-lines that enter the horizon at the 
+caustic.\footnote{Penrose, 1968. The proof is presented in Misner, Thorne, and Wheeler, p. 924}
+<% end_sec('caustics') %>
+
+
 <% begin_sec("The Herglotz-Noether theorem in 1+1 dimensions",nil,'herglotz-noether') %>\index{Herglotz-Noether theorem}
 
 Certain Born-rigid types of motion
@@ -1532,7 +1561,7 @@ all $x$, i.e., an observer instantaneously moving along W at $t=0$ says that all
 as well at that time. But because W is timelike, we can always find some neighborhood A of W such that
 every point in A is simultaneous with a unique event on W
 according to an observer at that event moving
-along with W. (Cf.~example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.) Therefore the value of $u$ is determined 
+along with W. (Cf.~section \ref{subsec:deja-vu-again}, p.~\pageref{subsec:deja-vu-again}.) Therefore the value of $u$ is determined 
 everywhere in A, and this completes the proof that the congruence exists and is unique in A.
 
 Remarks: 
@@ -1550,17 +1579,14 @@ theorems 18 and 22}
 the rigid motion cannot be extended to an arbitrary distance from W.
 If the proper acceleration of W can be as great as $a$, then as in
 example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}, we expect to be able to
-extend the rigid motion to a proper distance only as big as $c^2/a$.
-For example, in the accelerated coordinates 
-(Rindler coordinates)  described in
-section \ref{sec:rindler-coords}, p.~\pageref{sec:rindler-coords}, if a point on a rigid rod has
-$X=\text{constant}$, then the rod cannot extend outside the shaded wedge shown in
-figure \figref{rindler-wedge}.
+extend the rigid motion to a proper distance only as big as $c^2/a$, where there will be a caustic
+similar to the one in figure \figref{rindler-caustic}.
 <% end_sec('herglotz-noether') %>
 
 <% begin_sec("Bell's spaceship paradox revisited",nil,'bell-revisited') %>\index{Bell's spaceship paradox}%
 \index{spaceship paradox}\index{paradox!Bell's spaceship}
-Bell's spaceship paradox was discussed in example \ref{eg:bell-spaceship-paradox} on p.~\pageref{eg:bell-spaceship-paradox}.
+Bell's spaceship paradox was discussed in section \ref{subsec:bell-spaceship-paradox}
+on p.~\pageref{subsec:bell-spaceship-paradox}.
 In the paradox, two spaceships begin accelerating simultaneously and
 have equal accelerations in the frame of an external, inertial observer,
 causing a thread stretched between them breaks. We now give a more rigorous and mathematically elegant demonstration of the

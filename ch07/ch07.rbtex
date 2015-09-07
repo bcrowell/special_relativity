@@ -104,8 +104,8 @@ then it accelerates along its own length without any stress. (See problem \ref{h
 p.~\pageref{hw:rindler-expansion}.)
 
 The diagonals are event horizons (p.~\pageref{event-horizon}).
-Their intersection lies along every constant-$T$ line; cf.~examples \ref{eg:there-you-go-again},
-p.~\pageref{eg:there-you-go-again} and \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.
+Their intersection lies along every constant-$T$ line; cf.~example \ref{eg:there-you-go-again},
+p.~\pageref{eg:there-you-go-again}, and section \ref{subsec:deja-vu-again}, p.~\pageref{subsec:deja-vu-again}.
 <% end_sec('rindler-coords') %>
 
 <% begin_sec("Transformation of vectors",nil,'xfn-vectors') %>

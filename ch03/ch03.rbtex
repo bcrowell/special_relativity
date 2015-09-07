@@ -434,81 +434,6 @@ with a black hole. This example shows that we can have event horizons even when 
 gravity at all.\index{event horizon}\index{horizon}\label{event-horizon}
 \end{eg}
 
-<% marg(-100) %>
-<%
-  fig(
-    'bell-spaceship-paradox',
-    %q{%
-      Example \ref{eg:bell-spaceship-paradox}.
-    }
-  )
-%>
-<% end_marg %>
-
-\enlargethispage{\baselineskip}
-
-\begin{eg}{Bell's spaceship paradox}\label{eg:bell-spaceship-paradox}\index{Bell's spaceship paradox}%
-\index{spaceship paradox}\index{paradox!Bell's spaceship}
-A difficult philosophical question is whether the time dilation and length contractions predicted by relativity
-are ``real.'' This depends, of course, on what one means by ``real.'' They are frame-dependent, i.e., observers
-in different frames of reference disagree about them. But this doesn't tell us much about their reality, since
-velocities are frame-dependent in Newtonian mechanics, but nobody worries about whether velocities are real.
-John Bell\index{Bell, John} (1928-1990) proposed the following thought experiment to physicists in the CERN cafeteria, and
-found that nearly all of them got it wrong. He took this as evidence that their intuitions had been misguided by
-the standard way of approaching this question of the reality of Lorentz contractions.
-
-Let two spaceships accelerate as shown in figure \figref{bell-spaceship-paradox}.
-Each ship is equipped with a yard-arm, and a thread is tied between the two arms,
-\subfigref{bell-spaceship-paradox}{1}. 
-Unaccelerated observer $\vc{o}$ uses Minkowski coordinates $(t,x)$, as shown in \subfigref{bell-spaceship-paradox}{2}.
-The accelerations, as judged by $\vc{o}$, are equal for the two ships as functions of time. (It doesn't
-matter very much what functions we choose. Figures
-\subfigref{bell-spaceship-paradox}{2} and \subfigref{bell-spaceship-paradox}{3} 
-have been drawn for the case where the proper accelerations
-are constant.)
-Does the thread break, due
-to Lorentz contraction?
-
-The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
-Lorentz contraction is a frame-dependent effect, and no such contraction would be observed 
-in the rockets' frames.
-The error in this reasoning is that the accelerations of of the two ships
-were specified to be equal in frame $\vc{o}$,
-not in the frames of the rockets. The Minkowski coordinates
-$(t',x')$ shown in \subfigref{bell-spaceship-paradox}{2}
-correspond to the frame of an inertial observer $\vc{o}'$ who
-is momentarily moving along with the trailing rocket after the acceleration has been going on for a while.
-The $x'$ axis is a line of simultaneity for $\vc{o}'$, and this axis intersects the leading
-ship's world-line at a point that that $\vc{o}$ considers to be later in time. Therefore
-$\vc{o}'$ says that the leading ship has reached a higher speed than the trailing one.
-In $\vc{o}'$, the two ships' accelerations are unequal.
-
-We can also see directly from the spacetime diagram that whereas length $L_1$ is 4 units
-as measured by an observer initially at rest relative to the thread, 
-$L_2$ is about 5 units as measured by $\vc{o}'$, who is at rest relative to the trailing end
-of the thread at a later time. Since $L_2$ is greater than the unstressed length $L_1$, the
-thread is under tension.
-
-Figure \subfigref{bell-spaceship-paradox}{3} is more in the spirit of
-Bell's analysis. In frame $\vc{o}$, the thread has initial, unstressed length $L$.
-If the thread had been attached only to the leading ship, then it would have trailed
-behind it, unstressed, with Lorentz-contracted length $L/\gamma$. Since its actual length
-according to $\vc{o}$ is still $L$, it has been stretched relative to its unstressed length.
-
-This treatment has one wart on it, which is that we judged the distance between the two ships
-in a frame of reference instantaneously comoving with the trailing ship, but this is slightly
-different from the length as determined in the leading ship's frame. One way to remove this
-wart is to note that the fractional discrepancy $\Delta L_1/L_1$ is of order $v^3$, which is
-of a lower order than the strain in the thread, which is of order $v^2$. To carry out this type
-of error estimation rigorously would however be cumbersome.
-A more elegant and rigorous approach is
-given
-in section \ref{subsec:bell-revisited} on p.~\pageref{subsec:bell-revisited}.
-
-This presentation includes ideas contributed by physicsforums users tiny-tim and
-PeterDonis.
-\end{eg}
-
 <% end_sec('a-vector') %>
 <% begin_sec("Constraints on the velocity and acceleration vectors",nil,'v-a-constraints') %>
 <% begin_sec("Counting degrees of freedom",nil,'v-a-df') %>
@@ -635,99 +560,6 @@ and acceleration vectors:\label{a-dot-v-is-zero}
 This is analogous to the three-dimensional idea that in uniform circular motion, the
 perpendicularity of the velocity and acceleration three-vectors is what causes the
 velocity vector to rotate without changing its magnitude.
-<% marg(-10) %>
-<%
-  fig(
-    'deja-vu-again',
-    %q{Example \ref{eg:deja-vu-again}.}
-  )
-%>
-<% end_marg %>
-
-
-\begin{eg}{Deja vu all over again}\label{eg:deja-vu-again}
-In example \ref{eg:there-you-go-again} on p.~\pageref{eg:there-you-go-again}, we saw that when an observer
-is accelerated, she may consider an event to be simultaneous with her more than once. That is, given a smooth,
-timelike world-line $\vc{r}(\tau)$ parametrized by proper time, and an event E, which we take to be the origin
-of our coordinate system, there may be more than one time at which $\vc{r}$ is orthogonal to the velocity
-vector $\vc{v}$ (figure \subfigref{deja-vu-again}{1}). As remarked earlier, this is just a problem with applying a particular
-arbitrary labeling convention to a certain example --- not an earthshaking crisis in physics.
-Nevertheless it is of some intrinsic geometric interest to characterize the circumstances under which it can happen.
-We would like to place some kind of bound on how much acceleration is needed and how
-distant E must be.
-
-As a warm-up, consider the analogous problem in Euclidean space, \subfigref{deja-vu-again}{2}.
-Here we have the notion of a tubular neighborhood, which is the largest neighborhood surrounding a given
-curve W such that no point in it lies on two different normals.\index{tubular neighborhood}
-The tubular neighborhood has some minimum radius $r$, which is the greatest possible
-radius of a non-self-intersecting piece of rope whose central axis coincides with W.
-Normally, as in region A, the rope doesn't intersect itself.
-There are two qualitatively different reasons why the rope could self-intersect. 
-One is local: the radius of curvature of W is too small, as at B, where W coincides with a circle of radius $r$.
-The other is global: two points that are far apart as measured along W
-could be close together in the ambient Euclidean space, as at point C.
-
-If we carry over these ideas to Minkowski space, then case B,
-\subfigref{deja-vu-again}{3}, is easy to analyze using the techniques we have
-developed. The analog of the radius of curvature is the inverse of the proper acceleration, which suggests that
-we should be able to get a bound on the radius of the tubular neighborhood in terms of the acceleration.
-Define $f(\tau)=\vc{r}\cdot\vc{v}$. At a given point on W, $f$ is minus the Minkowski time coordinate
-that an observer whose world-line is W would assign, at that instant, to E.
-The condition for the type of self-intersection we're discussing
-is that both $f$ and its derivative with respect to proper time $f'$ vanish at the same point on W.
-Differentiating $f$ using the product rule, we
-find $f'=\vc{v}\cdot\vc{v}+\vc{r}\cdot\vc{a}=1+\vc{r}\cdot\vc{a}$ (in the $+---$ signature), so that
-$\vc{r}\cdot\vc{a}=-1$.
-
-We now make use of the fact that both $\vc{a}$ and $\vc{r}$ are orthogonal to W --- the former as a general
-kinematic fact, and the latter because $f=0$. This means that they lie in the plane perpendicular to W.
-The geometry of this plane is Euclidean, so we can apply the
-Euclidean inequality $|\vc{a}\cdot\vc{r}|\le|\vc{a}|\;|\vc{r}|$, where the bars on the left denote
-the absolute value and the ones on the right the magnitudes of the vectors. We therefore
-have $|\vc{a}|\;|\vc{r}|\ge 1$.
-Since $\vc{r}$ is orthogonal to
-W, we can interpret it as the proper distance between E and W. The magnitude of $\vc{a}$ is
-the proper acceleration. Converting to units with $c\ne1$, we have an exact bound of the form
-$(\text{proper distance})(\text{proper acceleration})\ge c^2$.
-In ordinary units $c$ is large, so in this sense E must be distant, and the acceleration large.
-This explains
-why we never encounter such a problem in nonrelativistic physics.
-
-% https://www.physicsforums.com/threads/every-event-is-simultaneous-with-you-at-some-time-proof.829332/
-\end{eg}
-
-\begin{eg}{That was never now}\label{eg:jamais-vu}
-In example \ref{eg:deja-vu-again} we
-characterized the circumstances under which simultaneity can fail to be
-unique. Simultaneity can also fail to exist. For example, 
-in the same notation, take W to be the constant-acceleration motion described in
-example \ref{eg:hyperbolic-motion}, p.~\pageref{eg:hyperbolic-motion}, and let E be the event $(-1,0)$.
-Then it can easily be shown (problem \ref{hw:jamais-vu}) that $f(\tau)$ is always positive, so an observer moving along W will
-always consider E to be in her past, never her future. No time exists for her such that she considers
-E to be ``now.'' The function $f$ comes to a maximum somewhere but never crosses zero.
-
-There will always be some neighborhood of W within which we are protected against nonexistence of simultaneity.
-To determine the radius of this neighborhood, we consider instead of an event like E an event B that lies
-on the boundary of the neighborhood, and define $f$ in terms of B rather than E.
-Then $f(\tau)=0$ for some $\tau$, but $f$ does not cross over zero, so that either $f\le 0$ everywhere
-or $f\ge 0$ everywhere. At the place where $f(\tau)=0$, we also have $f'(\tau)=0$, and the rest of the
-analysis is the same as in example \ref{eg:deja-vu-again}. Therefore the radius of the tubular neighborhood
-determined in that example defines a radius within which simultaneity has both existence and uniqueness.
-
-The interpretation of such a boundary point B is a little funny. For the motion
-in example \ref{eg:hyperbolic-motion}, the only such point is the one labeled $(0,0)$ in the
-Minkowski coordinates used there. Is there really anything special about this point, or is it just a random point that
-we happened to choose as the origin of our coordinate system? An observer moving along this W
-does not believe that any point in spacetime
-accessible to her has any special properties. She has always been accelerating and always will be, so no event she
-can observe or affect can be distinguished from the other events that she could have observed or affected in the same
-way at any earlier or later time. But we can easily show that B \emph{is} special by giving a description of
-it without reference to any coordinates. Let W's causal future be the set of all events that lie in the future light cone
-of some event on W, and similarly for W's causal past. The boundaries of these two sets are W's past and future
-event horizons, and these horizons coincide at only one event,
-which is B. This seems paradoxical, but our observer can neither observe nor affect B, so there is no contradiction.
-\end{eg}
-
 <% end_sec('v-dot-a-is-zero') %>
 
 <% end_sec('v-a-constraints') %>
@@ -965,6 +797,257 @@ FTL \emph{motion}. (After all, we do have motion at $c$, but no frames moving at
 For more about faster-than-light motion in relativity, see section \ref{sec:tachyons},
 p.~\pageref{sec:tachyons}.
 <% end_sec('ftl-frames') %>
+
+<% begin_sec("Thickening of a curve",nil,'thickening',{'optional'=>true}) %>\index{thickening of a curve}
+<% begin_sec("A geometrical interpretation of the acceleration",nil,'accel-thickening') %>
+<% marg %>
+<%
+  fig(
+    'thickened-circle',
+    %q{One-sided thickenings of a circle and a line segment.}
+  )
+%>
+<% end_marg %>
+We've interpreted the acceleration vector as a measure of the curvature of a world-line, but to make
+this more than a tool for visualization, we would have to define what we mean by curvature.
+A good way to approach this is shown in figure \subfigref{thickened-circle}{1}. Here a circle of circumference
+$L$ has been expanded, like a loaf of rising bread, to a circle of greater circumference $L^*$.
+This increase is only because the circle is curved. If we do the same thing with a line segment,
+\subfigref{thickened-circle}{2}, there is no increase in length. The increase in the length
+tells us about the curvature.
+
+Quantitatively, suppose that the thickness of the shaded area is $\Delta h$.
+Then the increase in circumference $\Delta L=L^*-L$ is given by
+\begin{equation*}
+  \frac{1}{L} \frac{\Delta L}{\Delta h} = k \qquad ,
+\end{equation*}
+where $k$ is a measure of curvature, and $k=1/r$ for a circle. We can take this as a definition of the curvature of
+a curve embedded in a two-dimensional Euclidean plane. The
+curves in figure \subfigref{thickened-circle}{1} both have constant curvature, and if we had applied
+our definition to any short segment of them, we would have gotten the same answer. For a curve with varying curvature,
+such as a letter ``S,'' the curvature can be defined as the appropriate limit at any given point, as the length
+of the segment enclosing the point approaches zero.
+Note that we had to pick an orientation for the expansion, i.e., a direction in which to expand. Given this orientation,
+it makes sense to talk about signed values of $h$ and $k$. If we choose the outward orientation for a circle, then
+its $k$ is positive.
+
+An interesting point about this definition is that it is \emph{extrinsic:} it depends on how the curve is embedded in the
+ambient two-dimensional space, and it depends on the Euclidean metric of that space. Because a curve is a one-dimensional
+object, there is nothing internal to the curve that would allow us to define its curvature. Imagine yourself as
+a tiny bug --- so tiny that you are pointlike. If the curve represents your universe, then you can explore it as much
+as you like, but you can never detect any internal evidence of its curvature. This is not the case in two dimensions.
+For example, a bug living on the two-dimensional surface of a sphere can detect its curvature by drawing triangles
+and measuring how much the sum of their interior angles differs from 180 degrees. This would be an \emph{intrinsic}
+measure of curvature. In general relativity, intrinsic curvature is of more interest than extrinsic curvature, because
+as far as we know our four-dimensional spacetime is not embedded in any five-dimensional space.
+
+<% marg %>
+<%
+  fig(
+    'thickened-world-line',
+    %q{One-sided thickening of a world-line.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'bell-spaceship-paradox',
+    %q{%
+      Bell's spaceship paradox.
+    }
+  )
+%>
+<% end_marg %>
+The definition given above is readily extended from Euclidean space to $1+1$ dimensions of spacetime.
+Figure \figref{thickened-world-line} shows a one-sided thickening of an accelerated world-line.
+Although the shaded area doesn't look uniformly thick to our Euclidean eyes, it is. For example,
+each of the dotted lines is orthogonal to the original world-line on the left, and they all have the
+same length $\Delta h$ as measured by an observer who traces that world-line. That is, each of these lines could
+represent a rigid measuring rod carried by that observer, drawn along a line that that observer considers
+to be a line of simultaneity at that time. In analogy to the Euclidean case, we have
+\begin{equation*}
+  \frac{1}{\tau} \frac{\Delta\tau}{\Delta h} = \frac{1}{a} \qquad .
+\end{equation*}
+
+<% end_sec('accel-thickening') %>
+<% begin_sec("Bell's spaceship paradox",nil,'bell-spaceship-paradox') %>\index{Bell's spaceship paradox}%
+\index{spaceship paradox}\index{paradox!Bell's spaceship}
+A variation on the situation shown in figure \figref{thickened-world-line} leads to a paradox with philosophical
+implications proposed by John Bell\index{Bell, John}.
+Bell went around the CERN cafeteria proposing the following thought experiment to the physicists eating lunch,
+and he found that nearly all of them got it wrong.
+Let two spaceships accelerate as shown in figure \figref{bell-spaceship-paradox}.
+Each ship is equipped with a yard-arm, and a thread is tied between the two arms,
+\subfigref{bell-spaceship-paradox}{1}. 
+Unaccelerated observer $\vc{o}$ uses Minkowski coordinates $(t,x)$, as shown in \subfigref{bell-spaceship-paradox}{2}.
+The accelerations, as judged by $\vc{o}$, are equal for the two ships as functions of $t$.
+Does the thread break, due
+to Lorentz contraction?
+
+A crucial difference between figures \figref{thickened-world-line} and \subfigref{bell-spaceship-paradox}{2}
+is that in the former, the thickening of the world-line has been carried out along the dotted normals,
+whereas the latter the second world-line is simply a copy of the first that has been shifted to the
+right, parallel to the $x$ axis.
+
+The popular answer in the CERN cafeteria was that the thread would not break, the reasoning being that
+Lorentz contraction is a frame-dependent effect, and no such contraction would be observed 
+in the rockets' frames.
+
+The error in this reasoning is that the accelerations of of the two ships
+were specified to be equal in frame $\vc{o}$,
+not in the frames of the rockets. The Minkowski coordinates
+$(t',x')$ shown in \subfigref{bell-spaceship-paradox}{2}
+correspond to the frame of an inertial observer $\vc{o}'$ who
+is momentarily moving along with the trailing rocket after the acceleration has been going on for a while.
+The $x'$ axis is a line of simultaneity for $\vc{o}'$, and this axis intersects the leading
+ship's world-line at a point that that $\vc{o}$ considers to be \emph{later} in time. Therefore
+$\vc{o}'$ says that the leading ship has reached a higher speed than the trailing one.
+In $\vc{o}'$, the two ships' accelerations are unequal.
+
+We can also see directly from the spacetime diagram that whereas length $L_1$ is 4 units
+as measured by an observer initially at rest relative to the thread, 
+$L_2$ is about 5 units as measured by $\vc{o}'$, who is at rest relative to the trailing end
+of the thread at a later time. Since $L_2$ is greater than the unstressed length $L_1$, the
+thread is under tension.
+
+Figure \subfigref{bell-spaceship-paradox}{3} is more in the spirit of
+Bell's analysis. In frame $\vc{o}$, the thread has initial, unstressed length $L$.
+If the thread had been attached only to the leading ship, then it would have trailed
+behind it, unstressed, with Lorentz-contracted length $L/\gamma$. Since its actual length
+according to $\vc{o}$ is still $L$, it has been stretched relative to its unstressed length.
+
+This paradox relates to
+the difficult philosophical question of whether the time dilation and length contractions predicted by relativity
+are ``real.'' This depends, of course, on what one means by ``real.'' They are frame-dependent, i.e., observers
+in different frames of reference disagree about them. But this doesn't tell us much about their reality, since
+velocities are frame-dependent in Newtonian mechanics, but nobody worries about whether velocities are real.
+Bell took his colleagues' wrong answers as evidence that their intuitions had been misguided by
+the standard way of approaching this question of the reality of Lorentz contractions.
+
+This treatment has one wart on it, which is that we judged the distance between the two ships
+in a frame of reference instantaneously comoving with the trailing ship, but this is slightly
+different from the length as determined in the leading ship's frame. 
+One way to remove this
+wart is to note that the fractional discrepancy $\Delta L_1/L_1$ is of order $v^3$, which is
+of a lower order than the strain in the thread, which is of order $v^2$. To carry out this type
+of error estimation rigorously would however be cumbersome.
+A more elegant and rigorous approach is
+given
+in section \ref{subsec:bell-revisited} on p.~\pageref{subsec:bell-revisited}, where we use fancier techniques
+to show that
+the motion shown in figure \figref{thickened-world-line} is the unique motion that
+allows every portion of the string to move without strain.
+
+This presentation includes ideas contributed by physicsforums users tiny-tim and
+PeterDonis.
+<% end_sec('bell-spaceship-paradox') %>
+<% begin_sec("Deja vu, jamais vu",4,'deja-vu') %>
+<% marg(-10) %>
+<%
+  fig(
+    'deja-vu-again',
+    %q{Deja vu.}
+  )
+%>
+<% end_marg %>
+<% begin_sec("Deja vu all over again",nil,'deja-vu-again') %>
+In example \ref{eg:there-you-go-again} on p.~\pageref{eg:there-you-go-again}, we saw that when an observer
+is accelerated, she may consider an event to be simultaneous with her more than once. That is, given a smooth,
+timelike world-line $\vc{r}(\tau)$ parametrized by proper time, and an event E, which we take to be the origin
+of our coordinate system, there may be more than one time at which $\vc{r}$ is orthogonal to the velocity
+vector $\vc{v}$ (figure \subfigref{deja-vu-again}{1}). As remarked earlier, this is just a problem with applying a particular
+arbitrary labeling convention to a certain example --- not an earthshaking crisis in physics.
+Nevertheless it is of some intrinsic geometric interest to characterize the circumstances under which it can happen.
+We would like to place some kind of bound on how much acceleration is needed and how
+distant E must be.
+
+As a warm-up, consider the analogous problem in Euclidean space, \subfigref{deja-vu-again}{2}.
+Here we have the notion of a tubular neighborhood, which is the greatest thickening of a
+curve W such that no point in it lies on two different normals.\index{tubular neighborhood}
+The tubular neighborhood has a radius $r$, which is the greatest possible
+radius of a non-self-intersecting piece of rope whose central axis coincides with W.
+Normally, as in region A, the rope doesn't intersect itself.
+There are two qualitatively different reasons why the rope could self-intersect. 
+One is local: the radius of curvature of W is too small, as at B, where W coincides with a circle of radius $r$.
+The other is global: two points that are far apart as measured along W
+could be close together in the ambient Euclidean space, as at point C.
+
+If we carry over these ideas to Minkowski space, then the local case,
+\subfigref{deja-vu-again}{3}, is easy to analyze using the techniques we have
+developed. The analog of the radius of curvature is the inverse of the proper acceleration, which suggests that
+we should be able to get a bound on the radius of the tubular neighborhood in terms of the acceleration.
+Define $f(\tau)=\vc{r}\cdot\vc{v}$. At a given point on W, $f$ is minus the Minkowski time coordinate
+that an observer whose world-line is W would assign, at that instant, to E.
+The condition for the type of self-intersection we're discussing
+is that both $f$ and its derivative with respect to proper time $f'$ vanish at the same point on W.
+Differentiating $f$ using the product rule, we
+find $f'=\vc{v}\cdot\vc{v}+\vc{r}\cdot\vc{a}=1+\vc{r}\cdot\vc{a}$ (in the $+---$ signature), so that
+$\vc{r}\cdot\vc{a}=-1$.
+
+We now make use of the fact that both $\vc{a}$ and $\vc{r}$ are orthogonal to W --- the former as a general
+kinematic fact, and the latter because $f=0$. This means that they lie in the plane perpendicular to W.
+The geometry of this plane is Euclidean, so we can apply the
+Euclidean inequality $|\vc{a}\cdot\vc{r}|\le|\vc{a}|\;|\vc{r}|$, where the bars on the left denote
+the absolute value and the ones on the right the magnitudes of the vectors. We therefore
+have $|\vc{a}|\;|\vc{r}|\ge 1$.
+Since $\vc{r}$ is orthogonal to
+W, we can interpret it as the proper distance between E and W. The magnitude of $\vc{a}$ is
+the proper acceleration. Converting to units with $c\ne1$, we have an exact bound of the form
+$(\text{proper distance})(\text{proper acceleration})\ge c^2$.
+In ordinary units $c$ is large, so in this sense E must be distant, and the acceleration large.
+This explains
+why we never encounter such a problem in nonrelativistic physics.
+
+% https://www.physicsforums.com/threads/every-event-is-simultaneous-with-you-at-some-time-proof.829332/
+
+<% end_sec('deja-vu-again') %>
+
+<% begin_sec("That was never now",nil,'jamais-vu') %>
+So far we have
+characterized the circumstances under which simultaneity can fail to be
+unique. Simultaneity can also fail to exist. For example, 
+in the same notation, take W to be the constant-acceleration motion described in
+example \ref{eg:hyperbolic-motion}, p.~\pageref{eg:hyperbolic-motion}, and let E be the event $(-1,0)$.
+Then it can easily be shown (problem \ref{hw:jamais-vu}) that $f(\tau)$ is always positive, so an observer moving along W will
+always consider E to be in her past, never her future. No time exists for her such that she considers
+E to be ``now.'' The function $f$ comes to a maximum somewhere but never crosses zero.
+
+There will always be some neighborhood of W within which we are protected against nonexistence of simultaneity.
+To determine the radius of this neighborhood, we consider an event B that lies
+on the boundary of the neighborhood, and define $f$ in terms of B rather than E.
+Then $f(\tau)=0$ for some $\tau$, but $f$ does not cross over zero, so that either $f\le 0$ everywhere
+or $f\ge 0$ everywhere. At the place where $f(\tau)=0$, we also have $f'(\tau)=0$, and the rest of the
+analysis is the same as before. Therefore the radius of the tubular neighborhood
+determined in that example defines a radius within which simultaneity has both existence and uniqueness.
+
+<% marg(0) %>
+<%
+  fig(
+    'jamais-vu',
+    %q{The boundary point B really is special.}
+  )
+%>
+<% end_marg %>
+
+The interpretation of such a boundary point B is a little funny.
+Figure \figref{jamais-vu} recapitulates the motion described
+in example \ref{eg:hyperbolic-motion}. For this motion, the only point like B is the one labeled $(0,0)$ in the
+Minkowski coordinates used in that derivation.
+Is there really anything special about this point, or is it just a random point that
+we happened to choose as the origin of our coordinate system? An observer moving along this W
+does not believe that any point in spacetime
+accessible to her has any special properties. She has always been accelerating and always will be, so no event she
+can observe or affect can be distinguished from the other events that she could have observed or affected in the same
+way at any earlier or later time. But we can easily show that B \emph{is} special by giving a description of
+it without reference to any coordinates. Let W's causal future be the set of all events that lie in the future light cone
+of some event on W, and similarly for W's causal past. The boundaries of these two sets are W's past and future
+event horizons, and these horizons coincide at only one event,
+which is B. This seems paradoxical, but our observer can neither observe nor affect B, so there is no contradiction.
+<% end_sec('jamais-vu') %>    
+
+<% end_sec('deja-vu') %>
+
+<% end_sec('thickening') %>
 
 <% begin_hw_sec %>
 

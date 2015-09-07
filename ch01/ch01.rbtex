@@ -1158,7 +1158,7 @@ receives it only once, at event C.
 
 The only problem here is a poor choice of labels, which causes E to have more than one label.
 Something similar happens in a constant-acceleration frame, section \ref{sec:rindler-coords},
-p.~\pageref{sec:rindler-coords}. Cf.~also example \ref{eg:deja-vu-again}, p.~\pageref{eg:deja-vu-again}.
+p.~\pageref{sec:rindler-coords}. Cf.~also section \ref{subsec:deja-vu-again}, p.~\pageref{subsec:deja-vu-again}.
 \end{eg}
 
 <% marg(0) %>
@@ -1303,6 +1303,8 @@ in order to give the interpretation shown in figure \figref{twin-paradox-triangl
 which we have already inferred that the triangle inequality must be reversed.
 To verify this mathematically, we can compute the difference
 $(\vc{m}+\vc{n})^2-(|\vc{m}|+|\vc{n}|)^2$ (problem \ref{hw:triangle-future-future}).
+
+An application to collisions is given in section \ref{subsec:collisions}, p.~\pageref{subsec:collisions}.
 
 <% end_sec('triangle-t') %>
 
