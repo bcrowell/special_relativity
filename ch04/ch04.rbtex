@@ -383,6 +383,7 @@ seem so far to be described correctly by general relativity.
 
 <% end_sec('mass-energy-equivalence') %> % E=mc$^2$
 <% begin_sec("Relativistic momentum",nil,'momentum') %>
+<% begin_sec("The energy-momentum vector",nil,'p-vector-intro') %>
 Newtonian mechanics has two different measures of motion, kinetic energy and momentum,
 and the relationship between them is nonlinear. Doubling your car's momentum quadruples
 its kinetic energy.
@@ -478,9 +479,36 @@ and let another such wave have momentum $(E,-E)$. The total momentum is
 $(2E,0)$. Thus this pair of massless particles has a collective mass of $2E$.
 This is an example of the non-additivity of relativistic mass.
 \end{eg}
+<% end_sec('p-vector-intro') %>
 
+<% begin_sec("Collisions",nil,'collisions') %>
 Example \ref{eg:mass-of-two-light-waves} shows that mass is not additive,
-nor it is a measure of the ``quantity of matter.''
+nor it is a measure of the ``quantity of matter.'' More generally, suppose that we have
+a collision between two objects, which could be two cars or two nuclei in a particle
+accelerator. Conservation of (spatial) momentum dictates that not all the
+energy is available for smashing windshields or creating gamma rays.
+For example, a Martian watching a parking-lot fender-bender through a powerful telescope would say that
+both cars were going as fast as fighter jets, due to the rotation of the earth, but this 
+doesn't make the bang any louder. To avoid being misled by these frame-dependent distractions,
+we can concentrate only on quantities that are scalars. For a two-body collision,
+there are three such scalars that we  can construct: $\vc{p}_1^2$, $\vc{p}_2^2$, and $\vc{p}_1\cdot\vc{p}_2$.
+(The notation $\vc{a}^2$ is simply an abbreviation for $\vc{a}\cdot\vc{a}$.)
+These are known as the collision invariants.\index{collision!invariants}
+The first two of these are simply the squared masses of the individual particles.
+
+Now consider the center of mass frame, i.e., the frame in which the total momentum has a zero spacelike
+part.\index{center of mass frame} In this frame, the total energy-momentum vector is of the form $(E_\text{cm},0)$, corresponding
+to a mass $M=E_\text{cm}$. All of this energy is available to make a bang. If we were colliding particles
+in an accelerator in order to produce new particles, this collision would be just barely enough
+energy to create a single particle of mass $M$, if the two incoming particles were annihilated in the
+process. This center of mass energy can be expressed in terms of the collision invariants as
+$M^2=(\vc{p}_1+\vc{p}_2)^2=\vc{p}_1^2+\vc{p}_2^2+2\vc{p}_1\cdot\vc{p}_2=m_1^2+m_2^2+2\vc{p}_1\cdot\vc{p}_2$.
+This is a nonlinear relationship, and the third collision invariant $\vc{p}_1\cdot\vc{p}_2$
+tells us how the nonlinearity plays out based on the relative directions of motion.
+The two momentum vectors are both timelike and future-directed, so by the reversed
+triangle equality (section \ref{sec:triangle}, p.~\pageref{sec:triangle}) we have $M\ge m_1+m_2$.
+<% end_sec('collisions') %>
+<% begin_sec("Some examples involving momentum",nil,'p-examples') %>
 
 \begin{eg}{Finding velocity given energy and momentum}\label{eg:v-from-p-vector}
 \egquestion If we know that a particle has mass-energy $E$ and momentum $p$ (which also implies
@@ -642,6 +670,7 @@ has been violated: the timelike component of the momentum is the mass-energy, an
 from 0 in the initial state to at least $2mc^2$ in the final state.
 \end{eg}
 
+<% end_sec('p-examples') %>
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
 Massless particles always travel at $c(=1)$. For
 suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
