@@ -2235,7 +2235,8 @@ def find_figure(name,width_type)
   # width_type = 'narrow' , 'wide' , 'fullpage' , 'raw'
 
   # Allow for kludges like fig('../../../lm/vw/figs/doppler',...), which I do in an E&M chapter of LM.
-  if name=~/^\.\./ then
+  # But don't do stuff like ../../../share/mechanics/fig/tractor, which shows up in chapter openers.
+  if name=~/^\.\./ && !(name=~/\.\.\/share/) then
     return name
   end
 

@@ -831,15 +831,15 @@ Note that we had to pick an orientation for the expansion, i.e., a direction in 
 it makes sense to talk about signed values of $h$ and $k$. If we choose the outward orientation for a circle, then
 its $k$ is positive.
 
-An interesting point about this definition is that it is \emph{extrinsic:} it depends on how the curve is embedded in the
+An interesting point about this definition is that it is \emph{extrinsic} rather than intrinsic, in the sense
+defined in section \ref{sec:failure-of-parallelism}, p.~\pageref{failure-of-parallelism}. That is, it depends on how the curve is embedded in the
 ambient two-dimensional space, and it depends on the Euclidean metric of that space. Because a curve is a one-dimensional
 object, there is nothing internal to the curve that would allow us to define its curvature. Imagine yourself as
 a tiny bug --- so tiny that you are pointlike. If the curve represents your universe, then you can explore it as much
 as you like, but you can never detect any internal evidence of its curvature. This is not the case in two dimensions.
 For example, a bug living on the two-dimensional surface of a sphere can detect its curvature by drawing triangles
 and measuring how much the sum of their interior angles differs from 180 degrees. This would be an \emph{intrinsic}
-measure of curvature. In general relativity, intrinsic curvature is of more interest than extrinsic curvature, because
-as far as we know our four-dimensional spacetime is not embedded in any five-dimensional space.
+measure of curvature. (See problem \ref{hw:pythagorean}, p.~\pageref{hw:pythagorean}.)
 
 <% marg %>
 <%
@@ -1205,11 +1205,11 @@ zero, and another example where the second factor is the one that vanishes (but 
 <% begin_hw('jamais-vu') %>
 Consider an observer O moving along a world-line W with
 the constant-acceleration motion defined in example \ref{eg:hyperbolic-motion}, p.~\pageref{eg:hyperbolic-motion}.
-In example \ref{eg:jamais-vu}, p.~\pageref{eg:jamais-vu}, we gave the coordinates of a certain event E that
+In section \ref{subsec:deja-vu}, p.~\pageref{subsec:deja-vu}, we gave the coordinates of a certain event E that
 was never ``now'' as described by our observer. The purpose of this problem is to analyze this is a more
 elegant and coordinate-invariant way.
 Let P be a point on W, 
-let B be the event described in example \ref{eg:jamais-vu},
+let B be the event described in section \ref{subsec:deja-vu},
 and let $\vc{x}=\overrightarrow{BP}$,
 $\vc{h}=\overrightarrow{BE}$, and
 $\vc{r}=\overrightarrow{EP}$.
