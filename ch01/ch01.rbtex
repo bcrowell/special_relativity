@@ -463,7 +463,47 @@ in ch.~\ref{ch:kinematics} and \ref{ch:dynamics}, it is not possible to accelera
 material objects to $c$, and in any case that isn't necessary. Relativistic effects exist
 at all speeds, but they're weak at speeds small compared to $c$.
 
-\pagebreak
+<% begin_sec("Numerical value of $c$",nil,'numerical-c') %>
+
+In this book we'll use units in which $c=1$. However, many beginners
+are vexed by the question of why $c$ has the particular value it does
+in a given system of units such as the SI.  Related to this is the
+question of whether $c$ could ever change, so that measuring it today
+and measuring it tomorrow would give slightly different results.  In a
+system of units where $c$ has units, its value is what it is only
+because of our choice of units, and there is no meaningful way to test
+whether it changes.
+
+Let's take the SI as an example of a system of
+units.  The SI was originally set up so that the meter and the second
+were defined in terms of properties of our planet. The meter was one
+forty-millionth of the earth's circumference, and the second was 1/86,400 of
+a mean solar day. Thus when we express c as $3\times10^8\ \munit/\sunit$, we are
+basically specifying the factor by which $c$ exceeds the speed at which
+a point on the equator goes around the center of the earth (with
+additional conversion factors of 40,000,000 and 86,400 thrown in).
+Since the properties of our planet are accidents of the formation of the solar system, there is no
+physical theory that can tell us why $c$ has this value in the original
+French-Revolutionary version of the SI.
+
+The base units of the SI were redefined over the centuries. Today, the
+second is defined in terms of an atomic standard, and the meter is
+defined as 1/299,792,458 of a light-second. Therefore $c$ has a defined
+value of exactly 299,792,458 m/s. Again, we find that the numerical
+value of $c$ has no fundamental significance; it is merely a matter of
+definition.
+
+It is possible to form the unitless ratio $\alpha=e^2/\hbar c\approx 1/137$,
+called the fine structure constant.\index{fine structure constant}
+Its value does not depend on our choice of units, so it is possible to do experiments
+to look for changes in its value over time, e.g., by comparing the spectrum of hydrogen
+on earth with the spectrum of distant stars, whose light has taken billions of years to get
+to us. Claims have even been made to the effect that these observations do show a change,
+although this appears to have been a mistake. If such a change did occur, we would not
+be able to attribute it unambiguously to a change in $c$ rather than a change in $\hbar$ or
+the fundamental charge.
+<% end_sec('numerical-c') %>
+
 
 \startdq
 
@@ -885,20 +925,6 @@ to be shrunk by a factor of 2. The same thing occurs for Alice, who observes
 Betty and her spaceship to be foreshortened.
 \end{eg}
 
-
-<% marg(0) %>
-<%
-  fig(
-    'atomic-clock-gamma',
-    %q{Time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
-       is calculated from $\gamma=1/\sqrt{1-v^2}$; at these small velocities, the approximation
-       $\gamma\approx 1+v^2/2$ is excellent, and the graph is indistinguishable
-       from a parabola. This graph corresponds to an extreme close-up view of the lower left corner of 
-       figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
-  )
-%>
-<% end_marg %>
-
 \begin{eg}{A moving atomic clock}\label{eg:chou}
 Expanding $\gamma$ in a Taylor series, we find $\gamma\approx 1-v^2/2$, so that
 when $v$ is small, relativistic effects are approximately proportional to $v^2$, so it is very
@@ -916,6 +942,19 @@ clock accurate enough to detect time dilation at speeds as low as 10 m/s. Figure
 Since it was not practical to move the entire clock, the experimenters only moved the aluminum atoms inside the
 clock that actually made it ``tick.''
 \end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'atomic-clock-gamma',
+    %q{Time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
+       is calculated from $\gamma=1/\sqrt{1-v^2}$; at these small velocities, the approximation
+       $\gamma\approx 1+v^2/2$ is excellent, and the graph is indistinguishable
+       from a parabola. This graph corresponds to an extreme close-up view of the lower left corner of 
+       figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{Large time dilation}\label{eg:cern-muons}
 The time dilation effects described in example \ref{eg:chou} were
@@ -962,6 +1001,8 @@ of decay predicted with and without relativity. The relativistic line is the one
 <% end_sec('gamma') %>
 <% end_sec('measurement') %>
 
+\pagebreak
+
 <%
   fig(   
     'joan-of-arc',
@@ -990,7 +1031,7 @@ original coordinate grid from the first panel, while the grid of black lines rep
 from the second panel. Omitting the grid from the gray rectangle makes the diagram easier
 to decode visually.
 
-<% marg(50) %>
+<% marg(60) %>
 <%
   fig(
     'smooshing',
@@ -998,6 +1039,8 @@ to decode visually.
   )
 %>
 <% end_marg %>
+
+\enlargethispage{-2\baselineskip}
 
 In special relativity it is of interest to convert between the Min\-kow\-ski coordinates
 of observers who are in motion relative to one another. The result,
@@ -1016,13 +1059,13 @@ Lorentz transformation.\index{Lorentz transformation}
        Each picture of the ruler is a snapshot taken at a certain moment as judged according to the second
        frame's
        notion of simultaneity. An observer in first frame judges the ruler's length instead according to
-       that frame's definition of simultaneity, i.e., using points that are lined up vertically on the graph.
+       that frame's definition of simultaneity, i.e., using points that are lined up horizontally on the graph.
        The ruler appears shorter in the frame in which it is moving.
     },
     {
       'width'=>'wide',
-      'sidecaption'=>true
-      # 'sidepos'=>'b'
+      'sidecaption'=>true,
+      'sidepos'=>'b'
     }
   )
 %>
@@ -1035,6 +1078,8 @@ erroneous conclusions by trying to reduce everything to a matter of inserting fa
 $\gamma$ in various equations. If the Lorentz transformation amounted to nothing more than
 length contraction and time dilation, it would be merely a change of units like the
 one shown in figure \figref{joan-of-arc}.
+
+\enlargethispage{-2\baselineskip}
 
 The Lorentz transformation translates into algebraic notation like this:
 \begin{align}\label{eqn:lorentz-transformation}
@@ -1096,6 +1141,7 @@ So far I've been arbitrarily choosing to draw only the first quadrant of each co
 Figure \figref{lorentz-more-quadrants} shows a region that includes all four quadrants.
 \end{eg}
 
+\pagebreak
 
 \begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
 Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
@@ -1128,6 +1174,8 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
   )
 %>
 
+\pagebreak
+
 <%
   fig(
     'schoolbus-with-x-t',
@@ -1142,36 +1190,6 @@ $8^2-4^2=48$, which comes out the same as in the other frame.
     }
   )
 %>
-
-\begin{eg}{Deja vu?}\label{eg:there-you-go-again}
-The grids we've been drawing
-are mere \emph{conventions}, as elaborate and arbitrary as dress in
-the court of Louis XIV. They come from a surveying process, which may need
-to be planned in advance and whose results we might not be able to \emph{see} until later.
-
-The dark line is the world-line of an observer O, who moves inertially for a while,
-accelerates to the left, and then moves inertially again. On the right are pasted two coordinate grids
-adapted to the two inertial segments. At event E, Bush steals the 2000 election, and this is
-depicted as being simultaneous with both event A and event B. Does poor O see it happen twice?
-No, even if the bad news is transmitted by a signal moving at the speed of light (dashed line), O
-receives it only once, at event C.
-
-The only problem here is a poor choice of labels, which causes E to have more than one label.
-Something similar happens in a constant-acceleration frame, section \ref{sec:rindler-coords},
-p.~\pageref{sec:rindler-coords}. Cf.~also section \ref{subsec:deja-vu-again}, p.~\pageref{subsec:deja-vu-again}.
-\end{eg}
-
-<% marg(0) %>
-<%
-  fig(
-    'there-you-go-again',
-    %q{Example \ref{eg:there-you-go-again}.}
-  )
-%>
-<% end_marg %>
-
-\pagebreak
-
 
 \begin{eg}{The garage paradox}\label{eg:garage-paradox}\index{garage paradox}
 One of the most famous of all the so-called relativity
@@ -1233,10 +1251,39 @@ Because the events occur at different $x$'s, each is shifted in time relative to
 according to clocks synchronized in frame 2 ($t'$, the train).
 \end{eg}
 
+\pagebreak
+
+\begin{eg}{Deja vu?}\label{eg:there-you-go-again}
+The grids we've been drawing
+are mere \emph{conventions}, as elaborate and arbitrary as dress in
+the court of Louis XIV. They come from a surveying process, which may need
+to be planned in advance and whose results we might not be able to \emph{see} until later.
+
+The dark line is the world-line of an observer O, who moves inertially for a while,
+accelerates to the left, and then moves inertially again. On the right are pasted two coordinate grids
+adapted to the two inertial segments. At event E, Bush steals the 2000 election, and this is
+depicted as being simultaneous with both event A and event B. Does poor O see it happen twice?
+No, even if the bad news is transmitted by a signal moving at the speed of light (dashed line), O
+receives it only once, at event C.
+
+The only problem here is a poor choice of labels, which causes E to have more than one label.
+Something similar happens in a constant-acceleration frame, section \ref{sec:rindler-coords},
+p.~\pageref{sec:rindler-coords}. Cf.~also p.~\pageref{subsubsec:deja-vu-again}.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'there-you-go-again',
+    %q{Example \ref{eg:there-you-go-again}.}
+  )
+%>
+<% end_marg %>
+
 
 <% end_sec('lorentz-transformation') %>
 
-<% begin_sec("Triangle and Cauchy-Schwarz inequalities",4,'triangle',{'optional'=>true}) %>\index{triangle inequalities}\index{Cauchy-Schwarz inequalities}
+<% begin_sec("Triangle and Cauchy-Schwarz inequalities",nil,'triangle',{'optional'=>true}) %>\index{triangle inequalities}\index{Cauchy-Schwarz inequalities}
 <% marg() %>
 <%
   fig(
