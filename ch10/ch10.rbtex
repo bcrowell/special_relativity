@@ -389,6 +389,80 @@ the line of charge is moving to the left in this frame, so it forms an electric 
 is the cause of the magnetic field $\vc{B}'$.
 \end{eg}
 
+<% marg(-10) %>
+<% fig(
+    'moving-charge',
+     %q{Example \ref{eg:moving-charge}.}
+   )
+%>
+<% end_marg %>
+\begin{eg}{A moving charge}\label{eg:moving-charge}
+Figure \subfigref{moving-charge}{1} shows the electric field lines of a charge, in the charge's rest frame K.
+In figure \subfigref{moving-charge}{2} we see the same electric field, in a frame $\zu{K}'$ in which the charge is moving
+along the $x$ axis, which points to the right,
+at 90\% of $c$. (In this frame there is also a magnetic field, which is not shown.) This electric field,
+which is time-varying, is shown as a snapshot in a hyperplane of simultaneity $t'=0$ of $\zu{K}'$.
+Surprisingly, these field lines all point toward the charge's \emph{present} position in $\zu{K}'$.
+
+Disturbances in the electromagnetic field propagate at $c$, not instantaneously, so one might have expected
+the field at a certain location P in this figure to point toward a location at a distance $r$ that the charge had
+occupied at an earlier time $t'=-r/c$. This would have produced a set of curved field lines reminiscent of
+the wake of a boat. To see that this is not possible, consider the point $(0,0,h,0)$ in the Minkowski
+coordinates of K, i.e., a point on the $y$ axis. After a Lorentz transformation along $x$, the coordinates of
+this point in $\zu{K}'$ are still $(0,0,h,0)$, so in $\zu{K}'$ as well it lies on a line that passes transversely
+through the present position of the charge. Since this point has $E_x=0$ and $\vc{B}=0$
+in K, application of the transformation
+laws shows that $E_x'=0$ as well, so that the field points toward the charge's present position, not its past
+position.
+
+One might worry that this would indicate that the information about the charge's position was propagating instantaneously,
+contradicting relativity. But this is a charge that has always been in its current state of motion and always
+will be. If the charge's motion had been disturbed by some external force at a time later than $t'=-r/c$, the field
+lines in K would still be pointing toward the location that the charge had previously occupied while at rest,
+and the field in $\zu{K}'$ would be pointing toward its linearly extrapolated position.
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{A field behaving like a stick}
+Figure \subfigref{moving-charge}{2} appears identical to a copy of figure \subfigref{moving-charge}{1} that has
+been Lorentz contracted by $1/\gamma$, and we can verify from the transformation laws for the fields that this
+is correct. Since these transformation laws apply regardless of how the fields
+were produced, we have a general rule, which is that if a field is purely electric in one frame, then
+its direction transforms to another frame in the same way as the direction of a stick,
+when we transform out of the stick's rest frame. (See problem \ref{hw:angle-of-a-stick}, p.~\pageref{hw:angle-of-a-stick}.)
+
+It is \emph{not} true in general that electric field lines can simply be carried over from one
+frame to another as if they were a framework built out of wire. This property holds only
+when the original frame is of a very special kind: a frame in which the field is purely electric. (We can always
+find such a frame if $E^2>B^2$; see section \ref{sec:em-invariants}.) As a counterexample to the notion that it
+applies more generally, consider the case in which a field is purely \emph{magnetic} in a certain frame. Then the
+electric field lines do not even exist in the original frame, but do exist in the new one.
+
+Coming back to the case where the original field is purely electric, so that the similarity in behavior
+does hold, it is not
+immediately obvious why there should be this strange correspondence
+between sticks and field lines. The methods used in problem
+\ref{hw:angle-of-a-stick} do not seem to have much in common with the
+ones we have used to determine how the electric field behaves.  But
+the following physical argument shows that there is a simple reason
+for the parallel behavior.
+
+Consider a stick with charges $+q$ and $-q$ fixed
+at the ends. The stick is nonrotating and moving inertially. In the
+stick's rest frame K, there is a field line originating from $+q$ and
+terminating on $-q$ which coincides with the stick.  Now consider frame
+$\zu{K}'$ moving in some direction relative to the stick. As discussed
+in example \ref{eg:moving-charge}, the field due to
+each charge points toward or away from its present instantaneous
+position in $\zu{K}'$ as well as K. Therefore each
+field, at the stick, is parallel to the stick, and we again have a
+field line in $\zu{K}'$ that coincides with the stick. Since the
+transformation of the field is independent of how the field was
+created, this holds for any field that is purely electric in the
+original frame.
+\end{eg}
+
 <% end_sec('em-xfn') %>
 
 <% begin_sec("Invariants",nil,'em-invariants') %>
