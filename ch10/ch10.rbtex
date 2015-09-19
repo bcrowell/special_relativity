@@ -415,14 +415,19 @@ in K, application of the transformation
 laws shows that $E_x'=0$ as well, so that the field points toward the charge's present position, not its past
 position.
 
+A similar but more complicated calculation shows that the field at intermediate angles is also in 
+the instantaneously radial direction. Rather than filling in the details, we note that this makes sense
+because the Poynting vector $\vc{E}\times\vc{B}$ then has no radial component, which is as
+expected because energy should be transported forward but not radiated outward.
+
+\enlargethispage{-2\baselineskip}
+
 One might worry that this would indicate that the information about the charge's position was propagating instantaneously,
 contradicting relativity. But this is a charge that has always been in its current state of motion and always
 will be. If the charge's motion had been disturbed by some external force at a time later than $t'=-r/c$, the field
 lines in K would still be pointing toward the location that the charge had previously occupied while at rest,
 and the field in $\zu{K}'$ would be pointing toward its linearly extrapolated position.
 \end{eg}
-
-\pagebreak
 
 \begin{eg}{A field behaving like a stick}
 Figure \subfigref{moving-charge}{2} appears identical to a copy of figure \subfigref{moving-charge}{1} that has
@@ -432,8 +437,10 @@ were produced, we have a general rule, which is that if a field is purely electr
 its direction transforms to another frame in the same way as the direction of a stick,
 when we transform out of the stick's rest frame. (See problem \ref{hw:angle-of-a-stick}, p.~\pageref{hw:angle-of-a-stick}.)
 
+\enlargethispage{-2\baselineskip}
+
 It is \emph{not} true in general that electric field lines can simply be carried over from one
-frame to another as if they were a framework built out of wire. This property holds only
+frame to another as if we were simply Lorentz-contracting a rat's nest built out of wire. This property holds only
 when the original frame is of a very special kind: a frame in which the field is purely electric. (We can always
 find such a frame if $E^2>B^2$; see section \ref{sec:em-invariants}.) As a counterexample to the notion that it
 applies more generally, consider the case in which a field is purely \emph{magnetic} in a certain frame. Then the
@@ -465,7 +472,7 @@ original frame.
 
 <% end_sec('em-xfn') %>
 
-<% begin_sec("Invariants",nil,'em-invariants') %>
+<% begin_sec("Invariants",4,'em-invariants') %>
 We've seen cases before in which an invariant can be formed from a rank-1 tensor. The square of the proper
 time corresponding to a timelike spacetime displacement $\vc{r}$ is $\vc{r}\cdot\vc{r}$ or, in the index
 notation introduced in section \ref{subsec:abstract-index}, $r^ar_a$. From the momentum tensor we can

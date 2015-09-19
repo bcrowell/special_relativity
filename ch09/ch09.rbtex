@@ -1654,13 +1654,15 @@ change. We could, e.g., appeal to an
 atomic standard, but Dicke\footnote{``Mach's principle and invariance
 under transformation of units,'' Phys Rev 125 (1962) 2163} points out
 that this could be problematic. Imagine, he says, that
-
+%
 \begin{quote}
 you are told by a space traveller that a
 hydrogen atom on Sirius has the same diameter as one on the earth. A
 few moments' thought will convince you that the statement is either a
 definition or else meaningless. 
 \end{quote}
+%
+(Some related ideas about the numerical value of $c$ were discussed on p.~\pageref{subsubsec:numerical-c}.)
 
 To start with, we note that abstract index notation is more convenient than concrete index notation for these purposes.
 As noted in section \ref{sec:xfn-derivatives}, p.~\pageref{sec:xfn-derivatives},

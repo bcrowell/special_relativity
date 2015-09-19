@@ -502,6 +502,13 @@ to us. Claims have even been made to the effect that these observations do show 
 although this appears to have been a mistake. If such a change did occur, we would not
 be able to attribute it unambiguously to a change in $c$ rather than a change in $\hbar$ or
 the fundamental charge.
+
+The standards used to define our units could change over time. The platinum-iridium standard for
+the kilogram in Paris is suspected to have lost about $50\ \mu\zu{g}$ of mass over the last century.
+Even the atomic standard used to define the second could be changing due to physics beyond our present
+knowledge. A change in $c$ might produce such a change, but any such change could also be produced
+by changes in other physical constants, such as the others occurring in the fine structure constant.
+Such issues are discussed at greater length in section \ref{sec:tensor-units}, p.~\pageref{sec:tensor-units}.
 <% end_sec('numerical-c') %>
 
 
