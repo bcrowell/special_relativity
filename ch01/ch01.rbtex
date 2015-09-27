@@ -154,8 +154,8 @@ strictly necessary.)
 
 Galilean spacetime, unlike Aristotelian spacetime, has no universal notion of ``same place.'' I can
 drive to Gettysburg, Pennsylvania, and stand in front of the brass plaque that marks the site of
-the momentous Civil War battle. But am I really in the same place? An observer whose frame of
-reference was fixed to another planet would say that our planet had moved through space since 1863.
+the momentous Civil War battle. But am I really in the same place? An observer on another
+planet would say that our planet had moved through space since 1863.
 
 Note that our geometrical description includes a notion of parallelism, but not of angular measure.
 We don't know or care whether the ``angle'' between an $\vc{s}$ and an $\vc{o}$ is 90 degrees. One
@@ -219,8 +219,7 @@ more on this topic.}
 The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
 
 We are used to thinking of time as absolute and universal, so it is
-disturbing to find that it can flow at a different rate for observers in
-different frames of reference. 
+disturbing to find that it can flow at a different rates for different observers.
 Nevertheless, the effects that Hafele and Keating observed were small.
 This makes sense: Galilean relativity had already been thoroughly verified for material objects such as
 clocks, planets, and airplanes,
@@ -344,33 +343,20 @@ and space. It is a property of spacetime, not a property of light.
 
 More fundamentally, $c$ is the maximum speed of cause and effect.\label{c-cause-and-effect}
 If we could propagate cause and effect, e.g., by transmitting
-a signal, at a speed greater than $c$, we would be violating both causality and the
-principle that motion is relative:
-\begin{itemize}
-\item \emph{The argument from causality:} If a signal could be propagated at a speed greater than
+a signal, at a speed greater than $c$, then the following argument shows that we would be violating either
+causality or the principle that motion is relative.
+If a signal could be propagated at a speed greater than
 $c$, then the vector $\vc{r}$ connecting the cause and the effect would be spacelike.
+By opening and closing the ``scissors'' of figure \figref{three-cases}, we can always find an observer
+$\vc{o}$ who considers $\vc{r}$ to be a vector of simultaneity. Thus if faster-than-light propagation is
+possible, then instantaneous propagation is possible, at least for some observer. Since motion is
+relative, this must be possible for all observers, regardless of their state of motion. Therefore
+\emph{any} spacelike vector is one along which we can send a signal.
 But by adding two spacelike vectors we can
 make a vector lying in the past timelike light cone, so by relaying the signal we could send a message
 into the past, violating causality.\label{no-ftl-info-causality}
-\item \emph{The argument from relativity of motion:}
-Furthermore, there would exist a frame in which vector $\vc{r}$ was a vector of simultaneity, so that
-the information would have been propagated not just faster than $c$ but in fact \emph{instantaneously}.
-It would then be possible to send signals from one place in the universe to another without any time lag.
-This would allow perfect synchronization of all clocks. But observations such as
-the Hafele-Keating experiment demonstrate that
-clocks A and B that have been initially synchronized will drift out of sync
-if one is in motion relative to the other.
-With instantaneous transmission of signals, we could determine, without having to wait for A and B to be reunited,
-which was ahead and which was behind. Since they don't need to be reunited, neither one needs to undergo any acceleration;
-each clock can fix an inertial frame of reference, with a velocity vector that changes neither its direction nor its magnitude.
-But this violates the principle that constant-velocity motion is relative, because each clock
-can be considered to be at rest, in its own frame of reference. Since no experiment has ever detected any violation
-of the relativity of motion, we conclude that instantaneous action at a distance is impossible.
-\end{itemize}
-One could complain that giving two separate arguments to this effect was gilding the lily. If we were
-doing mathematics, then one proof would be enough. But this is science, not mathematics, so every
-assumption that goes into an argument is not absolute truth but provisional truth, founded on
-observations that have limited precision and that cover a limited domain of conditions. Neither
+
+In interpreting this argument, note that neither
 the relativity of motion nor causality is a logical necessity; they are both just generalizations
 based on a body of evidence. For more on causality, and its uncertain empirical status,
 see section \ref{sec:causality}, p.~\pageref{sec:causality}.
@@ -384,7 +370,7 @@ the speed of light is constant, we expect the two parts to come back together at
 same time. If they don't, it's evidence that the device has been rotating. The plane's
 computer senses this and notes how much rotation has accumulated.
 \end{eg}
-<% marg(50) %>
+<% marg(300) %>
 <%
   fig(
     'ring-laser-gyro',
@@ -431,15 +417,6 @@ Later, he receives flash 2, and then flash 1. He infers that since both flashes 
 half the length of the train, flash 2 must have occurred first.
 How can this be reconciled with Alice's belief that the flashes were simultaneous?
 
-<% marg(20) %>
-<%
-  fig(
-    'einstein-train-solution',
-    %q{Example \ref{eg:einstein-train}.}
-  )
-%>
-<% end_marg %>
-
 \eganswer Figure \figref{einstein-train-solution} shows the corresponding spacetime diagram.
 It seems paradoxical that Alice and Bob disagree on simultaneity, but this is only because
 we have an ingrained prejudice in favor of Galilean relativity.
@@ -450,6 +427,15 @@ But Bob has a different opinion about what constitutes simultaneity. The slanted
 line is orthogonal to his world-line. According to Bob, 2 happened before the time
 represented by this line, 1 after.
 \end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'einstein-train-solution',
+    %q{Example \ref{eg:einstein-train}.}
+  )
+%>
+<% end_marg %>
 
 Example \ref{eg:einstein-train} is of course impractical as described, since real
 trains don't travel at speeds anywhere near $c$ relative to the dirt. We say that
@@ -854,10 +840,14 @@ Galilean version given in example \ref{eg:galilean-twin-paradox}.
 
 We have in general the following interpretation:
 
+\vfill
+
 \begin{lessimportant}[Time dilation]\label{time-dilation}
 A clock runs fastest in the frame of reference of an observer who is at rest relative to the clock. An observer
 in motion relative to the clock at speed $v$ perceives the clock as running more slowly by a factor of $\gamma$.
 \end{lessimportant}
+
+\vfill
 
 Although this is phrased in terms of clocks, we interpret it as telling us something about time itself.
 The attitude is that we should define a concept in terms
@@ -875,10 +865,14 @@ pocket watch, but
 she has also had fewer heartbeats, and the ship's atomic clock agrees with her watch to within the precision
 of the watch.
 
+\vfill
+
 <% self_check('gammaatvzero',<<-'SELF_CHECK'
 What is $\\gamma$ when $v=0$? What does this mean? Express the equation for $\\gamma$ in SI units.
   SELF_CHECK
   ) %>
+
+\vfill
 
 Time dilation is symmetrical in the sense that it treats all frames of reference democratically. If
 observers A and B aren't at rest relative to each other, then A says B's time runs slow, but B
@@ -888,13 +882,19 @@ in the corresponding Galilean case of
 example \ref{eg:galilean-twin-paradox} on p.~\pageref{eg:galilean-twin-paradox}, the asymmetry
 comes about because $\vc{a}$ and $\vc{c}$ are parallel, but $\vc{b}$ and $\vc{d}$ are not.
 
+\pagebreak
+
 As shown in example \ref{eg:interstellar-road-trip} below, consistency demands that in addition to the
 effect on time we have a similar effect on distances:
+
+\vfill
 
 \begin{lessimportant}[Length contraction]\label{length-contraction}
 A meter-stick appears longest to an observer who is at rest relative to it. An observer moving relative to the
 meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 \end{lessimportant}
+
+\vfill
 
 Our present discussion is limited to 1+1 dimensions, but in 3+1,
 only the length along the line of motion is contracted (ch.~\ref{ch:foundations},
@@ -903,6 +903,8 @@ It should not be imagined that length contraction is what an observer actually \
 Optical observations are influenced, for example, by the unequal times taken for light to propagate from the ends
 of the stick to the eye. A simulation of this type of effect is drawn in
 example \ref{eg:cube} on p.~\pageref{eg:cube}.
+
+\vfill
 
 \begin{eg}{An interstellar road trip}\label{eg:interstellar-road-trip}
 Alice stays on earth while her twin Betty
@@ -931,6 +933,8 @@ Betty sees the distance between the sun and Tau Ceti
 to be shrunk by a factor of 2. The same thing occurs for Alice, who observes
 Betty and her spaceship to be foreshortened.
 \end{eg}
+
+\pagebreak
 
 \begin{eg}{A moving atomic clock}\label{eg:chou}
 Expanding $\gamma$ in a Taylor series, we find $\gamma\approx 1-v^2/2$, so that

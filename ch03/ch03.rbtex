@@ -832,7 +832,8 @@ it makes sense to talk about signed values of $h$ and $k$. If we choose the outw
 its $k$ is positive.
 
 An interesting point about this definition is that it is \emph{extrinsic} rather than intrinsic, in the sense
-defined in section \ref{sec:failure-of-parallelism}, p.~\pageref{failure-of-parallelism}. That is, it depends on how the curve is embedded in the
+defined in section \ref{subsec:failure-of-parallelism}, 
+p.~\pageref{subsec:failure-of-parallelism}. That is, it depends on how the curve is embedded in the
 ambient two-dimensional space, and it depends on the Euclidean metric of that space. Because a curve is a one-dimensional
 object, there is nothing internal to the curve that would allow us to define its curvature. Imagine yourself as
 a tiny bug --- so tiny that you are pointlike. If the curve represents your universe, then you can explore it as much

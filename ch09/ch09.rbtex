@@ -1740,6 +1740,9 @@ We require that the equation $p^a = mv^a$ have dynamical units that check out, s
 We must also assign units of mass to the momentum.
 \end{eg}
 
+A system almost identical to this one, but with different terminology, is given by
+Schouten.\footnote{Tensor Analysis for Physicists, ch.~VI}
+
 For practical purposes in checking the units of an equation, we can see from
 example \ref{eg:units-of-momentum-fancy} that worrying about the kinematic units is
 a waste of time as long as we have checked that the indices are grammatical. We can therefore
