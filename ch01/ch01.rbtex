@@ -896,6 +896,9 @@ meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 
 \vfill
 
+\noindent
+The visualization of length contraction in terms of spacetime diagrams is presented in
+figure \subfigref{clock-and-ruler-gamma}{2} on p.~\pageref{fig:clock-and-ruler-gamma}.
 Our present discussion is limited to 1+1 dimensions, but in 3+1,
 only the length along the line of motion is contracted (ch.~\ref{ch:foundations},
 problem \ref{hw:no-transverse-length-contraction}, p.~\pageref{hw:no-transverse-length-contraction}).
@@ -919,7 +922,8 @@ her a long time to get there: 14 years, according to Alice.
 
 Betty experiences time dilation. At this speed, her $\gamma$ is 2.0, so that the voyage will
 only seem to her to last 7 years. But there is perfect symmetry between Alice's
-and Betty's frames of reference, so Betty agrees with Alice on their relative speed;
+and Betty's frames of reference, so Betty agrees with Alice on their relative speed.
+(For more detail on this point, see example \ref{eg:agree-on-v}, p.~\pageref{eg:agree-on-v}.)
 Betty sees herself as being at rest, while the sun and Tau Ceti both move backward
 at 87\% of the speed of light. How, then, can she observe Tau Ceti to get to her
 in only 7 years, when it should take 14 years to travel 12 light-years at this speed?
@@ -1026,15 +1030,15 @@ of decay predicted with and without relativity. The relativistic line is the one
 
 <% begin_sec("The Lorentz transformation",nil,'lorentz-transformation') %>
 
-Philosophically, coordinates are unnecessary, but in practical
-terms they are convenient. They are arbitrary, so we can change from one set
-to another.  For example, we can simply
+Philosophically, coordinates are unnecessary, but
+they are convenient. They are arbitrary, so we can change from one set
+to another.  For example, we can 
 change the units used to measure time and position, as in the first and second panels of
 figure \figref{joan-of-arc}. Nothing changes about the underlying events; only the
-labels are different. The third panel of figure \figref{joan-of-arc}
+labels are different. The third panel 
 shows a convenient convention we will use to
 depict such changes visually. The gray rectangle represents the
-original coordinate grid from the first panel, while the grid of black lines represents the new version
+original grid from the first panel, while the grid of black lines represents the new version
 from the second panel. Omitting the grid from the gray rectangle makes the diagram easier
 to decode visually.
 
@@ -1046,8 +1050,6 @@ to decode visually.
   )
 %>
 <% end_marg %>
-
-\enlargethispage{-2\baselineskip}
 
 In special relativity it is of interest to convert between the Min\-kow\-ski coordinates
 of observers who are in motion relative to one another. The result,
@@ -1086,22 +1088,26 @@ $\gamma$ in various equations. If the Lorentz transformation amounted to nothing
 length contraction and time dilation, it would be merely a change of units like the
 one shown in figure \figref{joan-of-arc}.
 
-\enlargethispage{-2\baselineskip}
-
-The Lorentz transformation translates into algebraic notation like this:
+The Lorentz transformation can be notated algebraically:
 \begin{align}\label{eqn:lorentz-transformation}
 \begin{split}
   t' &= \quad \gamma t - v\gamma x \\
   x' &= -v\gamma t + \gamma x
 \end{split}
 \end{align}
-The line $x=0$ is described in the $(t',x')$ coordinates as having slope $-1/v$,
-which is what justifies the interpretation of $v$ as
-a velocity. 
 The fact that this is the correct relativistic transformation can be verified by noting that
 (1) the speed-of-light lines $x=\pm t$ are preserved, and (2)
 the determinant equals 1, so that areas are preserved. Alternatively, it is
 sufficient to check the invariance of the spacetime interval under this transformation.
+
+Equations \eqref{eqn:lorentz-transformation} treat space and time in a perfectly symmetric way,
+but this should not be taken as implying that special relativity perfectly embodies such a
+symmetry. For example, I can easily revisit a place that I've been to before, but I can't
+go back in time. And of course we have three dimensions of space; our use of 1+1 dimensions rather
+than 3+1 is just a matter of convenience for the moment. Note also that there is no exact analogy
+between figure \subfigref{clock-and-ruler-gamma}{1}, where the clock is a pointlike object tracing
+a line through spacetime, and \subfigref{clock-and-ruler-gamma}{2}, where the ruler is an extended body that
+sweeps out a parallel-sided ribbon.
 
 <% marg(0) %>
 <%
@@ -1147,8 +1153,6 @@ the left relative to the one whose frame is represented by the gray square.
 So far I've been arbitrarily choosing to draw only the first quadrant of each coordinate system.
 Figure \figref{lorentz-more-quadrants} shows a region that includes all four quadrants.
 \end{eg}
-
-\pagebreak
 
 \begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
 Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
