@@ -899,10 +899,6 @@ meter-stick at $v$ observes the stick to be shortened by a factor of $\gamma$.
 Our present discussion is limited to 1+1 dimensions, but in 3+1,
 only the length along the line of motion is contracted (ch.~\ref{ch:foundations},
 problem \ref{hw:no-transverse-length-contraction}, p.~\pageref{hw:no-transverse-length-contraction}).
-It should not be imagined that length contraction is what an observer actually \emph{sees} visually.
-Optical observations are influenced, for example, by the unequal times taken for light to propagate from the ends
-of the stick to the eye. A simulation of this type of effect is drawn in
-example \ref{eg:cube} on p.~\pageref{eg:cube}.
 
 \vfill
 
@@ -1262,7 +1258,14 @@ Because the events occur at different $x$'s, each is shifted in time relative to
 according to clocks synchronized in frame 2 ($t'$, the train).
 \end{eg}
 
-\pagebreak
+<% marg(-300) %>
+<%
+  fig(
+    'there-you-go-again',
+    %q{Example \ref{eg:there-you-go-again}.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{Deja vu?}\label{eg:there-you-go-again}
 The grids we've been drawing
@@ -1270,7 +1273,7 @@ are mere \emph{conventions}, as elaborate and arbitrary as dress in
 the court of Louis XIV. They come from a surveying process, which may need
 to be planned in advance and whose results we might not be able to \emph{see} until later.
 
-The dark line is the world-line of an observer O, who moves inertially for a while,
+The dark line in figure \figref{there-you-go-again} is the world-line of an observer O, who moves inertially for a while,
 accelerates to the left, and then moves inertially again. On the right are pasted two coordinate grids
 adapted to the two inertial segments. At event E, Bush steals the 2000 election, and this is
 depicted as being simultaneous with both event A and event B. Does poor O see it happen twice?
@@ -1282,19 +1285,51 @@ Something similar happens in a constant-acceleration frame, section \ref{sec:rin
 p.~\pageref{sec:rindler-coords}. Cf.~also p.~\pageref{subsubsec:deja-vu-again}.
 \end{eg}
 
-<% marg(300) %>
+<% marg %>
 <%
   fig(
-    'there-you-go-again',
-    %q{Example \ref{eg:there-you-go-again}.}
+    'surveying',
+    %q{Minkowski coordinates are the result
+          of a complicated process of surveying.}
   )
 %>
 <% end_marg %>
 
+\vfill
+
+Many mistakes by beginners at relativity revolve around a set of unexamined preconceptions
+about what it means to observe things. One imagines that effects such as
+length contraction and time dilation are what an observer actually \emph{sees}, and perhaps that this
+process of seeing is instantaneous. Or one thinks of Minkowski coordinates as if they were
+the result of a simple and automatic process of perception by an observer.
+This is the kind of thinking that will lead one to believe that
+example \ref{eg:there-you-go-again} is crazy or paradoxical.
+
+As another example, it should not be imagined that the length contraction of a stick by $1/\gamma$
+is what an observer actually \emph{sees} when looking at the stick.
+Optical observations are influenced, for example, by the unequal times taken for light to propagate from the ends
+of the stick to the eye. A simulation of this type of effect is drawn in
+example \ref{eg:cube} on p.~\pageref{eg:cube}.
+
+Length contraction, time
+dilation, the observer-dependence of simultaneity,
+and Minkowski coordinates are all sophisticated results of a laborious
+process of collecting and analyzing data obtained by techniques such as Einstein synchronization,
+which require actions such as consulting atomic clocks or exchanging signals between different points
+at the speed of light. Figure \figref{surveying} outlines such a process in a cartoonish way.
+A fleet of rocket ships, carrying surveyors,
+is sent out from Earth and dispersed throughout a vast region of space. Surveyors
+look through their theodolites at images, which are formed by light rays (dashed lines)
+that have arrived after traveling at the finite speed $c$. Such light rays carry old, stale information
+about various events. A nuclear war has broken out. Rock and roll music has arrived on Saturn.
+The resulting data are then transmitted by various means (passenger pigeon, Morse-coded radio,
+paper mail) and consolidated at the surveying office. At the office, workers at a long
+row of desks crunch the numbers and produce a chart of Minkowski coordinates with the events marked in.
+
 
 <% end_sec('lorentz-transformation') %>
 
-<% begin_sec("Triangle and Cauchy-Schwarz inequalities",nil,'triangle',{'optional'=>true}) %>\index{triangle inequalities}\index{Cauchy-Schwarz inequalities}
+<% begin_sec("Triangle and Cauchy-Schwarz inequalities",4,'triangle',{'optional'=>true}) %>\index{triangle inequalities}\index{Cauchy-Schwarz inequalities}
 <% marg() %>
 <%
   fig(
@@ -1611,6 +1646,18 @@ $\vc{m}$ and $\vc{n}$ span the light cone, so that we can find some real number 
 $\vc{p}=\alpha\vc{m}+\vc{n}$ is lightlike. 
 Compute $\vc{p}^2$, and show that since $\alpha$ is real, the reversed Cauchy-Schwarz inequality holds.
 <% end_hw %>
+
+<% begin_hw('omg-length-contraction') %>
+A length-contracted object has length $L=L_0/\gamma$. Joe differentiates
+this with respect to time and finds $\der L/\der t=-L_0 v\gamma\der v/\der t$.
+He reasons that  there is no upper limit on the magnitude of
+$\der v/\der t$, and therefore if $v\ne 0$ the quantity $\der L/\der t$ can be
+arbitrarily large. This means that if an object accelerates away from an observer,
+its trailing
+edge can have  $v>c$, which is supposed to be forbidden by
+relativity. OMG! Is Joe's reasoning correct?
+<% end_hw %>
+
 
 <% end_hw_sec %>
 

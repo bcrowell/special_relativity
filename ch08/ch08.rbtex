@@ -1,3 +1,5 @@
+\addtocontents{toc}{\protect\vfill} % cosmetic
+
 <%
   require "./scripts/eruby_util.rb"
 %>

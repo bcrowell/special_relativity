@@ -1,3 +1,5 @@
+\addtocontents{toc}{\protect\newpage} % keep chapter heading from being orphaned from sections
+
 <%
   require "./scripts/eruby_util.rb"
 %>

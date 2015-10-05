@@ -105,6 +105,7 @@ config_file = 'book.config'
 if ! File.exist?(config_file) then fatal_error("error, file #{config_file} does not exist") end
 $config = {
   # In the following, nil means that there is no default and it's an error if it's not given explicitly.
+  # If adding a new config variable here, then also add it below (why did I do this?).
   'titlecase_above'=>nil, # e.g., 1 means titlecase for chapters but not for sections or subsections
   'hw_block_style'=>0 # 1 means hw numbered like a7, as in Fundamentals of Calculus
 }
