@@ -784,7 +784,7 @@ Although the coordinates were labeled $x$ and $y$, the proof made no use of the 
 so the result is equally valid regardless of the signature. The rectangle could equally
 well have been a rectangle in $1+1$-dimensional spacetime. The generalization to $n$
 dimensions is also automatic, and everything also carries through without modification
-if we replace the vector $J^a$ with a tensor such as $T^{ab}$ that as more indices --- the
+if we replace the vector $J^a$ with a tensor such as $T^{ab}$ that has more indices --- the
 extra index $b$ just comes along for the ride. Sometimes, as with Gauss's law in electromagnetism,
 we are interested in fields whose divergences are not zero. Gauss's theorem then becomes
 \begin{equation*}
@@ -1186,14 +1186,23 @@ properties claimed above.
 <% end_sec('christoffel-from-metric') %>
 
 <% begin_sec("The geodesic equation",nil,'geodesic-equation') %>\label{sec:geodesic-equation}
-In this section we show how the Christoffel symbols can be used to
-find differential equations that describe inertial motion.
+A world-line is a timelike curve in spacetime. As a special case, some such curves are actually
+not curved but straight. Physically, the ones we consider straight are those that could be
+the world-line of a test particle not acted on by any non-gravitational forces
+(sec.~\ref{sec:define-inertia}, p.~\pageref{sec:define-inertia}).
+Mathematically, we will show
+in this section how the Christoffel symbols can be used to
+find differential equations that describe such motion.
 The world-line of a test particle is called a geodesic.\index{geodesic}
-We defined this term in a nonrelativistic context as the shortest curve between two points.
+The equations also have solutions that are spacelike or lightlike, and we consider these
+to be geodesics as well.
+
 Geodesics play the same role in relativity that straight lines play in Euclidean geometry.
-In special relativity, a timelike
-geodesic maximizes the 
+In Euclidean geometry, we can specify two points and ask for the curve connecting them that has
+minimal length. The answer is a line. 
+In special relativity, a timelike geodesic \emph{maximizes} the 
 proper time (cf.~section \ref{subsec:maximal-time}, p.~\pageref{subsec:maximal-time}) between two events.
+
 In special relativity, geodesics are given by linear equations when expressed 
 in Minkowski coordinates, and the velocity vector of a test particle has constant components
 when expressed in Minkowski coordinates. In general relativity, Minkowski coordinates don't exist, and
@@ -1296,7 +1305,7 @@ minus sign being necessary because we are using a metric with
 signature $+---$, and we want the result to be real. The quantity
 $\sigma$ can be thought of as the result we would get by approximating
 the curve with a chain of short line segments, and adding their proper
-lengths. In the case where the whole curve lies within a single plane of
+lengths. In the case where the whole curve lies within a plane of
 simultaneity for some observer, $\sigma$ is the curve's Euclidean length as
 measured by that observer. Our $\sigma$ is neither a maximum nor a minimum for a spacelike geodesic
 connecting two events.
@@ -1307,13 +1316,39 @@ geometry: it increases the length. Deforming it in the $xt$
 plane, however, reduces the length (as becomes obvious when you
 consider the case of a large deformation that turns the geodesic into
 a curve of length zero, consisting of two lightlike line segments). 
-The result is that the geodesic is neither a minimizer nor a maximizer of $\sigma$ but
-is rather what is referred to as \emph{stationary} with respect to changes in $\sigma$.
-Stationarity means that if we vary the curve by some small amount, not moving any part of
-it by a Minkowski coordinate distance greater than $\epsilon$, then the change in
-$\sigma$ is of order $\epsilon^2$.
+The result is that the geodesic is neither a minimizer nor a maximizer of $\sigma$.
 
-That's not so bad, but the situation becomes worse for lightlike
+Maximizing or minimizing the proper length is a strong requirement. A related
+but more permissive criterion to apply to a curve connecting two fixed points
+is that if we vary the curve by some small amount, the variation in length should
+vanish to first order. For example, two points A and B on the surface of the earth determine
+a great circle, i.e., a circle whose circumference equals that of the earth.
+This great circle gives us two different paths by which we could travel from A to B.
+One of these will usually be longer than the other. Both of these are as straight as
+they can be while keeping to the surface of the earth, so in this context of spherical
+geometry they are both considered to be geodesics. One thing that the two paths have
+in common is that they are both \emph{stationary}. Stationarity is defined as follows.
+Given a certain parametrized curve $\gamma(t)$, let us fix some 
+vector $\vc{h}(t)$ at each point on the curve that is tangent to the earth's surface,
+and let $\vc{h}$ be a continuous function of $t$ that vanishes at the end-points.
+Then if $\epsilon$ is small compared to the radius of the earth, we can clearly
+define what it means to perturb $\gamma$ by $\epsilon\vc{h}$, producing another
+curve $\gamma^*$ similar to, but not the same as, $\gamma$. Stationarity means
+that the difference in length between $\gamma$ and $\gamma^*$ is of order $\epsilon^2$
+for small $\epsilon$. This is a generalization of the elementary calculus notion that
+a function has a zero derivative near an extremum or point of inflection. In our example on the surface of the
+earth, the two geodesics connecting A and B are both stationary.
+
+Spacelike geodesics in special relativity are stationary by the above definition.
+However, this assertion may be misleading. Because we construct the displacement
+as the product $\epsilon\vc{h}$, its \emph{derivative} is also guaranteed to shrink
+in proportion to $\epsilon$ for small $\epsilon$. We could loosen this requirement a little bit, and
+only require that the magnitude of the displacement be of order $\epsilon$. In this case,
+one can show that spacelike curves are not stationary. For example, any spacelike curve
+can be approximated to an arbitrary degree of precision by a chain of lightlike geodesic
+segments. Thus an arbitrarily small perturbation in the curve reduces its length to zero.
+
+The situation becomes even worse for lightlike
 geodesics.  Here we would have to define what ``length'' was. We could
 either take an absolute value, $L=\int \sqrt{|g_{ij}dx^i dx^j|}$, or
 not, $L=\int \sqrt{g_{ij}dx^i dx^j}$. If we don't take the absolute
@@ -1335,7 +1370,13 @@ helical curve about the $t$ axis.
 <% end_sec('covariant-derivative') %>
 
 <% begin_sec("Congruences, expansion, and rigidity",nil,'congruences-etc',{'optional'=>true}) %>
-<% marg(-5) %>
+
+This chapter has focused on fluxes of conserved quantities; we wanted to rule out
+pictures like \subfigref{congruence-vs-conservation}{1}, in which the appearance and disappearance
+of world-lines would imply nonconservation of properties such as charge and mass-energy.
+But the mathematical techniques we've developed turn out to be an elegant way to approach
+the different issues described in the other parts of figure \figref{congruence-vs-conservation}.
+<% marg(0) %>
 <%
   fig(
     'congruence-vs-conservation',
@@ -1344,12 +1385,6 @@ helical curve about the $t$ axis.
 %>
 <% end_marg %>
 <% begin_sec("Congruences",nil,'congruences') %>
-
-This chapter has focused on fluxes of conserved quantities; we wanted to rule out
-pictures like \subfigref{congruence-vs-conservation}{1}, in which the appearance and disappearance
-of world-lines would imply nonconservation of properties such as charge and mass-energy.
-But the mathematical techniques we've developed turn out to be an elegant way to approach
-the different issues described in the other parts of figure \figref{congruence-vs-conservation}.
 
 In \subfigref{congruence-vs-conservation}{2}, we have \emph{expansion}. For example, the world-lines could
 represent galaxies getting farther apart because of cosmological expansion resulting from the Big Bang.
@@ -1373,8 +1408,6 @@ This is something like the grain in a piece of wood, or Faraday's conception of 
 space, except that one of our $n+1$ dimensions is timelike, and the lines aren't allowed to point in
 directions that lie outside the light cone. One way to specify a congruence is to give the normalized velocity
 vector that is tangent to the world-line passing through any given point.
-
-\pagebreak
 
 \begin{eg}{An expanding congruence}\label{eg:exponential-congruence}
 As an example of a congruence in $1+1$ dimensions, consider the set of all curves of the form
@@ -1482,7 +1515,19 @@ $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not fla
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
 
-<% marg(-10) %>
+\pagebreak
+
+\begin{eg}{A catastrophe}\label{eg:catastrophe}
+Consider the timelike congruence in $1+1$ dimensions defined by $u=x/t$. This consists of the set of all inertial
+world-lines passing through the origin. Since our definition of a congruence requires that the world-lines
+be non-intersecting, let's restrict this example to the interior of the past light cone of the origin,
+$|x|<-t$. We have a universe full of hapless particles, all heading like lemmings toward a catastrophic
+collision. The spacetime diagram looks like an optical ray diagram for the formation of a real image.
+A computation gives the unexpectedly simple result $\Theta=\gamma/t$. For $t<0$, this is negative,
+indicating a contraction, and it blows up to minus infinity as $t$ approaches $0$.
+
+\end{eg}
+<% marg(300) %>
 <%
   fig(
     'catastrophe',
@@ -1497,16 +1542,6 @@ defined in section \ref{sec:covariant-derivative}, not the partial derivative $\
   )
 %>
 <% end_marg %>
-\begin{eg}{A catastrophe}\label{eg:catastrophe}
-Consider the timelike congruence in $1+1$ dimensions defined by $u=x/t$. This consists of the set of all inertial
-world-lines passing through the origin. Since our definition of a congruence requires that the world-lines
-be non-intersecting, let's restrict this example to the interior of the past light cone of the origin,
-$|x|<-t$. We have a universe full of hapless particles, all heading like lemmings toward a catastrophic
-collision. The spacetime diagram looks like an optical ray diagram for the formation of a real image.
-A computation gives the unexpectedly simple result $\Theta=\gamma/t$. For $t<0$, this is negative,
-indicating a contraction, and it blows up to minus infinity as $t$ approaches $0$.
-
-\end{eg}
 <% end_sec('expansion') %>
 
 <% begin_sec("Caustics",nil,'caustics') %>
