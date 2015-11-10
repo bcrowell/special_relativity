@@ -113,13 +113,13 @@ toward us. (Galaxies at cosmological distances are always observed to be recedin
 one another, but this doesn't necessarily hold for galaxies as close as these.)
 Relating the energy shift to the velocity, we have
 \begin{equation*}
-  \frac{E'}{E} = D = \sqrt{(1+v)/(1-v)} \qquad .
+  \frac{E'}{E} = D = \sqrt{(1+v)/(1-v)}\eqquad.
 \end{equation*}
 Since the shift is only about one part per thousand, the velocity is small compared
 to $c$ --- or small compared to 1 in units where $c=1$. Therefore we can employ the low-velocity approximation
 $D\approx 1+v$, which gives
 \begin{equation*}
-  v \approx D-1 = \frac{E'}{E}-1 = -1.0\times10^{-3} \qquad .
+  v \approx D-1 = \frac{E'}{E}-1 = -1.0\times10^{-3}\eqquad.
 \end{equation*}
 The negative sign confirms that the source is approaching rather than receding.
 This is in units where $c=1$. Converting to SI units, 
@@ -185,17 +185,17 @@ away from the other, whose energy gets boosted to $(E/2)D$. In frame B, as in A,
 O retains the same speed after emission of the light. But observers in frames
 A and B disagree on how much energy O has lost, the discrepancy being
 \begin{equation*}
-  E\left[\frac{1}{2}(D+D^{-1})-1\right] \qquad .
+  E\left[\frac{1}{2}(D+D^{-1})-1\right]\eqquad.
 \end{equation*}
 This can be rewritten using identity [2] from section \ref{sec:identities}  as
 \begin{equation*}
-  E(\gamma-1) \qquad .
+  E(\gamma-1)\eqquad.
 \end{equation*}
 Let's consider the case where B's velocity relative to A is small. Using the
 approximation $\gamma\approx 1+v^2/2$, our result
 is approximately
 \begin{equation*}
-  \frac{1}{2}Ev^2 \qquad ,
+  \frac{1}{2}Ev^2\eqquad,
 \end{equation*}
 neglecting terms of order $v^4$ and higher.
 The interpretation is that when O reduced its energy by $E$ in order to make
@@ -203,7 +203,7 @@ the light rays, it reduced its \emph{mass} from $m_\zu{o}$ to $m_\zu{o}-m$,
 where $m=E$. Inserting the necessary factor of $c^2$ to make this valid in units
 where $c\ne 1$, we have Einstein's famous
 \begin{equation*}
-  E=mc^2 \qquad .
+  E=mc^2\eqquad.
 \end{equation*}
 This derivation entailed both an approximation and some hidden assumptions.
 These issues are explored more thoroughly in 
@@ -247,7 +247,7 @@ produced by annihilating 1 kg of matter with 1 kg of antimatter is
 \begin{align*}
  E &= mc^2\\
    &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
-   &= 2\times10^{17}\ \junit \qquad ,
+   &= 2\times10^{17}\ \junit\eqquad,
 \end{align*}
 which is on the same order of magnitude as a day's energy consumption for the
 entire world's population!
@@ -288,7 +288,7 @@ $c=3\times10^8$ meters per second, so converting to mass units, we have
 \begin{align*}
                 m         &=    \frac{E}{c^2}  \\
                         &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
-                         &=    6\times10^{-12}\  \text{kilograms}   \qquad   .
+                         &=    6\times10^{-12}\  \text{kilograms}\eqquad.
 \end{align*}
 The change in mass is too small to measure with any
 practical technique. This is because the square of the speed
@@ -460,11 +460,11 @@ the inner product of its $(E,p)$ four-vector with itself equals $m^2$. In other 
 the energy-momentum four-vector is simply equal to the particle's mass. If we transform into a different
 frame of reference, in which $p\ne 0$, the inner product stays the same.  In symbols,
 \begin{equation*}
-  m^2 = E^2 - p^2 \qquad ,
+  m^2 = E^2 - p^2\eqquad,
 \end{equation*}
 or, in units with $c \ne 1$,
 \begin{equation*}
-  (mc^2)^2 = E^2 - (pc)^2 \qquad .
+  (mc^2)^2 = E^2 - (pc)^2\eqquad.
 \end{equation*}
 We take this as the relativistic definition of mass.\index{mass!defined} Since the definition
 is an inner product, which is a scalar, it is the same in all frames of reference. (Some older
@@ -644,7 +644,7 @@ using the quantum-mechanical relation $E=hc/\lambda$ to give the compact form $\
 The final result for the energy of the Compton edge is
 \begin{align*}
   E_\zu{o}-E_f &= \frac{E_\zu{o}}{1+1/2\alpha} \\
-               &= 478\ \zu{keV} \qquad ,
+               &= 478\ \zu{keV}\eqquad,
 \end{align*}
 in good agreement with figure \subfigref{compton-edge}{1}.
 % calc -e "E=662; m=511; a=E/m; E/(1+1/(2a))"
@@ -692,7 +692,7 @@ its velocity, we can find a similar equation for the momentum:
   p &= \sqrt{E^2-m^2} \\
     &= m\sqrt{\gamma^2-1} \\
     &= m\sqrt{\frac{1}{1-v^2}-1} \\
-    &= m\gamma v \qquad .
+    &= m\gamma v\eqquad.
 \end{align*}
 As a material particle gets closer and closer to $c$, its momentum approaches infinity,
 so that an infinite force would be required in order to reach $c$. 
@@ -840,13 +840,13 @@ Force is a concept that is seldom needed in relativity, and that's why this sect
 <% begin_sec("Four-force",nil,'four-force') %>\index{force!four-vector}
 By analogy with Newtonian mechanics, we define a relativistic force vector
 \begin{equation*}
-  \vc{F} = m\vc{a} \qquad ,
+  \vc{F} = m\vc{a}\eqquad,
 \end{equation*}
 where $\vc{a}$ is the acceleration four-vector (sec \ref{sec:v-and-a-vectors},
 p.~\pageref{sec:v-and-a-vectors}) and $m$ is the mass of a particle that has
 that acceleration as a result of the force $\vc{F}$. This is equivalent to
 \begin{equation*}
-  \vc{F} = \frac{\der\vc{p}}{\der\tau} \qquad ,
+  \vc{F} = \frac{\der\vc{p}}{\der\tau}\eqquad,
 \end{equation*}
 where $\vc{p}$ is the mass of the particle and $\tau$ its proper time. Since the timelike
 part of $\vc{p}$ is the particle's mass-energy, the timelike component of the force is
@@ -865,7 +865,7 @@ transformation properties, but a different $\vc{F}_\vc{o}$, which is what is
 actually measured by the observer $\vc{o}$. 
 It's defined as
 \begin{equation*}
-  \vc{F}_\vc{o} = \frac{\der\vc{p}}{\der t} \qquad ,
+  \vc{F}_\vc{o} = \frac{\der\vc{p}}{\der t}\eqquad,
 \end{equation*}
 with a $\der t$ in the denominator rather than a $\der\tau$. In other words, it measures the rate
 of transfer of momentum according to the observer, whose time coordinate is $t$, not $\tau$ --- unless
@@ -882,14 +882,14 @@ need not be parallel to the three-force.
 \begin{eg}{Circular motion}\label{eg:force-in-circular-motion}
 For a particle in uniform circular motion, $\gamma$ is constant, and we have
 \begin{equation*}
-    \vc{F}_\vc{o} = \frac{\der}{\der t}(m\gamma\vc{v}) = m \gamma\frac{\der \vc{v}}{\der t} \qquad .
+    \vc{F}_\vc{o} = \frac{\der}{\der t}(m\gamma\vc{v}) = m \gamma\frac{\der \vc{v}}{\der t}\eqquad.
 \end{equation*}
 The particle's mass-energy is constant, so the timelike component of
 $\vc{F}_\vc{o}$ does happen to be zero in this example.
 In terms of the three-vectors $\vc{v}_\vc{o}$ and $\vc{a}_\vc{o}$ defined in
 section \ref{sec:proj}, we have
 \begin{equation*}
-    \vc{F}_\vc{o} = m\gamma \frac{\der \vc{v}_\vc{o}}{\der t} = m\gamma \vc{a}_\vc{o}\qquad,
+    \vc{F}_\vc{o} = m\gamma \frac{\der \vc{v}_\vc{o}}{\der t} = m\gamma \vc{a}_\vc{o}\eqquad,
 \end{equation*}
 which is greater than the Newtonian value by the factor $\gamma$.
 As a practical example, in a cathode ray tube (CRT) such as the tube in
@@ -905,7 +905,7 @@ have been expected according to Newton's laws.
 \begin{eg}{Linear motion}\label{eg:force-in-linear-motion}
 For accelerated linear motion in the $x$ direction, ignoring $y$ and $z$, we have a velocity vector
 \begin{align*}
-  \vc{v} &= \frac{\der\vc{r}}{\der\tau} \qquad , \\
+  \vc{v} &= \frac{\der\vc{r}}{\der\tau}\eqquad, \\
 \intertext{whose $x$ component is $\gamma v$. Then}
   F_{\vc{o},x} &= m\frac{\der (\gamma v)}{\der t} \\
            &= m\frac{\der\gamma}{\der t} v+m\gamma\frac{\der v}{\der t} \\
@@ -919,7 +919,7 @@ The particle's apparent inertia is increased by a factor of $\gamma^3$ due to re
 The results of examples \ref{eg:force-in-circular-motion} and
 \ref{eg:force-in-linear-motion} can be combined as follows:
 \begin{equation*}
-  F_{\vc{o}} = m\gamma \vc{a}_{\vc{o},\perp}+m\gamma^3 \vc{a}_{\vc{o},\parallel} \qquad ,
+  F_{\vc{o}} = m\gamma \vc{a}_{\vc{o},\perp}+m\gamma^3 \vc{a}_{\vc{o},\parallel}\eqquad,
 \end{equation*}
 where the subscripts $\perp$ and $\parallel$ refer to the parts of $\vc{a}_\vc{o}$ perpendicular
 and parallel to $\vc{v}_\vc{o}$.
@@ -950,7 +950,7 @@ to this one, we have
 \begin{align*}
 \begin{split}
   F_{\vc{o}',\parallel} &= F_{\vc{o},\parallel} \qquad \text{and}\\
-  F_{\vc{o}',\perp}     &= \frac{F_{\vc{o},\perp}}{\gamma} \qquad ,
+  F_{\vc{o}',\perp}     &= \frac{F_{\vc{o},\perp}}{\gamma}\eqquad,
 \end{split}
 \end{align*}
 where $\parallel$ indicates the direction parallel to the relative velocity of the two frames,
@@ -1058,7 +1058,7 @@ the core of the star becomes a white dwarf, but once fusion ceases completely th
 state. Now consider the nuclear reactions\index{neutron star}
 \begin{align*}
   \zu{n} & \rightarrow \zu{p} + e^- + \bar{\nu} \\
-  \zu{p} & + e^-  \rightarrow \zu{n} + \nu \qquad ,
+  \zu{p} & + e^-  \rightarrow \zu{n} + \nu\eqquad,
 \end{align*}
 which happen due to the weak nuclear force. The first of these releases 0.8 MeV, and has a half-life of 14 minutes.
 This explains why free neutrons are not observed in significant numbers in our universe, e.g., in cosmic rays.

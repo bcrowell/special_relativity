@@ -351,7 +351,7 @@ the covector $__birddualvec(\vc{v})$, i.e., its dual.
 
 \eganswer Our goal is to write out an explicit expression for the covector in component form,
 \begin{equation*}
-  __birddualvec(\vc{v}) = (a,b) \qquad .
+  __birddualvec(\vc{v}) = (a,b)\eqquad.
 \end{equation*}
 To define these components, we have to have some basis in mind, consisting of one
 timelike observer-vector $\vc{o}$ and one spacelike vector of simultaneity $\vc{s}$.
@@ -368,7 +368,7 @@ $f(\vc{x})=g(__birdvec(\vc{v}),\vc{x})$. Therefore
 or
 \begin{equation*}
   g(__birdvec(\vc{v}),__birdvec(\hat{\vc{t}}))=3=a \qquad 
-  \text{and} \qquad g(__birdvec(\vc{v}),__birdvec(\hat{\vc{x}}))=-4=b \qquad .
+  \text{and} \qquad g(__birdvec(\vc{v}),__birdvec(\hat{\vc{x}}))=-4=b\eqquad.
 \end{equation*}
 \end{eg}
 
@@ -379,7 +379,7 @@ The result of the formidable, fancy-looking calculation in example
 \end{equation*}
 and flip the sign of its spacelike component to give the its dual, the covector
 \begin{equation*}
-  (3,-4) \qquad .
+  (3,-4)\eqquad.
 \end{equation*}
 Looking back at why this happened, it was because we were using Minkowski coordinates, and
 in Minkowski coordinates the form of the metric is $g(p,q)=(+1)p_tq_t+(-1)p_xq_x+\ldots$.
@@ -395,7 +395,7 @@ Given the vector
 \end{equation*} and
 the covector 
 \begin{equation*}
-  __birddualvec(\vc{f})=(1,2) \qquad ,
+  __birddualvec(\vc{f})=(1,2)\eqquad,
 \end{equation*}
 find $__birddualvec(\vc{e})$
 and $__birdvec(\vc{f})$
@@ -403,12 +403,12 @@ and $__birdvec(\vc{f})$
 \eganswer By the rule established above, we can find $__birddualvec(\vc{e})$ simply by
 flipping the sign of the 7,
 \begin{equation*}
-  __birddualvec(\vc{e})=(8,-7) \qquad .
+  __birddualvec(\vc{e})=(8,-7)\eqquad.
 \end{equation*}
 To find $__birdvec(\vc{f})$, we need to ask what vector $(a,b)$, if we flipped the sign of $b$,
 would give us $(a,-b)=(1,2)$. Obviously this is
 \begin{equation*}
-  __birdvec(\vc{f})=(1,-2) \qquad .
+  __birdvec(\vc{f})=(1,-2)\eqquad.
 \end{equation*}
 In other words, flipping the sign of the spacelike part of a vector is also the recipe for
 changing covectors into vectors.
@@ -509,7 +509,7 @@ The inverse transformation is found by flipping the sign of $v$.
 Putting our frequency vector through an inverse Lorentz boost,
 we find 
 \begin{equation*}
-  \omega'=\gamma \omega(1+v\cos\theta) \qquad .
+  \omega'=\gamma \omega(1+v\cos\theta)\eqquad.
 \end{equation*}
 For $\theta=0$ the Doppler factor
 reduces to $\gamma(1+v)=D$, recovering the $1+1$-dimensional result. For $\theta=90\degunit$,
@@ -551,7 +551,7 @@ $__birdvec(\vc{u})$. Reusing the expression for  $__birddualvec(\bomega)$ define
 \ref{subsec:doppler-fancy}, and arbitrarily
 fixing $__birdvec(\vc{u})$'s timelike component to be 1, we have
 \begin{equation*}
-  __birdvec(\vc{u}) =(1,-\cos\theta,-\sin\theta)  \qquad .
+  __birdvec(\vc{u}) =(1,-\cos\theta,-\sin\theta)\eqquad.
 \end{equation*}
 When this vector undergoes
 a boost $v$ along the $x$ axis it becomes
@@ -561,7 +561,7 @@ a boost $v$ along the $x$ axis it becomes
 The original angle $\theta=\tan^{-1}(u_y/u_x)$ has been transformed
 to $\theta'=\tan^{-1}(u_y'/u_x')$, the result being
 \begin{equation*}
-  \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)} \qquad .
+  \tan\theta' = \frac{\sin\theta}{\gamma(\cos\theta+v)}\eqquad.
 \end{equation*}
 
 \begin{eg}{A test of special relativity}
@@ -856,7 +856,7 @@ method works for 3-volume.
 Suppose that a parallelogram is formed with vectors $\vc{a}$ and $\vc{b}$ as two of its sides.
 It we double $\vc{a}$, then the area doubles as well,
 \begin{equation*}
-  \operatorname{area}(2\vc{a},\vc{b}) = 2\operatorname{area}(\vc{a},\vc{b}) \qquad .
+  \operatorname{area}(2\vc{a},\vc{b}) = 2\operatorname{area}(\vc{a},\vc{b})\eqquad.
 \end{equation*}
 In general, if we scale either of the
 vectors by a factor $c$, the area scales by the same factor, provided that we set some rule
@@ -864,7 +864,7 @@ for handling signs --- an issue that we'll ignore for the time being. Something 
 when we add two vectors, e.g.,
 \begin{equation*}
   \operatorname{area}(\vc{a},\vc{b}+\vc{c}) =  \operatorname{area}(\vc{a},\vc{b})
-                                              +\operatorname{area}(\vc{a},\vc{c})\qquad ,
+                                              +\operatorname{area}(\vc{a},\vc{c})\eqquad,
 \end{equation*}
 again passing over issues with signs.
 We refer to these properties as \emph{linearity} of the affine 2-volume. Any sensible measure
@@ -881,7 +881,7 @@ we have a scalar function that depends linearly on a vector, and such a function
 exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
 $\vc{S}$ according to
 \begin{equation*}
-  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d}) \qquad .
+  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})\eqquad.
 \end{equation*}
 The volume covector collects the information about the volume of the 3-parallelepiped,
 encapsulating it in a convenient form with known transformation properties. In particular,
@@ -960,14 +960,14 @@ vectors $__birdvec(\vc{a})$, $__birdvec(\vc{b})$, and $__birdvec(\vc{c})$,
 and let $__birddualvec(\vc{S})$ be the corresponding 3-volume covector.
 The surface is lightlike, so
 \begin{equation}\label{eq:lightlike-s}
-  __birdscalarproduct(\vc{S},\vc{S})=0 \qquad .
+  __birdscalarproduct(\vc{S},\vc{S})=0\eqquad.
 \end{equation}
 Because $__birddualvec(\vc{S})$ is defined as the function giving the 4-volume of a parallelepiped spanned
 by the bases with a fourth vector $__birdvec(\vc{d})$, and because this volume vanishes
 when $__birdvec(\vc{d})$ is tangent to the surface (property V2, p.~\pageref{volume-properties}),
 we have,
 \begin{equation}
-   __birdscalarproduct(\vc{S},\vc{a})=__birdscalarproduct(\vc{S},\vc{b})=__birdscalarproduct(\vc{S},\vc{c})=0 \qquad .
+   __birdscalarproduct(\vc{S},\vc{a})=__birdscalarproduct(\vc{S},\vc{b})=__birdscalarproduct(\vc{S},\vc{c})=0\eqquad.
 \end{equation}
 So in this sense $__birddualvec(\vc{S})$ is perpendicular to the surface.
 In Euclidean space we are used to describing the orientation of a surface in terms of the unit normal vector,

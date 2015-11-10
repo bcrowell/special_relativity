@@ -847,10 +847,13 @@ end
 # hw_block ... bumps by 3
 # hw_block(1) ... bumps by 1
 # hw_block('b') ... sets it to 'b'
+# 2nd arg = 0 means no extra vfill between blocks
 def hw_block(*arg)
   x = arg[0]
+  stretch = arg[1]
+  if stretch.nil? then stretch=1 end
   $hw_number_in_block = 0
-  print %q~\vspace{\stretch{2}}~
+  if stretch==1 then print %Q~\\vspace{\\stretch{2}}~ end
      # ... twice as big as what's at the end of homeworkforcelabel in lmcommon.sty
   if x.nil? then $hw_block = $hw_block+3; return end
   if x.class() == Fixnum then $hw_block = $hw_block+x; return end

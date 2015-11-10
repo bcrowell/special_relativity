@@ -161,13 +161,13 @@ the observer aboard a spaceship with world-line $(T,X)=(\tau,1)$
 has a favorite paperweight with mass $m$. According
 to measurements carried out aboard her ship, its energy-momentum vector is
 \begin{equation*}
-  (p_T,p_X) = (m,0) \qquad .
+  (p_T,p_X) = (m,0)\eqquad.
 \end{equation*}
 In the unaccelerated coordinates, this becomes
 \begin{align*}
   (p_t,p_x) &= (X\cosh T \; p_T+\sinh T \; p_X \: , \: X\sinh T \; p_T+\cosh T \; p_X) \\
             &= (m X \cosh T,m X \sinh T) \\
-            &= (m\cosh \tau,m\sinh \tau) \qquad .
+            &= (m\cosh \tau,m\sinh \tau)\eqquad.
 \end{align*}
 Since the functions $\cosh$ and $\sinh$ behave like $e^x$ for large $x$,
 we find that after the astronaut has spent a reasonable amount of proper time $\tau$ accelerating,
@@ -188,20 +188,20 @@ Here $\der s$ would represent proper time, in the case where the displacement wa
 Since we've already determined that
 \begin{align*}
   \der t &= X\cosh T\der T+\sinh T\der X \qquad \text{and} \\
-  \der x &= X\sinh T\der T+\cosh T\der X \qquad ,
+  \der x &= X\sinh T\der T+\cosh T\der X\eqquad,
 \end{align*}
 we can simply substitute into the expression for $\der s$ in order to find the form of
 the metric in $(T,X)$ coordinates. Employing the identity $\cosh^2-\sinh^2=1$, we
 find
 \begin{equation*}
-  \der s^2 = X^2\der T^2 -\der X^2 \qquad .
+  \der s^2 = X^2\der T^2 -\der X^2\eqquad.
 \end{equation*}
 The varying value of the $\der T^2$ coefficient is in fact exactly the kind of gravitational
 time dilation effect whose existence we predicted in section \ref{subsec:varying-metric},
 p.~\pageref{subsec:varying-metric} based on the equivalence principle. The form of the
 metric inferred there was
 \begin{equation*}
-  \der s^2 \approx (1+2\Delta \Phi)\der T^2 -\der X^2 \qquad ,
+  \der s^2 \approx (1+2\Delta \Phi)\der T^2 -\der X^2\eqquad,
 \end{equation*}
 where $\Delta \Phi$ is the difference in gravitational potential relative to
 some reference height. One of the approximations employed was
@@ -247,13 +247,13 @@ $a\sin\theta$ from the axis, so for an infinitesimal east-west distance we have
 $a\sin\theta\der\phi$. For convenience, let the units be chosen such that 
 $a=1$. Then the metric, with signature $++$, is 
 \begin{equation*}
-  \der s^2 = \der\theta^2 + \sin^2\theta\der\phi \qquad .
+  \der s^2 = \der\theta^2 + \sin^2\theta\der\phi\eqquad.
 \end{equation*}
 One of the many possible ways of forming a flat map is the 
 Lambert cylindrical projection,\index{Lambert cylindrical projection}
 \begin{align*}
   x &= \phi \\
-  y &= \cos\theta \qquad ,
+  y &= \cos\theta\eqquad,
 \end{align*}
 shown in figure \figref{lambert}.
 If we see a distance on the map and want to know how far
@@ -261,16 +261,16 @@ it actually is on the earth's surface, we need to transform the metric into the 
 coordinates. The inverse coordinate transformation is
 \begin{align*}
   \phi &= x \\
-  \theta &= \cos^{-1} y \qquad .
+  \theta &= \cos^{-1} y\eqquad.
 \end{align*}
 Taking differentials on both sides, we get
 \begin{align*}
   \der\phi &= \der x \\
-  \der \theta &= -\frac{\der y}{\sqrt{1-y^2}} \qquad .
+  \der \theta &= -\frac{\der y}{\sqrt{1-y^2}}\eqquad.
 \end{align*}
 We take the metric and eliminate $\theta$, $\phi$, $\der\theta$, and $\der\phi$, finding
 \begin{equation*}
-  \der s^2 = (1-y^2)\der x^2 + \frac{1}{1-y^2} \der y^2 \qquad .
+  \der s^2 = (1-y^2)\der x^2 + \frac{1}{1-y^2} \der y^2\eqquad.
 \end{equation*}
 In figure \figref{lambert}, the polka-dot pattern is made of figures that are actually circles,
 all of equal size,
@@ -292,13 +292,13 @@ In the Einstein concrete index notation, let
 coordinates $(x^0,x^1,x^2,x^3)$ be
 transformed to new coordinates $(x'^0,x'^1,x'^2,x'^3)$. Then vectors transform according to the rule
 \begin{equation}\label{eqn:vector-xfn-rule}
-  v'^\mu =  v^\kappa \frac{\partial x'^\mu}{\partial x^\kappa} \qquad ,
+  v'^\mu =  v^\kappa \frac{\partial x'^\mu}{\partial x^\kappa}\eqquad,
 \end{equation}
 where the Einstein summation convention implies a sum over the repeated index $\kappa$.
 By the same reasoning as in section \ref{subsec:change-of-basis}, p.~\pageref{subsec:change-of-basis},
 the transformation for a covector $\omega$ is
 \begin{equation}\label{eqn:covector-xfn-rule}
-  \omega'_\mu =  \omega_\kappa \frac{\partial x^\kappa}{\partial x'^\mu} \qquad .
+  \omega'_\mu =  \omega_\kappa \frac{\partial x^\kappa}{\partial x'^\mu}\eqquad.
 \end{equation}
 Note the inversion of the partial derivative in one equation compared to the other.
 Because these equations describe a change from one coordinate system to another,
@@ -336,7 +336,7 @@ zero, and all the derivatives for $\kappa=\mu$ equal 1.
 
 In equation \eqref{eqn:covector-xfn-rule}, it is tempting to write
 \begin{equation*}
-  \frac{\partial x^\kappa}{\partial x'^\mu} = \frac{1}{\frac{\partial x'^\mu}{\partial x^\kappa}} \qquad \text{(wrong!)} \qquad ,
+  \frac{\partial x^\kappa}{\partial x'^\mu} = \frac{1}{\frac{\partial x'^\mu}{\partial x^\kappa}} \qquad \text{(wrong!)}\eqquad,
 \end{equation*}
 but this would give infinite results for the mixed terms! Only in the case of functions of a single
 variable is it possible to flip derivatives in this way; it doesn't work for partial derivatives.
@@ -350,7 +350,7 @@ consider the transformation from polar coordinates $(r,\theta)$ in the plane
 to Cartesian coordinates
 \begin{align*}
   x &= r\cos\theta \\
-  y &= r\sin\theta \qquad .
+  y &= r\sin\theta\eqquad.
 \end{align*}
 A bug sits on the edge of a phonograph turntable, at $(r,\theta)=(1,0)$.
 The turntable rotates clockwise, giving the bug a velocity vector
@@ -359,7 +359,7 @@ one radian per second in the negative (counterclockwise) direction.
 Let's find the bug's velocity vector in Cartesian coordinates.
 The transformation law for vectors gives.
 \begin{equation*}
-  v^x = v^\kappa \frac{\partial x}{\partial x^\kappa} \qquad .
+  v^x = v^\kappa \frac{\partial x}{\partial x^\kappa}\eqquad.
 \end{equation*}
 Expanding the implied sum over the repeated index $\kappa$, we have
 \begin{align*}
@@ -368,7 +368,7 @@ Expanding the implied sum over the repeated index $\kappa$, we have
       &= (0) \frac{\partial x}{\partial r} 
        +(-1) \frac{\partial x}{\partial \theta} \\
       &= -r\sin\theta \\
-      &= 0 \qquad .
+      &= 0\eqquad.
 \end{align*}
 For the $y$ component,
 \begin{align*}
@@ -377,7 +377,7 @@ For the $y$ component,
       &= (0) \frac{\partial y}{\partial r} 
        +(-1) \frac{\partial y}{\partial \theta} \\
       &= -r\sin\theta \\
-      &= -1 \qquad .
+      &= -1\eqquad.
 \end{align*}
 \end{eg}
 
@@ -435,7 +435,7 @@ Oblique Cartesian coordinates are like
 normal Cartesian coordinates in the plane, but their axes are at at 
 an angle $\varphi \ne \pi/2$ to one another. Show that the metric in these coordinates is
 \begin{equation*}
-  \der s^2 = \der x^2 + \der y^2 + 2\cos\varphi\der x\der y \qquad .
+  \der s^2 = \der x^2 + \der y^2 + 2\cos\varphi\der x\der y\eqquad.
 \end{equation*}
 
 <% end_hw %>

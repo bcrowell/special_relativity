@@ -150,7 +150,7 @@ For simplicity, we'll neglect the $z$ coordinate in what follows. Extending the 
 problem \ref{hw:polar-metric} on p.~\pageref{hw:polar-metric} from $2+0$ dimensions to $2+1$,
 we have the metric
 \begin{equation}\label{eqn:nonrotating-metric}
-  \der s^2=\der t^2 - \der r^2 - r^2\der \theta^2 \qquad .
+  \der s^2=\der t^2 - \der r^2 - r^2\der \theta^2\eqquad.
 \end{equation}
 The results of section \ref{subsec:rot-no-sync} show that we do not expect to be able to
 define a completely satisfactory time coordinate in the rotating frame, so let's start
@@ -159,7 +159,7 @@ This is at least enough to make world-lines of constant $\theta'$ be ones that r
 the origin at the appropriate frequency. Substituting $\der\theta=\der\theta'+\omega\der t$,
 we find
 \begin{equation}\label{eq:rotating-lab-metric}
-  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t \qquad .
+  \der s^2=(1-\omega^2 r^2)\der t^2 - \der r^2 - r^2\der \theta'^2 - 2\omega r^2\der\theta'\der t\eqquad.
 \end{equation}
 <% end_sec('rot-coords') %>
 Recognizing $\omega r$ as the velocity of one frame relative to another, and
@@ -264,7 +264,7 @@ with a magnitude whose maximum size is on the order of $\theta^2$.
 <% begin_sec("Boosts",nil,'boosts-noncommutative') %>
 Something similar happens for boosts. In $3+1$ dimensions, we start with the vector
 \begin{equation}\label{eqn:boost-orig}
-  (0,1,0,0) \qquad ,
+  (0,1,0,0)\eqquad,
 \end{equation}
 pointing along the $x$ axis. A Lorentz boost with $v=0.1$ (eq.~\eqref{eqn:lorentz-transformation},
 p.~\pageref{eqn:lorentz-transformation}) in the $x$ direction gives

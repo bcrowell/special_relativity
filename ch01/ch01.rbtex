@@ -684,7 +684,7 @@ distance between A and B, as measured in a frame of reference in which A and B a
 Generalizing to 3+1 dimensions and to any vector $\vc{v}$, not just a displacement in spacetime,
 we have a measurement of the vector defined by
 \begin{equation*}
-  v_t^2-v_x^2-v_y^2-v_z^2 \qquad .
+  v_t^2-v_x^2-v_y^2-v_z^2\eqquad.
 \end{equation*}
 In the special case where $\vc{v}$ is a spacetime displacement, this can be referred to as the
 spacetime interval.\index{interval!defined}
@@ -692,7 +692,7 @@ Except for the signs, this looks very much like the Pythagorean theorem, which i
 of the vector dot product. We therefore define a 
 function $g$ called the \emph{metric},
 \begin{equation*}
-  g(\vc{u},\vc{v}) = u_t v_t - u_x v_x - u_y v_y - u_z v_z \qquad .
+  g(\vc{u},\vc{v}) = u_t v_t - u_x v_x - u_y v_y - u_z v_z\eqquad.
 \end{equation*}
 Because of the analogy with the Euclidean dot product, we often use the notation
 $\vc{u}\cdot\vc{v}$ for this quantity, and we sometimes call it the inner product.\index{inner product}
@@ -726,7 +726,7 @@ that make sense. The result for the metric could be
 \end{equation*}
 or
 \begin{equation*}
-  g(\vc{u},\vc{v}) = u_t v_t - (u_x v_x - u_y v_y - u_z v_z)/c^2 \qquad .
+  g(\vc{u},\vc{v}) = u_t v_t - (u_x v_x - u_y v_y - u_z v_z)/c^2\eqquad.
 \end{equation*}
 It doesn't matter which we pick, since the metric is arbitrary up to a constant factor.
 The former expression gives a result in meters, the latter seconds.
@@ -1160,13 +1160,13 @@ at $v=3/5$. (For this velocity, the stretching and squishing of the main diagona
 2.) Events are marked at coordinates that in the frame represented by the square are
 \begin{align*}
   (t,x) & = (0,0) \qquad \text{and} \\
-  (t,x) &=  (13,11) \qquad .
+  (t,x) &=  (13,11)\eqquad.
 \end{align*}
 The interval between these events is $13^2-11^2=48$. In the frame represented by the parallelogram, the same
 two events lie at coordinates
 \begin{align*}
   (t',x') & = (0,0) \qquad \text{and} \\
-  (t',x') &=  (8,4) \qquad .
+  (t',x') &=  (8,4)\eqquad.
 \end{align*}
 Calculating the interval using these values, the result is \linebreak[4]
 $8^2-4^2=48$, which comes out the same as in the other frame.
@@ -1381,7 +1381,7 @@ $\vc{n}_\parallel$ is timelike and $\vc{n}_\perp$ spacelike, we have (in the $+-
 and $\vc{n}_\perp^2<0$. Therefore, regardless of signature, $|\vc{n}|\le|\vc{n}_\parallel|$.
 Therefore we have the reversed Cauchy-Schwarz inequality
 \begin{equation*}
-  |\vc{m}\cdot\vc{n}| \ge |\vc{m}|\;|\vc{n}|\qquad \text{(valid for either $+---$ or $-+++$)}\qquad .
+  |\vc{m}\cdot\vc{n}| \ge |\vc{m}|\;|\vc{n}|\qquad \text{(valid for either $+---$ or $-+++$)}\eqquad.
 \end{equation*}
 A useful way of interpreting the reversal compared to the Euclidean case is that
 if the vectors happen to be normalized such that $|\vc{m}|=|\vc{n}|=1$, then
@@ -1493,7 +1493,7 @@ inner product $\vc{a}\cdot\vc{b}$?\hwendpart
 Expressed in natural units, the Lorentz transformation is
 \begin{align*}
   t' &= \quad \gamma t - v\gamma x \\
-  x' &= -v\gamma t + \gamma x \qquad .
+  x' &= -v\gamma t + \gamma x\eqquad.
 \end{align*}
 (a) Insert factors of $c$ to make it valid in units where $c\ne1$.
 (b) Show that in the limit $c\rightarrow\infty$, these have the right Galilean behavior.

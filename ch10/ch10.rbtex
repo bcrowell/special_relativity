@@ -224,7 +224,7 @@ would be a linear one, which would look like matrix multiplication:
 \end{equation*}
 or in index notation,
 \begin{equation*}
-  F^a = q\emt\indices{^a_b} v^b \qquad .
+  F^a = q\emt\indices{^a_b} v^b\eqquad.
 \end{equation*}
 Although the form $\emt\indices{^a_b}$ with one upper and one lower index occurs naturally in
 this expression, we'll find it more convenient from now on to work with the
@@ -292,7 +292,7 @@ $F^x=\gamma q(E_x+u_yB_z-u_zB_y)$
 Taking into account the difference of a factor of $\gamma$
 between the four-force and the force measured by an observer, we end up with the familiar Lorentz force law,
 \begin{equation*}
-  \vc{F}_\vc{o} = q(\vc{E}+\vc{u}\times\vc{B}) \qquad ,
+  \vc{F}_\vc{o} = q(\vc{E}+\vc{u}\times\vc{B})\eqquad,
 \end{equation*}
 where $\vc{B}$ is the magnetic field.
 This is expressed in units where $c=1$, so that
@@ -313,7 +313,7 @@ rule:
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} \\
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} \\
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} 
-  \end{pmatrix} \qquad .
+  \end{pmatrix}\eqquad.
 \end{equation*}
 Since this holds for the electromagnetic field tensor $\emt$, we find that
 under parity, $\vc{E}\rightarrow-\vc{E}$ and $\vc{B}\rightarrow\vc{B}$. For example, a capacitor
@@ -512,7 +512,7 @@ like this:
     S_x  &   &  &  \\
     S_y  &   &  &  \\
     S_z  &   &  &  
-  \end{pmatrix} \qquad .
+  \end{pmatrix}\eqquad.
 \end{equation*}
 
 <% marg(0) %>
@@ -585,11 +585,11 @@ these components can only have terms like $E_i E_j$ and $B_i B_j$, not
 mixed terms like $E_i B_j$. Taking into account properties 4 and 6, we find that the 
 diagonal terms must look like
 \begin{equation*}
-  4\pi k T^{xx} = a(E_x^2+B_x^2)+b(E^2+B^2) \qquad ,
+  4\pi k T^{xx} = a(E_x^2+B_x^2)+b(E^2+B^2)\eqquad,
 \end{equation*}
 and the off-diagonal ones
 \begin{equation*}
-  4\pi k T^{xy} = c(E_xE_y+B_xB_y) \qquad .
+  4\pi k T^{xy} = c(E_xE_y+B_xB_y)\eqquad.
 \end{equation*}
 Property 5 gives $1/2-a-3b=0$ and 7 gives $b=-a/2$, so we have $a=-1$ and $b=1/2$. 
 The determination of $c=-1$ is left as an exercise, problem \ref{hw:off-diagonal-stress-tensor}
@@ -603,12 +603,12 @@ complete expression for the stress-energy tensor of the electromagnetic field, w
     S_x  &   -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
     S_y  &   -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
     S_z  &   -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz} 
-  \end{pmatrix} \qquad ,
+  \end{pmatrix}\eqquad,
 \end{equation*}
 where
 \begin{align*}
-  U&=\frac{1}{8\pi k}(E^2+B^2) \qquad , \\
-  \vc{S}&=\frac{1}{4\pi k}\vc{E}\times\vc{B} \qquad ,
+  U&=\frac{1}{8\pi k}(E^2+B^2)\eqquad, \\
+  \vc{S}&=\frac{1}{4\pi k}\vc{E}\times\vc{B}\eqquad,
 \end{align*}
 and $\sigma$, known as the Maxwell stress tensor, is given by
 \begin{equation*}
@@ -623,7 +623,7 @@ All of this can be expressed more compactly and in a coordinate-independent way
 as
 \begin{equation}\label{eqn:em-stress-energy-coord-free}
   T^{ab} = \frac{1}{4\pi k} \left(\emt^{ac}\emt\indices{^b_c}+\frac{1}{4}o^do_dg^{ab}\emt_{ef}\emt^{ef}\right)
-      \qquad ,
+\eqquad,
 \end{equation}
 where $\vc{o}$ is a future-directed velocity vector, so that $o^do_d=+1$ for the signature $+---$
 used in this book, and $-1$ if the signature is $-+++$.
@@ -639,7 +639,7 @@ Then we have the following for the stress-energy tensor.
     1 & 1 & 0 & 0 \\
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0
-  \end{pmatrix} \qquad ,
+  \end{pmatrix}\eqquad,
 \end{equation*}
 The $T^{tt}$ component tells us that the wave has a certain energy density. 
 Because the wave is massless, we have $E^2-p^2=m^2=0$, so the momentum density is
@@ -656,7 +656,7 @@ T\indices{^{\mu}^{\nu}} = \left( \begin{matrix}
                    \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 In the ultrarelativistic limit $v\rightarrow 1$, this becomes
 \begin{equation*}
@@ -665,7 +665,7 @@ T\indices{^{\mu}^{\nu}} = (\text{energy density}) \times \left( \begin{matrix}
                    1 & 1 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad ,
+      \end{matrix} \right)\eqquad,
 \end{equation*}
 which is exactly the same as the result for our electromagnetic wave. This illustrates
 the fact discussed in section \ref{sec:ultrarelativistic} that all ultrarelativistic
@@ -744,7 +744,7 @@ encounter with Maxwell's equations in integral form. In units with $c=1$, Maxwel
 where
 \begin{align}
   \Phi_E &= \int \vc{E}\cdot\der\vc{a} \qquad \text{and} \label{eqn:e-flux} \\
-  \Phi_B &= \int \vc{B}\cdot\der\vc{a} \label{eqn:b-flux} \qquad .
+  \Phi_B &= \int \vc{B}\cdot\der\vc{a} \label{eqn:b-flux}\eqquad.
 \end{align}
 Equations \eqref{eqn:maxwell-div-e} and \eqref{eqn:maxwell-div-b}
 refer to a closed surface and the charge
@@ -871,7 +871,7 @@ imaginary circular hoop, across which we construct an imaginary flat surface.
 Every time the electron pierces the surface, it makes a momentary spike in the current
 $I$, which appears in \eqref{eqn:maxwell-curl-b},
 \begin{equation*}
-  \oint \vc{B}\cdot\der\bell = \frac{\partial\Phi_E}{\partial t}  + 4\pi k I \qquad .
+  \oint \vc{B}\cdot\der\bell = \frac{\partial\Phi_E}{\partial t}  + 4\pi k I\eqquad.
 \end{equation*}
 We might expect
 that this would cause the field $\vc{B}$ detected on the edge of the disk to show similar
@@ -937,7 +937,7 @@ of this combined equation should have a first derivative in it. Given the gramma
 rules of tensors and index gymnastics, we don't have many possible ways to accomplish this. The
 only obvious thing to try is
 \begin{equation}
-  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 4\pi k J^\mu \qquad . \label{eqn:maxwell-rel-source}
+  \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} = 4\pi k J^\mu\eqquad. \label{eqn:maxwell-rel-source}
 \end{equation}
 Writing this out for $\mu$ being the time coordinate, we get a relation that equates
 the divergence of $\vc{E}$ to $4\pi$ times the charge density; this is the local equivalent
@@ -948,7 +948,7 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
 \begin{equation}\label{eqn:maxwell-rel-2}
   \frac{\partial\emt^{\mu\nu}}{\partial x^\lambda}
   + \frac{\partial\emt^{\nu\lambda}}{\partial x^\mu}
-  + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0 \qquad .
+  + \frac{\partial\emt^{\lambda\mu}}{\partial x^\nu} = 0\eqquad.
 \end{equation}
 
 <%
@@ -1008,11 +1008,11 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
 \begin{equation*}
   \frac{\partial\emt^{xz}}{\partial t}
   + \frac{\partial\emt^{zt}}{\partial x}
-  + \frac{\partial\emt^{tx}}{\partial z} = 0 \qquad ,
+  + \frac{\partial\emt^{tx}}{\partial z} = 0\eqquad,
 \end{equation*}
         which is the same as
         \begin{equation*}
-          \frac{\partial B_y}{\partial t} + \frac{\partial E_z}{\partial x} - \frac{\partial E_x}{\partial z} = 0 \qquad .
+          \frac{\partial B_y}{\partial t} + \frac{\partial E_z}{\partial x} - \frac{\partial E_x}{\partial z} = 0\eqquad.
         \end{equation*}
         Because the first term is negative, the second term must be positive.
         Since equations \eqref{eqn:maxwell-rel-source} and \eqref{eqn:maxwell-rel-2} are written
@@ -1023,12 +1023,12 @@ of expressing \eqref{eqn:maxwell-div-b} and \eqref{eqn:maxwell-curl-e} turns out
 \begin{eg}{Conservation of charge and energy-momentum}
 Solving equation \eqref{eqn:maxwell-rel-source} for the current vector, we have
 \begin{equation*}
-  J^\mu = \frac{1}{4\pi k} \frac{\partial \emt^{\mu\nu}}{\partial x^\nu} \qquad .
+  J^\mu = \frac{1}{4\pi k} \frac{\partial \emt^{\mu\nu}}{\partial x^\nu}\eqquad.
 \end{equation*}
 Conservation of charge (section \ref{subsec:conservation-of-charge}, p.~\pageref{subsec:conservation-of-charge})
 can be expressed as
 \begin{equation*}
-  \frac{\partial J^\mu}{\partial x^\mu} = 0 \qquad .
+  \frac{\partial J^\mu}{\partial x^\mu} = 0\eqquad.
 \end{equation*}
 If we substitute the first equation into the second, we obtain
 \begin{equation*}
@@ -1038,7 +1038,7 @@ If we substitute the first equation into the second, we obtain
 or
 \begin{equation*}
   \frac{\partial^2  \emt^{\mu\nu}}{\partial x^\mu \partial x^\nu}
-        = 0 \qquad ,
+        = 0\eqquad,
 \end{equation*}
 with a sum over both $\mu$ and $\nu$. But this equation is automatically satisfied because
 $\emt$ is antisymmetric, so

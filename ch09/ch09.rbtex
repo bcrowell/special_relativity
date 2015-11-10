@@ -135,20 +135,20 @@ and the mobile ones) as a single density of charge $\rho_e$. Let the average vel
 known as their drift velocity, be $v$ in the $x$ direction. Then in the frame $\vc{o}'$ moving along
 with the drift velocity we have
 \begin{equation*}
-  \vc{J}'_e = (\rho_e',0,0,0) \qquad ,
+  \vc{J}'_e = (\rho_e',0,0,0)\eqquad,
 \end{equation*}
 which under a Lorentz transformation back into the lab frame becomes
 \begin{equation*}
-  \vc{J}_e = (\rho_e' \gamma,\rho_e' v \gamma,0,0) \qquad .
+  \vc{J}_e = (\rho_e' \gamma,\rho_e' v \gamma,0,0)\eqquad.
 \end{equation*}
 Adding the two current vectors, we have a total current in the lab frame
 \begin{equation*}
-  \vc{J} = (\rho_p+\rho_e' \gamma,\rho_e' v \gamma,0,0) \qquad .
+  \vc{J} = (\rho_p+\rho_e' \gamma,\rho_e' v \gamma,0,0)\eqquad.
 \end{equation*}
 The wire is electrically neutral in this frame, so $\rho_p+\rho_e' \gamma=0$. Since $\rho_p$ is a fixed
 property of the wire, we express $\rho_e'$ in terms of it as $\rho_p/\gamma$. Eliminating $\rho_e'$ gives
 \begin{equation*}
-  \vc{J} = (0,-\rho_p v ,0,0) \qquad .
+  \vc{J} = (0,-\rho_p v ,0,0)\eqquad.
 \end{equation*}
 Because the $\gamma$ factors canceled, we find that the current is exactly proportional to the
 drift velocity. Geometrically, we have added two timelike vectors and gotten a spacelike one;
@@ -203,7 +203,7 @@ divergence.\label{divergence}\index{divergence}
 This charge-conservation equation is valid regardless of the coordinate system,
 so it can also be rewritten in abstract index notation as
 \begin{equation}
-  \frac{\partial J^a}{\partial x^a} = 0 \qquad .
+  \frac{\partial J^a}{\partial x^a} = 0\eqquad.
 \end{equation}
 
 \begin{eg}{Conservation of charge in a solenoid}
@@ -212,7 +212,7 @@ and adapting the relevant expression from example \ref{eg:wire-four-current} to 
 circular rather than linear motion,
 we might have for the electrons' contribution to the current something of the form
 \begin{equation*}
-  \vc{J} = p (1,-qy,qx,0) \qquad ,
+  \vc{J} = p (1,-qy,qx,0)\eqquad,
 \end{equation*}
 where $p=\gamma v$ and $q$ depends on the $v$ and on the radius of the solenoid.
 Conservation of charge is satisfied, because each of the four terms
@@ -256,7 +256,7 @@ the future (i.e., $o^aS_a>0$). Then measurements by this observer come out as fo
 The stress-energy tensor allows us to express
 conservation of energy-momentum as
 \begin{equation}\label{eq:stress-energy-div-zero}
-  \frac{\partial T^{ab}}{\partial x^a} = 0 \qquad .
+  \frac{\partial T^{ab}}{\partial x^a} = 0\eqquad.
 \end{equation}
 This \emph{local} conservation of energy-momentum is all we get in general relativity. As discussed
 in section \ref{subsec:gr-no-e-cons}, p.~\pageref{subsec:gr-no-e-cons}, there is no such
@@ -282,7 +282,7 @@ in a certain frame of reference, described in Minkowski coordinates:
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 
-  \end{pmatrix} \qquad ,
+  \end{pmatrix}\eqquad,
 \end{equation*}
 where we now use $\rho$ to indicate the density of mass-energy, not charge as in section
 \ref{sec:j-vector}. This could be the stress-energy tensor of a stack of oranges at the
@@ -328,13 +328,13 @@ the corresponding coefficient in the expression for $\der s$, as in the followin
 The answer to problem \ref{hw:oblique-metric} on p.~\pageref{hw:oblique-metric} was the
 metric
 \begin{equation*}
-  \der s^2 = \der x^2 + \der y^2 + 2\cos\varphi\der x\der y \qquad .
+  \der s^2 = \der x^2 + \der y^2 + 2\cos\varphi\der x\der y\eqquad.
 \end{equation*}
 Writing this in terms of the metric tensor, we have
 \begin{align*}
   \der s^2 &= g_{\mu\nu} \der x^\mu \der x^\nu \\
            &= g_{xx} \der x^2 + g_{xy} \der x\der y + g_{yx} \der y \der x + g_{yy} \der y^2 \\
-           &= g_{xx} \der x^2 + 2g_{xy} \der x\der y + g_{yy} \der y^2 \qquad .
+           &= g_{xx} \der x^2 + 2g_{xy} \der x\der y + g_{yy} \der y^2\eqquad.
 \end{align*}
 Therefore we have $g_{xy}=\cos\varphi$, not $g_{xy}=2\cos\varphi$.
 \end{eg}
@@ -347,7 +347,7 @@ T\indices{^\mu^\nu} = \left( \begin{matrix}
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 Under a boost by $ v $ in the $x$ direction, the tensor transformation law gives
 \begin{equation*}
@@ -356,7 +356,7 @@ T\indices{^{\mu'}^{\nu'}} = \left( \begin{matrix}
                    \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 The over-all factor of $\gamma^2$ arises for the reasons previously described.
 \end{eg}
@@ -378,7 +378,7 @@ of the stress-energy tensor will flip their signs, while others will stay the sa
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} \\
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} \\
     \text{flip} & \text{no flip} & \text{no flip} & \text{no flip} 
-  \end{pmatrix} \qquad ,
+  \end{pmatrix}\eqquad,
 \end{equation*}
 Everything here was based solely on the fact that $T$ was a rank-2 tensor expressed in
 Minkowski coordinates, and therefore
@@ -436,7 +436,7 @@ T\indices{^{\mu}^{\nu}} = \begin{pmatrix}
                    0 & P & 0 & 0 \\
                    0 & 0 & P & 0 \\
                    0 & 0 & 0 & P
-      \end{pmatrix}  \qquad ,
+      \end{pmatrix}\eqquad,
 \end{equation*}
 we call it a perfect fluid in equilibrium. Although it may contain moving particles, this special frame is
 the one in which their momenta cancel out.
@@ -468,7 +468,7 @@ fluids are so important, I'll demonstrate how all of this works out in that case
 
 For a perfect fluid, we can write the stress-energy tensor in the coordinate-independent form
 \begin{equation*}
-  T^{ab}=(\rho+P)o^a o^b -(o^co_c) Pg^{ab} \qquad ,
+  T^{ab}=(\rho+P)o^a o^b -(o^co_c) Pg^{ab}\eqquad,
 \end{equation*}
 where
 $\vc{o}$ represents the velocity vector of an observer in the fluid's rest frame,
@@ -484,7 +484,7 @@ The various forms of the stress-energy tensor then look like the following:
 \begin{align*}
   T_{00} = A^2\rho   \quad & \quad T_{11} = B^2 P \\
   T\indices{^0_0} = s\rho   \quad & \quad T\indices{^1_1} = - sP \\
-  T^{00} = A^{-2}\rho   \quad & \quad T^{11} = B^{-2} P \qquad .
+  T^{00} = A^{-2}\rho   \quad & \quad T^{11} = B^{-2} P\eqquad.
 \end{align*}
 Which of these forms is the ``real'' one, e.g., which form of the $00$ component
 is the one that the observer $\vc{o}$
@@ -516,25 +516,25 @@ T\indices{^{\mu}^{\nu}} = \begin{pmatrix}
                    0 & P & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0
-      \end{pmatrix}  \qquad ,
+      \end{pmatrix}\eqquad,
 \end{equation*}
 where $P$ is negative and equals minus the tension per unit cross-sectional area.
 
 Conservation of energy-momentum is expressed as (eq.~\ref{eq:stress-energy-div-zero},
 p.~\pageref{eq:stress-energy-div-zero})
 \begin{equation*}
-  \frac{\partial T^{ab}}{\partial x^a} = 0 \qquad .
+  \frac{\partial T^{ab}}{\partial x^a} = 0\eqquad.
 \end{equation*}
 Converting the abstract indices to concrete ones, we have
 \begin{equation*}
-  \frac{\partial T^{\mu\nu}}{\partial x^\mu} = 0 \qquad ,
+  \frac{\partial T^{\mu\nu}}{\partial x^\mu} = 0\eqquad,
 \end{equation*}
 where there is an implied sum over $\mu$, and the equation must hold both in the case where
 $\nu$ is a label for $t$ and the one where it refers to $x$.
 
 In the first case, we have
 \begin{equation*}
-  \frac{\partial T^{tt}}{\partial t} +   \frac{\partial T^{xt}}{\partial x} = 0 \qquad ,
+  \frac{\partial T^{tt}}{\partial t} +   \frac{\partial T^{xt}}{\partial x} = 0\eqquad,
 \end{equation*}
 which is a statement of conservation of energy, energy being the timelike component of
 the energy-momentum.
@@ -545,11 +545,11 @@ expression for the stress-energy, we were dictating a static equilibrium.
 
 When $\nu$ stands for $x$, we get an equation that requires the $x$ component of momentum to be conserved,
 \begin{equation*}
-  \frac{\partial T^{tx}}{\partial t} +   \frac{\partial T^{xx}}{\partial x} = 0 \qquad .
+  \frac{\partial T^{tx}}{\partial t} +   \frac{\partial T^{xx}}{\partial x} = 0\eqquad.
 \end{equation*}
 This simply says
 \begin{equation*}
-  \frac{\partial P}{\partial x} = 0 \qquad ,
+  \frac{\partial P}{\partial x} = 0\eqquad,
 \end{equation*}
 meaning that the tension in the rope is constant along its length.
 \end{eg}
@@ -570,7 +570,7 @@ The stress-energy tensor is
 T\indices{^{\mu'}^{\nu'}} = \begin{pmatrix}
                    \rho & 0 \\
                    0 & P 
-      \end{pmatrix}  \qquad ,
+      \end{pmatrix}\eqquad,
 \end{equation*}
 where the components involving $y$ and $z$ are zero and not shown,
 and $P$ is negative as in example \ref{eg:gliding-rope}.
@@ -585,7 +585,7 @@ For simplicity, we restrict ourselves to the Newtonian approximation, so that th
 coordinates between the two frames is
 \begin{align*}
   t & \approx t' \\
-  x & \approx x'+\frac{1}{2}at'^2 \qquad ,
+  x & \approx x'+\frac{1}{2}at'^2\eqquad,
 \end{align*}
 where $a>0$ if the free-falling observer falls in the negative $x$ direction, i.e., positive
 $x$ is up. That is, if a point on the rope at a fixed $x'$ is marked with a spot of paint, then
@@ -595,25 +595,25 @@ Applying the tensor transformation law, we find
 T\indices{^{\mu}^{\nu}} = \begin{pmatrix}
                    \rho & \rho a t \\
                    \rho a t & P+\rho a^2t^2 
-      \end{pmatrix}  \qquad ,
+      \end{pmatrix}\eqquad,
 \end{equation*}
 As in example \ref{eg:gliding-rope}, conservation of energy is trivially satisfied.
 Conservation of momentum gives
 \begin{equation*}
-  \frac{\partial T^{tx}}{\partial t} +   \frac{\partial T^{xx}}{\partial x} = 0 \qquad ,
+  \frac{\partial T^{tx}}{\partial t} +   \frac{\partial T^{xx}}{\partial x} = 0\eqquad,
 \end{equation*}
 or
 \begin{equation*}
-  \rho a + \frac{\partial P}{\partial x} = 0 \qquad .
+  \rho a + \frac{\partial P}{\partial x} = 0\eqquad.
 \end{equation*}
 Integrating this with respect to $x$, we have
 \begin{equation*}
-  P = -\rho a x + \text{constant} \qquad .
+  P = -\rho a x + \text{constant}\eqquad.
 \end{equation*}
 Let the cross-sectional area of the rope be $A$, and let $\mu=\rho A$ be the mass per unit length
 and $T=-PA$ the tension. We then find
 \begin{equation*}
-  T = \mu a x + \text{constant} \qquad .
+  T = \mu a x + \text{constant}\eqquad.
 \end{equation*}
 Conservation of momentum requires that the tension vary along the length of the rope,
 just as we expect from Newton's laws: a section of the rope higher up has more
@@ -645,7 +645,7 @@ T\indices{^{\mu}^{\nu}} = \begin{pmatrix}
                    0 & -2 & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0
-      \end{pmatrix}  \qquad ,
+      \end{pmatrix}\eqquad,
 \end{equation*}
 because here the tensile stress $+2$ is greater than the mass density 1, which would
 lead to $|v|=\sqrt{2/1}>1$. Constraints of this kind are called energy conditions.
@@ -662,20 +662,20 @@ speed greater than $c$.
 An energy condition that is particularly simple to express 
 is the trace energy condition (TEC),\label{tec}
 \begin{equation*}
-  T\indices{^a_a} \ge 0 \qquad ,
+  T\indices{^a_a} \ge 0\eqquad,
 \end{equation*}
 where we have to have one upper index and one lower index in order to obey the grammatical
 rules of index notation.
 In Minkowski coordinates $(t,x,y,z)$, this becomes $T\indices{^\mu_\mu}\ge0$, with the
 implied sum over $\mu$ expanding to give
 \begin{equation*}
-  T\indices{^t_t}+T\indices{^x_x}+T\indices{^y_y}+T\indices{^z_z} \ge 0 \qquad .
+  T\indices{^t_t}+T\indices{^x_x}+T\indices{^y_y}+T\indices{^z_z} \ge 0\eqquad.
 \end{equation*}
 The left-hand side of this relation, the sum of the main-diagonal elements of a matrix, is
 called the trace of the matrix, hence the name of this energy condition.
 Since this book uses the signature $+---$ for the metric, raising the second index changes this to
 \begin{equation*}
-  T\indices{^t^t}-T\indices{^x^x}-T\indices{^y^y}-T\indices{^z^z} \ge 0 \qquad .
+  T\indices{^t^t}-T\indices{^x^x}-T\indices{^y^y}-T\indices{^z^z} \ge 0\eqquad.
 \end{equation*}
 In example \ref{eg:dust-stress-energy} on p.~\pageref{eg:dust-stress-energy}, we computed the
 stress-energy tensor of a cloud of dust, in a frame moving at velocity $v$ relative to the cloud's
@@ -686,7 +686,7 @@ T\indices{^{\mu'}^{\nu'}} = \left( \begin{matrix}
                    \gamma^2 v \rho & \gamma^2 v ^2\rho & 0 & 0 \\
                    0 & 0 & 0 & 0 \\
                    0 & 0 & 0 & 0    
-      \end{matrix} \right) \qquad .
+      \end{matrix} \right)\eqquad.
 \end{equation*}
 In this example, the trace energy condition is satisfied precisely under the condition
 $|v|\le 1$, which can be interpreted as a statement that according the TEC, the mass-energy
@@ -701,7 +701,7 @@ of the cloud can never be transported at a speed greater than $c$ in any frame.
 We've expressed conservation of charge and energy-momentum in terms of zero divergences,
 \begin{align*}
   \frac{\partial J^a}{\partial x^a} & = 0 \\
-  \frac{\partial T^{ab}}{\partial x^a} & = 0 \qquad .
+  \frac{\partial T^{ab}}{\partial x^a} & = 0\eqquad.
 \end{align*}
 These are expressed in terms of derivatives. The derivative of a function at a certain point
 only depends on the behavior of the function near that point, so these are local statements
@@ -710,7 +710,7 @@ of something remains constant. Taking charge as an example, observer $\vc{o}$ de
 coordinates $(t,x,y,z)$, and at a time $t_1$ says that the total
 amount of charge in some region is
 \begin{equation*}
-  q(t_1) = \int_{t_1} J^a \der S_a \qquad ,
+  q(t_1) = \int_{t_1} J^a \der S_a\eqquad,
 \end{equation*}
 where the subscript $t_1$ means that the integrand is to be evaluated over the surface of
 simultaneity $t=t_1$, and $\der S_a=(\der x\der y\der z,0,0,0)$
@@ -750,7 +750,7 @@ the two dimensions are both spacelike or one spacelike and one timelike; that is
 theorem doesn't depend on the signature of the metric.) Let R be a rectangular area,
 and let S be its boundary. Define the flux of the field through S as
 \begin{equation*}
-  \Phi = \int_\text{S} J^a \der S_a \qquad ,
+  \Phi = \int_\text{S} J^a \der S_a\eqquad,
 \end{equation*}
 where the integral is to be taken over all four sides, and the covector $\der S_a$ points outward.
 If the field has zero divergence, $\partial J^a/\partial x^a=0$, then
@@ -760,21 +760,21 @@ Proof: Define coordinates $x$ and $y$ aligned with the rectangle. Along the top 
 rectangle, the element of the surface, oriented outwards, is $\der\vc{S}=(0,\der x)$, so the
 contribution to the flux from the top is
 \begin{equation*}
-  \Phi_\text{top} = \int_\text{top} J^y(y_\text{top}) \der x \qquad .
+  \Phi_\text{top} = \int_\text{top} J^y(y_\text{top}) \der x\eqquad.
 \end{equation*}
 At the bottom, an outward orientation gives $\der\vc{S}=(0,-\der x)$, so
 \begin{equation*}
-  \Phi_\text{bottom} = -\int_\text{bottom} J^y(y_\text{bottom}) \der x \qquad .
+  \Phi_\text{bottom} = -\int_\text{bottom} J^y(y_\text{bottom}) \der x\eqquad.
 \end{equation*}
 Using the fundamental theorem of calculus, the sum of these is
 \begin{equation*}
   \Phi_\text{top}+\Phi_\text{bottom}
-         = \int_\text{R} \frac{\partial J^y}{\partial y} \der y \der x \qquad .
+         = \int_\text{R} \frac{\partial J^y}{\partial y} \der y \der x\eqquad.
 \end{equation*}
 Adding in the similar expressions for the left and right, we get
 \begin{equation*}
   \Phi = \int_\text{R} \left( \frac{\partial J^x}{\partial x}
-                      +\frac{\partial J^y}{\partial y}\right) \der x \der y \qquad .
+                      +\frac{\partial J^y}{\partial y}\right) \der x \der y\eqquad.
 \end{equation*}
 But the integrand is the divergence, which is zero by assumption, so $\Phi=0$ as claimed.
 <% end_sec('gauss-simple') %>
@@ -788,7 +788,7 @@ if we replace the vector $J^a$ with a tensor such as $T^{ab}$ that has more indi
 extra index $b$ just comes along for the ride. Sometimes, as with Gauss's law in electromagnetism,
 we are interested in fields whose divergences are not zero. Gauss's theorem then becomes
 \begin{equation*}
-  \int_\text{S} J^a \der S_a = \int_\text{R} \frac{\partial J^a}{\partial x^a} \der v \qquad ,
+  \int_\text{S} J^a \der S_a = \int_\text{R} \frac{\partial J^a}{\partial x^a} \der v\eqquad,
 \end{equation*}
 where $\der v$ is the element of $n$-volume. In $3+1$ dimensions we could use Minkowski coordinates
 to write the element of 4-volume as
@@ -922,14 +922,14 @@ Observer $\vc{o}$ says that at the initial
 time corresponding to $\text{s}_\text{A}$, the total amount of energy-momentum in
 the system was
 \begin{equation*}
-  p_A^\mu = - \int_{\text{s}_\text{A}} T^{\mu\nu} \der S_\nu \qquad ,
+  p_A^\mu = - \int_{\text{s}_\text{A}} T^{\mu\nu} \der S_\nu\eqquad,
 \end{equation*}
 where the minus sign occurs because we take $\der S_\nu$ to point outward, for compatibility with
 Gauss's theorem, and this makes it antiparallel to the velocity vector $\vc{o}$, which is
 the opposite of the orientation defined in equations \eqref{eqn:stress-energy-measurements}
 on p.~\pageref{eqn:stress-energy-measurements}. At the final time we have
 \begin{equation*}
-  p_B^\mu =  \int_{\text{s}_\text{B}} T^{\mu\nu} \der S_\nu \qquad ,
+  p_B^\mu =  \int_{\text{s}_\text{B}} T^{\mu\nu} \der S_\nu\eqquad,
 \end{equation*}
 with a plus sign because the outward direction is now the same as the direction of $\vc{o}$.
 Because of the vacuum region, there is no flux through the sides of the box, and therefore by
@@ -1013,7 +1013,7 @@ the metric really does vary or \ldots because the metric varies. In other words,
 no sensible way to assign a nonzero covariant derivative to the metric itself, so we must have
 $\nabla_X G=0$. The required correction therefore consists of replacing $\der/\der X$ with
 \begin{equation*}
- \nabla_X=\frac{\der}{\der X}-G^{-1}\frac{\der G}{\der X} \qquad .
+ \nabla_X=\frac{\der}{\der X}-G^{-1}\frac{\der G}{\der X}\eqquad.
 \end{equation*}
 Applying this to $G$ gives zero.
 $G$ is a second-rank tensor with two lower indices. If we apply the same correction to the derivatives
@@ -1033,7 +1033,7 @@ coordinates by a factor of $k$,
 covectors scale by $k^{-1}$, and second-rank tensors with two lower indices scale by $k^{-2}$. The
 correction term should therefore be half as much for covectors,
 \begin{equation*}
- \nabla_X=\frac{\der}{\der X}-\frac{1}{2}G^{-1}\frac{\der G}{\der X} \qquad .
+ \nabla_X=\frac{\der}{\der X}-\frac{1}{2}G^{-1}\frac{\der G}{\der X}\eqquad.
 \end{equation*}
 and
 should have an opposite sign for vectors.
@@ -1041,7 +1041,7 @@ should have an opposite sign for vectors.
 Generalizing the correction term to derivatives of vectors in more than one dimension, we should have something of this form:
 \begin{align*}
   \nabla_a v^b &= \partial_a v^b + \Gamma\indices{^b_{ac}}v^c\\
-  \nabla_a v_b &= \partial_a v_b - \Gamma\indices{^c_{ba}}v_c \qquad ,
+  \nabla_a v_b &= \partial_a v_b - \Gamma\indices{^c_{ba}}v_c\eqquad,
 \end{align*}
 where $\Gamma\indices{^b_{ac}}$, called the Christoffel symbol,\index{Christoffel symbol}
 does not transform like a tensor, and involves derivatives of the metric.
@@ -1092,7 +1092,7 @@ To compute the covariant derivative of a higher-rank tensor, we just add more co
 \begin{align*}
   \nabla_a U_{bc} = \partial_a U_{bc} - \Gamma\indices{^d_{ba}}U_{dc}-\Gamma\indices{^d_{ca}}U_{bd} \\
 \intertext{or}
-  \nabla_a U_b^c = \partial_a U_b^c - \Gamma\indices{^d_{ba}}U_d^c+\Gamma\indices{^c_{ad}}U_b^d            \qquad .
+  \nabla_a U_b^c = \partial_a U_b^c - \Gamma\indices{^d_{ba}}U_d^c+\Gamma\indices{^c_{ad}}U_b^d\eqquad.
 \end{align*}
 
 With the partial derivative $\partial_\mu$, it does not make sense to use the metric to raise the index
@@ -1125,14 +1125,14 @@ do not have a way of expressing non-covariant derivatives.
 We've already found the Christoffel symbol in terms of the metric in one dimension. Expressing it in
 tensor notation, we have
 \begin{align*}
-  \Gamma\indices{^d_{ba}} = \frac{1}{2}g^{cd}\left(\partial_? g_{??}\right) \qquad ,
+  \Gamma\indices{^d_{ba}} = \frac{1}{2}g^{cd}\left(\partial_? g_{??}\right)\eqquad,
 \end{align*}
 where inversion of the one-component matrix $G$ has been replaced by matrix inversion, and,
 more importantly, the question marks indicate that there would be more than one way to place
 the subscripts so that the result would be a grammatical tensor equation. The most general form
 for the Christoffel symbol would be 
 \begin{align*}
-  \Gamma\indices{^b_{ac}} = \frac{1}{2}g^{db}\left(L \partial_c g_{ab}+ M \partial_a g_{cb} + N \partial_b g_{ca}\right) \qquad ,
+  \Gamma\indices{^b_{ac}} = \frac{1}{2}g^{db}\left(L \partial_c g_{ab}+ M \partial_a g_{cb} + N \partial_b g_{ca}\right)\eqquad,
 \end{align*}
 where $L$, $M$, and $N$ are constants. Consistency with the one-dimensional expression requires $L+M+N=1$.
 The condition $L=M$ arises on physical, not mathematical grounds; it reflects the fact that experiments
@@ -1156,7 +1156,7 @@ Self-check: Does the above argument depend on the use of space for one coordinat
 
 The resulting general expression for the Christoffel symbol in terms of the metric is
 \begin{equation*}
-  \Gamma\indices{^c_{ab}} = \frac{1}{2}g^{cd}\left(\partial_a g_{bd}+\partial_b g_{ad}-\partial_d g_{ab}\right) \qquad .
+  \Gamma\indices{^c_{ab}} = \frac{1}{2}g^{cd}\left(\partial_a g_{bd}+\partial_b g_{ad}-\partial_d g_{ab}\right)\eqquad.
 \end{equation*}
 One can go back and check that this gives $\nabla_c g_{ab}=0$.
 
@@ -1249,21 +1249,21 @@ $\lambda$ isn't a coordinate.
 To connect the two types of derivatives, we can use a total derivative. To make the idea clear, here is how we calculate a total derivative
 for a scalar function $f(x,y)$, without tensor notation:
 \begin{equation*}
-  \frac{\der f}{\der \lambda} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial \lambda} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial \lambda} \qquad .
+  \frac{\der f}{\der \lambda} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial \lambda} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial \lambda}\eqquad.
 \end{equation*}
 This is just the generalization of the chain rule to a function of two variables. For example, if $\lambda$ represents time and $f$ temperature,
 then this would tell us the rate of change of the temperature as a thermometer was carried through space. Applying this to
 the present problem, we express the total covariant derivative as
 \begin{align*}
   \nabla_\lambda T^i &= (\nabla_b T^i) \frac{\der x^b}{\der\lambda} \\
-                     &= \left(\partial_b T^i + \Gamma\indices{^i_{bc}}T^c\right) \frac{\der x^b}{\der\lambda} \qquad .
+                     &= \left(\partial_b T^i + \Gamma\indices{^i_{bc}}T^c\right) \frac{\der x^b}{\der\lambda}\eqquad.
 \end{align*}
 <% end_sec('covar-der-wrt-param') %> % Covariant derivative with respect to a parameter
 
 <% begin_sec("The geodesic equation",nil,'geodesic-equation') %>\label{geodesic-diffeq}\index{geodesic equation}
 Recognizing $\partial_b T^i \der x^b/\der\lambda$ as a total non-covariant derivative, we find
 \begin{equation*}
-  \nabla_\lambda T^i = \frac{\der T^i}{\der\lambda} + \Gamma\indices{^i_{bc}}T^c \frac{\der x^b}{\der\lambda} \qquad .
+  \nabla_\lambda T^i = \frac{\der T^i}{\der\lambda} + \Gamma\indices{^i_{bc}}T^c \frac{\der x^b}{\der\lambda}\eqquad.
 \end{equation*}
 Substituting $\partial x^i/\partial\lambda$ for $T^i$, and setting the covariant derivative equal to zero, we obtain
 \begin{equation*}
@@ -1491,12 +1491,12 @@ it to observations made by the comoving observer), it should also be something w
 express as a scalar within the grammar of index gymnastics. There is only one possible way
 to express such a condition, which is
 \begin{equation*}
-  \partial_a v^a = 0 \qquad .
+  \partial_a v^a = 0\eqquad.
 \end{equation*}
 We can in fact define a scalar $\Theta$, called the expansion scalar,\index{expansion scalar}
 according to
 \begin{equation*}
-  \Theta = \partial_a v^a \qquad .
+  \Theta = \partial_a v^a\eqquad.
 \end{equation*}
 This definition is valid in $n+1$ dimensions, but in $1+1$ dimensions it reduces
 to $\Theta=\partial\gamma/\partial t+\partial(u\gamma)/\partial x$.
@@ -1841,11 +1841,11 @@ to a choice of coordinates. We might therefore prefer, as Penrose began advocati
 1970, to notate this vector in coordinate-independent
 notation such as ``birdtracks'' (section \ref{subsec:birdtracks}, p.~\pageref{subsec:birdtracks}),
 \begin{equation*}
-  __birdvec(\der\vc{x}) \qquad ,
+  __birdvec(\der\vc{x})\eqquad,
 \end{equation*}
 or the synonymous abstract index notation (section \ref{subsec:abstract-index}, p.~\pageref{subsec:abstract-index}),
 \begin{equation*}
-  \der x^a \qquad ,
+  \der x^a\eqquad,
 \end{equation*}
 where the use of the Latin letter $a$ means that we're not referring to any coordinate system, $a$ doesn't
 take on values such as 1 or 2, and $\der x^a$ refers to the entire object $__birdvec(\der\vc{x})$, not
@@ -1878,7 +1878,7 @@ could be used as a basis for a vector space whose structure is the same as the s
 In the modern context we rewrite the operator $\partial/\partial x^\mu$ as $\partial_\mu$ and
 use the Einstein summation convention, so that in the Cartan notation we express a vector in terms of its components as
 \begin{equation*}
-  \vc{x} = x^\mu \partial_\mu \qquad .
+  \vc{x} = x^\mu \partial_\mu\eqquad.
 \end{equation*}
 
 In the Cartan notation, the symbol $\der x^\mu$ is hijacked in order to represent something
@@ -1895,7 +1895,7 @@ Independently of Penrose and the physics community, mathematicians invented
 a different coordinate-free notation, one without indices. In this notation, for example,
 we would notate the magnitude of a vector not as $v_av^b$ or $g_{ab}v^av^b$ but as
 \begin{equation*}
-  g(\vc{v},\vc{v}) \qquad .
+  g(\vc{v},\vc{v})\eqquad.
 \end{equation*}
 This notation is too clumsy for use in complicated expressions involving tensors with many indices.
 As shown in section \ref{subsec:cartan-no-units}, it is also not compatible with the way physicists are accustomed to doing
@@ -1927,13 +1927,13 @@ six quantities occurring in these equations. We attribute to them the units $L^A
 If we follow the rule that multiplicative notation is to imply multiplication of units, then
 \begin{align}
   A &= B+C \qquad \text{and} \\
-  D &= E+F \qquad .
+  D &= E+F\eqquad.
 \end{align}
 For compatibility with the system in section \ref{sec:tensor-units}, equations 
 \ref{eq:cartan-r-in-basis}-\ref{eq:cartan-omega-in-basis} require
 \begin{align}
   &A+D=2\sigma \qquad \text{and} \\
-  &D=2\gamma+B \qquad .
+  &D=2\gamma+B\eqquad.
 \end{align}
 To avoid a clash between Cartan and concrete index notation in a Minkowski coordinate system,
 it would appear that we want the following three additional conditions.
