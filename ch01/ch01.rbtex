@@ -165,7 +165,7 @@ in figure \figref{aristotelian-s-and-o-vectors} were drawn perpendicular to one 
 a matter of convention, but any other angle could have been used.
 
 
-\begin{eg}{The Galilean twin paradox}\label{eg:galilean-twin-paradox}
+\begin{eg}{The Galilean twin paradox}\label{eg:galilean-twin-paradox}\index{twin paradox!Galilean}
 Alice and Betty are identical twins. Betty goes on a space voyage, traveling away from the
 earth along vector $\vc{o}_1$ and then turning around and coming back on $\vc{o}_2$.\
 Meanwhile, Alice stays on earth. Because this is an experiment involving material objects, and
@@ -807,7 +807,8 @@ sun's frame of reference.
 <% begin_sec("The gamma factor",nil,'gamma') %>\index{gamma factor!defined}
 
 Figure \figref{twin-paradox} is the relativistic version of example \ref{eg:galilean-twin-paradox}
-on p.~\pageref{eg:galilean-twin-paradox}. We intend to analyze it using the metric, and since the
+on p.~\pageref{eg:galilean-twin-paradox}.\index{twin paradox}
+We intend to analyze it using the metric, and since the
 metric gives the same result in any frame, we have chosen for convenience to represent it in the
 frame in which the earth is at rest. 
 We have $\vc{a}=(t,0)$ and $\vc{b}=(t,vx)$, where $v$ is the velocity of the spaceship relative

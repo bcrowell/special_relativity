@@ -89,7 +89,8 @@ metric, which allows us to compute how much proper time is experienced by each o
 
 <% begin_sec("The stretch factor is the Doppler shift",nil,'doppler') %>\index{Doppler shift}
 
-Figure \figref{twin-signals} shows how the ideas in the preceding section apply to the twin paradox.
+Figure \figref{twin-signals} shows
+how the ideas in the preceding section apply to the twin paradox.\index{twin paradox!signals exchanged}
 In \subfigref{twin-signals}{1} we see the situation as described by an impartial observer, who says
 that both twins are traveling to the right. But even the impartial observer agrees that one twin's
 motion is inertial and the other's noninertial, which breaks the symmetry and also allows the twins
