@@ -212,6 +212,8 @@ particles had some other characteristic, call it $r$, and there
 was then be some entirely separate field defined by their action on a particle with this ``$r$-ness.''
 But going down this road leads us to unrelated phenomena such as the the strong nuclear interaction.
 
+<% end_sec('b-field') %>
+<% begin_sec("The electromagnetic field tensor",nil,'em-field-tensor') %>
 The nature of the contradiction
 arrived at in section \ref{subsec:e-field} is such that our additional field is closely linked to
 the electric one, and therefore we expect it to act on charge, not on $r$-ness. Without inventing
@@ -322,7 +324,7 @@ in the magnetic field of a current loop, since the location of each current elem
 to the other side of the loop, but its direction of flow is also reversed, so that the picture as
 a whole remains unchanged.
 \end{eg}
-<% end_sec('b-field') %>
+<% end_sec('em-field-tensor') %>
 
 <% begin_sec("What about gravity?",nil,'what-about-gravity') %>
 A funny puzzle pops up if we go back and think about the assumptions on p.~\pageref{em-field-assumptions}
@@ -347,7 +349,8 @@ tensor transformation law for rank-2 tensors (p.~\pageref{rank-two-xfn}).
 We first state the general rule, in a prettified form, and then give some
 concrete examples.
 Under a boost by a three-velocity $\vc{v}$, the electric and magnetic fields
-$\vc{E}$ and $\vc{B}$ transform to $\vc{E}'$ and $\vc{B}'$ according to these rules:
+$\vc{E}$ and $\vc{B}$ transform to $\vc{E}'$ and $\vc{B}'$
+according to these rules:\label{eqn:em-transformation-three-vectors}
 \begin{align*}
   \vc{E}'_\parallel &=   \vc{E}_\parallel
          \qquad
@@ -490,16 +493,72 @@ invariants:
 \begin{align*}
   P &= B^2-E^2\\
 \intertext{and}
-  Q &= \vc{E}\cdot\vc{B}
+  Q &= \vc{E}\cdot\vc{B}.
 \end{align*}
-The first of these can also be expressed as $P=\frac{1}{2}\emt^{ab}\emt_{ab}$, while the second
+The fact that these are written as vector dot products of three-vectors shows that they are
+invariant under rotation, but we also want to show that they are relativistic scalars,
+i.e., invariant under boosts as well. To prove this, we can write them both in tensor notation.
+The first invariant can be expressed as $P=\frac{1}{2}\emt^{ab}\emt_{ab}$, while the second
 equals $Q=\frac{1}{4}\epsilon^{abcd}\emt_{ab}\emt_{cd}$, where the Levi-Civita symbol\index{Levi-Civita symbol}
 $\epsilon^{\kappa\lambda\mu\nu}$ equals $+1$ if $\kappa\lambda\mu\nu$ are an even permutation of 1234,
-$-1$ if odd, and 0 otherwise. For an electromagnetic wave, both $P$ and $Q$ are zero. (The converse is
-false: a field for which both invariants vanish need not be an electromagnetic wave.)
+$-1$ if odd, and 0 otherwise.
+
+A field for which both $P=Q=0$ is called a null field.
+An electromagnetic plane wave is a null field, and although this is easily verifiable from the
+definitions of $P$ and $Q$, there is a deeper reason why this should be true, and this reason
+applies not just to electromagnetic waves but to other types of waves, such as gravitational waves.
+Consider any relativistic scalar $s$ that is a continuous function of
+the electromagnetic field tensor $\emt$, i.e., a continuous function of $\emt$'s components.
+We want $s$ to vanish when $\emt=0$. Given an electromagnetic plane wave, we can 
+do a Lorentz boost parallel to the wave's direction of propagation. Under such a boost
+the wave suffers a Doppler shift in its wavelength and frequency, but in addition to that,
+the transformation equations on p.~\pageref{eqn:em-transformation-three-vectors} imply that
+the intensity of the fields is reduced at any given point. Thus in the limit of an indefinite process of
+acceleration, $\emt\rightarrow0$, and therefore $s\rightarrow0$ as well. But since $s$ is a scalar,
+its value is independent of our frame of reference, and so it must be zero in all frames.
+
+$P$ and $Q$ are a complete set of invariants for the electromagnetic field, meaning that
+the only other electromagnetic invariants are those that either can be determined from $P$ and
+$Q$ or depend on the derivatives of the fields, not just their values.
+To see that $P$ and $Q$ are complete in this sense, we can break the possibilities down into cases, according
+to whether $P$ and $Q$ are zero or nonzero, positive or negative. As a representative example,
+consider the case where $P<0$ and $Q\ne0$. First we rotate our frame of reference so that $\vc{E}$ is along
+the $x$ axis, and $\vc{B}$ lies in the $x$-$y$ plane. Next we do a boost along the $z$ axis
+in order to eliminate the $y$ component of $\vc{B}$; the field transformation equations on 
+p.~\pageref{eqn:em-transformation-three-vectors} make this possible because $|\vc{E}|>|\vc{B}|$.
+The result is that we have found a frame of reference in which $\vc{E}$ and $\vc{B}$ both lie along
+the $x$ axis. The only frame-independent information that there is to know is the information available
+in this frame, and that consists of only two real numbers, $E_x$ and $B_x$, which can be determined
+from the values of $P$ and $Q$.
+
+\begin{eg}{A static null field}
+Although an electromagnetic plane wave is a null field, the converse is not true. For example, we
+can create a static null field out of a static, uniform electric field and a static, uniform magnetic
+field, with the two fields perpendicular to one another.
+\end{eg}
+
+\begin{eg}{Another invariant?}
+Let $\Pi$ be the squared magnitude of the Poynting vector,\linebreak[4] $\Pi=(\vc{E}\times\vc{B})\cdot(\vc{E}\times\vc{B})$.
+Since $\Pi$ can be
+expressed in terms of dot products and scalar products, it is guaranteed to be invariant under
+rotations. However, it is not a relativistic invariant. For example, if we do a Lorentz boost
+parallel to the direction of an electromagnetic wave, the intensity of the wave changes, and so does $\Pi$.
+\end{eg}
+
+\begin{eg}{A non-null invariant for electromagnetic waves?}
+The quantity $Q^{-1}=1/(\vc{E}\cdot\vc{B})$ is clearly an invariant, and it doesn't vanish for
+an electromagnetic plane wave --- in fact, it is infinite for a plane wave. Does this contradict our
+proof that any invariant must vanish for a plane wave? No, because we only proved this in the case
+where the invariant is defined as a continuous function of $\emt$. Our function $Q^{-1}$ is a discontinuous
+function of $\emt$ when $\emt=0$. Such discontinuous invariants tend not to be very interesting.
+For suppose we try to measure $Q^{-1}$, and the thing we're measuring happens to be an 
+electromagnetic wave. Our measurements of the fields will probably be statistically consistent with
+zero, and therefore the error bars on our measurement of $Q^{-1}$ will likely be infinitely large.
+\end{eg}
+
 <% end_sec('em-invariants') %>
 
-<% begin_sec("Stress-energy tensor of the electromagnetic field",nil,'em-stress-energy') %>
+<% begin_sec("Stress-energy tensor of the electromagnetic field",4,'em-stress-energy') %>
 The electromagnetic field has a stress-energy tensor associated with it.
 From our study of electromagnetism we know that the electromagnetic field has
 energy density $U=(E^2+B^2)/8\pi k$ and momentum density $\vc{S}=(\vc{E}\times\vc{B})/4\pi k$ (in units
@@ -1064,7 +1123,7 @@ Use Gauss's law to find the field between the plates.\hwendpart
 (b) In the style of example \ref{eg:line-of-charge} on p.~\pageref{eg:line-of-charge},
 transform the field to a frame moving perpendicular to the plates, and verify that
 the result makes sense in terms of the sources that are present.\hwendpart
-(c) Repear the analysis for a frame moving parallel to the plates.
+(c) Repeat the analysis for a frame moving parallel to the plates.
 <% end_hw %>
 
 <% begin_hw('pure-e-to-pure-b') %>
