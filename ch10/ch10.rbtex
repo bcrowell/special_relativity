@@ -517,25 +517,31 @@ the intensity of the fields is reduced at any given point. Thus in the limit of 
 acceleration, $\emt\rightarrow0$, and therefore $s\rightarrow0$ as well. But since $s$ is a scalar,
 its value is independent of our frame of reference, and so it must be zero in all frames.
 
+\pagebreak
+
 $P$ and $Q$ are a complete set of invariants for the electromagnetic field, meaning that
 the only other electromagnetic invariants are those that either can be determined from $P$ and
 $Q$ or depend on the derivatives of the fields, not just their values.
 To see that $P$ and $Q$ are complete in this sense, we can break the possibilities down into cases, according
 to whether $P$ and $Q$ are zero or nonzero, positive or negative. As a representative example,
-consider the case where $P<0$ and $Q\ne0$. First we rotate our frame of reference so that $\vc{E}$ is along
+consider the case where $P<0$ and $Q>0$. First we rotate our frame of reference so that $\vc{E}$ is along
 the $x$ axis, and $\vc{B}$ lies in the $x$-$y$ plane. Next we do a boost along the $z$ axis
 in order to eliminate the $y$ component of $\vc{B}$; the field transformation equations on 
 p.~\pageref{eqn:em-transformation-three-vectors} make this possible because $|\vc{E}|>|\vc{B}|$.
 The result is that we have found a frame of reference in which $\vc{E}$ and $\vc{B}$ both lie along
-the $x$ axis. The only frame-independent information that there is to know is the information available
-in this frame, and that consists of only two real numbers, $E_x$ and $B_x$, which can be determined
+the positive $x$ axis. The only frame-independent information that there is to know is the information available
+in this frame, and that consists of only two positive real numbers, $E_x$ and $B_x$, which can be determined
 from the values of $P$ and $Q$.
+
+\vfill
 
 \begin{eg}{A static null field}
 Although an electromagnetic plane wave is a null field, the converse is not true. For example, we
 can create a static null field out of a static, uniform electric field and a static, uniform magnetic
 field, with the two fields perpendicular to one another.
 \end{eg}
+
+\vfill
 
 \begin{eg}{Another invariant?}
 Let $\Pi$ be the squared magnitude of the Poynting vector,\linebreak[4] $\Pi=(\vc{E}\times\vc{B})\cdot(\vc{E}\times\vc{B})$.
@@ -544,6 +550,8 @@ expressed in terms of dot products and scalar products, it is guaranteed to be i
 rotations. However, it is not a relativistic invariant. For example, if we do a Lorentz boost
 parallel to the direction of an electromagnetic wave, the intensity of the wave changes, and so does $\Pi$.
 \end{eg}
+
+\vfill
 
 \begin{eg}{A non-null invariant for electromagnetic waves?}
 The quantity $Q^{-1}=1/(\vc{E}\cdot\vc{B})$ is clearly an invariant, and it doesn't vanish for

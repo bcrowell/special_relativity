@@ -167,7 +167,7 @@ way under rotations.
 In section \ref{subsec:invariants} (p.~\pageref{subsec:invariants}), we defined an invariant
 as a quantity that did not change under rotations or Lorentz boosts, i.e., one that was independent
 of the frame of reference.\index{invariant!compared to scalar}\index{scalar}\index{Lorentz scalar|see{scalar}}
-For a scalar we have the even more restrictive condition that it must not change if we change
+For a scalar we have the even more restrictive condition that it must not change
 under any change of coordinates. For example, 
 area in $1+1$-dimensional spacetime is an invariant, but it's not a scalar; it changes when we rescale
 our coordinates.
@@ -190,7 +190,7 @@ $__birdscalarproduct(\bomega,\vc{o})$ is the frequency $\omega$ measured by this
 observer in units of radians per second.
 If the same observer considers $\vc{s}$ to be a vector of simultaneity with a length of
 one meter, then $__birdscalarproduct(\bomega,\vc{s})$ is
-the observer's measurement of the wavenumber $k$, defined as $2\pi$ divided by the wavelength.
+the observer's measurement of the wavenumber $k$, defined as $2\pi$ divided by the wavelength.\index{wavenumber}
 
 <% begin_sec("Visualization",nil,'visualization') %>
 In more than one dimension, there are natural ways of visualizing the different vector spaces inhabited by
@@ -201,6 +201,28 @@ on a topographic map, \subfigref{vector-measuring-covector}{2}, with an arrowhea
 show which way is ``uphill.''
 The act of measurement consists of counting how many of these
 lines are crossed by a certain vector, \subfigref{vector-measuring-covector}{3}.
+
+\begin{eg}{Parallelism between vectors and covectors}\label{eg:vector-parallel-to-covector}
+It seems visually obvious in figure \subfigref{vector-measuring-covector}{3} that the vector and covector
+are almost, but not exactly, parallel, since the arrowheads point in almost the same direction.
+Ordinarily, parallelism of nonzero vectors $\vc{u}$ and
+$\vc{v}$ would be expressed by the existence of a real number $\alpha$ such that $\vc{u}=\alpha\vc{v}$.
+But vectors and covectors are different kinds of beasts, belonging to different vector spaces. Scaling 
+up a zebra will never produce a giraffe. If there is no metric, then this is simply a fact of life:
+there is no natural way to define parallelism between a vector $\vc{v}$ and a covector $\bomega$.
+
+But if we have a metric, then we can define a magnitude for the vector $\vc{c}$
+in \subfigref{vector-measuring-covector}{3}, and keep that magnitude
+constant while rotating $\vc{v}$. If the metric is Euclidean, then this corresponds to rigidly
+rotating the arrow on the page, and $__birdscalarproduct(\bomega,\vc{v})$ is maximized for a certain
+orientation, which we define as the condition for parallelism. If the metric is noneuclidean, then
+things get a bit more complicated, but the same ideas apply if the vectors are either both spacelike
+or both timelike. For example, if both are timelike, then $__birdscalarproduct(\bomega,\vc{v})$
+is minimized by parallelism, because the Cauchy-Schwarz inequality is reversed
+(see sec.~\ref{subsec:triangle-t}, p.~\pageref{subsec:triangle-t}.)
+
+\end{eg}
+
 <% end_sec('visualization') %> 
 
 <% marg(300) %>
@@ -232,9 +254,10 @@ simply a circle:
 \begin{equation*}
   __birdgrad(\phi)
 \end{equation*}
-As discussed in section \ref{subsec:covariant-derivative-notation} on
-p.~\pageref{subsec:covariant-derivative-notation}, this notation, and the
-notion of a gradient, have to be defined in a special way when the coordinates are not Minkowski.
+This notation can also be extended to the case where the thing being differentiated is not
+a scalar, but then some complications are encountered when the coordinates are not Minkowski;
+see section \ref{subsec:covariant-derivative-notation},
+p.~\pageref{subsec:covariant-derivative-notation}.
 
 \begin{eg}{Cosmological observers}
 Time is relative, so what do people mean when they say that the universe is 13.8 billion years old?
@@ -247,85 +270,14 @@ world-line for their observer. One way of constructing this world-line is as fol
 temperature $T$ of the universe has decreased. (We define this temperature locally, but we average
 over large enough regions so that local variations don't matter.) The negative gradient of this temperature,
 $-\nabla T$, is a covector that points in a preferred direction in spacetime, and
-a preferred world-line for an observer is one whose velocity vector $\vc{v}$ is always ``parallel''
-to $-\nabla T$, in the sense that it maximizes 
-__birdscalarproduct((-\nabla T),\vc{v}), subject to the usual constraint $v^2=1$.
+a preferred world-line for an observer is one whose velocity vector $\vc{v}$ is always parallel
+to $-\nabla T$, in the sense defined in example \ref{eg:vector-parallel-to-covector} above.
 \end{eg}
 <% end_sec('gradient') %> 
 
-<% begin_sec("Phase and group velocity",nil,'phase-and-group-vel') %>
-<% begin_sec("Phase velocity",nil,'phase-vel') %>\index{velocity!wave!phase}
-A wavefront is a line or surface of constant phase.
-In a snapshot of a wave at one moment of time, the direction of propagation of the wave is across
-the wavefronts. The visual situation is different in a spacetime diagram. In $1+1$ dimensions,
-figure \subfigref{surfer-phase}{1}, suppose that the lines represent the crest of the water waves.
-The surfer is on top of a crest, riding along with it. His velocity vector $__birdvec(\vc{u})$ is in the spacetime
-direction that lies on top of the wavefront, not across it.
-Clearly both his motion and the propagation of the wave are to the right, not to the left as we might imagine
-based on experience with snapshots of waves.
-
-In $2+1$ dimensions, \subfigref{surfer-phase}{2}, the surfer's velocity is 
-visualized as an arrow lying within a plane of constant phase. 
-Given the wave's phase information, there is more than one possible arrow of this kind.
-We could try to resolve the ambiguity by requiring that the arrow's projection into the $xy$ plane
-be perpendicular to the intersection of the wavefronts with that plane, but (with the exception
-of the case where the wave  travels at $c$, example \ref{eg:light-phase-gives-vel},
-p.~\pageref{eg:light-phase-gives-vel}) this prescription gives
-results that change depending on our frame of reference, and the changes are not describable by
-a Lorentz transformation of the velocity vector.
-This shows that in the general case, the phase information of the wave, encoded in the
-frequency covector $__birddualvec(\bomega)$, does not describe the direction of the wave's
-propagation through space.\label{phase-does-not-determine-propagation}
-At most it tells us the wave's
-\emph{phase velocity}, $\omega/k$, which is not really a velocity. All of these are symptoms of
-the fact that a velocity is supposed to be a vector, but $__birddualvec(\bomega)$ is a covector.
-The phase velocity lacks
-physical interest, because it is not the velocity at which any ``stuff'' moves.\index{phase velocity}
-<% end_sec('phase-vel') %>
-
-<% begin_sec("Group velocity",nil,'group-vel') %>\index{velocity!wave!group}
-There is a dispersion relation between a wave's frequency and wavenumber.
-For example, surface waves in deep water obey the constraint $C=0$, where
-$C=\omega^4-\alpha^2 k^2$ (figure \figref{dispersion})
-and $\alpha$ is a constant with units of acceleration, relating
-to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
-could enter into the constraint.)
-<% marg(300) %>
-<%
-  fig(
-    'surfer-phase',
-    %q{The surfer moves directly to the right with velocity vector $\vc{u}$. The wave also propagates to
-       the right.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'dispersion',
-    %q{Points on the graph satisfy the dispersion relation $C=0$ for water waves.
-       At a given point on the graph, the covector $__birddualvec((\nabla C))$
-       tells us the group velocity.}
-  )
-%>
-<% end_marg %>
-
-When a wave is modulated, it can transport energy and momentum and transmit information,
-i.e., act as an agent of cause and effect between events. How fast does it go?
-If a certain bump on the envelope with which the
-wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
-the wave has near the bump are observed to be the same at P and Q. In general,
-$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
-so the spacetime displacement $__birdvec(\vc{r})$ from P to Q must satisfy
-the condition $__birdscalarproduct((\nabla C),\vc{r})=0$. The set of solutions to this
-equation is the world-line of the bump, and the inverse slope of this world-line is called the
-\emph{group velocity}. In our example of water waves, the group velocity is $\alpha/2\omega$,
-which is half the phase velocity.\index{group velocity}
-
-<% end_sec('group-vel') %>
-<% end_sec('phase-and-group-vel') %>
 <% end_sec('f-vector') %> 
 
-<% begin_sec("Duality",4,'duality') %>
+<% begin_sec("Duality",nil,'duality') %>
 <% begin_sec("Duality in 3+1 dimensions",nil,'duality-generalized') %>\index{duality}
 In our original $0+1$-dimensional example of the cuckoo clock and the earth, we had duality: the
 measurements $__birdscalarproduct(c,e)=24$ and $__birdscalarproduct(e,c)=1/24$ really provided
@@ -388,7 +340,7 @@ coordinates, and (2) the signature of the metric is, as assumed throughout this 
 $+---$, not $-+++$.
 
 \begin{eg}{Going both ways}\label{eg:going-both-ways}
-\egquestion Assume Minkowski coordinates at signature $+---$.
+\egquestion Assume Minkowski coordinates and signature $+---$.
 Given the vector
 \begin{equation*}
   __birdvec(\vc{e})=(8,7)
@@ -435,24 +387,6 @@ $p$ and $q$ is given by $p^Tgq$, where T represents the transpose. Rerunning the
 with these additional complications, we find that the dual of a vector $q$ is $(gq)^T$, while
 the dual of a covector $\omega$ is $(\omega g^{-1})^T$, where $g^{-1}$ is the inverse of the matrix
 $g$.
-
-\begin{eg}{Velocity vector of a light wave, given its phase}\label{eg:light-phase-gives-vel}
-We saw on p.~\pageref{phase-does-not-determine-propagation} that in general, the information about
-the phase of a wave encoded in $__birddualvec(\bomega)$
-does not determine its direction of propagation.
-The exception is a wave, such as a light
-wave, that propagates at $c$. 
-Let a world-line of propagation of the wave lie along the vector $__birdvec(\vc{v})$.
-In the case of a wave propagating at $c$, we have $v^2=0$ (so that $__birdvec(\vc{v})$ can't have the usual
-normalization for a velocity vector), and the dispersion relation is simply
-$\bomega^2=0$. Since the phase stays constant along a world-line of propagation,
-$__birdscalarproduct(\bomega,\vc{v})=0$. We therefore find that $\vc{v}$ and
-$\bomega$ are two nonzero, lightlike vectors that are orthogonal to each other.
-But as shown in problem \ref{hw:orthogonal-lightlike-are-parallel} 
-on p.~\pageref{hw:orthogonal-lightlike-are-parallel}, this implies that the two vectors are
-parallel. Thus if we're given the covector $__birddualvec(\bomega)$, we just have to
-compute its dual $__birdvec(\bomega)$ to find the direction of propagation.
-\end{eg}
 
 <% end_sec('duality-generalized') %>
 
@@ -648,11 +582,125 @@ ultraviolet and infrared, while some infrared and ultraviolet light would become
 <% end_sec('doppler-3d') %> 
 
 
-<% begin_sec("Some related mathematical tools",nil,'tools') %>
+<% begin_sec("Phase and group velocity",nil,'phase-and-group-vel') %>
+<% begin_sec("Phase velocity",nil,'phase-vel') %>\index{velocity!wave!phase}
+A wavefront is a line or surface of constant phase.
+In a snapshot of a wave at one moment of time, the direction of propagation of the wave is across
+the wavefronts. The visual situation is different in a spacetime diagram. In $1+1$ dimensions,
+figure \subfigref{surfer-phase}{1}, suppose that the lines represent the crest of the water waves.
+The surfer is on top of a crest, riding along with it. His velocity vector $__birdvec(\vc{u})$ is in the spacetime
+direction that lies on top of the wavefront, not across it.
+Clearly both his motion and the propagation of the wave are to the right, not to the left as we might imagine
+based on experience with snapshots of waves.
+<% marg(-300) %>
+<%
+  fig(
+    'surfer-phase',
+    %q{The surfer moves directly to the right with velocity vector $\vc{u}$. The wave also propagates to
+       the right.}
+  )
+%>
+<% end_marg %>
+
+In $2+1$ dimensions, \subfigref{surfer-phase}{2}, the surfer's velocity is 
+visualized as an arrow lying within a plane of constant phase. 
+Given the wave's phase information, there is more than one possible arrow of this kind.
+We could try to resolve the ambiguity by requiring that the arrow's projection into the $xy$ plane
+be perpendicular to the intersection of the wavefronts with that plane, but (with the exception
+of the case where the wave  travels at $c$, example \ref{eg:light-phase-gives-vel},
+p.~\pageref{eg:light-phase-gives-vel}) this prescription gives
+results that change depending on our frame of reference, and the changes are not describable by
+a Lorentz transformation of the velocity vector.
+This shows that in the general case, the phase information of the wave, encoded in the
+frequency covector $__birddualvec(\bomega)$, does not describe the direction of the wave's
+propagation through space.\label{phase-does-not-determine-propagation}
+At most it tells us the wave's
+\emph{phase velocity}, $\omega/k$, which is not really a velocity. All of these are symptoms of
+the fact that a velocity is supposed to be a vector, but $__birddualvec(\bomega)$ is a covector.
+The phase velocity lacks
+physical interest, because it is not the velocity at which any ``stuff'' moves.\index{phase velocity}
+
+\begin{eg}{Velocity vector of a light wave, given its phase}\label{eg:light-phase-gives-vel}
+We've seen that in general, the information about
+the phase of a wave encoded in $__birddualvec(\bomega)$
+does not determine its direction of propagation.
+The exception is a wave, such as a light
+wave, that propagates at $c$. 
+Let a world-line of propagation of the wave lie along the vector $__birdvec(\vc{v})$.
+In the case of a wave propagating at $c$, we have $v^2=0$ (so that $__birdvec(\vc{v})$ can't have the usual
+normalization for a velocity vector), and the dispersion relation is simply
+$\bomega^2=0$. Since the phase stays constant along a world-line of propagation,
+$__birdscalarproduct(\bomega,\vc{v})=0$. We therefore find that $\vc{v}$ and
+$\bomega$ are two nonzero, lightlike vectors that are orthogonal to each other.
+But as shown in problem \ref{hw:orthogonal-lightlike-are-parallel} 
+on p.~\pageref{hw:orthogonal-lightlike-are-parallel}, this implies that the two vectors are
+parallel. Thus if we're given the covector $__birddualvec(\bomega)$, we just have to
+compute its dual $__birdvec(\bomega)$ to find the direction of propagation.
+\end{eg}
+<% end_sec('phase-vel') %>
+
+<% begin_sec("Group velocity",nil,'group-vel') %>\index{velocity!wave!group}
+The phase velocity is not the velocity at which ``stuff'' is transmitted by the wave.
+The velocity of the stuff is called the group velocity.\index{group velocity}
+To have a meaningully defined group velocity,
+we need to have a wave that is modulated, because an unmodulated wave is an infinite sine wave
+that stretches off to infinity, and such an unmodulated wave does not transmit any energy or information.
+An unmodulated wave has the same frequency
+covector $__birddualvec(\bomega)$ throughout all of spacetime, i.e., the same frequency $\omega$ and wavenumber $k$.
+One way of describing a modulated wave is by how $__birddualvec(\bomega)$ does change.
+
+But the different components of $__birddualvec(\bomega)$ are not free to change in any randomly chosen way.
+Normally they are constrained by a dispersion relation.
+For example, surface waves in deep water obey the constraint $C=0$, where
+$C=\omega^4-\alpha^2 k^2$ (figure \figref{dispersion})
+and $\alpha$ is a constant with units of acceleration, relating
+to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
+could enter into the constraint.)
+<% marg(30) %>
+<%
+  fig(
+    'dispersion',
+    %q{Points on the graph satisfy the dispersion relation $C=0$ for water waves.
+       At a given point on the graph, the covector $__birddualvec((\nabla C))$
+       tells us the group velocity.}
+  )
+%>
+<% end_marg %>
+
+Now if a certain bump on the envelope with which the
+wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
+the wave has near the bump are observed to be the same at P and Q. In general,
+$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
+so the spacetime displacement $__birdvec(\vc{r})$ from P to Q must satisfy
+the condition $__birdscalarproduct((\nabla \bomega),\vc{r})=0$.
+
+In addition, $\nabla \bomega$ must be tangent to the surface of constraint $C=0$, so that the wave always
+obeys the constraint. Thus given a point $__birddualvec(\bomega)$ in frequency space, the direction of propagation
+$\vc{r}$ must be uniquely determined by the constraint.
+Suppose $C$ is a well-behaved function,
+so that it is approximately a linear function of any small change $\Delta\bomega$, i.e., in $1+1$
+dimensions we have
+\begin{equation*}
+  \Delta C = \frac{\partial C}{\partial \omega}\Delta\omega + \frac{\partial C}{\partial k}\Delta k.
+\end{equation*}
+In this approximation, $\Delta C$ is a linear function that acts on a covector $\Delta\bomega$ and gives back a scalar.
+In other words, $\Delta C$ acts like a vector with components
+\begin{equation*}
+  \Delta C = \left(\frac{\partial C}{\partial \omega}, \frac{\partial C}{\partial k}\right).
+\end{equation*}
+This vector is parallel to $\vc{r}$, so that it points in the wave's direction of propagation
+through spacetime, and tells us its group velocity $(\partial C/\partial k)/(\partial C/\partial\omega)$.
+In our example of water waves, a calculation shows that the group velocity is $\pm\alpha/2\omega$,
+which is half the phase velocity.
+
+<% end_sec('group-vel') %>
+<% end_sec('phase-and-group-vel') %>
+
+<% begin_sec("Abstract index notation",nil,'abstract-index') %>
 This chapter has centered on the physics of waves, but along the way we've found it helpful to build
 up some mathematical ideas such as covectors, which have applications in a much broader physical
-context. In this section we'll develop some related notation and geometrical applications.
-<% begin_sec("Abstract index notation",nil,'abstract-index') %>
+context. In this section we'll develop some related notation.
+
 Expressions in birdtracks notation such as
 \begin{equation*}
   __birdgrad(C)s
@@ -784,207 +832,6 @@ The symbol $g^{ab}$ refers to the inverse of the matrix $g_{ab}$.
 
 <% end_sec('abstract-index') %> 
 
-<% begin_sec("Volume",nil,'volume') %>\index{volume!affine}
-<% begin_sec("Desirable properties",nil,'volume-desirable') %>
-In $3+1$ dimensions, we have a natural way of defining four-dimensional volume, which is to
-pick a frame of reference and let the element of volume be $\der t\der x\der y\der z$ in
-the Minkowski coordinates of that frame. Although this definition of 4-volume is stated in terms of
-certain coordinates, it turns out to be Lorentz-invariant (section \ref{sec:area-is-scalar},
-p.~\pageref{sec:area-is-scalar}). It also has the following desirable properties:
-
-V1. Any two $m$-volumes can be compared in terms of their ratio.\label{volume-properties}
-
-V2. For any $m$ nonzero vectors, the $m$-volume of the parallelepiped they span is
-nonzero if and only if the vectors are linearly independent (that is, if none of them can be
-expressed in terms of the others using scalar multiplication and vector addition).
-
-We would also like to have convenient methods for working with three-volume, two-volume (area),
-and one-volume (length). But the $m$-volumes for $m<4$ give us headaches if we try to define
-them so that they obey both V1 and V2. For example, the obvious way to define length ($m=1$) is to
-use the metric, but then lightlike vectors would violate V2.
-<% marg(-20) %>
-<%
-  fig(
-    'lattice-construction',
-    %q{Using parallelism to define 1-volume.}
-  )
-%>
-<% end_marg %>
-<% end_sec('volume-desirable') %> 
-
-<% begin_sec("Affine measure",nil,'affine-measure') %>
-If we're willing to abandon V1, then the following approach succeeds. Consider the $m=1$ case.
-We ignore the metric completely and exploit the
-fact that in special relativity, spacetime is flat (postulate P2, p.~\pageref{subsec:flatness-postulate}),
-so that parallelism works the same way as in Euclidean geometry. 
-Let $\ell$ be
-a line, and suppose we want to define a number system on this line that measures how far apart events are.
-Depending on the type of line, this could be a measurement of time, of spatial distance, or a mixture of the
-two. First we arbitrarily single out two distinct points on $\ell$ and label them 0 and 1,
-as in figure \figref{lattice-construction}. Next, pick some
-auxiliary point $\zu{q}_0$ not lying on $\ell$. Construct
-$\zu{q}_0\zu{q}_1$ and parallel to $01$ and $1\zu{q}_1$ parallel to $0\zu{q}_0$, forming the parallelogram
-shown in the figure.
-Continuing in this way, we have a scaffolding of parallelograms adjacent
-to the line, determining an infinite lattice of points 1, 2, 3, \ldots on the line, which
-represent the positive integers. Fractions can be defined in a similar way. For example, $\frac{1}{2}$ is defined
-as the point such that when the initial lattice segment $0\frac{1}{2}$ is extended by the same construction, the next point
-on the lattice is 1. 
-The continuously varying variable constructed in this way is called an \emph{affine parameter}.\index{affine parameter}
-The time measured by a free-falling clock is an example of an affine parameter, as is the distance measured
-by the tick marks on a free-falling ruler. An affine parameter can only be defined along a straight
-world-line, not an arbitrary curve. The affine measurement of 1-volume violates V1,
-because it only allows us to compare distances that lie on $\ell$ or parallel to it. On the other hand,
-it has the advantage over metric measurement that it allows us to measure lengths along lightlike lines.
-
-Figure \figref{affine-area-lattice} shows how to define an affine measure of 2-volume, and a similar
-method works for 3-volume.
-<% marg(90) %>
-<%
-  fig(
-    'affine-area-lattice',
-    %q{The area of the viola can be determined by counting the
-           parallelograms formed by the lattice. The area can be determined to any desired precision,
-           by dividing the parallelograms into fractional parts that are as small as necessary.}
-  )
-%>
-<% end_marg %>
-<% end_sec('affine-measure') %> 
-
-<% begin_sec("Linearity",nil,'volume-linearity') %>\label{volume-linearity}
-
-Suppose that a parallelogram is formed with vectors $\vc{a}$ and $\vc{b}$ as two of its sides.
-It we double $\vc{a}$, then the area doubles as well,
-\begin{equation*}
-  \operatorname{area}(2\vc{a},\vc{b}) = 2\operatorname{area}(\vc{a},\vc{b})\eqquad.
-\end{equation*}
-In general, if we scale either of the
-vectors by a factor $c$, the area scales by the same factor, provided that we set some rule
-for handling signs --- an issue that we'll ignore for the time being. Something similar happens
-when we add two vectors, e.g.,
-\begin{equation*}
-  \operatorname{area}(\vc{a},\vc{b}+\vc{c}) =  \operatorname{area}(\vc{a},\vc{b})
-                                              +\operatorname{area}(\vc{a},\vc{c})\eqquad,
-\end{equation*}
-again passing over issues with signs.
-We refer to these properties as \emph{linearity} of the affine 2-volume. Any sensible measure
-of $m$-volume should have similar linearity properties.
-<% end_sec('volume-linearity') %> 
-<% begin_sec("The 3-volume covector",nil,'three-volume') %>\label{three-vol-covector}
-
-In the special case of $m=3$, linearity leads to an especially simple characterization
-of the volume. Let a 3-volume be defined by the parallelepiped spanned by vectors
-$\vc{a}$, $\vc{b}$, and $\vc{c}$. If we threw in a fourth vector $\vc{d}$, we would have
-a 4-volume, and 4-volume is a scalar. This 4-volume would depend in a linear way on
-all four vectors, and in particular it would depend linearly on $\vc{d}$. But this means
-we have a scalar function that depends linearly on a vector, and such a function is
-exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
-$\vc{S}$ according to
-\begin{equation*}
-  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})\eqquad.
-\end{equation*}
-The volume covector collects the information about the volume of the 3-parallelepiped,
-encapsulating it in a convenient form with known transformation properties. In particular,
-the statement and proof of Gauss's theorem in $3+1$ dimensions are greatly simplified
-by the use of this tool (p.~\pageref{covector-used-in-gauss-proof}).
-The 3-volume covector, unlike the affine 3-volume, is defined in
-an absolute sense rather than in relation to some parallelepiped arbitrarily chosen as
-a standard. Both the covector and the affine volume fail to satisfy the ratio-comparison
-property V1 on p.~\pageref{volume-properties}, since we can't compare volumes unless they
-lie in parallel 3-planes.
-
-We've been visualizing covectors in $n$ dimensions as stacks of $(n-1)$-dimensional planes
-(figure \subfigref{vector-measuring-covector}{2}, p.~\pageref{fig:vector-measuring-covector};
-figure \subfigref{surfer-phase}{2}, p.~\pageref{fig:surfer-phase}). The volume three-vector
-should therefore be visualized as a stack of 3-planes in a four-dimensional space. Since most
-of us can't visualize things very well in four dimensions, figure \figref{three-volume-covector}
-omits one of the dimensions, so that the 3-surfaces appear as two-dimensional planes.
-The small hand \subfigref{three-volume-covector}{1} has a certain 3-volume, and the
-covector that measures it is represented
-by the stack of 3-planes parallel to it, \subfigref{three-volume-covector}{2}.
-The bigger hand \subfigref{three-volume-covector}{3} has twice the 3-volume, and
-its covector is represented by a stack of planes with half the spacing.
-<% marg(100) %>
-<%
-  fig(
-    'three-volume-covector',
-    %q{Interpretation of the 3-volume covector.}
-  )
-%>
-<% end_marg %>
-<% end_sec('three-volume') %> 
-<% end_sec('volume') %> 
-<% begin_sec("Classification of 3-surfaces",nil,'classification-of-surfaces') %>\index{surfaces!classification of}
-If I nail together three sticks, all at right angles to one another, then I can consider them as a set of basis vectors
-spanning a three-dimensional space of events. This three-space is flat, so we can call it a hyperplane --- or just a plane
-if, as throughout this section, there is no danger of forgetting that it has three dimensions rather than two.
-All of the events in this plane are simultaneous in my frame of reference. None
-of these facts depends on the use of right angles;
-we just need to make sure that the sticks don't all lie in the same plane.
-
-The business of a physicist is ultimately
-to make predictions. That is, if given a set of initial conditions, we can say how our system will evolve through time.
-These initial conditions are in principle measured throughout all of space, and a plane of simultaneity would be
-a natural choice for the set of points at which to take the measurements.
-A surface used for this purpose is called a Cauchy surface.\index{surfaces!Cauchy}\index{Cauchy surface}
-
-If a plane is a surface of simultaneity according to some observer, then we call it \emph{spacelike}.
-Any particle's world-line must intersect such a plane exactly once, and this is why
-it works as a Cauchy surface: we are guaranteed to detect the particle, so that we can account for
-its effect on the evolution of the cosmos. 
-We could take a spacelike plane and reorient it.
-For a small enough change in the orientation (that is, a change that could be described by small enough
-changes in the basis vectors), it will remain spacelike.
-
-When a plane is not spacelike, and remains so under any sufficiently small change in orientation, we call it \emph{timelike}.
-In Minkowski coordinates, an example would be the $t$-$x$-$y$ plane. A given particle's world-line might never cross
-such a surface, and therefore a timelike plane cannot be used as a Cauchy surface.
-
-A plane that is neither spacelike nor timelike is called \emph{lightlike}. An example is the surface defined by
-the equation $x=t$ in Minkowski coordinates.
-
-The above classification can be stated very succinctly by using the 3-volume covector defined in 
-section \ref{subsec:volume}. A plane is spacelike, lightlike, or timelike, respectively, if
-the regions it contains are described by 3-volume covectors that are timelike, lightlike, or spacelike.
-A surface that is smooth but not necessarily flat can be be described locally according to
-these categories by considering its tangent plane. For example, a light cone is lightlike at each of
-its points, and since it is lightlike everywhere, we call it a lightlike surface. The event horizon
-of a black hole is also a lightlike surface. Any spacelike surface,
-whether curved or flat, can be used as a Cauchy surface. 
-
-Lightlike surfaces have some funny properties. 
-Using birdtracks notation,
-suppose that we form such a surface as the space spanned by
-the three basis
-vectors $__birdvec(\vc{a})$, $__birdvec(\vc{b})$, and $__birdvec(\vc{c})$,
-and let $__birddualvec(\vc{S})$ be the corresponding 3-volume covector.
-The surface is lightlike, so
-\begin{equation}\label{eq:lightlike-s}
-  __birdscalarproduct(\vc{S},\vc{S})=0\eqquad.
-\end{equation}
-Because $__birddualvec(\vc{S})$ is defined as the function giving the 4-volume of a parallelepiped spanned
-by the bases with a fourth vector $__birdvec(\vc{d})$, and because this volume vanishes
-when $__birdvec(\vc{d})$ is tangent to the surface (property V2, p.~\pageref{volume-properties}),
-we have,
-\begin{equation}
-   __birdscalarproduct(\vc{S},\vc{a})=__birdscalarproduct(\vc{S},\vc{b})=__birdscalarproduct(\vc{S},\vc{c})=0\eqquad.
-\end{equation}
-So in this sense $__birddualvec(\vc{S})$ is perpendicular to the surface.
-In Euclidean space we are used to describing the orientation of a surface in terms of the unit normal vector,
-and this is very nearly what $__birddualvec(\vc{S})$ is, except that it's a covector rather than a vector,
-and it also can't be made to have unit length, since its magnitude is zero.
-We could fix the first of these two problems by constructing the vector $__birdvec(\vc{S})$ that is
-dual to $__birddualvec(\vc{S})$, but this has a disconcerting effect.
-Combining \eqref{eq:lightlike-s}
-with the definition of $__birddualvec(\vc{S})$, we find that $__birdvec(\vc{S})$ spans
-a vanishing 4-volume with the basis vectors, and therefore by V2 we find that $__birdvec(\vc{S})$
-is tangent to the surface. Thus in some sense we have a vector that is both parallel to and tangent to
-a surface --- which avoids being absurd because we are really referring to two \emph{different} objects,
-the covector $__birddualvec(\vc{S})$ and the vector $__birdvec(\vc{S})$.
-
-<% end_sec('classification-of-surfaces') %> 
-<% end_sec('tools') %> 
-
 <% begin_hw_sec %>
 
 <% begin_hw('dual-of-dual') %>
@@ -993,15 +840,6 @@ invoking Minkowski coordinates and assuming the signature to be $+---$. Show tha
 assumptions were not necessary.
 <% end_hw %>
 
-<% begin_hw('lightlike-normal-vector') %>
-Let a 3-plane U be defined in Minkowski coordinates by the equation $x=t$.
-Is this plane spacelike, timelike, or lightlike?
-Find a covector $__birddualvec(\vc{S})$ that is normal to U in the sense described in
-section \ref{subsec:classification-of-surfaces}, p.~\pageref{subsec:classification-of-surfaces}, describing it in terms 
-of its components. Compute the vector $__birdvec(\vc{S})$, also in component form.
-Verify that $__birdscalarproduct(\vc{S},\vc{S})=0$.
-Show that $__birdvec(\vc{S})$ is tangent to M.
-<% end_hw %>
 
 <% end_hw_sec %>
 

@@ -1379,8 +1379,8 @@ and $\vc{n}_\perp$ perpendicular. We then have $|\vc{m}\cdot\vc{n}|=|\vc{m}\cdot
 =|\vc{m}|\;|\vc{n}_\parallel|$. But $\vc{n}^2=(\vc{n}_\parallel+\vc{n}_\perp)^2=\vc{n}_\parallel^2
 +2\vc{n}_\parallel\cdot\vc{n}_\perp+\vc{n}_\perp^2=\vc{n}_\parallel^2+\vc{n}_\perp^2$, and since
 $\vc{n}_\parallel$ is timelike and $\vc{n}_\perp$ spacelike, we have (in the $+---$ signature) $\vc{n}_\parallel^2>0$
-and $\vc{n}_\perp^2<0$. Therefore, regardless of signature, $|\vc{n}|\le|\vc{n}_\parallel|$.
-Therefore we have the reversed Cauchy-Schwarz inequality
+and $\vc{n}_\perp^2<0$. Therefore, regardless of signature, $|\vc{n}|\le|\vc{n}_\parallel|$,
+and we have the reversed Cauchy-Schwarz inequality
 \begin{equation*}
   |\vc{m}\cdot\vc{n}| \ge |\vc{m}|\;|\vc{n}|\qquad \text{(valid for either $+---$ or $-+++$)}\eqquad.
 \end{equation*}
