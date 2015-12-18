@@ -499,9 +499,9 @@ The fact that these are written as vector dot products of three-vectors shows th
 invariant under rotation, but we also want to show that they are relativistic scalars,
 i.e., invariant under boosts as well. To prove this, we can write them both in tensor notation.
 The first invariant can be expressed as $P=\frac{1}{2}\emt^{ab}\emt_{ab}$, while the second
-equals $Q=\frac{1}{4}\epsilon^{abcd}\emt_{ab}\emt_{cd}$, where the Levi-Civita symbol\index{Levi-Civita symbol}
-$\epsilon^{\kappa\lambda\mu\nu}$ equals $+1$ if $\kappa\lambda\mu\nu$ are an even permutation of 1234,
-$-1$ if odd, and 0 otherwise.
+equals $Q=\frac{1}{4}\epsilon^{abcd}\emt_{ab}\emt_{cd}$, where 
+$\epsilon^{\kappa\lambda\mu\nu}$ is
+the Levi-Civita tensor.\index{Levi-Civita tensor}
 
 A field for which both $P=Q=0$ is called a null field.
 An electromagnetic plane wave is a null field, and although this is easily verifiable from the

@@ -392,18 +392,7 @@ The stress-energy tensor carries information about pressure. For example,
 $T\indices{^x^x}$ is the flux in the $x$ direction
 of $x$-momentum. This is simply the pressure, $P$, that would be exerted on a surface with its normal
 in the $x$ direction. Negative pressure is tension, and this is the origin of the term ``tensor,''
-coined by the mathematician Levi-Civita.\index{Levi-Civita, Tullio}
-<% marg(0) %>
-<%
-  fig(
-    'levi-civita-portrait',
-    %q{Tullio Levi-Civita (1873-1941) worked on models of number systems possessing infinitesimals and on differential
-               geometry. He invented the tensor notation, which Einstein learned from his textbook. He was appointed to prestigious endowed chairs at
-               Padua and the University of Rome, but was fired in 1938 because
-               he was a Jew and an anti-fascist.}
-  )
-%>
-<% end_marg %>
+coined by Levi-Civita (see p.~\pageref{fig:levi-civita-portrait}).\index{Levi-Civita, Tullio}
 
 \begin{eg}{Pressure as a source of gravitational fields}
 Because the stress-energy tensor is the source of gravitational fields in general relativity,
