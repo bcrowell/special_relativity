@@ -1139,7 +1139,7 @@ to check that Lorentz transformations with velocities $v$ and $-v$ are inverses.
 justification is shown in figure \figref{agree-on-v}. In \subfigref{agree-on-v}{1}, A determines B's velocity relative
 to her by sending out two round-trip signals at the speed of light, and measuring the difference between
 the two round-trip times. Because
-spacetime is the same in all directions,\footnote{This is discussed in more detail on
+space is the same in all directions,\footnote{This is discussed in more detail on
 p.~\pageref{sec:symmetry-postulates}} the experimental
 data are exactly the same when B carries out the measurement, \subfigref{agree-on-v}{2}, and
 therefore B infers the same speed.

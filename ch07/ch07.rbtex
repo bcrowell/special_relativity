@@ -512,9 +512,11 @@ of $m$-volume should have similar linearity properties.
 In the special case of $m=3$, linearity leads to an especially simple characterization
 of the volume. Let a 3-volume be defined by the parallelepiped spanned by vectors
 $\vc{a}$, $\vc{b}$, and $\vc{c}$. If we threw in a fourth vector $\vc{d}$, we would have
-a 4-volume, and 4-volume is a scalar. This 4-volume would depend in a linear way on
+a 4-volume, and 4-volume is a Lorentz 
+invariant.\footnote{But not a relativistic scalar; see sec.~\ref{subsec:phase-is-scalar},
+p.~\pageref{subsec:phase-is-scalar} for the distinction.} This 4-volume would depend in a linear way on
 all four vectors, and in particular it would depend linearly on $\vc{d}$. But this means
-we have a scalar function that depends linearly on a vector, and such a function is
+we have a number that is a linear function of a vector, and such a function is
 exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
 $\vc{S}$ according to
 \begin{equation*}
@@ -548,9 +550,48 @@ its covector is represented by a stack of planes with half the spacing.
     %q{Interpretation of the 3-volume covector.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'change-of-basis',
+    %q{The viola has a different area when measured using a different parallelogram as the unit.}
+  )
+%>
 <% end_marg %>
 <% end_sec('three-volume') %> 
+<% begin_sec("Change of basis",nil,'volume-basis-change') %>
+Because we have not made use of the metric so far, all of our measures of area have been relative rather
+than absolute. As shown in figure \figref{change-of-basis}, they depend on what parallelogram we choose as
+our unit of area. The unit cell in \subfigref{change-of-basis}{2} is smaller than the one in
+\subfigref{change-of-basis}{1}, for two reasons: the vectors defining the edges are shorter, and
+the angle between them is smaller. Words like ``shorter'' and ``angle'' show us resorting to metric
+measurement, but we could also perform the comparison without using the metric, simply by using 
+parallelogram 1 to measure parallelogram 2, or 2 to measure 1.
+We can think of such a pair of vectors as basis vectors for the plane,
+switching our choice of unit parallelogram is then equivalent to a change of basis.
+Areas then change in proportion to the determinant of the matrix specifying the change of basis.
+
+\begin{eg}{A halfling basis}
+Suppose that $\vc{a}'=\vc{a}/2$, and $\vc{b}'=\vc{b}/2$. The change of basis from the unprimed pair to the
+primed pair is given by the matrix
+\begin{equation*}
+  \left( \begin{matrix}
+         2 & 0 \\
+         0 & 2
+      \end{matrix} \right),
+\end{equation*}
+which has determinant 4. Scaling down both basis vectors by a factor of 2 has caused a reduction by a factor of
+4 in the area of the unit parallelogram.
+If we use the primed parallelogram to measure other areas, then all the areas will
+come out bigger by a factor of 4.
+\end{eg}
+
+Rotations and Lorentz boosts are changes of basis. They have determinants equal to 1, i.e., they preserve spacetime
+volume.
+
+<% end_sec('volume-basis-change') %> 
 <% begin_sec("Classification of 3-surfaces",nil,'classification-of-surfaces') %>\index{surfaces!classification of}
+A useful application of the 3-volume covector is in classifying 3-surfaces by how they relate to the light cone.
 If I nail together three sticks, all at right angles to one another, then I can consider them as a set of basis vectors
 spanning a three-dimensional space of events. This three-space is flat, so we can call it a hyperplane --- or just a plane
 if, as throughout this section, there is no danger of forgetting that it has three dimensions rather than two.
@@ -620,12 +661,12 @@ the covector $__birddualvec(\vc{S})$ and the vector $__birdvec(\vc{S})$.
 
 <% end_sec('classification-of-surfaces') %> 
 <% end_sec('volume') %> 
-<% begin_sec("Orientation",4,'orientation') %>\index{orientation}
+<% begin_sec("Orientation",nil,'orientation') %>\index{orientation}
 As shown in figure \figref{negative-area}, linearity of area requires that some areas be assigned negative values.
 If we compare the areas $+1$ and $-1$, we see that the only difference is one of orientation, or handedness.
 In the case to which we have arbitrarily assigned area $+1$, vector $\vc{b}$ lies counterclockwise from
 vector $\vc{a}$, but when $\vc{a}$ is flipped, the relative orientation becomes clockwise.
-<% marg(300) %>
+<% marg(-300) %>
 <%
   fig(
     'negative-area',
@@ -641,14 +682,14 @@ to the plane inhabited by $\vc{a}$ and $\vc{b}$. The trouble
 with this approach is that it only works in three dimensions.
 In four dimensions, suppose that $\vc{a}$ lies along the $x$ axis, and $\vc{b}$ along the $t$ axis.
 Then if we were to define $\vc{a}\times\vc{b}$, it should be in a direction perpendicular to both
-of these, but we have more than one such direction. We could anything in the $y$-$z$ plane.
+of these, but we have more than one such direction. We could pick anything in the $y$-$z$ plane.
 
 To get started on this issue in $m$ dimensions, where $m$ does not necessarily equal 3, we can consider
 the $m$-volume of the $m$-dimensional parallelepiped spanned by $m$ vectors. For example, suppose that
 in 4-dimensional spacetime we pick our $m$ vectors to be the unit vectors lying along the four axes
 of the Minkowski coordinates,
 $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$. From experience with the vector cross
-product, which is anticommutative, we expect that the result will depend on the order of the vectors,
+product, which is anticommutative, we expect that the sign of the result will depend on the order of the vectors,
 so let's take them in that order. Clearly there are only two reasonable values we could imagine for this
 volume: $+1$ or $-1$. The choice is arbitrary, so we make an arbitrary choice. Let's say that it's $+1$ for
 this order. This amounts to choosing an \emph{orientation} for spacetime.
@@ -656,19 +697,32 @@ this order. This amounts to choosing an \emph{orientation} for spacetime.
 A hidden and nontrivial assumption was that once we made this choice 
 at one point in spacetime, it could be carried over to other regions of spacetime in a consistent way.
 This need not be the case, as suggested in figure \figref{mobius-strip}. However, our topic at the moment
-is special relativity, and it is usually assumed in special relativity that spacetime is topologically trivial,
-so that this issue doesn't arise.
-<% marg(0) %>
+is special relativity, and as discussed briefly on p.~\pageref{trivial-topology},
+it is usually assumed in special relativity that spacetime is topologically trivial,
+so that this issue arises only in general relativity, and only in  spacetimes that probably
+are not realistic models of our universe.\index{topology}
+<% marg(300) %>
 <%
   fig(
     'mobius-strip',
     %q{A M\"{o}bius strip is not an orientable surface.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'levi-civita-portrait',
+    %q{Tullio Levi-Civita (1873-1941) worked on models of number systems possessing infinitesimals and on differential
+               geometry. He invented the tensor notation, which Einstein learned from his textbook. He was appointed to
+               prestigious endowed chairs at
+               Padua and the University of Rome, but was fired in 1938 because
+               he was a Jew and an anti-fascist.}
+  )
+%>
 <% end_marg %>
 
 Since 4-volume is invariant under rotations and Lorentz transformations, our choice of an orientation
-suffices to fix a definition of 4-volume that is a Lorentz scalar. If vectors 
+suffices to fix a definition of 4-volume that is a Lorentz invariant. If vectors 
 $\vc{a}$, $\vc{b}$, $\vc{c}$, and $\vc{d}$ span a 4-parallelepiped, then because of the linearity of
 volume, we expect to be able to express the volume in terms of the vectors using index notation. The
 only possible way to construct such an equation is
@@ -690,18 +744,6 @@ are known to be tensors, it follows that $\epsilon$ also transforms as a tensor.
 coordinates are not Minkowski, we should be able to find the components of $\epsilon$ by the usual
 transformation rules. It can be shown that this is equivalent to multiplying the components of
 $\epsilon$ by $\sqrt{-g}$, where $g$ is the determinant of the metric.
-<% marg(300) %>
-<%
-  fig(
-    'levi-civita-portrait',
-    %q{Tullio Levi-Civita (1873-1941) worked on models of number systems possessing infinitesimals and on differential
-               geometry. He invented the tensor notation, which Einstein learned from his textbook. He was appointed to
-               prestigious endowed chairs at
-               Padua and the University of Rome, but was fired in 1938 because
-               he was a Jew and an anti-fascist.}
-  )
-%>
-<% end_marg %>
 \index{Levi-Civita, Tullio}
 
 \begin{eg}{Halfling coordinates}
