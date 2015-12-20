@@ -23,7 +23,7 @@ covectors, scalars, and vectors, and we learned rules for how these
 three types of quantities transformed in two special changes of coordinates:
 
 \begin{enumerate}\label{boost-and-scaling-rules}
-\item When we rescale all coordinates by a factor $\alpha$,
+\item When we rescale all coordinates by a factor $\alpha$, the components of
 vectors, scalars, and covectors scale by $\alpha^p$, where $p=+1$, $0$, and $-1$, respectively.
 \item Under a boost, the three cases require respectively the Lorentz transformation, no transformation,
 and the inverse Lorentz transformation.
@@ -221,6 +221,8 @@ in the expression for $\der s^2$. We'll see in section \ref{subsec:rank-two},
 p.~\pageref{subsec:rank-two}, that this is an
 example of a more general transformation law for \emph{tensors}, mathematical objects
 that generalize vectors and covectors in the same way that matrices generalize row and column vectors.
+A scalar, with no indices, is called a tensor of rank 0. Vectors and covectors, having one index,
+are called rank-1 tensors.\index{rank of a tensor}\index{tensor!rank}
 
 <%
   fig(
@@ -468,7 +470,7 @@ it has the advantage over metric measurement that it allows us to measure length
 
 Figure \figref{affine-area-lattice} shows how to define an affine measure of 2-volume, and a similar
 method works for 3-volume.
-<% marg(90) %>
+<% marg(300) %>
 <%
   fig(
     'affine-area-lattice',
@@ -482,6 +484,14 @@ method works for 3-volume.
   fig(
     'linearity-of-area',
     %q{Linearity of area. Doubling the vector $\vc{a}$ doubles the area.}
+  )
+%>
+<% end_marg %>
+<% marg(-300) %>
+<%
+  fig(
+    'change-of-basis',
+    %q{The viola has a different area when measured using a different parallelogram as the unit.}
   )
 %>
 <% end_marg %>
@@ -507,58 +517,6 @@ We refer to these properties as \emph{linearity} of the affine 2-volume. Any sen
 of $m$-volume should have similar linearity properties.
 
 <% end_sec('volume-linearity') %> 
-<% begin_sec("The 3-volume covector",nil,'three-volume') %>\label{three-vol-covector}
-
-In the special case of $m=3$, linearity leads to an especially simple characterization
-of the volume. Let a 3-volume be defined by the parallelepiped spanned by vectors
-$\vc{a}$, $\vc{b}$, and $\vc{c}$. If we threw in a fourth vector $\vc{d}$, we would have
-a 4-volume, and 4-volume is a Lorentz 
-invariant.\footnote{But not a relativistic scalar; see sec.~\ref{subsec:phase-is-scalar},
-p.~\pageref{subsec:phase-is-scalar} for the distinction.} This 4-volume would depend in a linear way on
-all four vectors, and in particular it would depend linearly on $\vc{d}$. But this means
-we have a number that is a linear function of a vector, and such a function is
-exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
-$\vc{S}$ according to
-\begin{equation*}
-  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})\eqquad.
-\end{equation*}
-The volume covector collects the information about the volume of the 3-parallelepiped,
-encapsulating it in a convenient form with known transformation properties. In particular,
-the statement and proof of Gauss's theorem in $3+1$ dimensions are greatly simplified
-by the use of this tool (p.~\pageref{covector-used-in-gauss-proof}).
-The 3-volume covector, unlike the affine 3-volume, is defined in
-an absolute sense rather than in relation to some parallelepiped arbitrarily chosen as
-a standard. Both the covector and the affine volume fail to satisfy the ratio-comparison
-property V1 on p.~\pageref{volume-properties}, since we can't compare volumes unless they
-lie in parallel 3-planes.
-
-We've been visualizing covectors in $n$ dimensions as stacks of $(n-1)$-dimensional planes
-(figure \subfigref{vector-measuring-covector}{2}, p.~\pageref{fig:vector-measuring-covector};
-figure \subfigref{surfer-phase}{2}, p.~\pageref{fig:surfer-phase}). The volume three-vector
-should therefore be visualized as a stack of 3-planes in a four-dimensional space. Since most
-of us can't visualize things very well in four dimensions, figure \figref{three-volume-covector}
-omits one of the dimensions, so that the 3-surfaces appear as two-dimensional planes.
-The small hand \subfigref{three-volume-covector}{1} has a certain 3-volume, and the
-covector that measures it is represented
-by the stack of 3-planes parallel to it, \subfigref{three-volume-covector}{2}.
-The bigger hand \subfigref{three-volume-covector}{3} has twice the 3-volume, and
-its covector is represented by a stack of planes with half the spacing.
-<% marg(100) %>
-<%
-  fig(
-    'three-volume-covector',
-    %q{Interpretation of the 3-volume covector.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'change-of-basis',
-    %q{The viola has a different area when measured using a different parallelogram as the unit.}
-  )
-%>
-<% end_marg %>
-<% end_sec('three-volume') %> 
 <% begin_sec("Change of basis",nil,'volume-basis-change') %>
 Because we have not made use of the metric so far, all of our measures of area have been relative rather
 than absolute. As shown in figure \figref{change-of-basis}, they depend on what parallelogram we choose as
@@ -590,6 +548,232 @@ Rotations and Lorentz boosts are changes of basis. They have determinants equal 
 volume.
 
 <% end_sec('volume-basis-change') %> 
+<% end_sec('volume') %> 
+<% begin_sec("Orientation",nil,'orientation') %>\index{orientation}
+As shown in figure \figref{negative-area}, linearity of area requires that some areas be assigned negative values.
+If we compare the areas $+1$ and $-1$, we see that the only difference is one of orientation, or handedness.
+In the case to which we have arbitrarily assigned area $+1$, vector $\vc{b}$ lies counterclockwise from
+vector $\vc{a}$, but when $\vc{a}$ is flipped, the relative orientation becomes clockwise.
+<% marg(-300) %>
+<%
+  fig(
+    'negative-area',
+    %q{Linearity of area requires that some areas be assigned negative values.}
+  )
+%>
+<% end_marg %>
+
+If you've had the usual freshman physics background, then you've seen this issue dealt with in a particular
+way, which is that we assume a third dimension to exist, and
+define the area to be the vector cross product $\vc{a}\times\vc{b}$, which is perpendicular
+to the plane inhabited by $\vc{a}$ and $\vc{b}$. The trouble
+with this approach is that it only works in three dimensions.
+In four dimensions, suppose that $\vc{a}$ lies along the $x$ axis, and $\vc{b}$ along the $t$ axis.
+Then if we were to define $\vc{a}\times\vc{b}$, it should be in a direction perpendicular to both
+of these, but we have more than one such direction. We could pick anything in the $y$-$z$ plane.
+
+To get started on this issue in $m$ dimensions, where $m$ does not necessarily equal 3, we can consider
+the $m$-volume of the $m$-dimensional parallelepiped spanned by $m$ vectors. For example, suppose that
+in 4-dimensional spacetime we pick our $m$ vectors to be the unit vectors lying along the four axes
+of the Minkowski coordinates,
+$\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$. From experience with the vector cross
+product, which is anticommutative, we expect that the sign of the result will depend on the order of the vectors,
+so let's take them in that order. Clearly there are only two reasonable values we could imagine for this
+volume: $+1$ or $-1$. The choice is arbitrary, so we make an arbitrary choice. Let's say that it's $+1$ for
+this order. This amounts to choosing an \emph{orientation} for spacetime.
+
+A hidden and nontrivial assumption was that once we made this choice 
+at one point in spacetime, it could be carried over to other regions of spacetime in a consistent way.
+This need not be the case, as suggested in figure \figref{mobius-strip}. However, our topic at the moment
+is special relativity, and as discussed briefly on p.~\pageref{trivial-topology},
+it is usually assumed in special relativity that spacetime is topologically trivial,
+so that this issue arises only in general relativity, and only in  spacetimes that probably
+are not realistic models of our universe.\index{topology}
+<% marg(300) %>
+<%
+  fig(
+    'mobius-strip',
+    %q{A M\"{o}bius strip is not an orientable surface.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'levi-civita-portrait',
+    %q{Tullio Levi-Civita (1873-1941) worked on models of number systems possessing infinitesimals and on differential
+               geometry. He invented the tensor notation, which Einstein learned from his textbook. He was appointed to
+               prestigious endowed chairs at
+               Padua and the University of Rome, but was fired in 1938 because
+               he was a Jew and an anti-fascist.}
+  )
+%>
+<% end_marg %>
+
+Since 4-volume is invariant under rotations and Lorentz transformations, our choice of an orientation
+suffices to fix a definition of 4-volume that is a Lorentz invariant. If vectors 
+$\vc{a}$, $\vc{b}$, $\vc{c}$, and $\vc{d}$ span a 4-parallelepiped, then the linearity of
+volume is expressed by saying that there is a set of coefficients $\epsilon_{ijkl}$
+such that
+\begin{equation*}
+  V = \epsilon_{ijkl} a^i b^j c^k d^l.
+\end{equation*}
+Notating it this way suggests that we interpret it as abstract index notation, in which case the lack
+of any indices on $V$ means that it is
+not just a Lorentz invariant but also a scalar.\footnote{For the distinction, see
+p.~\pageref{scalar-vs-lorentz-invariant}.} 
+
+\begin{eg}{Halfling coordinates}\label{eg:epsilon-under-rescaling}
+Let $(t,x,y,z)$ be Minkowski coordinates, and let $(t',x',y',z')=(2t,2x,2y,2z)$. Let's consider how each
+of the factors in our volume equation is affected as we do this change of coordinates.
+\begin{equation*}
+  \underbrace{V}_\text{no change} = 
+        \underbrace{\epsilon_{\kappa\lambda\mu\nu}}_{\times1/16}
+        \underbrace{a^\kappa}_{\times2} \underbrace{b^\lambda}_{\times2}
+        \underbrace{c^\mu}_{\times2} \underbrace{d^\nu}_{\times2}
+\end{equation*}
+Since our convention is that $V$ is a scalar, it doesn't change under a change of coordinates.
+This forces us to say that the components of $\epsilon$ change by a factor of 1/16 in this example.
+\end{eg}
+
+The result of example \ref{eg:epsilon-under-rescaling} tells us that under our convention that
+volume is a scalar, the components of $\epsilon$ must change when we change coordinates.
+One could argue that it would be more logical to think of the transformation in this
+example as a change of units, in which case the value of $V$ would be different in the new units;
+this is a possible alternative convention, but it would have the disadvantage of making it impossible
+to read off the transformation properties of an object from the number and position of its indices.
+Under our convention, we can read off the transformation properties in this way. Although section
+\ref{sec:xfn-summary} only presented these properties in the case of tensors of rank 0 and 1,
+deferring the general description of higher-rank tensors to  sec.~\ref{subsec:rank-two},
+p.~\pageref{subsec:rank-two},
+$\epsilon$'s transformation properties are, as implied by its four subscripts, those of a tensor
+of rank 4. Different authors use different conventions regarding the definition of $\epsilon$,
+which was originally described by the mathematician Levi-Civita.
+Since by our convention $\epsilon$ is a tensor, we refer to it as the Levi-Civita tensor.\index{Levi-Civita tensor}
+In other conventions, where $\epsilon$ is not a tensor, it may be referred to as the Levi-Civita symbol.
+
+The Levi-Civita tensor has lots and lots of indices. Scary! Imagine the complexity of this beast. (Sob.)
+We have four choices for the first index, four for the second, and so on, so that the total number
+of components is 256. Wait, don't reach for the kleenex. The following example shows that
+this complexity is illusory.
+
+\begin{eg}{Volume in Minkowski coordinates}\label{eg:minkowski-volume}
+We've set up our definitions so that for the parallelepiped 
+$\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$, $\hat{\vc{z}}$, we have $V=+1$. Therefore
+\begin{equation*}
+  \epsilon_{txyz} = +1
+\end{equation*}
+by definition, and because 4-volume is Lorentz invariant, this holds for \emph{any} set of Minkowski coordinates.
+
+If we interchange $x$ and $y$ to make the list $\hat{\vc{t}}$, $\hat{\vc{y}}$, $\hat{\vc{x}}$, $\hat{\vc{z}}$,
+then as in figure \figref{negative-area}, the volume becomes $-1$, so
+\begin{equation*}
+  \epsilon_{tyxz} = -1.
+\end{equation*}
+
+Suppose we take the edges of our parallelepiped to be $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{x}}$, $\hat{\vc{z}}$,
+with $y$ omitted and $x$ duplicated. These four vectors are not linearly independent, so our parallelepiped is
+degenerate and has zero volume.
+\begin{equation*}
+  \epsilon_{txxz} = 0.
+\end{equation*}
+
+From these examples, we see that once any element of $\epsilon$ has been fixed, all of the others can be
+determined as well. The rule is that interchanging any two indices flips the sign, and any repeated index
+makes the result zero.
+\end{eg}
+
+Example \ref{eg:minkowski-volume} shows that the the fancy symbol $\epsilon_{ijkl}$, which looks
+like a secret Mayan hieroglyph invoking 256 different numbers, actually encodes only \emph{one} number's
+worth of information; every component of the tensor either equals this number, or minus this number, or zero.
+Suppose we're working in some set of coordinates, which may not be Minkowski,
+and we want to find this number. A complicated way to find it would be to use the tensor transformation
+law for a rank-4 tensor (sec.~\ref{subsec:rank-two}, p.~\pageref{subsec:rank-two}). A much simpler way
+is to make use of the determinant of the metric, discussed in example \ref{eg:det-g}
+on p.~\pageref{eg:det-g}. For a list of coordinates $ijkl$ that are sorted out in the order that we
+define to be a positive orientation, the result is simply $\epsilon_{ijkl}=\sqrt{|\operatorname{det} g|}$.
+The absolute value sign is needed because a relativistic metric has a negative determinant.
+
+\begin{eg}{Cartesian coordinates and their halfling versions}
+Consider Euclidean coordinates in the plane, so that the metric is a $2\times2$ matrix, and
+$\epsilon_{ij}$ has only two indices.
+In standard Cartesian coordinates, the metric is
+$g=\operatorname{diag}(1,1)$, which has $\operatorname{det} g=1$. The Levi-Civita tensor therefore
+has $\epsilon_{xy}=+1$, and its other three components are uniquely determined from this one by the
+rules discussed in example \ref{eg:minkowski-volume}. In matrix form, these rules result in
+\begin{equation*}
+  \epsilon =   \left( \begin{matrix}
+         0 & 1 \\
+         -1 & 0
+      \end{matrix} \right).
+\end{equation*}
+
+Now transform to coordinates $(x',y')=(2x,2y)$. In these coordinates, the metric is
+$g'=\operatorname{diag}(1/4,1/4)$, with $\operatorname{det} g=1/16$, so that
+$\epsilon_{x'y'}=1/4$, or in matrix form,
+\begin{equation*}
+  \epsilon' =   \left( \begin{matrix}
+         0 & 1/4 \\
+         -1/4 & 0
+      \end{matrix} \right).
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Polar coordinates}
+In polar coordinates $(r,\theta)$, the metric is $g=\operatorname{diag}(1,r^2)$
+(problem \ref{hw:polar-metric}, p.~\pageref{hw:polar-metric}),
+which has determinant $r^2$. The Levi-Civita tensor is
+\begin{equation*}
+  \epsilon =   \left( \begin{matrix}
+         0 & r \\
+         -r & 0
+      \end{matrix} \right).
+\end{equation*}
+\end{eg}
+
+<% end_sec('orientation') %> 
+<% begin_sec("The 3-volume covector",nil,'three-volume') %>\label{three-vol-covector}
+
+Consider the volume of a three-dimensional subspace of four-dimensional spacetime.
+Linearity leads to an especially simple characterization
+of the 3-volume. Let a 3-volume be defined by the parallelepiped spanned by vectors
+$\vc{a}$, $\vc{b}$, and $\vc{c}$. If we threw in a fourth vector $\vc{d}$, we would have
+a 4-volume, and 4-volume is a scalar. This 4-volume would depend in a linear way on
+all four vectors, and in particular it would depend linearly on $\vc{d}$. But this means
+we have a scalar that is a linear function of a vector, and such a function is
+exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
+$\vc{S}$ according to
+\begin{equation*}
+  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})\eqquad.
+\end{equation*}
+The volume covector collects the information about the volume of the 3-parallelepiped,
+encapsulating it in a convenient form with known transformation properties. In particular,
+the statement and proof of Gauss's theorem in $3+1$ dimensions are greatly simplified
+by the use of this tool (p.~\pageref{covector-used-in-gauss-proof}).
+The 3-volume covector, unlike the affine 3-volume, is defined in
+an absolute sense rather than in relation to some parallelepiped arbitrarily chosen as
+a standard. Both the covector and the affine volume fail to satisfy the ratio-comparison
+property V1 on p.~\pageref{volume-properties}, since we can't compare volumes unless they
+lie in parallel 3-planes.
+<% marg(100) %>
+<%
+  fig(
+    'three-volume-covector',
+    %q{Interpretation of the 3-volume covector.}
+  )
+%>
+<% end_marg %>
+
+We've been visualizing covectors in $n$ dimensions as stacks of $(n-1)$-dimensional planes
+(figure \subfigref{vector-measuring-covector}{2}, p.~\pageref{fig:vector-measuring-covector};
+figure \subfigref{surfer-phase}{2}, p.~\pageref{fig:surfer-phase}). The volume three-vector
+should therefore be visualized as a stack of 3-planes in a four-dimensional space. Since most
+of us can't visualize things very well in four dimensions, figure \figref{three-volume-covector}
+omits one of the dimensions, so that the 3-surfaces appear as two-dimensional planes.
+The small hand \subfigref{three-volume-covector}{1} has a certain 3-volume, and the
+covector that measures it is represented
+by the stack of 3-planes parallel to it, \subfigref{three-volume-covector}{2}.
+The bigger hand \subfigref{three-volume-covector}{3} has twice the 3-volume, and
+its covector is represented by a stack of planes with half the spacing.
 <% begin_sec("Classification of 3-surfaces",nil,'classification-of-surfaces') %>\index{surfaces!classification of}
 A useful application of the 3-volume covector is in classifying 3-surfaces by how they relate to the light cone.
 If I nail together three sticks, all at right angles to one another, then I can consider them as a set of basis vectors
@@ -660,102 +844,8 @@ a surface --- which avoids being absurd because we are really referring to two \
 the covector $__birddualvec(\vc{S})$ and the vector $__birdvec(\vc{S})$.
 
 <% end_sec('classification-of-surfaces') %> 
-<% end_sec('volume') %> 
-<% begin_sec("Orientation",nil,'orientation') %>\index{orientation}
-As shown in figure \figref{negative-area}, linearity of area requires that some areas be assigned negative values.
-If we compare the areas $+1$ and $-1$, we see that the only difference is one of orientation, or handedness.
-In the case to which we have arbitrarily assigned area $+1$, vector $\vc{b}$ lies counterclockwise from
-vector $\vc{a}$, but when $\vc{a}$ is flipped, the relative orientation becomes clockwise.
-<% marg(-300) %>
-<%
-  fig(
-    'negative-area',
-    %q{Linearity of area requires that some areas be assigned negative values.}
-  )
-%>
-<% end_marg %>
 
-If you've had the usual freshman physics background, then you've seen this issue dealt with in a particular
-way, which is that we assume a third dimension to exist, and
-define the area to be the vector cross product $\vc{a}\times\vc{b}$, which is perpendicular
-to the plane inhabited by $\vc{a}$ and $\vc{b}$. The trouble
-with this approach is that it only works in three dimensions.
-In four dimensions, suppose that $\vc{a}$ lies along the $x$ axis, and $\vc{b}$ along the $t$ axis.
-Then if we were to define $\vc{a}\times\vc{b}$, it should be in a direction perpendicular to both
-of these, but we have more than one such direction. We could pick anything in the $y$-$z$ plane.
-
-To get started on this issue in $m$ dimensions, where $m$ does not necessarily equal 3, we can consider
-the $m$-volume of the $m$-dimensional parallelepiped spanned by $m$ vectors. For example, suppose that
-in 4-dimensional spacetime we pick our $m$ vectors to be the unit vectors lying along the four axes
-of the Minkowski coordinates,
-$\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$. From experience with the vector cross
-product, which is anticommutative, we expect that the sign of the result will depend on the order of the vectors,
-so let's take them in that order. Clearly there are only two reasonable values we could imagine for this
-volume: $+1$ or $-1$. The choice is arbitrary, so we make an arbitrary choice. Let's say that it's $+1$ for
-this order. This amounts to choosing an \emph{orientation} for spacetime.
-
-A hidden and nontrivial assumption was that once we made this choice 
-at one point in spacetime, it could be carried over to other regions of spacetime in a consistent way.
-This need not be the case, as suggested in figure \figref{mobius-strip}. However, our topic at the moment
-is special relativity, and as discussed briefly on p.~\pageref{trivial-topology},
-it is usually assumed in special relativity that spacetime is topologically trivial,
-so that this issue arises only in general relativity, and only in  spacetimes that probably
-are not realistic models of our universe.\index{topology}
-<% marg(300) %>
-<%
-  fig(
-    'mobius-strip',
-    %q{A M\"{o}bius strip is not an orientable surface.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'levi-civita-portrait',
-    %q{Tullio Levi-Civita (1873-1941) worked on models of number systems possessing infinitesimals and on differential
-               geometry. He invented the tensor notation, which Einstein learned from his textbook. He was appointed to
-               prestigious endowed chairs at
-               Padua and the University of Rome, but was fired in 1938 because
-               he was a Jew and an anti-fascist.}
-  )
-%>
-<% end_marg %>
-
-Since 4-volume is invariant under rotations and Lorentz transformations, our choice of an orientation
-suffices to fix a definition of 4-volume that is a Lorentz invariant. If vectors 
-$\vc{a}$, $\vc{b}$, $\vc{c}$, and $\vc{d}$ span a 4-parallelepiped, then because of the linearity of
-volume, we expect to be able to express the volume in terms of the vectors using index notation. The
-only possible way to construct such an equation is
-\begin{equation*}
-  V = \epsilon_{ijkl} a^i b^j c^k d^l,
-\end{equation*}
-where $\epsilon_{ijkl}$ is a tensor with four indices. It is known as the Levi-Civita tensor.\index{Levi-Civita tensor}
-
-For Minkowski coordinates $(t,x,y,z)$, the choice of sign made above implies $\epsilon_{txyz}=+1$. 
-Continuing to assume Minkowski coordinates, the other components of the tensor can be found by a simple
-rule involving permutations. If any of the two indices are equal, then the component is zero.
-(This is due to rule V2, p.~\pageref{volume-properties}.) Otherwise, the component equals
-$+1$ or $-1$ depending on whether the indices can be obtained
-from the set $txyz$ by an even or odd number of flips. For example, $\epsilon_{xtyz}=-1$
-and $\epsilon_{xtzy}=1$.
-
-Since $V$, $\vc{a}$, $\vc{b}$, $\vc{c}$, and $\vc{d}$
-are known to be tensors, it follows that $\epsilon$ also transforms as a tensor. Thus if the
-coordinates are not Minkowski, we should be able to find the components of $\epsilon$ by the usual
-transformation rules. It can be shown that this is equivalent to multiplying the components of
-$\epsilon$ by $\sqrt{-g}$, where $g$ is the determinant of the metric.
-\index{Levi-Civita, Tullio}
-
-\begin{eg}{Halfling coordinates}
-Let $t'=2t$, $x'=2x$, and so on, where the unprimed coordinates are Minkowski. In the primed coordinates,
-the metric has the form $\operatorname{diag}(1/4,-1/4,-1/4,-1/4)$, and its determinant is
-$g=-1/256$, so $\sqrt{-g}=1/16$. In the primed coordinates, consider the parallelepiped spanned
-by the unit vectors. The four-volume is $V=\epsilon_{t'x'y'z'}=1/16$. This makes sense because
-this four-dimensional parallelepiped has dimensions that are each half of those of the corresponding
-volume formed by the unit vectoes in Minkowski coordinates.
-\end{eg}
-
-<% end_sec('orientation') %> 
+<% end_sec('three-volume') %> 
 <% end_sec('levi-civita') %> 
 
 
@@ -789,13 +879,24 @@ an angle $\varphi \ne \pi/2$ to one another. Show that the metric in these coord
 <% begin_hw('lightlike-normal-vector') %>
 Let a 3-plane U be defined in Minkowski coordinates by the equation $x=t$.
 Is this plane spacelike, timelike, or lightlike?
-Find a covector $__birddualvec(\vc{S})$ that is normal to U in the sense described in
-section \ref{subsec:classification-of-surfaces}, p.~\pageref{subsec:classification-of-surfaces}, describing it in terms 
+Find a covector $__birddualvec(\vc{S})$ that is normal to U in the sense described on
+p.~\pageref{subsubsec:classification-of-surfaces}, describing it in terms 
 of its components. Compute the vector $__birdvec(\vc{S})$, also in component form.
 Verify that $__birdscalarproduct(\vc{S},\vc{S})=0$.
 Show that $__birdvec(\vc{S})$ is tangent to M.
 <% end_hw %>
 
+<% begin_hw('oblique-lc') %>
+For the oblique Cartesian coordinates defined in problem \ref{hw:oblique-metric},
+use the determinant of the metric to show that the Levi-Civita tensor is
+\begin{equation*}
+  \epsilon =   \left( \begin{matrix}
+         0 & \sin\varphi \\
+         -\sin\varphi & 0
+      \end{matrix} \right).
+\end{equation*}
+
+<% end_hw %>
 
 
 <% end_hw_sec %>

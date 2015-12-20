@@ -135,15 +135,34 @@ the technical condition being
 that each coordinate in each set is a differentiable function of each coordinate in the other
 set. Such a change of coordinates is called a \emph{diffeomorphism}.\index{diffeomorphism}\label{diffeomorphism}
 For example, a uniform scaling of the coordinates $(t,x,y,z)\rightarrow(kt,kx,ky,kz)$, which is
-arguably the same as a change of units,\footnote{The appropriate relativistic way of defining
-a change of units is subject to some ambiguity. See section \ref{sec:tensor-units}, p.~\pageref{sec:tensor-units}.} is all right
+analogous to a change of units,\footnote{The appropriate relativistic way of defining
+a change of units is subject to some ambiguity. 
+See section \ref{sec:tensor-units}, p.~\pageref{sec:tensor-units}.} is all right
 as long as $k$ is nonzero. A quantity that stays the same under any diffeomorphism is called
 a \emph{scalar}.\index{scalar}
 Since a Lorentz transformation is a diffeomorphism,
 every scalar is a Lorentz invariant. Not every Lorentz invariant
-is a scalar. For example, spacetime volume is Lorentz invariant (p.~\pageref{sec:area-is-scalar}),
-but under the change of units described above, spacetime volume doesn't stay the 
-same.\index{scalar!compared to Lorentz invariant}\index{invariant!compared to scalar}
+is a scalar.\index{scalar!compared to Lorentz invariant}\index{invariant!compared to scalar}
+\label{scalar-vs-lorentz-invariant}
+
+\begin{eg}{The determinant of the metric}\label{eg:det-g}
+Minkowski coordinates can be defined as coordinates in which the metric has the standard
+form $g=\operatorname{diag}(1,-1,-1,-1)$. If we rescale these coordinates according to
+$(t,x,y,z)\rightarrow(kt,kx,ky,kz)$, then the metric changes according to
+$g\rightarrow k^{-2}g$. To keep track of how ``un-Minkowski'' this scaling is, we could
+use the determinant of the metric $\operatorname{det}(g)=-k^{-8}$. This determinant
+tells us how many coordinate-grid boxes fit in a unit volume, and it is of interest in
+a more general context than this example of uniform rescaling, e.g., it serves a similar
+function when converting from Cartesian coordinates to polar coordinates.
+
+Under a Lorentz transformation or a rotation, the metric retains its standard form,
+and therefore $\operatorname{det}(g)$ is Lorentz invariant. 
+Another way of seeing this is that spacetime volume is Lorentz invariant (p.~\pageref{sec:area-is-scalar}),
+so that a Lorentz transformation doesn't change how many coordinate-grid boxes fit in a unit volume.
+
+But although $\operatorname{det}(g)$ is a Lorentz invariant, it is not a
+scalar, because it changes under the transformation described above.
+\end{eg}
 
 In birdtracks notation, any expression that has no external arrows at all represents a scalar. Since the
 expression $__birdscalarproduct(c,e)=24$ has no external arrows, only internal ones, it represents
