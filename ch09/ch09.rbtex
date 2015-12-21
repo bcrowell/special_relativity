@@ -685,7 +685,7 @@ of the cloud can never be transported at a speed greater than $c$ in any frame.
 
 <% end_sec('stress-energy') %>
 
-<% begin_sec("Gauss's theorem",nil,'gauss') %>
+<% begin_sec("Gauss's theorem",nil,'gauss') %>\index{Gauss's theorem}
 <% begin_sec("Integral conservation laws",nil,'integrated-conservation') %>
 We've expressed conservation of charge and energy-momentum in terms of zero divergences,
 \begin{align*}

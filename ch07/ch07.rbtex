@@ -650,6 +650,8 @@ of rank 4. Different authors use different conventions regarding the definition 
 which was originally described by the mathematician Levi-Civita.
 Since by our convention $\epsilon$ is a tensor, we refer to it as the Levi-Civita tensor.\index{Levi-Civita tensor}
 In other conventions, where $\epsilon$ is not a tensor, it may be referred to as the Levi-Civita symbol.
+Since the notation is not standardized, I will occasionally put a reminder next to important equations
+containing $\epsilon$ stating that this is the tensorial $\epsilon$.
 
 The Levi-Civita tensor has lots and lots of indices. Scary! Imagine the complexity of this beast. (Sob.)
 We have four choices for the first index, four for the second, and so on, so that the total number
@@ -693,13 +695,14 @@ on p.~\pageref{eg:det-g}. For a list of coordinates $ijkl$ that are sorted out i
 define to be a positive orientation, the result is simply $\epsilon_{ijkl}=\sqrt{|\operatorname{det} g|}$.
 The absolute value sign is needed because a relativistic metric has a negative determinant.
 
-\begin{eg}{Cartesian coordinates and their halfling versions}
+\begin{eg}{Cartesian coordinates and their halfling versions}\label{eg:lc-cartesian-and-halfling}
 Consider Euclidean coordinates in the plane, so that the metric is a $2\times2$ matrix, and
 $\epsilon_{ij}$ has only two indices.
 In standard Cartesian coordinates, the metric is
 $g=\operatorname{diag}(1,1)$, which has $\operatorname{det} g=1$. The Levi-Civita tensor therefore
 has $\epsilon_{xy}=+1$, and its other three components are uniquely determined from this one by the
-rules discussed in example \ref{eg:minkowski-volume}. In matrix form, these rules result in
+rules discussed in example \ref{eg:minkowski-volume}. (We could have flipped all the signs if we
+had wanted to choose the opposite orientation for the plane.) In matrix form, these rules result in
 \begin{equation*}
   \epsilon =   \left( \begin{matrix}
          0 & 1 \\
@@ -718,7 +721,7 @@ $\epsilon_{x'y'}=1/4$, or in matrix form,
 \end{equation*}
 \end{eg}
 
-\begin{eg}{Polar coordinates}
+\begin{eg}{Polar coordinates}\label{eg:lc-polar}
 In polar coordinates $(r,\theta)$, the metric is $g=\operatorname{diag}(1,r^2)$
 (problem \ref{hw:polar-metric}, p.~\pageref{hw:polar-metric}),
 which has determinant $r^2$. The Levi-Civita tensor is
@@ -726,8 +729,25 @@ which has determinant $r^2$. The Levi-Civita tensor is
   \epsilon =   \left( \begin{matrix}
          0 & r \\
          -r & 0
-      \end{matrix} \right).
+      \end{matrix} \right)
 \end{equation*}
+(taking the same orientation as in example \ref{eg:lc-cartesian-and-halfling}).
+\end{eg}
+
+\begin{eg}{Area of a circle}\label{eg:area-of-circle}
+Let's find the area of the unit circle.
+Its (signed) area is
+\begin{equation*}
+  A = \int \text{2-volume}(\der\vc{r},\der\vc{\btheta}),
+\end{equation*}
+where the order of $\der\vc{r}$ and $\der\vc{\theta}$ is chosen so that, with the
+orientation we've been using for the plane, the result will come out positive.
+Using the definition of the Levi-Civita tensor, we have
+\begin{align*}
+  A &= \int \epsilon_{r\theta}\der x^r\der x^\theta \\
+    &= \int_{r=0}^1 \int_{\theta=0}^{2\pi} r \der r \der\theta \qquad \text{[example \ref{eg:lc-polar}]}\\
+    &= \pi
+\end{align*} 
 \end{eg}
 
 <% end_sec('orientation') %> 
@@ -743,7 +763,11 @@ we have a scalar that is a linear function of a vector, and such a function is
 exactly what we mean by a covector. We can therefore define a volume covector\index{volume!3-volume covector}
 $\vc{S}$ according to
 \begin{equation*}
-  S_i d^i = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})\eqquad.
+  S_l d^l = \operatorname{4-volume}(\vc{a},\vc{b},\vc{c},\vc{d})
+\end{equation*}
+or
+\begin{equation*}
+  S_l = \epsilon_{ijkl}a^i b^j c^k. \qquad \text{[tensorial $\epsilon$]}
 \end{equation*}
 The volume covector collects the information about the volume of the 3-parallelepiped,
 encapsulating it in a convenient form with known transformation properties. In particular,
@@ -774,6 +798,27 @@ covector that measures it is represented
 by the stack of 3-planes parallel to it, \subfigref{three-volume-covector}{2}.
 The bigger hand \subfigref{three-volume-covector}{3} has twice the 3-volume, and
 its covector is represented by a stack of planes with half the spacing.
+
+If we step down from four dimensions to three, then the volume covector formed by
+vectors $\vc{u}$ and $\vc{v}$ becomes the vector cross product $\vc{S}=\vc{u}\times\vc{v}$,
+i.e., $S_k=\epsilon_{ijk} u^i v^j$.
+
+\begin{eg}{A vector cross product}
+Consider Euclidean 3-space in Cartesian coordinates. We know from freshman physics that
+\begin{equation*}
+  \hat{\vc{z}} = \hat{\vc{x}}\times\hat{\vc{y}}.
+\end{equation*}
+Reexpressing this in the notation above, we have $u^x=1$, $v^y=1$, and zero for all the other components of
+$\vc{u}$ and $\vc{v}$. Since the Levi-Civita tensor vanishes if we have any duplicated indices, its only
+nonvanishing component that can be relevant here is $\epsilon_{xyz}=1$. (Here we assume the standard
+right-handed orientation for Cartesian coordinates, and we make use of the fact that
+$g=\operatorname{diag}(1,1,1)$, so that $\operatorname{det}g=1$.) The result is
+\begin{equation*}
+  S_z=\epsilon_{xyz} u^x v^x = 1,
+\end{equation*}
+as expected. (It doesn't matter here whether we talk about $S_z$ or $S^z$, because with this metric,
+raising and lowering indices doesn't change the components of a vector.)
+\end{eg}
 <% begin_sec("Classification of 3-surfaces",nil,'classification-of-surfaces') %>\index{surfaces!classification of}
 A useful application of the 3-volume covector is in classifying 3-surfaces by how they relate to the light cone.
 If I nail together three sticks, all at right angles to one another, then I can consider them as a set of basis vectors
@@ -896,6 +941,11 @@ use the determinant of the metric to show that the Levi-Civita tensor is
       \end{matrix} \right).
 \end{equation*}
 
+<% end_hw %>
+
+<% begin_hw('volume-of-sphere') %>
+Use the technique demonstrated in example \ref{eg:area-of-circle},
+p.~\pageref{eg:area-of-circle}, to find the volume of the unit sphere.
 <% end_hw %>
 
 
