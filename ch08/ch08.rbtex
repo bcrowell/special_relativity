@@ -200,9 +200,218 @@ the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape
 
 <% end_sec('rotating-frames') %>
 
-<% begin_sec("Boosts and rotations",nil,'noncommutative') %>
-A relative of mine fell in love. She and her boyfriend bought a house in the suburbs and started trying to
-have a baby. They think they'll get married at some later point. An engineer by training, she says she
+<% begin_sec("Angular momentum",nil,'ang-mom') %>
+Nonrelativistically, the angular momentum of a particle with momentum $\vc{p}$, at a position
+$\vc{r}$ relative to some arbitrarily fixed point, is $\vc{L}=\vc{r}\times\vc{p}$. When we
+generalize this equation to relativity, we run into a number of issues. Issues due to special
+relativity:
+\begin{enumerate}
+  \item The vector cross product only makes sense in three dimensions, so it
+                     is not well defined in special relativity 
+                     (sec.~\ref{subsec:orientation}, p.~\pageref{no-rel-cross-product}).
+  \item Assuming we get around issue number 1, how do we know that this quantity is conserved?
+\end{enumerate}
+And from general relativity:
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item In general relativity, only infinitesimally small spatial or spacetime displacements $\der\vc{r}$ can be treated
+            as vectors. Larger ones cannot. This is because spacetime can be curved, and vectors can't be used to
+            define displacements on a curved space (e.g., the surface of the earth).
+  \item If space has a nontrivial topology, then we may not be able to define an orientation
+            (sec.~\ref{subsec:orientation}, p.~\pageref{spacetime-not-orientable}).
+\end{enumerate}
+For points 3 and 4, we refer to Hawking and Ellis, p.~62.
+For number 2 we will need the stress-energy tensor, which will be described in ch.~\ref{ch:flux}.
+Lest you feel totally cheated, we will resolve issue number 1 in section \ref{subsec:l-tensor},
+p.~\pageref{subsec:l-tensor}, but before we do
+that, let's consider an interesting example that can be handled with simpler math.
+<% begin_sec("The relativistic Bohr model",nil,'rel-bohr') %>
+If we want to see an interesting real-world example of relativistic angular momentum, we need something
+that rotates at relativistic velocities. At large scales we have astrophysical examples such as neutron
+stars and the accretion disks of black holes, but these involve gravity and would therefore require
+general relativity. At microscopic scales we have systems such as hadrons, nuclei, atoms, and molecules.
+These are quantum-mechanical, and relativistic quantum mechanics is a difficult topic that is beyond the
+scope of this book, but we can sidestep that issue by using the Bohr model of the atom. In the Bohr model
+of hydrogen, we assume that the electron has a circular orbit governed by Newton's laws,
+does not radiate, and has its angular
+momentum quantized in units of $\hbar$. Let's generalize the Bohr model by applying relativity.
+
+It will be convenient to define the constant $\alpha=ke^2/\hbar$,
+known as the fine structure constant,\index{fine structure constant}
+where $k$ is the Coulomb constant and $e$ is the fundamental charge.
+The fine structure constant is unitless and is approximately 1/137. It is essentially a measure of the strength
+of the electromagnetic interaction, and in the Bohr model it also turns out to be the velocity of the electron
+(in units of $c$) in the ground state of hydrogen. Because this velocity is small compared to 1, we
+expect relativistic corrections in hydrogen to be small --- of relative size $\alpha^2$. But we have
+an interesting opportunity to get at some additional and more exciting physics if we consider
+a \emph{hydrogenlike} atom, i.e., an ion with $Z$ protons in the nucleus and only one electron.
+Raising $Z$ cranks up the energy scale and therefore increases the velocity as well.
+
+Combining the Coulomb force law with the result of example \ref{eg:force-in-circular-motion},
+p.~\pageref{eg:force-in-circular-motion}, for uniform circular motion,
+we have $kZe^2/r=m\gamma v^2$, where the factor of $\gamma$ is
+the relativistic correction. The electron's momentum is perpendicular to the radius vector, so
+we assume for the moment that (as turns out to be true), the angular momentum is
+given by $L=rp=mv\gamma r$, where again a relativistic correction factor of $\gamma$ appears.
+This is quantized, so let $L=\ell\hbar$, where $\ell$ is an integer. Solving these equations gives
+\begin{align*}
+  v &= \frac{Z\alpha}{\ell} \\
+  r &= \frac{\ell^2\hbar}{mZ\alpha\gamma}.
+\end{align*}
+These differ from the nonrelativistic versions only by the factor of $\gamma$ in the second
+equation. The electrical energy is $U=-kZe^2/r$, and the kinetic energy $K=m(\gamma-1)$ (with $c=1$).
+We will find it convenient to work with the (positive) binding energy in units of the mass of
+the electron. Call this quantity $\mathcal{E}$. After some algebra, the result is
+\begin{equation*}
+  \mathcal{E} = 1-\sqrt{1-v^2}.
+\end{equation*}
+Surprisingly, this is also the exact result given by relativistic quantum mechanics if we solve
+the Dirac equation for the ground state, or if we take a high-energy (nearly unbound) state with the maximum
+value of $\ell$, as is appropriate for a semiclassical circular orbit. So we can see that even
+though our quantum mechanics was crude, our relativity makes some sense and gives reasonable results.
+For small $Z$, a Taylor series approximation gives $\mathcal{E}=v^2/2+v^4/8+\ldots$, where the
+fourth-order term represents the relativistic correction.
+
+So far so good, but now what if we crank up the value of $Z$ to make the relativistic effects
+strong? A very disturbing thing happens when we make $Z\gtrsim 137\approx 1/\alpha$. In the
+ground state we get $v>1$ and a
+complex number for $\mathcal{E}$. Clearly something has broken down, and our results no longer make sense.
+We might be inclined to dismiss this as a consequence of our crude model, but remember, our calculations
+happened to give the same result as the Dirac equation, which has real relativistic quantum mechanics baked
+in. We should take this breakdown as evidence of a real \emph{physical} breakdown. 
+The interpretation is as follows.
+
+According to quantum mechanics, the vacuum isn't really a vacuum.
+Particle-antiparticle pairs are continually popping into
+existence in empty space and then reannihilating one another.
+Their temporary creation is a violation of the conservation of mass-energy, but only a temporary violation,
+and this is allowed by the time-energy form of the Heisenberg uncertainty principle, $\Delta E\Delta t\gtrsim h$,
+as long as $\Delta t$ is short. It's as though we steal some money, but the police don't catch us as long as we
+put it back before anyone can notice.
+Because these particles are only temporarily in our universe, we call them virtual particles,
+as opposed to real particles that have a potentially
+permanent existence and can be detected as blips on a Geiger counter.
+
+But when the vacuum contains an electric field 
+that is beyond a certain critical strength, it becomes possible to create an electron-antielectron pair,
+let the opposite charges separate and release energy, and pay off the energy debt without having to reannihilate
+the particles. This is known as ``sparking the vacuum.'' As of this writing, only nuclei with $Z$ up to about
+118 have been discovered, and in any case the critical $Z$ value of $1/\alpha\approx137$ was only a rough estimate.
+But by colliding heavy nuclei such as lead, one can at least temporarily form an unstable compound system with
+a high $Z$, and attempts are being made to search for the predicted effect in the laboratory.
+<% end_sec('rel-bohr') %>
+
+<% begin_sec("The angular momentum tensor",nil,'l-tensor') %>
+As mentioned previously, there is no such thing as a vector cross product in four dimensions, so
+the nonrelativistic definition of angular momentum as $\vc{L}=\vc{r}\times\vc{p}$ needs to be modified
+to be usable in relativity.
+
+Given a position vector $r^a$ and a momentum vector $p^b$, we expect based both on units and the correspondence
+principle that a relativistic definition of angular momentum must be some kind of a product of the vectors.
+Based on the rules of index notation, we don't have much leeway here. The only products we can form are
+$r^a p^b$, which is a rank-2 tensor, or $r^a p_a$, a scalar. Since nonrelativistic angular momentum is a three-vector,
+the correspondence principle tells us that its relativistic incarnation can't be a scalar --- there simply
+wouldn't be enough information in a scalar to tell us the things that the nonrelativistic angular momentum vector
+tells us: what axis the rotation is about, and which direction the rotation is.
+
+The tensor $r^a p^b$ also has a problem, but one that can be fixed. Suppose that in a certain frame of
+reference a particle of mass $m\ne0$ is at rest at the origin. Then its position four-vector at time $t$ is $(t,0,0,0)$,
+and its energy-momentum vector is $(m,0,0,0)$. These vectors are parallel.
+The tensor $r^a p^b$ is nonzero and nonconserved as time flows,
+but clearly we want the angular momentum of an isolated particle to be conserved.
+Another example would be if, at a certain moment in time, we had $r=(0,x,0,0)$ and $p=(E,p,0,0)$, with 
+both $x$ and $p$ positive.
+This particle's motion is directly away from the origin, so its angular momentum should be zero by symmetry,
+but $r^a p^b$ is again nonzero.
+
+The way to fix the problem is to force the product of the position and momentum vectors to be an antisymmetric
+tensor:
+\begin{equation*}
+  L^{ab} = r^a p^b - r^b p^a.
+\end{equation*}
+Antisymmetric means that $L^{ab}=-L^{ba}$, so that elements on opposite sides of the main diagonal
+are the same except for opposite signs.
+A quick check shows that this gives the expected zero result in both of the above examples.
+A component such as $L^{yz}$ measures the amount of rotation in the $y$-$z$ plane. In a nonrelativistic
+context, we would have described this as an $x$ component $L_x$ of the angular momentum three-vector,
+because a rotation of the $y$-$z$ plane about the origin
+is a rotation \emph{about} the $x$ axis --- such a rotation
+keeps the $x$ axis fixed. But in four-dimensional spacetime, a rotation in the $y$-$z$ plane keeps the entire
+$t$-$x$ plane fixed, so the notion of rotation ``about an axis'' breaks down. (Notice the pattern: in
+two dimensions we rotate about a point, in three dimensions rotation is about a line, and in four dimensions
+we rotate about a fixed plane.)
+
+If we lay the angular momentum tensor out in matrix format, it looks like this:
+\begin{equation*}
+  \left( \begin{matrix}
+         0 & L^{tx} & L^{ty} & L^{tz} \\
+           & 0      & L^{xy} & L^{xz} \\
+           &        & 0      & L^{yz} \\
+           &        &        & 0
+      \end{matrix} \right).
+\end{equation*}
+The zeroes on the main diagonal are due to the antisymmetrization in the definition.
+I've left blanks below the main diagonal because although those components can be
+nonzero, they only contain a (negated) copy of the information given by the ones
+above the diagonal. We can see that there are really only 6 pieces of information
+in this $4\times 4$ matrix, and we've already physically interpreted the triangular cluster
+of three space-space components on the bottom right.
+
+Why do we have the row on the top, consisting of the time-space components, and what
+do they mean physically? A highbrow answer would be that this is something very deep
+having to do with the fact that, as described in section \ref{sec:noncommutative} below,
+rotation and linear motion are not as cleanly separated in relativity as they are in
+nonrelativistic physics. A more straightforward answer is that in most situations these
+components are actually not very interesting. Consider a cloud of particles labeled
+$i=1$ through $n$. Then for a representative component from the top row we have
+the total value
+\begin{equation*}
+  L^{tx} = \sum t_i p^x_i - \sum x_i E_i.
+\end{equation*}
+Now suppose that we fix a certain surface of simultaneity at time $t$. The sum becomes
+\begin{equation*}
+  L^{tx} = t \sum p^x_i - \sum x_i E_i.
+\end{equation*}
+There is information here, but it's not exciting information about angular momentum,
+it's boring information about the position and motion of the system's center of mass.
+If we fix a frame of reference in which the total momentum is zero, i.e., the center
+of mass frame, then we have $\sum p^x_i=0$. Let's also define the position of the
+center of mass as the average position weighted by mass-energy, rather than the mass-weighted
+average, as we would do in Newtonian mechanics. Then the sum $\sum x_i E_i$ is a constant
+relating to the position of the center of mass, and if we like we can make it equal zero
+by choosing the origin of our spatial coordinates to coincide with the center of mass.
+
+With these choices we have a much simpler angular momentum tensor:
+\begin{equation*}
+  \left( \begin{matrix}
+         0 & 0      & 0      & 0      \\
+           & 0      & L^{xy} & L^{xz} \\
+           &        & 0      & L^{yz} \\
+           &        &        & 0
+      \end{matrix} \right).
+\end{equation*}
+
+If we wish, we can sprinkle some notational sugar on top of all of this using
+the Levi-Civita tensor $\epsilon$ described in
+optional section \ref{sec:levi-civita}, p.~\pageref{sec:levi-civita}.
+Let's define a new tensor ${}^\star L$ according to
+\begin{equation*}
+  {}^\star L_{ij} = \epsilon_{ijkl} L^{kl}.
+\end{equation*}
+Then for an observer with velocity vector $o^i$, the quantity
+$o_i{}^\star L^{ij}$ has the form $(\ldots,L^{yz},L^{zx},L^{xy})$
+(problem \ref{hw:ang-mom-hodge}, p.~\pageref{hw:ang-mom-hodge}).\label{ang-mom-hodge}
+That is, its spatial components,
+as measured by the center-of-mass observer,
+are exactly the quantities we would have expected for the nonrelativistic angular
+momentum three-vector (using the correct relativistic momentum).
+<% end_sec('l-tensor') %>
+
+<% end_sec('ang-mom') %>
+
+<% begin_sec("Boosts and rotations",4,'noncommutative') %>
+A relative of mine fell in love. She and her boyfriend bought a house in the suburbs and had a baby.
+They think they'll get married at some later point. An engineer by training, she says she
 doesn't want to get hung up on the ``order of operations.'' For some mathematical operations,
 the order doesn't matter: $5+7$ is the same as $7+5$.
 
@@ -324,8 +533,8 @@ An atom is such a system.
 The Bohr model,\index{Bohr model} introduced in 1913, marked the first quantitatively successful, if
 conceptually muddled, description of the atomic energy levels of hydrogen. Continuing to take $c=1$,
 the over-all scale of the energies was calculated to be proportional to $m\alpha^2$, where $m$ is the mass of the
-electron, and $\alpha=ke^2/\hbar\approx1/137$, known as the fine structure constant,\index{fine structure constant}
-is essentially just a unitless way of expressing the coupling constant for electrical forces.
+electron, and $\alpha$ is the fine structure constant,
+defined earlier.
 At higher resolution, each excited energy level is found to be split into several sub-levels. The transitions among
 these close-lying states are in the millimeter region of the microwave spectrum. The energy scale of this fine structure is
 $\sim m\alpha^4$. This is down by a factor of $\alpha^2$ compared to the visible-light transitions,
@@ -384,6 +593,22 @@ relative phase of the two beams was expected to shift due to the Sagnac effect, 
 compare with the experimentally measured result of $0.230\pm0.005$ cycles.
 <% end_hw %>
 % calc -xe "x=(2010 ft->m); y=(1113 ft->m)"
+
+<% begin_hw('rhic-ang-mom') %>
+The relativistic heavy ion collider RHIC collides counter-rotating
+beams of gold nuclei at 9 GeV/nucleon.
+If a gold nucleus is approximately a sphere with radius $6\times 10^{-15}\ \munit$,
+find the maximum angular momentum, in units of $\hbar$,
+about the center of mass for a sideswiping collision. Answer: $\sim 10^5$.
+% calc -xe "A=197; KE=(9 10^9)(e)(1 V)*A; mn=1.67 10^-27 kg; m=Amn; E=mc^2+KE; p=sqrt(E^2-m^2c^4)/c->kg.m/s; r=6 10^-15 m; 2rp/hbar"
+%     1.1851382831003*10^5
+% https://books.google.com/books?id=huWqnD0MbiIC&lpg=PA197&ots=pUg86wxBYA&dq=%22relativistic%20heavy%20ion%22%20%22angular%20momentum%22&pg=PA197#v=onepage&q=%22relativistic%20heavy%20ion%22%20%22angular%20momentum%22&f=false
+<% end_hw %>
+
+<% begin_hw('ang-mom-hodge') %>
+Show, as claimed on p.~\pageref{ang-mom-hodge}, that the time-space
+components of the tensor ${}^\star L$ equal the angular momentum three-vector.
+<% end_hw %>
 
 <% end_hw_sec %>
 

@@ -564,7 +564,7 @@ vector $\vc{a}$, but when $\vc{a}$ is flipped, the relative orientation becomes 
 <% end_marg %>
 
 If you've had the usual freshman physics background, then you've seen this issue dealt with in a particular
-way, which is that we assume a third dimension to exist, and
+way, which is that we assume a third dimension to exist, and\label{no-rel-cross-product}
 define the area to be the vector cross product $\vc{a}\times\vc{b}$, which is perpendicular
 to the plane inhabited by $\vc{a}$ and $\vc{b}$. The trouble
 with this approach is that it only works in three dimensions.
@@ -582,7 +582,7 @@ so let's take them in that order. Clearly there are only two reasonable values w
 volume: $+1$ or $-1$. The choice is arbitrary, so we make an arbitrary choice. Let's say that it's $+1$ for
 this order. This amounts to choosing an \emph{orientation} for spacetime.
 
-A hidden and nontrivial assumption was that once we made this choice 
+A hidden and nontrivial assumption was that once we made this choice\label{spacetime-not-orientable}
 at one point in spacetime, it could be carried over to other regions of spacetime in a consistent way.
 This need not be the case, as suggested in figure \figref{mobius-strip}. However, our topic at the moment
 is special relativity, and as discussed briefly on p.~\pageref{trivial-topology},
