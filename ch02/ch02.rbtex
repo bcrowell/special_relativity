@@ -149,9 +149,9 @@ When I walk from the living room to the kitchen while carrying a mechanical gyro
 parallel-transporting the spacelike vector indicated by the direction of its axis.
 Figure \figref{schild-ladder} shows that parallel transport can also be defined for timelike vectors,
 and that parallel transport can be defined in spacetime using only inertial motion,
-clocks, and intersection of world-lines. Observers aboard the two spaceships exchange clocks in order
+clocks, and intersection of world-lines. Observers aboard the two spaceships use clocks in order
 to verify the parallelism of their world-lines (vectors AB and CD, which have equal lengths as measured
-by the proper time elapsed aboard the ships). The observers shoot the clocks across the space between them, and
+by the proper time elapsed aboard the ships). Observer AB shoots clocks to observer CD, and
 the clocks are set up so that when they pass by one another, they automatically record one another's readings.
 The vectors are parallel if the record later reveals AD and BC intersected at their midpoints, as measured
 by the proper times recorded on the clocks.

@@ -396,13 +396,12 @@ the Levi-Civita tensor $\epsilon$ described in
 optional section \ref{sec:levi-civita}, p.~\pageref{sec:levi-civita}.
 Let's define a new tensor ${}^\star L$ according to
 \begin{equation*}
-  {}^\star L_{ij} = \epsilon_{ijkl} L^{kl}.
+  {}^\star L_{ij} = \frac{1}{2}\epsilon_{ijkl} L^{kl}.
 \end{equation*}
-Then for an observer with velocity vector $o^i$, the quantity
-$o_i{}^\star L^{ij}$ has the form $(\ldots,L^{yz},L^{zx},L^{xy})$
+Then for an observer with velocity vector $o^\mu$, the quantity
+$o_\mu{}^\star L^{\mu\nu}$ has the form $(0,L^{yz},L^{zx},L^{xy})$
 (problem \ref{hw:ang-mom-hodge}, p.~\pageref{hw:ang-mom-hodge}).\label{ang-mom-hodge}
-That is, its spatial components,
-as measured by the center-of-mass observer,
+That is, its spatial components
 are exactly the quantities we would have expected for the nonrelativistic angular
 momentum three-vector (using the correct relativistic momentum).
 <% end_sec('l-tensor') %>
