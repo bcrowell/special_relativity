@@ -675,7 +675,14 @@ $C=\omega^4-\alpha^2 k^2$ (figure \figref{dispersion})
 and $\alpha$ is a constant with units of acceleration, relating
 to the acceleration of gravity. (Since the water is infinitely deep, there is no other scale that
 could enter into the constraint.)
-<% marg(30) %>
+
+Now if a certain bump on the envelope with which the
+wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
+the wave has near the bump are observed to be the same at P and Q. In general,
+$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
+so the spacetime displacement $__birdvec(\vc{r})$ from P to Q must satisfy
+the condition $__birdscalarproduct((\nabla \bomega),\vc{r})=0$.
+<% marg(300) %>
 <%
   fig(
     'dispersion',
@@ -685,13 +692,6 @@ could enter into the constraint.)
   )
 %>
 <% end_marg %>
-
-Now if a certain bump on the envelope with which the
-wave is modulated visits spacetime events P and Q, then whatever frequency and wavelength
-the wave has near the bump are observed to be the same at P and Q. In general,
-$k$ and $\omega$ are constant along the spacetime displacement of any point on the envelope,
-so the spacetime displacement $__birdvec(\vc{r})$ from P to Q must satisfy
-the condition $__birdscalarproduct((\nabla \bomega),\vc{r})=0$.
 
 In addition, $\nabla \bomega$ must be tangent to the surface of constraint $C=0$, so that the wave always
 obeys the constraint. Thus given a point $__birddualvec(\bomega)$ in frequency space, the direction of propagation
