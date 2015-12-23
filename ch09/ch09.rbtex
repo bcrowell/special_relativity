@@ -953,7 +953,36 @@ so the integrated energy-momentum $\vc{p}$ transforms as a four-vector.
 
 <% end_sec('p-vector') %>
 
+<% begin_sec("Angular momentum",nil,'cons-ang-mom') %>\index{angular momentum!conservation of}
+In sec.~\ref{subsec:l-tensor}, p.~\pageref{subsec:l-tensor}, we gave physical and mathematical
+plausibility arguments for defining relativistic angular momentum as $L^{ab}=r^a p^b - r^b p^a$.
+We can now show that this quantity is actually conserved. Just as the flux of energy-momentum $p^a$
+is the stress-energy tensor $T^{ab}$, we can take the angular momentum $L^{ab}$ and
+define its flux $\lambda^{abc}=r^aT^{bc}-r^bT^{ac}$. An observer with velocity vector $o^c$
+says that the density of energy-momentum is
+$T^{ac}o_c$ and the density of angular momentum is $\lambda^{abc}o_c$. If we can show that the
+divergence of $\lambda$ with respect to its third index is zero,
+then it follows that angular momentum is conserved. The divergence is
+\begin{equation*}
+  \frac{\partial \lambda^{abc}}{\partial x^c} = \frac{\partial}{\partial x^c}\left(r^aT^{bc}-r^bT^{ac}\right).
+\end{equation*}
+The product rule gives
+\begin{equation*}
+  \frac{\partial \lambda^{abc}}{\partial x^c} = \delta^a_cT^{bc}+r^a\frac{\partial}{\partial x^c}T^{bc}
+                -\delta^b_cT^{ac}-r^b\frac{\partial}{\partial x^c}T^{ac},
+\end{equation*}
+where $\delta^i_j$, called the Kronecker delta, is defined as 1 if $i=j$ and 0 if $i\ne j$.
+The divergence of the stress-energy tensor is zero, so the second and fourth terms vanish,
+and
+\begin{align*}
+  \frac{\partial \lambda^{abc}}{\partial x^c} &= \delta^a_cT^{bc} -\delta^b_cT^{ac} \\
+                                              &= T^{ba}-T^{ab},
+\end{align*}
+but this is zero because the stress-energy tensor is symmetric.
+<% end_sec('cons-ang-mom') %>
+
 <% end_sec('gauss') %>
+
 
 <% begin_sec("The covariant derivative",nil,'covariant-derivative',{'optional'=>true}) %>\index{covariant derivative}\index{derivative!covariant}\index{covariant derivative!in relativity}\index{derivative!covariant!in relativity}
 
@@ -976,14 +1005,6 @@ even though we're leaving out the upper index.)
 If $v$ is constant, its derivative $\der v/\der x$, computed in the ordinary way without any correction term, is zero.
 If we further assume that the metric is simply the constant $g=1$, then zero is
 not just the answer but the right answer.
-<% marg(50) %>
-<%
-  fig(
-    'varying-ruler-spacing',
-    %q{These three rulers represent three choices of coordinates.}
-  )
-%>
-<% end_marg %>
 
 Now suppose we transform into a new coordinate system $X$, and
 the metric $G$, expressed in this coordinate system, is not constant.
@@ -991,6 +1012,14 @@ Applying the tensor
 transformation law, we have $V =  v \der X/\der x$, and differentiation
 with respect to $X$ will not give zero, because the factor $\der X/\der x$ isn't constant. This is the wrong answer:
 $V$ isn't really varying, it just appears to vary because $G$ does.
+<% marg(300) %>
+<%
+  fig(
+    'varying-ruler-spacing',
+    %q{These three rulers represent three choices of coordinates.}
+  )
+%>
+<% end_marg %>
 
 We want to add a correction term onto the derivative operator $\der/\der X$, forming a
 new derivative operator $\nabla_X$
@@ -1503,8 +1532,6 @@ three spatial dimensions, the fractional rate of change of volume is
 $\Theta=(1/V)\der V/\der \tau=3H_\zu{o}$. (In this example, spacetime is not flat, so
 we would have to express $\Theta$ in terms of the covariant derivative $\nabla_a$
 defined in section \ref{sec:covariant-derivative}, not the partial derivative $\partial_a$.)
-
-\pagebreak
 
 \begin{eg}{A catastrophe}\label{eg:catastrophe}
 Consider the timelike congruence in $1+1$ dimensions defined by $u=x/t$. This consists of the set of all inertial

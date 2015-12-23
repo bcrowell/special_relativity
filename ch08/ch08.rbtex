@@ -200,7 +200,7 @@ the satellites via relays at Kwajalein, Ascension Island, Diego Garcia, and Cape
 
 <% end_sec('rotating-frames') %>
 
-<% begin_sec("Angular momentum",nil,'ang-mom') %>
+<% begin_sec("Angular momentum",nil,'ang-mom') %>\index{angular momentum}
 Nonrelativistically, the angular momentum of a particle with momentum $\vc{p}$, at a position
 $\vc{r}$ relative to some arbitrarily fixed point, is $\vc{L}=\vc{r}\times\vc{p}$. When we
 generalize this equation to relativity, we run into a number of issues. Issues due to special
@@ -221,6 +221,7 @@ And from general relativity:
             (sec.~\ref{subsec:orientation}, p.~\pageref{spacetime-not-orientable}).
 \end{enumerate}
 For points 3 and 4, we refer to Hawking and Ellis, p.~62.
+Number 2 is addressed in sec.~\ref{subsec:cons-ang-mom}, p.~\pageref{subsec:cons-ang-mom}.
 For number 2 we will need the stress-energy tensor, which will be described in ch.~\ref{ch:flux}.
 Lest you feel totally cheated, we will resolve issue number 1 in section \ref{subsec:l-tensor},
 p.~\pageref{subsec:l-tensor}, but before we do
@@ -339,7 +340,8 @@ is a rotation \emph{about} the $x$ axis --- such a rotation
 keeps the $x$ axis fixed. But in four-dimensional spacetime, a rotation in the $y$-$z$ plane keeps the entire
 $t$-$x$ plane fixed, so the notion of rotation ``about an axis'' breaks down. (Notice the pattern: in
 two dimensions we rotate about a point, in three dimensions rotation is about a line, and in four dimensions
-we rotate about a fixed plane.)
+we rotate about a fixed plane.) In sec.~\ref{subsec:cons-ang-mom}, p.~\pageref{subsec:cons-ang-mom},
+we show that $L^{ab}$ is conserved.
 
 If we lay the angular momentum tensor out in matrix format, it looks like this:
 \begin{equation*}
