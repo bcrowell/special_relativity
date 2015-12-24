@@ -525,9 +525,9 @@ our unit of area. The unit cell in \subfigref{change-of-basis}{2} is smaller tha
 the angle between them is smaller. Words like ``shorter'' and ``angle'' show us resorting to metric
 measurement, but we could also perform the comparison without using the metric, simply by using 
 parallelogram 1 to measure parallelogram 2, or 2 to measure 1.
-We can think of such a pair of vectors as basis vectors for the plane,
-switching our choice of unit parallelogram is then equivalent to a change of basis.
-Areas then change in proportion to the determinant of the matrix specifying the change of basis.
+If we think of such a pair of vectors as basis vectors for the plane, then
+switching our choice of unit parallelogram is equivalent to a change of basis.
+Areas change in proportion to the determinant of the matrix specifying the change of basis.
 
 \begin{eg}{A halfling basis}
 Suppose that $\vc{a}'=\vc{a}/2$, and $\vc{b}'=\vc{b}/2$. The change of basis from the unprimed pair to the
