@@ -15,6 +15,7 @@
 # See INTERNALS for documentation on all the files: geom.pos, marg.pos, chNN.pos,
 # figfeedbackNN, all.pos.
 
+require 'tempfile'
 require 'json'
 
 $label_counter = 0 # for generating labels when the user doesn't supply one
@@ -107,13 +108,14 @@ $config = {
   # In the following, nil means that there is no default and it's an error if it's not given explicitly.
   # If adding a new config variable here, then also add it below (why did I do this?).
   'titlecase_above'=>nil, # e.g., 1 means titlecase for chapters but not for sections or subsections
-  'hw_block_style'=>0 # 1 means hw numbered like a7, as in Fundamentals of Calculus
+  'hw_block_style'=>0, # 1 means hw numbered like a7, as in Fundamentals of Calculus
+  'allow_renumbering'=>0 # if a homework problem gets renumbered, is it ok in merge_problems_data.rb ?
 }
 File.open(config_file,'r') { |f|
   c = f.gets(nil) # nil means read whole file
   c.scan(/(\w+),(.*)/) { |var,value|
     if ! $config.has_key?(var) then fatal_error("Error in config file #{config_file}, illegal variable '#{var}'") end
-    if {'titlecase_above'=>nil,'hw_block_style'=>nil}.has_key?(var) then
+    if {'titlecase_above'=>nil,'hw_block_style'=>nil,'allow_renumbering'=>nil}.has_key?(var) then
       value = value.to_i
     end
     $config[var] = value
@@ -528,13 +530,6 @@ def fig(name,caption=nil,options={})
                            # default is false, except if caption is a null string, in which case it defaults to true
     'width'=>'narrow',     # 'narrow'=52 mm, 'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
-                           #   may get automagically changed for 2-column layout
-    'width2'=>'auto',      # width for 2-col layout;
-                           #   width='narrow',  width2='auto'  --  narrow figure stays same width, is not as wide as text colum
-                           #   width='fullpage',width2='auto'  --  nothing special
-                           #   width='wide',    width2='auto'  --  makes it a sidecaption regardless of whether sidecaption was actually set
-                           #   width2='column' -- generates a warning if an explicitly created 82.5-mm wide figure doesn't exist
-                           #   width2='column_auto' -- like column, but expands automatically, and warns if an explicit alternative *does* exist
     'sidecaption'=>false,
     'sidepos'=>'t',        # positioning of the side caption relative to the figure; can also be b, c
     'float'=>'default',    # defaults to false for narrow, true for wide or fullpage (because I couldn't get odd-even to work reliably for those if not floating)
@@ -577,6 +572,15 @@ def fig(name,caption=nil,options={})
   if options['narrowfigwidecaption'] then
     options['width']='wide'; options['sidecaption']=true; options['float']=false; options['anonymous']=false
   end
+
+  # Generate fig_widths. To regenerate these, change false to true below, and then follow
+  # directions in ~/Documents/writing/books/physics/data/README. This data file is used by problems book.
+  if false && width!='narrow' then
+    File.open('/home/bcrowell/fig_widths','a') { |f|
+      f.print "\"#{name}\":\"#{width}\",\n"
+    }
+  end
+
   if options['float']=='default' then
     options['float']=(width=='wide' or width=='fullpage')
   end
@@ -584,7 +588,7 @@ def fig(name,caption=nil,options={})
     options['anonymous']=(!caption)
   end
   dir = find_directory_where_figure_is(name)
-  if dir.nil? && options['text'].nil? then save_complaint("figure #{name} not found in #{dir()}/figs, #{shared_figs()[0]}, or #{shared_figs()[1]}") end
+  if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs, #{shared_figs()[0]}, or #{shared_figs()[1]}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
   #------------------------------------------------------------
@@ -1020,8 +1024,26 @@ def set_answer_text(label,long_label,text,type)
   # short label is used only for latex references
   if long_label==nil then long_label = label end
   text = handle_answer_text_caching(long_label,text,type)
+  text = handle_m4_in_answer_file(text)
   $answer_text[type][long_label] = text
   $answer_long_label_to_short[long_label] = label 
+end
+
+def handle_m4_in_answer_file(text)
+  # This happens in lowering-climber.
+  return text unless text=~/m4_/;
+  run_m4 = whichever_file_exists(["../scripts/run_m4.pl","scripts/run_m4.pl"])
+  if run_m4.nil? then save_complaint("couldn't find scripts/run_m4.pl in handle_m4_in_answer_file"); return text end
+  result = text
+  temp_file_name = "handle_m4_in_answer_file.temp"
+  File.open(temp_file_name,'w') { |f|
+    f.print text
+  }
+  cmd = "#{run_m4} #{temp_file_name} dummy ."
+  result = `#{cmd}`
+  if result=='' then $stderr.print "error in handle_m4_in_answer_file, result is null string" end
+  File.delete(temp_file_name)
+  return result
 end
 
 def handle_answer_text_caching(label,text,type)
@@ -1158,9 +1180,11 @@ def begin_hw_sec(title='Problems')
     t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{label}}{#{title}}}"
   end
   print t
+  $inside_hw_sec = true
 end
 
 def end_hw_sec
+  $inside_hw_sec = false
   print '\end{hwsection}'
 end
 
@@ -1186,7 +1210,7 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   if section_level==0 then anchor_command_2=anchor_command else anchor_command_1=anchor_command end
   if is_prepress then toc_macro="toclinewithoutlink" else toc_macro="toclinewithlink" end
   # In the following, I had been using begingroup/endgroup to temporarily disable \addcontentsline,
-  # but that had the side-effect that had the side effect of causing a \label{} that came after
+  # but that had the side-effect of causing a \label{} that came after
   # begin_sec to have a null string as the label instead of the section number.
   # - 
   # similar code in begin_hw_sec
@@ -1300,6 +1324,9 @@ def initial_cap(x)
 end
 
 def end_chapter
+  if $inside_hw_sec then
+    fatal_error("begin_hw_sec not matched by any end_hw_sec before end_chapter")
+  end
   $section_level -= 1
   if $section_level != -1 then
     $stderr.print "warning, at end_chapter, ch #{$ch}, section level at end of chapter is #{$section_level}, should be -1; probably begin_sec's and end_sec's are not properly balanced (happens in NP preface)\n"

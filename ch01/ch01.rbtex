@@ -1353,7 +1353,7 @@ where $\theta$ is the angle between the two vectors.
 Any proof of these facts ultimately depends on the assumption that the metric has the Euclidean signature
 $+++$ (or on equivalent assumptions such as Euclid's axioms). Figure \figref{twin-paradox-triangle} shows that
 on physical grounds, we do not expect the inequalities to hold for Minkowski vectors in their unmodified Euclidean forms.
-The quantity $|\vc{m}+\vc{n}|$ represented the proper time of the spaceship that moved inertially along with the
+The quantity $|\vc{m}+\vc{n}|$ represents the proper time of the spaceship that moved inertially along with the
 earth, while $|\vc{m}|+|\vc{n}|$ is the \emph{greater} proper time of the traveling spaceship.
 
 On the other hand, Minkowski space has copies of Euclidean space built in. For example, we know that
