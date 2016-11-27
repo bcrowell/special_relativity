@@ -726,6 +726,151 @@ In this frame, all directions in space would be equivalent, and there would be n
 directions of polarization should be permitted.
 \end{eg}
 <% end_sec('massless-go-at-c') %>
+
+<% begin_sec("Evidence as to which particles are massless",nil,'which-particles-are-massless') %>
+Which of the fundamental particles are massless, and which are not? This is can only be determined
+empirically, and we have at least one example, the neutrino, that was formerly thought to be massless
+but is now believed to be massive. For more about the neutrino, see section \ref{subsec:tachyon-searches},
+p.~\pageref{subsec:tachyon-searches}.
+In the present section we discuss bounds on the masses of the photon and the graviton.\footnote{For an in-depth review
+of this topic, see
+Goldhaber and Nieto, ``Photon and Graviton Mass Limits,'' \url{http://arxiv.org/abs/0809.1003}.}
+We omit a discussion of the gluon, which would be complicated by the fact that the gluon is
+never observed as a free particle or as a classical field. This section can be skipped without loss of
+continuity.
+
+Some readers may exclaim at this point that of course photons must be massless, because light
+has to travel at the speed of light. But it should be clear from the foregoing presentation that
+the $c$ in relativity is not to be interpreted as the speed of light, but as a kind of conversion
+factor between space and time. If photons have a small but nonvanishing mass, relativity does not
+have a stake driven through its heart.
+
+If we want to test whether the photon is massless, the most straightforward technique would seem
+to be to measure its time of flight as it travels some distance, and see if it goes slower than
+$c$. There is a difficulty here because our methods for measuring large distances, e.g., GPS, generally
+\emph{assume} that light travels at $c$. However, if the photon has some mass, then its velocity
+should depend on its energy, so we can instead test whether the speed of a photon depends on
+its energy. From quantum mechanics, this is related to its frequency by $E=hf$, so we are essentially
+testing whether the speed of light in a vacuum depends on frequency.
+Presently the best experimental tests of the invariance of
+the speed of light with respect to wavelength come from astronomical observations of gamma-ray bursts, which are sudden
+outpourings of high-energy photons, believed to originate from a supernova explosion in another galaxy. One such observation,
+in 2009,\footnote{\url{http://arxiv.org/abs/0908.1832}} collected photons from such a burst, with a duration of 2 seconds, indicating that the propagation
+time of all the photons differed by no more than 2 seconds out of a total time in flight on the order
+of ten billion years, or about one part in $10^{17}$!
+<% marg(300) %>
+<%
+  fig(
+    'gamma-ray-burst',
+    %q{An artist's conception of a gamma-ray burst, resulting from a supernova explosion.}
+  )
+%>
+<% end_marg %>
+
+It turns out, however, that the limits on the mass of the photon imposed by time of flight measurements
+can be improved on by many orders of magnitude using other methods.
+In the standard model of particle physics, forces are transmitted by the exchange of particles.
+We'll concentrate here on static forces. An electrostatic force is transmitted by the exchange of
+photons, and a static gravitational force by the exchange of gravitons. Gravity is not part of the
+standard model of particle physics, and individual gravitons cannot be directly detected by any
+foreseeable technology,\footnote{Rothman and Boughn, ``Can Gravitons Be Detected?,''
+\url{http://arxiv.org/abs/gr-qc/0601043}} but there are fundamental reasons for believing that they must
+exist, and in any case our discussion is mathematically identical for gravity and
+electromagnetism. We will therefore discuss electromagnetic fields and then note the corresponding results
+for gravity.
+
+If we imagine the field surrounding a stationary point charge as a swarm of photons, then the first
+question that occurs to us is what is the source of the energy needed in order to create them.
+The standard hand-waving argument is as follows. In addition to the usual momentum-energy form of
+the Heisenberg uncertainty principle $\Delta p \Delta x \gtrsim h$, there is an energy-time form
+$\Delta E \Delta t \gtrsim h$. This looks obvious by analogy
+when we consider that relativistically, energy and momentum are
+different parts of the energy-momentum four-vector, and likewise for time and position.
+We can interpret this to mean that it is possible, for short periods of time, to cheat the
+law of conservation of energy. We can steal a little energy but then pay it back immediately, as
+long as the duration of the loan is no more than about $t\sim h/E$. During this time, a virtual
+particle can travel a distance of no more than $\sim hc/E$. Now for a massless particle, this energy
+can be as small as desired, so the force can reach to arbitrarily large distances. But for a massive
+particle, we have the relativistic relation $E^2-p^2=m^2$, which requires $E\ge m$, or $E\ge mc^2$ in
+SI units. This minimum energy corresponds to a maximum range $\sim h/mc$. In general, we expect that
+the field carried by a massive particle will fall off more quickly with distance than the field of
+a massless particle, and we expect that this fall-off will be parametrized somehow by a length
+scale $h/mc$.
+
+How would we expect this to play out in the classical theory of electromagnetic fields?
+Consider a point charge, figure \subfigref{yukawa-field-lines}{1}. Its field lines are straight,
+and they spread out in all directions, so by observations
+of any region of space, we can trace the lines backward to see where they would have intersected. That is
+how far it is from our region of space to the charge. This is a kind of parallax measurement.
+In the case of gravity, this is exactly what
+Eratosthenes did in order to measure the radius of the earth.
+
+<% marg(300) %>
+<%
+  fig(
+    'yukawa-field-lines',
+    %q{1.~Field lines of a point charge. Observations within the small region indicated by a box allow
+       one to determine how far away the charge is. 2.~Field lines of an infinite capacitor plate, according to
+       standard electromagnetism. Observations within the box do not give information about how far away
+       the charge is. 3.~A violation of Gauss's law.}
+  )
+%>
+<% end_marg %>
+But now let's consider the case of an infinite, plane capacitor plate with some charge on 
+it, \subfigref{yukawa-field-lines}{2}.
+The field lines don't spread, so the parallax method doesn't work. If we examine the field in some small
+region of space, there should be no way to determine the distance to the capacitor plate. If we believe
+in Gauss's law, then the solution is simple: the field is constant in both magnitude and direction, so
+although it tells us the direction of the nearest point on the plate, it tells us nothing about the distance
+to that point. 
+
+But if the photon is massive, we expect fields to fall off more rapidly with distance than
+they would according to standard theory. In this example, the standard theory says that the field does
+not decrease at all with distance, so for a massive photon we expect that it \emph{does} fall off.
+This will violate Gauss's law, but we still expect that the distance to the plate will not be
+determinable by examination of a small region of space.
+
+If we're willing to violate Gauss's law,
+then we can have field lines simply terminate in empty space,
+\subfigref{yukawa-field-lines}{3},
+and this will cause the field strength
+to decrease. As we traverse a small distance $\der x$, moving away from the plate, some fraction
+of the field lines should terminate, leading to a corresponding fractional
+reduction $\der E/E$ in the field strength. The ratio $(\der E/E)/\der x$ must be constant,
+and this can only happen if we have $E\propto e^{-\mu x}$, where $\mu$ is a constant with units
+of inverse length. (On the other side of the plate, where $x$ is negative, we have $+\mu x$ inside the exponential.)
+For the reasons discussed above, we actually expect that $\mu$ equals $mc/h$ multiplied by
+a unitless constant of order unity. In fact, it can be shown
+that the unitless constant is a factor of $2\pi$, so $\mu$
+simply the mass, expressed in units where both $c$ and $\hbar$ equal 1.
+
+Since the field of a capacitor plate is equal to the superposition of the fields of all the charges
+distributed uniformly on it, our result that the capacitor's field falls off in a certain way
+tells us something corresponding about the field of a point charge. We expect that the field
+of a point charge $q$ is
+\begin{equation*}
+  E = kq \frac{e^{-\mu r}}{r^2},
+\end{equation*}
+where Coulomb's law is recovered in the case $\mu=0$. This form was originally inferred by
+Yukawa for nuclear forces, which really do have a finite range.\index{Yukawa potential}
+
+We now have an extraordinarily sensitive way of placing a limit on the masses of the photon
+and graviton. Even if $\mu$ is very small, we can make observations on very large distance
+scales, and static forces should fall off exponentially. In the case of gravitational forces,
+we observe that gravity does operate, with no detectable Yukawa-style attenuation,
+on scales comparable to the size of the observable universe, on the order of billions of light-years.
+This corresponds to a limit on the mass of the graviton of $\sim 10^{-69}\ \kgunit$ --- surely
+the smallest mass scale that has ever been probed by human beings! Measurements of the magnetic
+field of Jupiter by the Pioneer 10 space probe limit the mass of the photon to no more
+than about $8\times 10^{-52}\ \kgunit$, which is almost as impressive.
+
+Although today's tightest bounds are from solar-system and cosmological measurements, historically
+some very precise tabletop experiments were carried out. Laboratory experiments are always desirable
+in such cases because the conditions can be controlled, and the experiments can be replicated.
+Problem \ref{hw:yukawa-capacitor} on p.~\pageref{hw:yukawa-capacitor} is an analysis of such an
+experiment.
+<% end_sec('which-particles-are-massless') %>
+
 <% begin_sec("No global conservation of energy-momentum in general relativity",nil,'gr-no-e-cons') %>
 If you read optional chapter \ref{ch:foundations}, you know that the distinction between special
 and general relativity is defined by the flatness of spacetime, and that flatness is in turn
@@ -975,7 +1120,7 @@ the claimed result, which is valid for both massless and material particles.
 <% begin_sec("Two applications",nil,'two-applications-of-e-p',{'optional'=>true}) %>
 <% begin_sec("The Stefan-Boltzmann law",nil,'stefan-bolztmann') %>
 In 1818, Dulong and Petit analyzed experimental data to find the empirical and totally
-incorrect law $P\propto \exp[T/(13.5\ \degcunit)]$, relating the temperature $T$ of
+incorrect law $P\propto \exp[T/(13.5\ \zu{K})]$, relating the temperature $T$ of
 a body to the power it emits as electromagnetic radiation. (To see that it must be wrong, note that
 it doesn't vanish at absolute zero.) It was accepted until 1884, when
 Boltzmann corrected a systematic error in their analysis of the data, and offered a theoretical
@@ -1009,6 +1154,8 @@ which was dominated by radiation rather than matter.
 Because there is no heat transfer, the entropy is constant. Entropy can be interpreted as a measure
 of the number of accessible states, and because state-counting doesn't depend on scaling, the occupied
 modes of vibration stay the same. Thus, the wavelengths simply grow in proportion to $a$.
+(A more formal and rigorous version of this argument is called the adiabatic theorem, proved by
+Born and Fock in 1928.)
 Although this is a classical argument, we can save some work at this point by appealing to
 quantum mechanics for a shortcut. Since a photon has an energy $1/\lambda$, we have
 $U\propto 1/\lambda \propto 1/a$.
@@ -1287,7 +1434,7 @@ neutrino back from the grave.
 <% begin_sec("Tachyons and quantum mechanics",nil,'tachyons-and-qm') %>
 When we add quantum mechanics to special relativity, we get quantum field theory, which sounds scary
 and can be quite technical, but is governed by some very simple principles. One of these principles is that
-``everything not forbidden is compulsory.'' The phrase originated as political satire of communism by
+``everything not forbidden is compulsory.'' The phrase was popularized as a political satire of communism by
 T.H.~White, but was commandeered by physicist Murray Gell-Mann to express the idea that any process
 not forbidden by a conservation law will in fact occur in nature at some rate. 
 If tachyons exist, then it is possible to have two tachyons whose energy-momentum
@@ -1475,8 +1622,10 @@ presence of some third particle such as an atomic nucleus? Can Compton scatterin
 without a third particle?
 <% end_hw %>
 
+\pagebreak
+
 <% begin_hw('nucleons-nonrelativistic') %>
-This problem assume you know some basic quantum physics. The point of this
+This problem assumes you know some basic quantum physics. The point of this
 problem is to estimate whether or not a neutron or proton in an an atomic nucleus is
 highly relativistic. Nuclei typically have
 diameters of a few fm ($1\ \zu{fm}=10^{-15}\ \munit$). Take a neutron or proton to be
@@ -1518,6 +1667,37 @@ the total momentum is zero.
 In section \ref{subsec:work} we proved the work-energy relation $\der E/\der x=F$ in the context
 of relativity. Recapitulate the derivation in the context of pure Newtonian mechanics.
 <% end_hw %>
+
+\pagebreak
+
+<% begin_hw('yukawa-capacitor') %>
+Section \ref{subsec:which-particles-are-massless} on p.~\pageref{subsec:which-particles-are-massless}
+discusses the possibility that the photon has a small but nonzero mass $m$. One of the consequences is
+that the electric field of an infinite, uniformly charged plane is $E_x=\pm 2\pi k\sigma \exp(-\mu|x|)$,
+where $k$ is the Coulomb constant, $\sigma$ is the charge per unit area, $\mu=mc/\hbar$, and $x$ is
+the distance from the plane. When $m=0$, we recover the result of standard electromagnetism.
+The purpose of this problem is to analyze a laboratory experiment that can put an upper bound on $m$.
+
+Consider a rectangular, hollow, conducting box with charge placed on it.
+If $m=0$, then Gauss's law holds, and the field inside is exactly zero. We now consider the possibility
+that $m>0$. We make the box very thin in the $x$ direction, with
+sides localed at $x=\pm a$. We refer to these two sides as the ``plates.'' The box's extent
+in the $y$ and $z$ directions is much greater than $a$, so that
+the density of charge $\sigma$ on each of the two plates is nearly constant as long as we stay away from
+the fringing fields at the edges. Consider a point located at $x=b$, with $0<b<a$, and far from the
+edges. Show that there is a nonvanishing interior field, which can be measured in this
+experiment by the fractional difference in electric potential
+\begin{equation*}
+  \frac{V(a)-V(b)}{V(a)} \approx \frac{1}{2} m^2(a^2-b^2) + \ldots,
+\end{equation*}
+where $\ldots$ indicates higher-order terms.
+
+Remark: The experiment is more practical when carried out using a spherical geometry, since there are
+no fringing fields to worry about. The analysis comes out the same except that the factor of $1/2$ becomes $1/6$.
+Experiments of this type were first carried out by Cavendish in 1722, and then with a seris of
+order-of-magnitude improvements in precision by Plimpton in 1936 and Williams in 1971.
+<% end_hw %>
+
 
 <% end_hw_sec %>
 
