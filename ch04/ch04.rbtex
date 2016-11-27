@@ -906,6 +906,14 @@ Ohanian.\footnote{``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400
 Putting aside questions that are purely historical or concerned only with academic priority,
 we would like to know whether the proof has logical flaws, and also whether the claimed result is
 only valid under certain conditions. We need to consider the following questions:
+<% marg(-300) %>
+<%
+  fig(
+    'beads',
+    %q{The world lines of two beads bouncing back and forth on a wire.}
+  )
+%>
+<% end_marg %>
 
 \begin{enumerate}
 \item Does it matter whether the system being described has finite spatial extent, or whether the system
@@ -930,14 +938,6 @@ mass frame). As time goes on, an observer in this frame will say that the balls 
 of the wire simultaneously, at which point they rebound, maintaining the same total energy-momentum
 vector $\vc{p}$. The mass of the system is, by definition, $m=\sqrt{p_t^2-p_x^2}=\sqrt{2.31}$, and this
 mass remains constant as the balls bounce back and forth.
-<% marg(100) %>
-<%
-  fig(
-    'beads',
-    %q{The world lines of two beads bouncing back and forth on a wire.}
-  )
-%>
-<% end_marg %>
 
 Now let's transform into a frame $\vc{o}'$, moving at a velocity $v=1/2$ relative to $\vc{o}$.
 If velocities added linearly in relativity, then the initial velocities of the beads in this frame would
