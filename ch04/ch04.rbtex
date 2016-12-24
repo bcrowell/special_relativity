@@ -475,6 +475,26 @@ Interpret the equation $m^2=E^2-p^2$ in the case where $m=0$.
   SELF_CHECK
   ) %>
 
+A high-precision test of this fundamental relativistic relationship was carried out by Meyer \emph{et al.}
+in 1963 by studying the motion of electrons in static electric and magnetic fields. They define the quantity
+\begin{equation*}
+  Y^2 = \frac{E^2}{m^2+p^2},
+\end{equation*}
+which according to special relativity should equal 1. Their results, tabulated in the sidebar,
+show excellent agreement with theory.
+
+<% marg(140) %>
+\noindent\emph{Results from Meyer et al., 1963}
+
+\begin{tabular}{ll}
+  $v$ & $Y$ \\
+  0.9870 & 1.0002(5) \\
+  0.9881 & 1.0012(5) \\
+  0.9900 & 0.9998(5)
+\end{tabular}
+<% end_marg %>
+
+
 \begin{eg}{Mass of two light waves}\label{eg:mass-of-two-light-waves}
 Let the momentum of a certain light wave be $(p_t,p_x)=(E,E)$,
 and let another such wave have momentum $(E,-E)$. The total momentum is
@@ -685,15 +705,29 @@ absorption, and is therefore undetectable by any experiment. This is physically 
 we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
 undetectable even in principle.
 
+<% marg(-300) %>
+<%
+  fig(
+    'relativistic-momentum-tests',
+    %q{Two early high-precision tests of the relativistic equation $p=m\gamma v$ for the momentum of a material particle.
+       Graphing $p/m$ rather than $p$ allows the data for electrons and protons to be placed on the same graph.
+       The very small error bars for the data point from
+       Zrelov are represented by the height of the black rectangle.
+       }
+  )
+%>
+<% end_marg %>
+
 What about the case of a material particle, i.e., one having mass?
 Since we already have an equation $E=m\gamma$ for the energy of a material particle in terms of
-its velocity, we can find a similar equation for the momentum:
+its velocity, we can find a similar equation for the momentum,
 \begin{align*}
   p &= \sqrt{E^2-m^2} \\
     &= m\sqrt{\gamma^2-1} \\
     &= m\sqrt{\frac{1}{1-v^2}-1} \\
-    &= m\gamma v\eqquad.
+    &= m\gamma v\eqquad
 \end{align*}
+(a relation that is useful in its own right, and has been verified experimentally, \figref{relativistic-momentum-tests}).
 As a material particle gets closer and closer to $c$, its momentum approaches infinity,
 so that an infinite force would be required in order to reach $c$. 
 
@@ -828,7 +862,9 @@ But if the photon is massive, we expect fields to fall off more rapidly with dis
 they would according to standard theory. In this example, the standard theory says that the field does
 not decrease at all with distance, so for a massive photon we expect that it \emph{does} fall off.
 This will violate Gauss's law, but we still expect that the distance to the plate will not be
-determinable by examination of a small region of space.
+determinable by examination of a small region of space: if the field equations are linear, then
+a field with a given strength could be from a nearby capacitor plate with a small charge density,
+or a more distant one with more charge.
 
 If we're willing to violate Gauss's law,
 then we can have field lines simply terminate in empty space,
