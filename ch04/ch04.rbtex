@@ -1744,6 +1744,7 @@ The energy released in the decay is 1.33 MeV. The energy is shared randomly amon
 subject to the constraint imposed by conservation of energy-momentum, which dictates that very
 little of the energy is carried by the recoiling calcium nucleus. Determine the maximum energy
 of the calcium, and compare with the typical energy of a chemical bond, which is a few eV.
+If the potassium is part of a molecule, do we expect the molecule to survive?
 Carry out the calculation first by assuming that the electron is ultrarelativistic, then
 without the approximation, and comment on the how good the approximation is.
 <% end_hw %>
