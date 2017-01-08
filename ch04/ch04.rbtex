@@ -503,7 +503,7 @@ This is an example of the non-additivity of relativistic mass.
 \end{eg}
 <% end_sec('p-vector-intro') %>
 
-<% begin_sec("Collisions",nil,'collisions') %>
+<% begin_sec("Collision invariants",nil,'collisions') %>
 Example \ref{eg:mass-of-two-light-waves} shows that mass is not additive,
 nor it is a measure of the ``quantity of matter.'' More generally, suppose that we have
 a collision between two objects, which could be two cars or two nuclei in a particle
@@ -1732,6 +1732,20 @@ Remark: The experiment is more practical when carried out using a spherical geom
 no fringing fields to worry about. The analysis comes out the same except that the factor of $1/2$ becomes $1/6$.
 Experiments of this type were first carried out by Cavendish in 1722, and then with a seris of
 order-of-magnitude improvements in precision by Plimpton in 1936 and Williams in 1971.
+<% end_hw %>
+
+<% begin_hw('molecule-in-beta-decay') %>
+Potassium 40 is the strongest source of naturally occurring beta radioactivity in our environment.
+It decays according to
+\begin{equation*}
+  {}^{40}\zu{K} \rightarrow {}^{40}\zu{Ca} + e^- + \bar{\nu} .
+\end{equation*}
+The energy released in the decay is 1.33 MeV. The energy is shared randomly among the products,
+subject to the constraint imposed by conservation of energy-momentum, which dictates that very
+little of the energy is carried by the recoiling calcium nucleus. Determine the maximum energy
+of the calcium, and compare with the typical energy of a chemical bond, which is a few eV.
+Carry out the calculation first by assuming that the electron is ultrarelativistic, then
+without the approximation, and comment on the how good the approximation is.
 <% end_hw %>
 
 
