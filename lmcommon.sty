@@ -510,6 +510,18 @@ me permission to use it, but that doesn't mean you have permission to use it.}
 \titlecontents{briefchapter}[0mm]{\Large\sffamily{}}
         {}{}
         {}
+%========================= detect bug in titlesec package=========================
+% https://bugs.launchpad.net/ubuntu/+source/texlive-extra/+bug/1574052/comments/11
+\@ifpackagelater{titlesec}{2016/03/21}{%
+ % Package titlesec is on version 2.10.2 or higher, nothing to do %
+}{%
+ % Check if package titlesec is on version 2.10.1 %
+ \@ifpackagelater{titlesec}{2016/03/15}{%
+   \PackageError{lmcommon}{You're using broken version 2.10.1 of titlesec. Replace titlesec.sty on your system with the file fixed_titlesec.sty that was packaged with this book.}{}
+ }{%
+  % Package titlsecon is on version 2.10.0 or lower, nothing to do %
+ }%
+}
 %========================= graphicx package=========================
 \usepackage{graphicx}
 %========================= AtBeginDocument stuff=========================
