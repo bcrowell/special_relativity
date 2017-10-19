@@ -1670,6 +1670,8 @@ in the box. Use the de Broglie relation to estimate its typical momentum and thu
 typical speed. How relativistic is it?
 <% end_hw %>
 
+\vfill
+
 <% begin_hw('splitting') %>
 Show, as claimed in example \ref{eg:splitting} on p.~\pageref{eg:splitting}, that if a massless
 particle were to decay, Lorentz invariance requires that the time-scale $\tau$ for the process
@@ -1677,10 +1679,14 @@ be proportional to the particle's energy. What units would the constant of propo
 have?
 <% end_hw %>
 
+\vfill
+
 <% begin_hw('pulsar') %>
 Derive the equation $T=\sqrt{3\pi/G\rho}$ given on page \pageref{pulsar-density} for the period
 of a rotating, spherical object that results in zero apparent gravity at its surface.
 <% end_hw %>
+
+\vfill
 
 <% begin_hw('neutrino-antineutrino') %>
 Neutrinos with energies of $\sim1\ \zu{MeV}$ (the typical energy scale of nuclear physics)
@@ -1691,6 +1697,8 @@ Should astronomers be able to detect these photons by selecting only those with
 the correct energy?
 <% end_hw %>
 
+\vfill
+
 <% begin_hw('back-to-back-gammas') %>
 In a certain frame of reference, a gamma ray with energy $E_1$ is moving to the right,
 while a second gamma way with energy $E_2$ flies off to the left.
@@ -1698,6 +1706,8 @@ while a second gamma way with energy $E_2$ flies off to the left.
 (b) Find the velocity of the center-of-mass frame, i.e., the frame of reference in which
 the total momentum is zero.
 <% end_hw %>
+
+\vfill
 
 <% begin_hw('newtonian-work') %>
 In section \ref{subsec:work} we proved the work-energy relation $\der E/\der x=F$ in the context
@@ -1749,6 +1759,20 @@ Carry out the calculation first by assuming that the electron is ultrarelativist
 without the approximation, and comment on the how good the approximation is.
 <% end_hw %>
 
+\pagebreak
+
+<% begin_hw('gamma-decay-energy-comparisons') %>
+The products of a certain radioactive decay are a massive particle and a gamma ray.\\
+(a) Show that, in the center of mass frame, the energy of the gamma is
+less than the mass-energy of the massive particle.\hwendpart
+(b) Show that the opposite inequality holds if we compare the \emph{kinetic} energy
+of the massive particle to the energy of the gamma.\\
+(c) Suppose someone tells you that a certain massive particle has a mode of radioactive
+decay in which it disappears, and the only product is a gamma ray --- no residual massive
+particle exists. Use the result of part a to show that this is impossible, and then see
+if you can find a simpler argument to demonstrate the same thing.
+{[Based on a problem by B.~Shotwell.]}
+<% end_hw %>
 
 <% end_hw_sec %>
 

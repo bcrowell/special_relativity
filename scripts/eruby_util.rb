@@ -1254,9 +1254,13 @@ def sectioning_command_with_href(cmd,section_level,label,label_level,title)
   t3 = <<-TEX
     \\let\\addcontentsline\\oldacl
     TEX
-  t4 = <<-TEX
-    \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
-    TEX
+  if section_level<4 then
+    t4 = <<-TEX
+      \\#{toc_macro}{#{name_level}}{#{complete_label}}{#{title}}{\\the#{name_level}}
+      TEX
+  else
+    t4 = ''
+  end
   return mark_to_ignore_for_web(t1)+t2+mark_to_ignore_for_web(t3+t4)
 end
 
