@@ -1499,6 +1499,21 @@ Expressed in natural units, the Lorentz transformation is
 (b) Show that in the limit $c\rightarrow\infty$, these have the right Galilean behavior.
 <% end_hw %>
 
+\enlargethispage{\baselineskip}
+
+\pagebreak
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('ball-through-hole') %>
+We want to throw a ball of diameter $b$ through a hole of diameter $h$ in a thin wall.
+Clearly this is possible if $b<h$, but consider the case where $b>h$.
+If the motion is relativistic, then is it unambiguous whether the ball fits through the hole,
+or is this frame-dependent, as in example \ref{eg:garage-paradox} on p.~\pageref{eg:garage-paradox}?
+If the former, then is there some velocity $v$ that is required, expressible in terms of
+$b$ and $h$?
+<% end_hw %>
+
 <% begin_hw('classical-limit') %>
 This problem assumes you have some basic knowledge of quantum physics.
 One way of expressing the correspondence principle as applied to special
@@ -1525,7 +1540,7 @@ length, and $T$ is the tension.\\
  (a) Suppose a string has a density $\rho$, and a cross-sectional
 area $A$. Find an expression for the maximum tension that could possibly exist in the string
 without producing $v>c$, which is impossible according to relativity. Express your answer in
-terms of $\rho$, $A$, and $c$. The interpretation is that relativity puts a limit on how
+terms of $\rho$, $A$, and $c$. Thus relativity puts a limit on how
 strong any material can be.\answercheck\hwendpart
 (b) Every substance has a tensile strength, defined as the force
 per unit area required to break it by pulling it apart. The tensile strength is measured in
@@ -1544,8 +1559,6 @@ hole by other means than launching it out as a projectile.
 For example, suppose we lower an astronaut into a black hole on a rope, and then pull him
 back out again. Why might this not work?\hwendpart
 <% end_hw %>
-
-\pagebreak
 
 <% begin_hw('pole-paradox') %>
 The rod in the figure is perfectly rigid. At event A, the hammer strikes one end of the rod.

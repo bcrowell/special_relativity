@@ -78,7 +78,7 @@ end
 
 def save_complaint(message)
   File.open('eruby_complaints','a') { |f| 
-    f.print message,"\n"
+    f.print "eruby_util.rb: ",message,"\n"
   }
 end
 
@@ -187,7 +187,7 @@ end
 # for use when generating screen-resolution figures
 # e.g., ../9share/optics
 def shared_figs
-  return [ENV['SHARED_FIGS'],ENV['SHARED_FIGS2']]
+  return [ENV['SHARED_FIGS'],ENV['SHARED_FIGS2'],ENV['SHARED_FIGS3']]
 end
 
 def is_print
@@ -502,8 +502,9 @@ def find_directory_where_figure_is(name)
   if figure_exists_in_my_own_dir?(name) then return dir = "\\figprefix\\chapdir/figs" end
   # bug: doesn't support \figprefix
   s = shared_figs()
-  if figure_exists_in_this_dir?(name,s[0]) then return s[0] end
-  if figure_exists_in_this_dir?(name,s[1]) then return s[1] end
+  s.each { |ss|
+    if figure_exists_in_this_dir?(name,ss) then return ss end
+  }
   return nil
 end
 
@@ -563,8 +564,10 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
+                           # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."
+    'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
-    'textbox'=>false       # marginbox(), as used in Fund.
+    'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -584,7 +587,7 @@ def fig(name,caption=nil,options={})
     #    resize=true
     #      see macros \fignoresize, \inlinefignocaptionnoresize
   }
-  caption.gsub!(/\A\s+/,'') # blank lines on the front make latex freak out
+  unless caption.nil? then caption.gsub!(/\A\s+/,'') end # blank lines on the front make latex freak out
   if caption=='' then caption=nil end
   default_options.each { 
     |option,default|
@@ -608,11 +611,12 @@ def fig(name,caption=nil,options={})
   if options['float']=='default' then
     options['float']=(width=='wide' or width=='fullpage')
   end
+  has_caption = !(caption.nil?)
   if options['anonymous']=='default' then
-    options['anonymous']=(!caption)
+    options['anonymous']=!has_caption
   end
   dir = find_directory_where_figure_is(name)
-  if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs, #{shared_figs()[0]}, or #{shared_figs()[1]}") end
+  if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
   #------------------------------------------------------------
@@ -641,6 +645,7 @@ end
 
 # sets $page_rendered_on as a side-effect (or sets it to nil if all.pos isn't available yet)
 def fig_print(name,caption,options,dir)
+  has_caption = !(caption.nil?)
   if options['raw'] then spit("\\includegraphics{#{dir}/#{name}}"); return end
   width=options['width']
   $fig_handled = false
@@ -691,22 +696,25 @@ def fig_print(name,caption,options,dir)
   #============================================================================
   #----------------------- text ----------------------
   if options['text']!=nil then
+    text = options['text']
+    if options['title'] then text="\\noindent\\textit{#{options['title']}}\\\\"+text end
     if options['textbox'] then
-      spit("\\startmargintextbox{#{name}}{#{caption}}\n#{options['text']}\n\\finishmargintextbox{#{name}}\n")
+      spit("\\startmargintextbox{#{name}}{#{caption}}\n#{text}\n\\finishmargintextbox{#{name}}\n")
     else
-      spit("\\starttextfig{#{name}}#{options['text']}\n\\finishtextfig{#{name}}{%\n#{caption}}\n")
+      if has_caption then m = "finishtextfig" else m = "finishtextfignocaption" end
+      spit("\\starttextfig{#{name}}#{text}\n\\#{m}{#{name}}{%\n#{caption}}\n")
     end
   end
   #----------------------- narrow ----------------------
   if width=='narrow' and options['text']==nil then
     if options['anonymous'] then
-      if caption then
+      if has_caption then
         spit("\\anonymousfig{#{name}}{%\n#{caption}}{#{dir}}\n")
       else
         spit("\\fignocaption{#{name}}{#{dir}}\n")
       end
     else # not anonymous
-      if caption then
+      if has_caption then
         spit("\\fig{#{name}}{%\n#{caption}}{#{suffix}}{#{dir}}\n")
       else
         die(name,"no caption, but not anonymous")
@@ -718,7 +726,7 @@ def fig_print(name,caption,options,dir)
     if options['anonymous'] then
       if options['narrowfigwidecaption'] then die(name,'narrowfigwidecaption requires anonymous=false, and float=false') end
       if options['float']  then
-        if caption || true then # see einstein-train
+        if has_caption || true then # see einstein-train
           if options['sidecaption'] then
             spit("\\widefigsidecaption{#{sidepos}}{#{name}}{%\n#{caption}}{anonymous}{#{floatpos}}{float}{#{suffix}}{#{dir}}\n")
           else
@@ -728,7 +736,7 @@ def fig_print(name,caption,options,dir)
           die(name,"widefignocaption is currently only implemented as a nonfloating figure")
         end
       else # not floating
-        if caption then
+        if has_caption then
           #die(name,"widefig is currently only implemented as a floating figure, because I couldn't get it to work right unless it was floating (see comments in lmcommon.sty)")
         else
           spit("\\widefignocaptionnofloat[#{dir}]{#{name}}\n")
@@ -737,7 +745,7 @@ def fig_print(name,caption,options,dir)
     else # not anonymous
       if options['float'] then
         if options['narrowfigwidecaption'] then die(name,'narrowfigwidecaption requires anonymous=false, and float=false') end
-        if caption then
+        if has_caption then
           if options['sidecaption'] then
             spit("\\widefigsidecaption{#{sidepos}}{#{name}}{%\n#{caption}}{labeled}{#{floatpos}}{float}{#{suffix}}{#{dir}}\n")
           else
@@ -758,13 +766,13 @@ def fig_print(name,caption,options,dir)
   #----------------------- fullpage ----------------------
   if width=='fullpage' and options['text']==nil then
     if options['anonymous'] then
-      if caption then
+      if has_caption then
         die(name,"the combination of options fullpage+anonymous+caption is not currently supported")
       else
         spit("\\fullpagewidthfignocaption[#{dir}]{#{name}}\n")
       end
     else # not anonymous
-      if caption then
+      if has_caption then
         spit("\\fullpagewidthfig[#{dir}]{#{name}}{%\n#{caption}}\n")
       else
         die(name,"no caption, but not anonymous")
@@ -927,6 +935,8 @@ end
 def hw_hint(label)
   print "\\hwhint{hwhint:#{label}}"
   write_to_answer_data('hint')
+  #debug = (label=='nestedsolenoids' || label=='erbium')
+  #if debug then $stderr.print "hw_hint: wrote to answer data, label=#{label}\n" end
 end
 
 def hw_answer()
@@ -982,6 +992,8 @@ def print_answers_of_one_type(lo_ch,hi_ch,type,header)
   for ch in lo_ch..hi_ch do
     $answer_data.each { |a|
       #$stderr.print "type=",type,' ',a.join(','),"\n" if ch==0 && a[0]==0
+      #debug = (a[1]=='nestedsolenoids' || a[1]=='erbium')
+      #if debug then $stderr.print "debugging, ch=#{ch}, a=#{a}\n" end
       name = a[1]
       if ch==a[0] && type==a[2] then
         if last_ch!=ch then
@@ -991,7 +1003,7 @@ def print_answers_of_one_type(lo_ch,hi_ch,type,header)
         last_ch = ch
         long = answer_short_label_to_long(name,type)
         if long==nil then
-          save_complaint("No answer text available for problem #{name}, type #{type}")
+          save_complaint("No answer text available for problem #{name}, type #{type}; this may be because you didn't put an appropriate line in hwans.rbtex")
         else
           print answer_header(long,type)+$answer_text[type][long]
         end
@@ -1056,6 +1068,8 @@ def set_answer_text(label,long_label,text,type)
   text = handle_m4_in_answer_file(text)
   $answer_text[type][long_label] = text
   $answer_long_label_to_short[long_label] = label 
+  #debug = (label=~/nestedsolenoids/ || label=~/erbium/)
+  #if debug then $stderr.print "set_answer_text: label=#{label}\n" end
 end
 
 def handle_m4_in_answer_file(text)
@@ -1279,12 +1293,23 @@ end
 
 # The following allows me to control what's titlecase and what's not, simply by changing book.config. Since text can be shared between books,
 # and the same title may be a section in LM but a subsection in SN, this needs to be done on the fly.
+# As of Dec. 2017, I've switched all books to not using titlecase anywhere. The source-code files now
+# all have non-titlecase in all begin_secs. Some chapter titles still have titlecase in the source
+# files, but that gets converted to non-titlecase here. We now throw a warning if alter_titlecase
+# actually produces a change other than removing titlecase from a chapter title.
 def alter_titlecase(title,section_level)
+  result = title
+  warn = false
   if section_level>=$config['titlecase_above'] then
-    return remove_titlecase(title) 
+    # don't warn or try to fix; this happens for any proper noun that isn't in the list
+    # result = remove_titlecase(title) 
+    # warn = (result != title) && section_level>0
   else
-    return add_titlecase(title)
+    result = add_titlecase(title)
+    warn = (result != title)
   end
+  if warn then $stderr.print "warning from alter_titlecase in eruby_util.rb: title #{title} appears to have the wrong case, was automatically fixed ch=#{$ch}\n" end
+  return result
 end
 
 def add_titlecase(title)
