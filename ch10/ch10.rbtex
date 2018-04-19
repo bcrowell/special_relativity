@@ -1191,6 +1191,25 @@ some polarization. Do not assume a sinusoidal wave. Show that this is a solution
 (equation \eqref{eqn:maxwell-rel-source}, p.~\pageref{eqn:maxwell-rel-source}, in a vacuum).
 <% end_hw %>
 
+<% begin_hw('plane-wave-longitudinal-e') %>
+Suppose that we have an electromagnetic field of the form
+\begin{align*}
+  \textbf{E} &= A\hat{\vc{x}}\sin[k(x-ct)] \\
+  \textbf{B} &= A\hat{\vc{y}}\sin[k(x-ct)] .
+\end{align*}
+This looks like a plane wave propagating in the $+x$ direction, but with some nonstandard
+structure: the electric field is purely longitudinal rather than purely transverse.
+We expect that this will not be a vacuum solution of Maxwell's equations.
+The following is a trick for verifying this fact.
+Show that under a Lorentz boost in the $x$ direction, we always pick up a
+$z$ component for the electric field. This implies that there is a preferred frame
+of reference in which this wave has this special structure, with the purely longitudinal
+polarization, which doesn't make sense if this is a wave in vacuum, because a wave traveling at $c$ does not define
+any preferred frame of reference. The preferred frame must therefore be defined by the sources
+which are required in order to support the existence of this electromagnetic field.
+<% end_hw %>
+
+
 <% end_hw_sec %>
 
 <% end_chapter %>

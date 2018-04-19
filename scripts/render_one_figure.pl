@@ -4,26 +4,34 @@ use strict;
 
 # usage:
 #   render_one_figure.pl foo.svg
+#   render_one_figure.pl foo.svg 1
 # Renders it unless rendering already exists and is newer than svg. Attempts to render it to pdf first. If that
-# fails preflight, redoes it as a bitmap.
+# fails preflight, or if $always_make_png is set, redoes it as a bitmap.
+# I currently have $always_make_png=1, because certain figures, such as hw-cliff-pond, pass preflight
+# but don't RIP correctly on lulu.
+# Adding the 1 as the second command-line arg forces rendering even if it seems up to date.
 
 use FindBin;
 use File::Glob;
 use File::Copy;
 use File::Temp qw(tempdir);
 
+my $always_make_png = 1;
+
 my $not_for_real = 0;
 
 my $svg = $ARGV[0];
+my $force = ($ARGV[1] eq '1');
 
 my @temp_files = ();
 
 my $exists = 0;
 foreach my $e('pdf','jpg','png') {
+  next if $always_make_png && $e=='pdf';
   my $rendered = $svg;
   $rendered =~ s/\.svg$/.$e/;
   $exists = $exists || -e $rendered;
-  if (-e $rendered && -M $svg > -M $rendered) {exit(0)} # -M finds age in days
+  if ((!$force) && -e $rendered && -M $svg > -M $rendered) {exit(0)} # -M finds age in days
 }
 
 if ($exists) {
@@ -42,7 +50,8 @@ unless (-e $pdf && -M $svg > -M $pdf) { #
   #   https://bugs.launchpad.net/inkscape/+bug/382394
   # Create dir for temporary prefs file. Other files will be created there.
   my $temp_dir = tempdir( CLEANUP => 1 );
-  my $c="INKSCAPE_PORTABLE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
+  #my $c="INKSCAPE_PORTABLE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
+  my $c="INKSCAPE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
   print "  $c\n"; 
   unless ($not_for_real) {
     my $good_prefs = "$FindBin::RealBin/inkscape_rendering_preferences.xml";
@@ -61,9 +70,14 @@ unless (-e $pdf && -M $svg > -M $pdf) { #
 
 -x "scripts/preflight_one_fig.pl" or die "couldn't find scripts/preflight_one_fig.pl -- are you running me from home dir?";
 
-if (system("scripts/preflight_one_fig.pl $svg")==0) {finit('')}
+my $failed_preflight = (system("scripts/preflight_one_fig.pl $svg")!=0);
 
-print "  preflight failed on pdf rendering of $svg , probably due to transparency; rendering to bitmap instead\n";
+if ($failed_preflight) {
+  print "  preflight failed on pdf rendering of $svg , probably due to transparency; rendering to bitmap instead\n";
+}
+
+if (!$always_make_png && !$failed_preflight) {finit('')}
+
 push @temp_files,$pdf;
 my $png = $svg;
 $png=~s/\.svg$/.png/;
@@ -75,6 +89,7 @@ my $ppm = 'z-1.ppm'; # only 1 page in pdf
 push @temp_files,$ppm;
 if (system("pdftoppm -r 300 $pdf z")!=0) {finit("Error in render_one_figure.pl, pdftoppm")}
 if (system("convert $ppm $png")!=0) {finit("Error in render_one_figure.pl, ImageMagick's convert")}
+if (system("mogrify -density 300x300 -units PixelsPerInch $png")!=0) {finit("Error in render_one_figure.pl, ImageMagick's mogrify")}
 
 print "\n";
 finit();
