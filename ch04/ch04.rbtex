@@ -1774,6 +1774,15 @@ if you can find a simpler argument to demonstrate the same thing.
 {[Based on a problem by B.~Shotwell.]}
 <% end_hw %>
 
+<% begin_hw('energy-to-traverse-galaxy') %>
+(a) Let $L$ be the diameter of galaxy. Suppose that a person in a spaceship of mass $m$ wants
+to travel across the galaxy at constant speed, taking proper time $\tau$. Find the kinetic
+energy of the spaceship. (b) Your friend is impatient, and wants to make the voyage in
+an hour. For $L=10^5$ light years, estimate the energy in units of megatons of TNT
+(1 megaton=$4\times10^9\ \junit$).
+<% end_hw %>
+
+
 <% end_hw_sec %>
 
 <% end_chapter %>

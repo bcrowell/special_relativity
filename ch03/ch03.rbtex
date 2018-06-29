@@ -376,7 +376,7 @@ respect to proper time,\index{acceleration!vector}
   \vc{a}=\frac{\der\vc{v}}{\der\tau}\eqquad.
 \end{equation*}
 It measures the curvature of a world-line.
-Its squared magnitude is the minus the square of the \emph{proper acceleration},\index{proper acceleration}\index{acceleration!proper}
+Its squared magnitude is minus the square of the \emph{proper acceleration},\index{proper acceleration}\index{acceleration!proper}
 meaning the acceleration that would be measured by
 an accelerometer carried along that world-line.
 The proper acceleration is only approximately equal to the magnitude of the Newtonian
