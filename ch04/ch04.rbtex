@@ -1198,11 +1198,21 @@ $U\propto 1/\lambda \propto 1/a$.
 The temperature of the radiation is proportional to the average energy per degree of freedom,
 so we have $T\propto 1/a$ as well.
 
-Therefore $\rho\propto T^4$. This is equivalent to the Stefan-Boltzmann result, because light
-rays travel at the fixed speed $c$, and therefore the flux of radiation is proportional to the
-energy density. Even though this final proportionality is classical in nature, the value of the
-proportionality constant depends on Planck's constant, and is quantum-mechanical. A derivation is
-given, for example, in the Feynman Lectures on Physics,  section I-41.
+Therefore $\rho\propto T^4$. This is equivalent to the
+Stefan-Boltzmann result, because light rays travel at the fixed speed
+$c$, and therefore the flux of radiation is proportional to the energy
+density. Even though no quantum-mechanical ideas were explicitly used
+in Boltzmann's argument, the value of the proportionality constant
+depends on Planck's constant, and is quantum-mechanical.\footnote{
+And Boltzmann's argument does depend on the implicit assumption that
+the energy density is finite, whereas classical physics predicts it to be
+infinite, so in this sense it is not a complete classical argument. However,
+the finiteness of the energy density has been shown to be robust in the sense
+that it can be disentangled from specific assumptions about the quantum
+statistics: Montambaux, \url{arxiv.org/abs/1610.05940}.} A derivation
+is given, for example, in the Feynman Lectures on Physics, section
+I-41.
+
 <% end_sec('stefan-bolztmann') %>
 <% begin_sec("Degenerate matter",nil,'degenerate-matter') %>
 The properties of the momentum vector have surprising

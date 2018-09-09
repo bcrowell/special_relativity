@@ -27,7 +27,7 @@ my @temp_files = ();
 
 my $exists = 0;
 foreach my $e('pdf','jpg','png') {
-  next if $always_make_png && $e=='pdf';
+  next if $always_make_png && $e eq 'pdf';
   my $rendered = $svg;
   $rendered =~ s/\.svg$/.$e/;
   $exists = $exists || -e $rendered;
