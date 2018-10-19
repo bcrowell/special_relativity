@@ -210,7 +210,7 @@ What properties could this additional field have? How would we define or measure
 One way of imagining a new type of field would be if, in addition to charge $q$,
 particles had some other characteristic, call it $r$, and there
 was then be some entirely separate field defined by their action on a particle with this ``$r$-ness.''
-But going down this road leads us to unrelated phenomena such as the the strong nuclear interaction.
+But going down this road leads us to unrelated phenomena such as the strong nuclear interaction.
 
 <% end_sec('b-field') %>
 <% begin_sec("The electromagnetic field tensor",nil,'em-field-tensor') %>
