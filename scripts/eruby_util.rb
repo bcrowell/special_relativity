@@ -1131,6 +1131,35 @@ def end_ex
   print "\\end{handson}"
 end
 
+# The following are used in FAC:
+def begin_lab(title,columns=2,label='',type='mini',number='')
+  title = alter_titlecase(title,1)
+  if type=='mini' then
+    typename = 'Minilab'
+  else
+    typename = 'Lab'
+  end
+  if number==''
+    number = "\\thechapter"    
+  end
+  column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
+  print "\\begin{activity}{#{label}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+end
+
+def end_lab
+  print "\\end{activity}"
+end
+
+def begin_notes(columns=2)
+  title = "Notes for chapter \\thechapter"
+  column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
+  print "\\begin{activity}{}{#{title}}{#{column_command}}{}"
+end
+
+def end_notes
+  print "\\end{activity}"
+end
+
 # Examples:
 #   end_sec()
 #   end_sec('spacetime-interval') ... try to use this form, which acts as a check on whether the hierarchy

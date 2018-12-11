@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg3183"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="em-pressure-and-tension.svg">
   <defs
      id="defs3185">
@@ -243,14 +243,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1322808"
-     inkscape:cx="1271.3984"
-     inkscape:cy="249.02488"
+     inkscape:zoom="15.399806"
+     inkscape:cx="1234.1245"
+     inkscape:cy="-93.796277"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
-     inkscape:window-height="996"
+     inkscape:window-height="997"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -262,7 +262,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -278,7 +278,7 @@
        id="text5245"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan5247"></tspan></text>
+         id="tspan5247" /></text>
     <rect
        style="fill:#dedede;fill-opacity:1;stroke:none"
        id="rect3979-4"
@@ -590,7 +590,7 @@
            sodipodi:cy="924.60791"
            sodipodi:rx="6.8551059"
            sodipodi:ry="6.8551059"
-           d="m 1111.1504,931.46302 c -3.786,0 -6.8551,-3.06914 -6.8551,-6.85511 0,-3.78597 3.0691,-6.85511 6.8551,-6.85511 3.786,0 6.8551,3.06914 6.8551,6.85511 0,3.78361 -3.0655,6.85177 -6.8491,6.8551"
+           d="m 1111.1504,931.46302 a 6.8551059,6.8551059 0 0 1 -6.8551,-6.8536 6.8551059,6.8551059 0 0 1 6.8521,-6.85662 6.8551059,6.8551059 0 0 1 6.8581,6.85058 6.8551059,6.8551059 0 0 1 -6.8491,6.85963"
            sodipodi:start="1.5707963"
            sodipodi:end="7.8530999"
            sodipodi:open="true"
@@ -603,7 +603,7 @@
            sodipodi:cy="924.60791"
            sodipodi:rx="6.8551059"
            sodipodi:ry="6.8551059"
-           d="m 1111.1504,931.46302 c -3.786,0 -6.8551,-3.06914 -6.8551,-6.85511 0,-3.78597 3.0691,-6.85511 6.8551,-6.85511 3.786,0 6.8551,3.06914 6.8551,6.85511 0,3.78361 -3.0655,6.85177 -6.8491,6.8551"
+           d="m 1111.1504,931.46302 a 6.8551059,6.8551059 0 0 1 -6.8551,-6.8536 6.8551059,6.8551059 0 0 1 6.8521,-6.85662 6.8551059,6.8551059 0 0 1 6.8581,6.85058 6.8551059,6.8551059 0 0 1 -6.8491,6.85963"
            sodipodi:start="1.5707963"
            sodipodi:end="7.8530999"
            sodipodi:open="true"
@@ -830,7 +830,7 @@
            sodipodi:cy="924.60791"
            sodipodi:rx="6.8551059"
            sodipodi:ry="6.8551059"
-           d="m 1111.1504,931.46302 c -3.786,0 -6.8551,-3.06914 -6.8551,-6.85511 0,-3.78597 3.0691,-6.85511 6.8551,-6.85511 3.786,0 6.8551,3.06914 6.8551,6.85511 0,3.78361 -3.0655,6.85177 -6.8491,6.8551"
+           d="m 1111.1504,931.46302 a 6.8551059,6.8551059 0 0 1 -6.8551,-6.8536 6.8551059,6.8551059 0 0 1 6.8521,-6.85662 6.8551059,6.8551059 0 0 1 6.8581,6.85058 6.8551059,6.8551059 0 0 1 -6.8491,6.85963"
            sodipodi:start="1.5707963"
            sodipodi:end="7.8530999"
            sodipodi:open="true"
@@ -843,7 +843,7 @@
            sodipodi:cy="924.60791"
            sodipodi:rx="6.8551059"
            sodipodi:ry="6.8551059"
-           d="m 1111.1504,931.46302 c -3.786,0 -6.8551,-3.06914 -6.8551,-6.85511 0,-3.78597 3.0691,-6.85511 6.8551,-6.85511 3.786,0 6.8551,3.06914 6.8551,6.85511 0,3.78361 -3.0655,6.85177 -6.8491,6.8551"
+           d="m 1111.1504,931.46302 a 6.8551059,6.8551059 0 0 1 -6.8551,-6.8536 6.8551059,6.8551059 0 0 1 6.8521,-6.85662 6.8551059,6.8551059 0 0 1 6.8581,6.85058 6.8551059,6.8551059 0 0 1 -6.8491,6.85963"
            sodipodi:start="1.5707963"
            sodipodi:end="7.8530999"
            sodipodi:open="true"
@@ -949,5 +949,12 @@
          id="tspan6228"
          x="-820.56097"
          y="1299.4027">tension</tspan></text>
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#dedede;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4319"
+       width="3.1818583"
+       height="36.883583"
+       x="1233.7817"
+       y="1127.7527" />
   </g>
 </svg>
