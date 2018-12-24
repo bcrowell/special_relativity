@@ -413,7 +413,7 @@ lie above these lines. For example, a car sitting in a parking lot has $p=0$ and
 <%
   fig(
     'e-p-plane',
-    %q{In the $p$-$E$ plane, massless particles lie on the two diagonals, while particles with mass lie to the right.}
+    %q{In the $p$-$E$ plane, massless particles lie on the two diagonals, while particles with mass lie above.}
   )
 %>
 <% end_marg %>
