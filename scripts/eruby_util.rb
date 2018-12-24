@@ -553,7 +553,8 @@ def fig(name,caption=nil,options={})
     'anonymous'=>'default',# true means figure has no figure number, but still gets labeled (which is, e.g., 
                            #      necessary for photo credits)
                            # default is false, except if caption is a null string, in which case it defaults to true
-    'width'=>'narrow',     # 'narrow'=52 mm, 'wide'=113 mm, 'fullpage'=171 mm
+    'width'=>'narrow',     # 'narrow'=52 mm, 'column'=76.5 mm,
+                           #   'wide'=113 mm, 'fullpage'=171 mm
                            #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
     'sidecaption'=>false,
     'sidepos'=>'t',        # positioning of the side caption relative to the figure; can also be b, c
@@ -720,6 +721,35 @@ def fig_print(name,caption,options,dir)
         die(name,"no caption, but not anonymous")
       end
     end
+  end
+  #----------------------- column ------------------------
+  if width=='column' and options['text']==nil then
+    if options['sidecaption'] then
+      die(name,"width is column but sidecaption is true")
+    end
+    if options['narrowfigwidecaption'] then
+      die(name,"width is column but narrowfigwidecaption is true")
+    end
+    if !has_caption && !options['anonymous']
+      die(name,"no caption, but not anonymous")
+    end
+    if options['anonymous'] then
+      if options['float']  then
+        spit("\\columnfig[#{floatpos}]{#{name}}{%\n#{caption}}{#{suffix}}{anonymous}{#{dir}}\n")
+      else # not floating
+        if has_caption then
+          spit("\\columnfignofloatanon[#{dir}]{#{name}}{#{caption}}")
+        else
+          spit("\\columnfignocaptionnofloat[#{dir}]{#{name}}\n")
+        end
+      end
+    else # not anonymous
+      if options['float'] then
+        spit("\\columnfig[#{floatpos}]{#{name}}{%\n#{caption}}{#{suffix}}{labeled}{#{dir}}\n") # tested
+      else # not floating
+        spit("\\columnfignofloat{#{name}}{%\n#{caption}}\n") # tested
+      end # not floating
+    end # not anonymous
   end
   #----------------------- wide ------------------------
   if width=='wide' and options['text']==nil then
@@ -1143,7 +1173,7 @@ def begin_lab(title,columns=2,label='',type='mini',number='')
     number = "\\thechapter"    
   end
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
-  print "\\begin{activity}{#{label}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  print "\\begin{activity}{#{label}}{#{title}}{#{column_command}}{#{typename} #{number}: }\\normalcaptions\\zapcounters"
 end
 
 def end_lab

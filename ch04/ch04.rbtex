@@ -418,7 +418,7 @@ lie above these lines. For example, a car sitting in a parking lot has $p=0$ and
 %>
 <% end_marg %>
 
-Now what happens to such a graph when we change to a different frame or reference that is in motion relative to the
+Now what happens to such a graph when we change to a different frame of reference that is in motion relative to the
 original frame? A massless particle still has to act like a massless particle, so the diagonals are simply stretched
 or contracted along their own lengths. A transformation that always takes a line to a line is a linear transformation,
 and if the transformation between different frames of reference preserves
