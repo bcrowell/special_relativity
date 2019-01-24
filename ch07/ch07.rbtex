@@ -695,6 +695,14 @@ on p.~\pageref{eg:det-g}. For a list of coordinates $ijkl$ that are sorted out i
 define to be a positive orientation, the result is simply $\epsilon_{ijkl}=\sqrt{|\operatorname{det} g|}$.
 The absolute value sign is needed because a relativistic metric has a negative determinant.
 
+\begin{eg}{SI units}
+In SI units, the metric is $\der s^2=c^2\der t^2-\der x^2-\der y^2-\der z^2$. The determinant
+of the metric is $-c^2$. Suppose we have a $1\ \zu{m}^3$ box, and it exists for 1 s in its own rest frame,
+which we take as the frame that defines the right-handed Minkowski coordinates $(t,x,y,z)$.
+In these coordinates, we have $\epsilon_{txyz}=\sqrt{|\operatorname{det} g|}=c$.
+Therefore the 4-volume swept out by the box is $3\times10^8\ \munit^4$.
+\end{eg}
+
 \begin{eg}{Cartesian coordinates and their halfling versions}\label{eg:lc-cartesian-and-halfling}
 Consider Euclidean coordinates in the plane, so that the metric is a $2\times2$ matrix, and
 $\epsilon_{ij}$ has only two indices.
