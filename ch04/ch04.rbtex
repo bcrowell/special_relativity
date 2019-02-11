@@ -610,6 +610,26 @@ anther without interacting.}
 %--------- see http://physicsforums.com/showthread.php?p=3998393&posted=1#post3998393
 \end{eg}
 
+\begin{eg}{A selection rule in beta decay}\index{beta decay}
+A typical beta decay process is
+$\zu{n}\rightarrow\zu{p}+e^-+\bar{\nu}$, i.e., the conversion of a
+neutron into a proton, an electron, and an antineutrino.  The electron and
+antineutrino fly off, so the effect is to convert one of the nucleus's
+neutrons to a proton. For a
+particle with mass $m$ and kinetic energy $K$, the nonrelativistic
+momentum is $p=\sqrt{2mK}$, whereas in the ultrarelativisic limit we
+have $p=K/c$. The nucleons are normally going to be nonrelativistic
+and the leptons (electron and antineutrino) ultrarelativistic. Assuming the energies to be of the
+same order of magnitude, say 1 MeV, we expect
+$p_\text{lepton}/p_\text{nucleon}\sim (1/c)\sqrt{E/2m}\sim 0.03$. So
+to a pretty good approximation the momenta of the leptons are negligible,
+and we're just replacing, say, a neutron
+with a proton in the same state of motion. 
+Since the proton's momentum is the same as the neutron's, and it's replaced
+at the same point in space, its angular momentum is the same as well.
+This leads to the selection rule for beta decay that $\Delta L=0$, where
+$L$ is the orbital (not spin) angular momentum.
+\end{eg}
 
 \begin{eg}{Compton scattering}\label{eg:compton}
 Figure \subfigref{compton-edge}{1} is a histogram of gamma rays emitted by a

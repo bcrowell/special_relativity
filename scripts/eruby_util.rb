@@ -568,6 +568,8 @@ def fig(name,caption=nil,options={})
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
                            # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."
+                           # Tables and align* don't work in text, nor does \\, but paragraph breaks work;
+                           # may be able to get around this with minipage.
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
@@ -1182,13 +1184,13 @@ def begin_lab(title,columns=2,suffix='',type='mini',number='')
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
   label = $ch+suffix
   full_label = "activity-#{type}:"+label
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else
     t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}: #{title}}}"
-    t = t + "\\anchor{anchor-#{full_label}}"
   end
   print t
 end
@@ -1200,13 +1202,13 @@ end
 def begin_notes(columns=2)
   title = "Notes for chapter \\thechapter"
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{}{#{title}}{#{column_command}}{}"
   full_label = "notes:#{$ch}"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else
     t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{title}}}"
-    t = t + "\\anchor{anchor-#{full_label}}"
   end
   print t
 end
@@ -1298,8 +1300,8 @@ end
 def begin_hw_sec(title='Problems')
   label = "hw-#{$ch}-#{title.downcase.gsub(/\s+/,'_')}"
   t = <<-TEX
-    \\begin{hwsection}[#{title}]
     \\anchor{anchor-#{label}}% navigator_package
+    \\begin{hwsection}[#{title}]
     TEX
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
