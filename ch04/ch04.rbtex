@@ -1812,6 +1812,17 @@ an hour. For $L=10^5$ light years, estimate the energy in units of megatons of T
 (1 megaton=$4\times10^9\ \junit$).
 <% end_hw %>
 
+<% begin_hw('b-helix-exact') %>
+In your freshman course on electricity and magnetism, you learned that
+the force of a magnetic field on a charged particle is $\vc{F}_\vc{o}=q\vc{v}\times\vc{B}$.
+This has to be interpreted as the three-force, since the cross product only makes sense for
+three-vectors. This equation is exact, and does not need to be corrected relativistically.
+Suppose that a particle of charge $q$ undergoes circular motion with radius $r$ in a magnetic field $B$.
+Show that its momentum is given by $p=qBr$, and that this relation is exact.
+Note that Newton's second law is \emph{not} relativistically exact, so that you need to write
+down some relativistic equations and then show that the relativistic effects cancel out.
+<% end_hw %>
+
 
 <% end_hw_sec %>
 
