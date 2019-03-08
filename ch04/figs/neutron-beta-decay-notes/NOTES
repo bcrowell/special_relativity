@@ -1,0 +1,63 @@
+====theory====
+used neutron decay so that coulomb shifts would be negligible; for an example that shows
+    coulomb shifts, see the graphs I produced for 64Cu for SN
+outline of calculation
+  area of sphere in momentum space is propto p^2
+  so probability propto p1^2 p2^2, where 1=electron, 2=neutrino
+  change of variables to kinetic energy K and m2=0 gives
+    probability ~ p1E1p2E2
+          ~ (2m1K1+K1^2)^(1/2)(m1+K1)K2^2
+  let k=K1/Q, so k varies from 0 to 1
+  let q=Q/m1
+  because KE of recoiling nucleus is negligible, k goes from 0 to 1, and energy of neutrino is 1-k
+  result is the function above
+Q value
+  0.782343 MeV -- https://en.wikipedia.org/wiki/Free_neutron_decay
+  so my q=Q/m_e = 1.53
+curve is fit using the function
+  k^(1/2)(2/q+k)^(1/2)(1/q+k)(1-k)^2
+  checked against de Shalit and Feshbach, p. 777, eq. 2.9
+    notation (mine, theirs)
+      Q      E0-m
+      q      eps0-1
+      E1/m1  eps
+      k      (1/eps0)(eps-1)
+    checks out to within constant factors
+  plotted using desmos using q=1.53
+    https://www.desmos.com/calculator/vlmhvo6o9m
+  drew on top with inkscape
+====Hickerson====
+https://thesis.library.caltech.edu/7250/1/hickerson-2012-thesis.pdf
+  p. 91
+  fig 7.16
+not reliable below about 150 keV, or about E/Emax=0.2
+  e.g., hickerson doesn't try to do anything with it in fig 7.20 below that energy
+  there is a lot of background at low energies, so they had to impose a trigger
+  electrons have to make it through some foils
+https://arxiv.org/pdf/1707.00776.pdf
+  has figure that wasn't as useful for my purposes as thesis figure (harder to get rid of his
+        monte carlo curves)
+absolute normalization of y axis
+  from arxiv 1707.00776, fig. 4; rescale x by 1/.782 MeV, so rescale y by .782 MeV
+energy resolution
+  p. 95 of pdf: energy resolution is about 53 keV at some energy, presumably at the
+           peak of the spectrum, although he doesn't say so; says
+           resolution should be propto sqrt(E), although they didn't find that that mattered
+           enough to worry about, so they pretended it was constant
+  this is how I made my energy resolution bars on the graph
+low-energy data
+  I picked data points at  35, 65, 95, and 145 keV
+  found GEANT's estimate of efficiency by dividing GEANT curve by theory
+  statistical error bars are only 0.014 (on a scale where y max=1) even for the 35 keV point, i.e.,
+         would be about the size of that dot
+  but statistical error bars aren't the issue; efficiency is strongly curved and concave up,
+         so energy resolution leads to an overestimate of rate; therefore threw out 35 keV point
+  also threw out 95 keV, just because uneven spacing makes it look goofy
+high-energy data
+  dots are *not* efficiency corrected, but efficiency is nearly unity at these energies
+====Plaster====
+https://www.jlab.org/Hall-C/talks/08_09_07/martin.pdf
+  see p. 21, with credit to Plaster
+has no absolute calibration of rates
+ended up not using this, because the efficiency is clearly less than unity at the lower energies,
+      but isn't calibrated

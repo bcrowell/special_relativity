@@ -712,6 +712,74 @@ has been violated: the timelike component of the momentum is the mass-energy, an
 from 0 in the initial state to at least $2mc^2$ in the final state.
 \end{eg}
 
+\begin{eg}{Energy spectrum of beta decay}
+In $\beta^-$ decay, a nucleus emits an electron (beta particle) with kinetic energy
+$K_1$ and an antineutrino with $K_2$.  Because the recoiling daughter
+nucleus has such a large mass, its kinetic energy is negligible, and
+$K_1+K_2=Q$, where $Q$ is a constant fixed by conservation of mass-energy. 
+Since the energy can be shared between the electron and the neutrino, the
+electron's energy spectrum is continuous.
+
+In heavy nuclei, the shape of this
+spectrum is influenced by the electrical interaction of the electron with the
+nucleus, but in light nuclei it is a good approximation that  the spectrum depends
+only on the number of possible states for a given combination of $K_1$ and $K_2$.
+Given a kinetic energy $K$, the three-momentum vector's magnitude $p$ is fixed,
+and this vector must lie on the surface of a sphere in a three-dimensional space.
+The number of possible states with this momentum is proportional to the area
+of the sphere, i.e., to $p^2$. The probability of the momentum combination of $p_1$
+and $p_2$ is therefore proportional to $p_1^2p_2^2$.
+
+Here we will find the probability distribution of $K_1$ rather than $p_1$. (Calculating
+either ends up being about equally complicated.) If variables $u$ and $v$ are
+linked by some relationship, then their probability distributions are related
+by $\der P/\der u=(\der v/\der u)(\der P/\der v)$. In the case of energy and momentum,
+we have $m^2=E^2-p^2$, so that $\der p/\der E=E/p$. The result is that we predict
+the energy spectrum to be proportional to $p_1E_1p_2E_2$. Expressing this is terms of
+the kinetic energy $K=E-m$, and approximating $m_2\approx0$ for the neutrino, gives a proportionality to
+\begin{equation*}
+  \sqrt{2m_1K_1+K_1^2}(m_1+K_1)K_2^2.
+\end{equation*}
+We wish to express this in terms of $K_1$, eliminating $K_2$ through conservation of
+energy. To simplify the writing, we define the unitless variables $\kappa=K_1/Q$, $q=Q/m_1$.
+Some algebra then produces the probability distribution
+$D(\kappa)=\der P/\der \kappa$, which is
+\begin{equation*}
+  D(\kappa) \propto \kappa^{1/2}\left(\frac{2}{q}+\kappa\right)^{1/2}\left(\frac{1}{q}+\kappa\right)(1-\kappa)^2
+       \qquad (0\le \kappa\le 1).
+\end{equation*}
+
+<% marg() %>
+<%
+  fig(
+    'neutron-beta-decay',
+    %q{Beta decay of the neutron.
+       }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{neutron-beta-decay} shows that this equation is in
+excellent agreement with experiment for the decay
+$\zu{n}\rightarrow\zu{p}+e^{-1}+\bar{\nu}$,  with $Q=0.782\ \zu{MeV}$, measured by Hickerson
+\emph{et al.} in 2013.\footnote{I have manipulated their data somewhat
+for the purposes of this presentation. The two low-energy data-points
+are ones that I arbitrarily picked at 65 and 145 keV. I corrected
+these for the efficiency of the detector calculated from Hickerson's Monte Carlo
+simulation. Despite the extreme efficiency correction, the statistical
+error bars would still be too small to see on this scale, even down to
+energies of about 35 keV. At the lowest energies, the method of presentation
+I have used here for pedagogical purposes is subject to a systematic
+error because of the finite energy resolution of the detector and the
+strong nonlinearity of the efficiency as a function of energy. This systematic
+error is visible in the 65 keV data point.}
+Such measurements are difficult because one needs a supply of cold
+neutrons.  The horizontal error bars show the detector's energy resolution at a few
+representative points. Each data point represents an average over
+this range. The asymmetry of the curve arises because the antineutrino is ultrarelativistic,
+but the electron is not.
+\end{eg}
+
 <% end_sec('p-examples') %>
 <% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
 Massless particles always travel at $c(=1)$. For
