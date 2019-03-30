@@ -781,19 +781,21 @@ but the electron is not.
 \end{eg}
 
 <% end_sec('p-examples') %>
-<% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
-Massless particles always travel at $c(=1)$. For
-suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
-other observer could be at rest relative to the particle. In such a frame,
-the particle's momentum $p$ is zero by symmetry, since there is no preferred
-direction for it. Then $E^2=p^2+m^2$ is zero as well, so the particle's entire energy-momentum
-vector is zero. But a vector that vanishes in one frame also vanishes in every
-other frame. That means we're talking about a particle that can't undergo scattering, emission, or
-absorption, and is therefore undetectable by any experiment. This is physically unacceptable because
-we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
-undetectable even in principle.
+<% begin_sec("Momentum-velocity relation for material particles",nil,'p-v-relation') %>
+For a particle with mass, it would be convenient to have a relation between the velocity and the momentum.
+Since we already have an equation $E=m\gamma$ for the energy of a material particle in terms of
+its velocity, we can find a similar equation for the momentum,
+\begin{align*}
+  p &= \sqrt{E^2-m^2} \\
+    &= m\sqrt{\gamma^2-1} \\
+    &= m\sqrt{\frac{1}{1-v^2}-1} \\
+    &= m\gamma v\eqquad
+\end{align*}
+This has been verified experimentally, as shown in figure \figref{relativistic-momentum-tests}.
+As a material particle gets closer and closer to $c$, its momentum approaches infinity,
+so that an infinite force would be required in order to reach $c$. 
 
-<% marg(-300) %>
+<% marg(300) %>
 <%
   fig(
     'relativistic-momentum-tests',
@@ -806,18 +808,50 @@ undetectable even in principle.
 %>
 <% end_marg %>
 
-What about the case of a material particle, i.e., one having mass?
-Since we already have an equation $E=m\gamma$ for the energy of a material particle in terms of
-its velocity, we can find a similar equation for the momentum,
-\begin{align*}
-  p &= \sqrt{E^2-m^2} \\
-    &= m\sqrt{\gamma^2-1} \\
-    &= m\sqrt{\frac{1}{1-v^2}-1} \\
-    &= m\gamma v\eqquad
-\end{align*}
-(a relation that is useful in its own right, and has been verified experimentally, \figref{relativistic-momentum-tests}).
-As a material particle gets closer and closer to $c$, its momentum approaches infinity,
-so that an infinite force would be required in order to reach $c$. 
+Written in terms of four-vectors, this relation becomes simply
+$\vc{p}=m\vc{v}$, with the factor of $\gamma$ absorbed into the
+normalization of the velocity vector. Here $v$ and $\vc{v}$ differ not
+just because the latter carries information about the direction of
+motion, but also because it is defined as a derivative of position
+with respect to \emph{proper} time.  Because $m$ is a
+scalar,
+the vectors
+$\vc{v}$ and $\vc{p}$ are always parallel. This makes sense, because
+given a particle's world-line, it is not obvious how we could pick out
+a direction for the momentum vector except by setting it to be tangent
+to the world-line, like the velocity vector.\footnote{We could also consider the case where the mass acts like a matrix multiplying the vector
+$\vc{v}$ to give the vector $\vc{p}$. This would not be consistent with our definition $m^2=E^2-p^2$, but
+that doesn't prove that it's wrong. We want velocity vectors to be timelike or null
+(because otherwise we have problems with causality), and momentum
+vectors also to be timelike or null (because otherwise the vacuum is
+unstable with respect to production of pairs of particles whose
+momenta sum to zero, sec.~\ref{subsec:tachyons-and-qm}, p.~\pageref{subsec:tachyons-and-qm}).  This implies that the mass matrix must preserve
+the light cone. The linear transformations that preserve the light
+cone are (up to a constant factor) boosts and rotations, so our
+particle must have some built-in degree of freedom $b$ that describes
+its boost, or one that specifies its rotation $r$, or, in general,
+both.  These $b$ and $r$ are either dynamical properties of the
+particle or fixed, generic properties of all particles. If they're
+fixed, then this is of no importance, because it just means that we're
+using a different frame of reference to describe velocity vectors than
+for momentum vectors. If they're dynamical, then for a system of
+particles, interactions will cause the $b$ and $r$ to change, and this
+will in general result in nonconservation of momentum.}
+
+<% end_sec('p-v-relation') %>
+
+<% begin_sec("Massless particles travel at $c$",nil,'massless-go-at-c') %>
+Massless particles always travel at $c(=1)$. For
+suppose that a massless particle had $|v|<1$ in the frame of some observer. Then some
+other observer could be at rest relative to the particle. In such a frame,
+the particle's momentum $p$ is zero by symmetry, since there is no preferred
+direction for it. Then $E^2=p^2+m^2$ is zero as well, so the particle's entire energy-momentum
+vector is zero. But a vector that vanishes in one frame also vanishes in every
+other frame. That means we're talking about a particle that can't undergo scattering, emission, or
+absorption, and is therefore undetectable by any experiment. This is physically unacceptable because
+we don't consider phenomena (e.g., invisible fairies) to be of physical interest if they are
+undetectable even in principle.
+
 
 In summary, massless particles always move at $v=c$, while massive ones always move at $v<c$.
 

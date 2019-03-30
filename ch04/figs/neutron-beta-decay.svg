@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="neutron-beta-decay-spectrum.svg"
+   sodipodi:docname="neutron-beta-decay.svg"
    inkscape:export-filename="a.png"
    inkscape:export-xdpi="120"
    inkscape:export-ydpi="120">
@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.387885"
-     inkscape:cx="147.0967"
+     inkscape:cx="73.810089"
      inkscape:cy="734.1748"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -281,7 +281,9 @@
            y="368.22028"
            x="82.149155"
            id="tspan4968"
-           sodipodi:role="line">= K/K<tspan
+           sodipodi:role="line">= K<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan4209">1</tspan>/K<tspan
    id="tspan4970"
    style="font-size:64.99999762%;baseline-shift:sub">max</tspan></tspan></text>
       <text
