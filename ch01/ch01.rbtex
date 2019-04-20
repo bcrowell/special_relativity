@@ -1062,12 +1062,13 @@ Lorentz transformation.\index{Lorentz transformation}
     'clock-and-ruler-gamma',
     %q{%
       1. The clock is at rest in the original frame of reference, and it measures a time interval $t$.
-       In the new frame of reference, the time interval is greater by a factor of $\gamma$.
+       A clock at rest in the new frame of reference ticks the same number of times during a time interval that the observer in the original frame describes as
+       $\gamma t$.
       2. The ruler is moving in the first frame, represented by a square, but at rest in the second one,
        shown as a parallelogram.
        Each picture of the ruler is a snapshot taken at a certain moment as judged according to the second
        frame's
-       notion of simultaneity. An observer in first frame judges the ruler's length instead according to
+       notion of simultaneity. An observer in the first frame judges the ruler's length instead according to
        that frame's definition of simultaneity, i.e., using points that are lined up horizontally on the graph.
        The ruler appears shorter in the frame in which it is moving.
     },

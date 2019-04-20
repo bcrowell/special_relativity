@@ -297,6 +297,47 @@ of light is such a large number.
 
 \pagebreak
 
+\begin{eg}{The Cockroft-Walton experiment}
+One of the first historical tests of mass-energy equivalence was carried
+out in 1933 as a corollary of the discovery of induced nuclear 
+disintegration, or ``splitting the atom.''
+At the Cavendish laboratory in England, Cockroft and Walton built a kind of
+electrostatic generator called a Cockroft-Walton generator, which was
+capable of creating DC voltages of up to 280 kV. They used this to
+accelerate beams of protons.
+
+They read a paper by Gamow predicting quantum-mechanical tunneling,
+and realized that their proton beams ought to be able to fuse with
+lithium and beryllium, even though the energies were below the Coulomb
+barrier. 
+
+Bomparding lithium with protons in 1932, they observed a reaction which they interpreted as
+$\text{p}+{}^7\text{Li}\rightarrow2\alpha+17.0\ \text{MeV}$, for the
+following reasons. Natural lithium is 92\% ${}^7\text{Li}$.
+They had seen neutrons from their reactions, and
+had also hoped to see gammas but didn't. But in this experiment, they
+knew these were alphas because they stopped in air. Because the beam
+is much lighter than the target, the lab frame approximately coincides
+with the center of mass frame, in which the two alphas have equal
+energy due to conservation of energy and momentum. The range of the
+alphas in air was 8.4 cm, which determined their energies to be 8.6
+MeV each, so the energy released in the reaction was roughly double
+this amount (but slightly less due to the beam's kinetic energy).
+They got the Nobel Prize in 1951 for this work.
+
+As a bonus, Kenneth Bainbridge in the U.S.~realized that he could to use this as a test of mass-energy
+equivalence. The energy of 17.0 MeV was equivalent to 0.0182 atomic mass units.
+Bainbridge and F.W.~Aston had measured the atomic masses involved using
+mass spectrometers, so they could compute that the change in
+mass was 0.0181(6) u. This verified $E=mc^2$ to within the error bars.
+
+During World War II, Bainbridge managed the Trinity nuclear test, remarking
+after the explosion that ``Now we are all sons of bitches.'' He became a
+lifelong advocate of a nuclear test ban and civilian control of nuclear arms.
+\end{eg}
+
+\pagebreak
+
 \begin{eg}{Relativistic kinetic energy}\label{eg:bertozzi}
 By about 1930, particle accelerators had progressed to the point at which relativistic effects
 were routinely taken into account. In 1964, W.~Bertozzi did a special-purpose experiment to
