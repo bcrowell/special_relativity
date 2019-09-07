@@ -285,6 +285,7 @@ def end_marg
 end
 
 def marg(delta_y=0)
+  # positive is up
   if $in_marg then die('(marg)','marg, but already in a marg') end
   $n_marg = $n_marg+1
   $in_marg = true
@@ -1147,7 +1148,7 @@ def handle_m4_in_answer_file(text)
   File.open(temp_file_name,'w') { |f|
     f.print text
   }
-  cmd = "#{run_m4} #{temp_file_name} dummy ."
+  cmd = "#{run_m4} #{temp_file_name} #{ENV['BK']} ."
   result = `#{cmd}`
   if result=='' then $stderr.print "error in handle_m4_in_answer_file, result is null string" end
   File.delete(temp_file_name)
@@ -1197,7 +1198,7 @@ def end_ex
 end
 
 # The following are used in FAC:
-def begin_lab(title,columns=2,suffix='',type='mini',number='')
+def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
   # suffix is, e.g., B for ex. 3B in ch. 3
   title = alter_titlecase(title,1)
   if type=='mini' then
@@ -1211,8 +1212,8 @@ def begin_lab(title,columns=2,suffix='',type='mini',number='')
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
   label = $ch+suffix
   full_label = "activity-#{type}:"+label
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
@@ -1227,11 +1228,11 @@ def end_lab
 end
 
 def begin_notes(columns=2)
+  full_label = "notes:#{$ch}"
   title = "Notes for chapter \\thechapter"
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{}{#{title}}{#{column_command}}{}"
-  full_label = "notes:#{$ch}"
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else
@@ -1549,6 +1550,7 @@ def chapter(number,title,label,caption='',options={})
     'very_short_title'=>nil,  # used in running headers; if omitted, taken from short_title
     'optional'=>false
   }
+  insert_into_chapter_title_list(number.to_i,label,title)
   $section_level += 1
   $ch = number
   $label_counter = 0
@@ -1650,6 +1652,19 @@ def chapter_print(number,raw_title,label,caption,options)
   end
   print sectioning_command_with_href(result,0,bare_label,'ch',raw_title,options['optional'])
   #print "#{result}\\label{#{label}}\n"
+end
+
+def insert_into_chapter_title_list(number,label,title)
+  file = "chapters.json"
+  data = []
+  if FileTest.exist?(file) then
+    json_data = ''
+    File.open(file,'r') { |f| json_data = f.gets(nil) }
+    if json_data == '' then $stderr.print "Error reading file #{file} in eruby_util.rb"; exit(-1) end
+    data = JSON.parse(json_data)
+  end
+  data[number] = {'label'=>label.sub(/ch:/,''),'title'=>title}
+  File.open(file,'w') { |f| f.print JSON.pretty_generate(data) }
 end
 
 $photo_credits = []

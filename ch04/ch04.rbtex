@@ -753,7 +753,7 @@ has been violated: the timelike component of the momentum is the mass-energy, an
 from 0 in the initial state to at least $2mc^2$ in the final state.
 \end{eg}
 
-\begin{eg}{Energy spectrum of beta decay}
+\begin{eg}{Energy spectrum of beta decay}\label{beta decay!energy spectrum}
 In $\beta^-$ decay, a nucleus emits an electron (beta particle) with kinetic energy
 $K_1$ and an antineutrino with $K_2$.  Because the recoiling daughter
 nucleus has such a large mass, its kinetic energy is negligible, and
@@ -802,7 +802,7 @@ $D(\kappa)=\der P/\der \kappa$, which is
 
 Figure \figref{neutron-beta-decay} shows that this equation is in
 excellent agreement with experiment for the decay
-$\zu{n}\rightarrow\zu{p}+e^{-1}+\bar{\nu}$,  with $Q=0.782\ \zu{MeV}$, measured by Hickerson
+$\zu{n}\rightarrow\zu{p}+e^{-}+\bar{\nu}$,  with $Q=0.782\ \zu{MeV}$, measured by Hickerson
 \emph{et al.} in 2013.\footnote{I have manipulated their data somewhat
 for the purposes of this presentation. The two low-energy data-points
 are ones that I arbitrarily picked at 65 and 145 keV. I corrected
