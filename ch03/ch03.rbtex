@@ -868,7 +868,7 @@ same length $\Delta h$ as measured by an observer who traces that world-line. Th
 represent a rigid measuring rod carried by that observer, drawn along a line that that observer considers
 to be a line of simultaneity at that time. In analogy to the Euclidean case, we have
 \begin{equation*}
-  \frac{1}{\tau} \frac{\Delta\tau}{\Delta h} = \frac{1}{a}\eqquad.
+  \frac{1}{\tau} \frac{\Delta\tau}{\Delta h} = a \eqquad.
 \end{equation*}
 
 <% end_sec('accel-thickening') %>

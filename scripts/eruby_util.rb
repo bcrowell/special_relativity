@@ -29,9 +29,11 @@ $hw_has_solution = []
 $hw_trailing = []
 $hw_names_referred_to = []
 $hw_freeze = 0
+$hw_inside_group = false # see begin_hw_group()
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
+$normal_column_setup = true # gets set to false when we're in a two-column layout or a one-column layout with no margin for figures
 $geom_file = "geom.pos"
 $checked_geom = false
 $geom_exists = nil
@@ -501,7 +503,8 @@ def figure_exists_in_this_dir?(name,d)
 end
 
 # returns a directory (possibly with LaTeX macros in it) or nil if we can't find the figure
-def find_directory_where_figure_is(name)
+def find_directory_where_figure_is(name,topic)
+  if !topic.nil? then return "../share/#{topic}/figs" end
   if figure_exists_in_my_own_dir?(name) then return dir = "\\figprefix\\chapdir/figs" end
   # bug: doesn't support \figprefix
   s = shared_figs()
@@ -552,11 +555,12 @@ def raw_fig(name)
 end
 
 def eqn_image(name,hardcoded_dir=nil)
-  # Embed an image inside an equation.
+  # Embed an image inside an equation. This also works outside of equations.
   # Used in SN 14 and FAC ac/b.
+  # Typical usage with hardcoded_dir: <% eqn_image("eqn-wave2-flipped","../share/quantum/figs") %>
   dir = hardcoded_dir
   if hardcoded_dir.nil? then
-    dir = find_directory_where_figure_is(name)
+    dir = find_directory_where_figure_is(name,nil)
     if dir.nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}, ch=#{$ch}") end
   end
   file = "#{dir}/#{name}"
@@ -585,22 +589,28 @@ def fig(name,caption=nil,options={})
                            # default is false, except if caption is a null string, in which case it defaults to true
     'width'=>'narrow',     # 'native'=whatever the figure says it is, 'narrow'=52 mm, 'column'=76.5 mm,
                            #   'wide'=113 mm, 'fullpage'=171 mm
-                           #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
+                           #   Refers to graphic, not graphic plus caption (which is greater for sidecaption option).
+                           #   If fullpage figure ends up positioned incorrectly, see below re debugging.
     'sidecaption'=>false,
     'sidepos'=>'t',        # positioning of the side caption relative to the figure; can also be b, c
     'float'=>'default',    # defaults to false for narrow, true for wide or fullpage (because I couldn't get odd-even to work reliably for those if not floating)
     'floatpos'=>'h',       # standard latex positioning parameter for floating figures
     'narrowfigwidecaption'=>false, # currently only supported with float and !anonymous
     'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique;
-                           #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
+                           #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second; label is 'foo2', not 'foo-2'
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
-                           # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."
-                           # Tables and align* don't work in text, nor does \\, but paragraph breaks work;
-                           # may be able to get around this with minipage.
+                           # For an example of how to do this, Mod 7. Tables do work (as in that example). Adjust spacing using textgap.
+                           # Align* doesn't work in text, nor does \\, but paragraph breaks work;
+                           # may be able to get around this with minipage. To make it gray bg, use shaded environment.
+    'textgap'=>0,          # Additional space in mm between text figure and caption. Often needs to be -10 with table/shading?
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
-    'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
+    'textbox'=>false,      # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
+    'topic'=>nil           # e.g., set to 'optics' if this is in a share/optics and is not in topic_map; don't hardcode "../../../share/..."
+    # Debugging incorrect placement on the page:
+    #   If a fullpage width figure is in a page that doesn't have the standard layout, and is positioned incorrectly, see
+    #      logic about the flag $normal_column_setup. E.g., maybe this flag didn't get set.
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -648,7 +658,7 @@ def fig(name,caption=nil,options={})
   if options['anonymous']=='default' then
     options['anonymous']=!has_caption
   end
-  dir = find_directory_where_figure_is(name)
+  dir = find_directory_where_figure_is(name,options['topic'])
   if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}, ch=#{$ch}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
@@ -735,7 +745,9 @@ def fig_print(name,caption,options,dir)
       spit("\\startmargintextbox{#{name}}{#{caption}}\n#{text}\n\\finishmargintextbox{#{name}}\n")
     else
       if has_caption then m = "finishtextfig" else m = "finishtextfignocaption" end
-      spit("\\starttextfig{#{name}}#{text}\n\\#{m}{#{name}}{%\n#{caption}}\n")
+      textgap = options['textgap']
+      spit("\\starttextfig{#{name}}#{text}\n\\vspace{#{textgap}mm}\\#{m}{#{name}}{%\n#{caption}}\n")
+      # The -10mm is ad hoc. If it looks wrong in the output, can put an additional positive or negative vspace in the text itself.
     end
   end
   #----------------------- native ----------------------
@@ -835,11 +847,22 @@ def fig_print(name,caption,options,dir)
       if has_caption then
         die(name,"the combination of options fullpage+anonymous+caption is not currently supported")
       else
-        spit("\\fullpagewidthfignocaption[#{dir}]{#{name}}\n")
+        if $normal_column_setup then
+          #die(name,"fullpage figure used on a page without the normal layout")
+          spit("\\fullpagewidthfignocaption[#{dir}]{#{name}}\n")
+        else
+          raw_fig(name) # recurses
+        end
       end
     else # not anonymous
       if has_caption then
-        spit("\\fullpagewidthfig[#{dir}]{#{name}}{%\n#{caption}}\n")
+        if $normal_column_setup then
+          spit("\\fullpagewidthfig[#{dir}]{#{name}}{%\n#{caption}}\n")
+        else
+          save_complaint("****** warning: figure #{name} with caption, full page width and used in layout that is not the normal one; this feature is untested")
+          raw_fig(name) # recurses
+          spit("\\\\formatlikecaption{#{caption}}")
+        end
       else
         die(name,"no caption, but not anonymous")
       end
@@ -1031,6 +1054,7 @@ def read_answer_data()
   if ! File.exist?($answer_data_file) then return end
   File.open($answer_data_file,'r') { |f|
     a = f.gets(nil) # nil means read whole file
+    if a.nil? then return end
     a.scan(/(\d+),(.*),(.*)/) { |ch,name,type|
       $answer_data.push([ch.to_i,name,type])
     }
@@ -1108,6 +1132,27 @@ end
 def end_hw()
   print $hw_trailing[$hw_number]
   print "\\end{homeworkforcelabel}"
+  hw_vfill()
+end
+
+def hw_vfill()
+  if $hw_vfill and !$hw_inside_group then
+    print "\n\\vspace{\\fill}\n" # using \vspace{\fill} rather than \vfill makes the space not appear if at end of a page
+  end
+end
+
+# The following is used when the $hw_vfill tag is turned on and we have a wide figure that we want to keep close to the text of the
+# problem. See, e.g., Mod 3 (waves/c.rbtex).
+def begin_hw_group
+  if $hw_inside_group then fatal_error("begin_hw_group() used when already inside a group") end
+  if !$hw_vfill then fatal_error("begin_hw_group() used, but vfill option was not turned on in begin_hw_sec") end
+  $hw_inside_group = true
+end
+
+def end_hw_group
+  if !$hw_inside_group then fatal_error("end_hw_group() used when not already inside a group") end
+  $hw_inside_group = false
+  hw_vfill()
 end
 
 def hint_text(label,text=nil)
@@ -1191,40 +1236,42 @@ def begin_ex(title,label='',columns=1)
   title = alter_titlecase(title,1)
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
   print "\\begin{handson}{#{label}}{#{title}}{#{column_command}}"
+  $normal_column_setup = false
 end
 
 def end_ex
   print "\\end{handson}"
+  $normal_column_setup = true
 end
 
 # The following are used in FAC:
 def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
   # suffix is, e.g., B for ex. 3B in ch. 3
   title = alter_titlecase(title,1)
-  if type=='mini' then
-    typename = 'Minilab'
-  else
-    typename = 'Lab'
-  end
+  typename = 'Lab'
+  if type=='mini' then typename = 'Minilab' end
+  if type=='ex'   then typename = 'Exercise' end
   if number==''
-    number = "\\thechapter"    
+    number = "\\thechapter{}"
   end
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
-  label = $ch+suffix
+  label = number+suffix
   full_label = "activity-#{type}:"+label
-  t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
+  t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}#{suffix}: }"
+  if not is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else
-    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}: #{title}}}"
+    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}#{suffix}: #{title}}}"
   end
   print t
+  $normal_column_setup = false
 end
 
 def end_lab
   print "\\end{activity}"
+  $normal_column_setup = true
 end
 
 def begin_notes(columns=2)
@@ -1325,7 +1372,7 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   #$stderr.print "in begin_sec(), eruby_util.rb: level=#{$section_level}, title=#{title}, macro=#{macro}\n"
 end
 
-def begin_hw_sec(title='Problems')
+def begin_hw_sec(title:'Problems',vfill:false)
   label = "hw-#{$ch}-#{title.downcase.gsub(/\s+/,'_')}"
   t = <<-TEX
     \\anchor{anchor-#{label}}% navigator_package
@@ -1338,6 +1385,7 @@ def begin_hw_sec(title='Problems')
   end
   print t
   $inside_hw_sec = true
+  $hw_vfill = vfill
 end
 
 def end_hw_sec
@@ -1548,7 +1596,8 @@ def chapter(number,title,label,caption='',options={})
     'special_width'=>nil,  # used in CL4, to let part of the figure hang out into the margin
     'short_title'=>nil,      # used in TOC; if omitted, taken from title
     'very_short_title'=>nil,  # used in running headers; if omitted, taken from short_title
-    'optional'=>false
+    'optional'=>false,
+    'preface'=>nil         # prefatory text, appearing above the chapter heading, as in Modern Physics ch. 1; not supported with opener
   }
   insert_into_chapter_title_list(number.to_i,label,title)
   $section_level += 1
@@ -1609,7 +1658,11 @@ def chapter_print(number,raw_title,label,caption,options)
     end
   }
   if !has_opener then
-    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
+    if options['preface'].nil? then
+      result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
+    else
+      result = "\\mychapterwithpreface{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}{#{options['preface']}}#{append}"
+    end
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1
